@@ -14,7 +14,7 @@ composer require volc/volc-sdk-php
   ```
 - 默认为cn-north-1，如果需要调用其它地域服务，请在初始化函数getInstance中传入指定地域region，例如：
   ```
-  $client = Vod::getInstance('us-east-1');
+  $client = Iam::getInstance('us-east-1');
   ```
 - 注意：IAM模块目前只开放cn-north-1区域
 
