@@ -7,7 +7,6 @@ $client = Iam::getInstance();
 
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
-$client->setHost($host);
 
 echo "\nDemo 1\n";
 $response = $client->listUsers([]);

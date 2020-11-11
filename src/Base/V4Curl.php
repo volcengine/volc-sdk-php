@@ -20,6 +20,7 @@ abstract class V4Curl extends Singleton
     protected $region = '';
     protected $ak = '';
     protected $sk = '';
+    
 
     public function __construct()
     {
@@ -33,6 +34,9 @@ abstract class V4Curl extends Singleton
             'handler' => $this->stack,
             'base_uri' => $config['host'],
         ]);
+        
+        $this->version = file_get_contents(__DIR__.'/../../VERSION');
+        
     }
 
     public function setAccessKey($ak)
@@ -116,6 +120,7 @@ abstract class V4Curl extends Singleton
 
         $defaultConfig = $this->getConfig($this->region);
         $config = $this->configMerge($defaultConfig['config'], $config_api['config'], $config);
+        $config['headers']['User-Agent'] = 'volc-sdk-php/'.$this->version;        
         $info = array_merge($defaultConfig, $config_api);
         $info['config'] = $config;
 

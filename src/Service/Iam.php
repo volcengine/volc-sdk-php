@@ -24,7 +24,7 @@ class Iam extends V4Curl
     }
 
     public function listUsers(array $query = [])
-    {
+    {        
         $response = $this->request('ListUsers', $query);
         return $response->getBody();
     }
