@@ -255,7 +255,8 @@ class VodOption
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [
-                            'Accept' => 'application/json'
+                            'Accept' => 'application/json',
+                            'X-TT-ENV' => 'boe_husky_feature',
                         ],
                         'v4_credentials' => [
                             'region' => 'cn-north-1',
