@@ -5,6 +5,8 @@
 
 namespace Volc\Base;
 
+use Exception;
+
 class Singleton
 {
     private static $instances = array();
