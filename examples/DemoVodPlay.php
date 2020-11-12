@@ -9,7 +9,6 @@ use Volc\Service\Vod\Vod;
 
 
 $client = Vod::getInstance();
-// call below method if you dont set ak and sk in ～/.vcloud/config
 // $client->setAccessKey("");
 // $client->setSecretKey("");
 
