@@ -2,6 +2,17 @@
 
 namespace Volc\Service\Vod;
 
+const ResourceSpaceFormat = "trn:vod:%s:*:space/%s";
+const ResourceVideoFormat = "trn:vod::*:video_id/%s";
+const ResourceStreamTypeFormat = "trn:vod:::stream_type/%s";
+const ResourceWatermarkFormat = "trn:vod::*:watermark/%s";
+const ActionGetPlayInfo = "vod:GetPlayInfo";
+const ActionApplyUpload = "vod:ApplyUpload";
+const ActionCommitUpload = "vod:CommitUpload";
+const Star = "*";
+const Statement = "Statement";
+
+
 class VodOption
 {
     public static $VOD_TPL_OBJ = 'tplv-vod-obj';
@@ -119,5 +130,173 @@ class VodOption
     public function getH()
     {
         return $this->h;
+    }
+
+    public static $apiList = [
+        'GetPlayInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetPlayInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetOriginalPlayInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetOriginalPlayInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'ApplyUploadInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ApplyUploadInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'CommitUploadInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CommitUploadInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UploadMediaByUrl' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UploadMediaByUrl',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'QueryUploadTaskInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'QueryUploadTaskInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'StartWorkflow' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'StartWorkflow',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateVideoInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateVideoInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateVideoPublishStatus' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateVideoPublishStatus',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetVideoInfos' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetVideoInfos',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetRecommendedPoster' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetRecommendedPoster',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+    ];
+
+    public static function getConfig(string $region = '')
+    {
+        switch ($region) {
+            case 'cn-north-1':
+                $config = [
+                    'host' => 'http://volcengineapi-boe.byted.org',
+//                    'host' => 'https://vod.volcengineapi.com',
+                    'config' => [
+                        'timeout' => 5.0,
+                        'headers' => [
+                            'Accept' => 'application/json'
+                        ],
+                        'v4_credentials' => [
+                            'region' => 'cn-north-1',
+                            'service' => 'vod',
+                        ],
+                    ],
+                ];
+                break;
+            case 'ap-singapore-1':
+                $config = [
+                    'host' => 'https://vod.ap-singapore-1.volcengineapi.com',
+                    'config' => [
+                        'timeout' => 5.0,
+                        'headers' => [
+                            'Accept' => 'application/json'
+                        ],
+                        'v4_credentials' => [
+                            'region' => 'ap-singapore-1',
+                            'service' => 'vod',
+                        ],
+                    ],
+                ];
+                break;
+            case 'us-east-1':
+                $config = [
+                    'host' => 'https://vod.us-east-1.volcengineapi.com',
+                    'config' => [
+                        'timeout' => 5.0,
+                        'headers' => [
+                            'Accept' => 'application/json'
+                        ],
+                        'v4_credentials' => [
+                            'region' => 'us-east-1',
+                            'service' => 'vod',
+                        ],
+                    ],
+                ];
+                break;
+            default:
+                throw new \Exception("Cant find the region, please check it carefully");
+        }
+        return $config;
     }
 }
