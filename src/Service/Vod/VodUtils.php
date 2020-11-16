@@ -14,16 +14,12 @@ class VodUtils {
             $query = json_decode($jsonData, true);
             foreach ($query as $key => $value) {
                 switch (gettype($query[$key])) {
-                    case 'boolean':
-                        continue 2;
                     case 'integer':
-                        continue 2;
-                    case 'double':
-                        continue 2;
                     case 'string':
-                        continue 2;
+                    case 'double':
                     case 'NULL':
-                        continue 2;
+                    case 'boolean':
+                        break;
                     default:
                         $d = json_encode($value);
                         $query[$key] = $d;
