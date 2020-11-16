@@ -255,7 +255,7 @@ class VodOption
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [
-                            'Accept' => 'application/json'
+                            'Accept' => 'application/json',
                         ],
                         'v4_credentials' => [
                             'region' => 'cn-north-1',

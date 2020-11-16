@@ -15,15 +15,15 @@ class VodUtils {
             foreach ($query as $key => $value) {
                 switch (gettype($query[$key])) {
                     case 'boolean':
-                        continue;
+                        continue 2;
                     case 'integer':
-                        continue;
+                        continue 2;
                     case 'double':
-                        continue;
+                        continue 2;
                     case 'string':
-                        continue;
+                        continue 2;
                     case 'NULL':
-                        continue;
+                        continue 2;
                     default:
                         $d = json_encode($value);
                         $query[$key] = $d;
