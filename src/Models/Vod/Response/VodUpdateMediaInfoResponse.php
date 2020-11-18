@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodUpdateVideoPublishStatusResponse</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodUpdateMediaInfoResponse</code>
  */
-class VodUpdateVideoPublishStatusResponse extends \Google\Protobuf\Internal\Message
+class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>

@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodGetVideoInfosData</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodGetMediaInfosData</code>
  */
-class VodGetVideoInfosData extends \Google\Protobuf\Internal\Message
+class VodGetMediaInfosData extends \Google\Protobuf\Internal\Message
 {
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodVideoInfo VideoInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
      */
-    private $VideoInfoList;
+    private $MediaInfoList;
     /**
      *不存在的视频VID列表
      *
@@ -32,7 +32,7 @@ class VodGetVideoInfosData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Volc\Models\Vod\Business\VodVideoInfo[]|\Google\Protobuf\Internal\RepeatedField $VideoInfoList
+     *     @type \Volc\Models\Vod\Business\VodMediaInfo[]|\Google\Protobuf\Internal\RepeatedField $MediaInfoList
      *          视频信息列表
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $NotExistVids
      *          不存在的视频VID列表
@@ -46,25 +46,25 @@ class VodGetVideoInfosData extends \Google\Protobuf\Internal\Message
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodVideoInfo VideoInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getVideoInfoList()
+    public function getMediaInfoList()
     {
-        return $this->VideoInfoList;
+        return $this->MediaInfoList;
     }
 
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodVideoInfo VideoInfoList = 1;</code>
-     * @param \Volc\Models\Vod\Business\VodVideoInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
+     * @param \Volc\Models\Vod\Business\VodMediaInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setVideoInfoList($var)
+    public function setMediaInfoList($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodVideoInfo::class);
-        $this->VideoInfoList = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodMediaInfo::class);
+        $this->MediaInfoList = $arr;
 
         return $this;
     }

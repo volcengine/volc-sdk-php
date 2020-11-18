@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetVideoInfosResponse</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodUpdateMediaPublishStatusResponse</code>
  */
-class VodGetVideoInfosResponse extends \Google\Protobuf\Internal\Message
+class VodUpdateMediaPublishStatusResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
-    /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetVideoInfosData Result = 2;</code>
-     */
-    protected $Result = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class VodGetVideoInfosResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Models\Vod\Business\VodGetVideoInfosData $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class VodGetVideoInfosResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Models\Base\ResponseMetadata::class);
         $this->ResponseMetadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetVideoInfosData Result = 2;</code>
-     * @return \Volc\Models\Vod\Business\VodGetVideoInfosData
-     */
-    public function getResult()
-    {
-        return $this->Result;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetVideoInfosData Result = 2;</code>
-     * @param \Volc\Models\Vod\Business\VodGetVideoInfosData $var
-     * @return $this
-     */
-    public function setResult($var)
-    {
-        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodGetVideoInfosData::class);
-        $this->Result = $var;
 
         return $this;
     }

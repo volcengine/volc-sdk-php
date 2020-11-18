@@ -9,14 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodUpdateVideoInfoResponse</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetMediaInfosResponse</code>
  */
-class VodUpdateVideoInfoResponse extends \Google\Protobuf\Internal\Message
+class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
+    /**
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     */
+    protected $Result = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class VodUpdateVideoInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Models\Base\ResponseMetadata $ResponseMetadata
+     *     @type \Volc\Models\Vod\Business\VodGetMediaInfosData $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class VodUpdateVideoInfoResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Models\Base\ResponseMetadata::class);
         $this->ResponseMetadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     * @return \Volc\Models\Vod\Business\VodGetMediaInfosData
+     */
+    public function getResult()
+    {
+        return $this->Result;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     * @param \Volc\Models\Vod\Business\VodGetMediaInfosData $var
+     * @return $this
+     */
+    public function setResult($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodGetMediaInfosData::class);
+        $this->Result = $var;
 
         return $this;
     }

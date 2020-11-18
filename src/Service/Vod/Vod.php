@@ -20,12 +20,12 @@ use Volc\Models\Vod\Request\VodApplyUploadInfoRequest;
 use Volc\Models\Vod\Response\VodApplyUploadInfoResponse;
 use Volc\Models\Vod\Request\VodCommitUploadInfoRequest;
 use Volc\Models\Vod\Response\VodCommitUploadInfoResponse;
-use Volc\Models\Vod\Request\VodUpdateVideoInfoRequest;
-use Volc\Models\Vod\Response\VodUpdateVideoInfoResponse;
-use Volc\Models\Vod\Request\VodUpdateVideoPublishStatusRequest;
-use Volc\Models\Vod\Response\VodUpdateVideoPublishStatusResponse;
-use Volc\Models\Vod\Request\VodGetVideoInfosRequest;
-use Volc\Models\Vod\Response\VodGetVideoInfosResponse;
+use Volc\Models\Vod\Request\VodUpdateMediaInfoRequest;
+use Volc\Models\Vod\Response\VodUpdateMediaInfoResponse;
+use Volc\Models\Vod\Request\VodUpdateMediaPublishStatusRequest;
+use Volc\Models\Vod\Response\VodUpdateMediaPublishStatusResponse;
+use Volc\Models\Vod\Request\VodGetMediaInfosRequest;
+use Volc\Models\Vod\Response\VodGetMediaInfosResponse;
 use Volc\Models\Vod\Request\VodGetRecommendedPosterRequest;
 use Volc\Models\Vod\Response\VodGetRecommendedPosterResponse;
 use Volc\Models\Vod\Request\VodStartWorkflowRequest;
@@ -262,18 +262,18 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * UpdateVideoInfo.
+     * UpdateMediaInfo.
      *
-     * @param $req VodUpdateVideoInfoRequest
-     * @return VodUpdateVideoInfoResponse
+     * @param $req VodUpdateMediaInfoRequest
+     * @return VodUpdateMediaInfoResponse
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function updateVideoInfo (VodUpdateVideoInfoRequest $req): VodUpdateVideoInfoResponse
+	public function updateMediaInfo (VodUpdateMediaInfoRequest $req): VodUpdateMediaInfoResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateVideoInfo', ['query' => $query]);
+			$response = $this->request('UpdateMediaInfo', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -283,7 +283,7 @@ class Vod extends V4Curl
 			echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
 		}
-		$respData = new VodUpdateVideoInfoResponse();
+		$respData = new VodUpdateMediaInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -295,18 +295,18 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * UpdateVideoPublishStatus.
+     * UpdateMediaPublishStatus.
      *
-     * @param $req VodUpdateVideoPublishStatusRequest
-     * @return VodUpdateVideoPublishStatusResponse
+     * @param $req VodUpdateMediaPublishStatusRequest
+     * @return VodUpdateMediaPublishStatusResponse
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function updateVideoPublishStatus (VodUpdateVideoPublishStatusRequest $req): VodUpdateVideoPublishStatusResponse
+	public function updateMediaPublishStatus (VodUpdateMediaPublishStatusRequest $req): VodUpdateMediaPublishStatusResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateVideoPublishStatus', ['query' => $query]);
+			$response = $this->request('UpdateMediaPublishStatus', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -316,7 +316,7 @@ class Vod extends V4Curl
 			echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
 		}
-		$respData = new VodUpdateVideoPublishStatusResponse();
+		$respData = new VodUpdateMediaPublishStatusResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -328,18 +328,18 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * GetVideoInfos.
+     * GetMediaInfos.
      *
-     * @param $req VodGetVideoInfosRequest
-     * @return VodGetVideoInfosResponse
+     * @param $req VodGetMediaInfosRequest
+     * @return VodGetMediaInfosResponse
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function getVideoInfos (VodGetVideoInfosRequest $req): VodGetVideoInfosResponse
+	public function getMediaInfos (VodGetMediaInfosRequest $req): VodGetMediaInfosResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetVideoInfos', ['query' => $query]);
+			$response = $this->request('GetMediaInfos', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -349,7 +349,7 @@ class Vod extends V4Curl
 			echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
 		}
-		$respData = new VodGetVideoInfosResponse();
+		$respData = new VodGetMediaInfosResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
