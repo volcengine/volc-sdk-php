@@ -203,32 +203,32 @@ class VodOption
                 ],
             ]
         ],
-        'UpdateVideoInfo' => [
+        'UpdateMediaInfo' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'UpdateVideoInfo',
+                    'Action' => 'UpdateMediaInfo',
                     'Version' => '2020-08-01',
                 ],
             ]
         ],
-        'UpdateVideoPublishStatus' => [
+        'UpdateMediaPublishStatus' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'UpdateVideoPublishStatus',
+                    'Action' => 'UpdateMediaPublishStatus',
                     'Version' => '2020-08-01',
                 ],
             ]
         ],
-        'GetVideoInfos' => [
+        'GetMediaInfos' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'GetVideoInfos',
+                    'Action' => 'GetMediaInfos',
                     'Version' => '2020-08-01',
                 ],
             ]
