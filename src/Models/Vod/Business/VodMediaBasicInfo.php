@@ -50,21 +50,15 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      */
     protected $PublishStatus = '';
     /**
-     *审核状态
-     *
-     * Generated from protobuf field <code>int64 AuditStatus = 7;</code>
-     */
-    protected $AuditStatus = 0;
-    /**
      *标签列表
      *
-     * Generated from protobuf field <code>repeated string Tags = 8;</code>
+     * Generated from protobuf field <code>repeated string Tags = 7;</code>
      */
     private $Tags;
     /**
      *创建时间
      *
-     * Generated from protobuf field <code>string CreateTime = 9;</code>
+     * Generated from protobuf field <code>string CreateTime = 8;</code>
      */
     protected $CreateTime = '';
 
@@ -86,8 +80,6 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *          封面图对象地址
      *     @type string $PublishStatus
      *          发布状态
-     *     @type int|string $AuditStatus
-     *          审核状态
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $Tags
      *          标签列表
      *     @type string $CreateTime
@@ -256,35 +248,9 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *审核状态
-     *
-     * Generated from protobuf field <code>int64 AuditStatus = 7;</code>
-     * @return int|string
-     */
-    public function getAuditStatus()
-    {
-        return $this->AuditStatus;
-    }
-
-    /**
-     *审核状态
-     *
-     * Generated from protobuf field <code>int64 AuditStatus = 7;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setAuditStatus($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->AuditStatus = $var;
-
-        return $this;
-    }
-
-    /**
      *标签列表
      *
-     * Generated from protobuf field <code>repeated string Tags = 8;</code>
+     * Generated from protobuf field <code>repeated string Tags = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTags()
@@ -295,7 +261,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     /**
      *标签列表
      *
-     * Generated from protobuf field <code>repeated string Tags = 8;</code>
+     * Generated from protobuf field <code>repeated string Tags = 7;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -310,7 +276,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     /**
      *创建时间
      *
-     * Generated from protobuf field <code>string CreateTime = 9;</code>
+     * Generated from protobuf field <code>string CreateTime = 8;</code>
      * @return string
      */
     public function getCreateTime()
@@ -321,7 +287,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     /**
      *创建时间
      *
-     * Generated from protobuf field <code>string CreateTime = 9;</code>
+     * Generated from protobuf field <code>string CreateTime = 8;</code>
      * @param string $var
      * @return $this
      */
