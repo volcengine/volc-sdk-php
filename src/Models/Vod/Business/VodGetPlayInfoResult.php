@@ -22,7 +22,7 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *状态
      *
-     * Generated from protobuf field <code>int64 Status = 2;</code>
+     * Generated from protobuf field <code>int32 Status = 2;</code>
      */
     protected $Status = 0;
     /**
@@ -52,7 +52,7 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *播放列表数量
      *
-     * Generated from protobuf field <code>int64 TotalCount = 7;</code>
+     * Generated from protobuf field <code>int32 TotalCount = 7;</code>
      */
     protected $TotalCount = 0;
     /**
@@ -76,7 +76,7 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $Vid
      *           唯一ID
-     *     @type int|string $Status
+     *     @type int $Status
      *          状态
      *     @type string $PosterUrl
      *          封面地址
@@ -86,7 +86,7 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
      *           媒体类型
      *     @type bool $EnableAdaptive
      *          是否关键针对齐
-     *     @type int|string $TotalCount
+     *     @type int $TotalCount
      *          播放列表数量
      *     @type \Volc\Models\Vod\Business\VodAdaptiveInfo $AdaptiveInfo
      *           dash播放信息
@@ -128,8 +128,8 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *状态
      *
-     * Generated from protobuf field <code>int64 Status = 2;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Status = 2;</code>
+     * @return int
      */
     public function getStatus()
     {
@@ -139,13 +139,13 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *状态
      *
-     * Generated from protobuf field <code>int64 Status = 2;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Status = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Status = $var;
 
         return $this;
@@ -258,8 +258,8 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *播放列表数量
      *
-     * Generated from protobuf field <code>int64 TotalCount = 7;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 TotalCount = 7;</code>
+     * @return int
      */
     public function getTotalCount()
     {
@@ -269,13 +269,13 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *播放列表数量
      *
-     * Generated from protobuf field <code>int64 TotalCount = 7;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 TotalCount = 7;</code>
+     * @param int $var
      * @return $this
      */
     public function setTotalCount($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->TotalCount = $var;
 
         return $this;

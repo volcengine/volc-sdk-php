@@ -28,19 +28,19 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 3;</code>
+     * Generated from protobuf field <code>double Size = 3;</code>
      */
-    protected $Size = 0;
+    protected $Size = 0.0;
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 4;</code>
+     * Generated from protobuf field <code>int32 Height = 4;</code>
      */
     protected $Height = 0;
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 5;</code>
+     * Generated from protobuf field <code>int32 Width = 5;</code>
      */
     protected $Width = 0;
     /**
@@ -58,9 +58,9 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 8;</code>
+     * Generated from protobuf field <code>int32 Bitrate = 8;</code>
      */
-    protected $Bitrate = 0.0;
+    protected $Bitrate = 0;
     /**
      * hash值
      *
@@ -90,17 +90,17 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
      *          返回的媒体类型(video/audio)
      *     @type float $Duration
      *          视频时长(单位：s)
-     *     @type int|string $Size
+     *     @type float $Size
      *          视频文件大小
-     *     @type int|string $Height
+     *     @type int $Height
      *          视频高度
-     *     @type int|string $Width
+     *     @type int $Width
      *          视频宽度
      *     @type string $Format
      *          视频格式
      *     @type string $Codec
      *          编码类型
-     *     @type float $Bitrate
+     *     @type int $Bitrate
      *          码率(Kbps)
      *     @type string $Md5
      *           hash值
@@ -170,8 +170,8 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 3;</code>
-     * @return int|string
+     * Generated from protobuf field <code>double Size = 3;</code>
+     * @return float
      */
     public function getSize()
     {
@@ -181,13 +181,13 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 3;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>double Size = 3;</code>
+     * @param float $var
      * @return $this
      */
     public function setSize($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkDouble($var);
         $this->Size = $var;
 
         return $this;
@@ -196,8 +196,8 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 4;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Height = 4;</code>
+     * @return int
      */
     public function getHeight()
     {
@@ -207,13 +207,13 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 4;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Height = 4;</code>
+     * @param int $var
      * @return $this
      */
     public function setHeight($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Height = $var;
 
         return $this;
@@ -222,8 +222,8 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 5;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Width = 5;</code>
+     * @return int
      */
     public function getWidth()
     {
@@ -233,13 +233,13 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 5;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Width = 5;</code>
+     * @param int $var
      * @return $this
      */
     public function setWidth($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Width = $var;
 
         return $this;
@@ -300,8 +300,8 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 8;</code>
-     * @return float
+     * Generated from protobuf field <code>int32 Bitrate = 8;</code>
+     * @return int
      */
     public function getBitrate()
     {
@@ -311,13 +311,13 @@ class VodGetOriginalPlayInfoResult extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 8;</code>
-     * @param float $var
+     * Generated from protobuf field <code>int32 Bitrate = 8;</code>
+     * @param int $var
      * @return $this
      */
     public function setBitrate($var)
     {
-        GPBUtil::checkFloat($var);
+        GPBUtil::checkInt32($var);
         $this->Bitrate = $var;
 
         return $this;

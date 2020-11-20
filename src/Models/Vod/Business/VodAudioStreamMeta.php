@@ -28,13 +28,13 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *音频采样率
      *
-     * Generated from protobuf field <code>int64 SampleRate = 3;</code>
+     * Generated from protobuf field <code>int32 SampleRate = 3;</code>
      */
     protected $SampleRate = 0;
     /**
      *音频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 4;</code>
+     * Generated from protobuf field <code>int32 Bitrate = 4;</code>
      */
     protected $Bitrate = 0;
 
@@ -48,9 +48,9 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      *          音频编码格式
      *     @type float $Duration
      *          音频时长
-     *     @type int|string $SampleRate
+     *     @type int $SampleRate
      *          音频采样率
-     *     @type int|string $Bitrate
+     *     @type int $Bitrate
      *          音频码率(Kbps)
      * }
      */
@@ -114,8 +114,8 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *音频采样率
      *
-     * Generated from protobuf field <code>int64 SampleRate = 3;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 SampleRate = 3;</code>
+     * @return int
      */
     public function getSampleRate()
     {
@@ -125,13 +125,13 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *音频采样率
      *
-     * Generated from protobuf field <code>int64 SampleRate = 3;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 SampleRate = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setSampleRate($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->SampleRate = $var;
 
         return $this;
@@ -140,8 +140,8 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *音频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 4;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Bitrate = 4;</code>
+     * @return int
      */
     public function getBitrate()
     {
@@ -151,13 +151,13 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *音频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 4;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Bitrate = 4;</code>
+     * @param int $var
      * @return $this
      */
     public function setBitrate($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Bitrate = $var;
 
         return $this;

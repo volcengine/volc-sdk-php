@@ -64,27 +64,27 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 9;</code>
+     * Generated from protobuf field <code>int32 Bitrate = 9;</code>
      */
-    protected $Bitrate = 0.0;
+    protected $Bitrate = 0;
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Width = 10;</code>
+     * Generated from protobuf field <code>int32 Width = 10;</code>
      */
     protected $Width = 0;
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Height = 11;</code>
+     * Generated from protobuf field <code>int32 Height = 11;</code>
      */
     protected $Height = 0;
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 12;</code>
+     * Generated from protobuf field <code>double Size = 12;</code>
      */
-    protected $Size = 0;
+    protected $Size = 0.0;
     /**
      *劫持校验信息
      *
@@ -104,57 +104,27 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      */
     protected $InitRange = '';
     /**
-     *预加载大小
-     *
-     * Generated from protobuf field <code>int64 PreloadSize = 16;</code>
-     */
-    protected $PreloadSize = 0;
-    /**
-     *最小步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMinStep = 17;</code>
-     */
-    protected $PreloadMinStep = 0;
-    /**
-     *最大步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMaxStep = 18;</code>
-     */
-    protected $PreloadMaxStep = 0;
-    /**
-     *间隔,提前加载时长
-     *
-     * Generated from protobuf field <code>int64 PreloadInterval = 19;</code>
-     */
-    protected $PreloadInterval = 0;
-    /**
-     * p2p点播时，校验文件地址
-     *
-     * Generated from protobuf field <code>string P2pVerifyUrl = 20;</code>
-     */
-    protected $P2pVerifyUrl = '';
-    /**
      *加密过的秘钥
      *
-     * Generated from protobuf field <code>string PlayAuth = 21;</code>
+     * Generated from protobuf field <code>string PlayAuth = 16;</code>
      */
     protected $PlayAuth = '';
     /**
      *密钥keyID
      *
-     * Generated from protobuf field <code>string PlayAuthId = 22;</code>
+     * Generated from protobuf field <code>string PlayAuthId = 17;</code>
      */
     protected $PlayAuthId = '';
     /**
      *水印类型
      *
-     * Generated from protobuf field <code>string LogoType = 23;</code>
+     * Generated from protobuf field <code>string LogoType = 18;</code>
      */
     protected $LogoType = '';
     /**
      *音频质量
      *
-     * Generated from protobuf field <code>string Quality = 24;</code>
+     * Generated from protobuf field <code>string Quality = 19;</code>
      */
     protected $Quality = '';
 
@@ -180,13 +150,13 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *          主播放地址
      *     @type string $BackupPlayUrl
      *          备用播放地址
-     *     @type float $Bitrate
+     *     @type int $Bitrate
      *          码率(Kbps)
-     *     @type int|string $Width
+     *     @type int $Width
      *          视频高度
-     *     @type int|string $Height
+     *     @type int $Height
      *          视频宽度
-     *     @type int|string $Size
+     *     @type float $Size
      *          文件大小
      *     @type string $CheckInfo
      *          劫持校验信息
@@ -194,16 +164,6 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *           dash segment_base 分片信息
      *     @type string $InitRange
      *           dash segment_base 分片信息
-     *     @type int|string $PreloadSize
-     *          预加载大小
-     *     @type int|string $PreloadMinStep
-     *          最小步长
-     *     @type int|string $PreloadMaxStep
-     *          最大步长
-     *     @type int|string $PreloadInterval
-     *          间隔,提前加载时长
-     *     @type string $P2pVerifyUrl
-     *           p2p点播时，校验文件地址
      *     @type string $PlayAuth
      *          加密过的秘钥
      *     @type string $PlayAuthId
@@ -430,8 +390,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 9;</code>
-     * @return float
+     * Generated from protobuf field <code>int32 Bitrate = 9;</code>
+     * @return int
      */
     public function getBitrate()
     {
@@ -441,13 +401,13 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *码率(Kbps)
      *
-     * Generated from protobuf field <code>float Bitrate = 9;</code>
-     * @param float $var
+     * Generated from protobuf field <code>int32 Bitrate = 9;</code>
+     * @param int $var
      * @return $this
      */
     public function setBitrate($var)
     {
-        GPBUtil::checkFloat($var);
+        GPBUtil::checkInt32($var);
         $this->Bitrate = $var;
 
         return $this;
@@ -456,8 +416,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Width = 10;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Width = 10;</code>
+     * @return int
      */
     public function getWidth()
     {
@@ -467,13 +427,13 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Width = 10;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Width = 10;</code>
+     * @param int $var
      * @return $this
      */
     public function setWidth($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Width = $var;
 
         return $this;
@@ -482,8 +442,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Height = 11;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Height = 11;</code>
+     * @return int
      */
     public function getHeight()
     {
@@ -493,13 +453,13 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Height = 11;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Height = 11;</code>
+     * @param int $var
      * @return $this
      */
     public function setHeight($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Height = $var;
 
         return $this;
@@ -508,8 +468,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 12;</code>
-     * @return int|string
+     * Generated from protobuf field <code>double Size = 12;</code>
+     * @return float
      */
     public function getSize()
     {
@@ -519,13 +479,13 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 12;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>double Size = 12;</code>
+     * @param float $var
      * @return $this
      */
     public function setSize($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkDouble($var);
         $this->Size = $var;
 
         return $this;
@@ -610,139 +570,9 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *预加载大小
-     *
-     * Generated from protobuf field <code>int64 PreloadSize = 16;</code>
-     * @return int|string
-     */
-    public function getPreloadSize()
-    {
-        return $this->PreloadSize;
-    }
-
-    /**
-     *预加载大小
-     *
-     * Generated from protobuf field <code>int64 PreloadSize = 16;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setPreloadSize($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->PreloadSize = $var;
-
-        return $this;
-    }
-
-    /**
-     *最小步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMinStep = 17;</code>
-     * @return int|string
-     */
-    public function getPreloadMinStep()
-    {
-        return $this->PreloadMinStep;
-    }
-
-    /**
-     *最小步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMinStep = 17;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setPreloadMinStep($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->PreloadMinStep = $var;
-
-        return $this;
-    }
-
-    /**
-     *最大步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMaxStep = 18;</code>
-     * @return int|string
-     */
-    public function getPreloadMaxStep()
-    {
-        return $this->PreloadMaxStep;
-    }
-
-    /**
-     *最大步长
-     *
-     * Generated from protobuf field <code>int64 PreloadMaxStep = 18;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setPreloadMaxStep($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->PreloadMaxStep = $var;
-
-        return $this;
-    }
-
-    /**
-     *间隔,提前加载时长
-     *
-     * Generated from protobuf field <code>int64 PreloadInterval = 19;</code>
-     * @return int|string
-     */
-    public function getPreloadInterval()
-    {
-        return $this->PreloadInterval;
-    }
-
-    /**
-     *间隔,提前加载时长
-     *
-     * Generated from protobuf field <code>int64 PreloadInterval = 19;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setPreloadInterval($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->PreloadInterval = $var;
-
-        return $this;
-    }
-
-    /**
-     * p2p点播时，校验文件地址
-     *
-     * Generated from protobuf field <code>string P2pVerifyUrl = 20;</code>
-     * @return string
-     */
-    public function getP2PVerifyUrl()
-    {
-        return $this->P2pVerifyUrl;
-    }
-
-    /**
-     * p2p点播时，校验文件地址
-     *
-     * Generated from protobuf field <code>string P2pVerifyUrl = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setP2PVerifyUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->P2pVerifyUrl = $var;
-
-        return $this;
-    }
-
-    /**
      *加密过的秘钥
      *
-     * Generated from protobuf field <code>string PlayAuth = 21;</code>
+     * Generated from protobuf field <code>string PlayAuth = 16;</code>
      * @return string
      */
     public function getPlayAuth()
@@ -753,7 +583,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *加密过的秘钥
      *
-     * Generated from protobuf field <code>string PlayAuth = 21;</code>
+     * Generated from protobuf field <code>string PlayAuth = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -768,7 +598,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *密钥keyID
      *
-     * Generated from protobuf field <code>string PlayAuthId = 22;</code>
+     * Generated from protobuf field <code>string PlayAuthId = 17;</code>
      * @return string
      */
     public function getPlayAuthId()
@@ -779,7 +609,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *密钥keyID
      *
-     * Generated from protobuf field <code>string PlayAuthId = 22;</code>
+     * Generated from protobuf field <code>string PlayAuthId = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -794,7 +624,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *水印类型
      *
-     * Generated from protobuf field <code>string LogoType = 23;</code>
+     * Generated from protobuf field <code>string LogoType = 18;</code>
      * @return string
      */
     public function getLogoType()
@@ -805,7 +635,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *水印类型
      *
-     * Generated from protobuf field <code>string LogoType = 23;</code>
+     * Generated from protobuf field <code>string LogoType = 18;</code>
      * @param string $var
      * @return $this
      */
@@ -820,7 +650,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *音频质量
      *
-     * Generated from protobuf field <code>string Quality = 24;</code>
+     * Generated from protobuf field <code>string Quality = 19;</code>
      * @return string
      */
     public function getQuality()
@@ -831,7 +661,7 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     /**
      *音频质量
      *
-     * Generated from protobuf field <code>string Quality = 24;</code>
+     * Generated from protobuf field <code>string Quality = 19;</code>
      * @param string $var
      * @return $this
      */

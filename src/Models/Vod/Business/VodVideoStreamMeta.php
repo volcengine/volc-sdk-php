@@ -22,13 +22,13 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 2;</code>
+     * Generated from protobuf field <code>int32 Height = 2;</code>
      */
     protected $Height = 0;
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 3;</code>
+     * Generated from protobuf field <code>int32 Width = 3;</code>
      */
     protected $Width = 0;
     /**
@@ -46,7 +46,7 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 6;</code>
+     * Generated from protobuf field <code>int32 Bitrate = 6;</code>
      */
     protected $Bitrate = 0;
     /**
@@ -64,15 +64,15 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
      *
      *     @type string $Codec
      *          视频编码格式
-     *     @type int|string $Height
+     *     @type int $Height
      *          视频高度
-     *     @type int|string $Width
+     *     @type int $Width
      *          视频宽度
      *     @type float $Duration
      *          视频时长
      *     @type string $Definition
      *          视频清晰度
-     *     @type int|string $Bitrate
+     *     @type int $Bitrate
      *          视频码率(Kbps)
      *     @type float $Fps
      *          帧率
@@ -112,8 +112,8 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 2;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Height = 2;</code>
+     * @return int
      */
     public function getHeight()
     {
@@ -123,13 +123,13 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频高度
      *
-     * Generated from protobuf field <code>int64 Height = 2;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Height = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setHeight($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Height = $var;
 
         return $this;
@@ -138,8 +138,8 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 3;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Width = 3;</code>
+     * @return int
      */
     public function getWidth()
     {
@@ -149,13 +149,13 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频宽度
      *
-     * Generated from protobuf field <code>int64 Width = 3;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Width = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setWidth($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Width = $var;
 
         return $this;
@@ -216,8 +216,8 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 6;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Bitrate = 6;</code>
+     * @return int
      */
     public function getBitrate()
     {
@@ -227,13 +227,13 @@ class VodVideoStreamMeta extends \Google\Protobuf\Internal\Message
     /**
      *视频码率(Kbps)
      *
-     * Generated from protobuf field <code>int64 Bitrate = 6;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Bitrate = 6;</code>
+     * @param int $var
      * @return $this
      */
     public function setBitrate($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Bitrate = $var;
 
         return $this;

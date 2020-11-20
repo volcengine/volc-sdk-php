@@ -58,9 +58,9 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 8;</code>
+     * Generated from protobuf field <code>double Size = 8;</code>
      */
-    protected $Size = 0;
+    protected $Size = 0.0;
     /**
      *对象地址
      *
@@ -106,7 +106,7 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *          文件格式
      *     @type float $Duration
      *          时长
-     *     @type int|string $Size
+     *     @type float $Size
      *          文件大小
      *     @type string $StoreUri
      *          对象地址
@@ -308,8 +308,8 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 8;</code>
-     * @return int|string
+     * Generated from protobuf field <code>double Size = 8;</code>
+     * @return float
      */
     public function getSize()
     {
@@ -319,13 +319,13 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *文件大小
      *
-     * Generated from protobuf field <code>int64 Size = 8;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>double Size = 8;</code>
+     * @param float $var
      * @return $this
      */
     public function setSize($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkDouble($var);
         $this->Size = $var;
 
         return $this;
