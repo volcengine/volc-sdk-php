@@ -20,13 +20,13 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Vid = '';
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4 Format
+     *封装格式，支持mp4,dash,hls，默认mp4Format
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      */
     protected $Format = '';
     /**
-     *编码类型，默认h264，可选值为h264,h265等 Codec
+     *编码类型，默认h264，可选值为h264,bytevc1等Codec
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      */
@@ -71,9 +71,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Vid
      *           视频ID
      *     @type string $Format
-     *          封装格式，支持mp4,dash,hls，默认mp4 Format
+     *          封装格式，支持mp4,dash,hls，默认mp4Format
      *     @type string $Codec
-     *          编码类型，默认h264，可选值为h264,h265等 Codec
+     *          编码类型，默认h264，可选值为h264,bytevc1等Codec
      *     @type string $Definition
      *          视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
      *     @type string $FileType
@@ -118,7 +118,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4 Format
+     *封装格式，支持mp4,dash,hls，默认mp4Format
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      * @return string
@@ -129,7 +129,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4 Format
+     *封装格式，支持mp4,dash,hls，默认mp4Format
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      * @param string $var
@@ -144,7 +144,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *编码类型，默认h264，可选值为h264,h265等 Codec
+     *编码类型，默认h264，可选值为h264,bytevc1等Codec
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      * @return string
@@ -155,7 +155,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *编码类型，默认h264，可选值为h264,h265等 Codec
+     *编码类型，默认h264，可选值为h264,bytevc1等Codec
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      * @param string $var

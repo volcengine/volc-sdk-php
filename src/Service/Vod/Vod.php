@@ -58,7 +58,7 @@ class Vod extends V4Curl
 
     public function getPlayAuthToken(array $config = [])
     {
-        $token = ["Version" => "v1"];
+        $token = ["TokenVersion" => "V2"];
         $token["GetPlayInfoToken"] = parse_url($this->getRequestUrl("GetPlayInfo", $config))["query"];
         return base64_encode(json_encode($token));
     }
