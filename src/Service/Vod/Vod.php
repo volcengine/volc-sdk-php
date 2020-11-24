@@ -31,6 +31,10 @@ use Volc\Models\Vod\Response\VodGetRecommendedPosterResponse;
 use Volc\Models\Vod\Request\VodStartWorkflowRequest;
 use Volc\Models\Vod\Response\VodStartWorkflowResponse;
 
+const ActionApplyUpload = "vod:ApplyUploadInfo";
+const ActionCommitUpload = "vod:CommitUploadInfo";
+const Statement = "Statement";
+
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
  */
@@ -54,6 +58,22 @@ class Vod extends V4Curl
             print_r($e->getTraceAsString());
             throw $e;
         }
+    }
+
+    public function getUploadVideoAuth()
+    {
+        return $this->getUploadVideoAuthWithExpiredTime(60 * 60);
+    }
+
+    public function getUploadVideoAuthWithExpiredTime(int $expire)
+    {
+        $actions = [ActionApplyUpload, ActionCommitUpload];
+        $resources = [];
+        $statement = $this->newAllowStatement($actions, $resources);
+        $policy = [
+            Statement => [$statement],
+        ];
+        return $this->signSts2($policy, $expire);
     }
 
     public function getPlayAuthToken(array $config = [])
