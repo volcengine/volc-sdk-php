@@ -7,10 +7,10 @@ const ResourceVideoFormat = "trn:vod::*:video_id/%s";
 const ResourceStreamTypeFormat = "trn:vod:::stream_type/%s";
 const ResourceWatermarkFormat = "trn:vod::*:watermark/%s";
 const ActionGetPlayInfo = "vod:GetPlayInfo";
-const ActionApplyUpload = "vod:ApplyUpload";
-const ActionCommitUpload = "vod:CommitUpload";
-const Star = "*";
+const ActionApplyUpload = "vod:ApplyUploadInfo";
+const ActionCommitUpload = "vod:CommitUploadInfo";
 const Statement = "Statement";
+const Star = "*";
 
 
 class VodOption

@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
 {
     /**
+     *数据版本
+     *
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     */
+    protected $Version = 0;
+    /**
      * 唯一ID
      *
      * Generated from protobuf field <code>string Vid = 1;</code>
@@ -74,6 +80,8 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $Version
+     *          数据版本
      *     @type string $Vid
      *           唯一ID
      *     @type int $Status
@@ -97,6 +105,32 @@ class VodGetPlayInfoResult extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \Volc\Models\GPBMetadata\VodPlay::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     *数据版本
+     *
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+
+    /**
+     *数据版本
+     *
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkEnum($var, \Volc\Models\Vod\Business\VodVideoModelVersion::class);
+        $this->Version = $var;
+
+        return $this;
     }
 
     /**
