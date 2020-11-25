@@ -56,10 +56,17 @@ class Vod extends V4Curl
         }
     }
 
-    public function getPlayAuthToken(array $config = [])
+    public function getPlayAuthToken(VodGetPlayInfoRequest $req)
     {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+        }catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
         $token = ["TokenVersion" => "V2"];
-        $token["GetPlayInfoToken"] = parse_url($this->getRequestUrl("GetPlayInfo", $config))["query"];
+        $token["GetPlayInfoToken"] = parse_url($this->getRequestUrl("GetPlayInfo", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
 	
