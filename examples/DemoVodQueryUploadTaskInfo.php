@@ -32,6 +32,6 @@ echo $response->serializeToJsonString();
 echo "\n";
 
 $videoInfo = new VodURLSet();
-$videoInfo = $response->getResult()->getData()->getVideoInfoList()[0];
+$videoInfo = $response->getResult()->getData()->getMediaInfoList()[0];
 echo $videoInfo->getRequestId(), "\n";
 echo $videoInfo->getState(), "\n";
