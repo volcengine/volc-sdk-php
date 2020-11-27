@@ -16,9 +16,9 @@ class LogoOverride extends \Google\Protobuf\Internal\Message
     /**
      * 被覆盖的水印模板Id, 支持ALL
      *
-     * Generated from protobuf field <code>repeated string TemplateId = 1;</code>
+     * Generated from protobuf field <code>string TemplateId = 1;</code>
      */
-    private $TemplateId;
+    protected $TemplateId = '';
     /**
      * 自定义水印变量
      *
@@ -32,7 +32,7 @@ class LogoOverride extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $TemplateId
+     *     @type string $TemplateId
      *           被覆盖的水印模板Id, 支持ALL
      *     @type array|\Google\Protobuf\Internal\MapField $Vars
      *           自定义水印变量
@@ -46,8 +46,8 @@ class LogoOverride extends \Google\Protobuf\Internal\Message
     /**
      * 被覆盖的水印模板Id, 支持ALL
      *
-     * Generated from protobuf field <code>repeated string TemplateId = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string TemplateId = 1;</code>
+     * @return string
      */
     public function getTemplateId()
     {
@@ -57,14 +57,14 @@ class LogoOverride extends \Google\Protobuf\Internal\Message
     /**
      * 被覆盖的水印模板Id, 支持ALL
      *
-     * Generated from protobuf field <code>repeated string TemplateId = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string TemplateId = 1;</code>
+     * @param string $var
      * @return $this
      */
     public function setTemplateId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->TemplateId = $arr;
+        GPBUtil::checkString($var, True);
+        $this->TemplateId = $var;
 
         return $this;
     }
