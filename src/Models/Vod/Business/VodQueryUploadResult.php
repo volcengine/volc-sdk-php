@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet VideoInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet MediaInfoList = 1;</code>
      */
-    private $VideoInfoList;
+    private $MediaInfoList;
     /**
      * Generated from protobuf field <code>repeated string NotExistJobIds = 2;</code>
      */
@@ -28,7 +28,7 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Volc\Models\Vod\Business\VodURLSet[]|\Google\Protobuf\Internal\RepeatedField $VideoInfoList
+     *     @type \Volc\Models\Vod\Business\VodURLSet[]|\Google\Protobuf\Internal\RepeatedField $MediaInfoList
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $NotExistJobIds
      * }
      */
@@ -38,23 +38,23 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet VideoInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet MediaInfoList = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getVideoInfoList()
+    public function getMediaInfoList()
     {
-        return $this->VideoInfoList;
+        return $this->MediaInfoList;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet VideoInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodURLSet MediaInfoList = 1;</code>
      * @param \Volc\Models\Vod\Business\VodURLSet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setVideoInfoList($var)
+    public function setMediaInfoList($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodURLSet::class);
-        $this->VideoInfoList = $arr;
+        $this->MediaInfoList = $arr;
 
         return $this;
     }
