@@ -22,7 +22,7 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPlayInfoResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModel Result = 2;</code>
      */
     protected $Result = null;
 
@@ -34,7 +34,7 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Models\Base\ResponseMetadata $ResponseMetadata
      *           响应通用信息
-     *     @type \Volc\Models\Vod\Business\VodGetPlayInfoResult $Result
+     *     @type \Volc\Models\Vod\Business\VodPlayInfoModel $Result
      *           响应结果
      * }
      */
@@ -72,8 +72,8 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPlayInfoResult Result = 2;</code>
-     * @return \Volc\Models\Vod\Business\VodGetPlayInfoResult
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModel Result = 2;</code>
+     * @return \Volc\Models\Vod\Business\VodPlayInfoModel
      */
     public function getResult()
     {
@@ -83,13 +83,13 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPlayInfoResult Result = 2;</code>
-     * @param \Volc\Models\Vod\Business\VodGetPlayInfoResult $var
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModel Result = 2;</code>
+     * @param \Volc\Models\Vod\Business\VodPlayInfoModel $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodGetPlayInfoResult::class);
+        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodPlayInfoModel::class);
         $this->Result = $var;
 
         return $this;
