@@ -16,7 +16,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      *数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      */
     protected $Version = 0;
     /**
@@ -110,7 +110,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      *数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @return int
      */
     public function getVersion()
@@ -121,13 +121,13 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      *数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setVersion($var)
     {
-        GPBUtil::checkEnum($var, \Volc\Models\Vod\Business\VodVideoModelVersion::class);
+        GPBUtil::checkEnum($var, \Volc\Models\Vod\Business\VodPlayInfoModelVersion::class);
         $this->Version = $var;
 
         return $this;
