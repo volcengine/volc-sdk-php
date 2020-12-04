@@ -1,6 +1,7 @@
 <?php
 
 use Volc\Models\Vod\Request\VodUpdateMediaInfoRequest;
+use Volc\Models\Vod\Response\VodUpdateMediaInfoResponse;
 use Volc\Service\Vod\Vod;
 
 require('../vendor/autoload.php');
@@ -14,16 +15,21 @@ $vid = "vid";
 $title = "title";
 $tags = "tag1,tag2";
 
-echo "\n修改发布状态\n";
+echo "\n修改媒资信息\n";
 
 $req = new VodUpdateMediaInfoRequest();
 $req->setVid($vid);
 $req->setTitleUnwrapped($title);
 $req->setTagsUnwrapped($tags);
+$response = new VodUpdateMediaInfoResponse();
 try {
     $response = $client->updateMediaInfo($req);
 } catch (Throwable $e) {
     print($e);
+}
+
+if ($response->getResponseMetadata()->getError() != null) {
+    print_r($response->getResponseMetadata()->getError());
 }
 
 echo $response->serializeToJsonString();

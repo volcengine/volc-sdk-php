@@ -2,6 +2,7 @@
 require('../vendor/autoload.php');
 
 use Volc\Models\Vod\Request\VodUpdateMediaPublishStatusRequest;
+use Volc\Models\Vod\Response\VodUpdateMediaPublishStatusResponse;
 use Volc\Service\Vod\Vod;
 
 $client = Vod::getInstance();
@@ -17,9 +18,15 @@ echo "\n修改发布状态\n";
 $req = new VodUpdateMediaPublishStatusRequest();
 $req->setVid($vid);
 $req->setStatus($status);
+$response = new VodUpdateMediaPublishStatusResponse();
 try {
     $response = $client->updateMediaPublishStatus($req);
 } catch (Throwable $e) {
     print($e);
 }
+
+if ($response->getResponseMetadata()->getError() != null) {
+    print_r($response->getResponseMetadata()->getError());
+}
+
 echo $response->serializeToJsonString();

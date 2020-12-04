@@ -1,6 +1,7 @@
 <?php
 
 use Volc\Models\Vod\Request\VodGetRecommendedPosterRequest;
+use Volc\Models\Vod\Response\VodGetRecommendedPosterResponse;
 use Volc\Service\Vod\Vod;
 
 require('../vendor/autoload.php');
@@ -12,15 +13,19 @@ $client = Vod::getInstance();
 
 $vids = "vid1,vid2";
 
-echo "\n修改发布状态\n";
+echo "\n获取候选封面\n";
 
 $req = new VodGetRecommendedPosterRequest();
 $req->setVids($vids);
-
+$response = new VodGetRecommendedPosterResponse();
 try {
     $response = $client->getRecommendedPoster($req);
 } catch (Throwable $e) {
     print($e);
+}
+
+if ($response->getResponseMetadata()->getError() != null) {
+    print_r($response->getResponseMetadata()->getError());
 }
 
 echo $response->serializeToJsonString();
