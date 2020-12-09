@@ -250,8 +250,7 @@ class VodOption
         switch ($region) {
             case 'cn-north-1':
                 $config = [
-                    'host' => 'http://volcengineapi-boe.byted.org',
-//                    'host' => 'https://vod.volcengineapi.com',
+                    'host' => 'https://vod.volcengineapi.com',
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [
