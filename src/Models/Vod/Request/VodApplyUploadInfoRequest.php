@@ -38,7 +38,7 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\RequestVod::initOnce();
+        \Volc\Models\Vod\GPBMetadata\RequestVod::initOnce();
         parent::__construct($data);
     }
 

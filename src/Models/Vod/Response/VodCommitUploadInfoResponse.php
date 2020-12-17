@@ -33,7 +33,7 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\ResponseVod::initOnce();
+        \Volc\Models\Vod\GPBMetadata\ResponseVod::initOnce();
         parent::__construct($data);
     }
 

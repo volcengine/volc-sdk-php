@@ -47,7 +47,7 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\VodWorkflow::initOnce();
+        \Volc\Models\Vod\GPBMetadata\VodWorkflow::initOnce();
         parent::__construct($data);
     }
 

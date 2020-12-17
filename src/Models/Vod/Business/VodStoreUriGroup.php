@@ -39,7 +39,7 @@ class VodStoreUriGroup extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\VodMedia::initOnce();
+        \Volc\Models\Vod\GPBMetadata\VodMedia::initOnce();
         parent::__construct($data);
     }
 

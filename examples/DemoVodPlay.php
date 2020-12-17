@@ -12,7 +12,7 @@ $client = Vod::getInstance();
 // $client->setAccessKey("");
 // $client->setSecretKey("");
 
-$vid = "v0c2c369007abu04ru8riko30uo9n73g";
+$vid = "v02c70ba0000bv6524d4mkgqqb51jegg";
 $expire = 60; // 请求的签名有效期
 
 

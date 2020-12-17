@@ -39,7 +39,7 @@ class VodUpdateMediaPublishStatusRequest extends \Google\Protobuf\Internal\Messa
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\RequestVod::initOnce();
+        \Volc\Models\Vod\GPBMetadata\RequestVod::initOnce();
         parent::__construct($data);
     }
 

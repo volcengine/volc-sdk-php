@@ -39,7 +39,7 @@ class ValuePair extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\VodUpload::initOnce();
+        \Volc\Models\Vod\GPBMetadata\VodUpload::initOnce();
         parent::__construct($data);
     }
 

@@ -71,7 +71,7 @@ class ResponseMetadata extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\Base::initOnce();
+        \Volc\Models\Base\GPBMetadata\Base::initOnce();
         parent::__construct($data);
     }
 

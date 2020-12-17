@@ -103,7 +103,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\VodPlay::initOnce();
+        \Volc\Models\Vod\GPBMetadata\VodPlay::initOnce();
         parent::__construct($data);
     }
 

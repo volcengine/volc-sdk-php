@@ -55,7 +55,7 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\VodCommon::initOnce();
+        \Volc\Models\Vod\GPBMetadata\VodCommon::initOnce();
         parent::__construct($data);
     }
 

@@ -28,7 +28,7 @@ class VodUpdateMediaPublishStatusResponse extends \Google\Protobuf\Internal\Mess
      * }
      */
     public function __construct($data = NULL) {
-        \Volc\Models\GPBMetadata\ResponseVod::initOnce();
+        \Volc\Models\Vod\GPBMetadata\ResponseVod::initOnce();
         parent::__construct($data);
     }
 
