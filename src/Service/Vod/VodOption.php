@@ -143,16 +143,6 @@ class VodOption
                 ],
             ]
         ],
-        'GetOriginalPlayInfo' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetOriginalPlayInfo',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
         'ApplyUploadInfo' => [
             'url' => '/',
             'method' => 'get',

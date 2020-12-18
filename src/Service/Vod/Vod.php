@@ -10,8 +10,6 @@ use Throwable;
 use Volc\Base\V4Curl;
 use Volc\Models\Vod\Request\VodGetPlayInfoRequest;
 use Volc\Models\Vod\Response\VodGetPlayInfoResponse;
-use Volc\Models\Vod\Request\VodGetOriginalPlayInfoRequest;
-use Volc\Models\Vod\Response\VodGetOriginalPlayInfoResponse;
 use Volc\Models\Vod\Request\VodUrlUploadRequest;
 use Volc\Models\Vod\Response\VodUrlUploadResponse;
 use Volc\Models\Vod\Request\VodQueryUploadTaskInfoRequest;
@@ -109,39 +107,6 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetPlayInfoResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
-     * GetOriginalPlayInfo.
-     *
-     * @param $req VodGetOriginalPlayInfoRequest
-     * @return VodGetOriginalPlayInfoResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function getOriginalPlayInfo (VodGetOriginalPlayInfoRequest $req): VodGetOriginalPlayInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetOriginalPlayInfo', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetOriginalPlayInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

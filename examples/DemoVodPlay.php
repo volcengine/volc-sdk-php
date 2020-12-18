@@ -33,22 +33,6 @@ if ($response->getResponseMetadata()->getError() != null ){
 }
 echo $response->getResult()->getPlayInfoList()[0]->getMainPlayUrl();
 
-
-echo "\n获取源片播放地址\n";
-$req2 = new VodGetOriginalPlayInfoRequest();
-$req2->setVid($vid);
-$req2->setSsl('1');
-$response2 = new VodGetOriginalPlayInfoResponse();
-try {
-    $response2 = $client->getOriginalPlayInfo($req2);
-} catch (Exception $e) {
-    echo $e, "\n";
-}
-if ($response2->getResponseMetadata()->getError() != null ){
-    print_r($response2->getResponseMetadata()->getError());
-}
-echo $response2->getResult()->getMainPlayUrl();
-
 echo "\n获取PlayAuthToken\n";
 $req3 = new VodGetPlayInfoRequest();
 $req3->setVid($vid);
