@@ -35,7 +35,7 @@ abstract class V4Curl extends Singleton
             'base_uri' => $config['host'],
         ]);
         
-        $this->version = file_get_contents(__DIR__.'/../../VERSION');
+        $this->version = trim(file_get_contents(__DIR__.'/../../VERSION'));
         
     }
 
