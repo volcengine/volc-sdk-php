@@ -135,7 +135,7 @@ class ImageX extends V4Curl
 
         $body = fopen($filePath, "r");
         $tosClient = new Client([
-            'base_uri' => "http://" . $uploadHost,
+            'base_uri' => "https://" . $uploadHost,
             'timeout' => 5.0,
         ]);
 
