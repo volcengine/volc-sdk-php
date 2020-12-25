@@ -94,6 +94,16 @@ class ImageX extends V4Curl
                 ],
             ]
         ],
+        'DeleteImageUploadFiles' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteImageUploadFiles',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
     ];
 
     public function applyUploadImage(array $query)
@@ -189,7 +199,7 @@ class ImageX extends V4Curl
         for ($i = 0; $i < count($filePaths); ++$i) {
             $respCode = $this->upload($uploadHost, $uploadAddr['StoreInfos'][$i], $filePaths[$i]);
             if ($respCode != 0) {
-                return "upload " . $filePaths[i] . " error";
+                return "upload " . $filePaths[$i] . " error";
             }
         }
 
@@ -254,5 +264,11 @@ class ImageX extends V4Curl
         ];
 
         return $this->signSts2($policy, $expire);
+    }
+
+    public function deleteImages(string $serviceID, array $uris = [])
+    {
+        $response = $this->request('DeleteImageUploadFiles', ['query' => ['ServiceId' => $serviceID], 'json' => ['StoreUris' => $uris]]);
+        return (string)$response->getBody();
     }
 }
