@@ -2,7 +2,7 @@
 
 ### composer引用
 ```
-composer require volc/volc-sdk-php
+composer require volcengine/volc-sdk-php
 ```
 
 ### 地域Region设置
