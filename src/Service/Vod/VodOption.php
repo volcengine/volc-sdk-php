@@ -22,12 +22,12 @@ class VodOption
     public static $VOD_TPL_SMART_CROP = 'tplv-vod-cs';
     public static $VOD_TPL_SIG = 'tplv-bd-sig';
 
-    public static $FORMAT_JPEG     = 'jpeg';
-    public static $FORMAT_PNG      = 'png';
-    public static $FORMAT_WEBP     = 'webp';
-    public static $FORMAT_AWEBP    = 'awebp';
-    public static $FORMAT_GIF      = 'gif';
-    public static $FORMAT_HEIC     = 'heic';
+    public static $FORMAT_JPEG = 'jpeg';
+    public static $FORMAT_PNG = 'png';
+    public static $FORMAT_WEBP = 'webp';
+    public static $FORMAT_AWEBP = 'awebp';
+    public static $FORMAT_GIF = 'gif';
+    public static $FORMAT_HEIC = 'heic';
     public static $FORMAT_ORIGINAL = 'image';
 
     public static $HTTP = 'http';
@@ -157,6 +157,7 @@ class VodOption
             'url' => '/',
             'method' => 'get',
             'config' => [
+                'timeout' => 8.0,
                 'query' => [
                     'Action' => 'CommitUploadInfo',
                     'Version' => '2020-08-01',
