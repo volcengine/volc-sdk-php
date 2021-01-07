@@ -61,6 +61,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Ssl = 8;</code>
      */
     protected $Ssl = '';
+    /**
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedThumbs = 9;</code>
+     */
+    protected $NeedThumbs = '';
 
     /**
      * Constructor.
@@ -84,6 +90,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          播放地址是否base64编码，默认否，支持设置： 0-否，1-是
      *     @type string $Ssl
      *          返回https播放地址，默认否, 1-是；0-否
+     *     @type string $NeedThumbs
+     *           是否需要雪碧图（缩略图），默认否，1-是；0-否
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +303,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Ssl = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedThumbs = 9;</code>
+     * @return string
+     */
+    public function getNeedThumbs()
+    {
+        return $this->NeedThumbs;
+    }
+
+    /**
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedThumbs = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNeedThumbs($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->NeedThumbs = $var;
 
         return $this;
     }
