@@ -26,8 +26,10 @@ class VodUtils {
                 }
             }
         } catch (Exception $e) {
+            echo $e, "\n";
             throw $e;
         } catch (Throwable $t) {
+            echo $t, "\n";
             throw $t;
         }
         return $query;
@@ -38,13 +40,13 @@ class VodUtils {
         try {
             $respData->mergeFromJsonString($response->getBody(), true);
         } catch (Exception $e) {
+            echo $e, "\n";
             if ($respData == null || $respData->getResponseMetadata() == null) {
-                echo $e, "\n";
                 throw new Exception($response->getReasonPhrase());
             }
         } catch (Throwable $t) {
+            echo $t, "\n";
             if ($respData == null || $respData->getResponseMetadata() == null) {
-                echo $t, "\n";
                 throw new Exception($response->getReasonPhrase());
             }
         }
