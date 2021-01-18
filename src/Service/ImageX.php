@@ -64,6 +64,58 @@ class ImageX extends V4Curl
     }
 
     protected $apiList = [
+        // 模板管理
+        'CreateImageTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateImageTemplate',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'DeleteImageTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteImageTemplate',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'PreviewImageTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'PreviewImageTemplate',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'GetImageTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageTemplate',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'GetAllImageTemplates' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAllImageTemplates',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        // 资源管理
         'ApplyImageUpload' => [
             'url' => '/',
             'method' => 'get',
@@ -100,6 +152,46 @@ class ImageX extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteImageUploadFiles',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'GetImageUploadFile' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageUploadFile',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'GetImageUploadFiles' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageUploadFiles',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'PreviewImageUploadFile' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'PreviewImageUploadFile',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
+        'GetImageUpdateFiles' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageUpdateFiles',
                     'Version' => '2018-08-01',
                 ],
             ]
@@ -269,6 +361,12 @@ class ImageX extends V4Curl
     public function deleteImages(string $serviceID, array $uris = [])
     {
         $response = $this->request('DeleteImageUploadFiles', ['query' => ['ServiceId' => $serviceID], 'json' => ['StoreUris' => $uris]]);
+        return (string)$response->getBody();
+    }
+
+    public function requestImageX(string $action, array $config = [])
+    {
+        $response = $this->request($action, $config);
         return (string)$response->getBody();
     }
 }
