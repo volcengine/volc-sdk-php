@@ -73,6 +73,12 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
      */
     private $PlayInfoList;
+    /**
+     * 雪碧图列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     */
+    private $ThumbInfoList;
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      *           dash播放信息
      *     @type \Volc\Models\Vod\Business\VodPlayInfo[]|\Google\Protobuf\Internal\RepeatedField $PlayInfoList
      *          播放列表
+     *     @type \Volc\Models\Vod\Business\VodThumbInfo[]|\Google\Protobuf\Internal\RepeatedField $ThumbInfoList
+     *           雪碧图列表
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodPlayInfo::class);
         $this->PlayInfoList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 雪碧图列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getThumbInfoList()
+    {
+        return $this->ThumbInfoList;
+    }
+
+    /**
+     * 雪碧图列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     * @param \Volc\Models\Vod\Business\VodThumbInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setThumbInfoList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodThumbInfo::class);
+        $this->ThumbInfoList = $arr;
 
         return $this;
     }
