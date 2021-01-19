@@ -22,36 +22,6 @@ class AdBlocker extends V4Curl
                     ],
                 ];
                 break;
-            case 'ap-singapore-1':
-                $config = [
-                    'host' => 'https://open-ap-singapore-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'ap-singapore-1',
-                            'service' => 'AdBlocker',
-                        ],
-                    ],
-                ];
-                break;
-            case 'us-east-1':
-                $config = [
-                    'host' => 'https://open-us-east-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'us-east-1',
-                            'service' => 'AdBlocker',
-                        ],
-                    ],
-                ];
-                break;
             default:
                 throw new \Exception(sprintf("AdBlocker not support region, %s", $region));
         }
