@@ -1,5 +1,9 @@
 Change log
 
+2021-01-19 Bumped to version v1.0.3
+- Add adblock sdk.
+- Vod:enable large-file slice upload function.
+
 2020-12-30 Bumped to version v1.0.2
 - ImageX:add delete api.
 
