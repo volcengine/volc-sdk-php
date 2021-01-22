@@ -62,7 +62,7 @@ class VodUpload extends Vod
             return array(-1, $e->getMessage(), "", "");
         }
         if ($response->getResponseMetadata()->getError() != null) {
-            return array(-1, "$response->getResponseMetadata()->getError()", "", "");
+            return array(-1, $response->getResponseMetadata()->getError(), "", "");
         }
 
         $uploadAddress = $response->getResult()->getData()->getUploadAddress();
