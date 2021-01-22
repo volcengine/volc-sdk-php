@@ -31,15 +31,17 @@ try {
 } catch (Throwable $e) {
     echo $e, "\n";
 }
-if ($response->getResponseMetadata()->getError() != null) {
-    print_r($response->getResponseMetadata()->getError());
+if ($response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
+    echo $response->getResponseMetadata()->getError(), "\n";
 }
 echo $response->serializeToJsonString();
 echo "\n";
 
-echo $response->getResult()->getData()->getVid(), "\n";
-echo $response->getResult()->getData()->getPosterUri(), "\n";
-echo $response->getResult()->getData()->getSourceInfo()->getWidth(), "\n";
-echo $response->getResult()->getData()->getSourceInfo()->getHeight(), "\n";
+if ($response->getResult() != null) {
+    echo $response->getResult()->getData()->getVid(), "\n";
+    echo $response->getResult()->getData()->getPosterUri(), "\n";
+    echo $response->getResult()->getData()->getSourceInfo()->getWidth(), "\n";
+    echo $response->getResult()->getData()->getSourceInfo()->getHeight(), "\n";
+}
 
 
