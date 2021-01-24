@@ -297,9 +297,6 @@ class ImageX extends V4Curl
 
         $commitParams = array();
         $commitParams["ServiceId"] = $params["ServiceId"];
-        if (isset($params["SkipMeta"])) {
-            $commitParams["SkipMeta"] = $params["SkipMeta"];
-        }
         $commitBody = array();
         $commitBody["SessionKey"] = $uploadAddr['SessionKey'];
         if (isset($params["OptionInfos"])) {
