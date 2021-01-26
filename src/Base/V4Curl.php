@@ -156,7 +156,7 @@ abstract class V4Curl extends Singleton
     {
         $inner = [
             "LTAccessKeyId" => $credentials["ak"],
-            "AccessKeyId" => $sts["AccessKeyId"],
+            "AccessKeyId" => $sts["AccessKeyID"],
             "ExpiredTime" => $expire,
         ];
 
