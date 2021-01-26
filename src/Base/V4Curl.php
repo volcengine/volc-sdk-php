@@ -140,7 +140,7 @@ abstract class V4Curl extends Singleton
         $now = time();
 
         $sts = [
-            "AccessKeyId" => $this->generateAccessKeyId("AKTP"),
+            "AccessKeyID" => $this->generateAccessKeyId("AKTP"),
             "SecretAccessKey" => $this->generateSecretKey(),
             "ExpiredTime" => date('Y-m-d\TH:i:sP', $now + $expire),
             "CurrentTime" => date('Y-m-d\TH:i:sP', $now),
@@ -156,7 +156,7 @@ abstract class V4Curl extends Singleton
     {
         $inner = [
             "LTAccessKeyId" => $credentials["ak"],
-            "AccessKeyId" => $sts["AccessKeyId"],
+            "AccessKeyId" => $sts["AccessKeyID"],
             "ExpiredTime" => $expire,
         ];
 
