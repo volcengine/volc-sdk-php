@@ -1,5 +1,10 @@
 Change log
 
+2021-01-28 Bumped to version v1.0.4
+- Fixed sts2_ak
+- Fixed visual null pointer
+- more vod sdk support
+
 2021-01-19 Bumped to version v1.0.3
 - Add adblock sdk.
 - Vod:enable large-file slice upload function.
