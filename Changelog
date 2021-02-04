@@ -1,9 +1,12 @@
 Change log
 
+2021-02-04 Bumped to version v1.0.5
+- VEdit: support more cloud-edit sdk.
+
 2021-01-28 Bumped to version v1.0.4
-- Fixed sts2_ak
-- Fixed visual null pointer
-- more vod sdk support
+- Fixed sts2_ak.
+- Fixed visual null pointer.
+- more vod sdk support.
 
 2021-01-19 Bumped to version v1.0.3
 - Add adblock sdk.
