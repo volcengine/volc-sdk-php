@@ -1,8 +1,10 @@
 <?php
+
+
 namespace Volc\Service;
 use Volc\Base\V4Curl;
 
-class AdBlocker extends V4Curl
+class BusinessSecurity extends V4Curl
 {
     protected function getConfig(string $region)
     {
@@ -17,7 +19,7 @@ class AdBlocker extends V4Curl
                         ],
                         'v4_credentials' => [
                             'region' => 'cn-north-1',
-                            'service' => 'AdBlocker',
+                            'service' => 'BusinessSecurity',
                         ],
                     ],
                 ];
@@ -30,19 +32,19 @@ class AdBlocker extends V4Curl
 
 
     protected $apiList = [
-        'AdBlock' => [
+        'RiskDetection' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'AdBlock',
-                    'Version' => '2021-01-06',
+                    'Action' => 'RiskDetection',
+                    'Version' => '2021-02-02',
                 ],
             ]
         ],
     ];
 
-    public function adBlock(int $appId, string $service, string $parameters)
+    public function RiskDetect(int $appId, string $service, string $parameters)
     {
         $commitBody = array();
         $commitBody["app_id"] = $appId;
@@ -52,12 +54,12 @@ class AdBlocker extends V4Curl
             "json" => $commitBody
         ];
         try {
-            $response = $this->request('AdBlock', $commitReq);
+            $response = $this->request('RiskDetection', $commitReq);
             return (string)$response->getBody();
         }
         catch (\Exception $e)
         {
-            $response = $this->request('AdBlock', $commitReq);
+            $response = $this->request('RiskDetection', $commitReq);
             return (string)$response->getBody();
         }
     }
