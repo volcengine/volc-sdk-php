@@ -30,6 +30,7 @@ class VodUpload extends Vod
      * @param VodUploadMediaRequest $vodUploadMediaRequest
      * @return VodCommitUploadInfoResponse
      * @throws Exception
+     * @throws Throwable
      */
     public function uploadMedia(VodUploadMediaRequest $vodUploadMediaRequest): VodCommitUploadInfoResponse
     {
@@ -47,7 +48,7 @@ class VodUpload extends Vod
         try {
             return $this->commitUploadInfo($request);
         } catch (Throwable $e) {
-            throw e;
+            throw $e;
         }
     }
 
