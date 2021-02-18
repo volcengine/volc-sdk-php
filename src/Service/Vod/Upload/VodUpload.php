@@ -30,6 +30,7 @@ class VodUpload extends Vod
      * @param VodUploadMediaRequest $vodUploadMediaRequest
      * @return VodCommitUploadInfoResponse
      * @throws Exception
+     * @throws Throwable
      */
     public function uploadMedia(VodUploadMediaRequest $vodUploadMediaRequest): VodCommitUploadInfoResponse
     {
@@ -47,7 +48,7 @@ class VodUpload extends Vod
         try {
             return $this->commitUploadInfo($request);
         } catch (Throwable $e) {
-            throw e;
+            throw $e;
         }
     }
 
@@ -62,7 +63,7 @@ class VodUpload extends Vod
             return array(-1, $e->getMessage(), "", "");
         }
         if ($response->getResponseMetadata()->getError() != null) {
-            return array(-1, $response->getResponseMetadata()->getError(), "", "");
+            return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
         }
 
         $uploadAddress = $response->getResult()->getData()->getUploadAddress();
