@@ -1,5 +1,9 @@
 Change log
 
+2021-02-18 Bumped to version v1.0.6
+- Upgrade adblock sdk.
+- Vod: bug fix
+
 2021-02-04 Bumped to version v1.0.5
 - VEdit: support more cloud-edit sdk.
 
