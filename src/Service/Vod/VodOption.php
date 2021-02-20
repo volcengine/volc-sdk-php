@@ -234,6 +234,26 @@ class VodOption
                 ],
             ]
         ],
+        'DeleteMedia' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteMedia',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DeleteTranscodes' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteTranscodes',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
     ];
 
     public static function getConfig(string $region = '')
