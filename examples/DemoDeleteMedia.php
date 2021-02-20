@@ -11,7 +11,7 @@ $client = Vod::getInstance();
 // $client->setAccessKey("");
 // $client->setSecretKey("");
 
-$vids = "vid1,vid2";
+$vids = "vid1,vid2,vid3";
 $callBackArgs = "CallBackArgs";
 
 echo "\n视频批量删除\n";
