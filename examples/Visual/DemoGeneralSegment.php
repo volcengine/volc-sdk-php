@@ -8,7 +8,6 @@ $client = Visual::getInstance();
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
-echo "\nDemo JPCartoon\n";
-$response = $client->JPCartoon(['form_params' => ['image_base64' => '']]);
+echo "\nDemo GeneralSegment\n";
+$response = $client->GeneralSegment(['form_params' => ['image_base64' => '']]);
 echo $response;
-
