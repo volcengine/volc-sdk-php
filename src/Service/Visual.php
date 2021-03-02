@@ -24,8 +24,38 @@ class Visual extends V4Curl
     }
 
     public function JPCartoon(array $query = [])
-    {        
+    {
         $response = $this->request('JPCartoon', $query);
+        return $response->getBody();
+    }
+
+    public function FaceSwap(array $query = [])
+    {
+        $response = $this->request('FaceSwap', $query);
+        return $response->getBody();
+    }
+
+    public function HumanSegment(array $query = [])
+    {
+        $response = $this->request('HumanSegment', $query);
+        return $response->getBody();
+    }
+
+    public function GeneralSegment(array $query = [])
+    {
+        $response = $this->request('GeneralSegment', $query);
+        return $response->getBody();
+    }
+
+    public function EnhancePhoto(array $query = [])
+    {
+        $response = $this->request('EnhancePhoto', $query);
+        return $response->getBody();
+    }
+
+    public function ConvertPhoto(array $query = [])
+    {
+        $response = $this->request('ConvertPhoto', $query);
         return $response->getBody();
     }
 
@@ -36,6 +66,56 @@ class Visual extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'JPCartoon',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'FaceSwap' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceSwap',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'HumanSegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'HumanSegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'GeneralSegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GeneralSegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'EnhancePhoto' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EnhancePhoto',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'ConvertPhoto' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ConvertPhoto',
                     'Version' => '2020-08-26',
                 ],
             ],
