@@ -1,5 +1,8 @@
 Change log
 
+2021-02-22 Bumped to version v1.0.8
+- Visual: add new apis: FaceSwap, HumanSegment, GeneralSegment, EnhancePhoto, ConvertPhoto
+
 2021-02-22 Bumped to version v1.0.7
 - Visual:add JPCartoon api.
 
