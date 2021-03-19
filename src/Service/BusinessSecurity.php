@@ -30,7 +30,6 @@ class BusinessSecurity extends V4Curl
         return $config;
     }
 
-
     protected $apiList = [
         'RiskDetection' => [
             'url' => '/',
@@ -64,6 +63,19 @@ class BusinessSecurity extends V4Curl
         ],
     ];
 
+    protected function requestWithRetry(string $api, array $configs): string
+    {
+        try {
+            $response = $this->request($api, $configs);
+            return (string)$response->getBody();
+        }
+        catch (\Exception $e)
+        {
+            $response = $this->request($api, $configs);
+            return (string)$response->getBody();
+        }
+    }
+
     public function RiskDetect(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
@@ -73,15 +85,7 @@ class BusinessSecurity extends V4Curl
         $commitReq = [
             "json" => $commitBody
         ];
-        try {
-            $response = $this->request('RiskDetection', $commitReq);
-            return (string)$response->getBody();
-        }
-        catch (\Exception $e)
-        {
-            $response = $this->request('RiskDetection', $commitReq);
-            return (string)$response->getBody();
-        }
+        return $this->requestWithRetry("RiskDetection", $commitReq);
     }
 
     public function AsyncRiskDetect(int $appId, string  $service, string $parameters): string
@@ -93,23 +97,14 @@ class BusinessSecurity extends V4Curl
         $commitReq = [
             "json" => $commitBody
         ];
-        try {
-            $response = $this->request('AsyncRiskDetection', $commitReq);
-            return (string)$response->getBody();
-        }
-        catch (\Exception $e)
-        {
-            $response = $this->request('AsyncRiskDetection', $commitReq);
-            return (string)$response->getBody();
-        }
+        return $this->requestWithRetry("AsyncRiskDetection", $commitReq);
     }
 
-    public function RiskResult(int $appId, string $service, string $parameters, int $startTime, int $endTime, int $pageSize, int $pageNum): string
+    public function RiskResult(int $appId, string $service, int $startTime, int $endTime, int $pageSize, int $pageNum): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
         $commitBody["Service"] = $service;
-        $commitBody["Parameters"] = $parameters;
         $commitBody["StartTime"] = $startTime;
         $commitBody["EndTime"] = $endTime;
         $commitBody["PageSize"] = $pageSize;
@@ -117,14 +112,6 @@ class BusinessSecurity extends V4Curl
         $commitReq = [
             "query" => $commitBody
         ];
-        try {
-            $response = $this->request('RiskResult', $commitReq);
-            return (string)$response->getBody();
-        }
-        catch (\Exception $e)
-        {
-            $response = $this->request('RiskResult', $commitReq);
-            return (string)$response->getBody();
-        }
+        return $this->requestWithRetry("RiskResult", $commitReq);
     }
 }
