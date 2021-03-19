@@ -45,9 +45,9 @@ class AdBlocker extends V4Curl
     public function adBlock(int $appId, string $service, string $parameters)
     {
         $commitBody = array();
-        $commitBody["app_id"] = $appId;
-        $commitBody["service"] = $service;
-        $commitBody["parameters"] = $parameters;
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
         $commitReq = [
             "json" => $commitBody
         ];

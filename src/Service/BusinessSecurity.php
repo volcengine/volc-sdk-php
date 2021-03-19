@@ -42,14 +42,34 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'AsyncRiskDetection' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncRiskDetection',
+                    'Version' => '2021-02-25',
+                ],
+            ]
+        ],
+        'RiskResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'RiskResult',
+                    'Version' => '2021-03-10',
+                ],
+            ]
+        ],
     ];
 
-    public function RiskDetect(int $appId, string $service, string $parameters)
+    public function RiskDetect(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
-        $commitBody["app_id"] = $appId;
-        $commitBody["service"] = $service;
-        $commitBody["parameters"] = $parameters;
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
         $commitReq = [
             "json" => $commitBody
         ];
@@ -60,6 +80,50 @@ class BusinessSecurity extends V4Curl
         catch (\Exception $e)
         {
             $response = $this->request('RiskDetection', $commitReq);
+            return (string)$response->getBody();
+        }
+    }
+
+    public function AsyncRiskDetect(int $appId, string  $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        try {
+            $response = $this->request('AsyncRiskDetection', $commitReq);
+            return (string)$response->getBody();
+        }
+        catch (\Exception $e)
+        {
+            $response = $this->request('AsyncRiskDetection', $commitReq);
+            return (string)$response->getBody();
+        }
+    }
+
+    public function RiskResult(int $appId, string $service, string $parameters, int $startTime, int $endTime, int $pageSize, int $pageNum): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitBody["StartTime"] = $startTime;
+        $commitBody["EndTime"] = $endTime;
+        $commitBody["PageSize"] = $pageSize;
+        $commitBody["PageNum"] = $pageNum;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        try {
+            $response = $this->request('RiskResult', $commitReq);
+            return (string)$response->getBody();
+        }
+        catch (\Exception $e)
+        {
+            $response = $this->request('RiskResult', $commitReq);
             return (string)$response->getBody();
         }
     }
