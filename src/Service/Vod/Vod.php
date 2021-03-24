@@ -26,6 +26,10 @@ use Volc\Models\Vod\Request\VodGetMediaInfosRequest;
 use Volc\Models\Vod\Response\VodGetMediaInfosResponse;
 use Volc\Models\Vod\Request\VodGetRecommendedPosterRequest;
 use Volc\Models\Vod\Response\VodGetRecommendedPosterResponse;
+use Volc\Models\Vod\Request\VodDeleteMediaRequest;
+use Volc\Models\Vod\Response\VodDeleteMediaResponse;
+use Volc\Models\Vod\Request\VodDeleteTranscodesRequest;
+use Volc\Models\Vod\Response\VodDeleteTranscodesResponse;
 use Volc\Models\Vod\Request\VodStartWorkflowRequest;
 use Volc\Models\Vod\Response\VodStartWorkflowResponse;
 
@@ -371,6 +375,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetRecommendedPosterResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteMedia.
+     *
+     * @param $req VodDeleteMediaRequest
+     * @return VodDeleteMediaResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteMedia (VodDeleteMediaRequest $req): VodDeleteMediaResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteMedia', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteMediaResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteTranscodes.
+     *
+     * @param $req VodDeleteTranscodesRequest
+     * @return VodDeleteTranscodesResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteTranscodes (VodDeleteTranscodesRequest $req): VodDeleteTranscodesResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteTranscodes', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteTranscodesResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
