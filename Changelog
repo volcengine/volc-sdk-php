@@ -1,4 +1,7 @@
 Change log
+2021-03-24 Bumped to version v1.0.9
+- Added async and risk result.
+- Added delete media support.
 
 2021-03-02 Bumped to version v1.0.8
 - Visual: add new apis: FaceSwap, HumanSegment, GeneralSegment, EnhancePhoto, ConvertPhoto
