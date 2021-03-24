@@ -28,6 +28,18 @@ class AdBlocker extends V4Curl
         return $config;
     }
 
+    protected function requestWithRetry(string $api, array $configs): string
+    {
+        try {
+            $response = $this->request($api, $configs);
+            return (string)$response->getBody();
+        }
+        catch (\Exception $e)
+        {
+            $response = $this->request($api, $configs);
+            return (string)$response->getBody();
+        }
+    }
 
     protected $apiList = [
         'AdBlock' => [
@@ -45,20 +57,12 @@ class AdBlocker extends V4Curl
     public function adBlock(int $appId, string $service, string $parameters)
     {
         $commitBody = array();
-        $commitBody["app_id"] = $appId;
-        $commitBody["service"] = $service;
-        $commitBody["parameters"] = $parameters;
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
         $commitReq = [
             "json" => $commitBody
         ];
-        try {
-            $response = $this->request('AdBlock', $commitReq);
-            return (string)$response->getBody();
-        }
-        catch (\Exception $e)
-        {
-            $response = $this->request('AdBlock', $commitReq);
-            return (string)$response->getBody();
-        }
+        return $this->requestWithRetry("AdBlock", $commitReq);
     }
 }

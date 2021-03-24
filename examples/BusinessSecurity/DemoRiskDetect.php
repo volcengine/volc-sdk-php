@@ -8,5 +8,5 @@ $client = BusinessSecurity::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$response = $client->RiskDetect(3332, "chat", "{\"uid\":123411, \"operate_time\":1609818934, \"chat_text\":\"a😊\"}");
+$response = $client->RiskDetect(1, "chat", "{\"uid\":123411, \"operate_time\":1609818934, \"chat_text\":\"a😊\"}");
 echo $response;
