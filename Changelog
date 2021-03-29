@@ -1,4 +1,8 @@
 Change log
+
+2021-03-24 Bumped to version v1.0.10
+- Added sms sdk.
+
 2021-03-24 Bumped to version v1.0.9
 - Added async and risk result.
 - Added delete media support.
