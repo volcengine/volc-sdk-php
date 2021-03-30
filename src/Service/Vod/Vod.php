@@ -30,6 +30,8 @@ use Volc\Models\Vod\Request\VodDeleteMediaRequest;
 use Volc\Models\Vod\Response\VodDeleteMediaResponse;
 use Volc\Models\Vod\Request\VodDeleteTranscodesRequest;
 use Volc\Models\Vod\Response\VodDeleteTranscodesResponse;
+use Volc\Models\Vod\Request\VodGetMediaListRequest;
+use Volc\Models\Vod\Response\VodGetMediaListResponse;
 use Volc\Models\Vod\Request\VodStartWorkflowRequest;
 use Volc\Models\Vod\Response\VodStartWorkflowResponse;
 
@@ -441,6 +443,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDeleteTranscodesResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetMediaList.
+     *
+     * @param $req VodGetMediaListRequest
+     * @return VodGetMediaListResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getMediaList (VodGetMediaListRequest $req): VodGetMediaListResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetMediaList', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetMediaListResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
