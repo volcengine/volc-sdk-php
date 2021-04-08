@@ -6,6 +6,7 @@ use Volc\Base\V4Curl;
 use GuzzleHttp\Client;
 
 const ResourceServiceIdTRN = "trn:ImageX:*:*:ServiceId/%s";
+const ResourceStoreKeyTRN = "trn:ImageX:*:*:StoreKeys/%s";
 
 class ImageX extends V4Curl
 {
@@ -331,25 +332,30 @@ class ImageX extends V4Curl
         return base64_encode(json_encode($token));
     }
 
-    public function getUploadAuth(array $serviceIDList, int $expire = 3600)
+    public function getUploadAuth(array $serviceIDList, int $expire = 3600, string $keyPtn = '')
     {
-        $actions = ['ImageX:ApplyImageUpload', 'ImageX:CommitImageUpload'];
-        $resources = [];
+        $applyRes = [];
+        $commitRes = [];
         if (sizeof($serviceIDList) == 0)
         {
-            $resources[] = sprintf(ResourceServiceIdTRN, "*");
+            $applyRes[] = sprintf(ResourceServiceIdTRN, "*");
+            $commitRes[] = sprintf(ResourceServiceIdTRN, "*");
         }
         else
         {
             foreach ($serviceIDList as $serviceID)
             {
-                $resources[] = sprintf(ResourceServiceIdTRN, $serviceID);
+                $applyRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
+                $commitRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
             }
         }
+        $applyRes[] = sprintf(ResourceStoreKeyTRN, $keyPtn);
 
-        $statement = $this->newAllowStatement($actions, $resources);
         $policy = [
-            'Statement' => [$statement],
+            'Statement' => [
+                $this->newAllowStatement(['ImageX:ApplyImageUpload'], $applyRes),
+                $this->newAllowStatement(['ImageX:CommitImageUpload'], $commitRes),
+            ],
         ];
 
         return $this->signSts2($policy, $expire);
