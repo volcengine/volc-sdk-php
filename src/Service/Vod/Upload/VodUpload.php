@@ -26,13 +26,19 @@ const LargeFileSize = 1024 * 1024 * 1024;
 
 class VodUpload extends Vod
 {
+    /**
+     * @param VodUploadMediaRequest $vodUploadMediaRequest
+     * @return VodCommitUploadInfoResponse
+     * @throws Exception
+     * @throws Throwable
+     */
     public function uploadMedia(VodUploadMediaRequest $vodUploadMediaRequest): VodCommitUploadInfoResponse
     {
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($vodUploadMediaRequest->getSpaceName());
         $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
         if ($resp[0] != 0) {
-            return $resp[1];
+            throw new Exception($resp[1]);
         }
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMediaRequest->getSpaceName());
@@ -42,7 +48,7 @@ class VodUpload extends Vod
         try {
             return $this->commitUploadInfo($request);
         } catch (Throwable $e) {
-            throw e;
+            throw $e;
         }
     }
 
@@ -57,7 +63,7 @@ class VodUpload extends Vod
             return array(-1, $e->getMessage(), "", "");
         }
         if ($response->getResponseMetadata()->getError() != null) {
-            print_r($response->getResponseMetadata()->getError());
+            return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
         }
 
         $uploadAddress = $response->getResult()->getData()->getUploadAddress();

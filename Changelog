@@ -1,5 +1,30 @@
 Change log
 
+2021-03-24 Bumped to version v1.0.10
+- Added sms sdk.
+
+2021-03-24 Bumped to version v1.0.9
+- Added async and risk result.
+- Added delete media support.
+
+2021-03-02 Bumped to version v1.0.8
+- Visual: add new apis: FaceSwap, HumanSegment, GeneralSegment, EnhancePhoto, ConvertPhoto
+
+2021-02-22 Bumped to version v1.0.7
+- Visual:add JPCartoon api.
+
+2021-02-18 Bumped to version v1.0.6
+- Upgrade adblock sdk.
+- Vod: bug fix.
+
+2021-02-04 Bumped to version v1.0.5
+- VEdit: support more cloud-edit sdk.
+
+2021-01-28 Bumped to version v1.0.4
+- Fixed sts2_ak.
+- Fixed visual null pointer.
+- more vod sdk support.
+
 2021-01-19 Bumped to version v1.0.3
 - Add adblock sdk.
 - Vod:enable large-file slice upload function.
