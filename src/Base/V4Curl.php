@@ -6,12 +6,14 @@
 
 namespace Volc\Base;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Exception\ClientException;
+use Throwable;
 
 abstract class V4Curl extends Singleton
 {
@@ -20,7 +22,7 @@ abstract class V4Curl extends Singleton
     protected $region = '';
     protected $ak = '';
     protected $sk = '';
-    
+
 
     public function __construct()
     {
@@ -34,9 +36,9 @@ abstract class V4Curl extends Singleton
             'handler' => $this->stack,
             'base_uri' => $config['host'],
         ]);
-        
-        $this->version = trim(file_get_contents(__DIR__.'/../../VERSION'));
-        
+
+        $this->version = trim(file_get_contents(__DIR__ . '/../../VERSION'));
+
     }
 
     public function setAccessKey($ak)
@@ -120,7 +122,7 @@ abstract class V4Curl extends Singleton
 
         $defaultConfig = $this->getConfig($this->region);
         $config = $this->configMerge($defaultConfig['config'], $config_api['config'], $config);
-        $config['headers']['User-Agent'] = 'volc-sdk-php/'.$this->version;        
+        $config['headers']['User-Agent'] = 'volc-sdk-php/' . $this->version;
         $info = array_merge($defaultConfig, $config_api);
         $info['config'] = $config;
 
@@ -165,7 +167,7 @@ abstract class V4Curl extends Singleton
 
         if (sizeof($policy) > 0) {
             $inner["PolicyString"] = json_encode($policy);
-        }else {
+        } else {
             $inner["PolicyString"] = "";
         }
 
@@ -226,7 +228,7 @@ abstract class V4Curl extends Singleton
             return function (RequestInterface $request, array $options) use ($handler) {
                 if (isset($options['replace'])) {
                     $replace = $options['replace'];
-                    $uri = (string) $request->getUri();
+                    $uri = (string)$request->getUri();
 
                     $func = function ($matches) use ($replace) {
                         $key = substr($matches[0], 1, -1);
@@ -265,6 +267,58 @@ abstract class V4Curl extends Singleton
 
     protected function aesEncrypt($src, $pwd)
     {
-        return base64_encode(openssl_encrypt($src, "AES-128-CBC", $pwd, OPENSSL_RAW_DATA|OPENSSL_ZERO_PADDING, $pwd));
+        return base64_encode(openssl_encrypt($src, "AES-128-CBC", $pwd, OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING, $pwd));
+    }
+
+    /**
+     * @throws Exception
+     * @throws Throwable
+     */
+    protected function createHlsDrmAuthToken(string $authAlgorithm, int $expireSeconds)
+    {
+        if ($expireSeconds == 0) {
+            throw new Exception("invalid exception");
+        }
+       $credentials = $this->prepareCredentials($this->getConfig($this->region));
+        try {
+            $token = $this->createAuth($authAlgorithm, "2.0", $credentials['ak'], $credentials['sk'], $expireSeconds);
+            $query = array(
+                "token" => $token,
+                "X-Expires" => strval($expireSeconds),
+            );
+            return parse_url($this->getRequestUrl("GetHlsDecryptionKey", ['query' => $query]))['query'];
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+    }
+
+
+    /**
+     * @throws Exception
+     */
+    private function createAuth(string $dsa, string $version, string $accessKey, string $secretKey, int $expireSeconds): string
+    {
+        if ($accessKey == "") {
+            throw new Exception("invalid accessKey");
+        }
+        if ($secretKey == "") {
+            throw new Exception("invalid secretKey");
+        }
+        $timestamp = time() + $expireSeconds;
+        $deadline = gmdate("Ymd\THis\Z", $timestamp);
+        $key1 = hash_hmac('sha256', $deadline, $secretKey, true);
+        $key2 = hash_hmac('sha256', "vod", $key1, true);
+        $dateKey = bin2hex($key2);
+        $data = $dsa . "&" . $version . "&" . $timestamp;
+        switch ($dsa) {
+            case "HMAC-SHA1":
+                $sign = base64_encode(hash_hmac('sha1', $data, $dateKey, true));
+                break;
+            default:
+                throw new Exception("invalid dsa");
+        }
+        return $dsa . ":" . $version . ":" . $timestamp . ":" . $accessKey . ":" . $sign;
     }
 }
