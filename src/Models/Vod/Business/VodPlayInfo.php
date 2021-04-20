@@ -127,6 +127,12 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Quality = 19;</code>
      */
     protected $Quality = '';
+    /**
+     * 弹幕蒙版偏移量
+     *
+     * Generated from protobuf field <code>string BarrageMaskOffset = 20;</code>
+     */
+    protected $BarrageMaskOffset = '';
 
     /**
      * Constructor.
@@ -172,6 +178,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *          水印类型
      *     @type string $Quality
      *          音频质量
+     *     @type string $BarrageMaskOffset
+     *           弹幕蒙版偏移量
      * }
      */
     public function __construct($data = NULL) {
@@ -669,6 +677,32 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Quality = $var;
+
+        return $this;
+    }
+
+    /**
+     * 弹幕蒙版偏移量
+     *
+     * Generated from protobuf field <code>string BarrageMaskOffset = 20;</code>
+     * @return string
+     */
+    public function getBarrageMaskOffset()
+    {
+        return $this->BarrageMaskOffset;
+    }
+
+    /**
+     * 弹幕蒙版偏移量
+     *
+     * Generated from protobuf field <code>string BarrageMaskOffset = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBarrageMaskOffset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BarrageMaskOffset = $var;
 
         return $this;
     }
