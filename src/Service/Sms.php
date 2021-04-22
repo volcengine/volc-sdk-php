@@ -11,7 +11,7 @@ class Sms extends V4Curl
     protected function getConfig(string $region = '')
     {
         return [
-            'host' => 'https://open.volcengineapi.com',
+            'host' => 'https://sms.volcengineapi.com',
             'config' => [
                 'timeout' => 10.0,
                 'headers' => [
