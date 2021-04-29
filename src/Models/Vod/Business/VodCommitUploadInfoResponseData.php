@@ -29,6 +29,10 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CallbackArgs = 4;</code>
      */
     protected $CallbackArgs = '';
+    /**
+     * Generated from protobuf field <code>string Mid = 5;</code>
+     */
+    protected $Mid = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Models\Vod\Business\VodSourceInfo $SourceInfo
      *     @type string $PosterUri
      *     @type string $CallbackArgs
+     *     @type string $Mid
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CallbackArgs = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Mid = 5;</code>
+     * @return string
+     */
+    public function getMid()
+    {
+        return $this->Mid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Mid = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Mid = $var;
 
         return $this;
     }

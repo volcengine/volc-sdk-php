@@ -32,6 +32,12 @@ use Volc\Models\Vod\Request\VodDeleteTranscodesRequest;
 use Volc\Models\Vod\Response\VodDeleteTranscodesResponse;
 use Volc\Models\Vod\Request\VodGetMediaListRequest;
 use Volc\Models\Vod\Response\VodGetMediaListResponse;
+use Volc\Models\Vod\Request\VodGetSubtitleInfoListRequest;
+use Volc\Models\Vod\Response\VodGetSubtitleInfoListResponse;
+use Volc\Models\Vod\Request\VodUpdateSubtitleStatusRequest;
+use Volc\Models\Vod\Response\VodUpdateSubtitleStatusResponse;
+use Volc\Models\Vod\Request\VodUpdateSubtitleInfoRequest;
+use Volc\Models\Vod\Response\VodUpdateSubtitleInfoResponse;
 use Volc\Models\Vod\Request\VodStartWorkflowRequest;
 use Volc\Models\Vod\Response\VodStartWorkflowResponse;
 
@@ -476,6 +482,105 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetMediaListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetSubtitleInfoList.
+     *
+     * @param $req VodGetSubtitleInfoListRequest
+     * @return VodGetSubtitleInfoListResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getSubtitleInfoList (VodGetSubtitleInfoListRequest $req): VodGetSubtitleInfoListResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetSubtitleInfoList', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetSubtitleInfoListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateSubtitleStatus.
+     *
+     * @param $req VodUpdateSubtitleStatusRequest
+     * @return VodUpdateSubtitleStatusResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateSubtitleStatus (VodUpdateSubtitleStatusRequest $req): VodUpdateSubtitleStatusResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateSubtitleStatus', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateSubtitleStatusResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateSubtitleInfo.
+     *
+     * @param $req VodUpdateSubtitleInfoRequest
+     * @return VodUpdateSubtitleInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateSubtitleInfo (VodUpdateSubtitleInfoRequest $req): VodUpdateSubtitleInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateSubtitleInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateSubtitleInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

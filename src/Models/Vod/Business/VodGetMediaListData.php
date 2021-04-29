@@ -38,7 +38,7 @@ class VodGetMediaListData extends \Google\Protobuf\Internal\Message
      */
     protected $Offset = 0;
     /**
-     *分页大小 
+     *分页大小
      *
      * Generated from protobuf field <code>int32 PageSize = 5;</code>
      */
@@ -59,7 +59,7 @@ class VodGetMediaListData extends \Google\Protobuf\Internal\Message
      *     @type int $Offset
      *          数据偏移量 
      *     @type int $PageSize
-     *          分页大小 
+     *          分页大小
      * }
      */
     public function __construct($data = NULL) {
@@ -172,7 +172,7 @@ class VodGetMediaListData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *分页大小 
+     *分页大小
      *
      * Generated from protobuf field <code>int32 PageSize = 5;</code>
      * @return int
@@ -183,7 +183,7 @@ class VodGetMediaListData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *分页大小 
+     *分页大小
      *
      * Generated from protobuf field <code>int32 PageSize = 5;</code>
      * @param int $var

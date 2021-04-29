@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
 {
     /**
-     *数据版本
+     * 数据版本
      *
      * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      */
@@ -26,19 +26,19 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      */
     protected $Vid = '';
     /**
-     *状态
+     * 状态
      *
      * Generated from protobuf field <code>int32 Status = 2;</code>
      */
     protected $Status = 0;
     /**
-     *封面地址
+     * 封面地址
      *
      * Generated from protobuf field <code>string PosterUrl = 3;</code>
      */
     protected $PosterUrl = '';
     /**
-     *播放时长(单位：s)
+     * 播放时长(单位：s)
      *
      * Generated from protobuf field <code>float Duration = 4;</code>
      */
@@ -50,13 +50,13 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      */
     protected $FileType = '';
     /**
-     *是否关键针对齐
+     * 是否关键针对齐
      *
      * Generated from protobuf field <code>bool EnableAdaptive = 6;</code>
      */
     protected $EnableAdaptive = false;
     /**
-     *播放列表数量
+     * 播放列表数量
      *
      * Generated from protobuf field <code>int32 TotalCount = 7;</code>
      */
@@ -68,7 +68,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      */
     protected $AdaptiveInfo = null;
     /**
-     *播放列表
+     * 播放列表
      *
      * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
      */
@@ -79,6 +79,12 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
      */
     private $ThumbInfoList;
+    /**
+     * 弹幕蒙版url
+     *
+     * Generated from protobuf field <code>string BarrageMaskUrl = 12;</code>
+     */
+    protected $BarrageMaskUrl = '';
 
     /**
      * Constructor.
@@ -87,27 +93,29 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $Version
-     *          数据版本
+     *           数据版本
      *     @type string $Vid
      *           唯一ID
      *     @type int $Status
-     *          状态
+     *           状态
      *     @type string $PosterUrl
-     *          封面地址
+     *           封面地址
      *     @type float $Duration
-     *          播放时长(单位：s)
+     *           播放时长(单位：s)
      *     @type string $FileType
      *           媒体类型
      *     @type bool $EnableAdaptive
-     *          是否关键针对齐
+     *           是否关键针对齐
      *     @type int $TotalCount
-     *          播放列表数量
+     *           播放列表数量
      *     @type \Volc\Models\Vod\Business\VodAdaptiveInfo $AdaptiveInfo
      *           dash播放信息
      *     @type \Volc\Models\Vod\Business\VodPlayInfo[]|\Google\Protobuf\Internal\RepeatedField $PlayInfoList
-     *          播放列表
+     *           播放列表
      *     @type \Volc\Models\Vod\Business\VodThumbInfo[]|\Google\Protobuf\Internal\RepeatedField $ThumbInfoList
      *           雪碧图列表
+     *     @type string $BarrageMaskUrl
+     *           弹幕蒙版url
      * }
      */
     public function __construct($data = NULL) {
@@ -116,7 +124,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *数据版本
+     * 数据版本
      *
      * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @return int
@@ -127,7 +135,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *数据版本
+     * 数据版本
      *
      * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @param int $var
@@ -168,7 +176,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *状态
+     * 状态
      *
      * Generated from protobuf field <code>int32 Status = 2;</code>
      * @return int
@@ -179,7 +187,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *状态
+     * 状态
      *
      * Generated from protobuf field <code>int32 Status = 2;</code>
      * @param int $var
@@ -194,7 +202,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封面地址
+     * 封面地址
      *
      * Generated from protobuf field <code>string PosterUrl = 3;</code>
      * @return string
@@ -205,7 +213,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封面地址
+     * 封面地址
      *
      * Generated from protobuf field <code>string PosterUrl = 3;</code>
      * @param string $var
@@ -220,7 +228,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放时长(单位：s)
+     * 播放时长(单位：s)
      *
      * Generated from protobuf field <code>float Duration = 4;</code>
      * @return float
@@ -231,7 +239,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放时长(单位：s)
+     * 播放时长(单位：s)
      *
      * Generated from protobuf field <code>float Duration = 4;</code>
      * @param float $var
@@ -272,7 +280,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *是否关键针对齐
+     * 是否关键针对齐
      *
      * Generated from protobuf field <code>bool EnableAdaptive = 6;</code>
      * @return bool
@@ -283,7 +291,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *是否关键针对齐
+     * 是否关键针对齐
      *
      * Generated from protobuf field <code>bool EnableAdaptive = 6;</code>
      * @param bool $var
@@ -298,7 +306,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放列表数量
+     * 播放列表数量
      *
      * Generated from protobuf field <code>int32 TotalCount = 7;</code>
      * @return int
@@ -309,7 +317,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放列表数量
+     * 播放列表数量
      *
      * Generated from protobuf field <code>int32 TotalCount = 7;</code>
      * @param int $var
@@ -350,7 +358,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放列表
+     * 播放列表
      *
      * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -361,7 +369,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *播放列表
+     * 播放列表
      *
      * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
      * @param \Volc\Models\Vod\Business\VodPlayInfo[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -397,6 +405,32 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Models\Vod\Business\VodThumbInfo::class);
         $this->ThumbInfoList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 弹幕蒙版url
+     *
+     * Generated from protobuf field <code>string BarrageMaskUrl = 12;</code>
+     * @return string
+     */
+    public function getBarrageMaskUrl()
+    {
+        return $this->BarrageMaskUrl;
+    }
+
+    /**
+     * 弹幕蒙版url
+     *
+     * Generated from protobuf field <code>string BarrageMaskUrl = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBarrageMaskUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BarrageMaskUrl = $var;
 
         return $this;
     }

@@ -67,6 +67,18 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string NeedThumbs = 9;</code>
      */
     protected $NeedThumbs = '';
+    /**
+     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
+     */
+    protected $NeedBarrageMask = '';
+    /**
+     * 指定CDN类型
+     *
+     * Generated from protobuf field <code>string CdnType = 11;</code>
+     */
+    protected $CdnType = '';
 
     /**
      * Constructor.
@@ -92,6 +104,10 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          返回https播放地址，默认否, 1-是；0-否
      *     @type string $NeedThumbs
      *           是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *     @type string $NeedBarrageMask
+     *           是否需要蒙版弹幕，默认否，1-是；0-否
+     *     @type string $CdnType
+     *           指定CDN类型
      * }
      */
     public function __construct($data = NULL) {
@@ -329,6 +345,58 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->NeedThumbs = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
+     * @return string
+     */
+    public function getNeedBarrageMask()
+    {
+        return $this->NeedBarrageMask;
+    }
+
+    /**
+     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     *
+     * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNeedBarrageMask($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->NeedBarrageMask = $var;
+
+        return $this;
+    }
+
+    /**
+     * 指定CDN类型
+     *
+     * Generated from protobuf field <code>string CdnType = 11;</code>
+     * @return string
+     */
+    public function getCdnType()
+    {
+        return $this->CdnType;
+    }
+
+    /**
+     * 指定CDN类型
+     *
+     * Generated from protobuf field <code>string CdnType = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCdnType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->CdnType = $var;
 
         return $this;
     }

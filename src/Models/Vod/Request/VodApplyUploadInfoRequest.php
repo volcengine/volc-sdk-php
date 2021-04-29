@@ -25,6 +25,10 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double FileSize = 3;</code>
      */
     protected $FileSize = 0.0;
+    /**
+     * Generated from protobuf field <code>string FileType = 4;</code>
+     */
+    protected $FileType = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *     @type string $SessionKey
      *     @type float $FileSize
+     *     @type string $FileType
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->FileSize = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string FileType = 4;</code>
+     * @return string
+     */
+    public function getFileType()
+    {
+        return $this->FileType;
+    }
+
+    /**
+     * Generated from protobuf field <code>string FileType = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileType = $var;
 
         return $this;
     }

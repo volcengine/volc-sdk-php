@@ -25,6 +25,10 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 3;</code>
      */
     protected $SourceInfo = null;
+    /**
+     * Generated from protobuf field <code>string Mid = 4;</code>
+     */
+    protected $Mid = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
      *     @type string $Vid
      *     @type string $PosterUri
      *     @type \Volc\Models\Vod\Business\VodSourceInfo $SourceInfo
+     *     @type string $Mid
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodSourceInfo::class);
         $this->SourceInfo = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Mid = 4;</code>
+     * @return string
+     */
+    public function getMid()
+    {
+        return $this->Mid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Mid = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Mid = $var;
 
         return $this;
     }
