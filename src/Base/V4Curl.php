@@ -283,7 +283,7 @@ abstract class V4Curl extends Singleton
         try {
             $token = $this->createAuth($authAlgorithm, "2.0", $credentials['ak'], $credentials['sk'], $expireSeconds);
             $query = array(
-                "Token" => $token,
+                "DrmAuthToken" => $token,
                 "X-Expires" => strval($expireSeconds),
             );
             return parse_url($this->getRequestUrl("GetHlsDecryptionKey", ['query' => $query]))['query'];

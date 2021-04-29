@@ -10,6 +10,10 @@ use Throwable;
 use Volc\Base\V4Curl;
 use Volc\Models\Vod\Request\VodGetPlayInfoRequest;
 use Volc\Models\Vod\Response\VodGetPlayInfoResponse;
+use Volc\Models\Vod\Request\VodGetPrivateDrmPlayAuthRequest;
+use Volc\Models\Vod\Response\VodGetPrivateDrmPlayAuthResponse;
+use Volc\Models\Vod\Request\VodGetHlsDrmSecretKeyRequest;
+use Volc\Models\Vod\Response\VodGetHlsDrmSecretKeyResponse;
 use Volc\Models\Vod\Request\VodUrlUploadRequest;
 use Volc\Models\Vod\Response\VodUrlUploadResponse;
 use Volc\Models\Vod\Request\VodQueryUploadTaskInfoRequest;
@@ -129,6 +133,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetPlayInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetPrivateDrmPlayAuth.
+     *
+     * @param $req VodGetPrivateDrmPlayAuthRequest
+     * @return VodGetPrivateDrmPlayAuthResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getPrivateDrmPlayAuth (VodGetPrivateDrmPlayAuthRequest $req): VodGetPrivateDrmPlayAuthResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetPrivateDrmPlayAuth', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetPrivateDrmPlayAuthResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetHlsDrmSecretKey.
+     *
+     * @param $req VodGetHlsDrmSecretKeyRequest
+     * @return VodGetHlsDrmSecretKeyResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getHlsDrmSecretKey (VodGetHlsDrmSecretKeyRequest $req): VodGetHlsDrmSecretKeyResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetHlsDrmSecretKey', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetHlsDrmSecretKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
