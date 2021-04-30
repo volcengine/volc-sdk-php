@@ -279,9 +279,9 @@ abstract class V4Curl extends Singleton
         if ($expireSeconds == 0) {
             throw new Exception("invalid exception");
         }
-       $credentials = $this->prepareCredentials($this->getConfig($this->region));
+        $credentials = $this->prepareCredentials($this->getConfig($this->region));
         try {
-            $token = $this->createAuth($authAlgorithm, "2.0", $credentials['ak'], $credentials['sk'], $expireSeconds);
+            $token = $this->createAuth($authAlgorithm, "2.0", $credentials['ak'], $credentials['sk'], $this->region, $expireSeconds);
             $query = array(
                 "DrmAuthToken" => $token,
                 "X-Expires" => strval($expireSeconds),
@@ -298,7 +298,7 @@ abstract class V4Curl extends Singleton
     /**
      * @throws Exception
      */
-    private function createAuth(string $dsa, string $version, string $accessKey, string $secretKey, int $expireSeconds): string
+    private function createAuth(string $dsa, string $version, string $accessKey, string $secretKey, $region, int $expireSeconds): string
     {
         if ($accessKey == "") {
             throw new Exception("invalid accessKey");
@@ -308,9 +308,11 @@ abstract class V4Curl extends Singleton
         }
         $timestamp = time() + $expireSeconds;
         $deadline = gmdate("Ymd\THis\Z", $timestamp);
-        $key1 = hash_hmac('sha256', $deadline, $secretKey, true);
-        $key2 = hash_hmac('sha256', "vod", $key1, true);
-        $dateKey = bin2hex($key2);
+        $kDate = hash_hmac('sha256', $deadline, $secretKey, true);
+        $kRegion = hash_hmac('sha256', $region, $kDate, true);
+        $kService = hash_hmac('sha256', "vod", $kRegion, true);
+        $kCredentials = hash_hmac('sha256', "request", $kService, true);
+        $dateKey = bin2hex($kCredentials);
         $data = $dsa . "&" . $version . "&" . $timestamp;
         switch ($dsa) {
             case "HMAC-SHA1":
