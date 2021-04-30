@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Request.VodGetHlsDrmSecretKeyRequest</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Request.VodGetHlsDecryptionKeyRequest</code>
  */
-class VodGetHlsDrmSecretKeyRequest extends \Google\Protobuf\Internal\Message
+class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Drm鉴权Token

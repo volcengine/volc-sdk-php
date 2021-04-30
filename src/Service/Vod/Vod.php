@@ -12,8 +12,8 @@ use Volc\Models\Vod\Request\VodGetPlayInfoRequest;
 use Volc\Models\Vod\Response\VodGetPlayInfoResponse;
 use Volc\Models\Vod\Request\VodGetPrivateDrmPlayAuthRequest;
 use Volc\Models\Vod\Response\VodGetPrivateDrmPlayAuthResponse;
-use Volc\Models\Vod\Request\VodGetHlsDrmSecretKeyRequest;
-use Volc\Models\Vod\Response\VodGetHlsDrmSecretKeyResponse;
+use Volc\Models\Vod\Request\VodGetHlsDecryptionKeyRequest;
+use Volc\Models\Vod\Response\VodGetHlsDecryptionKeyResponse;
 use Volc\Models\Vod\Request\VodUrlUploadRequest;
 use Volc\Models\Vod\Response\VodUrlUploadResponse;
 use Volc\Models\Vod\Request\VodQueryUploadTaskInfoRequest;
@@ -177,18 +177,18 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * GetHlsDrmSecretKey.
+     * GetHlsDecryptionKey.
      *
-     * @param $req VodGetHlsDrmSecretKeyRequest
-     * @return VodGetHlsDrmSecretKeyResponse
+     * @param $req VodGetHlsDecryptionKeyRequest
+     * @return VodGetHlsDecryptionKeyResponse
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function getHlsDrmSecretKey (VodGetHlsDrmSecretKeyRequest $req): VodGetHlsDrmSecretKeyResponse
+	public function getHlsDecryptionKey (VodGetHlsDecryptionKeyRequest $req): VodGetHlsDecryptionKeyResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetHlsDrmSecretKey', ['query' => $query]);
+			$response = $this->request('GetHlsDecryptionKey', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -198,7 +198,7 @@ class Vod extends V4Curl
 			echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
 		}
-		$respData = new VodGetHlsDrmSecretKeyResponse();
+		$respData = new VodGetHlsDecryptionKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

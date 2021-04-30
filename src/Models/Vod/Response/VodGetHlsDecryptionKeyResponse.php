@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetHlsDrmSecretKeyResponse</code>
+ * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetHlsDecryptionKeyResponse</code>
  */
-class VodGetHlsDrmSecretKeyResponse extends \Google\Protobuf\Internal\Message
+class VodGetHlsDecryptionKeyResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * 响应通用信息
@@ -22,7 +22,7 @@ class VodGetHlsDrmSecretKeyResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDrmSecretKeyResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDecryptionKeyResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -34,7 +34,7 @@ class VodGetHlsDrmSecretKeyResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Models\Base\ResponseMetadata $ResponseMetadata
      *           响应通用信息
-     *     @type \Volc\Models\Vod\Business\VodGetHlsDrmSecretKeyResult $Result
+     *     @type \Volc\Models\Vod\Business\VodGetHlsDecryptionKeyResult $Result
      *           响应结果
      * }
      */
@@ -72,8 +72,8 @@ class VodGetHlsDrmSecretKeyResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDrmSecretKeyResult Result = 2;</code>
-     * @return \Volc\Models\Vod\Business\VodGetHlsDrmSecretKeyResult
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDecryptionKeyResult Result = 2;</code>
+     * @return \Volc\Models\Vod\Business\VodGetHlsDecryptionKeyResult
      */
     public function getResult()
     {
@@ -83,13 +83,13 @@ class VodGetHlsDrmSecretKeyResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDrmSecretKeyResult Result = 2;</code>
-     * @param \Volc\Models\Vod\Business\VodGetHlsDrmSecretKeyResult $var
+     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetHlsDecryptionKeyResult Result = 2;</code>
+     * @param \Volc\Models\Vod\Business\VodGetHlsDecryptionKeyResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodGetHlsDrmSecretKeyResult::class);
+        GPBUtil::checkMessage($var, \Volc\Models\Vod\Business\VodGetHlsDecryptionKeyResult::class);
         $this->Result = $var;
 
         return $this;
