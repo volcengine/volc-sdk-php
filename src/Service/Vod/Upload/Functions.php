@@ -22,7 +22,7 @@ class Functions
         self::$funcs[] = new FunctionInner("StartWorkflow", new WorkflowInput($templateId));
     }
 
-    public static function AddOptionInfoFunc(OptionInfo $optionInfo)
+    public static function addOptionInfoFunc(OptionInfo $optionInfo)
     {
         self::$funcs[] = new FunctionInner("AddOptionInfo", $optionInfo);
     }
