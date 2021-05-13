@@ -70,7 +70,7 @@ class VodUpload extends Vod
             $session = $uploadAddress->getSessionKey();
 
             $storeInfo = new VodStoreInfo();
-            $storeInfo ->mergeFrom($uploadAddress->getStoreInfos() ->offsetGet(0));
+            $storeInfo ->mergeFrom(($uploadAddress->getStoreInfos())[0]);
             $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
             if ($respCode != 0) {
                 return array(-1, "upload " . $filePath . " error", "", "");
