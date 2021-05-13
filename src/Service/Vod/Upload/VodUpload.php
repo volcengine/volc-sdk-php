@@ -14,11 +14,11 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RetryMiddleware;
 use Throwable;
-use Volc\Models\Vod\Business\VodStoreInfo;
-use Volc\Models\Vod\Request\VodApplyUploadInfoRequest;
-use Volc\Models\Vod\Request\VodCommitUploadInfoRequest;
-use Volc\Models\Vod\Request\VodUploadMediaRequest;
-use Volc\Models\Vod\Response\VodCommitUploadInfoResponse;
+use Volc\Service\Vod\Models\Business\VodStoreInfo;
+use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
+use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
+use Volc\Service\Vod\Models\Request\VodUploadMediaRequest;
+use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
 use Volc\Service\Vod\Vod;
 
 const MinChunkSize = 1024 * 1024 * 20;
@@ -52,35 +52,37 @@ class VodUpload extends Vod
         }
     }
 
-    public function upload(VodApplyUploadInfoRequest $applyRequest, string $filePath)
+    public function upload(VodApplyUploadInfoRequest $applyRequest, string $filePath): array
     {
         if (!file_exists($filePath)) {
             return array(-1, "file not exists", "", "");
         }
         try {
             $response = $this->applyUploadInfo($applyRequest);
+            if ($response->getResponseMetadata()->getError() != null) {
+                return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
+            }
+
+            $uploadAddress = $response->getResult()->getData()->getUploadAddress();
+
+            $uploadHost = ($uploadAddress->getUploadHosts())[0];
+            $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
+            $session = $uploadAddress->getSessionKey();
+
+            $storeInfo = new VodStoreInfo();
+            $storeInfo ->mergeFrom(($uploadAddress->getStoreInfos())[0]);
+            $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
+            if ($respCode != 0) {
+                return array(-1, "upload " . $filePath . " error", "", "");
+            }
+
+            return array(0, "", $session, $oid);
         } catch (Throwable $e) {
             return array(-1, $e->getMessage(), "", "");
         }
-        if ($response->getResponseMetadata()->getError() != null) {
-            return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
-        }
-
-        $uploadAddress = $response->getResult()->getData()->getUploadAddress();
-
-        $uploadHost = $uploadAddress->getUploadHosts()[0];
-        $oid = $uploadAddress->getStoreInfos()[0]->getStoreUri();
-        $session = $uploadAddress->getSessionKey();
-
-        $respCode = $this->uploadFile($uploadHost, $uploadAddress->getStoreInfos()[0], $filePath);
-        if ($respCode != 0) {
-            return array(-1, "upload " . $filePath . " error", "", "");
-        }
-
-        return array(0, "", $session, $oid);
     }
 
-    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath)
+    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath): int
     {
         if (!file_exists($filePath)) {
             return -1;
@@ -108,7 +110,7 @@ class VodUpload extends Vod
         }
     }
 
-    private function retryDecider()
+    private function retryDecider(): \Closure
     {
         return function ($retries,
                          Request $request,
@@ -121,14 +123,14 @@ class VodUpload extends Vod
         };
     }
 
-    private function retryDelay()
+    private function retryDelay(): \Closure
     {
         return function ($num) {
             return RetryMiddleware::exponentialDelay($num);
         };
     }
 
-    private function directUpload(string $oid, string $auth, string $filePath, Client $client)
+    private function directUpload(string $oid, string $auth, string $filePath, Client $client): int
     {
         $content = file_get_contents($filePath);
         $crc32 = sprintf("%08x", crc32($content));
@@ -140,7 +142,7 @@ class VodUpload extends Vod
         return 0;
     }
 
-    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client)
+    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client): int
     {
         $uploadID = $this->initUploadPart($oid, $auth, $isLargeFile, $client);
         if ($uploadID == "") {
@@ -183,7 +185,7 @@ class VodUpload extends Vod
         return $initUploadResponse['payload']['uploadID'];
     }
 
-    private function uploadPart(string $oid, string $auth, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client)
+    private function uploadPart(string $oid, string $auth, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client): string
     {
         $uri = sprintf("%s?partNumber=%d&uploadID=%s", $oid, $partNumber, $uploadID);
         $crc32 = sprintf("%08x", crc32($data));
@@ -199,7 +201,7 @@ class VodUpload extends Vod
         return $crc32;
     }
 
-    private function uploadMergePart(string $oid, string $auth, string $uploadID, array $checkSum, bool $isLargeFile, Client $client)
+    private function uploadMergePart(string $oid, string $auth, string $uploadID, array $checkSum, bool $isLargeFile, Client $client): int
     {
         $uri = sprintf("%s?uploadID=%s", $oid, $uploadID);
         $m = [];
