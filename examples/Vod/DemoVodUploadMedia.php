@@ -32,7 +32,7 @@ try {
     echo $e, "\n";
 }
 if ($response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
-    echo $response->getResponseMetadata()->getError(), "\n";
+    echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 }
 echo $response->serializeToJsonString();
 echo "\n";
