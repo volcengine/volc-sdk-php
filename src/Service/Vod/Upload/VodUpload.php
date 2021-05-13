@@ -59,25 +59,27 @@ class VodUpload extends Vod
         }
         try {
             $response = $this->applyUploadInfo($applyRequest);
+            if ($response->getResponseMetadata()->getError() != null) {
+                return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
+            }
+
+            $uploadAddress = $response->getResult()->getData()->getUploadAddress();
+
+            $uploadHost = ($uploadAddress->getUploadHosts())[0];
+            $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
+            $session = $uploadAddress->getSessionKey();
+
+            $storeInfo = new VodStoreInfo();
+            $storeInfo ->mergeFrom($uploadAddress->getStoreInfos() ->offsetGet(0));
+            $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
+            if ($respCode != 0) {
+                return array(-1, "upload " . $filePath . " error", "", "");
+            }
+
+            return array(0, "", $session, $oid);
         } catch (Throwable $e) {
             return array(-1, $e->getMessage(), "", "");
         }
-        if ($response->getResponseMetadata()->getError() != null) {
-            return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
-        }
-
-        $uploadAddress = $response->getResult()->getData()->getUploadAddress();
-
-        $uploadHost = ($uploadAddress->getUploadHosts())[0];
-        $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
-        $session = $uploadAddress->getSessionKey();
-        $storeInfo = new VodStoreInfo(($uploadAddress->getStoreInfos())[0]);
-        $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
-        if ($respCode != 0) {
-            return array(-1, "upload " . $filePath . " error", "", "");
-        }
-
-        return array(0, "", $session, $oid);
     }
 
     public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath): int
