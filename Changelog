@@ -1,6 +1,6 @@
 Change log
 
-2020-05-20 Bumped to version v1.0.12
+2021-05-20 Bumped to version v1.0.12
 - Add hls drm utils for vod
 - Support material upload
 - Add retry after http error
