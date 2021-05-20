@@ -15,8 +15,9 @@ $space = 'your space';
 $filePath = "file path";
 
 //音视频素材上传
-Functions::addGetMetaFunc();
-Functions::addSnapshotTimeFunc(2.1);
+$functions = new Functions();
+$functions->addGetMetaFunc();
+$functions->addSnapshotTimeFunc(2.1);
 
 $optionInfo = new OptionInfo();
 $optionInfo->Title = '素材测试视频';
@@ -25,9 +26,9 @@ $optionInfo->Description = '素材测试，视频文件';
 $optionInfo->Category = 'video';
 $optionInfo->RecordType = 2;
 $optionInfo->Format = 'mp4';
-Functions::addOptionInfoFunc($optionInfo);
+$functions->addOptionInfoFunc($optionInfo);
 
-$functions = Functions::getFunctionsString();
+$functions = $functions->getFunctionsString();
 
 $request = new VodUploadMaterialRequest();
 $request->setSpaceName($space);
@@ -57,8 +58,9 @@ if ($response->getResult() != null) {
     echo $response->getResult()->getData()->getSourceInfo()->getHeight(), "\n";
 }
 
-//图片素材上传
-//Functions::addGetMetaFunc();
+////图片素材上传
+//$functions = new Functions();
+//$functions->addGetMetaFunc();
 //
 //$optionInfo = new OptionInfo();
 //$optionInfo->Title = '素材测试图片';
@@ -67,9 +69,9 @@ if ($response->getResult() != null) {
 //$optionInfo->Category = 'image';
 //$optionInfo->RecordType = 2;
 //$optionInfo->Format = 'jpg';
-//Functions::addOptionInfoFunc($optionInfo);
+//$functions->addOptionInfoFunc($optionInfo);
 //
-//$functions = Functions::getFunctionsString();
+//$functions = $functions->getFunctionsString();
 //
 //$request = new VodUploadMaterialRequest();
 //$request->setSpaceName($space);
@@ -100,7 +102,8 @@ if ($response->getResult() != null) {
 //}
 
 ////字幕素材上传
-//Functions::addGetMetaFunc();
+//$functions = new Functions();
+//$functions->addGetMetaFunc();
 //
 //$optionInfo = new OptionInfo();
 //$optionInfo->Title = '素材测试字幕';
@@ -109,9 +112,9 @@ if ($response->getResult() != null) {
 //$optionInfo->Category = 'subtitle';
 //$optionInfo->RecordType = 2;
 //$optionInfo->Format = 'vtt';
-//Functions::addOptionInfoFunc($optionInfo);
+//$functions->addOptionInfoFunc($optionInfo);
 //
-//$functions = Functions::getFunctionsString();
+//$functions = $functions->getFunctionsString();
 //
 //$request = new VodUploadMaterialRequest();
 //$request->setSpaceName($space);

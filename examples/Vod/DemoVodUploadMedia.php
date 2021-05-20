@@ -13,9 +13,10 @@ $client->setSecretKey('your sk');
 $space = 'your space';
 $filePath = "file path";
 
-Functions::addGetMetaFunc();
-Functions::addSnapshotTimeFunc(2.1);
-$functions = Functions::getFunctionsString();
+$functions = new Functions();
+$functions->addGetMetaFunc();
+$functions->addSnapshotTimeFunc(2.1);
+$functions = $functions->getFunctionsString();
 
 $request = new VodUploadMediaRequest();
 $request->setSpaceName($space);
