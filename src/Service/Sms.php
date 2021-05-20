@@ -41,6 +41,9 @@ class Sms extends V4Curl
     public function sendSms(array $query = [])
     {
         $response = $this->request('SendSms', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('SendSms', $query);
+        }
         return $response->getBody();
     }
 
