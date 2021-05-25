@@ -265,7 +265,6 @@ class VodOption
             ]
         ],
         'GetSubtitleInfoList' => [
-            'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
@@ -290,6 +289,26 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSubtitleInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetHlsDecryptionKey' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetHlsDecryptionKey',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetPrivateDrmPlayAuth' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetPrivateDrmPlayAuth',
                     'Version' => '2020-08-01',
                 ],
             ]

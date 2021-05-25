@@ -197,6 +197,16 @@ class ImageX extends V4Curl
                 ],
             ]
         ],
+        'FetchImageUrl' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FetchImageUrl',
+                    'Version' => '2018-08-01',
+                ],
+            ]
+        ],
     ];
 
     public function applyUploadImage(array $query)

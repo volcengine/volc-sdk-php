@@ -1,5 +1,11 @@
 Change log
 
+2021-05-20 Bumped to version v1.0.12
+- Add hls drm utils for vod
+- Support material upload
+- Add retry after http error
+- Add imagex image fetch API
+
 2021-04-20 Bumped to version v1.0.11
 - Added pcdn and barrageMask support.
 - Added store key res.
