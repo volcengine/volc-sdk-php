@@ -8,32 +8,36 @@ namespace Volc\Service\Vod;
 use Exception;
 use Throwable;
 use Volc\Base\V4Curl;
-use Volc\Models\Vod\Request\VodGetPlayInfoRequest;
-use Volc\Models\Vod\Response\VodGetPlayInfoResponse;
-use Volc\Models\Vod\Request\VodUrlUploadRequest;
-use Volc\Models\Vod\Response\VodUrlUploadResponse;
-use Volc\Models\Vod\Request\VodQueryUploadTaskInfoRequest;
-use Volc\Models\Vod\Response\VodQueryUploadTaskInfoResponse;
-use Volc\Models\Vod\Request\VodApplyUploadInfoRequest;
-use Volc\Models\Vod\Response\VodApplyUploadInfoResponse;
-use Volc\Models\Vod\Request\VodCommitUploadInfoRequest;
-use Volc\Models\Vod\Response\VodCommitUploadInfoResponse;
-use Volc\Models\Vod\Request\VodUpdateMediaInfoRequest;
-use Volc\Models\Vod\Response\VodUpdateMediaInfoResponse;
-use Volc\Models\Vod\Request\VodUpdateMediaPublishStatusRequest;
-use Volc\Models\Vod\Response\VodUpdateMediaPublishStatusResponse;
-use Volc\Models\Vod\Request\VodGetMediaInfosRequest;
-use Volc\Models\Vod\Response\VodGetMediaInfosResponse;
-use Volc\Models\Vod\Request\VodGetRecommendedPosterRequest;
-use Volc\Models\Vod\Response\VodGetRecommendedPosterResponse;
-use Volc\Models\Vod\Request\VodDeleteMediaRequest;
-use Volc\Models\Vod\Response\VodDeleteMediaResponse;
-use Volc\Models\Vod\Request\VodDeleteTranscodesRequest;
-use Volc\Models\Vod\Response\VodDeleteTranscodesResponse;
-use Volc\Models\Vod\Request\VodGetMediaListRequest;
-use Volc\Models\Vod\Response\VodGetMediaListResponse;
-use Volc\Models\Vod\Request\VodStartWorkflowRequest;
-use Volc\Models\Vod\Response\VodStartWorkflowResponse;
+use Volc\Service\Vod\Models\Request\VodGetPlayInfoRequest;
+use Volc\Service\Vod\Models\Response\VodGetPlayInfoResponse;
+use Volc\Service\Vod\Models\Request\VodGetPrivateDrmPlayAuthRequest;
+use Volc\Service\Vod\Models\Response\VodGetPrivateDrmPlayAuthResponse;
+use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
+use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
+use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
+use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
+use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
+use Volc\Service\Vod\Models\Response\VodQueryUploadTaskInfoResponse;
+use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
+use Volc\Service\Vod\Models\Response\VodApplyUploadInfoResponse;
+use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
+use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateMediaInfoRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateMediaInfoResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateMediaPublishStatusRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateMediaPublishStatusResponse;
+use Volc\Service\Vod\Models\Request\VodGetMediaInfosRequest;
+use Volc\Service\Vod\Models\Response\VodGetMediaInfosResponse;
+use Volc\Service\Vod\Models\Request\VodGetRecommendedPosterRequest;
+use Volc\Service\Vod\Models\Response\VodGetRecommendedPosterResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteMediaRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteMediaResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteTranscodesRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteTranscodesResponse;
+use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
+use Volc\Service\Vod\Models\Response\VodGetMediaListResponse;
+use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
+use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
 
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
@@ -50,7 +54,11 @@ class Vod extends V4Curl
         parent::__construct($this->region);
     }
 
-    protected function getConfig(string $region){
+    /**
+     * @throws Exception
+     */
+    protected function getConfig(string $region): array
+    {
         try {
             return VodOption::getConfig($region);
         } catch (Exception $e) {
@@ -60,26 +68,32 @@ class Vod extends V4Curl
         }
     }
 
-    public function getPlayAuthToken(VodGetPlayInfoRequest $req)
+    /**
+     * @throws Throwable
+     */
+    public function getPlayAuthToken(VodGetPlayInfoRequest $req, int $expireSeconds): string
     {
         try {
             $query = VodUtils::formatRequestParam($req);
-        }catch (Exception $e) {
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
+        }
+        if ($expireSeconds > 0) {
+            $query["X-Expires"] = $expireSeconds;
         }
         $token = ["TokenVersion" => "V2"];
         $token["GetPlayInfoToken"] = parse_url($this->getRequestUrl("GetPlayInfo", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
 	
-	public function getUploadVideoAuth()
+    public function getUploadVideoAuth(): array
     {
         return $this->getUploadVideoAuthWithExpiredTime(60 * 60);
     }
 
-    public function getUploadVideoAuthWithExpiredTime(int $expire)
+    public function getUploadVideoAuthWithExpiredTime(int $expire): array
     {
         $actions = [ActionApplyUpload, ActionCommitUpload];
         $resources = [];
@@ -88,6 +102,14 @@ class Vod extends V4Curl
             Statement => [$statement],
         ];
         return $this->signSts2($policy, $expire);
+    }
+
+    /**
+     * @throws Throwable
+     */
+    public function getSHA1HlsDrmAuthToken(int $expireSeconds): string
+    {
+        return $this->createHlsDrmAuthToken("HMAC-SHA1", $expireSeconds);
     }
 
 	/**
@@ -113,6 +135,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetPlayInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetPrivateDrmPlayAuth.
+     *
+     * @param $req VodGetPrivateDrmPlayAuthRequest
+     * @return VodGetPrivateDrmPlayAuthResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getPrivateDrmPlayAuth (VodGetPrivateDrmPlayAuthRequest $req): VodGetPrivateDrmPlayAuthResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetPrivateDrmPlayAuth', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetPrivateDrmPlayAuthResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetHlsDecryptionKey.
+     *
+     * @param $req VodGetHlsDecryptionKeyRequest
+     * @return VodGetHlsDecryptionKeyResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getHlsDecryptionKey (VodGetHlsDecryptionKeyRequest $req): VodGetHlsDecryptionKeyResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetHlsDecryptionKey', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetHlsDecryptionKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

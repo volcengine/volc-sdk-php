@@ -11,7 +11,7 @@ class Sms extends V4Curl
     protected function getConfig(string $region = '')
     {
         return [
-            'host' => 'https://open.volcengineapi.com',
+            'host' => 'https://sms.volcengineapi.com',
             'config' => [
                 'timeout' => 10.0,
                 'headers' => [
@@ -41,6 +41,9 @@ class Sms extends V4Curl
     public function sendSms(array $query = [])
     {
         $response = $this->request('SendSms', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('SendSms', $query);
+        }
         return $response->getBody();
     }
 
