@@ -13,9 +13,10 @@ $client->setSecretKey('your sk');
 $space = 'your space';
 $filePath = "file path";
 
-Functions::addGetMetaFunc();
-Functions::addSnapshotTimeFunc(2.1);
-$functions = Functions::getFunctionsString();
+$functions = new Functions();
+$functions->addGetMetaFunc();
+$functions->addSnapshotTimeFunc(2.1);
+$functions = $functions->getFunctionsString();
 
 $request = new VodUploadMediaRequest();
 $request->setSpaceName($space);
@@ -32,7 +33,7 @@ try {
     echo $e, "\n";
 }
 if ($response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
-    echo $response->getResponseMetadata()->getError(), "\n";
+    echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 }
 echo $response->serializeToJsonString();
 echo "\n";
