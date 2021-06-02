@@ -7,7 +7,7 @@ namespace Volc\Service\Vod\Models\Business;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>Volcengine.Models.Vod.Business.VodPlayInfoModelVersion</code>
+ * Protobuf type <code>Volcengine.Vod.Models.Business.VodPlayInfoModelVersion</code>
  */
 class VodPlayInfoModelVersion
 {

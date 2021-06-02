@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodUpdateMediaInfoResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodUpdateMediaInfoResponse</code>
  */
 class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
 
@@ -33,7 +33,7 @@ class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
      */
     public function getResponseMetadata()
@@ -42,7 +42,7 @@ class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
      * @return $this
      */

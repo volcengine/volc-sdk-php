@@ -9,20 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetPlayInfoResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetMediaListResponse</code>
  */
-class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
+class VodGetMediaListResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * 响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModel Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaListData Result = 2;</code>
      */
     protected $Result = null;
 
@@ -33,9 +29,7 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Base\ResponseMetadata $ResponseMetadata
-     *           响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\VodPlayInfoModel $Result
-     *           响应结果
+     *     @type \Volc\Service\Vod\Models\Business\VodGetMediaListData $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +38,6 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
      */
@@ -55,8 +47,6 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
      * @return $this
@@ -70,10 +60,8 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModel Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodPlayInfoModel
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaListData Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodGetMediaListData
      */
     public function getResult()
     {
@@ -81,15 +69,13 @@ class VodGetPlayInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModel Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodPlayInfoModel $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaListData Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodGetMediaListData $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodPlayInfoModel::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodGetMediaListData::class);
         $this->Result = $var;
 
         return $this;

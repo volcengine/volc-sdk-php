@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodUploadAddress</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodUploadAddress</code>
  */
 class VodUploadAddress extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreInfo StoreInfos = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      */
     private $StoreInfos;
     /**
@@ -22,7 +22,7 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
      */
     private $UploadHosts;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodHeaderPair UploadHeader = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      */
     private $UploadHeader;
     /**
@@ -48,7 +48,7 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreInfo StoreInfos = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStoreInfos()
@@ -57,7 +57,7 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreInfo StoreInfos = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodStoreInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodHeaderPair UploadHeader = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUploadHeader()
@@ -101,7 +101,7 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodHeaderPair UploadHeader = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\VodHeaderPair[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Request.VodDeleteMediaRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodDeleteMediaRequest</code>
  */
 class VodDeleteMediaRequest extends \Google\Protobuf\Internal\Message
 {

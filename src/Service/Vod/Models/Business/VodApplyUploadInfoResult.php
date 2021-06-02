@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodApplyUploadInfoResult</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodApplyUploadInfoResult</code>
  */
 class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodApplyUploadInfoData Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      */
     protected $Data = null;
 
@@ -33,7 +33,7 @@ class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodApplyUploadInfoData Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodApplyUploadInfoData
      */
     public function getData()
@@ -42,7 +42,7 @@ class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodApplyUploadInfoData Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodApplyUploadInfoData $var
      * @return $this
      */

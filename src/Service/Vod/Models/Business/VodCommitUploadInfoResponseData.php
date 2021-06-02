@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodCommitUploadInfoResponseData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodCommitUploadInfoResponseData</code>
  */
 class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
 {
@@ -18,7 +18,7 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
      */
     protected $Vid = '';
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      */
     protected $SourceInfo = null;
     /**
@@ -75,7 +75,7 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo
      */
     public function getSourceInfo()
@@ -84,7 +84,7 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this
      */

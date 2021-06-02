@@ -254,6 +254,16 @@ class VodOption
                 ],
             ]
         ],
+        'GetMediaList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMediaList',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
         'GetHlsDecryptionKey' => [
             'url' => '/',
             'method' => 'get',

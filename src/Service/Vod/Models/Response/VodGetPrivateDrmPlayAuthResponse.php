@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetPrivateDrmPlayAuthResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetPrivateDrmPlayAuthResponse</code>
  */
 class VodGetPrivateDrmPlayAuthResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * 响应通用信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -46,7 +46,7 @@ class VodGetPrivateDrmPlayAuthResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应通用信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
      */
     public function getResponseMetadata()
@@ -57,7 +57,7 @@ class VodGetPrivateDrmPlayAuthResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应通用信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
      * @return $this
      */
@@ -72,7 +72,7 @@ class VodGetPrivateDrmPlayAuthResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodGetPrivateDrmPlayAuthResult
      */
     public function getResult()
@@ -83,7 +83,7 @@ class VodGetPrivateDrmPlayAuthResponse extends \Google\Protobuf\Internal\Message
     /**
      * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetPrivateDrmPlayAuthResult Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodGetPrivateDrmPlayAuthResult $var
      * @return $this
      */

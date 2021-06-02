@@ -9,32 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.OverrideParams</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.OverrideParams</code>
  */
 class OverrideParams extends \Google\Protobuf\Internal\Message
 {
     /**
      * 水印覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.LogoOverride Logo = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.LogoOverride Logo = 1;</code>
      */
     private $Logo;
     /**
      * 视频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
      */
     private $TranscodeVideo;
     /**
      * 音频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
      */
     private $TranscodeAudio;
     /**
      * 截图覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.SnapshotOverride Snapshot = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.SnapshotOverride Snapshot = 4;</code>
      */
     private $Snapshot;
 
@@ -62,7 +62,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 水印覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.LogoOverride Logo = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.LogoOverride Logo = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLogo()
@@ -73,7 +73,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 水印覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.LogoOverride Logo = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.LogoOverride Logo = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\LogoOverride[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 视频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranscodeVideo()
@@ -99,7 +99,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 视频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeVideoOverride TranscodeVideo = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\TranscodeVideoOverride[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -114,7 +114,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 音频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranscodeAudio()
@@ -125,7 +125,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 音频转码覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TranscodeAudioOverride TranscodeAudio = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\TranscodeAudioOverride[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 截图覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.SnapshotOverride Snapshot = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.SnapshotOverride Snapshot = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSnapshot()
@@ -151,7 +151,7 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     /**
      * 截图覆盖参数
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.SnapshotOverride Snapshot = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.SnapshotOverride Snapshot = 4;</code>
      * @param \Volc\Service\Vod\Models\Business\SnapshotOverride[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

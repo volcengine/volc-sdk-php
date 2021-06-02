@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Base.ResponseError</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Base.ResponseError</code>
  */
 class ResponseError extends \Google\Protobuf\Internal\Message
 {

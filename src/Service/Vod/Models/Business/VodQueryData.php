@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodQueryData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodQueryData</code>
  */
 class VodQueryData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryUploadResult Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      */
     protected $Data = null;
 
@@ -33,7 +33,7 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryUploadResult Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodQueryUploadResult
      */
     public function getData()
@@ -42,7 +42,7 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryUploadResult Data = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodQueryUploadResult $var
      * @return $this
      */

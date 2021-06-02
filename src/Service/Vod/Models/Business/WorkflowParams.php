@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.WorkflowParams</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.WorkflowParams</code>
  */
 class WorkflowParams extends \Google\Protobuf\Internal\Message
 {
     /**
      * 覆盖参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.OverrideParams OverrideParams = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.OverrideParams OverrideParams = 1;</code>
      */
     protected $OverrideParams = null;
     /**
@@ -46,7 +46,7 @@ class WorkflowParams extends \Google\Protobuf\Internal\Message
     /**
      * 覆盖参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.OverrideParams OverrideParams = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.OverrideParams OverrideParams = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\OverrideParams
      */
     public function getOverrideParams()
@@ -57,7 +57,7 @@ class WorkflowParams extends \Google\Protobuf\Internal\Message
     /**
      * 覆盖参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.OverrideParams OverrideParams = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.OverrideParams OverrideParams = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\OverrideParams $var
      * @return $this
      */
