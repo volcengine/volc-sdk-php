@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodQueryUploadTaskInfoResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodQueryUploadTaskInfoResponse</code>
  */
 class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      */
     protected $Result = null;
 
@@ -38,7 +38,7 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
      */
     public function getResponseMetadata()
@@ -47,7 +47,7 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
      * @return $this
      */
@@ -60,7 +60,7 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodQueryData
      */
     public function getResult()
@@ -69,7 +69,7 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodQueryData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodQueryData $var
      * @return $this
      */

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Base.ResponseMetadata</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Base.ResponseMetadata</code>
  */
 class ResponseMetadata extends \Google\Protobuf\Internal\Message
 {
@@ -46,7 +46,7 @@ class ResponseMetadata extends \Google\Protobuf\Internal\Message
     /**
      * 异常信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseError Error = 6;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseError Error = 6;</code>
      */
     protected $Error = null;
 
@@ -208,7 +208,7 @@ class ResponseMetadata extends \Google\Protobuf\Internal\Message
     /**
      * 异常信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseError Error = 6;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseError Error = 6;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseError
      */
     public function getError()
@@ -219,7 +219,7 @@ class ResponseMetadata extends \Google\Protobuf\Internal\Message
     /**
      * 异常信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseError Error = 6;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseError Error = 6;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseError $var
      * @return $this
      */

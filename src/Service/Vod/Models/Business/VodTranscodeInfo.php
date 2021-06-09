@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodTranscodeInfo</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodTranscodeInfo</code>
  */
 class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
 {
@@ -70,13 +70,13 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
      */
     protected $VideoStreamMeta = null;
     /**
      *音频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
      */
     protected $AudioStreamMeta = null;
     /**
@@ -360,7 +360,7 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
      * @return \Volc\Service\Vod\Models\Business\VodVideoStreamMeta
      */
     public function getVideoStreamMeta()
@@ -371,7 +371,7 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
      * @param \Volc\Service\Vod\Models\Business\VodVideoStreamMeta $var
      * @return $this
      */
@@ -386,7 +386,7 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *音频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
      * @return \Volc\Service\Vod\Models\Business\VodAudioStreamMeta
      */
     public function getAudioStreamMeta()
@@ -397,7 +397,7 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     /**
      *音频流信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
      * @param \Volc\Service\Vod\Models\Business\VodAudioStreamMeta $var
      * @return $this
      */

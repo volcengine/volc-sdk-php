@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Response.VodGetMediaInfosResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetMediaInfosResponse</code>
  */
 class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaInfosData Result = 2;</code>
      */
     protected $Result = null;
 
@@ -38,7 +38,7 @@ class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
      */
     public function getResponseMetadata()
@@ -47,7 +47,7 @@ class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
      * @return $this
      */
@@ -60,7 +60,7 @@ class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaInfosData Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodGetMediaInfosData
      */
     public function getResult()
@@ -69,7 +69,7 @@ class VodGetMediaInfosResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodGetMediaInfosData Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetMediaInfosData Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodGetMediaInfosData $var
      * @return $this
      */

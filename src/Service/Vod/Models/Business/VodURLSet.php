@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodURLSet</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodURLSet</code>
  */
 class VodURLSet extends \Google\Protobuf\Internal\Message
 {
@@ -42,7 +42,7 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
      */
     protected $AccountId = '';
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      */
     protected $SourceInfo = null;
 
@@ -222,7 +222,7 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo
      */
     public function getSourceInfo()
@@ -231,7 +231,7 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this
      */

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Request.VodUrlUploadRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodUrlUploadRequest</code>
  */
 class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
 {
@@ -22,7 +22,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传URL设置参数集合
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodUrlUploadURLSet URLSets = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      */
     private $URLSets;
 
@@ -72,7 +72,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传URL设置参数集合
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodUrlUploadURLSet URLSets = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getURLSets()
@@ -83,7 +83,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传URL设置参数集合
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodUrlUploadURLSet URLSets = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodUrlUploadURLSet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

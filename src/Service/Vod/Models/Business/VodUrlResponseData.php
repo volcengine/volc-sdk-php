@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodUrlResponseData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodUrlResponseData</code>
  */
 class VodUrlResponseData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.ValuePair Data = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      */
     private $Data;
 
@@ -33,7 +33,7 @@ class VodUrlResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.ValuePair Data = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getData()
@@ -42,7 +42,7 @@ class VodUrlResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.ValuePair Data = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\ValuePair[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

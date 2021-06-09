@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Request.VodStartWorkflowRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodStartWorkflowRequest</code>
  */
 class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
 {
@@ -28,7 +28,7 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     /**
      * 动态参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.WorkflowParams Input = 3;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.WorkflowParams Input = 3;</code>
      */
     protected $Input = null;
     /**
@@ -122,7 +122,7 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     /**
      * 动态参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.WorkflowParams Input = 3;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.WorkflowParams Input = 3;</code>
      * @return \Volc\Service\Vod\Models\Business\WorkflowParams
      */
     public function getInput()
@@ -133,7 +133,7 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     /**
      * 动态参数
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.WorkflowParams Input = 3;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.WorkflowParams Input = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\WorkflowParams $var
      * @return $this
      */

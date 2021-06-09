@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.TranscodeAudioOverride</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.TranscodeAudioOverride</code>
  */
 class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
 {
@@ -20,7 +20,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
      */
     private $TemplateId;
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.Clip Clip = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
      */
     protected $Clip = null;
 
@@ -67,7 +67,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.Clip Clip = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\Clip
      */
     public function getClip()
@@ -76,7 +76,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.Clip Clip = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\Clip $var
      * @return $this
      */

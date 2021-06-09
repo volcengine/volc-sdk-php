@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodGetMediaInfosData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodGetMediaInfosData</code>
  */
 class VodGetMediaInfosData extends \Google\Protobuf\Internal\Message
 {
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodMediaInfo MediaInfoList = 1;</code>
      */
     private $MediaInfoList;
     /**
@@ -46,7 +46,7 @@ class VodGetMediaInfosData extends \Google\Protobuf\Internal\Message
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodMediaInfo MediaInfoList = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMediaInfoList()
@@ -57,7 +57,7 @@ class VodGetMediaInfosData extends \Google\Protobuf\Internal\Message
     /**
      *视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodMediaInfo MediaInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodMediaInfo MediaInfoList = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodMediaInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

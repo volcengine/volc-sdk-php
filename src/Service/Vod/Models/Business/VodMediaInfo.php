@@ -9,26 +9,26 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodMediaInfo</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodMediaInfo</code>
  */
 class VodMediaInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      *视频基础信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodMediaBasicInfo BasicInfo = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodMediaBasicInfo BasicInfo = 1;</code>
      */
     protected $BasicInfo = null;
     /**
      *原视频信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      */
     protected $SourceInfo = null;
     /**
      *转码视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
      */
     private $TranscodeInfos;
 
@@ -54,7 +54,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频基础信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodMediaBasicInfo BasicInfo = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodMediaBasicInfo BasicInfo = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodMediaBasicInfo
      */
     public function getBasicInfo()
@@ -65,7 +65,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *视频基础信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodMediaBasicInfo BasicInfo = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodMediaBasicInfo BasicInfo = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodMediaBasicInfo $var
      * @return $this
      */
@@ -80,7 +80,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *原视频信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo
      */
     public function getSourceInfo()
@@ -91,7 +91,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *原视频信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodSourceInfo SourceInfo = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this
      */
@@ -106,7 +106,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *转码视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranscodeInfos()
@@ -117,7 +117,7 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
     /**
      *转码视频信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTranscodeInfo TranscodeInfos = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\VodTranscodeInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

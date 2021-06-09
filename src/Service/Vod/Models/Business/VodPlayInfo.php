@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodPlayInfo</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodPlayInfo</code>
  */
 class VodPlayInfo extends \Google\Protobuf\Internal\Message
 {

@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodGetPrivateDrmPlayAuthResult</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodGetPrivateDrmPlayAuthResult</code>
  */
 class VodGetPrivateDrmPlayAuthResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * 播放许可信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
      */
     private $PlayAuthInfoList;
 
@@ -38,7 +38,7 @@ class VodGetPrivateDrmPlayAuthResult extends \Google\Protobuf\Internal\Message
     /**
      * 播放许可信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPlayAuthInfoList()
@@ -49,7 +49,7 @@ class VodGetPrivateDrmPlayAuthResult extends \Google\Protobuf\Internal\Message
     /**
      * 播放许可信息列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPrivateDrmPlayAuthInfo PlayAuthInfoList = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodPrivateDrmPlayAuthInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

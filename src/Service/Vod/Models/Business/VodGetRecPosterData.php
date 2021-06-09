@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodGetRecPosterData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodGetRecPosterData</code>
  */
 class VodGetRecPosterData extends \Google\Protobuf\Internal\Message
 {
     /**
      *封面图信息
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
      */
     private $StoreUriGroups;
     /**
@@ -46,7 +46,7 @@ class VodGetRecPosterData extends \Google\Protobuf\Internal\Message
     /**
      *封面图信息
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStoreUriGroups()
@@ -57,7 +57,7 @@ class VodGetRecPosterData extends \Google\Protobuf\Internal\Message
     /**
      *封面图信息
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreUriGroup StoreUriGroups = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodStoreUriGroup[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

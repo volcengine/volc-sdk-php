@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodPlayInfoModel</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodPlayInfoModel</code>
  */
 class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * 数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModelVersion Version = 10;</code>
      */
     protected $Version = 0;
     /**
@@ -64,19 +64,19 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * dash播放信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     protected $AdaptiveInfo = null;
     /**
      * 播放列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPlayInfo PlayInfoList = 9;</code>
      */
     private $PlayInfoList;
     /**
      * 雪碧图列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodThumbInfo ThumbInfoList = 11;</code>
      */
     private $ThumbInfoList;
     /**
@@ -126,7 +126,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @return int
      */
     public function getVersion()
@@ -137,7 +137,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 数据版本
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodPlayInfoModelVersion Version = 10;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModelVersion Version = 10;</code>
      * @param int $var
      * @return $this
      */
@@ -334,7 +334,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * dash播放信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      * @return \Volc\Service\Vod\Models\Business\VodAdaptiveInfo
      */
     public function getAdaptiveInfo()
@@ -345,7 +345,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * dash播放信息
      *
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      * @param \Volc\Service\Vod\Models\Business\VodAdaptiveInfo $var
      * @return $this
      */
@@ -360,7 +360,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 播放列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPlayInfo PlayInfoList = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPlayInfoList()
@@ -371,7 +371,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 播放列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodPlayInfo PlayInfoList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPlayInfo PlayInfoList = 9;</code>
      * @param \Volc\Service\Vod\Models\Business\VodPlayInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -386,7 +386,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 雪碧图列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodThumbInfo ThumbInfoList = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getThumbInfoList()
@@ -397,7 +397,7 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     /**
      * 雪碧图列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Models.Vod.Business.VodThumbInfo ThumbInfoList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodThumbInfo ThumbInfoList = 11;</code>
      * @param \Volc\Service\Vod\Models\Business\VodThumbInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Models.Vod.Business.VodApplyUploadInfoData</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodApplyUploadInfoData</code>
  */
 class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodUploadAddress UploadAddress = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodUploadAddress UploadAddress = 1;</code>
      */
     protected $UploadAddress = null;
 
@@ -33,7 +33,7 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodUploadAddress UploadAddress = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodUploadAddress UploadAddress = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodUploadAddress
      */
     public function getUploadAddress()
@@ -42,7 +42,7 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Models.Vod.Business.VodUploadAddress UploadAddress = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodUploadAddress UploadAddress = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodUploadAddress $var
      * @return $this
      */
