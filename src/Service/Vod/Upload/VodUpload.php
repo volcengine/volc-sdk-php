@@ -117,13 +117,18 @@ class VodUpload extends Vod
         $handlerStack = HandlerStack::create(new CurlHandler());
         $handlerStack->push(Middleware::retry($this->retryDecider(), $this->retryDelay()));
 
+        $timeout = 30.0;
+        $fileSize = filesize($filePath);
+
+        if ($fileSize > LargeFileSize) {
+            $timeout = 600.0;
+        }
         $client = new Client([
             'base_uri' => "http://" . $uploadHost,
-            'timeout' => 30.0,
+            'timeout' => $timeout,
             'handler' => $handlerStack,
         ]);
 
-        $fileSize = filesize($filePath);
         if ($fileSize < MinChunkSize) {
             return $this->directUpload($oid, $auth, $filePath, $client);
         } elseif ($fileSize > LargeFileSize) {
