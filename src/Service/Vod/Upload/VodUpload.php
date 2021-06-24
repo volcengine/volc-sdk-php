@@ -17,6 +17,7 @@ use Throwable;
 use Volc\Service\Vod\Models\Business\VodStoreInfo;
 use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
+use Volc\Service\Vod\Models\Request\VodUploadMaterialRequest;
 use Volc\Service\Vod\Models\Request\VodUploadMediaRequest;
 use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
 use Volc\Service\Vod\Vod;
@@ -52,6 +53,28 @@ class VodUpload extends Vod
         }
     }
 
+    public function uploadMaterial(VodUploadMaterialRequest $vodUploadMaterialRequest): VodCommitUploadInfoResponse
+    {
+        $applyRequest = new VodApplyUploadInfoRequest();
+        $applyRequest->setSpaceName($vodUploadMaterialRequest->getSpaceName());
+        $applyRequest->setFileType($vodUploadMaterialRequest->getFileType());
+        $resp = $this->upload($applyRequest, $vodUploadMaterialRequest->getFilePath());
+        if ($resp[0] != 0) {
+            throw new Exception($resp[1]);
+        }
+        $request = new VodCommitUploadInfoRequest();
+        $request->setSpaceName($vodUploadMaterialRequest->getSpaceName());
+        $request->setSessionKey($resp[2]);
+        $request->setCallbackArgs($vodUploadMaterialRequest->getCallbackArgs());
+        $request->setFunctions($vodUploadMaterialRequest->getFunctions());
+        try {
+            return $this->commitUploadInfo($request);
+        } catch (Throwable $e) {
+            throw $e;
+        }
+    }
+
+
     public function upload(VodApplyUploadInfoRequest $applyRequest, string $filePath): array
     {
         if (!file_exists($filePath)) {
@@ -70,7 +93,7 @@ class VodUpload extends Vod
             $session = $uploadAddress->getSessionKey();
 
             $storeInfo = new VodStoreInfo();
-            $storeInfo ->mergeFrom(($uploadAddress->getStoreInfos())[0]);
+            $storeInfo->mergeFrom(($uploadAddress->getStoreInfos())[0]);
             $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
             if ($respCode != 0) {
                 return array(-1, "upload " . $filePath . " error", "", "");
@@ -94,13 +117,18 @@ class VodUpload extends Vod
         $handlerStack = HandlerStack::create(new CurlHandler());
         $handlerStack->push(Middleware::retry($this->retryDecider(), $this->retryDelay()));
 
+        $timeout = 30.0;
+        $fileSize = filesize($filePath);
+
+        if ($fileSize > LargeFileSize) {
+            $timeout = 600.0;
+        }
         $client = new Client([
             'base_uri' => "http://" . $uploadHost,
-            'timeout' => 30.0,
+            'timeout' => $timeout,
             'handler' => $handlerStack,
         ]);
 
-        $fileSize = filesize($filePath);
         if ($fileSize < MinChunkSize) {
             return $this->directUpload($oid, $auth, $filePath, $client);
         } elseif ($fileSize > LargeFileSize) {

@@ -8,4 +8,6 @@ class OptionInfo
     public $Tags;
     public $Description;
     public $Category;
+    public $RecordType;
+    public $Format;
 }
