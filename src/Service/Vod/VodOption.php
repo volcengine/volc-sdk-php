@@ -265,6 +265,7 @@ class VodOption
             ]
         ],
         'GetSubtitleInfoList' => [
+            'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
