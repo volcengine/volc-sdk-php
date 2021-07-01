@@ -1,6 +1,5 @@
 <?php
 
-
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
 use Volc\Service\Vod\Models\Response\VodGetMediaListResponse;
 use Volc\Service\Vod\Vod;
@@ -47,4 +46,3 @@ if ($response->getResponseMetadata()->getError() != null) {
 }
 
 echo $response->serializeToJsonString();
-

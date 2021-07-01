@@ -264,6 +264,36 @@ class VodOption
                 ],
             ]
         ],
+        'GetSubtitleInfoList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSubtitleInfoList',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateSubtitleStatus' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSubtitleStatus',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateSubtitleInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSubtitleInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
         'GetHlsDecryptionKey' => [
             'url' => '/',
             'method' => 'get',

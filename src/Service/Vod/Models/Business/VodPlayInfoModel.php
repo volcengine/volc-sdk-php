@@ -85,6 +85,12 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string BarrageMaskUrl = 12;</code>
      */
     protected $BarrageMaskUrl = '';
+    /**
+     * 字幕信息列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSubtitleInfo SubtitleInfoList = 13;</code>
+     */
+    private $SubtitleInfoList;
 
     /**
      * Constructor.
@@ -116,6 +122,8 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      *           雪碧图列表
      *     @type string $BarrageMaskUrl
      *           弹幕蒙版url
+     *     @type \Volc\Service\Vod\Models\Business\VodSubtitleInfo[]|\Google\Protobuf\Internal\RepeatedField $SubtitleInfoList
+     *           字幕信息列表
      * }
      */
     public function __construct($data = NULL) {
@@ -431,6 +439,32 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->BarrageMaskUrl = $var;
+
+        return $this;
+    }
+
+    /**
+     * 字幕信息列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSubtitleInfo SubtitleInfoList = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSubtitleInfoList()
+    {
+        return $this->SubtitleInfoList;
+    }
+
+    /**
+     * 字幕信息列表
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSubtitleInfo SubtitleInfoList = 13;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodSubtitleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSubtitleInfoList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodSubtitleInfo::class);
+        $this->SubtitleInfoList = $arr;
 
         return $this;
     }

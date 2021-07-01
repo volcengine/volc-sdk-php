@@ -36,6 +36,12 @@ use Volc\Service\Vod\Models\Request\VodDeleteTranscodesRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteTranscodesResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
 use Volc\Service\Vod\Models\Response\VodGetMediaListResponse;
+use Volc\Service\Vod\Models\Request\VodGetSubtitleInfoListRequest;
+use Volc\Service\Vod\Models\Response\VodGetSubtitleInfoListResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateSubtitleStatusRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateSubtitleStatusResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateSubtitleInfoRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateSubtitleInfoResponse;
 use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
 use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
 
@@ -85,6 +91,29 @@ class Vod extends V4Curl
         }
         $token = ["TokenVersion" => "V2"];
         $token["GetPlayInfoToken"] = parse_url($this->getRequestUrl("GetPlayInfo", ['query' => $query]))['query'];
+        return base64_encode(json_encode($token));
+    }
+
+    /**
+     * @throws Throwable
+     */
+    public function getSubtitleAuthToken(VodGetSubtitleInfoListRequest $req, int $expireSeconds): string
+    {
+        try {
+            if($req->getVid() == ""){
+                throw new Exception("传入的Vid为空");
+            }
+            $query = array("Vid"=>$req->getVid());
+            $query["Status"] = "Published";
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($expireSeconds > 0) {
+            $query["X-Expires"] = $expireSeconds;
+        }
+        $token["GetSubtitleAuthToken"] = parse_url($this->getRequestUrl("GetSubtitleInfoList", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
 	
@@ -564,6 +593,105 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetMediaListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetSubtitleInfoList.
+     *
+     * @param $req VodGetSubtitleInfoListRequest
+     * @return VodGetSubtitleInfoListResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getSubtitleInfoList (VodGetSubtitleInfoListRequest $req): VodGetSubtitleInfoListResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetSubtitleInfoList', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetSubtitleInfoListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateSubtitleStatus.
+     *
+     * @param $req VodUpdateSubtitleStatusRequest
+     * @return VodUpdateSubtitleStatusResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateSubtitleStatus (VodUpdateSubtitleStatusRequest $req): VodUpdateSubtitleStatusResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateSubtitleStatus', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateSubtitleStatusResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateSubtitleInfo.
+     *
+     * @param $req VodUpdateSubtitleInfoRequest
+     * @return VodUpdateSubtitleInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateSubtitleInfo (VodUpdateSubtitleInfoRequest $req): VodUpdateSubtitleInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateSubtitleInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateSubtitleInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
