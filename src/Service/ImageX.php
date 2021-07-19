@@ -244,7 +244,7 @@ class ImageX extends V4Curl
             return -1;
         }
         $content = file_get_contents($filePath);
-        $crc32 = dechex(crc32($content));
+        $crc32 = sprintf("%08x", crc32($content));
 
         $body = fopen($filePath, "r");
         $tosClient = new Client([
