@@ -1,5 +1,8 @@
 Change log
 
+2021-07-22 Bumped to version v1.0.16
+- Fixed cr32
+
 2021-07-15 Bumped to version v1.0.15
 - Upgraded signer method to latest
 
