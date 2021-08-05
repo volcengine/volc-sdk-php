@@ -10,15 +10,25 @@ class Sms extends V4Curl
 
     protected function getConfig(string $region = '')
     {
+
+        switch ($region){
+            case 'ap-singapore-1':
+                $host = 'https://sms.byteplusapi.com';
+                $region = 'ap-singapore-1';
+                break;
+            default:
+                $host = 'https://sms.volcengineapi.com';
+                $region = 'cn-north-1';
+        }
         return [
-            'host' => 'https://sms.volcengineapi.com',
+            'host' => $host,
             'config' => [
                 'timeout' => 10.0,
                 'headers' => [
                     'Accept' => 'application/json'
                 ],
                 'v4_credentials' => [
-                    'region' => 'cn-north-1',
+                    'region' => $region,
                     'service' => 'volcSMS',
                 ],
             ],
