@@ -207,6 +207,16 @@ class ImageX extends V4Curl
                 ],
             ]
         ],
+        'GetImageOCR' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageOCR',
+                    'Version'=> '2018-08-01',
+                ]
+            ]
+        ]
     ];
 
     public function applyUploadImage(array $query)
@@ -381,5 +391,18 @@ class ImageX extends V4Curl
     {
         $response = $this->request($action, $config);
         return (string)$response->getBody();
+    }
+
+    public function getImageOCR(array $params = [])
+    {
+        $params["Action"] = "GetImageOCR";
+        $params["Version"] = "2018-08-01";
+        $queryStr = http_build_query($params);
+        $response = $this->request('GetImageOCR', ['query' => $queryStr]);
+        $ocrResponse = json_decode((string) $response->getBody(), true);
+        if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("uploadImages: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $ocrResponse["Result"];
     }
 }
