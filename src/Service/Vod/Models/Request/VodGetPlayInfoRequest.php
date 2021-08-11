@@ -79,6 +79,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CdnType = 11;</code>
      */
     protected $CdnType = '';
+    /**
+     * 唯一性标识信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 12;</code>
+     */
+    protected $UnionInfo = '';
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           是否需要蒙版弹幕，默认否，1-是；0-否
      *     @type string $CdnType
      *           指定CDN类型
+     *     @type string $UnionInfo
+     *           唯一性标识信息
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CdnType = $var;
+
+        return $this;
+    }
+
+    /**
+     * 唯一性标识信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 12;</code>
+     * @return string
+     */
+    public function getUnionInfo()
+    {
+        return $this->UnionInfo;
+    }
+
+    /**
+     * 唯一性标识信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUnionInfo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UnionInfo = $var;
 
         return $this;
     }

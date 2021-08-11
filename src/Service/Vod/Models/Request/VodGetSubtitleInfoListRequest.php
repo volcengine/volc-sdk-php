@@ -68,7 +68,7 @@ class VodGetSubtitleInfoListRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Tag = '';
     /**
-     *file的偏移量
+     * file的偏移量
      *
      * Generated from protobuf field <code>string Offset = 10;</code>
      */
@@ -111,7 +111,7 @@ class VodGetSubtitleInfoListRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Tag
      *          标签
      *     @type string $Offset
-     *          file的偏移量
+     *           file的偏移量
      *     @type string $PageSize
      *          分页大小（结果一fileId分页）
      *     @type string $Ssl
@@ -358,7 +358,7 @@ class VodGetSubtitleInfoListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *file的偏移量
+     * file的偏移量
      *
      * Generated from protobuf field <code>string Offset = 10;</code>
      * @return string
@@ -369,7 +369,7 @@ class VodGetSubtitleInfoListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *file的偏移量
+     * file的偏移量
      *
      * Generated from protobuf field <code>string Offset = 10;</code>
      * @param string $var

@@ -141,6 +141,24 @@ class Vod extends V4Curl
         return $this->createHlsDrmAuthToken("HMAC-SHA1", $expireSeconds);
     }
 
+    /**
+     * @throws Throwable
+     */
+    public function getPrivateDrmPlayAuthToken(VodGetPrivateDrmPlayAuthRequest $req, int $expireSeconds): string
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($expireSeconds > 0) {
+            $query["X-Expires"] = $expireSeconds;
+        }
+        return parse_url($this->getRequestUrl("GetPrivateDrmPlayAuth", ['query' => $query]))['query'];
+    }
+
 	/**
      * GetPlayInfo.
      *

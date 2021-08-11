@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * drm类型
+     * drm类型（不区分大小写，支持web,app;默认web）
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      */
@@ -31,6 +31,12 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string PlayAuthIds = 3;</code>
      */
     protected $PlayAuthIds = '';
+    /**
+     * 加密唯一信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 4;</code>
+     */
+    protected $UnionInfo = '';
 
     /**
      * Constructor.
@@ -39,11 +45,13 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $DrmType
-     *           drm类型
+     *           drm类型（不区分大小写，支持web,app;默认web）
      *     @type string $Vid
      *           视频id
      *     @type string $PlayAuthIds
      *           播放许可id列表，以逗号分割
+     *     @type string $UnionInfo
+     *           加密唯一信息
      * }
      */
     public function __construct($data = NULL) {
@@ -52,7 +60,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * drm类型
+     * drm类型（不区分大小写，支持web,app;默认web）
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      * @return string
@@ -63,7 +71,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * drm类型
+     * drm类型（不区分大小写，支持web,app;默认web）
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      * @param string $var
@@ -125,6 +133,32 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->PlayAuthIds = $var;
+
+        return $this;
+    }
+
+    /**
+     * 加密唯一信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 4;</code>
+     * @return string
+     */
+    public function getUnionInfo()
+    {
+        return $this->UnionInfo;
+    }
+
+    /**
+     * 加密唯一信息
+     *
+     * Generated from protobuf field <code>string UnionInfo = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUnionInfo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UnionInfo = $var;
 
         return $this;
     }
