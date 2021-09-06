@@ -4,9 +4,9 @@ use Volc\Service\Sms;
 use Volc\Models\Vod\Request\VodApplyUploadInfoRequest;
 use Volc\Models\Vod\Response\VodApplyUploadInfoResponse;
 
-$client = Sms::getInstance();
- $client->setAccessKey("your ak");
- $client->setSecretKey("your sk");
+$client = Sms::getInstance('ap-singapore-1');
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 // template
 $template = [
