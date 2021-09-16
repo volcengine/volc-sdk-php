@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service\Cdn;
+namespace Volc\Service;
 
 use Volc\Base\V4Curl;
 

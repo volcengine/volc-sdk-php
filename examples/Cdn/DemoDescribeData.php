@@ -1,6 +1,6 @@
 <?php
 
-use Volc\Service\Cdn\Cdn;
+use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
 
