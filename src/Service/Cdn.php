@@ -107,6 +107,36 @@ class Cdn extends V4Curl
                     'Version' => '2021-03-01',
                 ],
             ]
+        ],
+        'StartCdnDomain' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'StartCdnDomain',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+        'StopCdnDomain' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'StopCdnDomain',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+        'DeleteCdnDomain' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteCdnDomain',
+                    'Version' => '2021-03-01',
+                ],
+            ]
         ]
     ];
 
@@ -193,6 +223,21 @@ class Cdn extends V4Curl
     {
         return $this->requestWithRetry("DescribeCdnAccessLog", $query);
     }
+
+    public function startCdnDomain(array $query = []): string
+    {
+        return $this->requestWithRetry("StartCdnDomain", $query);
+    }
+
+    public function stopCdnDomain(array $query = []): string
+    {
+        return $this->requestWithRetry("StopCdnDomain", $query);
+    }
+
+    public function deleteCdnDomain(array $query = []): string
+    {
+        return $this->requestWithRetry("DeleteCdnDomain", $query);
+    }
 }
 
-?>
+
