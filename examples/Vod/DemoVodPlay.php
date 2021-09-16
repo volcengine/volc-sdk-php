@@ -41,11 +41,3 @@ try {
 } catch (Exception | Throwable $e) {
     echo $e, "\n";
 }
-
-echo "\n获取HlsDrmAuthToken\n";
-try {
-    $response3 = $client->getSHA1HlsDrmAuthToken($expire);
-    echo $response3;
-} catch (Exception | Throwable $e) {
-    echo $e, "\n";
-}
