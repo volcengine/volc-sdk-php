@@ -1,5 +1,9 @@
 Change log
 
+2021-09-16 Bumped to version v1.0.18
+- Added sms v2 sdk
+- Added private drm for vod
+
 2021-08-05 Bumped to version v1.0.17
 - Added sms sdk
 - Added ocr sdk
