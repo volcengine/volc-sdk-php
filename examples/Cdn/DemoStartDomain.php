@@ -6,14 +6,14 @@ require('../../vendor/autoload.php');
 
 $client = Cdn::getInstance();
 
-$ak = 'your ak';
-$sk = 'your sk';
+$ak = 'ak';
+$sk = 'sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 $now = time();
 $body = [
-    'DomainName' => 'www.yourdomain.com'
+    'Domain' => 'sdk-online.cdn-test.bytedance.com'
 ];
 
 $response = $client->startCdnDomain(['json' => $body]);

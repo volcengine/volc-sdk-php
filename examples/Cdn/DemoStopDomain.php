@@ -13,7 +13,7 @@ $client->setSecretKey($sk);
 
 $now = time();
 $body = [
-    'DomainName' => 'www.yourdomain.com'
+    'Domain' => 'sdk-online.cdn-test.bytedance.com'
 ];
 
 $response = $client->stopCdnDomain(['json' => $body]);
