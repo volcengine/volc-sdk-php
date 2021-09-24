@@ -137,7 +137,27 @@ class Cdn extends V4Curl
                     'Version' => '2021-03-01',
                 ],
             ]
-        ]
+        ],
+        'ListCdnDomains' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnDomains',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+        'DescribeCdnUpperIp' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeCdnUpperIp',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
     ];
 
     public function __construct()
@@ -237,6 +257,16 @@ class Cdn extends V4Curl
     public function deleteCdnDomain(array $query = []): string
     {
         return $this->requestWithRetry("DeleteCdnDomain", $query);
+    }
+
+    public function listCdnDomains(array $query = []): string
+    {
+        return $this->requestWithRetry("ListCdnDomains", $query);
+    }
+
+    public function describeCdnUpperIp(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeCdnUpperIp", $query);
     }
 }
 
