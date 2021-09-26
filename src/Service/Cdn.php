@@ -263,11 +263,6 @@ class Cdn extends V4Curl
     {
         return $this->requestWithRetry("ListCdnDomains", $query);
     }
-
-    public function describeCdnUpperIp(array $query = []): string
-    {
-        return $this->requestWithRetry("DescribeCdnUpperIp", $query);
-    }
 }
 
 
