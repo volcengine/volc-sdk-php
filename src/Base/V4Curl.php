@@ -50,12 +50,16 @@ abstract class V4Curl extends Singleton
 
     public function setHost($host)
     {
-        if ($host != "") {
-            $this->client = new Client([
-                'handler' => $this->stack,
-                'base_uri' => $host,
-            ]);
+        if ($host == "") {
+            return;
         }
+        if (substr($host, 0, 8) != "https://" && substr($host, 0, 7) != "http://") {
+            $host = "https://" . $host;
+        }
+        $this->client = new Client([
+            'handler' => $this->stack,
+            'base_uri' => $host,
+        ]);
     }
 
     public function setSecretKey($sk)
