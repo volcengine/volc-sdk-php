@@ -1,6 +1,22 @@
 Change log
 
 2021-09-16 Bumped to version v1.0.18
+- SubmitRefreshTask
+- SubmitPreloadTask
+- DescribeContentTasks
+- DescribeContentQuota
+- DescribeCdnData
+- DescribeCdnOriginData
+- DescribeCdnRegionAndIsp
+- DescribeCdnDomainTopData
+- DescribeCdnAccountingData
+- DescribeCdnAccessLog
+- StartCdnDomain
+- StopCdnDomain
+- DeleteCdnDomain
+- ListCdnDomains
+
+2021-09-16 Bumped to version v1.0.18
 - Added sms v2 sdk
 - Added private drm for vod
 
