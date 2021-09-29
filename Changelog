@@ -1,6 +1,9 @@
 Change log
 
-2021-09-16 Bumped to version v1.0.18
+2021-09-29 Bumped to version v1.0.20
+- Minor refactor
+
+2021-09-28 Bumped to version v1.0.19
 - SubmitRefreshTask
 - SubmitPreloadTask
 - DescribeContentTasks
