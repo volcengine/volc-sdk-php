@@ -183,7 +183,11 @@ class VodUpload extends Vod
         $checkSum = [];
         for ($i = 0; $i < $lastNum; $i++) {
             $data = stream_get_contents($fp, MinChunkSize, $i * MinChunkSize);
-            $crc32 = $this->uploadPart($oid, $auth, $uploadID, $i, $data, $isLargeFile, $client);
+            $partNumber = $i;
+            if ($isLargeFile) {
+                $partNumber = $partNumber + 1;
+            }
+            $crc32 = $this->uploadPart($oid, $auth, $uploadID, $partNumber, $data, $isLargeFile, $client);
             if ($crc32 == "") {
                 return -1;
             }
@@ -191,6 +195,9 @@ class VodUpload extends Vod
         }
         $maxLength = $fileSize - $lastNum * MinChunkSize;
         $data = stream_get_contents($fp, $maxLength, $lastNum * MinChunkSize);
+        if ($isLargeFile) {
+            $lastNum = $lastNum + 1;
+        }
         $crc32 = $this->uploadPart($oid, $auth, $uploadID, $lastNum, $data, $isLargeFile, $client);
         if ($crc32 == "") {
             return -1;
@@ -234,7 +241,11 @@ class VodUpload extends Vod
         $uri = sprintf("%s?uploadID=%s", $oid, $uploadID);
         $m = [];
         for ($i = 0; $i < count($checkSum); $i++) {
-            $m[] = sprintf("%d:%s", $i, $checkSum[$i]);
+            $no = $i;
+            if ($isLargeFile) {
+                $no = $i + 1;
+            }
+            $m[] = sprintf("%d:%s", $no, $checkSum[$i]);
         }
         $body = implode(",", $m);
         $headers = ['Authorization' => $auth];
