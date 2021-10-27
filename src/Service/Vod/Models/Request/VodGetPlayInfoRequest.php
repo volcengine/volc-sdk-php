@@ -32,13 +32,13 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Codec = '';
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
+     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      */
     protected $Definition = '';
     /**
-     *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      */
@@ -85,6 +85,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string UnionInfo = 12;</code>
      */
     protected $UnionInfo = '';
+    /**
+     * HDR清晰度，默认不查询，支持：all,
+     *
+     * Generated from protobuf field <code>string HDRDefinition = 13;</code>
+     */
+    protected $HDRDefinition = '';
 
     /**
      * Constructor.
@@ -99,9 +105,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Codec
      *          编码类型，默认h264，可选值为h264,bytevc1等Codec
      *     @type string $Definition
-     *          视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
+     *          视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
      *     @type string $FileType
-     *          流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
+     *           2k, 4k
      *     @type string $LogoType
      *           水印贴片标签
      *     @type string $Base64
@@ -116,6 +122,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           指定CDN类型
      *     @type string $UnionInfo
      *           唯一性标识信息
+     *     @type string $HDRDefinition
+     *           HDR清晰度，默认不查询，支持：all,
      * }
      */
     public function __construct($data = NULL) {
@@ -202,7 +210,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
+     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @return string
@@ -213,7 +221,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
+     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @param string $var
@@ -228,7 +236,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @return string
@@ -239,7 +247,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @param string $var
@@ -431,6 +439,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->UnionInfo = $var;
+
+        return $this;
+    }
+
+    /**
+     * HDR清晰度，默认不查询，支持：all,
+     *
+     * Generated from protobuf field <code>string HDRDefinition = 13;</code>
+     * @return string
+     */
+    public function getHDRDefinition()
+    {
+        return $this->HDRDefinition;
+    }
+
+    /**
+     * HDR清晰度，默认不查询，支持：all,
+     *
+     * Generated from protobuf field <code>string HDRDefinition = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHDRDefinition($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HDRDefinition = $var;
 
         return $this;
     }
