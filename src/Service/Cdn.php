@@ -216,9 +216,9 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeContentTasks", $query);
     }
 
-    public function describeContentQuota(array $query = []): string
+    public function describeContentQuota(): string
     {
-        return $this->requestWithRetry("DescribeContentQuota", $query);
+        return $this->requestWithRetry("DescribeContentQuota", []);
     }
 
     public function describeCdnData(array $query = []): string
