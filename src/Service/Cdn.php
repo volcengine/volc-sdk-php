@@ -52,6 +52,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnData',
                     'Version' => '2021-03-01',
@@ -62,6 +63,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnOriginData',
                     'Version' => '2021-03-01',
@@ -72,6 +74,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnRegionAndIsp',
                     'Version' => '2021-03-01',
@@ -82,6 +85,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnDomainTopData',
                     'Version' => '2021-03-01',
@@ -92,6 +96,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnAccountingData',
                     'Version' => '2021-03-01',
@@ -102,6 +107,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnAccessLog',
                     'Version' => '2021-03-01',
@@ -152,6 +158,7 @@ class Cdn extends V4Curl
             'url' => '/',
             'method' => 'post',
             'config' => [
+                'timeout' => 60.0,
                 'query' => [
                     'Action' => 'DescribeCdnUpperIp',
                     'Version' => '2021-03-01',
@@ -171,7 +178,7 @@ class Cdn extends V4Curl
         return [
             'host' => "https://cdn.volcengineapi.com",
             'config' => [
-                'timeout' => 5.0,
+                'timeout' => 30.0,
                 'headers' => [
                     'Accept' => 'application/json'
                 ],
@@ -209,9 +216,9 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeContentTasks", $query);
     }
 
-    public function describeContentQuota(array $query = []): string
+    public function describeContentQuota(): string
     {
-        return $this->requestWithRetry("DescribeContentQuota", $query);
+        return $this->requestWithRetry("DescribeContentQuota", []);
     }
 
     public function describeCdnData(array $query = []): string
