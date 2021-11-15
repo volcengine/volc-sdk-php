@@ -11,5 +11,10 @@ $sk = 'your sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
-$response = $client->describeContentTasks();
+$response = $client->describeContentTasks(['json' => [
+    "PageNum" => 1,
+    'PageSize' => 10,
+    'TaskType' => 'refresh_file'
+]]);
+
 var_dump($response);
