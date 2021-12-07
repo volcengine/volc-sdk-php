@@ -242,9 +242,9 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeCdnOriginData", $query);
     }
 
-    public function describeCdnRegionAndIsp(): string
+    public function describeCdnRegionAndIsp(array $query = []): string
     {
-        return $this->requestWithRetry("DescribeCdnRegionAndIsp", []);
+        return $this->requestWithRetry("DescribeCdnRegionAndIsp", $query);
     }
 
     public function describeCdnDataDetail(array $query = []): string
