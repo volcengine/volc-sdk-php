@@ -290,7 +290,7 @@ class ImageX extends V4Curl
         }
         $applyParams["StoreKeys"] = array();
         $queryStr = http_build_query($applyParams);
-        if (is_array($params["StoreKeys"])) {
+        if (isset($params["StoreKeys"]) && is_array($params["StoreKeys"])) {
             foreach ($params["StoreKeys"] as $key => $value) {
                 $queryStr = $queryStr . "&StoreKeys=" . urlencode($value);
             }
