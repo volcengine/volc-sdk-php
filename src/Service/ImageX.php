@@ -290,8 +290,10 @@ class ImageX extends V4Curl
         }
         $applyParams["StoreKeys"] = array();
         $queryStr = http_build_query($applyParams);
-        foreach ($params["StoreKeys"] as $key => $value) {
-            $queryStr = $queryStr . "&StoreKeys=" . urlencode($value);
+        if (is_array($params["StoreKeys"])) {
+            foreach ($params["StoreKeys"] as $key => $value) {
+                $queryStr = $queryStr . "&StoreKeys=" . urlencode($value);
+            }
         }
 
         $response = $this->applyUploadImage(['query' => $queryStr]);
