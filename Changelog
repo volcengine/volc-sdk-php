@@ -1,5 +1,9 @@
 Change log
 
+2021-11-15 Bumped to version v1.0.22
+- Updated example and remove unused formal param
+- Increased default timeouts
+
 2021-10-27 Bumped to version v1.0.21
 - Fixed Vod large file
 - Fixed HDR support for vod api
