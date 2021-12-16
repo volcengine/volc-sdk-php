@@ -92,6 +92,17 @@ class Cdn extends V4Curl
                 ],
             ]
         ],
+        'DescribeCdnDataDetail' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'timeout' => 60.0,
+                'query' => [
+                    'Action' => 'DescribeCdnDataDetail',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
         'DescribeCdnAccountingData' => [
             'url' => '/',
             'method' => 'post',
@@ -190,7 +201,7 @@ class Cdn extends V4Curl
         ];
     }
 
-    protected function requestWithRetry(string $api, array $configs): string
+    public function requestWithRetry(string $api, array $configs): string
     {
         try {
             $response = $this->request($api, $configs);
@@ -231,9 +242,14 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeCdnOriginData", $query);
     }
 
-    public function describeCdnRegionAndIsp(): string
+    public function describeCdnRegionAndIsp(array $query = []): string
     {
-        return $this->requestWithRetry("DescribeCdnRegionAndIsp", []);
+        return $this->requestWithRetry("DescribeCdnRegionAndIsp", $query);
+    }
+
+    public function describeCdnDataDetail(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeCdnDataDetail", $query);
     }
 
     public function describeCdnDomainTopData(array $query = []): string
@@ -269,6 +285,11 @@ class Cdn extends V4Curl
     public function listCdnDomains(array $query = []): string
     {
         return $this->requestWithRetry("ListCdnDomains", $query);
+    }
+
+    public function describeCdnUpperIp(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeCdnUpperIp", $query);
     }
 }
 
