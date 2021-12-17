@@ -1,5 +1,11 @@
 Change log
 
+2021-12-16 Bumped to version v1.0.23
+- element verify
+- DescribeCdnUpperIp and describeCdnDataDetail apis
+- Fix foreach warning
+
+
 2021-11-15 Bumped to version v1.0.22
 - Updated example and remove unused formal param
 - Increased default timeouts
