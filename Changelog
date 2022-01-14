@@ -1,8 +1,10 @@
 Change log
 
+2022-01-14 Bumped to version v1.0.26
+- Downgrade PHP to 7.0
+
 2021-12-30 Bumped to version v1.0.25
 - Refactored signing method
-
 
 2021-12-28 Bumped to version v1.0.24
 - Added live php sdk
