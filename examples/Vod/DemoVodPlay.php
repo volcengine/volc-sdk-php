@@ -24,7 +24,9 @@ $req->setFileType('evideo');
 $response = new VodGetPlayInfoResponse();
 try {
     $response = $client->getPlayInfo($req);
-} catch (Exception | Throwable $e) {
+} catch (Exception $e) {
+    echo $e, "\n";
+} catch (Throwable $e) {
     echo $e, "\n";
 }
 if ($response->getResponseMetadata()->getError() != null) {
@@ -38,6 +40,8 @@ $req2->setVid($vid);
 try {
     $response2 = $client->getPlayAuthToken($req2, $expire);
     echo $response2;
-} catch (Exception | Throwable $e) {
+} catch (Exception $e) {
+    echo $e, "\n";
+} catch (Throwable $e) {
     echo $e, "\n";
 }
