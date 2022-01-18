@@ -20,5 +20,5 @@ $body = [
     'PageNum' => 1
 ];
 
-$response = $client->describeCdnAccessLog(['json' => $body]);
+$response = $client->describeCdnAccessLog($body);
 var_dump($response);

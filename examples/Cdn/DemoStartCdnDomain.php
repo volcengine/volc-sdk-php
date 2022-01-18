@@ -11,9 +11,10 @@ $sk = 'sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
+$now = time();
 $body = [
-    'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
+    'Domain' => 'sdk-online.cdn-test.bytedance.com'
 ];
 
-$response = $client->submitPreloadTask($body);
+$response = $client->startCdnDomain($body);
 var_dump($response);

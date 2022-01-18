@@ -17,8 +17,9 @@ $body = [
     'EndTime' => $now,
     'Metric' => 'pv',
     'Domain' => 'my.com',
-    'Item' => 'region'
+    'Interval' => '5min',
+    'Aggregate' => 'aggregate'
 ];
 
-$response = $client->describeCdnDomainTopData($body);
+$response = $client->describeOriginNrtDataSummary($body);
 var_dump($response);

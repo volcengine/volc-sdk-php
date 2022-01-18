@@ -13,8 +13,14 @@ $client->setSecretKey($sk);
 
 $now = time();
 $body = [
-    'Domain' => 'sdk-online.cdn-test.bytedance.com'
+    'StartTime' => $now - 86400,
+    'EndTime' => $now,
+    'Metric' => 'pv',
+    'Item' => 'isp',
+    'Domain' => 'my.com',
+    'Interval' => '5min',
+    'Area' => 'China',
 ];
 
-$response = $client->deleteCdnDomain(['json' => $body]);
+$response = $client->describeEdgeTopNrtData($body);
 var_dump($response);

@@ -12,8 +12,11 @@ $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 $body = [
-    'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
+    'Resources' => ['www.example1.com', 'www.example2.com'],
+    'ResourceTags' => [
+        ['Key' => 'userKey', 'Value' => 'userValue']
+    ]
 ];
 
-$response = $client->submitPreloadTask($body);
+$response = $client->addResourceTags($body);
 var_dump($response);

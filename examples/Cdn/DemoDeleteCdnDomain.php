@@ -13,12 +13,8 @@ $client->setSecretKey($sk);
 
 $now = time();
 $body = [
-    'StartTime' => $now - 86400,
-    'EndTime' => $now,
-    'Metric' => 'pv',
-    'Domain' => 'my.com',
-    'Item' => 'region'
+    'Domain' => 'sdk-online.cdn-test.example.com'
 ];
 
-$response = $client->describeCdnDomainTopData($body);
+$response = $client->deleteCdnDomain($body);
 var_dump($response);

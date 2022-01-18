@@ -24,5 +24,5 @@ $body = [
     'IpVersion' => 'ipv4'
 ];
 
-$response = $client->describeCdnData(['json' => $body]);
+$response = $client->describeCdnData($body);
 var_dump($response);
