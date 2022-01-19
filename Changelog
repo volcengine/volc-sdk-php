@@ -1,5 +1,9 @@
 Change log
 
+2022-01-19 Bumped to version v1.0.27
+- Fixed signing url method
+- Removed multi catch for 7.0
+
 2022-01-14 Bumped to version v1.0.26
 - Downgrade PHP to 7.0
 
