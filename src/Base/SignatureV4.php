@@ -5,7 +5,6 @@ namespace Volc\Base;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Query;
 use GuzzleHttp\Psr7\Utils;
-use GuzzleHttp\Psr7\BufferStream;
 use Psr\Http\Message\RequestInterface;
 use Volc\Base\Model\SignParam;
 use Volc\Base\Model\SignResult;
@@ -35,7 +34,7 @@ class SignatureV4
         $parsed['query']['X-SignedQueries'] = implode(';', $signedQueries);
 
         $cs = $this->createScope($sdt, $credentials['region'], $credentials['service']);
-        $payload = Utils::hash(new BufferStream(), 'sha256');
+        $payload = $this->getPayload($request);
         $context = $this->createContext($parsed, $payload);
         $toSign = $this->createStringToSign($ldt, $cs, $context['creq']);
         $signingKey = $this->getSigningKey(
