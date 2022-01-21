@@ -1,5 +1,8 @@
 Change log
 
+2022-01-21 Bumped to version v1.0.28
+- 点播火山引擎转码处理新增 EnableLowPriority 字段
+
 2022-01-19 Bumped to version v1.0.27
 - Fixed signing url method
 - Removed multi catch for 7.0
