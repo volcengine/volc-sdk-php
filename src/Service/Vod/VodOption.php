@@ -294,6 +294,46 @@ class VodOption
                 ],
             ]
         ],
+        'CreateVideoClassification' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateVideoClassification',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'UpdateVideoClassification' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateVideoClassification',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'DeleteVideoClassification' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteVideoClassification',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'ListVideoClassifications' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListVideoClassifications',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
         'GetHlsDecryptionKey' => [
             'url' => '/',
             'method' => 'get',
