@@ -71,6 +71,46 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'MobileSecondSale' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileSecondSale',
+                    'Version' => '2022-02-08',
+                ],
+            ]
+        ],
+        'MobileEmptyCheck' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileEmptyCheck',
+                    'Version' => '2022-02-08',
+                ],
+            ]
+        ],
+        'MobileOnlineStatus' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileOnlineStatus',
+                    'Version' => '2022-02-08',
+                ],
+            ]
+        ],
+        'MobileOnlineTime' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileOnlineTime',
+                    'Version' => '2022-02-08',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -135,5 +175,53 @@ class BusinessSecurity extends V4Curl
             "json" => $commitBody
         ];
         return $this->requestWithRetry("ElementVerify", $commitReq);
+    }
+
+    public function MobileSecondSale(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileSecondSale", $commitReq);
+    }
+
+    public function MobileEmptyCheck(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileEmptyCheck", $commitReq);
+    }
+
+    public function MobileOnlineStatus(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileOnlineStatus", $commitReq);
+    }
+
+    public function MobileOnlineTime(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileOnlineTime", $commitReq);
     }
 }
