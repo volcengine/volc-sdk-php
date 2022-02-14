@@ -11,7 +11,7 @@
     "php": ">=7.0",
     "guzzlehttp/guzzle": "~6.2",
     "ext-json": "*",
-    "google/protobuf": "v3.12.*",
+    "google/protobuf": "*",
     "google/gax": "*",
     "ext-openssl": "*"
   },
