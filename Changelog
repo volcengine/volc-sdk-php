@@ -1,8 +1,12 @@
 Change log
 
+2022-02-15 Bumped to version v1.0.30
+- Fixed sign only method 
+- Fixed guzzle version to *
+- Added mobile_status api
+
 2022-02-10 Bumped to version v1.0.29
 - 号码验证2期需求
-
 
 2022-01-21 Bumped to version v1.0.28
 - 点播火山引擎转码处理新增 EnableLowPriority 字段
