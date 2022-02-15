@@ -118,10 +118,10 @@ class SignatureV4
         $result->setXCredential($credential);
         $result->setXDate($ldt);
         $result->setXSignature($signature);
-        if ($parsed['query']['X-SignedHeaders'] != null) {
-            $result->setXSignedHeaders($parsed['query']['X-SignedHeaders']);
+        if (isset($context['headers']) and $context['headers'] != null) {
+            $result->setXSignedHeaders($context['headers']);
         }
-        if ($parsed['query']['X-SignedQueries'] != null) {
+        if (isset($parsed['query']['X-SignedQueries']) and $parsed['query']['X-SignedQueries'] != null) {
             $result->setXSignedQueries($parsed['query']['X-SignedQueries']);
         }
         $result->setAuthorization(
