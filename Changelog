@@ -1,5 +1,8 @@
 Change log
 
+2022-02-15 Bumped to version v1.0.31
+- Fixed protobuf dependency
+
 2022-02-15 Bumped to version v1.0.30
 - Fixed sign only method 
 - Fixed guzzle version to *
