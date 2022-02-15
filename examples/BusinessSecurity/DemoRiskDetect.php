@@ -14,14 +14,5 @@ echo $response;
 $response = $client->ElementVerify(5461, "idcard_two_element_verify", "{\"operate_time\":1609818934, \"idcard_no\": \"\", \"idcard_name\":\"\"}");
 echo $response;
 
-$response = $client->MobileSecondSale(5461, "mobile_status", "{\"operate_time\":1609818934, \"mobile\": \"\", \"since_date\":\"\"}");
-echo $response;
-
-$response = $client->MobileEmptyCheck(5461, "mobile_status", "{\"operate_time\":1609818934, \"mobile\": \"\"}");
-echo $response;
-
-$response = $client->MobileOnlineStatus(5461, "mobile_status", "{\"operate_time\":1609818934, \"mobile\": \"\"}");
-echo $response;
-
-$response = $client->MobileOnlineTime(5461, "mobile_status", "{\"operate_time\":1609818934, \"mobile\": \"\"}");
+$response = $client->MobileStatus(5461, "mobile_empty_status", "{\"operate_time\":1609818934, \"mobile\": \"\"}");
 echo $response;
