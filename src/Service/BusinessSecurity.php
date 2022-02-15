@@ -71,43 +71,13 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
-        'MobileSecondSale' => [
+        'MobileStatus' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'MobileSecondSale',
-                    'Version' => '2022-02-08',
-                ],
-            ]
-        ],
-        'MobileEmptyCheck' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'MobileEmptyCheck',
-                    'Version' => '2022-02-08',
-                ],
-            ]
-        ],
-        'MobileOnlineStatus' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'MobileOnlineStatus',
-                    'Version' => '2022-02-08',
-                ],
-            ]
-        ],
-        'MobileOnlineTime' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'MobileOnlineTime',
-                    'Version' => '2022-02-08',
+                    'Action' => 'MobileStatus',
+                    'Version' => '2020-12-25',
                 ],
             ]
         ],
@@ -177,7 +147,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("ElementVerify", $commitReq);
     }
 
-    public function MobileSecondSale(int $appId, string $service, string $parameters): string
+    public function MobileStatus(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -186,42 +156,6 @@ class BusinessSecurity extends V4Curl
         $commitReq = [
             "json" => $commitBody
         ];
-        return $this->requestWithRetry("MobileSecondSale", $commitReq);
-    }
-
-    public function MobileEmptyCheck(int $appId, string $service, string $parameters): string
-    {
-        $commitBody = array();
-        $commitBody["AppId"] = $appId;
-        $commitBody["Service"] = $service;
-        $commitBody["Parameters"] = $parameters;
-        $commitReq = [
-            "json" => $commitBody
-        ];
-        return $this->requestWithRetry("MobileEmptyCheck", $commitReq);
-    }
-
-    public function MobileOnlineStatus(int $appId, string $service, string $parameters): string
-    {
-        $commitBody = array();
-        $commitBody["AppId"] = $appId;
-        $commitBody["Service"] = $service;
-        $commitBody["Parameters"] = $parameters;
-        $commitReq = [
-            "json" => $commitBody
-        ];
-        return $this->requestWithRetry("MobileOnlineStatus", $commitReq);
-    }
-
-    public function MobileOnlineTime(int $appId, string $service, string $parameters): string
-    {
-        $commitBody = array();
-        $commitBody["AppId"] = $appId;
-        $commitBody["Service"] = $service;
-        $commitBody["Parameters"] = $parameters;
-        $commitReq = [
-            "json" => $commitBody
-        ];
-        return $this->requestWithRetry("MobileOnlineTime", $commitReq);
+        return $this->requestWithRetry("MobileStatus", $commitReq);
     }
 }
