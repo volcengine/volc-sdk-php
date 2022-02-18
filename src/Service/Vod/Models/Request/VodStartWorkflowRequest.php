@@ -43,6 +43,12 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CallbackArgs = 5;</code>
      */
     protected $CallbackArgs = '';
+    /**
+     * 是否使能闲时转码
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 6;</code>
+     */
+    protected $EnableLowPriority = false;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      *           任务优先级
      *     @type string $CallbackArgs
      *           回调参数
+     *     @type bool $EnableLowPriority
+     *           是否使能闲时转码
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CallbackArgs = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否使能闲时转码
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 6;</code>
+     * @return bool
+     */
+    public function getEnableLowPriority()
+    {
+        return $this->EnableLowPriority;
+    }
+
+    /**
+     * 是否使能闲时转码
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableLowPriority($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->EnableLowPriority = $var;
 
         return $this;
     }
