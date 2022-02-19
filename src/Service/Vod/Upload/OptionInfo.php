@@ -10,4 +10,5 @@ class OptionInfo
     public $Category;
     public $RecordType;
     public $Format;
+    public $ClassificationId;
 }
