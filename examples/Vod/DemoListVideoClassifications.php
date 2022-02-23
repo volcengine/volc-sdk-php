@@ -1,7 +1,7 @@
 <?php
 
-use Volc\Service\Vod\Models\Business\VodListVideoClassificationDatas;
-use Volc\Service\Vod\Models\Request\VodListVideoClassificationRequests;
+use Volc\Service\Vod\Models\Business\VodVideoClassificationsData;
+use Volc\Service\Vod\Models\Request\VodListVideoClassificationsRequest;
 use Volc\Service\Vod\Vod;
 
 require('../../vendor/autoload.php');
@@ -14,10 +14,10 @@ $client = Vod::getInstance();
 $space = "space";
 $classificationId = 1;
 
-$req = new VodListVideoClassificationRequests();
+$req = new VodListVideoClassificationsRequest();
 $req->setSpaceName($space);
 $req->setClassificationId($classificationId);
-$response = new VodListVideoClassificationDatas();
+$response = new VodVideoClassificationsData();
 try {
     $response = $client->listVideoClassifications($req);
 } catch (Throwable $e) {
