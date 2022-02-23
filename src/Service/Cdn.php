@@ -373,6 +373,7 @@ class Cdn extends V4Curl
         return [
             'host' => "https://cdn.volcengineapi.com",
             'config' => [
+                'timeout' => 60 * 5,
                 'headers' => [
                     'Accept' => 'application/json',
                     'Content-Type' => 'application/json'
