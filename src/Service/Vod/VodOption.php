@@ -2,143 +2,79 @@
 
 namespace Volc\Service\Vod;
 
-const ResourceSpaceFormat = "trn:vod:%s:*:space/%s";
-const ResourceVideoFormat = "trn:vod::*:video_id/%s";
-const ResourceStreamTypeFormat = "trn:vod:::stream_type/%s";
-const ResourceWatermarkFormat = "trn:vod::*:watermark/%s";
-const ActionGetPlayInfo = "vod:GetPlayInfo";
+
+use Exception;
+
 const ActionApplyUpload = "vod:ApplyUploadInfo";
 const ActionCommitUpload = "vod:CommitUploadInfo";
 const Statement = "Statement";
-const Star = "*";
 
 
 class VodOption
 {
-    public static $VOD_TPL_OBJ = 'tplv-vod-obj';
-    public static $VOD_TPL_NOOP = 'tplv-vod-noop';
-    public static $VOD_TPL_RESIZE = 'tplv-vod-rs';
-    public static $VOD_TPL_CENTER_CROP = 'tplv-vod-cc';
-    public static $VOD_TPL_SMART_CROP = 'tplv-vod-cs';
-    public static $VOD_TPL_SIG = 'tplv-bd-sig';
-
-    public static $FORMAT_JPEG = 'jpeg';
-    public static $FORMAT_PNG = 'png';
-    public static $FORMAT_WEBP = 'webp';
-    public static $FORMAT_AWEBP = 'awebp';
-    public static $FORMAT_GIF = 'gif';
-    public static $FORMAT_HEIC = 'heic';
-    public static $FORMAT_ORIGINAL = 'image';
-
-    public static $HTTP = 'http';
-    public static $HTTPS = 'https';
-
-    public $isHttps;
-    public $format;
-    public $sigKey;
-    public $tpl;
-    public $w;
-    public $h;
-    public $kv;
-
-    public function setHttps(bool $isHttps)
-    {
-        $this->isHttps = $isHttps;
-    }
-
-    public function getHttps()
-    {
-        return $this->isHttps;
-    }
-
-    public function setFormat(string $format)
-    {
-        $this->format = $format;
-    }
-
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    public function setSig(string $sig)
-    {
-        $this->sigKey = $sig;
-    }
-
-    public function getSig()
-    {
-        return $this->sigKey;
-    }
-
-    public function setKV(array $kv)
-    {
-        $this->kv = $kv;
-    }
-
-    public function getKV()
-    {
-        return $this->kv;
-    }
-
-    public function setVodTplObj()
-    {
-        $this->tpl = VodOption::$VOD_TPL_OBJ;
-    }
-
-    public function setVodNoop()
-    {
-        $this->tpl = VodOption::$VOD_TPL_NOOP;
-    }
-
-    public function setVodSig()
-    {
-        $this->tpl = VodOption::$VOD_TPL_SIG;
-    }
-
-    public function setVodTplCenterCrop(int $weight, int $height)
-    {
-        $this->tpl = VodOption::$VOD_TPL_CENTER_CROP;
-        $this->w = $weight;
-        $this->h = $height;
-    }
-
-    public function setVodTplSmartCrop(int $weight, int $height)
-    {
-        $this->tpl = VodOption::$VOD_TPL_SMART_CROP;
-        $this->w = $weight;
-        $this->h = $height;
-    }
-
-    public function setVodTplResize(int $weight, int $height)
-    {
-        $this->tpl = VodOption::$VOD_TPL_RESIZE;
-        $this->w = $weight;
-        $this->h = $height;
-    }
-
-    public function getTpl()
-    {
-        return $this->tpl;
-    }
-
-    public function getW()
-    {
-        return $this->w;
-    }
-
-    public function getH()
-    {
-        return $this->h;
-    }
-
     public static $apiList = [
+        // **********************************************************************
+        // 播放
+        // **********************************************************************
         'GetPlayInfo' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
                     'Action' => 'GetPlayInfo',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetPrivateDrmPlayAuth' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetPrivateDrmPlayAuth',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetHlsDecryptionKey' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetHlsDecryptionKey',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'GetPlayInfoWithLiveTimeShiftScene' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetPlayInfoWithLiveTimeShiftScene',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
+        // 上传
+        // **********************************************************************
+        'UploadMediaByUrl' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UploadMediaByUrl',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'QueryUploadTaskInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'QueryUploadTaskInfo',
                     'Version' => '2020-08-01',
                 ],
             ]
@@ -164,36 +100,9 @@ class VodOption
                 ],
             ]
         ],
-        'UploadMediaByUrl' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'UploadMediaByUrl',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
-        'QueryUploadTaskInfo' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'QueryUploadTaskInfo',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
-        'StartWorkflow' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'StartWorkflow',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
+        // **********************************************************************
+        // 媒资
+        // **********************************************************************
         'UpdateMediaInfo' => [
             'url' => '/',
             'method' => 'get',
@@ -294,6 +203,66 @@ class VodOption
                 ],
             ]
         ],
+        'GetAuditFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAuditFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetMLFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMLFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetBetterFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetBetterFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAudioInfoForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioInfoForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAutomaticSpeechRecognitionForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAutomaticSpeechRecognitionForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAudioEventDetectionForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioEventDetectionForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
         'CreateVideoClassification' => [
             'url' => '/',
             'method' => 'get',
@@ -334,28 +303,143 @@ class VodOption
                 ],
             ]
         ],
-        'GetHlsDecryptionKey' => [
+        // **********************************************************************
+        // 转码
+        // **********************************************************************
+        'StartWorkflow' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'GetHlsDecryptionKey',
+                    'Action' => 'StartWorkflow',
                     'Version' => '2020-08-01',
                 ],
             ]
         ],
-        'GetPrivateDrmPlayAuth' => [
+        // **********************************************************************
+        // 空间管理
+        // **********************************************************************
+        'CreateSpace' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'GetPrivateDrmPlayAuth',
-                    'Version' => '2020-08-01',
+                    'Action' => 'CreateSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'ListSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'GetSpaceDetail' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSpaceDetail',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'GetSpaceConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSpaceConfig',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'UpdateSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'UpdateSpaceUploadConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpaceUploadConfig',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
+        // 分发加速管理
+        // **********************************************************************
+        'ListDomain' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListDomain',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'CreateCdnRefreshTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnRefreshTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'CreateCdnPreloadTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnPreloadTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
+        // 回调管理
+        // **********************************************************************
+        'AddCallbackSubscription' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'AddCallbackSubscription',
+                    'Version' => '2021-12-01',
+                ],
+            ]
+        ],
+        'SetCallbackEvent' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'SetCallbackEvent',
+                    'Version' => '2021-12-01',
                 ],
             ]
         ],
     ];
 
+    /**
+     * @throws Exception
+     */
     public static function getConfig(string $region = '')
     {
         switch ($region) {
@@ -374,38 +458,8 @@ class VodOption
                     ],
                 ];
                 break;
-            case 'ap-singapore-1':
-                $config = [
-                    'host' => 'https://vod.ap-singapore-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'ap-singapore-1',
-                            'service' => 'vod',
-                        ],
-                    ],
-                ];
-                break;
-            case 'us-east-1':
-                $config = [
-                    'host' => 'https://vod.us-east-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'us-east-1',
-                            'service' => 'vod',
-                        ],
-                    ],
-                ];
-                break;
             default:
-                throw new \Exception("Cant find the region, please check it carefully");
+                throw new Exception("Cant find the region, please check it carefully");
         }
         return $config;
     }
