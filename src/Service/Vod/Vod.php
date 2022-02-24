@@ -44,6 +44,8 @@ use Volc\Service\Vod\Models\Request\VodUpdateSubtitleInfoRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSubtitleInfoResponse;
 use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
 use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
+use Volc\Service\Vod\Models\Request\VodCreateCDNPreloadTaskRequest;
+use Volc\Service\Vod\Models\Response\VodCreateCDNPreloadTaskResponse;
 
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
@@ -743,6 +745,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodStartWorkflowResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateCDNPreloadTask.
+     *
+     * @param $req VodCreateCDNPreloadTaskRequest
+     * @return VodCreateCDNPreloadTaskResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function CreateCDNPreloadTask (VodCreateCDNPreloadTaskRequest $req): VodCreateCDNPreloadTaskResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateCDNPreloadTask', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateCDNPreloadTaskResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
