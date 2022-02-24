@@ -9,9 +9,13 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateCdnPreloadTaskRequest</code>
+ * **********************************************************************
+ * 回调管理
+ * **********************************************************************
+ *
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodAddCallbackSubscriptionRequest</code>
  */
-class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
+class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * 空间名
@@ -20,11 +24,11 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      */
     protected $SpaceName = '';
     /**
-     * 预热Url
+     * 订阅URL
      *
-     * Generated from protobuf field <code>string Urls = 2;</code>
+     * Generated from protobuf field <code>string Url = 2;</code>
      */
-    protected $Urls = '';
+    protected $Url = '';
 
     /**
      * Constructor.
@@ -34,8 +38,8 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $SpaceName
      *           空间名
-     *     @type string $Urls
-     *           预热Url
+     *     @type string $Url
+     *           订阅URL
      * }
      */
     public function __construct($data = NULL) {
@@ -70,27 +74,27 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
+     * 订阅URL
      *
-     * Generated from protobuf field <code>string Urls = 2;</code>
+     * Generated from protobuf field <code>string Url = 2;</code>
      * @return string
      */
-    public function getUrls()
+    public function getUrl()
     {
-        return $this->Urls;
+        return $this->Url;
     }
 
     /**
-     * 预热Url
+     * 订阅URL
      *
-     * Generated from protobuf field <code>string Urls = 2;</code>
+     * Generated from protobuf field <code>string Url = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setUrls($var)
+    public function setUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->Urls = $var;
+        $this->Url = $var;
 
         return $this;
     }

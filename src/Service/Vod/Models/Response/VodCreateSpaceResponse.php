@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCreateCdnPreloadTaskResponse</code>
+ * **********************************************************************
+ * 空间管理
+ * **********************************************************************
+ *
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCreateSpaceResponse</code>
  */
-class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
+class VodCreateSpaceResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
-    /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
-     */
-    protected $Result = null;
 
     /**
      * Constructor.
@@ -29,7 +29,6 @@ class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +54,6 @@ class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Base\ResponseMetadata::class);
         $this->ResponseMetadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult
-     */
-    public function getResult()
-    {
-        return $this->Result;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult $var
-     * @return $this
-     */
-    public function setResult($var)
-    {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult::class);
-        $this->Result = $var;
 
         return $this;
     }

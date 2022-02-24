@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCreateCdnPreloadTaskResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCreateCdnRefreshTaskResponse</code>
  */
-class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
+class VodCreateCdnRefreshTaskResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>

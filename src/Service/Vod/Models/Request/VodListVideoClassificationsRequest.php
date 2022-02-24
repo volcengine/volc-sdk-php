@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateCdnPreloadTaskRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodListVideoClassificationsRequest</code>
  */
-class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
+class VodListVideoClassificationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
-     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 预热Url
-     *
-     * Generated from protobuf field <code>string Urls = 2;</code>
+     * Generated from protobuf field <code>int64 ClassificationId = 2;</code>
      */
-    protected $Urls = '';
+    protected $ClassificationId = 0;
 
     /**
      * Constructor.
@@ -33,9 +29,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
-     *     @type string $Urls
-     *           预热Url
+     *     @type int|string $ClassificationId
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +38,6 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
-     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
      */
@@ -55,8 +47,6 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
-     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
      * @return $this
@@ -70,27 +60,23 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
-     *
-     * Generated from protobuf field <code>string Urls = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 ClassificationId = 2;</code>
+     * @return int|string
      */
-    public function getUrls()
+    public function getClassificationId()
     {
-        return $this->Urls;
+        return $this->ClassificationId;
     }
 
     /**
-     * 预热Url
-     *
-     * Generated from protobuf field <code>string Urls = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 ClassificationId = 2;</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setUrls($var)
+    public function setClassificationId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->Urls = $var;
+        GPBUtil::checkInt64($var);
+        $this->ClassificationId = $var;
 
         return $this;
     }

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateCdnPreloadTaskRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateCdnRefreshTaskRequest</code>
  */
-class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
+class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * 空间名
@@ -20,11 +20,17 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      */
     protected $SpaceName = '';
     /**
-     * 预热Url
+     * 刷新Url或目录
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      */
     protected $Urls = '';
+    /**
+     * 刷新任务类型
+     *
+     * Generated from protobuf field <code>string Type = 3;</code>
+     */
+    protected $Type = '';
 
     /**
      * Constructor.
@@ -35,7 +41,9 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *           空间名
      *     @type string $Urls
-     *           预热Url
+     *           刷新Url或目录
+     *     @type string $Type
+     *           刷新任务类型
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +78,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
+     * 刷新Url或目录
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @return string
@@ -81,7 +89,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
+     * 刷新Url或目录
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @param string $var
@@ -91,6 +99,32 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Urls = $var;
+
+        return $this;
+    }
+
+    /**
+     * 刷新任务类型
+     *
+     * Generated from protobuf field <code>string Type = 3;</code>
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * 刷新任务类型
+     *
+     * Generated from protobuf field <code>string Type = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Type = $var;
 
         return $this;
     }

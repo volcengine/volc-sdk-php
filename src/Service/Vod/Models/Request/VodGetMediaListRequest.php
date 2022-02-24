@@ -67,6 +67,12 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string PageSize = 9;</code>
      */
     protected $PageSize = '';
+    /**
+     *分类id列表
+     *
+     * Generated from protobuf field <code>string ClassificationIds = 10;</code>
+     */
+    protected $ClassificationIds = '';
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      *          数据偏移量
      *     @type string $PageSize
      *          分页大小
+     *     @type string $ClassificationIds
+     *          分类id列表
      * }
      */
     public function __construct($data = NULL) {
@@ -329,6 +337,32 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->PageSize = $var;
+
+        return $this;
+    }
+
+    /**
+     *分类id列表
+     *
+     * Generated from protobuf field <code>string ClassificationIds = 10;</code>
+     * @return string
+     */
+    public function getClassificationIds()
+    {
+        return $this->ClassificationIds;
+    }
+
+    /**
+     *分类id列表
+     *
+     * Generated from protobuf field <code>string ClassificationIds = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClassificationIds($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClassificationIds = $var;
 
         return $this;
     }

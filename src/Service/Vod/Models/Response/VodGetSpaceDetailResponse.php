@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCreateCdnPreloadTaskResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetSpaceDetailResponse</code>
  */
-class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
+class VodGetSpaceDetailResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSpaceInfo Result = 2;</code>
      */
     protected $Result = null;
 
@@ -29,7 +29,7 @@ class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodSpaceInfo $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSpaceInfo Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodSpaceInfo
      */
     public function getResult()
     {
@@ -69,13 +69,13 @@ class VodCreateCdnPreloadTaskResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateCdnTaskResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSpaceInfo Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodSpaceInfo $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCreateCdnTaskResult::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodSpaceInfo::class);
         $this->Result = $var;
 
         return $this;

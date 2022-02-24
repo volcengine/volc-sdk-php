@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodCreateCDNTaskInfo</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Business.VodCreateCdnTaskResult</code>
  */
-class VodCreateCDNTaskInfo extends \Google\Protobuf\Internal\Message
+class VodCreateCdnTaskResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 任务id
+     * 任务ID
      *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      */
@@ -27,7 +27,7 @@ class VodCreateCDNTaskInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $TaskId
-     *           任务id
+     *           任务ID
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class VodCreateCDNTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 任务id
+     * 任务ID
      *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class VodCreateCDNTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 任务id
+     * 任务ID
      *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      * @param string $var
