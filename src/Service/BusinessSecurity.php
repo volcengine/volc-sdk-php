@@ -61,6 +61,26 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'ElementVerify' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ElementVerify',
+                    'Version' => '2021-11-23',
+                ],
+            ]
+        ],
+        'MobileStatus' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileStatus',
+                    'Version' => '2020-12-25',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -113,5 +133,29 @@ class BusinessSecurity extends V4Curl
             "query" => $commitBody
         ];
         return $this->requestWithRetry("RiskResult", $commitReq);
+    }
+
+    public function ElementVerify(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("ElementVerify", $commitReq);
+    }
+
+    public function MobileStatus(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileStatus", $commitReq);
     }
 }

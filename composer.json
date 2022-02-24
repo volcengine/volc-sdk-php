@@ -8,10 +8,10 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "guzzlehttp/guzzle": "~6.2",
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "*",
     "ext-json": "*",
-    "google/protobuf": "v3.12.*",
+    "google/protobuf": "*",
     "google/gax": "*",
     "ext-openssl": "*"
   },

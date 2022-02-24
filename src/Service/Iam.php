@@ -9,7 +9,7 @@ class Iam extends V4Curl
     protected function getConfig(string $region = '')
     {
         return [
-            'host' => 'https://iam.bytedanceapi.com',
+            'host' => 'https://open.volcengineapi.com',
             'config' => [
                 'timeout' => 5.0,
                 'headers' => [

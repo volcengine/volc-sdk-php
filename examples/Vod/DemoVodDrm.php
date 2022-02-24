@@ -32,7 +32,9 @@ try {
 
     $response2 = $client->getPrivateDrmPlayAuthToken($req, $expire);
     echo $response2;
-} catch (Exception | Throwable $e) {
+} catch (Exception $e) {
+    echo $e, "\n";
+} catch (Throwable $e) {
     echo $e, "\n";
 }
 
@@ -40,7 +42,9 @@ echo "\n获取PrivateDrmAuth\n";
 try {
     $response3 = $client->getPrivateDrmPlayAuth($req);
     echo $response3->serializeToJsonString();
-} catch (Exception | Throwable $e) {
+} catch (Exception $e) {
+    echo $e, "\n";
+} catch (Throwable $e) {
     echo $e, "\n";
 }
 

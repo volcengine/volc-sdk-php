@@ -11,6 +11,5 @@ $sk = 'your sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
-$body = ['Domain' => 'example.com'];
-$response = $client->describeCdnRegionAndIsp(['json' => $body]);
+$response = $client->describeCdnUpperIp(['json' => ['Domain' => 'example.com']]);
 var_dump($response);

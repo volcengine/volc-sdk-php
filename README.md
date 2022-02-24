@@ -1,52 +1,49 @@
-## 使用方式
+<h1 align="center"><img src="https://iam.volccdn.com/obj/volcengine-public/pic/volcengine-icon.png"></h1>
+<h1 align="center">火山引擎SDK for PHP</h1> 
+欢迎使用火山引擎SDK for PHP，本文档为您介绍如何获取及调用SDK。
 
-### composer引用
-
+## 前置准备
+### 服务开通
+请确保您已开通了您需要访问的服务。您可前往[火山引擎控制台](https://console.volcengine.com/ )，在左侧菜单中选择或在顶部搜索栏中搜索您需要使用的服务，进入服务控制台内完成开通流程。
+### 获取安全凭证
+Access Key（访问密钥）是访问火山引擎服务的安全凭证，包含Access Key ID（简称为AK）和Secret Access Key（简称为SK）两部分。您可登录[火山引擎控制台](https://console.volcengine.com/ )，前往“[访问控制](https://console.volcengine.com/iam )”的“[访问密钥](https://console.volcengine.com/iam/keymanage/ )”中创建及管理您的Access Key。更多信息可参考[访问密钥帮助文档](https://www.volcengine.com/docs/6291/65568 )。
+###环境检查
+PHP版本需要不低于7.1。
+## 获取与安装
+推荐使用composer安装火山引擎SDK for PHP：
 ```shell
 $ composer require volcengine/volc-sdk-php
 ```
+## 相关配置
+### 安全凭证配置
+火山引擎SDK for PHP支持以下几种方式进行凭证管理：
 
-### 地域Region设置
+*注意：代码中Your AK及Your SK需要分别替换为您的AK及SK。*
 
-- 目前已开放三个地域设置，分别为
-
-    * cn-north-1 (默认)
-    * ap-singapore-1
-    * us-east-1
-
-- 默认为cn-north-1，如果需要调用其它地域服务，请在初始化函数getInstance中传入指定地域region，例如：
-  ```php
-  $client = Iam::getInstance('us-east-1');
-  ```
-- 注意：IAM模块目前只开放cn-north-1区域
-
-### AK/SK设置
-
-以下方式优先级依次降低，建议在代码里显示设置，以便排查问题
-
-**代码设置(推荐)**
-
-调用VodService的方法setAccessKey/setSecretKey
-
+**方式一**：在Client中显式指定AK/SK **（推荐）**
 ```php
-$client = Cdn::getInstance('cn-north-1');
-$ak = 'your ak';
-$sk = 'your sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$client = Iam::getInstance();
+$client->setAccessKey(Your AK);
+$client->setSecretKey(Your SK);
 ```
 
-**设置环境变量**
+**方式二**：从环境变量加载AK/SK
+  ```bash
+  VOLC_ACCESSKEY="Your AK"  
+  VOLC_SECRETKEY="Your SK"
+  ```
+**方式三**：从HOME文件加载AK/SK
 
-在当前环境变量中分别设置 VOLC_ACCESSKEY="your ak"  VOLC_SECRETKEY = "your sk"
+在本地的~/.volc/config中添加如下内容：
+  ```json
+    {
+      "ak": "Your AK",
+      "sk": "Your SK"
+    }
+  ```
 
-**配置文件**
-
-添加json格式的配置文件放在～/.volc/config中，格式为：{"ak":"your ak","sk":"your sk"}
-
-## 更多示例
-
-[examples](./examples)
+##其它资源
+示例参见[examples](./examples)
 
 
 

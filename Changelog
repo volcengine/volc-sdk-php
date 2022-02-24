@@ -1,5 +1,42 @@
 Change log
 
+2022-02-15 Bumped to version v1.0.31
+- Fixed protobuf dependency
+
+2022-02-15 Bumped to version v1.0.30
+- Fixed sign only method 
+- Fixed guzzle version to *
+- Added mobile_status api
+
+2022-02-10 Bumped to version v1.0.29
+- 号码验证2期需求
+
+2022-01-21 Bumped to version v1.0.28
+- 点播火山引擎转码处理新增 EnableLowPriority 字段
+
+2022-01-19 Bumped to version v1.0.27
+- Fixed signing url method
+- Removed multi catch for 7.0
+
+2022-01-14 Bumped to version v1.0.26
+- Downgrade PHP to 7.0
+
+2021-12-30 Bumped to version v1.0.25
+- Refactored signing method
+
+2021-12-28 Bumped to version v1.0.24
+- Added live php sdk
+
+2021-12-16 Bumped to version v1.0.23
+- element verify
+- DescribeCdnUpperIp and describeCdnDataDetail apis
+- Fix foreach warning
+
+
+2021-11-15 Bumped to version v1.0.22
+- Updated example and remove unused formal param
+- Increased default timeouts
+
 2021-10-27 Bumped to version v1.0.21
 - Fixed Vod large file
 - Fixed HDR support for vod api
