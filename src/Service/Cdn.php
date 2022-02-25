@@ -184,13 +184,13 @@ class Cdn extends V4Curl
                 ],
             ]
         ],
-#获取计费指标的细分数据: https://www.volcengine.com/docs/6454/96167
-        'DescribeAccountingData' => [
+#（Deprecated）查询域名排行数据: https://www.volcengine.com/docs/6454/70447?type=preview
+        'DescribeCdnDomainTopData' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'DescribeAccountingData',
+                    'Action' => 'DescribeCdnDomainTopData',
                     'Version' => '2021-03-01',
                 ],
             ]
@@ -202,6 +202,17 @@ class Cdn extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeCdnService',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+#获取计费指标的细分数据: https://www.volcengine.com/docs/6454/96167
+        'DescribeAccountingData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeAccountingData',
                     'Version' => '2021-03-01',
                 ],
             ]
@@ -338,17 +349,6 @@ class Cdn extends V4Curl
                 ],
             ]
         ],
-#删除资源标签: https://www.volcengine.com/docs/6454/80316
-        'DeleteResourceTags' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DeleteResourceTags',
-                    'Version' => '2021-03-01',
-                ],
-            ]
-        ],
 #查询标签清单: https://www.volcengine.com/docs/6454/80315
         'ListResourceTags' => [
             'url' => '/',
@@ -356,6 +356,17 @@ class Cdn extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListResourceTags',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+#删除资源标签: https://www.volcengine.com/docs/6454/80316
+        'DeleteResourceTags' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteResourceTags',
                     'Version' => '2021-03-01',
                 ],
             ]
@@ -523,6 +534,14 @@ class Cdn extends V4Curl
             $data = new \ArrayObject();
         }
         return $this->requestWithRetry("DescribeCdnRegionAndIsp", ['json' => $data]);
+    }
+
+    public function describeCdnDomainTopData(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeCdnDomainTopData", ['json' => $data]);
     }
 
     public function describeCdnService(array $data = []): string
