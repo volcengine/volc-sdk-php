@@ -91,6 +91,18 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string HDRDefinition = 13;</code>
      */
     protected $HDRDefinition = '';
+    /**
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     *
+     * Generated from protobuf field <code>string PlayScene = 14;</code>
+     */
+    protected $PlayScene = '';
+    /**
+     * DRM过期时间戳
+     *
+     * Generated from protobuf field <code>string DrmExpireTimestamp = 15;</code>
+     */
+    protected $DrmExpireTimestamp = '';
 
     /**
      * Constructor.
@@ -124,6 +136,10 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           唯一性标识信息
      *     @type string $HDRDefinition
      *           HDR清晰度，默认不查询，支持：all,
+     *     @type string $PlayScene
+     *           240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     *     @type string $DrmExpireTimestamp
+     *           DRM过期时间戳
      * }
      */
     public function __construct($data = NULL) {
@@ -465,6 +481,58 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->HDRDefinition = $var;
+
+        return $this;
+    }
+
+    /**
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     *
+     * Generated from protobuf field <code>string PlayScene = 14;</code>
+     * @return string
+     */
+    public function getPlayScene()
+    {
+        return $this->PlayScene;
+    }
+
+    /**
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     *
+     * Generated from protobuf field <code>string PlayScene = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlayScene($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->PlayScene = $var;
+
+        return $this;
+    }
+
+    /**
+     * DRM过期时间戳
+     *
+     * Generated from protobuf field <code>string DrmExpireTimestamp = 15;</code>
+     * @return string
+     */
+    public function getDrmExpireTimestamp()
+    {
+        return $this->DrmExpireTimestamp;
+    }
+
+    /**
+     * DRM过期时间戳
+     *
+     * Generated from protobuf field <code>string DrmExpireTimestamp = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDrmExpireTimestamp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DrmExpireTimestamp = $var;
 
         return $this;
     }
