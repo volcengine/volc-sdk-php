@@ -1227,39 +1227,6 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * GetSpaceDetail.
-     *
-     * @param $req VodGetSpaceDetailRequest
-     * @return VodGetSpaceDetailResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function getSpaceDetail (VodGetSpaceDetailRequest $req): VodGetSpaceDetailResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetSpaceDetail', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetSpaceDetailResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
      * GetSpaceConfig.
      *
      * @param $req VodGetSpaceConfigRequest
