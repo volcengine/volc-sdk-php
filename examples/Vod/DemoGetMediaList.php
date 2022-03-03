@@ -20,6 +20,7 @@ $startTime = "1999-01-01T00:00:00Z";
 $endTime = "2021-04-01T00:00:00Z";
 $offset = "0";
 $pageSize = "10";
+$classificationId = 0;
 
 echo "\n获取视频列表\n";
 
@@ -33,6 +34,7 @@ $req->setStartTime($startTime);
 $req->setEndTime($endTime);
 $req->setOffset($offset);
 $req->setPageSize($pageSize);
+$req->setClassificationIds($classificationId);
 
 $response = new VodGetMediaListResponse();
 try {

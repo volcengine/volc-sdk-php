@@ -14,6 +14,8 @@ use Volc\Service\Vod\Models\Request\VodGetPrivateDrmPlayAuthRequest;
 use Volc\Service\Vod\Models\Response\VodGetPrivateDrmPlayAuthResponse;
 use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
 use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
+use Volc\Service\Vod\Models\Request\VodGetPlayInfoWithLiveTimeShiftSceneRequest;
+use Volc\Service\Vod\Models\Response\VodGetPlayInfoWithLiveTimeShiftSceneResponse;
 use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
 use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
 use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
@@ -42,8 +44,50 @@ use Volc\Service\Vod\Models\Request\VodUpdateSubtitleStatusRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSubtitleStatusResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSubtitleInfoRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSubtitleInfoResponse;
+use Volc\Service\Vod\Models\Request\VodGetAuditFramesForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetAuditFramesForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodGetMLFramesForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetMLFramesForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodGetBetterFramesForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetBetterFramesForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodGetAudioInfoForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetAudioInfoForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodGetAutomaticSpeechRecognitionForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetAutomaticSpeechRecognitionForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodGetAudioEventDetectionForAuditRequest;
+use Volc\Service\Vod\Models\Response\VodGetAudioEventDetectionForAuditResponse;
+use Volc\Service\Vod\Models\Request\VodCreateVideoClassificationRequest;
+use Volc\Service\Vod\Models\Response\VodCreateVideoClassificationResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateVideoClassificationRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateVideoClassificationResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteVideoClassificationRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteVideoClassificationResponse;
+use Volc\Service\Vod\Models\Request\VodListVideoClassificationsRequest;
+use Volc\Service\Vod\Models\Response\VodListVideoClassificationsResponse;
 use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
 use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
+use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
+use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;
+use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
+use Volc\Service\Vod\Models\Response\VodListSpaceResponse;
+use Volc\Service\Vod\Models\Request\VodGetSpaceDetailRequest;
+use Volc\Service\Vod\Models\Response\VodGetSpaceDetailResponse;
+use Volc\Service\Vod\Models\Request\VodGetSpaceConfigRequest;
+use Volc\Service\Vod\Models\Response\VodGetSpaceConfigResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateSpaceRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateSpaceResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
+use Volc\Service\Vod\Models\Request\VodListDomainRequest;
+use Volc\Service\Vod\Models\Response\VodListDomainResponse;
+use Volc\Service\Vod\Models\Request\VodCreateCdnRefreshTaskRequest;
+use Volc\Service\Vod\Models\Response\VodCreateCdnRefreshTaskResponse;
+use Volc\Service\Vod\Models\Request\VodCreateCdnPreloadTaskRequest;
+use Volc\Service\Vod\Models\Response\VodCreateCdnPreloadTaskResponse;
+use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
+use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
+use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
+use Volc\Service\Vod\Models\Response\VodSetCallbackEventResponse;
 
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
@@ -719,6 +763,138 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
+
+	/**
+     * CreateVideoClassification.
+     *
+     * @param $req VodCreateVideoClassificationRequest
+     * @return VodCreateVideoClassificationResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function createVideoClassification (VodCreateVideoClassificationRequest $req): VodCreateVideoClassificationResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateVideoClassification', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateVideoClassificationResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateVideoClassification.
+     *
+     * @param $req VodUpdateVideoClassificationRequest
+     * @return VodUpdateVideoClassificationResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateVideoClassification (VodUpdateVideoClassificationRequest $req): VodUpdateVideoClassificationResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateVideoClassification', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateVideoClassificationResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteVideoClassification.
+     *
+     * @param $req VodDeleteVideoClassificationRequest
+     * @return VodDeleteVideoClassificationResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteVideoClassification (VodDeleteVideoClassificationRequest $req): VodDeleteVideoClassificationResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteVideoClassification', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteVideoClassificationResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListVideoClassifications.
+     *
+     * @param $req VodListVideoClassificationsRequest
+     * @return VodListVideoClassificationsResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listVideoClassifications (VodListVideoClassificationsRequest $req): VodListVideoClassificationsResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListVideoClassifications', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListVideoClassificationsResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
 	
 	/**
      * StartWorkflow.
@@ -728,7 +904,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function StartWorkflow (VodStartWorkflowRequest $req): VodStartWorkflowResponse
+	public function startWorkflow (VodStartWorkflowRequest $req): VodStartWorkflowResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -752,5 +928,4 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
-	
 }  // end of service
