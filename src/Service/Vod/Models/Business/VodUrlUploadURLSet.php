@@ -61,6 +61,18 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Category = 8;</code>
      */
     protected $Category = '';
+    /**
+     * 设置文件名
+     *
+     * Generated from protobuf field <code>string FileName = 9;</code>
+     */
+    protected $FileName = '';
+    /**
+     *设置分类Id
+     *
+     * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
+     */
+    protected $ClassificationId = 0;
 
     /**
      * Constructor.
@@ -84,6 +96,10 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           标签
      *     @type string $Category
      *           分类
+     *     @type string $FileName
+     *           设置文件名
+     *     @type int|string $ClassificationId
+     *          设置分类Id
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +311,58 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Category = $var;
+
+        return $this;
+    }
+
+    /**
+     * 设置文件名
+     *
+     * Generated from protobuf field <code>string FileName = 9;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     * 设置文件名
+     *
+     * Generated from protobuf field <code>string FileName = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     *设置分类Id
+     *
+     * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
+     * @return int|string
+     */
+    public function getClassificationId()
+    {
+        return $this->ClassificationId;
+    }
+
+    /**
+     *设置分类Id
+     *
+     * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setClassificationId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->ClassificationId = $var;
 
         return $this;
     }

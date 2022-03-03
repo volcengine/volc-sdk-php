@@ -61,6 +61,12 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CreateTime = 8;</code>
      */
     protected $CreateTime = '';
+    /**
+     *分类串
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification Classification = 9;</code>
+     */
+    protected $Classification = null;
 
     /**
      * Constructor.
@@ -84,6 +90,8 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *          标签列表
      *     @type string $CreateTime
      *          创建时间
+     *     @type \Volc\Service\Vod\Models\Business\VodClassification $Classification
+     *          分类串
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +303,32 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CreateTime = $var;
+
+        return $this;
+    }
+
+    /**
+     *分类串
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification Classification = 9;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodClassification
+     */
+    public function getClassification()
+    {
+        return $this->Classification;
+    }
+
+    /**
+     *分类串
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification Classification = 9;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodClassification $var
+     * @return $this
+     */
+    public function setClassification($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodClassification::class);
+        $this->Classification = $var;
 
         return $this;
     }
