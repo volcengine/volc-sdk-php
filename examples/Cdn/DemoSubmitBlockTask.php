@@ -15,5 +15,5 @@ $body = [
     'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
 ];
 
-$response = $client->submitPreloadTask($body);
+$response = $client->submitBlockTask($body);
 var_dump($response);

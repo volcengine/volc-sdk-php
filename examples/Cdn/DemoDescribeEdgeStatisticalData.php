@@ -17,8 +17,11 @@ $body = [
     'EndTime' => $now,
     'Metric' => 'pv',
     'Domain' => 'my.com',
-    'Item' => 'region'
+    'Interval' => '5min',
+    'Area' => 'China',
+    'Region' => 'BJ',
+    'IpVersion' => 'ipv4'
 ];
 
-$response = $client->describeCdnDomainTopData($body);
+$response = $client->describeEdgeStatisticalData($body);
 var_dump($response);

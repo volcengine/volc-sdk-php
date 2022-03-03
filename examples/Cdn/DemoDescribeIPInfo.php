@@ -11,9 +11,10 @@ $sk = 'sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
+$now = time();
 $body = [
-    'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
+    'IP' => '1.1.1.1'
 ];
 
-$response = $client->submitPreloadTask($body);
+$response = $client->describeIPInfo($body);
 var_dump($response);

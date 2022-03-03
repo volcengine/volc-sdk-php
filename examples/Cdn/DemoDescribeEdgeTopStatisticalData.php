@@ -16,9 +16,10 @@ $body = [
     'StartTime' => $now - 86400,
     'EndTime' => $now,
     'Metric' => 'pv',
+    'Item' => 'url',
     'Domain' => 'my.com',
-    'Item' => 'region'
+    'Area' => 'China',
 ];
 
-$response = $client->describeCdnDomainTopData($body);
+$response = $client->describeEdgeTopStatisticalData($body);
 var_dump($response);

@@ -16,5 +16,5 @@ $body = [
     'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
 ];
 
-$response = $client->submitRefreshTask(['json' => $body]);
+$response = $client->submitRefreshTask($body);
 var_dump($response);
