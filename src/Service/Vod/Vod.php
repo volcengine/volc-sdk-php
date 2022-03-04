@@ -160,7 +160,7 @@ class Vod extends V4Curl
         $token["GetSubtitleAuthToken"] = parse_url($this->getRequestUrl("GetSubtitleInfoList", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
-	
+
     public function getUploadVideoAuth(): array
     {
         return $this->getUploadVideoAuthWithExpiredTime(60 * 60);
@@ -203,30 +203,30 @@ class Vod extends V4Curl
         return parse_url($this->getRequestUrl("GetPrivateDrmPlayAuth", ['query' => $query]))['query'];
     }
 
-	/**
+    /**
      * GetPlayInfo.
      *
      * @param $req VodGetPlayInfoRequest
      * @return VodGetPlayInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getPlayInfo (VodGetPlayInfoRequest $req): VodGetPlayInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetPlayInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getPlayInfo (VodGetPlayInfoRequest $req): VodGetPlayInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetPlayInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetPlayInfoResponse();
-		try {
+        }
+        $respData = new VodGetPlayInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -234,32 +234,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetPrivateDrmPlayAuth.
      *
      * @param $req VodGetPrivateDrmPlayAuthRequest
      * @return VodGetPrivateDrmPlayAuthResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getPrivateDrmPlayAuth (VodGetPrivateDrmPlayAuthRequest $req): VodGetPrivateDrmPlayAuthResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetPrivateDrmPlayAuth', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getPrivateDrmPlayAuth (VodGetPrivateDrmPlayAuthRequest $req): VodGetPrivateDrmPlayAuthResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetPrivateDrmPlayAuth', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetPrivateDrmPlayAuthResponse();
-		try {
+        }
+        $respData = new VodGetPrivateDrmPlayAuthResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -267,32 +267,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetHlsDecryptionKey.
      *
      * @param $req VodGetHlsDecryptionKeyRequest
      * @return VodGetHlsDecryptionKeyResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getHlsDecryptionKey (VodGetHlsDecryptionKeyRequest $req): VodGetHlsDecryptionKeyResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetHlsDecryptionKey', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getHlsDecryptionKey (VodGetHlsDecryptionKeyRequest $req): VodGetHlsDecryptionKeyResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetHlsDecryptionKey', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetHlsDecryptionKeyResponse();
-		try {
+        }
+        $respData = new VodGetHlsDecryptionKeyResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -300,32 +300,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetPlayInfoWithLiveTimeShiftScene.
      *
      * @param $req VodGetPlayInfoWithLiveTimeShiftSceneRequest
      * @return VodGetPlayInfoWithLiveTimeShiftSceneResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getPlayInfoWithLiveTimeShiftScene (VodGetPlayInfoWithLiveTimeShiftSceneRequest $req): VodGetPlayInfoWithLiveTimeShiftSceneResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetPlayInfoWithLiveTimeShiftScene', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getPlayInfoWithLiveTimeShiftScene (VodGetPlayInfoWithLiveTimeShiftSceneRequest $req): VodGetPlayInfoWithLiveTimeShiftSceneResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetPlayInfoWithLiveTimeShiftScene', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetPlayInfoWithLiveTimeShiftSceneResponse();
-		try {
+        }
+        $respData = new VodGetPlayInfoWithLiveTimeShiftSceneResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -333,32 +333,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UploadMediaByUrl.
      *
      * @param $req VodUrlUploadRequest
      * @return VodUrlUploadResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function uploadMediaByUrl (VodUrlUploadRequest $req): VodUrlUploadResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UploadMediaByUrl', ['query' => $query]);
-		} catch (Exception $e) {
+    public function uploadMediaByUrl (VodUrlUploadRequest $req): VodUrlUploadResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UploadMediaByUrl', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUrlUploadResponse();
-		try {
+        }
+        $respData = new VodUrlUploadResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -366,32 +366,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * QueryUploadTaskInfo.
      *
      * @param $req VodQueryUploadTaskInfoRequest
      * @return VodQueryUploadTaskInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function queryUploadTaskInfo (VodQueryUploadTaskInfoRequest $req): VodQueryUploadTaskInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('QueryUploadTaskInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function queryUploadTaskInfo (VodQueryUploadTaskInfoRequest $req): VodQueryUploadTaskInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('QueryUploadTaskInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodQueryUploadTaskInfoResponse();
-		try {
+        }
+        $respData = new VodQueryUploadTaskInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -399,32 +399,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * ApplyUploadInfo.
      *
      * @param $req VodApplyUploadInfoRequest
      * @return VodApplyUploadInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function applyUploadInfo (VodApplyUploadInfoRequest $req): VodApplyUploadInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('ApplyUploadInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function applyUploadInfo (VodApplyUploadInfoRequest $req): VodApplyUploadInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('ApplyUploadInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodApplyUploadInfoResponse();
-		try {
+        }
+        $respData = new VodApplyUploadInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -432,32 +432,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * CommitUploadInfo.
      *
      * @param $req VodCommitUploadInfoRequest
      * @return VodCommitUploadInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function commitUploadInfo (VodCommitUploadInfoRequest $req): VodCommitUploadInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('CommitUploadInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function commitUploadInfo (VodCommitUploadInfoRequest $req): VodCommitUploadInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CommitUploadInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodCommitUploadInfoResponse();
-		try {
+        }
+        $respData = new VodCommitUploadInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -465,32 +465,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UpdateMediaInfo.
      *
      * @param $req VodUpdateMediaInfoRequest
      * @return VodUpdateMediaInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateMediaInfo (VodUpdateMediaInfoRequest $req): VodUpdateMediaInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateMediaInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateMediaInfo (VodUpdateMediaInfoRequest $req): VodUpdateMediaInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateMediaInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateMediaInfoResponse();
-		try {
+        }
+        $respData = new VodUpdateMediaInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -498,32 +498,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UpdateMediaPublishStatus.
      *
      * @param $req VodUpdateMediaPublishStatusRequest
      * @return VodUpdateMediaPublishStatusResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateMediaPublishStatus (VodUpdateMediaPublishStatusRequest $req): VodUpdateMediaPublishStatusResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateMediaPublishStatus', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateMediaPublishStatus (VodUpdateMediaPublishStatusRequest $req): VodUpdateMediaPublishStatusResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateMediaPublishStatus', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateMediaPublishStatusResponse();
-		try {
+        }
+        $respData = new VodUpdateMediaPublishStatusResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -531,32 +531,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetMediaInfos.
      *
      * @param $req VodGetMediaInfosRequest
      * @return VodGetMediaInfosResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getMediaInfos (VodGetMediaInfosRequest $req): VodGetMediaInfosResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetMediaInfos', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getMediaInfos (VodGetMediaInfosRequest $req): VodGetMediaInfosResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetMediaInfos', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetMediaInfosResponse();
-		try {
+        }
+        $respData = new VodGetMediaInfosResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -564,32 +564,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetRecommendedPoster.
      *
      * @param $req VodGetRecommendedPosterRequest
      * @return VodGetRecommendedPosterResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getRecommendedPoster (VodGetRecommendedPosterRequest $req): VodGetRecommendedPosterResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetRecommendedPoster', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getRecommendedPoster (VodGetRecommendedPosterRequest $req): VodGetRecommendedPosterResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetRecommendedPoster', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetRecommendedPosterResponse();
-		try {
+        }
+        $respData = new VodGetRecommendedPosterResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -597,32 +597,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * DeleteMedia.
      *
      * @param $req VodDeleteMediaRequest
      * @return VodDeleteMediaResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function deleteMedia (VodDeleteMediaRequest $req): VodDeleteMediaResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DeleteMedia', ['query' => $query]);
-		} catch (Exception $e) {
+    public function deleteMedia (VodDeleteMediaRequest $req): VodDeleteMediaResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('DeleteMedia', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDeleteMediaResponse();
-		try {
+        }
+        $respData = new VodDeleteMediaResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -630,32 +630,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * DeleteTranscodes.
      *
      * @param $req VodDeleteTranscodesRequest
      * @return VodDeleteTranscodesResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function deleteTranscodes (VodDeleteTranscodesRequest $req): VodDeleteTranscodesResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DeleteTranscodes', ['query' => $query]);
-		} catch (Exception $e) {
+    public function deleteTranscodes (VodDeleteTranscodesRequest $req): VodDeleteTranscodesResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('DeleteTranscodes', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDeleteTranscodesResponse();
-		try {
+        }
+        $respData = new VodDeleteTranscodesResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -663,32 +663,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetMediaList.
      *
      * @param $req VodGetMediaListRequest
      * @return VodGetMediaListResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getMediaList (VodGetMediaListRequest $req): VodGetMediaListResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetMediaList', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getMediaList (VodGetMediaListRequest $req): VodGetMediaListResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetMediaList', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetMediaListResponse();
-		try {
+        }
+        $respData = new VodGetMediaListResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -696,32 +696,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetSubtitleInfoList.
      *
      * @param $req VodGetSubtitleInfoListRequest
      * @return VodGetSubtitleInfoListResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getSubtitleInfoList (VodGetSubtitleInfoListRequest $req): VodGetSubtitleInfoListResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetSubtitleInfoList', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getSubtitleInfoList (VodGetSubtitleInfoListRequest $req): VodGetSubtitleInfoListResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetSubtitleInfoList', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetSubtitleInfoListResponse();
-		try {
+        }
+        $respData = new VodGetSubtitleInfoListResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -729,32 +729,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UpdateSubtitleStatus.
      *
      * @param $req VodUpdateSubtitleStatusRequest
      * @return VodUpdateSubtitleStatusResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateSubtitleStatus (VodUpdateSubtitleStatusRequest $req): VodUpdateSubtitleStatusResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateSubtitleStatus', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateSubtitleStatus (VodUpdateSubtitleStatusRequest $req): VodUpdateSubtitleStatusResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateSubtitleStatus', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateSubtitleStatusResponse();
-		try {
+        }
+        $respData = new VodUpdateSubtitleStatusResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -762,32 +762,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UpdateSubtitleInfo.
      *
      * @param $req VodUpdateSubtitleInfoRequest
      * @return VodUpdateSubtitleInfoResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateSubtitleInfo (VodUpdateSubtitleInfoRequest $req): VodUpdateSubtitleInfoResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateSubtitleInfo', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateSubtitleInfo (VodUpdateSubtitleInfoRequest $req): VodUpdateSubtitleInfoResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateSubtitleInfo', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateSubtitleInfoResponse();
-		try {
+        }
+        $respData = new VodUpdateSubtitleInfoResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -795,32 +795,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * CreateVideoClassification.
      *
      * @param $req VodCreateVideoClassificationRequest
      * @return VodCreateVideoClassificationResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function createVideoClassification (VodCreateVideoClassificationRequest $req): VodCreateVideoClassificationResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('CreateVideoClassification', ['query' => $query]);
-		} catch (Exception $e) {
+    public function createVideoClassification (VodCreateVideoClassificationRequest $req): VodCreateVideoClassificationResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CreateVideoClassification', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodCreateVideoClassificationResponse();
-		try {
+        }
+        $respData = new VodCreateVideoClassificationResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -828,32 +828,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * UpdateVideoClassification.
      *
      * @param $req VodUpdateVideoClassificationRequest
      * @return VodUpdateVideoClassificationResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateVideoClassification (VodUpdateVideoClassificationRequest $req): VodUpdateVideoClassificationResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateVideoClassification', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateVideoClassification (VodUpdateVideoClassificationRequest $req): VodUpdateVideoClassificationResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateVideoClassification', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateVideoClassificationResponse();
-		try {
+        }
+        $respData = new VodUpdateVideoClassificationResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -861,32 +861,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * DeleteVideoClassification.
      *
      * @param $req VodDeleteVideoClassificationRequest
      * @return VodDeleteVideoClassificationResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function deleteVideoClassification (VodDeleteVideoClassificationRequest $req): VodDeleteVideoClassificationResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DeleteVideoClassification', ['query' => $query]);
-		} catch (Exception $e) {
+    public function deleteVideoClassification (VodDeleteVideoClassificationRequest $req): VodDeleteVideoClassificationResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('DeleteVideoClassification', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDeleteVideoClassificationResponse();
-		try {
+        }
+        $respData = new VodDeleteVideoClassificationResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -894,32 +894,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * ListVideoClassifications.
      *
      * @param $req VodListVideoClassificationsRequest
      * @return VodListVideoClassificationsResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function listVideoClassifications (VodListVideoClassificationsRequest $req): VodListVideoClassificationsResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('ListVideoClassifications', ['query' => $query]);
-		} catch (Exception $e) {
+    public function listVideoClassifications (VodListVideoClassificationsRequest $req): VodListVideoClassificationsResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('ListVideoClassifications', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodListVideoClassificationsResponse();
-		try {
+        }
+        $respData = new VodListVideoClassificationsResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -927,32 +927,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * StartWorkflow.
      *
      * @param $req VodStartWorkflowRequest
      * @return VodStartWorkflowResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function startWorkflow (VodStartWorkflowRequest $req): VodStartWorkflowResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('StartWorkflow', ['query' => $query]);
-		} catch (Exception $e) {
+    public function startWorkflow (VodStartWorkflowRequest $req): VodStartWorkflowResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('StartWorkflow', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodStartWorkflowResponse();
-		try {
+        }
+        $respData = new VodStartWorkflowResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -960,32 +960,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * CreateSpace.
      *
      * @param $req VodCreateSpaceRequest
      * @return VodCreateSpaceResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function createSpace (VodCreateSpaceRequest $req): VodCreateSpaceResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('CreateSpace', ['query' => $query]);
-		} catch (Exception $e) {
+    public function createSpace (VodCreateSpaceRequest $req): VodCreateSpaceResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CreateSpace', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodCreateSpaceResponse();
-		try {
+        }
+        $respData = new VodCreateSpaceResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -993,32 +993,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * ListSpace.
      *
      * @param $req VodListSpaceRequest
      * @return VodListSpaceResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function listSpace (VodListSpaceRequest $req): VodListSpaceResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('ListSpace', ['query' => $query]);
-		} catch (Exception $e) {
+    public function listSpace (VodListSpaceRequest $req): VodListSpaceResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('ListSpace', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodListSpaceResponse();
-		try {
+        }
+        $respData = new VodListSpaceResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1026,32 +1026,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * GetSpaceConfig.
      *
      * @param $req VodGetSpaceConfigRequest
      * @return VodGetSpaceConfigResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function getSpaceConfig (VodGetSpaceConfigRequest $req): VodGetSpaceConfigResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetSpaceConfig', ['query' => $query]);
-		} catch (Exception $e) {
+    public function getSpaceConfig (VodGetSpaceConfigRequest $req): VodGetSpaceConfigResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('GetSpaceConfig', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodGetSpaceConfigResponse();
-		try {
+        }
+        $respData = new VodGetSpaceConfigResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1059,32 +1059,99 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
+    }
 
-	/**
+    /**
+     * UpdateSpace.
+     *
+     * @param $req VodUpdateSpaceRequest
+     * @return VodUpdateSpaceResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function updateSpace (VodUpdateSpaceRequest $req): VodUpdateSpaceResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateSpace', ['query' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodUpdateSpaceResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+    /**
+     * UpdateSpaceUploadConfig.
+     *
+     * @param $req VodUpdateSpaceUploadConfigRequest
+     * @return VodUpdateSpaceUploadConfigResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function updateSpaceUploadConfig (VodUpdateSpaceUploadConfigRequest $req): VodUpdateSpaceUploadConfigResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('UpdateSpaceUploadConfig', ['query' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodUpdateSpaceUploadConfigResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+
+    /**
      * ListDomain.
      *
      * @param $req VodListDomainRequest
      * @return VodListDomainResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function listDomain (VodListDomainRequest $req): VodListDomainResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('ListDomain', ['query' => $query]);
-		} catch (Exception $e) {
+    public function listDomain (VodListDomainRequest $req): VodListDomainResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('ListDomain', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodListDomainResponse();
-		try {
+        }
+        $respData = new VodListDomainResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1092,32 +1159,98 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
+     * CreateCdnRefreshTask.
+     *
+     * @param $req VodCreateCdnRefreshTaskRequest
+     * @return VodCreateCdnRefreshTaskResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function createCdnRefreshTask (VodCreateCdnRefreshTaskRequest $req): VodCreateCdnRefreshTaskResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CreateCdnRefreshTask', ['query' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodCreateCdnRefreshTaskResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+    /**
+     * CreateCdnPreloadTask.
+     *
+     * @param $req VodCreateCdnPreloadTaskRequest
+     * @return VodCreateCdnPreloadTaskResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function createCdnPreloadTask (VodCreateCdnPreloadTaskRequest $req): VodCreateCdnPreloadTaskResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CreateCdnPreloadTask', ['query' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodCreateCdnPreloadTaskResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+    /**
      * AddCallbackSubscription.
      *
      * @param $req VodAddCallbackSubscriptionRequest
      * @return VodAddCallbackSubscriptionResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function addCallbackSubscription (VodAddCallbackSubscriptionRequest $req): VodAddCallbackSubscriptionResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('AddCallbackSubscription', ['query' => $query]);
-		} catch (Exception $e) {
+    public function addCallbackSubscription (VodAddCallbackSubscriptionRequest $req): VodAddCallbackSubscriptionResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('AddCallbackSubscription', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodAddCallbackSubscriptionResponse();
-		try {
+        }
+        $respData = new VodAddCallbackSubscriptionResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1125,32 +1258,32 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
-	/**
+    }
+
+    /**
      * SetCallbackEvent.
      *
      * @param $req VodSetCallbackEventRequest
      * @return VodSetCallbackEventResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function setCallbackEvent (VodSetCallbackEventRequest $req): VodSetCallbackEventResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('SetCallbackEvent', ['query' => $query]);
-		} catch (Exception $e) {
+    public function setCallbackEvent (VodSetCallbackEventRequest $req): VodSetCallbackEventResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('SetCallbackEvent', ['query' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodSetCallbackEventResponse();
-		try {
+        }
+        $respData = new VodSetCallbackEventResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1158,6 +1291,7 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
+    }
+
 }  // end of service
+

@@ -359,26 +359,26 @@ class VodOption
                 ],
             ]
         ],
-//        'UpdateSpace' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'UpdateSpace',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'UpdateSpaceUploadConfig' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'UpdateSpaceUploadConfig',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
+        'UpdateSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'UpdateSpaceUploadConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpaceUploadConfig',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 分发加速管理
         // **********************************************************************
@@ -392,26 +392,26 @@ class VodOption
                 ],
             ]
         ],
-//        'CreateCdnRefreshTask' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'CreateCdnRefreshTask',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'CreateCdnPreloadTask' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'CreateCdnPreloadTask',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
+        'CreateCdnRefreshTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnRefreshTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'CreateCdnPreloadTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnPreloadTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************
