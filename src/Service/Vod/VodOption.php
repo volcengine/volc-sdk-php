@@ -431,7 +431,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'SetCallbackEvent',
-                    'Version' => '2021-12-01',
+                    'Version' => '2021-01-01',
                 ],
             ]
         ],
