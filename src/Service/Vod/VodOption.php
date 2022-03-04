@@ -203,66 +203,66 @@ class VodOption
                 ],
             ]
         ],
-        'GetAuditFramesForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetAuditFramesForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
-        'GetMLFramesForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetMLFramesForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
-        'GetBetterFramesForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetBetterFramesForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
-        'GetAudioInfoForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetAudioInfoForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
-        'GetAutomaticSpeechRecognitionForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetAutomaticSpeechRecognitionForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
-        'GetAudioEventDetectionForAudit' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetAudioEventDetectionForAudit',
-                    'Version' => '2021-11-01',
-                ],
-            ]
-        ],
+//        'GetAuditFramesForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetAuditFramesForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
+//        'GetMLFramesForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetMLFramesForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
+//        'GetBetterFramesForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetBetterFramesForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
+//        'GetAudioInfoForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetAudioInfoForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
+//        'GetAutomaticSpeechRecognitionForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetAutomaticSpeechRecognitionForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
+//        'GetAudioEventDetectionForAudit' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetAudioEventDetectionForAudit',
+//                    'Version' => '2021-11-01',
+//                ],
+//            ]
+//        ],
         'CreateVideoClassification' => [
             'url' => '/',
             'method' => 'get',
@@ -359,26 +359,26 @@ class VodOption
                 ],
             ]
         ],
-        'UpdateSpace' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'UpdateSpace',
-                    'Version' => '2021-01-01',
-                ],
-            ]
-        ],
-        'UpdateSpaceUploadConfig' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'UpdateSpaceUploadConfig',
-                    'Version' => '2021-01-01',
-                ],
-            ]
-        ],
+//        'UpdateSpace' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'UpdateSpace',
+//                    'Version' => '2021-01-01',
+//                ],
+//            ]
+//        ],
+//        'UpdateSpaceUploadConfig' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'UpdateSpaceUploadConfig',
+//                    'Version' => '2021-01-01',
+//                ],
+//            ]
+//        ],
         // **********************************************************************
         // 分发加速管理
         // **********************************************************************
@@ -392,26 +392,26 @@ class VodOption
                 ],
             ]
         ],
-        'CreateCdnRefreshTask' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'CreateCdnRefreshTask',
-                    'Version' => '2021-01-01',
-                ],
-            ]
-        ],
-        'CreateCdnPreloadTask' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'CreateCdnPreloadTask',
-                    'Version' => '2021-01-01',
-                ],
-            ]
-        ],
+//        'CreateCdnRefreshTask' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'CreateCdnRefreshTask',
+//                    'Version' => '2021-01-01',
+//                ],
+//            ]
+//        ],
+//        'CreateCdnPreloadTask' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'CreateCdnPreloadTask',
+//                    'Version' => '2021-01-01',
+//                ],
+//            ]
+//        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************
