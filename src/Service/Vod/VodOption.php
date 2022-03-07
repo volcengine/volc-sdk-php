@@ -349,16 +349,16 @@ class VodOption
 //                ],
 //            ]
 //        ],
-        'GetSpaceConfig' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetSpaceConfig',
-                    'Version' => '2021-01-01',
-                ],
-            ]
-        ],
+//        'GetSpaceConfig' => [
+//            'url' => '/',
+//            'method' => 'get',
+//            'config' => [
+//                'query' => [
+//                    'Action' => 'GetSpaceConfig',
+//                    'Version' => '2022-01-01',
+//                ],
+//            ]
+//        ],
         'UpdateSpace' => [
             'url' => '/',
             'method' => 'get',
