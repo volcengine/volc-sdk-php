@@ -375,7 +375,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSpaceUploadConfig',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
