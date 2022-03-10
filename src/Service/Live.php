@@ -450,7 +450,7 @@ class Live extends V4Curl
 
     public function deleteCallback(array $query = []): string
     {
-        return $this->requestWithRetry("DescribeCallback", $query);
+        return $this->requestWithRetry("DeleteCallback", $query);
     }
 
     public function createDomain(array $query = []): string

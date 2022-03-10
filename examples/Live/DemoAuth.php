@@ -31,10 +31,12 @@ $body = [
     'Domain' => 'domain',
     'App' => 'app',
     'RefererInfoList' => [
-        'Key' => 'asd',
-        'Type' => 'xx',
-        'Value' => 'sad',
-        'Priority' => 0,
+        [
+            'Key' => 'asd',
+            'Type' => 'xx',
+            'Value' => 'sad',
+            'Priority' => 0,
+        ],
     ],
 ];
 

@@ -17,6 +17,7 @@ echo $response;
 echo '<br>';
 
 $body = [
+    'Preset' => 'preset',
     'Vhost' => 'vhost',
     'App' => 'app',
     'Bucket' => 'bb2',
