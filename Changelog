@@ -1,5 +1,11 @@
 Change log
 
+2022-03-03 Bumped to version v1.0.32
+- BREAKING CHANGE: only accept json body as the in parameter.
+- Implement related example for apis
+- Add new apis
+- Add Video-Classification For VOD
+
 2022-02-15 Bumped to version v1.0.31
 - Fixed protobuf dependency
 

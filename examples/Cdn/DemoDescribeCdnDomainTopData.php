@@ -20,5 +20,5 @@ $body = [
     'Item' => 'region'
 ];
 
-$response = $client->describeCdnDomainTopData(['json' => $body]);
+$response = $client->describeCdnDomainTopData($body);
 var_dump($response);

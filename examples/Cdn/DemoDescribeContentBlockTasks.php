@@ -6,15 +6,17 @@ require('../../vendor/autoload.php');
 
 $client = Cdn::getInstance();
 
-$ak = 'your ak';
-$sk = 'your sk';
+$ak = 'ak';
+$sk = 'sk';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 $now = time();
 $body = [
-    'Domain' => 'sdk-online.cdn-test.bytedance.com'
+    'TaskType' => 'block_url',
+    'StartTime' => $now - 86400,
+    'EndTime' => $now
 ];
 
-$response = $client->stopCdnDomain(['json' => $body]);
+$response = $client->describeContentBlockTasks($body);
 var_dump($response);

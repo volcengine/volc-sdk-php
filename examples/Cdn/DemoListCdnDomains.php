@@ -20,5 +20,5 @@ $body = [
     'PageSize' => 50
 ];
 
-$response = $client->listCdnDomains(['json' => $body]);
+$response = $client->listCdnDomains($body);
 var_dump($response);

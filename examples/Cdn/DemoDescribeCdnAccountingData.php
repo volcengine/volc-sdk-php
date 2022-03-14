@@ -18,5 +18,5 @@ $body = [
     'Domain' => 'my.com',
 ];
 
-$response = $client->describeCdnAccountingData(['json' => $body]);
+$response = $client->describeCdnAccountingData($body);
 var_dump($response);
