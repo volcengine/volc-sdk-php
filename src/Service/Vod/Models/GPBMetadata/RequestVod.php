@@ -12,7 +12,7 @@ class RequestVod
         $pool = \Google\Protobuf\Internal\DescriptorPool::getGeneratedPool();
 
         if (static::$is_initialized == true) {
-            return;
+          return;
         }
         \GPBMetadata\Google\Protobuf\Wrappers::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodWorkflow::initOnce();

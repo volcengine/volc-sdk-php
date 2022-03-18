@@ -12,7 +12,7 @@ class ResponseVod
         $pool = \Google\Protobuf\Internal\DescriptorPool::getGeneratedPool();
 
         if (static::$is_initialized == true) {
-            return;
+          return;
         }
         \Volc\Service\Base\Models\GPBMetadata\Base::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodPlay::initOnce();
