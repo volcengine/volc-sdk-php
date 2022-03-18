@@ -46,16 +46,16 @@ class VodOption
                 ],
             ]
         ],
-//        'GetPlayInfoWithLiveTimeShiftScene' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetPlayInfoWithLiveTimeShiftScene',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
+        'GetPlayInfoWithLiveTimeShiftScene' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetPlayInfoWithLiveTimeShiftScene',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 上传
         // **********************************************************************
@@ -326,36 +326,36 @@ class VodOption
                 ],
             ]
         ],
-//        // **********************************************************************
-//        // 空间管理
-//        // **********************************************************************
-//        'CreateSpace' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'CreateSpace',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'ListSpace' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'ListSpace',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
+        // **********************************************************************
+        // 空间管理
+        // **********************************************************************
+        'CreateSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'ListSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
 //        'GetSpaceDetail' => [
 //            'url' => '/',
 //            'method' => 'get',
 //            'config' => [
 //                'query' => [
 //                    'Action' => 'GetSpaceDetail',
-//                    'Version' => '2021-01-01',
+//                    'Version' => '2022-01-01',
 //                ],
 //            ]
 //        ],
@@ -365,86 +365,86 @@ class VodOption
 //            'config' => [
 //                'query' => [
 //                    'Action' => 'GetSpaceConfig',
-//                    'Version' => '2021-01-01',
+//                    'Version' => '2022-01-01',
 //                ],
 //            ]
 //        ],
-//        'UpdateSpace' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'UpdateSpace',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'UpdateSpaceUploadConfig' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'UpdateSpaceUploadConfig',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        // **********************************************************************
-//        // 分发加速管理
-//        // **********************************************************************
-//        'ListDomain' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'ListDomain',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'CreateCdnRefreshTask' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'CreateCdnRefreshTask',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        'CreateCdnPreloadTask' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'CreateCdnPreloadTask',
-//                    'Version' => '2021-01-01',
-//                ],
-//            ]
-//        ],
-//        // **********************************************************************
-//        // 回调管理
-//        // **********************************************************************
-//        'AddCallbackSubscription' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'AddCallbackSubscription',
-//                    'Version' => '2021-12-01',
-//                ],
-//            ]
-//        ],
-//        'SetCallbackEvent' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'SetCallbackEvent',
-//                    'Version' => '2021-12-01',
-//                ],
-//            ]
-//        ],
+        'UpdateSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpace',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'UpdateSpaceUploadConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSpaceUploadConfig',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
+        // 分发加速管理
+        // **********************************************************************
+        'ListDomain' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListDomain',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'CreateCdnRefreshTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnRefreshTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'CreateCdnPreloadTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateCdnPreloadTask',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
+        // 回调管理
+        // **********************************************************************
+        'AddCallbackSubscription' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'AddCallbackSubscription',
+                    'Version' => '2021-12-01',
+                ],
+            ]
+        ],
+        'SetCallbackEvent' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'SetCallbackEvent',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
     ];
 
     /**
