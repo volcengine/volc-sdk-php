@@ -29,6 +29,10 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Functions = 4;</code>
      */
     protected $Functions = '';
+    /**
+     * Generated from protobuf field <code>string FileName = 5;</code>
+     */
+    protected $FileName = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *     @type string $FilePath
      *     @type string $CallbackArgs
      *     @type string $Functions
+     *     @type string $FileName
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Functions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string FileName = 5;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     * Generated from protobuf field <code>string FileName = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
 
         return $this;
     }
