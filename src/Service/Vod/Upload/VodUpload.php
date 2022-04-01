@@ -37,6 +37,7 @@ class VodUpload extends Vod
     {
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($vodUploadMediaRequest->getSpaceName());
+        $applyRequest->setFileName($vodUploadMediaRequest->getFileName());
         $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -58,6 +59,7 @@ class VodUpload extends Vod
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($vodUploadMaterialRequest->getSpaceName());
         $applyRequest->setFileType($vodUploadMaterialRequest->getFileType());
+        $applyRequest->setFileName($vodUploadMaterialRequest->getFileName());
         $resp = $this->upload($applyRequest, $vodUploadMaterialRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);

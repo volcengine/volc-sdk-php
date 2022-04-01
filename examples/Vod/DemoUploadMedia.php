@@ -23,6 +23,7 @@ $request->setSpaceName($space);
 $request->setFilePath($filePath);
 $request->setFunctions($functions);
 $request->setCallbackArgs("my callback");
+$request->setFileName("hello/vod");
 
 $response = new VodCommitUploadInfoResponse();
 try {
