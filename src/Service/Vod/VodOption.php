@@ -203,66 +203,66 @@ class VodOption
                 ],
             ]
         ],
-//        'GetAuditFramesForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetAuditFramesForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
-//        'GetMLFramesForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetMLFramesForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
-//        'GetBetterFramesForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetBetterFramesForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
-//        'GetAudioInfoForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetAudioInfoForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
-//        'GetAutomaticSpeechRecognitionForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetAutomaticSpeechRecognitionForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
-//        'GetAudioEventDetectionForAudit' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetAudioEventDetectionForAudit',
-//                    'Version' => '2021-11-01',
-//                ],
-//            ]
-//        ],
+        'GetAuditFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAuditFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetMLFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMLFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetBetterFramesForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetBetterFramesForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAudioInfoForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioInfoForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAutomaticSpeechRecognitionForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAutomaticSpeechRecognitionForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
+        'GetAudioEventDetectionForAudit' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioEventDetectionForAudit',
+                    'Version' => '2021-11-01',
+                ],
+            ]
+        ],
         'CreateVideoClassification' => [
             'url' => '/',
             'method' => 'get',

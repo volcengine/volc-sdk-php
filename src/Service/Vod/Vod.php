@@ -800,6 +800,204 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * GetAuditFramesForAudit.
+     *
+     * @param $req VodGetAuditFramesForAuditRequest
+     * @return VodGetAuditFramesForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAuditFramesForAudit (VodGetAuditFramesForAuditRequest $req): VodGetAuditFramesForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAuditFramesForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAuditFramesForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetMLFramesForAudit.
+     *
+     * @param $req VodGetMLFramesForAuditRequest
+     * @return VodGetMLFramesForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getMLFramesForAudit (VodGetMLFramesForAuditRequest $req): VodGetMLFramesForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetMLFramesForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetMLFramesForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetBetterFramesForAudit.
+     *
+     * @param $req VodGetBetterFramesForAuditRequest
+     * @return VodGetBetterFramesForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getBetterFramesForAudit (VodGetBetterFramesForAuditRequest $req): VodGetBetterFramesForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetBetterFramesForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetBetterFramesForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetAudioInfoForAudit.
+     *
+     * @param $req VodGetAudioInfoForAuditRequest
+     * @return VodGetAudioInfoForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAudioInfoForAudit (VodGetAudioInfoForAuditRequest $req): VodGetAudioInfoForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAudioInfoForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAudioInfoForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetAutomaticSpeechRecognitionForAudit.
+     *
+     * @param $req VodGetAutomaticSpeechRecognitionForAuditRequest
+     * @return VodGetAutomaticSpeechRecognitionForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAutomaticSpeechRecognitionForAudit (VodGetAutomaticSpeechRecognitionForAuditRequest $req): VodGetAutomaticSpeechRecognitionForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAutomaticSpeechRecognitionForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAutomaticSpeechRecognitionForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetAudioEventDetectionForAudit.
+     *
+     * @param $req VodGetAudioEventDetectionForAuditRequest
+     * @return VodGetAudioEventDetectionForAuditResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAudioEventDetectionForAudit (VodGetAudioEventDetectionForAuditRequest $req): VodGetAudioEventDetectionForAuditResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAudioEventDetectionForAudit', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAudioEventDetectionForAuditResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * CreateVideoClassification.
      *
      * @param $req VodCreateVideoClassificationRequest
@@ -1086,6 +1284,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetSpaceDetailResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetSpaceConfig.
+     *
+     * @param $req VodGetSpaceConfigRequest
+     * @return VodGetSpaceConfigResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getSpaceConfig (VodGetSpaceConfigRequest $req): VodGetSpaceConfigResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetSpaceConfig', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetSpaceConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
