@@ -18,7 +18,7 @@ class VodListCdnTasksResponse extends \Google\Protobuf\Internal\Message
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CdnTaskResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -29,7 +29,7 @@ class VodListCdnTasksResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\CdnTaskResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodCdnTaskResult $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class VodListCdnTasksResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CdnTaskResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\CdnTaskResult
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodCdnTaskResult
      */
     public function getResult()
     {
@@ -69,13 +69,13 @@ class VodListCdnTasksResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CdnTaskResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\CdnTaskResult $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodCdnTaskResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\CdnTaskResult::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCdnTaskResult::class);
         $this->Result = $var;
 
         return $this;
