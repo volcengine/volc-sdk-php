@@ -9,20 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * **********************************************************************
- * 转码
- * **********************************************************************
- *
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodStartWorkflowResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodListSnapshotsResponse</code>
  */
-class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
+class VodListSnapshotsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodStartWorkflowResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSnapshotData Result = 2;</code>
      */
     protected $Result = null;
 
@@ -33,7 +29,7 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\VodStartWorkflowResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodSnapshotData $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -64,8 +60,8 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodStartWorkflowResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodStartWorkflowResult
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSnapshotData Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodSnapshotData
      */
     public function getResult()
     {
@@ -73,13 +69,13 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodStartWorkflowResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodStartWorkflowResult $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSnapshotData Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodSnapshotData $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodStartWorkflowResult::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodSnapshotData::class);
         $this->Result = $var;
 
         return $this;
