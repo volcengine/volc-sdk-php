@@ -216,6 +216,16 @@ class ImageX extends V4Curl
                     'Version'=> '2018-08-01',
                 ]
             ]
+        ],
+        'GetSegmentImage' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSegmentImage',
+                    'Version'=> '2018-08-01',
+                ]
+            ]
         ]
     ];
 
@@ -401,6 +411,19 @@ class ImageX extends V4Curl
         $params["Version"] = "2018-08-01";
         $queryStr = http_build_query($params);
         $response = $this->request('GetImageOCR', ['query' => $queryStr]);
+        $ocrResponse = json_decode((string) $response->getBody(), true);
+        if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("uploadImages: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $ocrResponse["Result"];
+    }
+
+    public function getSegmentImage(array $params = [])
+    {
+        $params["Action"] = "GetSegmentImage";
+        $params["Version"] = "2018-08-01";
+        $queryStr = http_build_query($params);
+        $response = $this->request('GetSegmentImage', ['query' => $queryStr]);
         $ocrResponse = json_decode((string) $response->getBody(), true);
         if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
             return sprintf("uploadImages: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
