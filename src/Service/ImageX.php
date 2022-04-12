@@ -424,10 +424,10 @@ class ImageX extends V4Curl
         $params["Version"] = "2018-08-01";
         $queryStr = http_build_query($params);
         $response = $this->request('GetSegmentImage', ['query' => $queryStr]);
-        $ocrResponse = json_decode((string) $response->getBody(), true);
-        if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
-            return sprintf("uploadImages: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
+        $segmentResponse = json_decode((string) $response->getBody(), true);
+        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("uploadImages: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
         }
-        return $ocrResponse["Result"];
+        return $segmentResponse["Result"];
     }
 }
