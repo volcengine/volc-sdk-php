@@ -71,6 +71,16 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'ElementVerifyV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ElementVerify',
+                    'Version' => '2022-04-13',
+                ],
+            ]
+        ],
         'MobileStatus' => [
             'url' => '/',
             'method' => 'post',
@@ -78,6 +88,16 @@ class BusinessSecurity extends V4Curl
                 'query' => [
                     'Action' => 'MobileStatus',
                     'Version' => '2020-12-25',
+                ],
+            ]
+        ],
+        'MobileStatusV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'MobileStatus',
+                    'Version' => '2022-04-13',
                 ],
             ]
         ],
@@ -147,6 +167,18 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("ElementVerify", $commitReq);
     }
 
+    public function ElementVerifyV2(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("ElementVerifyV2", $commitReq);
+    }
+
     public function MobileStatus(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
@@ -157,5 +189,17 @@ class BusinessSecurity extends V4Curl
             "json" => $commitBody
         ];
         return $this->requestWithRetry("MobileStatus", $commitReq);
+    }
+
+    public function MobileStatusV2(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("MobileStatusV2", $commitReq);
     }
 }
