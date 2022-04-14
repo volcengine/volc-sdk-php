@@ -8,7 +8,7 @@ class Cdn extends V4Curl
 {
 
     protected $apiList = [
-        #添加加速域名: https://www.volcengine.com/docs/6454/97340
+#添加加速域名: https://www.volcengine.com/docs/6454/97340
         'AddCdnDomain' => [
             'url' => '/',
             'method' => 'post',
@@ -158,6 +158,39 @@ class Cdn extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeEdgeTopNrtData',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+#获取回源数据的统计排序: https://www.volcengine.com/docs/6454/104892
+        'DescribeOriginTopNrtData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeOriginTopNrtData',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+#获取访问状态码的统计排序: https://www.volcengine.com/docs/6454/104888
+        'DescribeEdgeTopStatusCode' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeEdgeTopStatusCode',
+                    'Version' => '2021-03-01',
+                ],
+            ]
+        ],
+#获取回源状态码的统计排序: https://www.volcengine.com/docs/6454/104891
+        'DescribeOriginTopStatusCode' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeOriginTopStatusCode',
                     'Version' => '2021-03-01',
                 ],
             ]
@@ -518,6 +551,30 @@ class Cdn extends V4Curl
             $data = new \ArrayObject();
         }
         return $this->requestWithRetry("DescribeEdgeTopNrtData", ['json' => $data]);
+    }
+
+    public function describeOriginTopNrtData(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeOriginTopNrtData", ['json' => $data]);
+    }
+
+    public function describeEdgeTopStatusCode(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeEdgeTopStatusCode", ['json' => $data]);
+    }
+
+    public function describeOriginTopStatusCode(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeOriginTopStatusCode", ['json' => $data]);
     }
 
     public function describeEdgeTopStatisticalData(array $data = []): string
