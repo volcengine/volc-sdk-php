@@ -78,6 +78,7 @@ if ($response->getResult() != null) {
 //$request->setFilePath($filePath);
 //$request->setFunctions($functions);
 //$request->setFileType("image");
+//$request->setFileName("hello/vod/image");
 //
 //$request->setCallbackArgs("my callback");
 //
@@ -121,6 +122,7 @@ if ($response->getResult() != null) {
 //$request->setFilePath($filePath);
 //$request->setFunctions($functions);
 //$request->setFileType("object");
+//$request->setFileName("hello/vod/object");
 //
 //$request->setCallbackArgs("my callback");
 //

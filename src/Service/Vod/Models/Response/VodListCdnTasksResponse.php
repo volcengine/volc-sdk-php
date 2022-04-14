@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetSpaceConfigResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodListCdnTasksResponse</code>
  */
-class VodGetSpaceConfigResponse extends \Google\Protobuf\Internal\Message
+class VodListCdnTasksResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSpaceConfigInfo Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
      */
-    private $Result;
+    protected $Result = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class VodGetSpaceConfigResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\VodSpaceConfigInfo[]|\Google\Protobuf\Internal\RepeatedField $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodCdnTaskResult $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class VodGetSpaceConfigResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSpaceConfigInfo Result = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodCdnTaskResult
      */
     public function getResult()
     {
@@ -69,14 +69,14 @@ class VodGetSpaceConfigResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSpaceConfigInfo Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodSpaceConfigInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnTaskResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodCdnTaskResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodSpaceConfigInfo::class);
-        $this->Result = $arr;
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCdnTaskResult::class);
+        $this->Result = $var;
 
         return $this;
     }
