@@ -359,16 +359,6 @@ class VodOption
                 ],
             ]
         ],
-//        'GetSpaceConfig' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetSpaceConfig',
-//                    'Version' => '2022-01-01',
-//                ],
-//            ]
-//        ],
         'UpdateSpace' => [
             'url' => '/',
             'method' => 'get',
@@ -429,6 +419,26 @@ class VodOption
                 'query' => [
                     'Action' => 'ListCdnTasks',
                     'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'ListCdnAccessLog' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnAccessLog',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'ListCdnTopAccessUrl' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnTopAccessUrl',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
