@@ -20,27 +20,21 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Domains = '';
     /**
-     * 空间名
-     *
-     * Generated from protobuf field <code>string SpaceName = 2;</code>
-     */
-    protected $SpaceName = '';
-    /**
      * 查询起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 StartTimestamp = 3;</code>
+     * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      */
     protected $StartTimestamp = 0;
     /**
      * 查询结束时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 EndTimestamp = 4;</code>
+     * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      */
     protected $EndTimestamp = 0;
     /**
      *排序方式，默认值为pv。取值：flux - 流量, pv -访问量
      *
-     * Generated from protobuf field <code>string SortType = 5;</code>
+     * Generated from protobuf field <code>string SortType = 4;</code>
      */
     protected $SortType = '';
 
@@ -52,8 +46,6 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $Domains
      *           域名（当前仅支持一个域名）
-     *     @type string $SpaceName
-     *           空间名
      *     @type int $StartTimestamp
      *           查询起始时间戳，单位：Unix秒级时间戳
      *     @type int $EndTimestamp
@@ -94,35 +86,9 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
-     *
-     * Generated from protobuf field <code>string SpaceName = 2;</code>
-     * @return string
-     */
-    public function getSpaceName()
-    {
-        return $this->SpaceName;
-    }
-
-    /**
-     * 空间名
-     *
-     * Generated from protobuf field <code>string SpaceName = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSpaceName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->SpaceName = $var;
-
-        return $this;
-    }
-
-    /**
      * 查询起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 StartTimestamp = 3;</code>
+     * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      * @return int
      */
     public function getStartTimestamp()
@@ -133,7 +99,7 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     /**
      * 查询起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 StartTimestamp = 3;</code>
+     * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      * @param int $var
      * @return $this
      */
@@ -148,7 +114,7 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     /**
      * 查询结束时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 EndTimestamp = 4;</code>
+     * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      * @return int
      */
     public function getEndTimestamp()
@@ -159,7 +125,7 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     /**
      * 查询结束时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int32 EndTimestamp = 4;</code>
+     * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      * @param int $var
      * @return $this
      */
@@ -174,7 +140,7 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     /**
      *排序方式，默认值为pv。取值：flux - 流量, pv -访问量
      *
-     * Generated from protobuf field <code>string SortType = 5;</code>
+     * Generated from protobuf field <code>string SortType = 4;</code>
      * @return string
      */
     public function getSortType()
@@ -185,7 +151,7 @@ class VodListCdnTopAccessUrlRequest extends \Google\Protobuf\Internal\Message
     /**
      *排序方式，默认值为pv。取值：flux - 流量, pv -访问量
      *
-     * Generated from protobuf field <code>string SortType = 5;</code>
+     * Generated from protobuf field <code>string SortType = 4;</code>
      * @param string $var
      * @return $this
      */
