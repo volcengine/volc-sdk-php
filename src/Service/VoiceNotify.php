@@ -1,12 +1,12 @@
 <?php
 
 namespace Volc\Service;
-
+use Volc\Base\V4Curl;
 use ArrayObject;
 use Exception;
-use Volc\Base\V4Curl;
 
-class VoiceNotify extends V4Curl{
+class VoiceNotify extends V4Curl
+{
 
     /**
      * @throws Exception
