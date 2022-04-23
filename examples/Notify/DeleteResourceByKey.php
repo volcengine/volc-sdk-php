@@ -1,9 +1,9 @@
 <?php
 
-require('../../vendor/autoload.php');
+require('../../../vendor/autoload.php');
+use Volc\Service\VoiceNotify;
 
-use Volc\Service\Notify;
-$client = Notify::getInstance();
+$client = VoiceNotify::getInstance();
 
 $client->setAccessKey("***REMOVED***");
 $client->setSecretKey("***REMOVED***");

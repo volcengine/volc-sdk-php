@@ -6,32 +6,36 @@ use ArrayObject;
 use Exception;
 use Volc\Base\V4Curl;
 
-class Notify extends V4Curl{
+class VoiceNotify extends V4Curl{
 
     /**
      * @throws Exception
      */
     protected function getConfig(string $region): array
     {
-        return match ($region) {
-            'cn-north-1' => [
-                'host' => 'https://cloud-vms.volcengineapi.com',
-                'config' => [
-                    'timeout' => 10.0,
-                    'headers' => [
-                        'Accept' => 'application/json'
+        switch ($region){
+            case 'cn-north-1':
+                $config = [
+                    'host' => 'https://cloud-vms.volcengineapi.com',
+                    'config' => [
+                        'timeout' => 10.0,
+                        'headers' => [
+                            'Accept' => 'application/json'
+                        ],
+                        'v4_credentials' => [
+                            'region' => 'cn-north-1',
+                            'service' => 'volc_voice_notify',
+                        ],
                     ],
-                    'v4_credentials' => [
-                        'region' => 'cn-north-1',
-                        'service' => 'volc_voice_notify',
-                    ],
-                ],
-            ],
-            default => throw new Exception(sprintf("This region not support now, %s", $region)),
-        };
+                ];
+                break;
+            default:
+                throw new Exception(sprintf("This region not support now, %s", $region));
+        }
+        return $config;
     }
 
-    protected array $apiList = [
+    protected $apiList = [
         'CreateTask' => [
             'url' => '/',
             'method' => 'post',
@@ -252,7 +256,7 @@ class Notify extends V4Curl{
         if (empty($data)){
             $data = new ArrayObject();
         }
-       return $this->requestWithRetry("UpdateTask", ['json' => $data]);
+        return $this->requestWithRetry("UpdateTask", ['json' => $data]);
     }
 
     public function SingleBatchAppend(array $data = []): string
@@ -291,7 +295,7 @@ class Notify extends V4Curl{
 
     public function DeleteResourceByKey(string $resourceKey): string
     {
-       return $this->requestWithRetry("OpenDeleteResource", ['query' => ['ResourceKey' => $resourceKey], 'json' => []]);
+        return $this->requestWithRetry("OpenDeleteResource", ['query' => ['ResourceKey' => $resourceKey], 'json' => []]);
     }
 
     public function GetResourceUploadUrl(array $data = []): string
