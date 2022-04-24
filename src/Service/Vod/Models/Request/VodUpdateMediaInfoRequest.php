@@ -43,6 +43,12 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue Tags = 5;</code>
      */
     protected $Tags = null;
+    /**
+     *视频分类Id
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
+     */
+    protected $ClassificationId = null;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *          视频描述
      *     @type \Google\Protobuf\StringValue $Tags
      *          视频标签
+     *     @type \Google\Protobuf\Int64Value $ClassificationId
+     *          视频分类Id
      * }
      */
     public function __construct($data = NULL) {
@@ -303,6 +311,59 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
     public function setTagsUnwrapped($var)
     {
         $this->writeWrapperValue("Tags", $var);
+        return $this;}
+
+    /**
+     *视频分类Id
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getClassificationId()
+    {
+        return $this->ClassificationId;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getClassificationId()</code>
+
+     *视频分类Id
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
+     * @return int|string|null
+     */
+    public function getClassificationIdUnwrapped()
+    {
+        return $this->readWrapperValue("ClassificationId");
+    }
+
+    /**
+     *视频分类Id
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setClassificationId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->ClassificationId = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     *视频分类Id
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setClassificationIdUnwrapped($var)
+    {
+        $this->writeWrapperValue("ClassificationId", $var);
         return $this;}
 
 }

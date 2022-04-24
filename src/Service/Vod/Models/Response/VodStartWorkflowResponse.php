@@ -9,12 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * **********************************************************************
+ * 转码
+ * **********************************************************************
+ *
  * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodStartWorkflowResponse</code>
  */
 class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
@@ -28,7 +32,7 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Volc\Service\Vod\Models\Base\ResponseMetadata $ResponseMetadata
+     *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
      *     @type \Volc\Service\Vod\Models\Business\VodStartWorkflowResult $Result
      * }
      */
@@ -38,8 +42,8 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
-     * @return \Volc\Service\Vod\Models\Base\ResponseMetadata
+     * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * @return \Volc\Service\Base\Models\Base\ResponseMetadata
      */
     public function getResponseMetadata()
     {
@@ -47,13 +51,13 @@ class VodStartWorkflowResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
-     * @param \Volc\Service\Vod\Models\Base\ResponseMetadata $var
+     * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
+     * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
      */
     public function setResponseMetadata($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Base\ResponseMetadata::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Base\Models\Base\ResponseMetadata::class);
         $this->ResponseMetadata = $var;
 
         return $this;

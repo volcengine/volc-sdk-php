@@ -20,5 +20,5 @@ $body = [
     'Interval' => '5min',
 ];
 
-$response = $client->describeCdnOriginData(['json' => $body]);
+$response = $client->describeCdnOriginData($body);
 var_dump($response);

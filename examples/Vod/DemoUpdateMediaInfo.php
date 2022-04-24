@@ -13,14 +13,18 @@ $client = Vod::getInstance();
 
 $vid = "vid";
 $title = "title";
+$desc = "desc";
 $tags = "tag1,tag2";
+$classificationId = 0;
 
 echo "\n修改媒资信息\n";
 
 $req = new VodUpdateMediaInfoRequest();
 $req->setVid($vid);
 $req->setTitleUnwrapped($title);
+$req->setDescriptionUnwrapped($desc);
 $req->setTagsUnwrapped($tags);
+$req->setClassificationIdUnwrapped($classificationId);
 $response = new VodUpdateMediaInfoResponse();
 try {
     $response = $client->updateMediaInfo($req);

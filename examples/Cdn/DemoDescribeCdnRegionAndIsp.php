@@ -12,5 +12,5 @@ $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 $body = ['Domain' => 'example.com'];
-$response = $client->describeCdnRegionAndIsp(['json' => $body]);
+$response = $client->describeCdnRegionAndIsp($body);
 var_dump($response);
