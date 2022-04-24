@@ -397,6 +397,136 @@ class Live extends V4Curl
                 ],
             ]
         ],
+        'DescribeLiveBandwidthData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveTrafficData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveTrafficData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveP95PeakBandwidthData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveP95PeakBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeRecordData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeRecordData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeTranscodeData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeTranscodeData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeSnapshotData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeSnapshotData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveDomainLog' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveDomainLog',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribePushStreamMetrics' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribePushStreamMetrics',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveStreamSessions' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveStreamSessions',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribePlayResponseStatusStat' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribePlayResponseStatusStat',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveMetricTrafficData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveMetricTrafficData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveMetricBandwidthData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveMetricBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribePlayStreamList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribePlayStreamList',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
     ];
 
     public function __construct()
@@ -626,5 +756,70 @@ class Live extends V4Curl
     public function listVhostSnapshotPreset(array $query = []): string
     {
         return $this->requestWithRetry("ListVhostSnapshotPreset", $query);
+    }
+
+    public function describeLiveBandwidthData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveBandwidthData", $query);
+    }
+
+    public function describeLiveTrafficData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveTrafficData", $query);
+    }
+
+    public function describeLiveP95PeakBandwidthData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveP95PeakBandwidthData", $query);
+    }
+
+    public function describeRecordData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeRecordData", $query);
+    }
+
+    public function describeTranscodeData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeTranscodeData", $query);
+    }
+
+    public function describeSnapshotData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeSnapshotData", $query);
+    }
+
+    public function describeLiveDomainLog(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveDomainLog", $query);
+    }
+
+    public function describePushStreamMetrics(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribePushStreamMetrics", $query);
+    }
+
+    public function describeLiveStreamSessions(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveStreamSessions", $query);
+    }
+
+    public function describePlayResponseStatusStat(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribePlayResponseStatusStat", $query);
+    }
+
+    public function describeLiveMetricTrafficData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveMetricTrafficData", $query);
+    }
+
+    public function describeLiveMetricBandwidthData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveMetricBandwidthData", $query);
+    }
+
+    public function describePlayStreamList(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribePlayStreamList", $query);
     }
 }
