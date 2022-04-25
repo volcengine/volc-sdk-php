@@ -62,18 +62,5 @@ $response = $client->deleteReferer(['json' => $body]);
 echo $response;
 echo '<br>';
 
-$body = [
-    'Domain' => 'dd',
-    'App' => 'app',
-    'SceneType' => 'push',
-];
-
-$response = $client->enableAuth(['json' => $body]);
-echo $response;
-echo '<br>';
-
-$response = $client->disableAuth(['json' => $body]);
-echo $response;
-echo '<br>';
 
 

@@ -127,26 +127,6 @@ class Live extends V4Curl
                 ],
             ]
         ],
-        'EnableAuth' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'EnableAuth',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
-        'DisableAuth' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DisableAuth',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
         'DescribeAuth' => [
             'url' => '/',
             'method' => 'post',
@@ -193,16 +173,6 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateCert',
-                    'Version' => '2020-08-01',
-                ],
-            ]
-        ],
-        'DescribeCertDetailSecret' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCertDetailSecret',
                     'Version' => '2020-08-01',
                 ],
             ]
@@ -623,16 +593,6 @@ class Live extends V4Curl
         return $this->requestWithRetry("UpdateAuthKey", $query);
     }
 
-    public function enableAuth(array $query = []): string
-    {
-        return $this->requestWithRetry("EnableAuth", $query);
-    }
-
-    public function disableAuth(array $query = []): string
-    {
-        return $this->requestWithRetry("DisableAuth", $query);
-    }
-
     public function describeAuth(array $query = []): string
     {
         return $this->requestWithRetry("DescribeAuth", $query);
@@ -658,10 +618,6 @@ class Live extends V4Curl
         return $this->requestWithRetry("CreateCert", $query);
     }
 
-    public function describeCertDetailSecret(array $query = []): string
-    {
-        return $this->requestWithRetry("DescribeCertDetailSecret", $query);
-    }
 
     public function updateCert(array $query = []): string
     {

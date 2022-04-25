@@ -14,14 +14,6 @@ echo $response;
 echo '<br>';
 
 $body = [
-    'ChainID' => 'xxxxxx',
-];
-
-$response = $client->describeCertDetailSecret(['json' => $body]);
-echo $response;
-echo '<br>';
-
-$body = [
     'UseWay' => 'sign',
     'CertName' => 'asd',
 ];
