@@ -432,6 +432,16 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeVodDomainBandwidthData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodDomainBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************
