@@ -12,7 +12,6 @@ $client->setSecretKey("your sk");
 $req = new VodListCdnTopAccessUrlRequest();
 $response = new VodListCdnTopAccessUrlResponse();
 try {
-    $req->setSpaceName("your space name");
     $req->setDomains("your domain");
     $req->setStartTimestamp(0);
     $req->setEndTimestamp(0);
