@@ -69,7 +69,7 @@ echo $response;
 echo '<br>';
 
 $body = [
-    "DomainList" => "example.com, example2.com",
+    "DomainList" => "example.com,example2.com",
     "StartTime" => "2022-04-21T14:00:00+08:00",
     "EndTime" => "2022-04-22T14:00:00+08:00",
 ];
