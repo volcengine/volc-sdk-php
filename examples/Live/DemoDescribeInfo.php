@@ -123,8 +123,8 @@ $body = [
     "IPList" => ["123.123.123.000"],
     "RegionList" => [
         [
-            "Area" => "cn",
-            "Country" => "cn",
+            "Area" => "CN",
+            "Country" => "CN",
             "Province" => "beijing",
         ],
     ],
@@ -145,8 +145,8 @@ $body = [
     "IPList" => ["123.123.123.000"],
     "RegionList" => [
         [
-            "Area" => "cn",
-            "Country" => "cn",
+            "Area" => "CN",
+            "Country" => "CN",
             "Province" => "beijing",
         ]
     ],
