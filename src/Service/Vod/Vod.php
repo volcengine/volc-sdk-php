@@ -88,12 +88,16 @@ use Volc\Service\Vod\Models\Request\VodListCdnTasksRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTasksResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnAccessLogRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnAccessLogResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnTopAccessUrlRequest;
+use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
 use Volc\Service\Vod\Models\Response\VodSetCallbackEventResponse;
+use Volc\Service\Vod\Models\Request\VodGetSmartStrategyLitePlayInfoRequest;
+use Volc\Service\Vod\Models\Response\VodGetSmartStrategyLitePlayInfoResponse;
 
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
@@ -1530,6 +1534,39 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * ListCdnTopAccessUrl.
+     *
+     * @param $req VodListCdnTopAccessUrlRequest
+     * @return VodListCdnTopAccessUrlResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listCdnTopAccessUrl (VodListCdnTopAccessUrlRequest $req): VodListCdnTopAccessUrlResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListCdnTopAccessUrl', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListCdnTopAccessUrlResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * DescribeVodDomainBandwidthData.
      *
      * @param $req VodDescribeVodDomainBandwidthDataRequest
@@ -1618,6 +1655,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodSetCallbackEventResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetSmartStrategyLitePlayInfo.
+     *
+     * @param $req VodGetSmartStrategyLitePlayInfoRequest
+     * @return VodGetSmartStrategyLitePlayInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getSmartStrategyLitePlayInfo (VodGetSmartStrategyLitePlayInfoRequest $req): VodGetSmartStrategyLitePlayInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetSmartStrategyLitePlayInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetSmartStrategyLitePlayInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

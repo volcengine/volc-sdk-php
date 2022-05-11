@@ -359,16 +359,6 @@ class VodOption
                 ],
             ]
         ],
-//        'GetSpaceConfig' => [
-//            'url' => '/',
-//            'method' => 'get',
-//            'config' => [
-//                'query' => [
-//                    'Action' => 'GetSpaceConfig',
-//                    'Version' => '2022-01-01',
-//                ],
-//            ]
-//        ],
         'UpdateSpace' => [
             'url' => '/',
             'method' => 'get',
@@ -432,6 +422,26 @@ class VodOption
                 ],
             ]
         ],
+        'ListCdnAccessLog' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnAccessLog',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'ListCdnTopAccessUrl' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnTopAccessUrl',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
         'DescribeVodDomainBandwidthData' => [
             'url' => '/',
             'method' => 'get',
@@ -442,6 +452,7 @@ class VodOption
                 ],
             ]
         ],
+        
         // **********************************************************************
         // 回调管理
         // **********************************************************************
