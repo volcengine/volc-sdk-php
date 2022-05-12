@@ -31,10 +31,12 @@ $body = [
     'Domain' => 'domain',
     'App' => 'app',
     'RefererInfoList' => [
-        'Key' => 'asd',
-        'Type' => 'xx',
-        'Value' => 'sad',
-        'Priority' => 0,
+        [
+            'Key' => 'asd',
+            'Type' => 'xx',
+            'Value' => 'sad',
+            'Priority' => 0,
+        ],
     ],
 ];
 
@@ -60,18 +62,5 @@ $response = $client->deleteReferer(['json' => $body]);
 echo $response;
 echo '<br>';
 
-$body = [
-    'Domain' => 'dd',
-    'App' => 'app',
-    'SceneType' => 'push',
-];
-
-$response = $client->enableAuth(['json' => $body]);
-echo $response;
-echo '<br>';
-
-$response = $client->disableAuth(['json' => $body]);
-echo $response;
-echo '<br>';
 
 

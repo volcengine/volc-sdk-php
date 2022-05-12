@@ -8,10 +8,12 @@ $body = [
     'App' => 'app',
     'Bucket' => 'bb',
     'RecordTob' => [
-        'Format'=>'hls',
-        'Duration'=>100,
-        'Splice' => -1,
-        'RecordObject' => '/xx/xx',
+        [
+            'Format' => 'hls',
+            'Duration' => 100,
+            'Splice' => -1,
+            'RecordObject' => '/xx/xx',
+        ],
     ]
 ];
 
@@ -21,14 +23,17 @@ echo '<br>';
 
 
 $body = [
+    "Preset" => "preset",
     'Vhost' => 'vhost',
     'App' => 'app',
     'Bucket' => 'bb2',
     'RecordTob' => [
-        'Format'=>'hls',
-        'Duration'=>100,
-        'Splice' => -1,
-        'RecordObject' => '/xx/xx',
+        [
+            'Format' => 'hls',
+            'Duration' => 100,
+            'Splice' => -1,
+            'RecordObject' => '/xx/xx',
+        ],
     ]
 ];
 $response = $client->updateRecordPreset(['json' => $body]);
@@ -39,7 +44,7 @@ echo '<br>';
 $body = [
     'Vhost' => 'vhost',
     'App' => 'app',
-    'Preset'=>'xx',
+    'Preset' => 'xx',
 ];
 $response = $client->deleteRecordPreset(['json' => $body]);
 echo $response;

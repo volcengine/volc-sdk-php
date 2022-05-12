@@ -30,7 +30,7 @@ echo $response;
 echo '<br>';
 
 $body = [
-    'Domain' => 'domain',
+    'DomainList' => ['domain1', 'domain2'],
 ];
 $response = $client->describeDomain(['json' => $body]);
 echo $response;
