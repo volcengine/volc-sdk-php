@@ -4,6 +4,7 @@
 use Volc\Service\Notify;
 
 require('../../../vendor/autoload.php');
+require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
 $client->setAccessKey("***REMOVED***");
@@ -11,8 +12,8 @@ $client->setSecretKey("***REMOVED***");
 
 
 $body = [
-    'FileName'=>'测试的文件.mp3'
+    'FileName'=>'mytest.mp3',
 ];
 
-$response = $client->CommitResourceUpload(['json' => $body]);
+$response = $client->CommitResourceUpload($body);
 echo $response;

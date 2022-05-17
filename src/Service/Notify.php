@@ -2,7 +2,10 @@
 
 namespace Volc\Service;
 
-class Notify
+use Exception;
+use Volc\Base\V4Curl;
+
+class Notify extends V4Curl
 {
     /**
      * @throws Exception
@@ -315,6 +318,6 @@ class Notify
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("QueryOpenGetResource", $data);
+        return $this->requestWithRetry("QueryOpenGetResource", ['json' => $data]);
     }
 }

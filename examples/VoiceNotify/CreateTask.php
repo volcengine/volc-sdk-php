@@ -3,27 +3,28 @@
 use Volc\Service\Notify;
 
 require('../../../vendor/autoload.php');
+require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
 $client->setAccessKey("***REMOVED***");
 $client->setSecretKey("***REMOVED***");
 
 $body = [
-    'Name' => '你好',
+    'Name' => '你好2222',
     'Resource' => '9b39e17fb12444c78f20d6551469a6f0',
     'Type' => 0,
     'NumberPoolNo' => 'NP162213338604093530',
     'Concurrency' => 2,
     'PhoneList' => [
         [
-            'Phone' => 'your phone',
+            'Phone' => '13370496697',
         ]
     ],
-    'StartTime' => '2022-03-01 00:00:00',
-    'EndTime' => '2022-03-01 00:00:00',
+    'StartTime' => '2022-05-18 00:00:00',
+    'EndTime' => '2022-05-15 18:00:00',
     'SelectNumberRule' => 5,
 ];
 
-$response = $client->CreateTask(['json' => $body]);
+$response = $client->CreateTask($body);
 echo $response;
 

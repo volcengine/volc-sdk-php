@@ -2,6 +2,7 @@
 use Volc\Service\Notify;
 
 require('../../../vendor/autoload.php');
+require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
 $client->setAccessKey("***REMOVED***");
@@ -9,12 +10,12 @@ $client->setSecretKey("***REMOVED***");
 
 
 $body = [
-    'TaskOpenId' => '106d2984fbf0480480cbc8b98d609592',
+    'TaskOpenId' => '0742e8123ada40cb9efa6b55e8fced7a',
     'Concurrency'=> 3,
-    'StartTime' => '2022-03-02 00:00:00',
-    'EndTime' => '2022-03-13 01:30:00',
+    'StartTime' => '2022-05-17 00:00:00',
+    'EndTime' => '2022-05-17 18:30:00',
     'Recall' => 1,
 ];
 
-$response = $client->UpdateTask(['json' => $body]);
+$response = $client->UpdateTask($body);
 echo $response;

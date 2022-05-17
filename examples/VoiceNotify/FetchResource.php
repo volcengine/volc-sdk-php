@@ -4,6 +4,7 @@
 use Volc\Service\Notify;
 
 require('../../../vendor/autoload.php');
+require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
 $client->setAccessKey("***REMOVED***");
@@ -11,9 +12,9 @@ $client->setSecretKey("***REMOVED***");
 
 
 $body = [
-    'url'=>'公网url，使用前需要申请正向代理',
-    'Name'=>'测试',
+    'Url'=>'http://upload.kuaidihelp.com/ivr_voice_new/2021_12/3355798202112171127415813.wav',
+    'Name'=>'测试快宝',
 ];
 
-$response = $client->FetchResource(['json' => $body]);
+$response = $client->FetchResource($body);
 echo $response;
