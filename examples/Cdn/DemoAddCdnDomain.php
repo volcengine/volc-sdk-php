@@ -2,7 +2,7 @@
 
 use Volc\Service\Cdn;
 
-require('../../vendor/autoload.php');
+require('../../../vendor/autoload.php');
 
 $client = Cdn::getInstance();
 
