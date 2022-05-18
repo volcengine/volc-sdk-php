@@ -9,6 +9,6 @@ $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 echo "\nDemo FaceSwap\n";
-$response = $client->JPCartoon(['form_params' => [
+$response = $client->FaceSwap(['form_params' => [
     'image_base64' => '', 'template_base64' => '', 'action_id' => 'faceswap']]);
 echo $response;
