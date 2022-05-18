@@ -7,8 +7,8 @@ require('../../../vendor/autoload.php');
 require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 
 $body = [

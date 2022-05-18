@@ -8,12 +8,12 @@ require('../../../vendor/autoload.php');
 require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 
 $body = [
-    'Name'=>'公网url，使用前需要申请正向代理',
+    'Name'=>'测试',
     'TtsTemplateContent'=>'测试',
     'Remark'=>"测试",
     'TtsOption'=>"{\"loop\":0,\"loop_interval\":0,\"speed\":10,\"volume\":10,\"pitch\":10,\"voice_type\":\"BV001_streaming\",\"lang\":\"ch\",\"voice\":\"other\"}",

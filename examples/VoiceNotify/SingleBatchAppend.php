@@ -6,14 +6,14 @@ require('../../../vendor/autoload.php');
 require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 
 $body = [
     'List' => [
         [
-            'Phone'=>'13370496697',
+            'Phone'=>'your phone',
             'Resource' => '9b39e17fb12444c78f20d6551469a6f0',
             'NumberPoolNo'=>'NP162213338604093530',
             'NumberType'=>0,

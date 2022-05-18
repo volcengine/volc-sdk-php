@@ -7,13 +7,13 @@ require('../../../vendor/autoload.php');
 require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 
 $body = [
-    'Url'=>'http://upload.kuaidihelp.com/ivr_voice_new/2021_12/3355798202112171127415813.wav',
-    'Name'=>'测试快宝',
+    'Url'=>'公网可以访问的url，需要申请正向代理',
+    'Name'=>'测试',
 ];
 
 $response = $client->FetchResource($body);

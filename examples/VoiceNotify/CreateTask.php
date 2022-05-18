@@ -6,8 +6,8 @@ require('../../../vendor/autoload.php');
 require('../../src/Service/Notify.php');
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 $body = [
     'Name' => '你好2222',
@@ -17,7 +17,7 @@ $body = [
     'Concurrency' => 2,
     'PhoneList' => [
         [
-            'Phone' => '13370496697',
+            'Phone' => 'your phone',
         ]
     ],
     'StartTime' => '2022-05-18 00:00:00',

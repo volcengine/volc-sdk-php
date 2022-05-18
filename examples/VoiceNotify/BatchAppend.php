@@ -7,14 +7,14 @@ require('../../src/Service/Notify.php');
 
 
 $client = Notify::getInstance();
-$client->setAccessKey("***REMOVED***");
-$client->setSecretKey("***REMOVED***");
+$client->setAccessKey("your ak");
+$client->setSecretKey("your sk");
 
 $body = [
     'TaskOpenId' => '106d2984fbf0480480cbc8b98d609592',
     'PhoneList' => [
         [
-            'Phone' => '13370496697',
+            'Phone' => 'your phone',
         ]
     ],
 ];
