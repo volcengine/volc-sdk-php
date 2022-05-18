@@ -2,6 +2,7 @@
 
 namespace Volc\Service;
 
+use ArrayObject;
 use Exception;
 use Volc\Base\V4Curl;
 
