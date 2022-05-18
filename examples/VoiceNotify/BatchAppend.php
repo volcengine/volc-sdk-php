@@ -14,11 +14,11 @@ $body = [
     'TaskOpenId' => '106d2984fbf0480480cbc8b98d609592',
     'PhoneList' => [
         [
-            'Phone' => 'your phone',
+            'Phone' => '13370496697',
         ]
     ],
 ];
 
-$response = $client->BatchAppend(['json' => $body]);
+$response = $client->BatchAppend($body);
 echo $response;
 
