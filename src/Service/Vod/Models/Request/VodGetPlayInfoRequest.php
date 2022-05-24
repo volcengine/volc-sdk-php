@@ -103,6 +103,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string DrmExpireTimestamp = 15;</code>
      */
     protected $DrmExpireTimestamp = '';
+    /**
+     *音频码率
+     *
+     * Generated from protobuf field <code>string Quality = 16;</code>
+     */
+    protected $Quality = '';
 
     /**
      * Constructor.
@@ -140,6 +146,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
      *     @type string $DrmExpireTimestamp
      *           DRM过期时间戳
+     *     @type string $Quality
+     *          音频码率
      * }
      */
     public function __construct($data = NULL) {
@@ -533,6 +541,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->DrmExpireTimestamp = $var;
+
+        return $this;
+    }
+
+    /**
+     *音频码率
+     *
+     * Generated from protobuf field <code>string Quality = 16;</code>
+     * @return string
+     */
+    public function getQuality()
+    {
+        return $this->Quality;
+    }
+
+    /**
+     *音频码率
+     *
+     * Generated from protobuf field <code>string Quality = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuality($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Quality = $var;
 
         return $this;
     }
