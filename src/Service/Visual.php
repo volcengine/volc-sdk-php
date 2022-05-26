@@ -59,6 +59,24 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
+    public function OCRNormal(array $query = [])
+    {
+        $response = $this->request('OCRNormal', $query);
+        return $response->getBody();
+    }
+
+    public function IDCard(array $query = [])
+    {
+        $response = $this->request('IDCard', $query);
+        return $response->getBody();
+    }
+
+    public function BankCard(array $query = [])
+    {
+        $response = $this->request('BankCard', $query);
+        return $response->getBody();
+    }
+
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
@@ -120,5 +138,36 @@ class Visual extends V4Curl
                 ],
             ],
         ],
+        'OCRNormal' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'OCRNormal',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'IDCard' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'IDCard',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'BankCard' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BankCard',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+
     ];
 }
