@@ -7,7 +7,7 @@ $body = [
     'Domain' => 'domain1',
     'App' => 'app',
     'Stream' => 'stream',
-    'EndTime' => '2021-03-23 14:49:58',
+    'EndTime' => '2022-02-12T08:12:48.000Z',
 ];
 
 $response = $client->forbidStream(['json' => $body]);
