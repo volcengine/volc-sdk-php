@@ -97,6 +97,12 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CreateTime = 14;</code>
      */
     protected $CreateTime = '';
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 15;</code>
+     */
+    protected $Quality = '';
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      *          帧率
      *     @type string $CreateTime
      *          创建时间
+     *     @type string $Quality
+     *          音频质量
      * }
      */
     public function __construct($data = NULL) {
@@ -499,6 +507,32 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CreateTime = $var;
+
+        return $this;
+    }
+
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 15;</code>
+     * @return string
+     */
+    public function getQuality()
+    {
+        return $this->Quality;
+    }
+
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuality($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Quality = $var;
 
         return $this;
     }
