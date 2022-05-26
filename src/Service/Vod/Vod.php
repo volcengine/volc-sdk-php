@@ -92,6 +92,10 @@ use Volc\Service\Vod\Models\Request\VodListCdnTopAccessUrlRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
+use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
+use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -1589,6 +1593,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDescribeVodDomainBandwidthDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListCdnUsageData.
+     *
+     * @param $req VodListCdnUsageDataRequest
+     * @return VodCdnStatisticsCommonResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listCdnUsageData (VodListCdnUsageDataRequest $req): VodCdnStatisticsCommonResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListCdnUsageData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCdnStatisticsCommonResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListCdnStatusData.
+     *
+     * @param $req VodListCdnStatusDataRequest
+     * @return VodCdnStatisticsCommonResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listCdnStatusData (VodListCdnStatusDataRequest $req): VodCdnStatisticsCommonResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListCdnStatusData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCdnStatisticsCommonResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

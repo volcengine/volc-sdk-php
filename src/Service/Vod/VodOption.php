@@ -452,7 +452,27 @@ class VodOption
                 ],
             ]
         ],
-        
+        'ListCdnUsageData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnUsageData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'ListCdnStatusData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnStatusData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+
         // **********************************************************************
         // 回调管理
         // **********************************************************************
