@@ -1,4 +1,5 @@
 <?php
+
 use Volc\Service\SecretNumber;
 
 require('../../vendor/autoload.php');
@@ -9,11 +10,13 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'NumberPoolNo' => 'NP161156328504091435',
+    'PhoneNoA' => '13700000001',
+    'PhoneNoB' => '13700000002',
+    'PhoneNoX' => '13700000003',
+    'ExpireTime' => '1632920195',
+    'UserData' => 'this is my user data',
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->BindAXB($body);
 echo $response;

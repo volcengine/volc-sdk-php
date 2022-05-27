@@ -9,11 +9,9 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'NumberPoolNo' => 'NP162981168404095092',
+    'SubId' => 'S16329006138991e7e1003',
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->UnbindAXN($body);
 echo $response;

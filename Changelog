@@ -1,4 +1,6 @@
 Change log
+2022-05-27 Bumped to version v1.0.39
+-add SecretNumber service and example.
 
 2022-05-20 Bumped to version v1.0.38
 - Added notify service

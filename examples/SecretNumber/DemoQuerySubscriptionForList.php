@@ -9,11 +9,12 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'NumberPoolNo' => 'NP161156328504091435',
+    'PhoneNoX' => '13700000003',
+    'Status' => 1,
+    'Offset' => 0,
+    'Limit' => 20,
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->QuerySubscriptionForList($body);
 echo $response;

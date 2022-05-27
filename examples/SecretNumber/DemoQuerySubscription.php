@@ -9,11 +9,9 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'NumberPoolNo' => 'NP161156328504091435',
+    'SubId' => 'S16329001153159fa121d9',
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->QuerySubscription($body);
 echo $response;

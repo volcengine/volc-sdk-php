@@ -38,6 +38,17 @@ class SecretNumber extends V4Curl
     }
 
     protected $apiList = [
+        'BindAXB' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BindAXB',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
         'SelectNumberAndBindAXB' => [
             'url' => '/',
             'method' => 'post',
@@ -178,7 +189,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("BindAXB", ['json' => $data]);
+        return $this->requestWithRetry("BindAXB", ['form_params' => $data]);
     }
 
     public function SelectNumberAndBindAXB(array $data = []): string
@@ -186,7 +197,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("SelectNumberAndBindAXB", ['json' => $data]);
+        return $this->requestWithRetry("SelectNumberAndBindAXB", ['form_params' => $data]);
     }
 
     public function UnbindAXB(array $data = []): string
@@ -194,7 +205,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("UnbindAXB", ['json' => $data]);
+        return $this->requestWithRetry("UnbindAXB", ['form_params' => $data]);
     }
 
     public function QuerySubscription(array $data = []): string
@@ -202,7 +213,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("QuerySubscription", ['json' => $data]);
+        return $this->requestWithRetry("QuerySubscription", ['form_params' => $data]);
     }
 
     public function QuerySubscriptionForList(array $data = []): string
@@ -210,7 +221,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("QuerySubscriptionForList", ['json' => $data]);
+        return $this->requestWithRetry("QuerySubscriptionForList", ['form_params' => $data]);
     }
 
     public function UpgradeAXToAXB(array $data = []): string
@@ -218,7 +229,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("UpgradeAXToAXB", ['json' => $data]);
+        return $this->requestWithRetry("UpgradeAXToAXB", ['form_params' => $data]);
     }
 
     public function UpdateAXB(array $data = []): string
@@ -226,7 +237,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("UpdateAXB", ['json' => $data]);
+        return $this->requestWithRetry("UpdateAXB", ['form_params' => $data]);
     }
 
     public function BindAXN(array $data = []): string
@@ -234,7 +245,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("BindAXN", ['json' => $data]);
+        return $this->requestWithRetry("BindAXN", ['form_params' => $data]);
     }
 
     public function UpdateAXN(array $data = []): string
@@ -242,7 +253,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("UpdateAXN", ['json' => $data]);
+        return $this->requestWithRetry("UpdateAXN", ['form_params' => $data]);
     }
 
     public function UnbindAXN(array $data = []): string
@@ -250,7 +261,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("UnbindAXN", ['json' => $data]);
+        return $this->requestWithRetry("UnbindAXN", ['form_params' => $data]);
     }
 
     public function Click2Call(array $data = []): string
@@ -258,7 +269,7 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("Click2Call", ['json' => $data]);
+        return $this->requestWithRetry("Click2Call", ['form_params' => $data]);
     }
 
     public function Click2CallLite(array $data = []): string
@@ -266,6 +277,6 @@ class SecretNumber extends V4Curl
         if (empty($data)){
             $data = new ArrayObject();
         }
-        return $this->requestWithRetry("Click2CallLite", ['json' => $data]);
+        return $this->requestWithRetry("Click2CallLite", ['form_params' => $data]);
     }
 }

@@ -9,11 +9,10 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'Caller' => '137XXXX8257',
+    'Callee' => '158XXXX9130',
+    'NumberPoolNo' => 'NPXXXXX810901043',
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->Click2CallLite($body);
 echo $response;

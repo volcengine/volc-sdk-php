@@ -9,11 +9,11 @@ $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'Caller' => "137XXXX8257",
-    'Callee' => "158XXXX9130",
-    'CallerNumberPoolNo' => 'NP163517154204092175',
-    'CalleeNumberPoolNo' => 'NP163517154204092175',
+    'NumberPoolNo' => 'NP161156328504091435',
+    'SubId' => 'S163290034831599ce523b',
+    'PhoneNoB' => '13700000002',
+    'UserData' => 'this is my user data',
 ];
 
-$response = $client->Click2Call($body);
+$response = $client->UpgradeAXToAXB($body);
 echo $response;
