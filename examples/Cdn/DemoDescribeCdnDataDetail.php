@@ -5,17 +5,18 @@ use Volc\Service\Cdn;
 require('../../vendor/autoload.php');
 
 $client = Cdn::getInstance();
+require_once "init.php";
 
-$ak = 'ak';
-$sk = 'sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$client = Cdn::getInstance();
 
-$now = time();
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
+
 $body = [
-    'StartTime' => $now - 3600,
-    'EndTime' => $now,
-    'Domain' => 'example.com',
+    'StartTime' => $config->startTime,
+    'EndTime' => $config->endTime,
+    'Domain' => $config->exampleDomain,
     'Metric' => "bandwidth",
     'Interval' => '5min',
     'Protocol' => 'http',
