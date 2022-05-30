@@ -34,11 +34,21 @@ class VodGetAutomaticSpeechRecognitionForAuditResult extends \Google\Protobuf\In
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodASRInfoForAudit Info = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodASRInfoForAudit
+     * @return \Volc\Service\Vod\Models\Business\VodASRInfoForAudit|null
      */
     public function getInfo()
     {
         return $this->Info;
+    }
+
+    public function hasInfo()
+    {
+        return isset($this->Info);
+    }
+
+    public function clearInfo()
+    {
+        unset($this->Info);
     }
 
     /**

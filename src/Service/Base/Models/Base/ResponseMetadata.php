@@ -209,11 +209,21 @@ class ResponseMetadata extends \Google\Protobuf\Internal\Message
      * 异常信息
      *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseError Error = 6;</code>
-     * @return \Volc\Service\Base\Models\Base\ResponseError
+     * @return \Volc\Service\Base\Models\Base\ResponseError|null
      */
     public function getError()
     {
         return $this->Error;
+    }
+
+    public function hasError()
+    {
+        return isset($this->Error);
+    }
+
+    public function clearError()
+    {
+        unset($this->Error);
     }
 
     /**

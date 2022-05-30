@@ -131,11 +131,21 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      * 动态参数
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.WorkflowParams Input = 3;</code>
-     * @return \Volc\Service\Vod\Models\Business\WorkflowParams
+     * @return \Volc\Service\Vod\Models\Business\WorkflowParams|null
      */
     public function getInput()
     {
         return $this->Input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->Input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->Input);
     }
 
     /**

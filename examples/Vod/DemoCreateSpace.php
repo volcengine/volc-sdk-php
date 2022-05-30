@@ -1,4 +1,5 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;

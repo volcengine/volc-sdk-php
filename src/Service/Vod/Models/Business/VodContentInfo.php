@@ -38,11 +38,11 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
      */
     protected $TaskType = '';
     /**
-     *任务创建时间
+     *任务创建时间，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>double CreateTime = 5;</code>
+     * Generated from protobuf field <code>int32 CreateTimestamp = 5;</code>
      */
-    protected $CreateTime = 0.0;
+    protected $CreateTimestamp = 0;
     /**
      *任务ID
      *
@@ -64,8 +64,8 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
      *          任务状态
      *     @type string $TaskType
      *          任务类型
-     *     @type float $CreateTime
-     *          任务创建时间
+     *     @type int $CreateTimestamp
+     *          任务创建时间，单位：Unix秒级时间戳
      *     @type string $TaskId
      *          任务ID
      * }
@@ -180,27 +180,27 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务创建时间
+     *任务创建时间，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>double CreateTime = 5;</code>
-     * @return float
+     * Generated from protobuf field <code>int32 CreateTimestamp = 5;</code>
+     * @return int
      */
-    public function getCreateTime()
+    public function getCreateTimestamp()
     {
-        return $this->CreateTime;
+        return $this->CreateTimestamp;
     }
 
     /**
-     *任务创建时间
+     *任务创建时间，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>double CreateTime = 5;</code>
-     * @param float $var
+     * Generated from protobuf field <code>int32 CreateTimestamp = 5;</code>
+     * @param int $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTimestamp($var)
     {
-        GPBUtil::checkDouble($var);
-        $this->CreateTime = $var;
+        GPBUtil::checkInt32($var);
+        $this->CreateTimestamp = $var;
 
         return $this;
     }

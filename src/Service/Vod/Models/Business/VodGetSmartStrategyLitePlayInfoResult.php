@@ -115,11 +115,21 @@ class VodGetSmartStrategyLitePlayInfoResult extends \Google\Protobuf\Internal\Me
      * 匹配的VideoModel
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPlayInfoModel PlayInfoModel = 3;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodPlayInfoModel
+     * @return \Volc\Service\Vod\Models\Business\VodPlayInfoModel|null
      */
     public function getPlayInfoModel()
     {
         return $this->PlayInfoModel;
+    }
+
+    public function hasPlayInfoModel()
+    {
+        return isset($this->PlayInfoModel);
+    }
+
+    public function clearPlayInfoModel()
+    {
+        unset($this->PlayInfoModel);
     }
 
     /**
