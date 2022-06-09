@@ -3,21 +3,19 @@
 use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
+require_once "init.php";
 
 $client = Cdn::getInstance();
 
-$ak = 'ak';
-$sk = 'sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
 
-$now = time();
 $body = [
-    'Domain' => 'www.yourdomain.com',
+    'Domain' => $config->exampleDomain,
     'ServiceType' => 'web',
-    'ResourceTag' => 'key:val',
-    'PageNum' => 3,
-    'PageSize' => 50
+    'PageNum' => 1,
+    'PageSize' => 10
 ];
 
 $response = $client->listCdnDomains($body);

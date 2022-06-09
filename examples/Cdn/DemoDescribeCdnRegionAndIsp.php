@@ -3,14 +3,17 @@
 use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
+require_once "init.php";
 
 $client = Cdn::getInstance();
 
-$ak = 'your ak';
-$sk = 'your sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
 
-$body = ['Domain' => 'example.com'];
+
+$body = [
+    'Domain' => $config->exampleDomain,
+];
 $response = $client->describeCdnRegionAndIsp($body);
 var_dump($response);
