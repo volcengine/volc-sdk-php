@@ -1,5 +1,9 @@
 Change log
 
+2022-06-09 Bumped to version v1.0.40
+- Added service secertNumber
+- Fixed apis for cdn
+
 2022-05-26 Bumped to version v1.0.39
 - Added rtc service
 - Added apis for ocr
