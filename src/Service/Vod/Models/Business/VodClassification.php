@@ -179,11 +179,21 @@ class VodClassification extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification SubClassification = 6;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodClassification
+     * @return \Volc\Service\Vod\Models\Business\VodClassification|null
      */
     public function getSubClassification()
     {
         return $this->SubClassification;
+    }
+
+    public function hasSubClassification()
+    {
+        return isset($this->SubClassification);
+    }
+
+    public function clearSubClassification()
+    {
+        unset($this->SubClassification);
     }
 
     /**

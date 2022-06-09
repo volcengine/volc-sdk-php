@@ -34,11 +34,21 @@ class VodUpdateMediaPublishStatusResponse extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
-     * @return \Volc\Service\Base\Models\Base\ResponseMetadata
+     * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
     public function getResponseMetadata()
     {
         return $this->ResponseMetadata;
+    }
+
+    public function hasResponseMetadata()
+    {
+        return isset($this->ResponseMetadata);
+    }
+
+    public function clearResponseMetadata()
+    {
+        unset($this->ResponseMetadata);
     }
 
     /**

@@ -73,11 +73,21 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      * 裁剪参数
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\Clip
+     * @return \Volc\Service\Vod\Models\Business\Clip|null
      */
     public function getClip()
     {
         return $this->Clip;
+    }
+
+    public function hasClip()
+    {
+        return isset($this->Clip);
+    }
+
+    public function clearClip()
+    {
+        unset($this->Clip);
     }
 
     /**

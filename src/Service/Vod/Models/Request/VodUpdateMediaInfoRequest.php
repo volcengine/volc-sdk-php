@@ -105,11 +105,21 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *视频封面Uri
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue PosterUri = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPosterUri()
     {
         return $this->PosterUri;
+    }
+
+    public function hasPosterUri()
+    {
+        return isset($this->PosterUri);
+    }
+
+    public function clearPosterUri()
+    {
+        unset($this->PosterUri);
     }
 
     /**
@@ -158,11 +168,21 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *视频名称
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue Title = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTitle()
     {
         return $this->Title;
+    }
+
+    public function hasTitle()
+    {
+        return isset($this->Title);
+    }
+
+    public function clearTitle()
+    {
+        unset($this->Title);
     }
 
     /**
@@ -211,11 +231,21 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *视频描述
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue Description = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
         return $this->Description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->Description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->Description);
     }
 
     /**
@@ -264,11 +294,21 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *视频标签
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue Tags = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTags()
     {
         return $this->Tags;
+    }
+
+    public function hasTags()
+    {
+        return isset($this->Tags);
+    }
+
+    public function clearTags()
+    {
+        unset($this->Tags);
     }
 
     /**
@@ -317,11 +357,21 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *视频分类Id
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getClassificationId()
     {
         return $this->ClassificationId;
+    }
+
+    public function hasClassificationId()
+    {
+        return isset($this->ClassificationId);
+    }
+
+    public function clearClassificationId()
+    {
+        unset($this->ClassificationId);
     }
 
     /**

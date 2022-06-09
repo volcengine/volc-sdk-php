@@ -34,11 +34,21 @@ class VodCommitData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResponseData Data = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResponseData
+     * @return \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResponseData|null
      */
     public function getData()
     {
         return $this->Data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->Data);
+    }
+
+    public function clearData()
+    {
+        unset($this->Data);
     }
 
     /**

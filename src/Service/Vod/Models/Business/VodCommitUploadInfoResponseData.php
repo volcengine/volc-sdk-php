@@ -76,11 +76,21 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodSourceInfo
+     * @return \Volc\Service\Vod\Models\Business\VodSourceInfo|null
      */
     public function getSourceInfo()
     {
         return $this->SourceInfo;
+    }
+
+    public function hasSourceInfo()
+    {
+        return isset($this->SourceInfo);
+    }
+
+    public function clearSourceInfo()
+    {
+        unset($this->SourceInfo);
     }
 
     /**

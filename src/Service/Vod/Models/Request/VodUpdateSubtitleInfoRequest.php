@@ -183,11 +183,21 @@ class VodUpdateSubtitleInfoRequest extends \Google\Protobuf\Internal\Message
      *标题
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue Title = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTitle()
     {
         return $this->Title;
+    }
+
+    public function hasTitle()
+    {
+        return isset($this->Title);
+    }
+
+    public function clearTitle()
+    {
+        unset($this->Title);
     }
 
     /**
@@ -236,11 +246,21 @@ class VodUpdateSubtitleInfoRequest extends \Google\Protobuf\Internal\Message
      *标签
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue Tag = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTag()
     {
         return $this->Tag;
+    }
+
+    public function hasTag()
+    {
+        return isset($this->Tag);
+    }
+
+    public function clearTag()
+    {
+        unset($this->Tag);
     }
 
     /**

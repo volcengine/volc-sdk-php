@@ -343,11 +343,21 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * dash播放信息
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAdaptiveInfo AdaptiveInfo = 8;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodAdaptiveInfo
+     * @return \Volc\Service\Vod\Models\Business\VodAdaptiveInfo|null
      */
     public function getAdaptiveInfo()
     {
         return $this->AdaptiveInfo;
+    }
+
+    public function hasAdaptiveInfo()
+    {
+        return isset($this->AdaptiveInfo);
+    }
+
+    public function clearAdaptiveInfo()
+    {
+        unset($this->AdaptiveInfo);
     }
 
     /**
