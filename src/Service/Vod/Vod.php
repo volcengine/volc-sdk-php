@@ -8,6 +8,8 @@ namespace Volc\Service\Vod;
 use Exception;
 use Throwable;
 use Volc\Base\V4Curl;
+use Volc\Service\Vod\Models\Request\VodGetAllPlayInfoRequest;
+use Volc\Service\Vod\Models\Response\VodGetAllPlayInfoResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoRequest;
 use Volc\Service\Vod\Models\Response\VodGetPlayInfoResponse;
 use Volc\Service\Vod\Models\Request\VodGetPrivateDrmPlayAuthRequest;
@@ -95,6 +97,7 @@ use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
+use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -216,6 +219,39 @@ class Vod extends V4Curl
         return parse_url($this->getRequestUrl("GetPrivateDrmPlayAuth", ['query' => $query]))['query'];
     }
 
+	/**
+     * GetAllPlayInfo.
+     *
+     * @param $req VodGetAllPlayInfoRequest
+     * @return VodGetAllPlayInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAllPlayInfo (VodGetAllPlayInfoRequest $req): VodGetAllPlayInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAllPlayInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAllPlayInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
 	/**
      * GetPlayInfo.
      *
