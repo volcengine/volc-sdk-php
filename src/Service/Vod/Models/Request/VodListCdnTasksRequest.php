@@ -44,17 +44,17 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Status = '';
     /**
-     *起始时间戳
+     *起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 StartTime = 6;</code>
+     * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
      */
-    protected $StartTime = 0;
+    protected $StartTimestamp = 0;
     /**
-     *截止时间戳
+     *截止时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 EndTime = 7;</code>
+     * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
      */
-    protected $EndTime = 0;
+    protected $EndTimestamp = 0;
     /**
      *页码
      *
@@ -84,10 +84,10 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
      *          任务类型
      *     @type string $Status
      *          任务状态
-     *     @type int|string $StartTime
-     *          起始时间戳
-     *     @type int|string $EndTime
-     *          截止时间戳
+     *     @type int $StartTimestamp
+     *          起始时间戳，单位：Unix秒级时间戳
+     *     @type int $EndTimestamp
+     *          截止时间戳，单位：Unix秒级时间戳
      *     @type int $PageNum
      *          页码
      *     @type int $PageSize
@@ -230,53 +230,53 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *起始时间戳
+     *起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 StartTime = 6;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
+     * @return int
      */
-    public function getStartTime()
+    public function getStartTimestamp()
     {
-        return $this->StartTime;
+        return $this->StartTimestamp;
     }
 
     /**
-     *起始时间戳
+     *起始时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 StartTime = 6;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
+     * @param int $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTimestamp($var)
     {
-        GPBUtil::checkInt64($var);
-        $this->StartTime = $var;
+        GPBUtil::checkInt32($var);
+        $this->StartTimestamp = $var;
 
         return $this;
     }
 
     /**
-     *截止时间戳
+     *截止时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 EndTime = 7;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
+     * @return int
      */
-    public function getEndTime()
+    public function getEndTimestamp()
     {
-        return $this->EndTime;
+        return $this->EndTimestamp;
     }
 
     /**
-     *截止时间戳
+     *截止时间戳，单位：Unix秒级时间戳
      *
-     * Generated from protobuf field <code>int64 EndTime = 7;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
+     * @param int $var
      * @return $this
      */
-    public function setEndTime($var)
+    public function setEndTimestamp($var)
     {
-        GPBUtil::checkInt64($var);
-        $this->EndTime = $var;
+        GPBUtil::checkInt32($var);
+        $this->EndTimestamp = $var;
 
         return $this;
     }

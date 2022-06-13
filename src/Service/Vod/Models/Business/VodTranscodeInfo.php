@@ -361,11 +361,21 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *视频流信息
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 10;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodVideoStreamMeta
+     * @return \Volc\Service\Vod\Models\Business\VodVideoStreamMeta|null
      */
     public function getVideoStreamMeta()
     {
         return $this->VideoStreamMeta;
+    }
+
+    public function hasVideoStreamMeta()
+    {
+        return isset($this->VideoStreamMeta);
+    }
+
+    public function clearVideoStreamMeta()
+    {
+        unset($this->VideoStreamMeta);
     }
 
     /**
@@ -387,11 +397,21 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *音频流信息
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 11;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodAudioStreamMeta
+     * @return \Volc\Service\Vod\Models\Business\VodAudioStreamMeta|null
      */
     public function getAudioStreamMeta()
     {
         return $this->AudioStreamMeta;
+    }
+
+    public function hasAudioStreamMeta()
+    {
+        return isset($this->AudioStreamMeta);
+    }
+
+    public function clearAudioStreamMeta()
+    {
+        unset($this->AudioStreamMeta);
     }
 
     /**

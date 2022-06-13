@@ -1,7 +1,8 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
-use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Vod;
 
 
@@ -16,7 +17,7 @@ $req->setEndTime("endTime");
 $req->setAggregation(300);
 $req->setBandwidthType("bandwidthType");
 
-$response = new VodDescribeVodDomainBandwidthDataRequest();
+$response = new VodDescribeVodDomainBandwidthDataResponse();
 try {
     $response = $client->describeVodDomainBandwidthData($req);
 } catch (Exception $e) {

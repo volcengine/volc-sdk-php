@@ -81,11 +81,21 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      * 播放分发加速配置
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainInstanceInfos PlayInstanceInfo = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos
+     * @return \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos|null
      */
     public function getPlayInstanceInfo()
     {
         return $this->PlayInstanceInfo;
+    }
+
+    public function hasPlayInstanceInfo()
+    {
+        return isset($this->PlayInstanceInfo);
+    }
+
+    public function clearPlayInstanceInfo()
+    {
+        unset($this->PlayInstanceInfo);
     }
 
     /**
@@ -107,11 +117,21 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      * 图片分发加速配置
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainInstanceInfos ImageInstanceInfo = 3;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos
+     * @return \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos|null
      */
     public function getImageInstanceInfo()
     {
         return $this->ImageInstanceInfo;
+    }
+
+    public function hasImageInstanceInfo()
+    {
+        return isset($this->ImageInstanceInfo);
+    }
+
+    public function clearImageInstanceInfo()
+    {
+        unset($this->ImageInstanceInfo);
     }
 
     /**

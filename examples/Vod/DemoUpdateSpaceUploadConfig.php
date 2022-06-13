@@ -1,9 +1,9 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
 use Volc\Service\Vod\Vod;
-
 
 $client = Vod::getInstance();
 $client->setAccessKey("your ak");

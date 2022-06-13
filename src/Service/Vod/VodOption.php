@@ -418,7 +418,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTasks',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],

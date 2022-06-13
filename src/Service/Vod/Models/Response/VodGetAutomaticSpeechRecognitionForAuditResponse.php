@@ -39,11 +39,21 @@ class VodGetAutomaticSpeechRecognitionForAuditResponse extends \Google\Protobuf\
 
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
-     * @return \Volc\Service\Base\Models\Base\ResponseMetadata
+     * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
     public function getResponseMetadata()
     {
         return $this->ResponseMetadata;
+    }
+
+    public function hasResponseMetadata()
+    {
+        return isset($this->ResponseMetadata);
+    }
+
+    public function clearResponseMetadata()
+    {
+        unset($this->ResponseMetadata);
     }
 
     /**
@@ -61,11 +71,21 @@ class VodGetAutomaticSpeechRecognitionForAuditResponse extends \Google\Protobuf\
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodGetAutomaticSpeechRecognitionForAuditResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodGetAutomaticSpeechRecognitionForAuditResult
+     * @return \Volc\Service\Vod\Models\Business\VodGetAutomaticSpeechRecognitionForAuditResult|null
      */
     public function getResult()
     {
         return $this->Result;
+    }
+
+    public function hasResult()
+    {
+        return isset($this->Result);
+    }
+
+    public function clearResult()
+    {
+        unset($this->Result);
     }
 
     /**
