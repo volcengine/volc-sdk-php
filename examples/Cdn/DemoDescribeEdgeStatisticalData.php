@@ -3,21 +3,20 @@
 use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
+require_once "init.php";
 
 $client = Cdn::getInstance();
 
-$ak = 'your ak';
-$sk = 'your sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
 
-$now = time();
 $body = [
-    'StartTime' => $now - 86400,
-    'EndTime' => $now,
-    'Metric' => 'pv',
-    'Domain' => 'my.com',
-    'Interval' => '5min',
+    'StartTime' => $config->startTime,
+    'EndTime' => $config->endTime,
+    'Metric' => 'clientIp',
+    'Domain' => $config->exampleDomain,
+    'Interval' => 'hour',
     'Area' => 'China',
     'Region' => 'BJ',
     'IpVersion' => 'ipv4'

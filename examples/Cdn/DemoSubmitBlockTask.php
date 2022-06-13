@@ -3,16 +3,17 @@
 use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
+require_once "init.php";
 
 $client = Cdn::getInstance();
 
-$ak = 'ak';
-$sk = 'sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
+
 
 $body = [
-    'Urls' => 'http://yourdomain.com/1.txt\nhttp://yourdomain.com/2.jpg'
+    'Urls' => sprintf('http://%s/1.txt\nhttp://%s/2.jpg', $config->exampleDomain, $config->exampleDomain),
 ];
 
 $response = $client->submitBlockTask($body);

@@ -3,17 +3,16 @@
 use Volc\Service\Cdn;
 
 require('../../vendor/autoload.php');
+require_once "init.php";
 
 $client = Cdn::getInstance();
 
-$ak = 'ak';
-$sk = 'sk';
-$client->setAccessKey($ak);
-$client->setSecretKey($sk);
+$config = new Config();
+$client->setAccessKey($config->ak);
+$client->setSecretKey($config->sk);
 
-$now = time();
 $body = [
-    'Domain' => 'sdk-online.cdn-test.bytedance.com'
+    'Domain' => $config->exampleDomain,
 ];
 
 $response = $client->startCdnDomain($body);
