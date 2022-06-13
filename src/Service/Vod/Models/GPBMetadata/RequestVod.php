@@ -19,8 +19,30 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¹1
-vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"À
+À4
+vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
+VodGetAllPlayInfoRequest
+Vids (	
+Formats (	
+Codecs (	
+Definitions (	
+	FileTypes (	
+	LogoTypes (	
+NeedEncryptStream (	
+Ssl (	
+
+NeedThumbs	 (	
+NeedBarrageMask
+ (	
+CdnType (	
+	UnionInfo (	
+	PlayScene (	
+DrmExpireTimestamp (	
+HDRType (	 
+KeyFrameAlignmentVersion (	
+
+UserAction (	
+Quality (	"À
 VodGetPlayInfoRequest
 Vid (	
 Format (	

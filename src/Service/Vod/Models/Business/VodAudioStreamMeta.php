@@ -37,6 +37,12 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 Bitrate = 4;</code>
      */
     protected $Bitrate = 0;
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 5;</code>
+     */
+    protected $Quality = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      *          音频采样率
      *     @type int $Bitrate
      *          音频码率(Kbps)
+     *     @type string $Quality
+     *          音频质量
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->Bitrate = $var;
+
+        return $this;
+    }
+
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 5;</code>
+     * @return string
+     */
+    public function getQuality()
+    {
+        return $this->Quality;
+    }
+
+    /**
+     *音频质量
+     *
+     * Generated from protobuf field <code>string Quality = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuality($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Quality = $var;
 
         return $this;
     }
