@@ -1,4 +1,5 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodDescribeIPInfoRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeIPInfoResponse;
@@ -22,6 +23,6 @@ try {
 if ($response->getResponseMetadata()->getError() != null) {
     print_r($response->getResponseMetadata()->getError());
 } else {
-    echo $response->getResult()->serializeToString();
+    print_r($response->serializeToJsonString());
 }
 
