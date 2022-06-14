@@ -97,6 +97,7 @@ use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
+use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;

@@ -502,7 +502,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'SetCallbackEvent',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],

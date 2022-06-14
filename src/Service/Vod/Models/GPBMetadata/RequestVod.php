@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-À4
+é4
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -307,10 +307,13 @@ DomainList (	
 Metric (	"C
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
-Url (	"?
+Url (	"h
 VodSetCallbackEventRequest
 	SpaceName (	
-Events (	"ô
+Events (	
+AuthEnabled (	
+
+PrivateKey (	"ô
 &VodGetSmartStrategyLitePlayInfoRequest
 PlayUrl (	
 Format (	
