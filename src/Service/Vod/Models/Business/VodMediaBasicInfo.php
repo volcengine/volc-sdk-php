@@ -311,11 +311,21 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *分类串
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification Classification = 9;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodClassification
+     * @return \Volc\Service\Vod\Models\Business\VodClassification|null
      */
     public function getClassification()
     {
         return $this->Classification;
+    }
+
+    public function hasClassification()
+    {
+        return isset($this->Classification);
+    }
+
+    public function clearClassification()
+    {
+        unset($this->Classification);
     }
 
     /**

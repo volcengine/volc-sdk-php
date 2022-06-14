@@ -18,9 +18,9 @@ class VodDescribeIPInfoResponse extends \Google\Protobuf\Internal\Message
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeIpInfoResult Result = 2;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodCdnIpInfo Result = 2;</code>
      */
-    protected $Result = null;
+    private $Result;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class VodDescribeIPInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\VodDescribeIpInfoResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodCdnIpInfo[]|\Google\Protobuf\Internal\RepeatedField $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -39,11 +39,21 @@ class VodDescribeIPInfoResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
-     * @return \Volc\Service\Base\Models\Base\ResponseMetadata
+     * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
     public function getResponseMetadata()
     {
         return $this->ResponseMetadata;
+    }
+
+    public function hasResponseMetadata()
+    {
+        return isset($this->ResponseMetadata);
+    }
+
+    public function clearResponseMetadata()
+    {
+        unset($this->ResponseMetadata);
     }
 
     /**
@@ -60,8 +70,8 @@ class VodDescribeIPInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeIpInfoResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodDescribeIpInfoResult
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodCdnIpInfo Result = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getResult()
     {
@@ -69,14 +79,14 @@ class VodDescribeIPInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeIpInfoResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodDescribeIpInfoResult $var
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodCdnIpInfo Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodCdnIpInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodDescribeIpInfoResult::class);
-        $this->Result = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodCdnIpInfo::class);
+        $this->Result = $arr;
 
         return $this;
     }

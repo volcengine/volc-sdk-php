@@ -133,6 +133,18 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string BarrageMaskOffset = 20;</code>
      */
     protected $BarrageMaskOffset = '';
+    /**
+     *时长
+     *
+     * Generated from protobuf field <code>float Duration = 21;</code>
+     */
+    protected $Duration = 0.0;
+    /**
+     * 在转对齐,使用的帧对齐转码版本
+     *
+     * Generated from protobuf field <code>string KeyFrameAlignment = 22;</code>
+     */
+    protected $KeyFrameAlignment = '';
 
     /**
      * Constructor.
@@ -180,6 +192,10 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *          音频质量
      *     @type string $BarrageMaskOffset
      *           弹幕蒙版偏移量
+     *     @type float $Duration
+     *          时长
+     *     @type string $KeyFrameAlignment
+     *           在转对齐,使用的帧对齐转码版本
      * }
      */
     public function __construct($data = NULL) {
@@ -703,6 +719,58 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->BarrageMaskOffset = $var;
+
+        return $this;
+    }
+
+    /**
+     *时长
+     *
+     * Generated from protobuf field <code>float Duration = 21;</code>
+     * @return float
+     */
+    public function getDuration()
+    {
+        return $this->Duration;
+    }
+
+    /**
+     *时长
+     *
+     * Generated from protobuf field <code>float Duration = 21;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->Duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * 在转对齐,使用的帧对齐转码版本
+     *
+     * Generated from protobuf field <code>string KeyFrameAlignment = 22;</code>
+     * @return string
+     */
+    public function getKeyFrameAlignment()
+    {
+        return $this->KeyFrameAlignment;
+    }
+
+    /**
+     * 在转对齐,使用的帧对齐转码版本
+     *
+     * Generated from protobuf field <code>string KeyFrameAlignment = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKeyFrameAlignment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->KeyFrameAlignment = $var;
 
         return $this;
     }

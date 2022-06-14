@@ -1,4 +1,5 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;

@@ -34,11 +34,21 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodUploadAddress UploadAddress = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodUploadAddress
+     * @return \Volc\Service\Vod\Models\Business\VodUploadAddress|null
      */
     public function getUploadAddress()
     {
         return $this->UploadAddress;
+    }
+
+    public function hasUploadAddress()
+    {
+        return isset($this->UploadAddress);
+    }
+
+    public function clearUploadAddress()
+    {
+        unset($this->UploadAddress);
     }
 
     /**

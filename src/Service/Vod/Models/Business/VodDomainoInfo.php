@@ -225,11 +225,21 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *证书
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainCertificateInfo Certificate = 6;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodDomainCertificateInfo
+     * @return \Volc\Service\Vod\Models\Business\VodDomainCertificateInfo|null
      */
     public function getCertificate()
     {
         return $this->Certificate;
+    }
+
+    public function hasCertificate()
+    {
+        return isset($this->Certificate);
+    }
+
+    public function clearCertificate()
+    {
+        unset($this->Certificate);
     }
 
     /**

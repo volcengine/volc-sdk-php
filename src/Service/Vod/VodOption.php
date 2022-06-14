@@ -26,6 +26,16 @@ class VodOption
                 ],
             ]
         ],
+        'GetAllPlayInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAllPlayInfo',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
         'GetPrivateDrmPlayAuth' => [
             'url' => '/',
             'method' => 'get',
@@ -418,7 +428,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTasks',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
