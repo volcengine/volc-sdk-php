@@ -1,11 +1,14 @@
 <?php
 
-use Volc\Service\Rtc;
+//调用示例
 
-require('../../vendor/autoload.php');
+namespace YourProject\Rtc;
+
+require('../vendor/autoload.php');
 
 $client = Rtc::getInstance();
 
+// ak/sk 获取方式参考:https://www.volcengine.com/docs/6348/69828
 $ak = 'Your_AK';
 $sk = 'Your_SK';
 $client->setAccessKey($ak);
@@ -25,7 +28,7 @@ echo "\n";
 
 //ListRooms - GET 请求
 $body = [
-    'AppId' => '6203c45e42bddf00c4bb8994',
+    'AppId' => 'Your_AppId',
 ];
 
 $response = $client->listRooms(['query' => $body]);
