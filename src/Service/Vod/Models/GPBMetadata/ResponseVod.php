@@ -25,7 +25,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodSmartStrategy::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‚D
+§E
 vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -156,7 +156,10 @@ $VodDeleteVideoClassificationResponseG
 Result (2G.Volcengine.Vod.Models.Business.VodDescribeVodDomainBandwidthDataResult"·
 VodCdnStatisticsCommonResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataL
-Result (2<.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult"m
+Result (2<.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult"¢
+VodDescribeIPInfoResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata<
+Result (2,.Volcengine.Vod.Models.Business.VodCdnIpInfo"m
 "VodAddCallbackSubscriptionResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f
 VodSetCallbackEventResponseG

@@ -482,6 +482,16 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeIpInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeIpInfo',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
 
         // **********************************************************************
         // 回调管理
