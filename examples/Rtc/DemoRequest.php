@@ -25,7 +25,7 @@ echo "\n";
 
 //ListRooms - GET 请求
 $body = [
-    'AppId' => '6203c45e42bddf00c4bb8994',
+    'AppId' => 'Your_AppId',
 ];
 
 $response = $client->listRooms(['query' => $body]);
