@@ -34,11 +34,21 @@ class VodGetAudioInfoForAuditResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioInfoForAudit AudioInfo = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodAudioInfoForAudit
+     * @return \Volc\Service\Vod\Models\Business\VodAudioInfoForAudit|null
      */
     public function getAudioInfo()
     {
         return $this->AudioInfo;
+    }
+
+    public function hasAudioInfo()
+    {
+        return isset($this->AudioInfo);
+    }
+
+    public function clearAudioInfo()
+    {
+        unset($this->AudioInfo);
     }
 
     /**

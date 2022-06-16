@@ -1,9 +1,9 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodListCdnTasksRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTasksResponse;
 use Volc\Service\Vod\Vod;
-
 
 $client = Vod::getInstance();
 $client->setAccessKey("your ak");
@@ -17,8 +17,8 @@ try {
     $req->setDomainName("your domain");
     $req->setTaskType("your task type");
     $req->setStatus("your status");
-    $req->setStartTime(0);
-    $req->setEndTime(0);
+    $req->setStartTimestamp(0);
+    $req->setEndTimestamp(0);
     $req->setPageNum(1);
     $req->setPageSize(10);
     $response = $client->listCdnTasks($req);

@@ -26,6 +26,16 @@ class VodOption
                 ],
             ]
         ],
+        'GetAllPlayInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAllPlayInfo',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
         'GetPrivateDrmPlayAuth' => [
             'url' => '/',
             'method' => 'get',
@@ -418,7 +428,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTasks',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
@@ -452,7 +462,37 @@ class VodOption
                 ],
             ]
         ],
-        
+        'ListCdnUsageData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnUsageData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'ListCdnStatusData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnStatusData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'DescribeIpInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeIpInfo',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+
         // **********************************************************************
         // 回调管理
         // **********************************************************************
@@ -472,7 +512,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'SetCallbackEvent',
-                    'Version' => '2021-01-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],

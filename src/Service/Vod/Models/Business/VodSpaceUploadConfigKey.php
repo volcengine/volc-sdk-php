@@ -23,10 +23,17 @@ class VodSpaceUploadConfigKey
      * Generated from protobuf enum <code>CustomUploadFilePathVodSpaceUploadConfigKey = 1;</code>
      */
     const CustomUploadFilePathVodSpaceUploadConfigKey = 1;
+    /**
+     * 上传完成后自动发布key
+     *
+     * Generated from protobuf enum <code>AutoPublishAfterUploadVodSpaceUploadConfigKey = 2;</code>
+     */
+    const AutoPublishAfterUploadVodSpaceUploadConfigKey = 2;
 
     private static $valueToName = [
         self::UndefinedVodSpaceUploadConfigKey => 'UndefinedVodSpaceUploadConfigKey',
         self::CustomUploadFilePathVodSpaceUploadConfigKey => 'CustomUploadFilePathVodSpaceUploadConfigKey',
+        self::AutoPublishAfterUploadVodSpaceUploadConfigKey => 'AutoPublishAfterUploadVodSpaceUploadConfigKey',
     ];
 
     public static function name($value)

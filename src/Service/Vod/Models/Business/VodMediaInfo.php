@@ -55,11 +55,21 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
      *视频基础信息
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodMediaBasicInfo BasicInfo = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodMediaBasicInfo
+     * @return \Volc\Service\Vod\Models\Business\VodMediaBasicInfo|null
      */
     public function getBasicInfo()
     {
         return $this->BasicInfo;
+    }
+
+    public function hasBasicInfo()
+    {
+        return isset($this->BasicInfo);
+    }
+
+    public function clearBasicInfo()
+    {
+        unset($this->BasicInfo);
     }
 
     /**
@@ -81,11 +91,21 @@ class VodMediaInfo extends \Google\Protobuf\Internal\Message
      *原视频信息
      *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodSourceInfo
+     * @return \Volc\Service\Vod\Models\Business\VodSourceInfo|null
      */
     public function getSourceInfo()
     {
         return $this->SourceInfo;
+    }
+
+    public function hasSourceInfo()
+    {
+        return isset($this->SourceInfo);
+    }
+
+    public function clearSourceInfo()
+    {
+        unset($this->SourceInfo);
     }
 
     /**

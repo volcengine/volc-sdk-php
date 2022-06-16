@@ -34,11 +34,21 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodQueryUploadResult
+     * @return \Volc\Service\Vod\Models\Business\VodQueryUploadResult|null
      */
     public function getData()
     {
         return $this->Data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->Data);
+    }
+
+    public function clearData()
+    {
+        unset($this->Data);
     }
 
     /**

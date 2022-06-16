@@ -12,6 +12,8 @@ $client->setSecretKey('your sk');
 $request = new VodSetCallbackEventRequest();
 $request->setSpaceName("your space name");
 $request->setEvents("your event");
+$request->setAuthEnabled("your auth enabled: 1 or 0");
+$request->setPrivateKey("your private key");
 
 $response = new VodSetCallbackEventResponse();
 try {

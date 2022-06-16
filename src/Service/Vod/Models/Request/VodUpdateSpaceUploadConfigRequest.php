@@ -26,7 +26,7 @@ class VodUpdateSpaceUploadConfigRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $ConfigKey = '';
     /**
-     * 需要变更的设置value
+     * 需要变更的设置value，取值与ConfigKey相关。ConfigKey传入1时，ConfigValue可选值为”true“或”false“;
      *
      * Generated from protobuf field <code>string ConfigValue = 3;</code>
      */
@@ -43,7 +43,7 @@ class VodUpdateSpaceUploadConfigRequest extends \Google\Protobuf\Internal\Messag
      *     @type string $ConfigKey
      *           需要变更的设置key，值为VodSpaceUploadConfigKey中的枚举数字
      *     @type string $ConfigValue
-     *           需要变更的设置value
+     *           需要变更的设置value，取值与ConfigKey相关。ConfigKey传入1时，ConfigValue可选值为”true“或”false“;
      * }
      */
     public function __construct($data = NULL) {
@@ -104,7 +104,7 @@ class VodUpdateSpaceUploadConfigRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 需要变更的设置value
+     * 需要变更的设置value，取值与ConfigKey相关。ConfigKey传入1时，ConfigValue可选值为”true“或”false“;
      *
      * Generated from protobuf field <code>string ConfigValue = 3;</code>
      * @return string
@@ -115,7 +115,7 @@ class VodUpdateSpaceUploadConfigRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 需要变更的设置value
+     * 需要变更的设置value，取值与ConfigKey相关。ConfigKey传入1时，ConfigValue可选值为”true“或”false“;
      *
      * Generated from protobuf field <code>string ConfigValue = 3;</code>
      * @param string $var

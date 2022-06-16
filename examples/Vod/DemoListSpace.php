@@ -1,9 +1,9 @@
 <?php
+require('../../vendor/autoload.php');
 
 use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodListSpaceResponse;
 use Volc\Service\Vod\Vod;
-
 
 $client = Vod::getInstance();
 $client->setAccessKey("your ak");
