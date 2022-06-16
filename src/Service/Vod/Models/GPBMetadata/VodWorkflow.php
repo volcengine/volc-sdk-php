@@ -16,8 +16,7 @@ class VodWorkflow
         }
         $pool->internalAddGeneratedFile(
             '
-¯
-
+†
 vod/business/vod_workflow.protoVolcengine.Vod.Models.Business"\'
 VodStartWorkflowResult
 RunId (	"Ü
@@ -55,7 +54,53 @@ TemplateId (	2
 TemplateId (	
 
 OffsetTime (
-OffsetTimeList (BÌ
+OffsetTimeList ("¥
+TranscodeResult
+Vid (	>
+
+Inspection (2*.Volcengine.Vod.Models.Business.InspectionE
+CategoryTags (2/.Volcengine.Vod.Models.Business.CategoryTagInfo"‚
+
+Inspection8
+Quality (2\'.Volcengine.Vod.Models.Business.Quality:
+DeLogo (2*.Volcengine.Vod.Models.Business.DeLogoInfo"ˆ
+Quality=
+Visual (2-.Volcengine.Vod.Models.Business.VisualQuality>
+
+VolumeInfo (2*.Volcengine.Vod.Models.Business.VolumeInfo"q
+
+DeLogoInfo
+AnchorWidth (
+AnchorHeight (
+PosX (
+PosY (
+SizeX (
+SizeY ("|
+VisualQuality
+VQScore (
+Contrast (
+Colorfulness (
+
+Brightness (
+Texture (
+Noise ("S
+
+VolumeInfo
+Loudness (
+Peak (
+
+MeanVolume (
+	MaxVolume ("Ö
+CategoryTagInfo
+TagId (
+Prob (
+TagName (	
+Level (S
+
+ParentInfo (2?.Volcengine.Vod.Models.Business.CategoryTagInfo.ParentInfoEntry1
+ParentInfoEntry
+key (	
+value (	:8BÌ
 )com.volcengine.service.vod.model.businessBVodWorkflowPZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 

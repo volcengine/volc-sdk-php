@@ -70,6 +70,8 @@ use Volc\Service\Vod\Models\Request\VodListSnapshotsRequest;
 use Volc\Service\Vod\Models\Response\VodListSnapshotsResponse;
 use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
 use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
+use Volc\Service\Vod\Models\Request\VodRetrieveTranscodeResultRequest;
+use Volc\Service\Vod\Models\Response\VodRetrieveTranscodeResultResponse;
 use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
@@ -95,6 +97,7 @@ use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
+use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeIPInfoRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeIPInfoResponse;
@@ -1232,6 +1235,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodStartWorkflowResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * RetrieveTranscodeResult.
+     *
+     * @param $req VodRetrieveTranscodeResultRequest
+     * @return VodRetrieveTranscodeResultResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function retrieveTranscodeResult (VodRetrieveTranscodeResultRequest $req): VodRetrieveTranscodeResultResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('RetrieveTranscodeResult', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodRetrieveTranscodeResultResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
