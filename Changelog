@@ -1,5 +1,9 @@
 Change log
 
+2022-06-17 Bumped to version v1.0.41
+- Updated apis for vod
+- Updated demo for rtc
+
 2022-06-09 Bumped to version v1.0.40
 - Added service secertNumber
 - Fixed apis for cdn
