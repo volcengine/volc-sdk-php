@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-’5
+Ø5
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -233,7 +233,11 @@ TemplateId (	=
 Input (2..Volcengine.Vod.Models.Business.WorkflowParams
 Priority (
 CallbackArgs (	
-EnableLowPriority ("v
+EnableLowPriority ("D
+!VodRetrieveTranscodeResultRequest
+Vid (	
+
+ResultType (	"v
 VodCreateSpaceRequest
 	SpaceName (	
 ProjectName (	
