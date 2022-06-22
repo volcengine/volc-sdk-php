@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
+     *
      * Generated from protobuf field <code>string URLSets = 2;</code>
      */
     protected $URLSets = '';
@@ -29,7 +33,9 @@ class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
+     *           上传的空间名 
      *     @type string $URLSets
+     *           上传URL设置参数集合，每个URL入参的设置均在此设置 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
      */
@@ -47,6 +55,8 @@ class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
      * @return $this
@@ -60,6 +70,8 @@ class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
+     *
      * Generated from protobuf field <code>string URLSets = 2;</code>
      * @return string
      */
@@ -69,6 +81,8 @@ class VodUrlUploadJsonRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
+     *
      * Generated from protobuf field <code>string URLSets = 2;</code>
      * @param string $var
      * @return $this

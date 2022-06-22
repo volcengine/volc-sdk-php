@@ -14,19 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Drm鉴权Token
+     * Drm鉴权Token 
      *
      * Generated from protobuf field <code>string DrmAuthToken = 1;</code>
      */
     protected $DrmAuthToken = '';
     /**
-     * AccessKey
+     * 加密hls的访问Key,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Ak = 2;</code>
      */
     protected $Ak = '';
     /**
-     * Drm鉴权数据源
+     * Drm鉴权数据源,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Source = 3;</code>
      */
@@ -39,11 +39,11 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $DrmAuthToken
-     *           Drm鉴权Token
+     *           Drm鉴权Token 
      *     @type string $Ak
-     *           AccessKey
+     *           加密hls的访问Key,从m3u8文件中取到 
      *     @type string $Source
-     *           Drm鉴权数据源
+     *           Drm鉴权数据源,从m3u8文件中取到 
      * }
      */
     public function __construct($data = NULL) {
@@ -52,7 +52,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Drm鉴权Token
+     * Drm鉴权Token 
      *
      * Generated from protobuf field <code>string DrmAuthToken = 1;</code>
      * @return string
@@ -63,7 +63,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Drm鉴权Token
+     * Drm鉴权Token 
      *
      * Generated from protobuf field <code>string DrmAuthToken = 1;</code>
      * @param string $var
@@ -78,7 +78,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * AccessKey
+     * 加密hls的访问Key,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Ak = 2;</code>
      * @return string
@@ -89,7 +89,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * AccessKey
+     * 加密hls的访问Key,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Ak = 2;</code>
      * @param string $var
@@ -104,7 +104,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Drm鉴权数据源
+     * Drm鉴权数据源,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Source = 3;</code>
      * @return string
@@ -115,7 +115,7 @@ class VodGetHlsDecryptionKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Drm鉴权数据源
+     * Drm鉴权数据源,从m3u8文件中取到 
      *
      * Generated from protobuf field <code>string Source = 3;</code>
      * @param string $var

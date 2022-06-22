@@ -14,25 +14,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 原项目
+     * 原项目 
      *
      * Generated from protobuf field <code>string SourceProjectName = 2;</code>
      */
     protected $SourceProjectName = '';
     /**
-     * 变更目标项目
+     * 变更目标项目 
      *
      * Generated from protobuf field <code>string TargetProjectName = 3;</code>
      */
     protected $TargetProjectName = '';
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $SourceProjectName
-     *           原项目
+     *           原项目 
      *     @type string $TargetProjectName
-     *           变更目标项目
+     *           变更目标项目 
      *     @type string $Description
-     *           描述
+     *           描述 
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 原项目
+     * 原项目 
      *
      * Generated from protobuf field <code>string SourceProjectName = 2;</code>
      * @return string
@@ -97,7 +97,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 原项目
+     * 原项目 
      *
      * Generated from protobuf field <code>string SourceProjectName = 2;</code>
      * @param string $var
@@ -112,7 +112,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 变更目标项目
+     * 变更目标项目 
      *
      * Generated from protobuf field <code>string TargetProjectName = 3;</code>
      * @return string
@@ -123,7 +123,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 变更目标项目
+     * 变更目标项目 
      *
      * Generated from protobuf field <code>string TargetProjectName = 3;</code>
      * @param string $var
@@ -138,7 +138,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodUpdateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 4;</code>
      * @param string $var

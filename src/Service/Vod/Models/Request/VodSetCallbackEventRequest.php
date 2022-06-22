@@ -14,25 +14,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 事件列表
+     * 事件列表 
      *
      * Generated from protobuf field <code>string Events = 2;</code>
      */
     protected $Events = '';
     /**
-     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字
+     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字 
      *
      * Generated from protobuf field <code>string AuthEnabled = 3;</code>
      */
     protected $AuthEnabled = '';
     /**
-     * 回调鉴权key
+     * 回调鉴权key 
      *
      * Generated from protobuf field <code>string PrivateKey = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $Events
-     *           事件列表
+     *           事件列表 
      *     @type string $AuthEnabled
-     *           是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字
+     *           是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字 
      *     @type string $PrivateKey
-     *           回调鉴权key
+     *           回调鉴权key 
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 事件列表
+     * 事件列表 
      *
      * Generated from protobuf field <code>string Events = 2;</code>
      * @return string
@@ -97,7 +97,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 事件列表
+     * 事件列表 
      *
      * Generated from protobuf field <code>string Events = 2;</code>
      * @param string $var
@@ -112,7 +112,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字
+     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字 
      *
      * Generated from protobuf field <code>string AuthEnabled = 3;</code>
      * @return string
@@ -123,7 +123,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字
+     * 是否开启回调鉴权,值为VodCallbackAuthType中的枚举数字 
      *
      * Generated from protobuf field <code>string AuthEnabled = 3;</code>
      * @param string $var
@@ -138,7 +138,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 回调鉴权key
+     * 回调鉴权key 
      *
      * Generated from protobuf field <code>string PrivateKey = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodSetCallbackEventRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 回调鉴权key
+     * 回调鉴权key 
      *
      * Generated from protobuf field <code>string PrivateKey = 4;</code>
      * @param string $var

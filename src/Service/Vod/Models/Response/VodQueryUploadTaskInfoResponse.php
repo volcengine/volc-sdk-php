@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      */
     protected $Result = null;
@@ -29,7 +33,9 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     *           通用返回结构 
      *     @type \Volc\Service\Vod\Models\Business\VodQueryData $Result
+     *           URL批量上传状态查询结果 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -57,6 +65,8 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
@@ -70,6 +80,8 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodQueryData|null
      */
@@ -89,6 +101,8 @@ class VodQueryUploadTaskInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryData Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodQueryData $var
      * @return $this

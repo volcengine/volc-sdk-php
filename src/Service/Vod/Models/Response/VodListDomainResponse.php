@@ -18,10 +18,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodListDomainResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
      */
     protected $Result = null;
@@ -33,7 +37,9 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     *          响应通用信息
      *     @type \Volc\Service\Vod\Models\Business\VodDomainConfigInfo $Result
+     *          响应结果
      * }
      */
     public function __construct($data = NULL) {
@@ -42,6 +48,8 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -61,6 +69,8 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
@@ -74,6 +84,8 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodDomainConfigInfo|null
      */
@@ -93,6 +105,8 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodDomainConfigInfo $var
      * @return $this

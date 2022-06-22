@@ -502,6 +502,16 @@ class VodOption
                 ],
             ]
         ],
+        'ListCdnPvData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnPvData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
 
         // **********************************************************************
         // 回调管理

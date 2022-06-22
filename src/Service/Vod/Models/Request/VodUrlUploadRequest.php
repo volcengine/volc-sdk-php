@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 上传的空间名
+     * 上传的空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 上传URL设置参数集合
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      */
@@ -33,9 +33,9 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           上传的空间名
+     *           上传的空间名 
      *     @type \Volc\Service\Vod\Models\Business\VodUrlUploadURLSet[]|\Google\Protobuf\Internal\RepeatedField $URLSets
-     *           上传URL设置参数集合
+     *           上传URL设置参数集合，每个URL入参的设置均在此设置 
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传的空间名
+     * 上传的空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -55,7 +55,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传的空间名
+     * 上传的空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -70,7 +70,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传URL设置参数集合
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -81,7 +81,7 @@ class VodUrlUploadRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传URL设置参数集合
+     * 上传URL设置参数集合，每个URL入参的设置均在此设置 
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUrlUploadURLSet URLSets = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodUrlUploadURLSet[]|\Google\Protobuf\Internal\RepeatedField $var

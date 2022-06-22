@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 查询游标
+     * 查询游标 
      *
      * Generated from protobuf field <code>double Offset = 1;</code>
      */
     protected $Offset = 0.0;
     /**
-     * 查询数量
+     * 查询数量 
      *
      * Generated from protobuf field <code>double Limit = 2;</code>
      */
@@ -33,9 +33,9 @@ class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $Offset
-     *           查询游标
+     *           查询游标 
      *     @type float $Limit
-     *           查询数量
+     *           查询数量 
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询游标
+     * 查询游标 
      *
      * Generated from protobuf field <code>double Offset = 1;</code>
      * @return float
@@ -55,7 +55,7 @@ class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询游标
+     * 查询游标 
      *
      * Generated from protobuf field <code>double Offset = 1;</code>
      * @param float $var
@@ -70,7 +70,7 @@ class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询数量
+     * 查询数量 
      *
      * Generated from protobuf field <code>double Limit = 2;</code>
      * @return float
@@ -81,7 +81,7 @@ class VodListSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询数量
+     * 查询数量 
      *
      * Generated from protobuf field <code>double Limit = 2;</code>
      * @param float $var

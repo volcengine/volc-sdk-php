@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodDescribeIPInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     *ip，多个用逗号隔开
+     * ip，多个用逗号隔开
      *
      * Generated from protobuf field <code>string Ips = 1;</code>
      */
@@ -27,7 +27,7 @@ class VodDescribeIPInfoRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Ips
-     *          ip，多个用逗号隔开
+     *           ip，多个用逗号隔开
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class VodDescribeIPInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *ip，多个用逗号隔开
+     * ip，多个用逗号隔开
      *
      * Generated from protobuf field <code>string Ips = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class VodDescribeIPInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *ip，多个用逗号隔开
+     * ip，多个用逗号隔开
      *
      * Generated from protobuf field <code>string Ips = 1;</code>
      * @param string $var

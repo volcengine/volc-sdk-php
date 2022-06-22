@@ -9,36 +9,40 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * **********************************************************************
+ * 空间管理
+ * **********************************************************************
+ *
  * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateSpaceRequest</code>
  */
 class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 项目名
+     * 项目名 
      *
      * Generated from protobuf field <code>string ProjectName = 2;</code>
      */
     protected $ProjectName = '';
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 3;</code>
      */
     protected $Description = '';
     /**
-     * 空间区域
+     * 空间区域 
      *
      * Generated from protobuf field <code>string Region = 4;</code>
      */
     protected $Region = '';
     /**
-     * 创建用户
+     * 创建用户 
      *
      * Generated from protobuf field <code>string UserName = 5;</code>
      */
@@ -51,15 +55,15 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $ProjectName
-     *           项目名
+     *           项目名 
      *     @type string $Description
-     *           描述
+     *           描述 
      *     @type string $Region
-     *           空间区域
+     *           空间区域 
      *     @type string $UserName
-     *           创建用户
+     *           创建用户 
      * }
      */
     public function __construct($data = NULL) {
@@ -68,7 +72,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -79,7 +83,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -94,7 +98,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 项目名
+     * 项目名 
      *
      * Generated from protobuf field <code>string ProjectName = 2;</code>
      * @return string
@@ -105,7 +109,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 项目名
+     * 项目名 
      *
      * Generated from protobuf field <code>string ProjectName = 2;</code>
      * @param string $var
@@ -120,7 +124,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 3;</code>
      * @return string
@@ -131,7 +135,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述
+     * 描述 
      *
      * Generated from protobuf field <code>string Description = 3;</code>
      * @param string $var
@@ -146,7 +150,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间区域
+     * 空间区域 
      *
      * Generated from protobuf field <code>string Region = 4;</code>
      * @return string
@@ -157,7 +161,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间区域
+     * 空间区域 
      *
      * Generated from protobuf field <code>string Region = 4;</code>
      * @param string $var
@@ -172,7 +176,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建用户
+     * 创建用户 
      *
      * Generated from protobuf field <code>string UserName = 5;</code>
      * @return string
@@ -183,7 +187,7 @@ class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建用户
+     * 创建用户 
      *
      * Generated from protobuf field <code>string UserName = 5;</code>
      * @param string $var

@@ -86,17 +86,7 @@ class ResponseVod
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
 Result (2;.Volcengine.Vod.Models.Business.VodUpdateSubtitleStatusData"h
 VodUpdateSubtitleInfoResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"Á
-$VodCreateVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataP
-Result (2@.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData"o
-$VodUpdateVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"o
-$VodDeleteVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"»
-#VodListVideoClassificationsResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
-Result (2;.Volcengine.Vod.Models.Business.VodVideoClassificationsData"¸
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¸
 !VodGetAuditFramesForAuditResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataJ
 Result (2:.Volcengine.Vod.Models.Business.VodGetFramesForAuditResult"µ
@@ -114,7 +104,17 @@ $VodDeleteVideoClassificationResponseG
 Result (2N.Volcengine.Vod.Models.Business.VodGetAutomaticSpeechRecognitionForAuditResult"Í
 )VodGetAudioEventDetectionForAuditResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataW
-Result (2G.Volcengine.Vod.Models.Business.VodGetAudioEventDetectionForAuditResult"¤
+Result (2G.Volcengine.Vod.Models.Business.VodGetAudioEventDetectionForAuditResult"Á
+$VodCreateVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataP
+Result (2@.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData"o
+$VodUpdateVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"o
+$VodDeleteVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"»
+#VodListVideoClassificationsResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
+Result (2;.Volcengine.Vod.Models.Business.VodVideoClassificationsData"¤
 VodListSnapshotsResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
 Result (2/.Volcengine.Vod.Models.Business.VodSnapshotData"«

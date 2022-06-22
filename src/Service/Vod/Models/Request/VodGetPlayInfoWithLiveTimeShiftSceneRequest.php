@@ -14,31 +14,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 播放URI
+     * 播放URI列表,多个uri之间使用“,”分隔 
      *
      * Generated from protobuf field <code>string StoreUris = 1;</code>
      */
     protected $StoreUris = '';
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 2;</code>
      */
     protected $SpaceName = '';
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 3;</code>
      */
     protected $Ssl = '';
     /**
-     * 过期时间戳：毫秒。若不传，则为当前时间+1小时
+     * 过期时间戳：毫秒。若不传，则为当前时间+1小时 
      *
      * Generated from protobuf field <code>string ExpireTimestamp = 4;</code>
      */
     protected $ExpireTimestamp = '';
     /**
-     *生成地址时填充BucketName，默认否, 1-是；0-否
+     * 生成地址时填充BucketName，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedComposeBucketName = 5;</code>
      */
@@ -51,15 +51,15 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
      *     Optional. Data for populating the Message object.
      *
      *     @type string $StoreUris
-     *           播放URI
+     *           播放URI列表,多个uri之间使用“,”分隔 
      *     @type string $SpaceName
-     *           空间名称
+     *           空间名称 
      *     @type string $Ssl
-     *          返回https播放地址，默认否, 1-是；0-否
+     *           返回https播放地址，默认否, 1-是；0-否 
      *     @type string $ExpireTimestamp
-     *           过期时间戳：毫秒。若不传，则为当前时间+1小时
+     *           过期时间戳：毫秒。若不传，则为当前时间+1小时 
      *     @type string $NeedComposeBucketName
-     *          生成地址时填充BucketName，默认否, 1-是；0-否
+     *           生成地址时填充BucketName，默认否, 1-是；0-否 
      * }
      */
     public function __construct($data = NULL) {
@@ -68,7 +68,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 播放URI
+     * 播放URI列表,多个uri之间使用“,”分隔 
      *
      * Generated from protobuf field <code>string StoreUris = 1;</code>
      * @return string
@@ -79,7 +79,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 播放URI
+     * 播放URI列表,多个uri之间使用“,”分隔 
      *
      * Generated from protobuf field <code>string StoreUris = 1;</code>
      * @param string $var
@@ -94,7 +94,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 2;</code>
      * @return string
@@ -105,7 +105,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 2;</code>
      * @param string $var
@@ -120,7 +120,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 3;</code>
      * @return string
@@ -131,7 +131,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 3;</code>
      * @param string $var
@@ -146,7 +146,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 过期时间戳：毫秒。若不传，则为当前时间+1小时
+     * 过期时间戳：毫秒。若不传，则为当前时间+1小时 
      *
      * Generated from protobuf field <code>string ExpireTimestamp = 4;</code>
      * @return string
@@ -157,7 +157,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * 过期时间戳：毫秒。若不传，则为当前时间+1小时
+     * 过期时间戳：毫秒。若不传，则为当前时间+1小时 
      *
      * Generated from protobuf field <code>string ExpireTimestamp = 4;</code>
      * @param string $var
@@ -172,7 +172,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     *生成地址时填充BucketName，默认否, 1-是；0-否
+     * 生成地址时填充BucketName，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedComposeBucketName = 5;</code>
      * @return string
@@ -183,7 +183,7 @@ class VodGetPlayInfoWithLiveTimeShiftSceneRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     *生成地址时填充BucketName，默认否, 1-是；0-否
+     * 生成地址时填充BucketName，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedComposeBucketName = 5;</code>
      * @param string $var

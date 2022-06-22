@@ -14,26 +14,38 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
+     * 上传文件的路径 
+     *
      * Generated from protobuf field <code>string FilePath = 2;</code>
      */
     protected $FilePath = '';
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      */
     protected $CallbackArgs = '';
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      */
     protected $Functions = '';
     /**
+     * 上传的类型，media、image、object 默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 5;</code>
      */
     protected $FileType = '';
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 6;</code>
      */
     protected $FileName = '';
@@ -45,11 +57,17 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
+     *           上传的空间名 
      *     @type string $FilePath
+     *           上传文件的路径 
      *     @type string $CallbackArgs
+     *           业务希望上传透传的信息，会在上传成功时返回给用户 
      *     @type string $Functions
+     *           上传的功能函数 
      *     @type string $FileType
+     *           上传的类型，media、image、object 默认为 media 
      *     @type string $FileName
+     *           上传的文件在存储中的名字，即 bucket/key 中的 key 
      * }
      */
     public function __construct($data = NULL) {
@@ -58,6 +76,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
      */
@@ -67,6 +87,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
      * @return $this
@@ -80,6 +102,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传文件的路径 
+     *
      * Generated from protobuf field <code>string FilePath = 2;</code>
      * @return string
      */
@@ -89,6 +113,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传文件的路径 
+     *
      * Generated from protobuf field <code>string FilePath = 2;</code>
      * @param string $var
      * @return $this
@@ -102,6 +128,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      * @return string
      */
@@ -111,6 +139,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      * @param string $var
      * @return $this
@@ -124,6 +154,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      * @return string
      */
@@ -133,6 +165,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      * @param string $var
      * @return $this
@@ -146,6 +180,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的类型，media、image、object 默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @return string
      */
@@ -155,6 +191,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的类型，media、image、object 默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @param string $var
      * @return $this
@@ -168,6 +206,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 6;</code>
      * @return string
      */
@@ -177,6 +217,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 6;</code>
      * @param string $var
      * @return $this

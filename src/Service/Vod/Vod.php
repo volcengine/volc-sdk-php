@@ -97,10 +97,11 @@ use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
-use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Request\VodDescribeIPInfoRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeIPInfoResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnPvDataRequest;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -1763,6 +1764,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDescribeIPInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListCdnPvData.
+     *
+     * @param $req VodListCdnPvDataRequest
+     * @return VodCdnStatisticsCommonResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listCdnPvData (VodListCdnPvDataRequest $req): VodCdnStatisticsCommonResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListCdnPvData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCdnStatisticsCommonResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
