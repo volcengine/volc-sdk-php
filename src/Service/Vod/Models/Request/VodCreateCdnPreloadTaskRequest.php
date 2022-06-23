@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 预热Url
+     * 预热Url 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      */
@@ -33,9 +33,9 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $Urls
-     *           预热Url
+     *           预热Url 
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -55,7 +55,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -70,7 +70,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
+     * 预热Url 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @return string
@@ -81,7 +81,7 @@ class VodCreateCdnPreloadTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 预热Url
+     * 预热Url 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @param string $var

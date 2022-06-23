@@ -25,7 +25,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodSmartStrategy::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ßE
+ÿF
 vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"™
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -86,17 +86,7 @@ class ResponseVod
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
 Result (2;.Volcengine.Vod.Models.Business.VodUpdateSubtitleStatusData"h
 VodUpdateSubtitleInfoResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¡
-$VodCreateVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataP
-Result (2@.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData"o
-$VodUpdateVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"o
-$VodDeleteVideoClassificationResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"ª
-#VodListVideoClassificationsResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
-Result (2;.Volcengine.Vod.Models.Business.VodVideoClassificationsData"∏
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"∏
 !VodGetAuditFramesForAuditResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataJ
 Result (2:.Volcengine.Vod.Models.Business.VodGetFramesForAuditResult"µ
@@ -114,13 +104,26 @@ $VodDeleteVideoClassificationResponseG
 Result (2N.Volcengine.Vod.Models.Business.VodGetAutomaticSpeechRecognitionForAuditResult"Õ
 )VodGetAudioEventDetectionForAuditResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataW
-Result (2G.Volcengine.Vod.Models.Business.VodGetAudioEventDetectionForAuditResult"§
+Result (2G.Volcengine.Vod.Models.Business.VodGetAudioEventDetectionForAuditResult"¡
+$VodCreateVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataP
+Result (2@.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData"o
+$VodUpdateVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"o
+$VodDeleteVideoClassificationResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"ª
+#VodListVideoClassificationsResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
+Result (2;.Volcengine.Vod.Models.Business.VodVideoClassificationsData"§
 VodListSnapshotsResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
 Result (2/.Volcengine.Vod.Models.Business.VodSnapshotData"´
 VodStartWorkflowResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataF
-Result (26.Volcengine.Vod.Models.Business.VodStartWorkflowResult"a
+Result (26.Volcengine.Vod.Models.Business.VodStartWorkflowResult"Æ
+"VodRetrieveTranscodeResultResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
+Result (2/.Volcengine.Vod.Models.Business.TranscodeResult"a
 VodCreateSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"ù
 VodListSpaceResponseG

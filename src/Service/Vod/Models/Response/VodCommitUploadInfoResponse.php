@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
+     * 视频上传 1005 阶段返回结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResult Result = 2;</code>
      */
     protected $Result = null;
@@ -29,7 +33,9 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     *           通用返回结构 
      *     @type \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResult $Result
+     *           视频上传 1005 阶段返回结果 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -57,6 +65,8 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 通用返回结构 
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
@@ -70,6 +80,8 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频上传 1005 阶段返回结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResult Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResult|null
      */
@@ -89,6 +101,8 @@ class VodCommitUploadInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频上传 1005 阶段返回结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResult Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResult $var
      * @return $this

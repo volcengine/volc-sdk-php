@@ -18,109 +18,114 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 视频ID
+     * 视频ID 
      *
      * Generated from protobuf field <code>string Vids = 1;</code>
      */
     protected $Vids = '';
     /**
-     *封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。 多个 Format 组成的字符串，中间用","隔开。默认获取全部
+     * 封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。多个Format
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Formats = 2;</code>
      */
     protected $Formats = '';
     /**
-     *编码格式，支持 mp3、aac、opus、H264、H265、H266 。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 编码格式，支持 mp3、aac、opus、H264、H265、H266。多个Codec
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Codecs = 3;</code>
      */
     protected $Codecs = '';
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。多个
+     * Codec 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Definitions = 4;</code>
      */
     protected $Definitions = '';
     /**
-     *视频流清晰度，默认返回全部，支持："video": 加密视频流, "audio": 普通音频音频流。 多个 FileType 组成的字符串，中间用","隔开
+     * 流文件类型。支持：video-视频流, audio-音频流。
+     * 多个 FileType 组成的字符串，中间用","隔开。默认获取全部类型
      *
      * Generated from protobuf field <code>string FileTypes = 5;</code>
      */
     protected $FileTypes = '';
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoTypes = 6;</code>
      */
     protected $LogoTypes = '';
     /**
-     * 是否加密, 支持: "encrypt" : 加密流, "normal" : 非加密流, 默认返回全部
+     * 是否加密, 支持: "encrypt"-加密流, "normal"-非加密流, 默认返回全部 
      *
      * Generated from protobuf field <code>string NeedEncryptStream = 7;</code>
      */
     protected $NeedEncryptStream = '';
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 8;</code>
      */
     protected $Ssl = '';
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 9;</code>
      */
     protected $NeedThumbs = '';
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
      */
     protected $NeedBarrageMask = '';
     /**
-     * 指定 CDN 类型, 支持 "1"-P2P；"2"-OwnVDP。 默认 normal
+     * 指定CDN类型, 默认不传为普通CDN, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string CdnType = 11;</code>
      */
     protected $CdnType = '';
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 12;</code>
      */
     protected $UnionInfo = '';
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看
+     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
      *
      * Generated from protobuf field <code>string PlayScene = 13;</code>
      */
     protected $PlayScene = '';
     /**
-     * DRM过期时间戳
+     * DRM过期时间戳, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string DrmExpireTimestamp = 14;</code>
      */
     protected $DrmExpireTimestamp = '';
     /**
-     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部
+     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部 
      *
      * Generated from protobuf field <code>string HDRType = 15;</code>
      */
     protected $HDRType = '';
     /**
-     * 使用的帧对齐转码版本。支持: "1" - 返回版本一, 默认没指定版本，全部返回
+     * 使用的帧对齐转码版本。支持: "1"-返回版本一, 默认不指定版本，全部返回 
      *
      * Generated from protobuf field <code>string KeyFrameAlignmentVersion = 16;</code>
      */
     protected $KeyFrameAlignmentVersion = '';
     /**
-     * 发布状态, 支持: "Available" : 发布, "NoAction" : 未发布, 默认返回全部
+     * 发布状态, 支持: "Available"-发布, "NoAction"-未发布, 默认返回全部 
      *
      * Generated from protobuf field <code>string UserAction = 17;</code>
      */
     protected $UserAction = '';
     /**
-     * 音频音质。当 FileType 为 audio 时起作用，表示音频音质参数。支持：medium、higher、highest. 默认返回所有音频流
+     * 音频音质。当 FileType 为
+     * audio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 18;</code>
      */
@@ -133,41 +138,46 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Vids
-     *           视频ID
+     *           视频ID 
      *     @type string $Formats
-     *          封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。 多个 Format 组成的字符串，中间用","隔开。默认获取全部
+     *           封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。多个Format
+     *           组成的字符串，中间用","隔开。默认获取全部
      *     @type string $Codecs
-     *          编码格式，支持 mp3、aac、opus、H264、H265、H266 。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     *           编码格式，支持 mp3、aac、opus、H264、H265、H266。多个Codec
+     *           组成的字符串，中间用","隔开。默认获取全部
      *     @type string $Definitions
-     *          视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     *           视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。多个
+     *           Codec 组成的字符串，中间用","隔开。默认获取全部
      *     @type string $FileTypes
-     *          视频流清晰度，默认返回全部，支持："video": 加密视频流, "audio": 普通音频音频流。 多个 FileType 组成的字符串，中间用","隔开
+     *           流文件类型。支持：video-视频流, audio-音频流。
+     *           多个 FileType 组成的字符串，中间用","隔开。默认获取全部类型
      *     @type string $LogoTypes
-     *           水印贴片标签
+     *           水印贴片标签 
      *     @type string $NeedEncryptStream
-     *           是否加密, 支持: "encrypt" : 加密流, "normal" : 非加密流, 默认返回全部
+     *           是否加密, 支持: "encrypt"-加密流, "normal"-非加密流, 默认返回全部 
      *     @type string $Ssl
-     *          返回https播放地址，默认否, 1-是；0-否
+     *           返回https播放地址，默认否, 1-是；0-否 
      *     @type string $NeedThumbs
-     *           是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *           是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *     @type string $NeedBarrageMask
-     *           是否需要蒙版弹幕，默认否，1-是；0-否
+     *           是否需要蒙版弹幕，默认否，1-是；0-否 
      *     @type string $CdnType
-     *           指定 CDN 类型, 支持 "1"-P2P；"2"-OwnVDP。 默认 normal
+     *           指定CDN类型, 默认不传为普通CDN, 若需使用请联系技术支持 
      *     @type string $UnionInfo
-     *           唯一性标识信息
+     *           唯一性标识信息, 若需使用请联系技术支持 
      *     @type string $PlayScene
-     *           播放场景，指定获取对应场景的音视频流。当前支持：preview-试看
+     *           播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
      *     @type string $DrmExpireTimestamp
-     *           DRM过期时间戳
+     *           DRM过期时间戳, 若需使用请联系技术支持 
      *     @type string $HDRType
-     *           默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部
+     *           默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部 
      *     @type string $KeyFrameAlignmentVersion
-     *           使用的帧对齐转码版本。支持: "1" - 返回版本一, 默认没指定版本，全部返回
+     *           使用的帧对齐转码版本。支持: "1"-返回版本一, 默认不指定版本，全部返回 
      *     @type string $UserAction
-     *           发布状态, 支持: "Available" : 发布, "NoAction" : 未发布, 默认返回全部
+     *           发布状态, 支持: "Available"-发布, "NoAction"-未发布, 默认返回全部 
      *     @type string $Quality
-     *           音频音质。当 FileType 为 audio 时起作用，表示音频音质参数。支持：medium、higher、highest. 默认返回所有音频流
+     *           音频音质。当 FileType 为
+     *           audio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
      * }
      */
     public function __construct($data = NULL) {
@@ -176,7 +186,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频ID
+     * 视频ID 
      *
      * Generated from protobuf field <code>string Vids = 1;</code>
      * @return string
@@ -187,7 +197,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频ID
+     * 视频ID 
      *
      * Generated from protobuf field <code>string Vids = 1;</code>
      * @param string $var
@@ -202,7 +212,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。 多个 Format 组成的字符串，中间用","隔开。默认获取全部
+     * 封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。多个Format
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Formats = 2;</code>
      * @return string
@@ -213,7 +224,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。 多个 Format 组成的字符串，中间用","隔开。默认获取全部
+     * 封装格式，支持 mp4、dash、hls、mp3、m4a、ogg。多个Format
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Formats = 2;</code>
      * @param string $var
@@ -228,7 +240,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *编码格式，支持 mp3、aac、opus、H264、H265、H266 。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 编码格式，支持 mp3、aac、opus、H264、H265、H266。多个Codec
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Codecs = 3;</code>
      * @return string
@@ -239,7 +252,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *编码格式，支持 mp3、aac、opus、H264、H265、H266 。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 编码格式，支持 mp3、aac、opus、H264、H265、H266。多个Codec
+     * 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Codecs = 3;</code>
      * @param string $var
@@ -254,7 +268,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。多个
+     * Codec 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Definitions = 4;</code>
      * @return string
@@ -265,7 +280,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。 多个 Codec 组成的字符串，中间用","隔开。默认获取全部
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p。多个
+     * Codec 组成的字符串，中间用","隔开。默认获取全部
      *
      * Generated from protobuf field <code>string Definitions = 4;</code>
      * @param string $var
@@ -280,7 +296,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持："video": 加密视频流, "audio": 普通音频音频流。 多个 FileType 组成的字符串，中间用","隔开
+     * 流文件类型。支持：video-视频流, audio-音频流。
+     * 多个 FileType 组成的字符串，中间用","隔开。默认获取全部类型
      *
      * Generated from protobuf field <code>string FileTypes = 5;</code>
      * @return string
@@ -291,7 +308,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持："video": 加密视频流, "audio": 普通音频音频流。 多个 FileType 组成的字符串，中间用","隔开
+     * 流文件类型。支持：video-视频流, audio-音频流。
+     * 多个 FileType 组成的字符串，中间用","隔开。默认获取全部类型
      *
      * Generated from protobuf field <code>string FileTypes = 5;</code>
      * @param string $var
@@ -306,7 +324,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoTypes = 6;</code>
      * @return string
@@ -317,7 +335,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoTypes = 6;</code>
      * @param string $var
@@ -332,7 +350,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否加密, 支持: "encrypt" : 加密流, "normal" : 非加密流, 默认返回全部
+     * 是否加密, 支持: "encrypt"-加密流, "normal"-非加密流, 默认返回全部 
      *
      * Generated from protobuf field <code>string NeedEncryptStream = 7;</code>
      * @return string
@@ -343,7 +361,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否加密, 支持: "encrypt" : 加密流, "normal" : 非加密流, 默认返回全部
+     * 是否加密, 支持: "encrypt"-加密流, "normal"-非加密流, 默认返回全部 
      *
      * Generated from protobuf field <code>string NeedEncryptStream = 7;</code>
      * @param string $var
@@ -358,7 +376,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 8;</code>
      * @return string
@@ -369,7 +387,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 8;</code>
      * @param string $var
@@ -384,7 +402,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 9;</code>
      * @return string
@@ -395,7 +413,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 9;</code>
      * @param string $var
@@ -410,7 +428,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
      * @return string
@@ -421,7 +439,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 10;</code>
      * @param string $var
@@ -436,7 +454,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 指定 CDN 类型, 支持 "1"-P2P；"2"-OwnVDP。 默认 normal
+     * 指定CDN类型, 默认不传为普通CDN, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string CdnType = 11;</code>
      * @return string
@@ -447,7 +465,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 指定 CDN 类型, 支持 "1"-P2P；"2"-OwnVDP。 默认 normal
+     * 指定CDN类型, 默认不传为普通CDN, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string CdnType = 11;</code>
      * @param string $var
@@ -462,7 +480,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 12;</code>
      * @return string
@@ -473,7 +491,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 12;</code>
      * @param string $var
@@ -488,7 +506,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看
+     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
      *
      * Generated from protobuf field <code>string PlayScene = 13;</code>
      * @return string
@@ -499,7 +517,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看
+     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
      *
      * Generated from protobuf field <code>string PlayScene = 13;</code>
      * @param string $var
@@ -514,7 +532,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DRM过期时间戳
+     * DRM过期时间戳, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string DrmExpireTimestamp = 14;</code>
      * @return string
@@ -525,7 +543,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DRM过期时间戳
+     * DRM过期时间戳, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string DrmExpireTimestamp = 14;</code>
      * @param string $var
@@ -540,7 +558,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部
+     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部 
      *
      * Generated from protobuf field <code>string HDRType = 15;</code>
      * @return string
@@ -551,7 +569,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部
+     * 默认获取全部。支持: "SDR", "PQHDR", "SLGHDR", 默认返回全部 
      *
      * Generated from protobuf field <code>string HDRType = 15;</code>
      * @param string $var
@@ -566,7 +584,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 使用的帧对齐转码版本。支持: "1" - 返回版本一, 默认没指定版本，全部返回
+     * 使用的帧对齐转码版本。支持: "1"-返回版本一, 默认不指定版本，全部返回 
      *
      * Generated from protobuf field <code>string KeyFrameAlignmentVersion = 16;</code>
      * @return string
@@ -577,7 +595,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 使用的帧对齐转码版本。支持: "1" - 返回版本一, 默认没指定版本，全部返回
+     * 使用的帧对齐转码版本。支持: "1"-返回版本一, 默认不指定版本，全部返回 
      *
      * Generated from protobuf field <code>string KeyFrameAlignmentVersion = 16;</code>
      * @param string $var
@@ -592,7 +610,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 发布状态, 支持: "Available" : 发布, "NoAction" : 未发布, 默认返回全部
+     * 发布状态, 支持: "Available"-发布, "NoAction"-未发布, 默认返回全部 
      *
      * Generated from protobuf field <code>string UserAction = 17;</code>
      * @return string
@@ -603,7 +621,7 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 发布状态, 支持: "Available" : 发布, "NoAction" : 未发布, 默认返回全部
+     * 发布状态, 支持: "Available"-发布, "NoAction"-未发布, 默认返回全部 
      *
      * Generated from protobuf field <code>string UserAction = 17;</code>
      * @param string $var
@@ -618,7 +636,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 音频音质。当 FileType 为 audio 时起作用，表示音频音质参数。支持：medium、higher、highest. 默认返回所有音频流
+     * 音频音质。当 FileType 为
+     * audio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 18;</code>
      * @return string
@@ -629,7 +648,8 @@ class VodGetAllPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 音频音质。当 FileType 为 audio 时起作用，表示音频音质参数。支持：medium、higher、highest. 默认返回所有音频流
+     * 音频音质。当 FileType 为
+     * audio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 18;</code>
      * @param string $var

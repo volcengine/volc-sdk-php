@@ -14,31 +14,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 域名列表,多个域名用逗号分割
+     * 域名列表,多个域名用逗号分割 
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      */
     protected $DomainList = '';
     /**
-     * 查询的起始时间, rfc3339
+     * 查询的起始时间, rfc3339 
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      */
     protected $StartTime = '';
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天
+     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      */
     protected $EndTime = '';
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400
+     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      */
     protected $Aggregation = 0;
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、PCDN、ALL 
      *
      * Generated from protobuf field <code>string BandwidthType = 5;</code>
      */
@@ -51,15 +51,15 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type string $DomainList
-     *           域名列表,多个域名用逗号分割
+     *           域名列表,多个域名用逗号分割 
      *     @type string $StartTime
-     *           查询的起始时间, rfc3339
+     *           查询的起始时间, rfc3339 
      *     @type string $EndTime
-     *           查询的结束时间, rfc3339；查询时间跨度不超过93天
+     *           查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *     @type int $Aggregation
-     *           聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400
+     *           聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *     @type string $BandwidthType
-     *           默认是CDN，支持CDN、PCDN、ALL
+     *           默认是CDN，支持CDN、PCDN、ALL 
      * }
      */
     public function __construct($data = NULL) {
@@ -68,7 +68,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 域名列表,多个域名用逗号分割
+     * 域名列表,多个域名用逗号分割 
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      * @return string
@@ -79,7 +79,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 域名列表,多个域名用逗号分割
+     * 域名列表,多个域名用逗号分割 
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      * @param string $var
@@ -94,7 +94,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的起始时间, rfc3339
+     * 查询的起始时间, rfc3339 
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      * @return string
@@ -105,7 +105,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的起始时间, rfc3339
+     * 查询的起始时间, rfc3339 
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      * @param string $var
@@ -120,7 +120,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天
+     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      * @return string
@@ -131,7 +131,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天
+     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      * @param string $var
@@ -146,7 +146,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400
+     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      * @return int
@@ -157,7 +157,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400
+     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      * @param int $var
@@ -172,7 +172,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、PCDN、ALL 
      *
      * Generated from protobuf field <code>string BandwidthType = 5;</code>
      * @return string
@@ -183,7 +183,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、PCDN、ALL 
      *
      * Generated from protobuf field <code>string BandwidthType = 5;</code>
      * @param string $var

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetSpaceDetailRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
@@ -27,7 +27,7 @@ class VodGetSpaceDetailRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class VodGetSpaceDetailRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class VodGetSpaceDetailRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var

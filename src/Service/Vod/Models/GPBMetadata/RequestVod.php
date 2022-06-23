@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-’5
+‹6
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -62,11 +62,7 @@ NeedThumbs	 (	
 HDRDefinition (	
 	PlayScene (	
 DrmExpireTimestamp (	
-Quality (	"I
-VodGetOriginalPlayInfoRequest
-Vid (	
-Base64 (	
-Ssl (	"g
+Quality (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -176,22 +172,7 @@ SessionKey (	
 Language (	
 Format (	+
 Title (2.google.protobuf.StringValue)
-Tag (2.google.protobuf.StringValue"q
-#VodCreateVideoClassificationRequest
-	SpaceName (	
-Level (
-ParentId (
-Classification (	"j
-#VodUpdateVideoClassificationRequest
-	SpaceName (	
-ClassificationId (
-Classification (	"R
-#VodDeleteVideoClassificationRequest
-	SpaceName (	
-ClassificationId ("Q
-"VodListVideoClassificationsRequest
-	SpaceName (	
-ClassificationId ("w
+Tag (2.google.protobuf.StringValue"w
  VodGetAuditFramesForAuditRequest
 Vid (	
 Strategy (	
@@ -223,7 +204,22 @@ SessionKey (	
 Strategy (	"I
 (VodGetAudioEventDetectionForAuditRequest
 Vid (	
-Strategy (	"&
+Strategy (	"q
+#VodCreateVideoClassificationRequest
+	SpaceName (	
+Level (
+ParentId (
+Classification (	"j
+#VodUpdateVideoClassificationRequest
+	SpaceName (	
+ClassificationId (
+Classification (	"R
+#VodDeleteVideoClassificationRequest
+	SpaceName (	
+ClassificationId ("Q
+"VodListVideoClassificationsRequest
+	SpaceName (	
+ClassificationId ("&
 VodListSnapshotsRequest
 Vid (	"¼
 VodStartWorkflowRequest
@@ -233,7 +229,11 @@ TemplateId (	=
 Input (2..Volcengine.Vod.Models.Business.WorkflowParams
 Priority (
 CallbackArgs (	
-EnableLowPriority ("v
+EnableLowPriority ("D
+!VodRetrieveTranscodeResultRequest
+Vid (	
+
+ResultType (	"v
 VodCreateSpaceRequest
 	SpaceName (	
 ProjectName (	
@@ -306,7 +306,13 @@ DomainList (	
 DataType (	
 Metric (	"\'
 VodDescribeIPInfoRequest
-Ips (	"C
+Ips (	"|
+VodListCdnPvDataRequest
+Domains (	
+Interval (	
+StartTimestamp (
+EndTimestamp (
+DataType (	"C
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
 Url (	"h

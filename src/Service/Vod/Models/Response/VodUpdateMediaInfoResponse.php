@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
@@ -25,6 +27,7 @@ class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     *          响应通用信息
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -52,6 +57,8 @@ class VodUpdateMediaInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this

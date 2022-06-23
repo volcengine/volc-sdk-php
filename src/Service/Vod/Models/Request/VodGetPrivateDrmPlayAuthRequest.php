@@ -14,25 +14,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * drm类型（不区分大小写，支持web,app;默认web）
+     * drm类型，支持web,app。默认web 
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      */
     protected $DrmType = '';
     /**
-     * 视频id
+     * 视频id 
      *
      * Generated from protobuf field <code>string Vid = 2;</code>
      */
     protected $Vid = '';
     /**
-     * 播放许可id列表，以逗号分割
+     * 播放许可id列表，以逗号分割 
      *
      * Generated from protobuf field <code>string PlayAuthIds = 3;</code>
      */
     protected $PlayAuthIds = '';
     /**
-     * 加密唯一信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $DrmType
-     *           drm类型（不区分大小写，支持web,app;默认web）
+     *           drm类型，支持web,app。默认web 
      *     @type string $Vid
-     *           视频id
+     *           视频id 
      *     @type string $PlayAuthIds
-     *           播放许可id列表，以逗号分割
+     *           播放许可id列表，以逗号分割 
      *     @type string $UnionInfo
-     *           加密唯一信息
+     *           唯一性标识信息, 若需使用请联系技术支持 
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * drm类型（不区分大小写，支持web,app;默认web）
+     * drm类型，支持web,app。默认web 
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * drm类型（不区分大小写，支持web,app;默认web）
+     * drm类型，支持web,app。默认web 
      *
      * Generated from protobuf field <code>string DrmType = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频id
+     * 视频id 
      *
      * Generated from protobuf field <code>string Vid = 2;</code>
      * @return string
@@ -97,7 +97,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频id
+     * 视频id 
      *
      * Generated from protobuf field <code>string Vid = 2;</code>
      * @param string $var
@@ -112,7 +112,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放许可id列表，以逗号分割
+     * 播放许可id列表，以逗号分割 
      *
      * Generated from protobuf field <code>string PlayAuthIds = 3;</code>
      * @return string
@@ -123,7 +123,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放许可id列表，以逗号分割
+     * 播放许可id列表，以逗号分割 
      *
      * Generated from protobuf field <code>string PlayAuthIds = 3;</code>
      * @param string $var
@@ -138,7 +138,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 加密唯一信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodGetPrivateDrmPlayAuthRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 加密唯一信息
+     * 唯一性标识信息, 若需使用请联系技术支持 
      *
      * Generated from protobuf field <code>string UnionInfo = 4;</code>
      * @param string $var

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodListCdnStatusDataRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodListCdnPvDataRequest</code>
  */
-class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
+class VodListCdnPvDataRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * 域名，多个用逗号隔开 
@@ -20,7 +20,7 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Domains = '';
     /**
-     * 聚合度 
+     * 聚合度,可选：auto,5min,hour,day 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      */
@@ -38,17 +38,11 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
      */
     protected $EndTimestamp = 0;
     /**
-     * 统计数据类别 
+     * 统计数据类别, 可选edge-边缘数据,origin-回源数据 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      */
     protected $DataType = '';
-    /**
-     * 指标类别 
-     *
-     * Generated from protobuf field <code>string Metric = 6;</code>
-     */
-    protected $Metric = '';
 
     /**
      * Constructor.
@@ -59,15 +53,13 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Domains
      *           域名，多个用逗号隔开 
      *     @type string $Interval
-     *           聚合度 
+     *           聚合度,可选：auto,5min,hour,day 
      *     @type int|string $StartTimestamp
      *           查询范围起始时间 
      *     @type int|string $EndTimestamp
      *           查询范围截止时间 
      *     @type string $DataType
-     *           统计数据类别 
-     *     @type string $Metric
-     *           指标类别 
+     *           统计数据类别, 可选edge-边缘数据,origin-回源数据 
      * }
      */
     public function __construct($data = NULL) {
@@ -102,7 +94,7 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 聚合度 
+     * 聚合度,可选：auto,5min,hour,day 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      * @return string
@@ -113,7 +105,7 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 聚合度 
+     * 聚合度,可选：auto,5min,hour,day 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      * @param string $var
@@ -180,7 +172,7 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 统计数据类别 
+     * 统计数据类别, 可选edge-边缘数据,origin-回源数据 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      * @return string
@@ -191,7 +183,7 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 统计数据类别 
+     * 统计数据类别, 可选edge-边缘数据,origin-回源数据 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      * @param string $var
@@ -201,32 +193,6 @@ class VodListCdnStatusDataRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->DataType = $var;
-
-        return $this;
-    }
-
-    /**
-     * 指标类别 
-     *
-     * Generated from protobuf field <code>string Metric = 6;</code>
-     * @return string
-     */
-    public function getMetric()
-    {
-        return $this->Metric;
-    }
-
-    /**
-     * 指标类别 
-     *
-     * Generated from protobuf field <code>string Metric = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMetric($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->Metric = $var;
 
         return $this;
     }

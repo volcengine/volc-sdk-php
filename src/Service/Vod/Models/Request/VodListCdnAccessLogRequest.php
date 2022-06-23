@@ -14,25 +14,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 域名（当前仅支持设置一个域名）
+     * 域名（当前仅支持设置一个域名） 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      */
     protected $Domains = '';
     /**
-     * 查询起始时间戳，单位：Unix秒级时间戳
+     * 查询起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      */
     protected $StartTimestamp = 0;
     /**
-     * 查询结束时间戳，单位：Unix秒级时间戳
+     * 查询结束时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      */
     protected $EndTimestamp = 0;
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Domains
-     *           域名（当前仅支持设置一个域名）
+     *           域名（当前仅支持设置一个域名） 
      *     @type int $StartTimestamp
-     *           查询起始时间戳，单位：Unix秒级时间戳
+     *           查询起始时间戳，单位：Unix秒级时间戳 
      *     @type int $EndTimestamp
-     *           查询结束时间戳，单位：Unix秒级时间戳
+     *           查询结束时间戳，单位：Unix秒级时间戳 
      *     @type string $SpaceName
-     *           空间名称
+     *           空间名称 
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 域名（当前仅支持设置一个域名）
+     * 域名（当前仅支持设置一个域名） 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 域名（当前仅支持设置一个域名）
+     * 域名（当前仅支持设置一个域名） 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询起始时间戳，单位：Unix秒级时间戳
+     * 查询起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      * @return int
@@ -97,7 +97,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询起始时间戳，单位：Unix秒级时间戳
+     * 查询起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 2;</code>
      * @param int $var
@@ -112,7 +112,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询结束时间戳，单位：Unix秒级时间戳
+     * 查询结束时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      * @return int
@@ -123,7 +123,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询结束时间戳，单位：Unix秒级时间戳
+     * 查询结束时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 3;</code>
      * @param int $var
@@ -138,7 +138,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodListCdnAccessLogRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名称
+     * 空间名称 
      *
      * Generated from protobuf field <code>string SpaceName = 4;</code>
      * @param string $var

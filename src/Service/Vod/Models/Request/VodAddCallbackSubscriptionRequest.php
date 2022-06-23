@@ -18,13 +18,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 订阅URL
+     * 订阅URL 
      *
      * Generated from protobuf field <code>string Url = 2;</code>
      */
@@ -37,9 +37,9 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $Url
-     *           订阅URL
+     *           订阅URL 
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +48,7 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -59,7 +59,7 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -74,7 +74,7 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 订阅URL
+     * 订阅URL 
      *
      * Generated from protobuf field <code>string Url = 2;</code>
      * @return string
@@ -85,7 +85,7 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 订阅URL
+     * 订阅URL 
      *
      * Generated from protobuf field <code>string Url = 2;</code>
      * @param string $var

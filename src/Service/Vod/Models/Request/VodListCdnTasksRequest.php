@@ -14,55 +14,55 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     *空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     *任务ID
+     * 任务ID 
      *
      * Generated from protobuf field <code>string TaskId = 2;</code>
      */
     protected $TaskId = '';
     /**
-     *域名
+     * 域名 
      *
      * Generated from protobuf field <code>string DomainName = 3;</code>
      */
     protected $DomainName = '';
     /**
-     *任务类型
+     * 任务类型 
      *
      * Generated from protobuf field <code>string TaskType = 4;</code>
      */
     protected $TaskType = '';
     /**
-     *任务状态
+     * 任务状态 
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      */
     protected $Status = '';
     /**
-     *起始时间戳，单位：Unix秒级时间戳
+     * 起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
      */
     protected $StartTimestamp = 0;
     /**
-     *截止时间戳，单位：Unix秒级时间戳
+     * 截止时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
      */
     protected $EndTimestamp = 0;
     /**
-     *页码
+     * 页码 
      *
      * Generated from protobuf field <code>int32 PageNum = 8;</code>
      */
     protected $PageNum = 0;
     /**
-     *页面大小
+     * 页面大小 
      *
      * Generated from protobuf field <code>int32 PageSize = 9;</code>
      */
@@ -75,23 +75,23 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *          空间名
+     *           空间名 
      *     @type string $TaskId
-     *          任务ID
+     *           任务ID 
      *     @type string $DomainName
-     *          域名
+     *           域名 
      *     @type string $TaskType
-     *          任务类型
+     *           任务类型 
      *     @type string $Status
-     *          任务状态
+     *           任务状态 
      *     @type int $StartTimestamp
-     *          起始时间戳，单位：Unix秒级时间戳
+     *           起始时间戳，单位：Unix秒级时间戳 
      *     @type int $EndTimestamp
-     *          截止时间戳，单位：Unix秒级时间戳
+     *           截止时间戳，单位：Unix秒级时间戳 
      *     @type int $PageNum
-     *          页码
+     *           页码 
      *     @type int $PageSize
-     *          页面大小
+     *           页面大小 
      * }
      */
     public function __construct($data = NULL) {
@@ -100,7 +100,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -111,7 +111,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -126,7 +126,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务ID
+     * 任务ID 
      *
      * Generated from protobuf field <code>string TaskId = 2;</code>
      * @return string
@@ -137,7 +137,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务ID
+     * 任务ID 
      *
      * Generated from protobuf field <code>string TaskId = 2;</code>
      * @param string $var
@@ -152,7 +152,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *域名
+     * 域名 
      *
      * Generated from protobuf field <code>string DomainName = 3;</code>
      * @return string
@@ -163,7 +163,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *域名
+     * 域名 
      *
      * Generated from protobuf field <code>string DomainName = 3;</code>
      * @param string $var
@@ -178,7 +178,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务类型
+     * 任务类型 
      *
      * Generated from protobuf field <code>string TaskType = 4;</code>
      * @return string
@@ -189,7 +189,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务类型
+     * 任务类型 
      *
      * Generated from protobuf field <code>string TaskType = 4;</code>
      * @param string $var
@@ -204,7 +204,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务状态
+     * 任务状态 
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      * @return string
@@ -215,7 +215,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *任务状态
+     * 任务状态 
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      * @param string $var
@@ -230,7 +230,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *起始时间戳，单位：Unix秒级时间戳
+     * 起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
      * @return int
@@ -241,7 +241,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *起始时间戳，单位：Unix秒级时间戳
+     * 起始时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 StartTimestamp = 6;</code>
      * @param int $var
@@ -256,7 +256,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *截止时间戳，单位：Unix秒级时间戳
+     * 截止时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
      * @return int
@@ -267,7 +267,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *截止时间戳，单位：Unix秒级时间戳
+     * 截止时间戳，单位：Unix秒级时间戳 
      *
      * Generated from protobuf field <code>int32 EndTimestamp = 7;</code>
      * @param int $var
@@ -282,7 +282,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *页码
+     * 页码 
      *
      * Generated from protobuf field <code>int32 PageNum = 8;</code>
      * @return int
@@ -293,7 +293,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *页码
+     * 页码 
      *
      * Generated from protobuf field <code>int32 PageNum = 8;</code>
      * @param int $var
@@ -308,7 +308,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *页面大小
+     * 页面大小 
      *
      * Generated from protobuf field <code>int32 PageSize = 9;</code>
      * @return int
@@ -319,7 +319,7 @@ class VodListCdnTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *页面大小
+     * 页面大小 
      *
      * Generated from protobuf field <code>int32 PageSize = 9;</code>
      * @param int $var

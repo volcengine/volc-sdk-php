@@ -14,37 +14,37 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 域名，多个用逗号隔开
+     * 域名，多个用逗号隔开 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      */
     protected $Domains = '';
     /**
-     * 聚合度
+     * 聚合度 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      */
     protected $Interval = '';
     /**
-     * 查询范围起始时间
+     * 查询范围起始时间 
      *
      * Generated from protobuf field <code>int64 StartTimestamp = 3;</code>
      */
     protected $StartTimestamp = 0;
     /**
-     * 查询范围截止时间
+     * 查询范围截止时间 
      *
      * Generated from protobuf field <code>int64 EndTimestamp = 4;</code>
      */
     protected $EndTimestamp = 0;
     /**
-     *统计数据类别
+     * 统计数据类别 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      */
     protected $DataType = '';
     /**
-     *指标类别
+     * 指标类别 
      *
      * Generated from protobuf field <code>string Metric = 6;</code>
      */
@@ -57,17 +57,17 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Domains
-     *           域名，多个用逗号隔开
+     *           域名，多个用逗号隔开 
      *     @type string $Interval
-     *           聚合度
+     *           聚合度 
      *     @type int|string $StartTimestamp
-     *           查询范围起始时间
+     *           查询范围起始时间 
      *     @type int|string $EndTimestamp
-     *           查询范围截止时间
+     *           查询范围截止时间 
      *     @type string $DataType
-     *          统计数据类别
+     *           统计数据类别 
      *     @type string $Metric
-     *          指标类别
+     *           指标类别 
      * }
      */
     public function __construct($data = NULL) {
@@ -76,7 +76,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 域名，多个用逗号隔开
+     * 域名，多个用逗号隔开 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      * @return string
@@ -87,7 +87,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 域名，多个用逗号隔开
+     * 域名，多个用逗号隔开 
      *
      * Generated from protobuf field <code>string Domains = 1;</code>
      * @param string $var
@@ -102,7 +102,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 聚合度
+     * 聚合度 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      * @return string
@@ -113,7 +113,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 聚合度
+     * 聚合度 
      *
      * Generated from protobuf field <code>string Interval = 2;</code>
      * @param string $var
@@ -128,7 +128,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询范围起始时间
+     * 查询范围起始时间 
      *
      * Generated from protobuf field <code>int64 StartTimestamp = 3;</code>
      * @return int|string
@@ -139,7 +139,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询范围起始时间
+     * 查询范围起始时间 
      *
      * Generated from protobuf field <code>int64 StartTimestamp = 3;</code>
      * @param int|string $var
@@ -154,7 +154,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询范围截止时间
+     * 查询范围截止时间 
      *
      * Generated from protobuf field <code>int64 EndTimestamp = 4;</code>
      * @return int|string
@@ -165,7 +165,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 查询范围截止时间
+     * 查询范围截止时间 
      *
      * Generated from protobuf field <code>int64 EndTimestamp = 4;</code>
      * @param int|string $var
@@ -180,7 +180,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *统计数据类别
+     * 统计数据类别 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      * @return string
@@ -191,7 +191,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *统计数据类别
+     * 统计数据类别 
      *
      * Generated from protobuf field <code>string DataType = 5;</code>
      * @param string $var
@@ -206,7 +206,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *指标类别
+     * 指标类别 
      *
      * Generated from protobuf field <code>string Metric = 6;</code>
      * @return string
@@ -217,7 +217,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *指标类别
+     * 指标类别 
      *
      * Generated from protobuf field <code>string Metric = 6;</code>
      * @param string $var

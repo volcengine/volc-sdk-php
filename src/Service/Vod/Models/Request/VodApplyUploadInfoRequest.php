@@ -14,22 +14,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
+     * 上传重试时可选择带上的 Session 信息，作为下发参数的辅助信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      */
     protected $SessionKey = '';
     /**
+     * 上传的文件大小，单位为字节，非必填参数 
+     *
      * Generated from protobuf field <code>double FileSize = 3;</code>
      */
     protected $FileSize = 0.0;
     /**
+     * 上传的类型，可不填，默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 4;</code>
      */
     protected $FileType = '';
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 5;</code>
      */
     protected $FileName = '';
@@ -41,10 +51,15 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
+     *           上传的空间名 
      *     @type string $SessionKey
+     *           上传重试时可选择带上的 Session 信息，作为下发参数的辅助信息 
      *     @type float $FileSize
+     *           上传的文件大小，单位为字节，非必填参数 
      *     @type string $FileType
+     *           上传的类型，可不填，默认为 media 
      *     @type string $FileName
+     *           上传的文件在存储中的名字，即 bucket/key 中的 key 
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +68,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
      */
@@ -62,6 +79,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +94,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传重试时可选择带上的 Session 信息，作为下发参数的辅助信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      * @return string
      */
@@ -84,6 +105,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传重试时可选择带上的 Session 信息，作为下发参数的辅助信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      * @param string $var
      * @return $this
@@ -97,6 +120,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件大小，单位为字节，非必填参数 
+     *
      * Generated from protobuf field <code>double FileSize = 3;</code>
      * @return float
      */
@@ -106,6 +131,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件大小，单位为字节，非必填参数 
+     *
      * Generated from protobuf field <code>double FileSize = 3;</code>
      * @param float $var
      * @return $this
@@ -119,6 +146,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的类型，可不填，默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 4;</code>
      * @return string
      */
@@ -128,6 +157,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的类型，可不填，默认为 media 
+     *
      * Generated from protobuf field <code>string FileType = 4;</code>
      * @param string $var
      * @return $this
@@ -141,6 +172,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 5;</code>
      * @return string
      */
@@ -150,6 +183,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *
      * Generated from protobuf field <code>string FileName = 5;</code>
      * @param string $var
      * @return $this

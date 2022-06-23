@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodCdnStatisticsCommonResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodRetrieveTranscodeResultResponse</code>
  */
-class VodCdnStatisticsCommonResponse extends \Google\Protobuf\Internal\Message
+class VodRetrieveTranscodeResultResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      *响应通用信息
@@ -22,7 +22,7 @@ class VodCdnStatisticsCommonResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.TranscodeResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -34,7 +34,7 @@ class VodCdnStatisticsCommonResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
      *          响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\VodCdnStatisticsCommonResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\TranscodeResult $Result
      *          响应结果
      * }
      */
@@ -82,8 +82,8 @@ class VodCdnStatisticsCommonResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodCdnStatisticsCommonResult|null
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.TranscodeResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\TranscodeResult|null
      */
     public function getResult()
     {
@@ -103,13 +103,13 @@ class VodCdnStatisticsCommonResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodCdnStatisticsCommonResult $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.TranscodeResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\TranscodeResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCdnStatisticsCommonResult::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\TranscodeResult::class);
         $this->Result = $var;
 
         return $this;

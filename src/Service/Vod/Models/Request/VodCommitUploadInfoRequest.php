@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
+     * 上传 1005 阶段需要带上 1001 的 Session 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      */
     protected $SessionKey = '';
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      */
     protected $CallbackArgs = '';
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      */
     protected $Functions = '';
@@ -37,9 +45,13 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
+     *           上传的空间名 
      *     @type string $SessionKey
+     *           上传 1005 阶段需要带上 1001 的 Session 
      *     @type string $CallbackArgs
+     *           业务希望上传透传的信息，会在上传成功时返回给用户 
      *     @type string $Functions
+     *           上传的功能函数 
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +60,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
      */
@@ -57,6 +71,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间名 
+     *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +86,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传 1005 阶段需要带上 1001 的 Session 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      * @return string
      */
@@ -79,6 +97,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传 1005 阶段需要带上 1001 的 Session 
+     *
      * Generated from protobuf field <code>string SessionKey = 2;</code>
      * @param string $var
      * @return $this
@@ -92,6 +112,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      * @return string
      */
@@ -101,6 +123,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 业务希望上传透传的信息，会在上传成功时返回给用户 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      * @param string $var
      * @return $this
@@ -114,6 +138,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      * @return string
      */
@@ -123,6 +149,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的功能函数 
+     *
      * Generated from protobuf field <code>string Functions = 4;</code>
      * @param string $var
      * @return $this

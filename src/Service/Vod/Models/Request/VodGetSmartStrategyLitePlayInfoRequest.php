@@ -18,67 +18,69 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 播放url
+     * 播放url 
      *
      * Generated from protobuf field <code>string PlayUrl = 1;</code>
      */
     protected $PlayUrl = '';
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4Format
+     * 封装格式，支持mp4,dash,hls，默认mp4Format 
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      */
     protected $Format = '';
     /**
-     *编码类型，默认h264，可选值为h264,bytevc1等Codec
+     * 编码类型，默认h264，可选值为h264,bytevc1等Codec 
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      */
     protected $Codec = '';
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      */
     protected $Definition = '';
     /**
-     * 2k, 4k
+     * 流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      */
     protected $FileType = '';
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoType = 6;</code>
      */
     protected $LogoType = '';
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 7;</code>
      */
     protected $Ssl = '';
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 8;</code>
      */
     protected $NeedThumbs = '';
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 9;</code>
      */
     protected $NeedBarrageMask = '';
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息 
      *
      * Generated from protobuf field <code>string UnionInfo = 10;</code>
      */
     protected $UnionInfo = '';
     /**
      * HDR清晰度，默认不查询，支持：all,
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      */
@@ -91,27 +93,29 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
      *     Optional. Data for populating the Message object.
      *
      *     @type string $PlayUrl
-     *           播放url
+     *           播放url 
      *     @type string $Format
-     *          封装格式，支持mp4,dash,hls，默认mp4Format
+     *           封装格式，支持mp4,dash,hls，默认mp4Format 
      *     @type string $Codec
-     *          编码类型，默认h264，可选值为h264,bytevc1等Codec
+     *           编码类型，默认h264，可选值为h264,bytevc1等Codec 
      *     @type string $Definition
-     *          视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
-     *     @type string $FileType
+     *           视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
      *           2k, 4k
+     *     @type string $FileType
+     *           流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
      *     @type string $LogoType
-     *           水印贴片标签
+     *           水印贴片标签 
      *     @type string $Ssl
-     *          返回https播放地址，默认否, 1-是；0-否
+     *           返回https播放地址，默认否, 1-是；0-否 
      *     @type string $NeedThumbs
-     *           是否需要雪碧图（缩略图），默认否，1-是；0-否
+     *           是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *     @type string $NeedBarrageMask
-     *           是否需要蒙版弹幕，默认否，1-是；0-否
+     *           是否需要蒙版弹幕，默认否，1-是；0-否 
      *     @type string $UnionInfo
-     *           唯一性标识信息
+     *           唯一性标识信息 
      *     @type string $HDRDefinition
      *           HDR清晰度，默认不查询，支持：all,
+     *           240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
      * }
      */
     public function __construct($data = NULL) {
@@ -120,7 +124,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 播放url
+     * 播放url 
      *
      * Generated from protobuf field <code>string PlayUrl = 1;</code>
      * @return string
@@ -131,7 +135,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 播放url
+     * 播放url 
      *
      * Generated from protobuf field <code>string PlayUrl = 1;</code>
      * @param string $var
@@ -146,7 +150,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4Format
+     * 封装格式，支持mp4,dash,hls，默认mp4Format 
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      * @return string
@@ -157,7 +161,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *封装格式，支持mp4,dash,hls，默认mp4Format
+     * 封装格式，支持mp4,dash,hls，默认mp4Format 
      *
      * Generated from protobuf field <code>string Format = 2;</code>
      * @param string $var
@@ -172,7 +176,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *编码类型，默认h264，可选值为h264,bytevc1等Codec
+     * 编码类型，默认h264，可选值为h264,bytevc1等Codec 
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      * @return string
@@ -183,7 +187,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *编码类型，默认h264，可选值为h264,bytevc1等Codec
+     * 编码类型，默认h264，可选值为h264,bytevc1等Codec 
      *
      * Generated from protobuf field <code>string Codec = 3;</code>
      * @param string $var
@@ -198,7 +202,8 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @return string
@@ -209,7 +214,8 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p,
+     * 2k, 4k
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @param string $var
@@ -224,7 +230,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 2k, 4k
+     * 流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @return string
@@ -235,7 +241,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 2k, 4k
+     * 流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @param string $var
@@ -250,7 +256,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoType = 6;</code>
      * @return string
@@ -261,7 +267,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 水印贴片标签
+     * 水印贴片标签 
      *
      * Generated from protobuf field <code>string LogoType = 6;</code>
      * @param string $var
@@ -276,7 +282,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 7;</code>
      * @return string
@@ -287,7 +293,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     *返回https播放地址，默认否, 1-是；0-否
+     * 返回https播放地址，默认否, 1-是；0-否 
      *
      * Generated from protobuf field <code>string Ssl = 7;</code>
      * @param string $var
@@ -302,7 +308,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 8;</code>
      * @return string
@@ -313,7 +319,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 是否需要雪碧图（缩略图），默认否，1-是；0-否
+     * 是否需要雪碧图（缩略图），默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedThumbs = 8;</code>
      * @param string $var
@@ -328,7 +334,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 9;</code>
      * @return string
@@ -339,7 +345,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 是否需要蒙版弹幕，默认否，1-是；0-否
+     * 是否需要蒙版弹幕，默认否，1-是；0-否 
      *
      * Generated from protobuf field <code>string NeedBarrageMask = 9;</code>
      * @param string $var
@@ -354,7 +360,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息 
      *
      * Generated from protobuf field <code>string UnionInfo = 10;</code>
      * @return string
@@ -365,7 +371,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * 唯一性标识信息
+     * 唯一性标识信息 
      *
      * Generated from protobuf field <code>string UnionInfo = 10;</code>
      * @param string $var
@@ -381,6 +387,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
 
     /**
      * HDR清晰度，默认不查询，支持：all,
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      * @return string
@@ -392,6 +399,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
 
     /**
      * HDR清晰度，默认不查询，支持：all,
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      * @param string $var

@@ -14,19 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
     /**
-     * 刷新Url或目录
+     * 刷新Url或目录 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      */
     protected $Urls = '';
     /**
-     * 刷新任务类型
+     * 刷新任务类型 
      *
      * Generated from protobuf field <code>string Type = 3;</code>
      */
@@ -39,11 +39,11 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SpaceName
-     *           空间名
+     *           空间名 
      *     @type string $Urls
-     *           刷新Url或目录
+     *           刷新Url或目录 
      *     @type string $Type
-     *           刷新任务类型
+     *           刷新任务类型 
      * }
      */
     public function __construct($data = NULL) {
@@ -52,7 +52,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @return string
@@ -63,7 +63,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 空间名
+     * 空间名 
      *
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      * @param string $var
@@ -78,7 +78,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 刷新Url或目录
+     * 刷新Url或目录 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @return string
@@ -89,7 +89,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 刷新Url或目录
+     * 刷新Url或目录 
      *
      * Generated from protobuf field <code>string Urls = 2;</code>
      * @param string $var
@@ -104,7 +104,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 刷新任务类型
+     * 刷新任务类型 
      *
      * Generated from protobuf field <code>string Type = 3;</code>
      * @return string
@@ -115,7 +115,7 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 刷新任务类型
+     * 刷新任务类型 
      *
      * Generated from protobuf field <code>string Type = 3;</code>
      * @param string $var

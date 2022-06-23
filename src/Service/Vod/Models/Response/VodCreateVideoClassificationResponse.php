@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData Result = 2;</code>
      */
     protected $Result = null;
@@ -29,7 +33,9 @@ class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     *          响应通用信息
      *     @type \Volc\Service\Vod\Models\Business\VodCreateVideoClassificationData $Result
+     *          响应结果
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -57,6 +65,8 @@ class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     *响应通用信息
+     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
@@ -70,6 +80,8 @@ class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData Result = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodCreateVideoClassificationData|null
      */
@@ -89,6 +101,8 @@ class VodCreateVideoClassificationResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     *响应结果
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateVideoClassificationData Result = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodCreateVideoClassificationData $var
      * @return $this

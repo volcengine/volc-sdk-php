@@ -336,6 +336,16 @@ class VodOption
                 ],
             ]
         ],
+        'RetrieveTranscodeResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'RetrieveTranscodeResult',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 空间管理
         // **********************************************************************
@@ -488,6 +498,16 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeIpInfo',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'ListCdnPvData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnPvData',
                     'Version' => '2022-01-01',
                 ],
             ]

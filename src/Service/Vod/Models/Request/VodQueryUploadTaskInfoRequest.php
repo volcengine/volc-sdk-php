@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryUploadTaskInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 任务ID列表，通过任务ID可以查询任务的状态 
+     *
      * Generated from protobuf field <code>string JobIds = 1;</code>
      */
     protected $JobIds = '';
@@ -25,6 +27,7 @@ class VodQueryUploadTaskInfoRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $JobIds
+     *           任务ID列表，通过任务ID可以查询任务的状态 
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodQueryUploadTaskInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 任务ID列表，通过任务ID可以查询任务的状态 
+     *
      * Generated from protobuf field <code>string JobIds = 1;</code>
      * @return string
      */
@@ -42,6 +47,8 @@ class VodQueryUploadTaskInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 任务ID列表，通过任务ID可以查询任务的状态 
+     *
      * Generated from protobuf field <code>string JobIds = 1;</code>
      * @param string $var
      * @return $this
