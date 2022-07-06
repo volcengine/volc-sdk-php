@@ -47,12 +47,12 @@ class Rtc extends V4Curl
                 ]
             ]
         ],
-        'ListRooms' => [
+        'ListRoomInformation' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'ListRooms',
+                    'Action' => 'ListRoomInformation',
                     'Version' => '2020-12-01',
                 ]
             ]
@@ -76,8 +76,8 @@ class Rtc extends V4Curl
         return $this->requestWithRetry("ListApps", $query);
     }
 
-    public function listRooms(array $query = []): string
+    public function listRoomInformation(array $query = []): string
     {
-        return $this->requestWithRetry("ListRooms", $query);
+        return $this->requestWithRetry("ListRoomInformation", $query);
     }
 }
