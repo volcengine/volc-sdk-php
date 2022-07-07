@@ -497,6 +497,16 @@ class Live extends V4Curl
                 ],
             ]
         ],
+        'DescribePullToPushBandwidthData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribePullToPushBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
     ];
 
     public function __construct()
@@ -777,5 +787,10 @@ class Live extends V4Curl
     public function describePlayStreamList(array $query = []): string
     {
         return $this->requestWithRetry("DescribePlayStreamList", $query);
+    }
+
+    public function describePullToPushBandwidthData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribePullToPushBandwidthData", $query);
     }
 }
