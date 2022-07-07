@@ -169,3 +169,17 @@ $body = [
 $response = $client->describePlayStreamList(['query' => $body]);
 echo $response;
 echo '<br>';
+
+
+$body = [
+    "DomainList" => ["example.com"],
+    "DstAddrTypeList" => ["live","Third"],
+    "StartTime" => "2021-04-13T00:00:00+08:00",
+    "EndTime" => "2021-04-14T00:00:00+08:00",
+    "Aggregation" => 300,
+    "ShowDetail" => True,
+];
+
+$response = $client->describePullToPushBandwidthData(['json' => $body]);
+echo $response;
+echo '<br>';
