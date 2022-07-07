@@ -23,12 +23,14 @@ echo "listApps result:\n";
 echo $response;
 echo "\n";
 
-//ListRooms - GET 请求
+// ListRoomInformation - GET 请求
 $body = [
     'AppId' => 'Your_AppId',
+    'StartTime' => '2022-04-22T12:00:00+08:00',
+    'EndTime' => '2022-05-22T12:59:00+08:00'
 ];
 
-$response = $client->listRooms(['query' => $body]);
+$response = $client->listRoomInformation(['query' => $body]);
 echo "listRooms result:\n";
 echo $response;
 echo "\n";
