@@ -37,12 +37,12 @@ class Rtc extends V4Curl
     // 格式固定，变量是 method、Action、Version
     // 最外层 key 和 Action 保持一致
     protected $apiList = [
-        'ListApps' => [
+        'ListIndicators' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'ListApps',
+                    'Action' => 'ListIndicators',
                     'Version' => '2020-12-01',
                 ]
             ]
@@ -71,9 +71,9 @@ class Rtc extends V4Curl
     }
 
     // ===API 方法===
-    public function listApps(array $query = []): string
+    public function listIndicators(array $query = []): string
     {
-        return $this->requestWithRetry("ListApps", $query);
+        return $this->requestWithRetry("ListIndicators", $query);
     }
 
     public function listRoomInformation(array $query = []): string
