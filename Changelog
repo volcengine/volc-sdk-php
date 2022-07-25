@@ -1,8 +1,10 @@
 Change log
 
+2022-07-25 Bumped to version v1.0.44
+- Added apis for security
+
 2022-07-07 Bumped to version v1.0.43
 - Added apis for live\rtc
-
 
 2022-06-23 Bumped to version v1.0.42
 - Added apis for vod
