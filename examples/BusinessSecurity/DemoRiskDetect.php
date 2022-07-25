@@ -16,3 +16,15 @@ echo $response;
 
 $response = $client->MobileStatus(5461, "mobile_empty_status", "{\"operate_time\":1609818934, \"mobile\": \"\"}");
 echo $response;
+
+$response = $client->ImageContentRisk(5461, "image_content_risk", "{\"operate_time\": 1617960951, \"ip\": \"127.0.0.9\", \"did\":1357924680, \"data_id\": \"wangyifan\", \"account_id\": \"212910\", \"type\":1,\"url\":\"待检测图片\", \"label\": \"301,302,305,351,303,310\"}");
+echo $response;
+
+$response = $client->AsyncImageRisk(5461, "image_content_risk", "{\"operate_time\": 1617960951, \"ip\": \"127.0.0.9\", \"did\":1357924680, \"data_id\": \"w\", \"account_id\": \"212910\", \"type\":1,\"url\":\"待检测图片\", \"label\": \"301,302,305,351,303,310\"}");
+echo $response;
+
+$response = $client->GetImageResult(5461, "image_content_risk", "w");
+echo $response;
+
+$response = $client->TextRisk(5461, "text_risk",  "{\"operate_time\": 1652154752, \"text\": \"待检测文本\", \"did\":1357924680, \"account_id\": \"123\"}");
+echo $response;

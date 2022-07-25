@@ -101,6 +101,46 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'ImageContentRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageContentRisk',
+                    'Version' => '2021-11-29',
+                ],
+            ]
+        ],
+        'AsyncImageRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncImageRisk',
+                    'Version' => '2021-11-29',
+                ],
+            ]
+        ],
+        'GetImageResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageResult',
+                    'Version' => '2021-11-29',
+                ],
+            ]
+        ],
+        'TextRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'TextRisk',
+                    'Version' => '2022-01-26',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -108,9 +148,7 @@ class BusinessSecurity extends V4Curl
         try {
             $response = $this->request($api, $configs);
             return (string)$response->getBody();
-        }
-        catch (\Exception $e)
-        {
+        } catch (\Exception $e) {
             $response = $this->request($api, $configs);
             return (string)$response->getBody();
         }
@@ -202,4 +240,53 @@ class BusinessSecurity extends V4Curl
         ];
         return $this->requestWithRetry("MobileStatusV2", $commitReq);
     }
+
+    public function ImageContentRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("ImageContentRisk", $commitReq);
+    }
+
+    public function AsyncImageRisk(int $appId, string  $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncImageRisk", $commitReq);
+    }
+
+    public function GetImageResult(int $appId, string $service, string  $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("GetImageResult", $commitReq);
+    }
+
+    public function TextRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("TextRisk", $commitReq);
+    }
+
 }
