@@ -33,12 +33,12 @@ class Rtc extends V4Curl
 
     //OpenAPI 配置: 主要是method、Action、version
     protected $apiList = [
-        'ListApps' => [
+        'ListIndicators' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'ListApps',
+                    'Action' => 'ListIndicators',
                     'Version' => '2020-12-01',
                 ]
             ]
@@ -66,9 +66,9 @@ class Rtc extends V4Curl
         }
     }
 
-    public function listApps(array $query = []): string
+    public function listIndicators(array $query = []): string
     {
-        return $this->requestWithRetry("ListApps", $query);
+        return $this->requestWithRetry("ListIndicators", $query);
     }
 
     public function listRoomInformation(array $query = []): string

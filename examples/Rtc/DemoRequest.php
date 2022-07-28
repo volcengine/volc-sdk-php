@@ -12,14 +12,15 @@ $client->setAccessKey($ak);
 $client->setSecretKey($sk);
 
 // 参数规范参考: https://guzzle-cn.readthedocs.io/zh_CN/latest/request-options.html#query
-// ListApps - POST 请求
+// ListIndicators - POST 请求
 $body = [
-    'Reverse' => 1,
-    'Offset' => '0',
-    'Limit' => '10',
+    'AppId' => 'Your_AppId',
+    'StartTime' => '2022-07-24T00:00:00+08:00',
+    'EndTime' => '2022-07-28T00:00:00+08:00',
+    'Indicator' => 'NetworkTransDelay'
 ];
-$response = $client->listApps(['json' => $body]);
-echo "listApps result:\n";
+$response = $client->listIndicators(['json' => $body]);
+echo "ListIndicators result:\n";
 echo $response;
 echo "\n";
 
@@ -31,6 +32,6 @@ $body = [
 ];
 
 $response = $client->listRoomInformation(['query' => $body]);
-echo "listRooms result:\n";
+echo "listRoomInformation result:\n";
 echo $response;
 echo "\n";
