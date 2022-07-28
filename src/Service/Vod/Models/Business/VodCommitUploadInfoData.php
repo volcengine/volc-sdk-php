@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      */
     protected $Vid = '';
     /**
+     * 视频对应的封面图 URI id 
+     *
      * Generated from protobuf field <code>string PosterUri = 2;</code>
      */
     protected $PosterUri = '';
     /**
+     * 视频元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 3;</code>
      */
     protected $SourceInfo = null;
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 4;</code>
      */
     protected $Mid = '';
@@ -37,9 +45,13 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Vid
+     *           视频 id 
      *     @type string $PosterUri
+     *           视频对应的封面图 URI id 
      *     @type \Volc\Service\Vod\Models\Business\VodSourceInfo $SourceInfo
+     *           视频元信息 
      *     @type string $Mid
+     *           素材 id 
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +60,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      * @return string
      */
@@ -57,6 +71,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +86,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频对应的封面图 URI id 
+     *
      * Generated from protobuf field <code>string PosterUri = 2;</code>
      * @return string
      */
@@ -79,6 +97,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频对应的封面图 URI id 
+     *
      * Generated from protobuf field <code>string PosterUri = 2;</code>
      * @param string $var
      * @return $this
@@ -92,6 +112,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 3;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo|null
      */
@@ -111,6 +133,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this
@@ -124,6 +148,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 4;</code>
      * @return string
      */
@@ -133,6 +159,8 @@ class VodCommitUploadInfoData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 4;</code>
      * @param string $var
      * @return $this

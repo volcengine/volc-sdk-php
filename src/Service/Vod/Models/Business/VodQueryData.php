@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryData extends \Google\Protobuf\Internal\Message
 {
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      */
     protected $Data = null;
@@ -25,6 +27,7 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\VodQueryUploadResult $Data
+     *           URL批量上传状态查询结果 
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodQueryUploadResult|null
      */
@@ -52,6 +57,8 @@ class VodQueryData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodQueryUploadResult Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodQueryUploadResult $var
      * @return $this

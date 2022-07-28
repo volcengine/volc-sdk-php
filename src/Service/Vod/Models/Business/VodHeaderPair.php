@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodHeaderPair extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 key 
+     *
      * Generated from protobuf field <code>string Key = 1;</code>
      */
     protected $Key = '';
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 value 
+     *
      * Generated from protobuf field <code>string Value = 2;</code>
      */
     protected $Value = '';
@@ -29,7 +33,9 @@ class VodHeaderPair extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Key
+     *           1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 key 
      *     @type string $Value
+     *           1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 value 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodHeaderPair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 key 
+     *
      * Generated from protobuf field <code>string Key = 1;</code>
      * @return string
      */
@@ -47,6 +55,8 @@ class VodHeaderPair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 key 
+     *
      * Generated from protobuf field <code>string Key = 1;</code>
      * @param string $var
      * @return $this
@@ -60,6 +70,8 @@ class VodHeaderPair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 value 
+     *
      * Generated from protobuf field <code>string Value = 2;</code>
      * @return string
      */
@@ -69,6 +81,8 @@ class VodHeaderPair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息，1002-1004 上传时需要带的 header 中的 value 
+     *
      * Generated from protobuf field <code>string Value = 2;</code>
      * @param string $var
      * @return $this

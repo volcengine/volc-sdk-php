@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodStoreInfo extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 1001 阶段返回存储的 uri 
+     *
      * Generated from protobuf field <code>string StoreUri = 1;</code>
      */
     protected $StoreUri = '';
     /**
+     * 1001 阶段返回上传使用的签名信息 
+     *
      * Generated from protobuf field <code>string Auth = 2;</code>
      */
     protected $Auth = '';
@@ -29,7 +33,9 @@ class VodStoreInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $StoreUri
+     *           1001 阶段返回存储的 uri 
      *     @type string $Auth
+     *           1001 阶段返回上传使用的签名信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodStoreInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回存储的 uri 
+     *
      * Generated from protobuf field <code>string StoreUri = 1;</code>
      * @return string
      */
@@ -47,6 +55,8 @@ class VodStoreInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回存储的 uri 
+     *
      * Generated from protobuf field <code>string StoreUri = 1;</code>
      * @param string $var
      * @return $this
@@ -60,6 +70,8 @@ class VodStoreInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回上传使用的签名信息 
+     *
      * Generated from protobuf field <code>string Auth = 2;</code>
      * @return string
      */
@@ -69,6 +81,8 @@ class VodStoreInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回上传使用的签名信息 
+     *
      * Generated from protobuf field <code>string Auth = 2;</code>
      * @param string $var
      * @return $this

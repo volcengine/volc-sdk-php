@@ -14,61 +14,61 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 视频的URL
+     * 视频的URL 
      *
      * Generated from protobuf field <code>string SourceUrl = 1;</code>
      */
     protected $SourceUrl = '';
     /**
-     * 透传的回调信息
+     * 透传的业务信息 
      *
      * Generated from protobuf field <code>string CallbackArgs = 2;</code>
      */
     protected $CallbackArgs = '';
     /**
-     * 视频的MD5
+     * 视频的MD5 
      *
      * Generated from protobuf field <code>string Md5 = 3;</code>
      */
     protected $Md5 = '';
     /**
-     * 模板Id
+     * 模板Id 
      *
      * Generated from protobuf field <code>string TemplateId = 4;</code>
      */
     protected $TemplateId = '';
     /**
-     * 标题
+     * 标题 
      *
      * Generated from protobuf field <code>string Title = 5;</code>
      */
     protected $Title = '';
     /**
-     * 描述信息
+     * 描述信息 
      *
      * Generated from protobuf field <code>string Description = 6;</code>
      */
     protected $Description = '';
     /**
-     * 标签
+     * 标签 
      *
      * Generated from protobuf field <code>string Tags = 7;</code>
      */
     protected $Tags = '';
     /**
-     * 分类
+     * 分类 
      *
      * Generated from protobuf field <code>string Category = 8;</code>
      */
     protected $Category = '';
     /**
-     * 设置文件名
+     * 设置文件名 
      *
      * Generated from protobuf field <code>string FileName = 9;</code>
      */
     protected $FileName = '';
     /**
-     *设置分类Id
+     * 设置分类Id 
      *
      * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
      */
@@ -81,25 +81,25 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SourceUrl
-     *           视频的URL
+     *           视频的URL 
      *     @type string $CallbackArgs
-     *           透传的回调信息
+     *           透传的业务信息 
      *     @type string $Md5
-     *           视频的MD5
+     *           视频的MD5 
      *     @type string $TemplateId
-     *           模板Id
+     *           模板Id 
      *     @type string $Title
-     *           标题
+     *           标题 
      *     @type string $Description
-     *           描述信息
+     *           描述信息 
      *     @type string $Tags
-     *           标签
+     *           标签 
      *     @type string $Category
-     *           分类
+     *           分类 
      *     @type string $FileName
-     *           设置文件名
+     *           设置文件名 
      *     @type int|string $ClassificationId
-     *          设置分类Id
+     *           设置分类Id 
      * }
      */
     public function __construct($data = NULL) {
@@ -108,7 +108,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频的URL
+     * 视频的URL 
      *
      * Generated from protobuf field <code>string SourceUrl = 1;</code>
      * @return string
@@ -119,7 +119,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频的URL
+     * 视频的URL 
      *
      * Generated from protobuf field <code>string SourceUrl = 1;</code>
      * @param string $var
@@ -134,7 +134,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 透传的回调信息
+     * 透传的业务信息 
      *
      * Generated from protobuf field <code>string CallbackArgs = 2;</code>
      * @return string
@@ -145,7 +145,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 透传的回调信息
+     * 透传的业务信息 
      *
      * Generated from protobuf field <code>string CallbackArgs = 2;</code>
      * @param string $var
@@ -160,7 +160,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频的MD5
+     * 视频的MD5 
      *
      * Generated from protobuf field <code>string Md5 = 3;</code>
      * @return string
@@ -171,7 +171,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频的MD5
+     * 视频的MD5 
      *
      * Generated from protobuf field <code>string Md5 = 3;</code>
      * @param string $var
@@ -186,7 +186,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 模板Id
+     * 模板Id 
      *
      * Generated from protobuf field <code>string TemplateId = 4;</code>
      * @return string
@@ -197,7 +197,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 模板Id
+     * 模板Id 
      *
      * Generated from protobuf field <code>string TemplateId = 4;</code>
      * @param string $var
@@ -212,7 +212,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 标题
+     * 标题 
      *
      * Generated from protobuf field <code>string Title = 5;</code>
      * @return string
@@ -223,7 +223,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 标题
+     * 标题 
      *
      * Generated from protobuf field <code>string Title = 5;</code>
      * @param string $var
@@ -238,7 +238,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述信息
+     * 描述信息 
      *
      * Generated from protobuf field <code>string Description = 6;</code>
      * @return string
@@ -249,7 +249,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 描述信息
+     * 描述信息 
      *
      * Generated from protobuf field <code>string Description = 6;</code>
      * @param string $var
@@ -264,7 +264,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 标签
+     * 标签 
      *
      * Generated from protobuf field <code>string Tags = 7;</code>
      * @return string
@@ -275,7 +275,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 标签
+     * 标签 
      *
      * Generated from protobuf field <code>string Tags = 7;</code>
      * @param string $var
@@ -290,7 +290,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 分类
+     * 分类 
      *
      * Generated from protobuf field <code>string Category = 8;</code>
      * @return string
@@ -301,7 +301,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 分类
+     * 分类 
      *
      * Generated from protobuf field <code>string Category = 8;</code>
      * @param string $var
@@ -316,7 +316,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 设置文件名
+     * 设置文件名 
      *
      * Generated from protobuf field <code>string FileName = 9;</code>
      * @return string
@@ -327,7 +327,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 设置文件名
+     * 设置文件名 
      *
      * Generated from protobuf field <code>string FileName = 9;</code>
      * @param string $var
@@ -342,7 +342,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *设置分类Id
+     * 设置分类Id 
      *
      * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
      * @return int|string
@@ -353,7 +353,7 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *设置分类Id
+     * 设置分类Id 
      *
      * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
      * @param int|string $var

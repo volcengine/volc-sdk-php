@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUploadAddress extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 1001 阶段返回指定存储相关信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      */
     private $StoreInfos;
     /**
+     * 1001 阶段返回指定的上传域名 
+     *
      * Generated from protobuf field <code>repeated string UploadHosts = 2;</code>
      */
     private $UploadHosts;
     /**
+     * 1001 阶段返回指定上传带的头信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      */
     private $UploadHeader;
     /**
+     * 1001 阶段返回的 Session 信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 4;</code>
      */
     protected $SessionKey = '';
@@ -37,9 +45,13 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\VodStoreInfo[]|\Google\Protobuf\Internal\RepeatedField $StoreInfos
+     *           1001 阶段返回指定存储相关信息 
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $UploadHosts
+     *           1001 阶段返回指定的上传域名 
      *     @type \Volc\Service\Vod\Models\Business\VodHeaderPair[]|\Google\Protobuf\Internal\RepeatedField $UploadHeader
+     *           1001 阶段返回指定上传带的头信息 
      *     @type string $SessionKey
+     *           1001 阶段返回的 Session 信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +60,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定存储相关信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -57,6 +71,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定存储相关信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStoreInfo StoreInfos = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodStoreInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -70,6 +86,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定的上传域名 
+     *
      * Generated from protobuf field <code>repeated string UploadHosts = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -79,6 +97,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定的上传域名 
+     *
      * Generated from protobuf field <code>repeated string UploadHosts = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -92,6 +112,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定上传带的头信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -101,6 +123,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回指定上传带的头信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodHeaderPair UploadHeader = 3;</code>
      * @param \Volc\Service\Vod\Models\Business\VodHeaderPair[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -114,6 +138,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回的 Session 信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 4;</code>
      * @return string
      */
@@ -123,6 +149,8 @@ class VodUploadAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回的 Session 信息 
+     *
      * Generated from protobuf field <code>string SessionKey = 4;</code>
      * @param string $var
      * @return $this

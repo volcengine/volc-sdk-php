@@ -56,7 +56,7 @@ class VodSpriteSnapshot extends \Google\Protobuf\Internal\Message
      */
     protected $CaptureNum = 0;
     /**
-     *Uri列表
+     * Uri列表
      *
      * Generated from protobuf field <code>repeated string StoreUris = 8;</code>
      */
@@ -89,7 +89,7 @@ class VodSpriteSnapshot extends \Google\Protobuf\Internal\Message
      *     @type int $CaptureNum
      *          截图总数限制
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $StoreUris
-     *          Uri列表
+     *           Uri列表
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $Urls
      *          图片地址列表
      * }
@@ -282,7 +282,7 @@ class VodSpriteSnapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Uri列表
+     * Uri列表
      *
      * Generated from protobuf field <code>repeated string StoreUris = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -293,7 +293,7 @@ class VodSpriteSnapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Uri列表
+     * Uri列表
      *
      * Generated from protobuf field <code>repeated string StoreUris = 8;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

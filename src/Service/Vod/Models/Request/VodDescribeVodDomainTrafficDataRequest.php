@@ -9,46 +9,40 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodDescribeVodDomainBandwidthDataRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodDescribeVodDomainTrafficDataRequest</code>
  */
-class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal\Message
+class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 域名列表,多个域名用逗号分割 
+     * list of domains to query
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      */
     protected $DomainList = '';
     /**
-     * 查询的起始时间, rfc3339 
+     * rfc339
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      */
     protected $StartTime = '';
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
+     * rfc339
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      */
     protected $EndTime = '';
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
+     * default 300, supports 1800, 3600 and 86400
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      */
     protected $Aggregation = 0;
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * PCDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 5;</code>
      */
-    protected $BandwidthType = '';
-    /**
-     * 加速区域 
-     *
-     * Generated from protobuf field <code>string Area = 6;</code>
-     */
-    protected $Area = '';
+    protected $TrafficType = '';
 
     /**
      * Constructor.
@@ -57,17 +51,15 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type string $DomainList
-     *           域名列表,多个域名用逗号分割 
+     *           list of domains to query
      *     @type string $StartTime
-     *           查询的起始时间, rfc3339 
+     *           rfc339
      *     @type string $EndTime
-     *           查询的结束时间, rfc3339；查询时间跨度不超过93天 
+     *           rfc339
      *     @type int $Aggregation
-     *           聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
-     *     @type string $BandwidthType
-     *           默认是CDN，支持CDN、PCDN、ALL 
-     *     @type string $Area
-     *           加速区域 
+     *           default 300, supports 1800, 3600 and 86400
+     *     @type string $TrafficType
+     *           PCDN, CDN, or ALL
      * }
      */
     public function __construct($data = NULL) {
@@ -76,7 +68,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 域名列表,多个域名用逗号分割 
+     * list of domains to query
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      * @return string
@@ -87,7 +79,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 域名列表,多个域名用逗号分割 
+     * list of domains to query
      *
      * Generated from protobuf field <code>string DomainList = 1;</code>
      * @param string $var
@@ -102,7 +94,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的起始时间, rfc3339 
+     * rfc339
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      * @return string
@@ -113,7 +105,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的起始时间, rfc3339 
+     * rfc339
      *
      * Generated from protobuf field <code>string StartTime = 2;</code>
      * @param string $var
@@ -128,7 +120,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
+     * rfc339
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      * @return string
@@ -139,7 +131,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
+     * rfc339
      *
      * Generated from protobuf field <code>string EndTime = 3;</code>
      * @param string $var
@@ -154,7 +146,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
+     * default 300, supports 1800, 3600 and 86400
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      * @return int
@@ -165,7 +157,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
+     * default 300, supports 1800, 3600 and 86400
      *
      * Generated from protobuf field <code>int32 Aggregation = 4;</code>
      * @param int $var
@@ -180,53 +172,27 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * PCDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 5;</code>
      * @return string
      */
-    public function getBandwidthType()
+    public function getTrafficType()
     {
-        return $this->BandwidthType;
+        return $this->TrafficType;
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * PCDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setBandwidthType($var)
+    public function setTrafficType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->BandwidthType = $var;
-
-        return $this;
-    }
-
-    /**
-     * 加速区域 
-     *
-     * Generated from protobuf field <code>string Area = 6;</code>
-     * @return string
-     */
-    public function getArea()
-    {
-        return $this->Area;
-    }
-
-    /**
-     * 加速区域 
-     *
-     * Generated from protobuf field <code>string Area = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setArea($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->Area = $var;
+        $this->TrafficType = $var;
 
         return $this;
     }

@@ -32,7 +32,7 @@ class VodSnapshot extends \Google\Protobuf\Internal\Message
      */
     protected $Width = 0;
     /**
-     *Uri
+     * Uri
      *
      * Generated from protobuf field <code>string StoreUri = 4;</code>
      */
@@ -57,7 +57,7 @@ class VodSnapshot extends \Google\Protobuf\Internal\Message
      *     @type int $Width
      *          宽
      *     @type string $StoreUri
-     *          Uri
+     *           Uri
      *     @type string $Url
      *          图片地址
      * }
@@ -146,7 +146,7 @@ class VodSnapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Uri
+     * Uri
      *
      * Generated from protobuf field <code>string StoreUri = 4;</code>
      * @return string
@@ -157,7 +157,7 @@ class VodSnapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Uri
+     * Uri
      *
      * Generated from protobuf field <code>string StoreUri = 4;</code>
      * @param string $var

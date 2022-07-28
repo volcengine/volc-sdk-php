@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCommitData extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 视频信息上报结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResponseData Data = 1;</code>
      */
     protected $Data = null;
@@ -25,6 +27,7 @@ class VodCommitData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResponseData $Data
+     *           视频信息上报结果 
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodCommitData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频信息上报结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResponseData Data = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResponseData|null
      */
@@ -52,6 +57,8 @@ class VodCommitData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频信息上报结果 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCommitUploadInfoResponseData Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodCommitUploadInfoResponseData $var
      * @return $this

@@ -29,6 +29,14 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>string Url = 2;</code>
      */
     protected $Url = '';
+    /**
+     * 添加订阅地址的内容类型。默认值为“application/octet-stream”。支持的取值为
+     * "application/json",
+     * "application/octet-stream"
+     *
+     * Generated from protobuf field <code>string ContentType = 3;</code>
+     */
+    protected $ContentType = '';
 
     /**
      * Constructor.
@@ -40,6 +48,10 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
      *           空间名 
      *     @type string $Url
      *           订阅URL 
+     *     @type string $ContentType
+     *           添加订阅地址的内容类型。默认值为“application/octet-stream”。支持的取值为
+     *           "application/json",
+     *           "application/octet-stream"
      * }
      */
     public function __construct($data = NULL) {
@@ -95,6 +107,36 @@ class VodAddCallbackSubscriptionRequest extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkString($var, True);
         $this->Url = $var;
+
+        return $this;
+    }
+
+    /**
+     * 添加订阅地址的内容类型。默认值为“application/octet-stream”。支持的取值为
+     * "application/json",
+     * "application/octet-stream"
+     *
+     * Generated from protobuf field <code>string ContentType = 3;</code>
+     * @return string
+     */
+    public function getContentType()
+    {
+        return $this->ContentType;
+    }
+
+    /**
+     * 添加订阅地址的内容类型。默认值为“application/octet-stream”。支持的取值为
+     * "application/json",
+     * "application/octet-stream"
+     *
+     * Generated from protobuf field <code>string ContentType = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ContentType = $var;
 
         return $this;
     }

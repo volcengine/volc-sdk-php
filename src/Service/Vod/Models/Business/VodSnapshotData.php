@@ -44,7 +44,7 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
      */
     private $AnimatedPosterSnapshots;
     /**
-     *Ai动图
+     * Ai动图
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSnapshot AiDynpostSnapshots = 6;</code>
      */
@@ -73,7 +73,7 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\VodSnapshot[]|\Google\Protobuf\Internal\RepeatedField $AnimatedPosterSnapshots
      *          循环动图
      *     @type \Volc\Service\Vod\Models\Business\VodSnapshot[]|\Google\Protobuf\Internal\RepeatedField $AiDynpostSnapshots
-     *          Ai动图
+     *           Ai动图
      *     @type \Volc\Service\Vod\Models\Business\VodSpriteSnapshot[]|\Google\Protobuf\Internal\RepeatedField $SpriteSnapshots
      *          雪碧图
      * }
@@ -214,7 +214,7 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Ai动图
+     * Ai动图
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSnapshot AiDynpostSnapshots = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -225,7 +225,7 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *Ai动图
+     * Ai动图
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSnapshot AiDynpostSnapshots = 6;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSnapshot[]|\Google\Protobuf\Internal\RepeatedField $var

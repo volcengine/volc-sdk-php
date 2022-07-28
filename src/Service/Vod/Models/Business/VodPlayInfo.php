@@ -145,6 +145,12 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string KeyFrameAlignment = 22;</code>
      */
     protected $KeyFrameAlignment = '';
+    /**
+     *响度信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVolumeInfo Volume = 23;</code>
+     */
+    protected $Volume = null;
 
     /**
      * Constructor.
@@ -196,6 +202,8 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *          时长
      *     @type string $KeyFrameAlignment
      *           在转对齐,使用的帧对齐转码版本
+     *     @type \Volc\Service\Vod\Models\Business\VodVolumeInfo $Volume
+     *          响度信息
      * }
      */
     public function __construct($data = NULL) {
@@ -771,6 +779,42 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->KeyFrameAlignment = $var;
+
+        return $this;
+    }
+
+    /**
+     *响度信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVolumeInfo Volume = 23;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodVolumeInfo|null
+     */
+    public function getVolume()
+    {
+        return $this->Volume;
+    }
+
+    public function hasVolume()
+    {
+        return isset($this->Volume);
+    }
+
+    public function clearVolume()
+    {
+        unset($this->Volume);
+    }
+
+    /**
+     *响度信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVolumeInfo Volume = 23;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodVolumeInfo $var
+     * @return $this
+     */
+    public function setVolume($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodVolumeInfo::class);
+        $this->Volume = $var;
 
         return $this;
     }

@@ -20,7 +20,7 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
      */
     protected $SpaceName = '';
     /**
-     *  uint32 AccountID = 2;        // 账号ID
+     * 所属区域
      *
      * Generated from protobuf field <code>string Region = 3;</code>
      */
@@ -83,7 +83,7 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *           空间名
      *     @type string $Region
-     *            uint32 AccountID = 2;        // 账号ID
+     *           所属区域
      *     @type string $ProjectName
      *           IAM项目名称
      *     @type string $BucketName
@@ -134,7 +134,7 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *  uint32 AccountID = 2;        // 账号ID
+     * 所属区域
      *
      * Generated from protobuf field <code>string Region = 3;</code>
      * @return string
@@ -145,7 +145,7 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *  uint32 AccountID = 2;        // 账号ID
+     * 所属区域
      *
      * Generated from protobuf field <code>string Region = 3;</code>
      * @param string $var

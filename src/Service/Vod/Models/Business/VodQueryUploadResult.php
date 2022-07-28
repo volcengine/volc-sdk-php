@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
 {
     /**
+     * URL批量上传状态查询返回的 JobId 对应的信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodURLSet MediaInfoList = 1;</code>
      */
     private $MediaInfoList;
     /**
+     * URL批量上传状态查询不存在的 JobId 
+     *
      * Generated from protobuf field <code>repeated string NotExistJobIds = 2;</code>
      */
     private $NotExistJobIds;
@@ -29,7 +33,9 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\VodURLSet[]|\Google\Protobuf\Internal\RepeatedField $MediaInfoList
+     *           URL批量上传状态查询返回的 JobId 对应的信息 
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $NotExistJobIds
+     *           URL批量上传状态查询不存在的 JobId 
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询返回的 JobId 对应的信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodURLSet MediaInfoList = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -47,6 +55,8 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询返回的 JobId 对应的信息 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodURLSet MediaInfoList = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodURLSet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -60,6 +70,8 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询不存在的 JobId 
+     *
      * Generated from protobuf field <code>repeated string NotExistJobIds = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -69,6 +81,8 @@ class VodQueryUploadResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL批量上传状态查询不存在的 JobId 
+     *
      * Generated from protobuf field <code>repeated string NotExistJobIds = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
