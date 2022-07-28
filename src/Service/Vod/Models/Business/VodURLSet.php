@@ -14,34 +14,50 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodURLSet extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 请求 Id,用于日志查询 
+     *
      * Generated from protobuf field <code>string RequestId = 1;</code>
      */
     protected $RequestId = '';
     /**
+     * JobId，用于查询 URL 上传状态 
+     *
      * Generated from protobuf field <code>string JobId = 2;</code>
      */
     protected $JobId = '';
     /**
+     * 用户上传的Url 
+     *
      * Generated from protobuf field <code>string SourceUrl = 3;</code>
      */
     protected $SourceUrl = '';
     /**
+     * Url 的上传状态，init,process,success,fail 
+     *
      * Generated from protobuf field <code>string State = 4;</code>
      */
     protected $State = '';
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 5;</code>
      */
     protected $Vid = '';
     /**
+     * 上传的空间 
+     *
      * Generated from protobuf field <code>string SpaceName = 6;</code>
      */
     protected $SpaceName = '';
     /**
+     * 用户账号的 Id 
+     *
      * Generated from protobuf field <code>string AccountId = 7;</code>
      */
     protected $AccountId = '';
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      */
     protected $SourceInfo = null;
@@ -53,13 +69,21 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $RequestId
+     *           请求 Id,用于日志查询 
      *     @type string $JobId
+     *           JobId，用于查询 URL 上传状态 
      *     @type string $SourceUrl
+     *           用户上传的Url 
      *     @type string $State
+     *           Url 的上传状态，init,process,success,fail 
      *     @type string $Vid
+     *           视频 id 
      *     @type string $SpaceName
+     *           上传的空间 
      *     @type string $AccountId
+     *           用户账号的 Id 
      *     @type \Volc\Service\Vod\Models\Business\VodSourceInfo $SourceInfo
+     *           视频的元信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -68,6 +92,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 请求 Id,用于日志查询 
+     *
      * Generated from protobuf field <code>string RequestId = 1;</code>
      * @return string
      */
@@ -77,6 +103,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 请求 Id,用于日志查询 
+     *
      * Generated from protobuf field <code>string RequestId = 1;</code>
      * @param string $var
      * @return $this
@@ -90,6 +118,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * JobId，用于查询 URL 上传状态 
+     *
      * Generated from protobuf field <code>string JobId = 2;</code>
      * @return string
      */
@@ -99,6 +129,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * JobId，用于查询 URL 上传状态 
+     *
      * Generated from protobuf field <code>string JobId = 2;</code>
      * @param string $var
      * @return $this
@@ -112,6 +144,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 用户上传的Url 
+     *
      * Generated from protobuf field <code>string SourceUrl = 3;</code>
      * @return string
      */
@@ -121,6 +155,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 用户上传的Url 
+     *
      * Generated from protobuf field <code>string SourceUrl = 3;</code>
      * @param string $var
      * @return $this
@@ -134,6 +170,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Url 的上传状态，init,process,success,fail 
+     *
      * Generated from protobuf field <code>string State = 4;</code>
      * @return string
      */
@@ -143,6 +181,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Url 的上传状态，init,process,success,fail 
+     *
      * Generated from protobuf field <code>string State = 4;</code>
      * @param string $var
      * @return $this
@@ -156,6 +196,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 5;</code>
      * @return string
      */
@@ -165,6 +207,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频 id 
+     *
      * Generated from protobuf field <code>string Vid = 5;</code>
      * @param string $var
      * @return $this
@@ -178,6 +222,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间 
+     *
      * Generated from protobuf field <code>string SpaceName = 6;</code>
      * @return string
      */
@@ -187,6 +233,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 上传的空间 
+     *
      * Generated from protobuf field <code>string SpaceName = 6;</code>
      * @param string $var
      * @return $this
@@ -200,6 +248,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 用户账号的 Id 
+     *
      * Generated from protobuf field <code>string AccountId = 7;</code>
      * @return string
      */
@@ -209,6 +259,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 用户账号的 Id 
+     *
      * Generated from protobuf field <code>string AccountId = 7;</code>
      * @param string $var
      * @return $this
@@ -222,6 +274,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo|null
      */
@@ -241,6 +295,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this

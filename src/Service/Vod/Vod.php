@@ -82,6 +82,8 @@ use Volc\Service\Vod\Models\Request\VodUpdateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeVodSpaceStorageDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodSpaceStorageDataResponse;
 use Volc\Service\Vod\Models\Request\VodListDomainRequest;
 use Volc\Service\Vod\Models\Response\VodListDomainResponse;
 use Volc\Service\Vod\Models\Request\VodCreateCdnRefreshTaskRequest;
@@ -101,6 +103,8 @@ use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Request\VodDescribeIPInfoRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeIPInfoResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnPvDataRequest;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
@@ -108,6 +112,8 @@ use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
 use Volc\Service\Vod\Models\Response\VodSetCallbackEventResponse;
 use Volc\Service\Vod\Models\Request\VodGetSmartStrategyLitePlayInfoRequest;
 use Volc\Service\Vod\Models\Response\VodGetSmartStrategyLitePlayInfoResponse;
+use Volc\Service\Vod\Models\Request\VodGetAppInfoRequest;
+use Volc\Service\Vod\Models\Response\VodGetAppInfoResponse;
 
 /**
  * Generated from protobuf service <code>vod/service/service_vod.proto</code>
@@ -1445,6 +1451,39 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * DescribeVodSpaceStorageData.
+     *
+     * @param $req VodDescribeVodSpaceStorageDataRequest
+     * @return VodDescribeVodSpaceStorageDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodSpaceStorageData (VodDescribeVodSpaceStorageDataRequest $req): VodDescribeVodSpaceStorageDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodSpaceStorageData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeVodSpaceStorageDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * ListDomain.
      *
      * @param $req VodListDomainRequest
@@ -1775,6 +1814,39 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * DescribeVodDomainTrafficData.
+     *
+     * @param $req VodDescribeVodDomainTrafficDataRequest
+     * @return VodDescribeVodDomainTrafficDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodDomainTrafficData (VodDescribeVodDomainTrafficDataRequest $req): VodDescribeVodDomainTrafficDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodDomainTrafficData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeVodDomainTrafficDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * ListCdnPvData.
      *
      * @param $req VodListCdnPvDataRequest
@@ -1896,6 +1968,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetSmartStrategyLitePlayInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetAppInfo.
+     *
+     * @param $req VodGetAppInfoRequest
+     * @return VodGetAppInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAppInfo (VodGetAppInfoRequest $req): VodGetAppInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetAppInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAppInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

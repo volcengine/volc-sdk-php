@@ -61,6 +61,12 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string UpdateTime = 8;</code>
      */
     protected $UpdateTime = '';
+    /**
+     *加速区域，cn:国内,overseas:海外，global:全球
+     *
+     * Generated from protobuf field <code>string Region = 9;</code>
+     */
+    protected $Region = '';
 
     /**
      * Constructor.
@@ -84,6 +90,8 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *          创建时间
      *     @type string $UpdateTime
      *          更新时间
+     *     @type string $Region
+     *          加速区域，cn:国内,overseas:海外，global:全球
      * }
      */
     public function __construct($data = NULL) {
@@ -305,6 +313,32 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->UpdateTime = $var;
+
+        return $this;
+    }
+
+    /**
+     *加速区域，cn:国内,overseas:海外，global:全球
+     *
+     * Generated from protobuf field <code>string Region = 9;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->Region;
+    }
+
+    /**
+     *加速区域，cn:国内,overseas:海外，global:全球
+     *
+     * Generated from protobuf field <code>string Region = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Region = $var;
 
         return $this;
     }

@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã6
+∂:
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -233,7 +233,16 @@ TemplateId (	=
 !VodRetrieveTranscodeResultRequest
 Vid (	
 
-ResultType (	"v
+ResultType (	"ú
+#VodSubmitDirectEditTaskAsyncRequest
+Uploader (	
+Application (	
+	EditParam (
+Priority (
+CallbackUri (	
+CallbackArgs (	"/
+VodGetDirectEditResultRequest
+ReqIds (	"v
 VodCreateSpaceRequest
 	SpaceName (	
 ProjectName (	
@@ -253,7 +262,13 @@ ResultType (	"v
 !VodUpdateSpaceUploadConfigRequest
 	SpaceName (	
 	ConfigKey (	
-ConfigValue (	")
+ConfigValue (	"Å
+%VodDescribeVodSpaceStorageDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+Aggregation (
+Type (	")
 VodListDomainRequest
 	SpaceName (	"O
 VodCreateCdnRefreshTaskRequest
@@ -283,14 +298,15 @@ DomainName (	
 Domains (	
 StartTimestamp (
 EndTimestamp (
-SortType (	"é
+SortType (	"ú
 (VodDescribeVodDomainBandwidthDataRequest
 
 DomainList (	
 	StartTime (	
 EndTime (	
 Aggregation (
-BandwidthType (	"è
+BandwidthType (	
+Area (	"è
 VodListCdnUsageDataRequest
 Domains (	
 Interval (	
@@ -312,10 +328,18 @@ DomainList (	
 Interval (	
 StartTimestamp (
 EndTimestamp (
-DataType (	"C
+DataType (	"ä
+&VodDescribeVodDomainTrafficDataRequest
+
+DomainList (	
+	StartTime (	
+EndTime (	
+Aggregation (
+TrafficType (	"X
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
-Url (	"h
+Url (	
+ContentType (	"h
 VodSetCallbackEventRequest
 	SpaceName (	
 Events (	
@@ -336,7 +360,9 @@ NeedThumbs (	
 NeedBarrageMask	 (	
 	UnionInfo
  (	
-HDRDefinition (	B»
+HDRDefinition (	"%
+VodGetAppInfoRequest
+AppId (B»
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request†ÿ Volc\\Service\\Vod\\Models\\Request‚#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

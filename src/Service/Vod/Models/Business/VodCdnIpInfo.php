@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     *ip地址
+     * ip地址
      *
      * Generated from protobuf field <code>string Ip = 1;</code>
      */
@@ -26,13 +26,13 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
      */
     protected $CdnIp = false;
     /**
-     *IP所属地区,非火山cdn返回"-"
+     * IP所属地区,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Location = 3;</code>
      */
     protected $Location = '';
     /**
-     *IP所属运营商,非火山cdn返回"-"
+     * IP所属运营商,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Isp = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Ip
-     *          ip地址
+     *           ip地址
      *     @type bool $CdnIp
      *          是否是火山cdn的ip
      *     @type string $Location
-     *          IP所属地区,非火山cdn返回"-"
+     *           IP所属地区,非火山cdn返回"-"
      *     @type string $Isp
-     *          IP所属运营商,非火山cdn返回"-"
+     *           IP所属运营商,非火山cdn返回"-"
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *ip地址
+     * ip地址
      *
      * Generated from protobuf field <code>string Ip = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *ip地址
+     * ip地址
      *
      * Generated from protobuf field <code>string Ip = 1;</code>
      * @param string $var
@@ -112,7 +112,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *IP所属地区,非火山cdn返回"-"
+     * IP所属地区,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Location = 3;</code>
      * @return string
@@ -123,7 +123,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *IP所属地区,非火山cdn返回"-"
+     * IP所属地区,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Location = 3;</code>
      * @param string $var
@@ -138,7 +138,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *IP所属运营商,非火山cdn返回"-"
+     * IP所属运营商,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Isp = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodCdnIpInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *IP所属运营商,非火山cdn返回"-"
+     * IP所属运营商,非火山cdn返回"-"
      *
      * Generated from protobuf field <code>string Isp = 4;</code>
      * @param string $var

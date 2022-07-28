@@ -38,7 +38,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Definition = '';
     /**
-     * 流文件类型，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio.默认video
+     * 流文件类型,支持:
+     * 加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      */
@@ -86,8 +87,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $UnionInfo = '';
     /**
-     * HDR清晰度，默认不查询，支持：all, 240p, 360p,
-     * 420p，480p，540p，720p，1080p, 2k, 4k
+     * HDR清晰度，默认不查询，支持：all, 240p, 360p, 420p, 480p, 540p, 720p,
+     * 1080p, 2k, 4k 
      *
      * Generated from protobuf field <code>string HDRDefinition = 13;</code>
      */
@@ -105,8 +106,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $DrmExpireTimestamp = '';
     /**
-     * 音频音质。当
-     * FileType为audio和eaudio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
+     * 音频音质。当FileType为audio和eaudio时起作用,表示音频音质参数.支持: medium,
+     * higher, highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 16;</code>
      */
@@ -127,7 +128,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Definition
      *           视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k.默认返回全部
      *     @type string $FileType
-     *           流文件类型，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio.默认video
+     *           流文件类型,支持:
+     *           加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
      *     @type string $LogoType
      *           水印贴片标签 
      *     @type string $Base64
@@ -143,15 +145,15 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $UnionInfo
      *           唯一性标识信息, 若需使用请联系技术支持 
      *     @type string $HDRDefinition
-     *           HDR清晰度，默认不查询，支持：all, 240p, 360p,
-     *           420p，480p，540p，720p，1080p, 2k, 4k
+     *           HDR清晰度，默认不查询，支持：all, 240p, 360p, 420p, 480p, 540p, 720p,
+     *           1080p, 2k, 4k 
      *     @type string $PlayScene
      *           播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
      *     @type string $DrmExpireTimestamp
      *           DRM过期时间戳, 若需使用请联系技术支持 
      *     @type string $Quality
-     *           音频音质。当
-     *           FileType为audio和eaudio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
+     *           音频音质。当FileType为audio和eaudio时起作用,表示音频音质参数.支持: medium,
+     *           higher, highest.默认返回所有音频流
      * }
      */
     public function __construct($data = NULL) {
@@ -264,7 +266,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 流文件类型，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio.默认video
+     * 流文件类型,支持:
+     * 加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @return string
@@ -275,7 +278,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 流文件类型，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio.默认video
+     * 流文件类型,支持:
+     * 加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
      *
      * Generated from protobuf field <code>string FileType = 5;</code>
      * @param string $var
@@ -472,8 +476,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * HDR清晰度，默认不查询，支持：all, 240p, 360p,
-     * 420p，480p，540p，720p，1080p, 2k, 4k
+     * HDR清晰度，默认不查询，支持：all, 240p, 360p, 420p, 480p, 540p, 720p,
+     * 1080p, 2k, 4k 
      *
      * Generated from protobuf field <code>string HDRDefinition = 13;</code>
      * @return string
@@ -484,8 +488,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * HDR清晰度，默认不查询，支持：all, 240p, 360p,
-     * 420p，480p，540p，720p，1080p, 2k, 4k
+     * HDR清晰度，默认不查询，支持：all, 240p, 360p, 420p, 480p, 540p, 720p,
+     * 1080p, 2k, 4k 
      *
      * Generated from protobuf field <code>string HDRDefinition = 13;</code>
      * @param string $var
@@ -552,8 +556,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 音频音质。当
-     * FileType为audio和eaudio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
+     * 音频音质。当FileType为audio和eaudio时起作用,表示音频音质参数.支持: medium,
+     * higher, highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 16;</code>
      * @return string
@@ -564,8 +568,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 音频音质。当
-     * FileType为audio和eaudio时起作用，表示音频音质参数。支持：medium、higher、highest.默认返回所有音频流
+     * 音频音质。当FileType为audio和eaudio时起作用,表示音频音质参数.支持: medium,
+     * higher, highest.默认返回所有音频流
      *
      * Generated from protobuf field <code>string Quality = 16;</code>
      * @param string $var

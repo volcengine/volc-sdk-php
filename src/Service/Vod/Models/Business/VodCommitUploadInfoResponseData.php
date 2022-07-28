@@ -14,22 +14,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 视频的 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      */
     protected $Vid = '';
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      */
     protected $SourceInfo = null;
     /**
+     * 视频的封面图 URI 
+     *
      * Generated from protobuf field <code>string PosterUri = 3;</code>
      */
     protected $PosterUri = '';
     /**
+     * 视频透传业务的参数 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 4;</code>
      */
     protected $CallbackArgs = '';
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 5;</code>
      */
     protected $Mid = '';
@@ -41,10 +51,15 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $Vid
+     *           视频的 id 
      *     @type \Volc\Service\Vod\Models\Business\VodSourceInfo $SourceInfo
+     *           视频的元信息 
      *     @type string $PosterUri
+     *           视频的封面图 URI 
      *     @type string $CallbackArgs
+     *           视频透传业务的参数 
      *     @type string $Mid
+     *           素材 id 
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +68,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      * @return string
      */
@@ -62,6 +79,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的 id 
+     *
      * Generated from protobuf field <code>string Vid = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +94,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @return \Volc\Service\Vod\Models\Business\VodSourceInfo|null
      */
@@ -94,6 +115,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的元信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 2;</code>
      * @param \Volc\Service\Vod\Models\Business\VodSourceInfo $var
      * @return $this
@@ -107,6 +130,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的封面图 URI 
+     *
      * Generated from protobuf field <code>string PosterUri = 3;</code>
      * @return string
      */
@@ -116,6 +141,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的封面图 URI 
+     *
      * Generated from protobuf field <code>string PosterUri = 3;</code>
      * @param string $var
      * @return $this
@@ -129,6 +156,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频透传业务的参数 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 4;</code>
      * @return string
      */
@@ -138,6 +167,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频透传业务的参数 
+     *
      * Generated from protobuf field <code>string CallbackArgs = 4;</code>
      * @param string $var
      * @return $this
@@ -151,6 +182,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 5;</code>
      * @return string
      */
@@ -160,6 +193,8 @@ class VodCommitUploadInfoResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 素材 id 
+     *
      * Generated from protobuf field <code>string Mid = 5;</code>
      * @param string $var
      * @return $this

@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ValuePair extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Url对应的JobId
+     * Url对应的JobId 
      *
      * Generated from protobuf field <code>string JobId = 1;</code>
      */
     protected $JobId = '';
     /**
-     * 上传的Url
+     * 用户上传的Url 
      *
      * Generated from protobuf field <code>string SourceUrl = 2;</code>
      */
@@ -33,9 +33,9 @@ class ValuePair extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $JobId
-     *           Url对应的JobId
+     *           Url对应的JobId 
      *     @type string $SourceUrl
-     *           上传的Url
+     *           用户上传的Url 
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class ValuePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Url对应的JobId
+     * Url对应的JobId 
      *
      * Generated from protobuf field <code>string JobId = 1;</code>
      * @return string
@@ -55,7 +55,7 @@ class ValuePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Url对应的JobId
+     * Url对应的JobId 
      *
      * Generated from protobuf field <code>string JobId = 1;</code>
      * @param string $var
@@ -70,7 +70,7 @@ class ValuePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传的Url
+     * 用户上传的Url 
      *
      * Generated from protobuf field <code>string SourceUrl = 2;</code>
      * @return string
@@ -81,7 +81,7 @@ class ValuePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传的Url
+     * 用户上传的Url 
      *
      * Generated from protobuf field <code>string SourceUrl = 2;</code>
      * @param string $var

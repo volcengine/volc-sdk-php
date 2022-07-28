@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 1001 阶段返回信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      */
     protected $Data = null;
@@ -25,6 +27,7 @@ class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\VodApplyUploadInfoData $Data
+     *           1001 阶段返回信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      * @return \Volc\Service\Vod\Models\Business\VodApplyUploadInfoData|null
      */
@@ -52,6 +57,8 @@ class VodApplyUploadInfoResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1001 阶段返回信息 
+     *
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodApplyUploadInfoData Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\VodApplyUploadInfoData $var
      * @return $this

@@ -26,7 +26,7 @@ class VodGetBetterFramesForAuditRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $Strategy = '';
     /**
-     * 优选帧的覆盖率得分，取值[0,1]，0代表取全部优选帧
+     * 优选帧的覆盖率得分，取值为从0至1的小数，0代表取全部优选帧
      *
      * Generated from protobuf field <code>string CoverRate = 3;</code>
      */
@@ -43,7 +43,7 @@ class VodGetBetterFramesForAuditRequest extends \Google\Protobuf\Internal\Messag
      *     @type string $Strategy
      *          视频审核帧模板中的Strategy，抽帧策略，默认为default
      *     @type string $CoverRate
-     *           优选帧的覆盖率得分，取值[0,1]，0代表取全部优选帧
+     *           优选帧的覆盖率得分，取值为从0至1的小数，0代表取全部优选帧
      * }
      */
     public function __construct($data = NULL) {
@@ -104,7 +104,7 @@ class VodGetBetterFramesForAuditRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 优选帧的覆盖率得分，取值[0,1]，0代表取全部优选帧
+     * 优选帧的覆盖率得分，取值为从0至1的小数，0代表取全部优选帧
      *
      * Generated from protobuf field <code>string CoverRate = 3;</code>
      * @return string
@@ -115,7 +115,7 @@ class VodGetBetterFramesForAuditRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * 优选帧的覆盖率得分，取值[0,1]，0代表取全部优选帧
+     * 优选帧的覆盖率得分，取值为从0至1的小数，0代表取全部优选帧
      *
      * Generated from protobuf field <code>string CoverRate = 3;</code>
      * @param string $var

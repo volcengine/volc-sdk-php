@@ -19,14 +19,16 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodWorkflow::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodEdit::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodCommon::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodSmartStrategy::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodAppsManage::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿF
-vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"™
+ÀN
+vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.proto"™
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
 Result (24.Volcengine.Vod.Models.Business.VodAllPlayInfoResult"£
@@ -123,7 +125,13 @@ $VodDeleteVideoClassificationResponseG
 Result (26.Volcengine.Vod.Models.Business.VodStartWorkflowResult"Æ
 "VodRetrieveTranscodeResultResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
-Result (2/.Volcengine.Vod.Models.Business.TranscodeResult"a
+Result (2/.Volcengine.Vod.Models.Business.TranscodeResult"¿
+$VodSubmitDirectEditTaskAsyncResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
+Result (2?.Volcengine.Vod.Models.Business.SubmitDirectEditTaskAsyncResult"Æ
+VodGetDirectEditResultResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
+Result (23.Volcengine.Vod.Models.Business.GetDirectEditResult"a
 VodCreateSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"ù
 VodListSpaceResponseG
@@ -135,7 +143,10 @@ $VodDeleteVideoClassificationResponseG
 VodUpdateSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"m
 "VodUpdateSpaceUploadConfigResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"•
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"«
+&VodDescribeVodSpaceStorageDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
+Result (2D.Volcengine.Vod.Models.Business.VodDescribeVodSpaceStorageDataResult"•
 VodListDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
 Result (23.Volcengine.Vod.Models.Business.VodDomainConfigInfo"≤
@@ -162,14 +173,20 @@ $VodDeleteVideoClassificationResponseG
 Result (2<.Volcengine.Vod.Models.Business.VodCdnStatisticsCommonResult"¢
 VodDescribeIPInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata<
-Result (2,.Volcengine.Vod.Models.Business.VodCdnIpInfo"m
+Result (2,.Volcengine.Vod.Models.Business.VodCdnIpInfo"…
+\'VodDescribeVodDomainTrafficDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataU
+Result (2E.Volcengine.Vod.Models.Business.VodDescribeVodDomainTrafficDataResult"m
 "VodAddCallbackSubscriptionResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f
 VodSetCallbackEventResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"…
 \'VodGetSmartStrategyLitePlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataU
-Result (2E.Volcengine.Vod.Models.Business.VodGetSmartStrategyLitePlayInfoResultBÃ
+Result (2E.Volcengine.Vod.Models.Business.VodGetSmartStrategyLitePlayInfoResult"•
+VodGetAppInfoResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
+Result (23.Volcengine.Vod.Models.Business.VodGetAppInfoResultBÃ
 )com.volcengine.service.vod.model.responseBVodResponsePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/response†ÿ  Volc\\Service\\Vod\\Models\\Response‚#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 

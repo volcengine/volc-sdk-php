@@ -399,6 +399,16 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeVodSpaceStorageData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceStorageData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 分发加速管理
         // **********************************************************************
@@ -468,6 +478,16 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodDomainBandwidthData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodDomainTrafficData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodDomainTrafficData',
                     'Version' => '2020-08-01',
                 ],
             ]

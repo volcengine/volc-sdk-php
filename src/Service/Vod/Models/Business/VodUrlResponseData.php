@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodUrlResponseData extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 视频的URL的键值对，包含 JobId 和对应的 SourceUrl 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      */
     private $Data;
@@ -25,6 +27,7 @@ class VodUrlResponseData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\ValuePair[]|\Google\Protobuf\Internal\RepeatedField $Data
+     *           视频的URL的键值对，包含 JobId 和对应的 SourceUrl 
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class VodUrlResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的URL的键值对，包含 JobId 和对应的 SourceUrl 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -42,6 +47,8 @@ class VodUrlResponseData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 视频的URL的键值对，包含 JobId 和对应的 SourceUrl 
+     *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.ValuePair Data = 1;</code>
      * @param \Volc\Service\Vod\Models\Business\ValuePair[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
