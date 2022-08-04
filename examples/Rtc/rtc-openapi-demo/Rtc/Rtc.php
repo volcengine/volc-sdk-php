@@ -2,7 +2,7 @@
 
 // RTC API 管理类
 // 1. $apiList 新增API配置
-// 2. 添加对应action的方法
+// 2. 添加对应action的方法及版本号
 namespace YourProject\Rtc;
 
 use Volc\Base\V4Curl;
@@ -37,23 +37,23 @@ class Rtc extends V4Curl
     // 格式固定，变量是 method、Action、Version
     // 最外层 key 和 Action 保持一致
     protected $apiList = [
-        'ListIndicators' => [
+        'StartRecord' => [
             'url' => '/',
             'method' => 'post',
             'config' => [
                 'query' => [
-                    'Action' => 'ListIndicators',
-                    'Version' => '2020-12-01',
+                    'Action' => 'StartRecord',
+                    'Version' => '2022-06-01',
                 ]
             ]
         ],
-        'ListRoomInformation' => [
+        'GetRecordTask' => [
             'url' => '/',
             'method' => 'get',
             'config' => [
                 'query' => [
-                    'Action' => 'ListRoomInformation',
-                    'Version' => '2020-12-01',
+                    'Action' => 'GetRecordTask',
+                    'Version' => '2022-06-01',
                 ]
             ]
         ]
@@ -71,13 +71,13 @@ class Rtc extends V4Curl
     }
 
     // ===API 方法===
-    public function listIndicators(array $query = []): string
+    public function startRecord(array $query = []): string
     {
-        return $this->requestWithRetry("ListIndicators", $query);
+        return $this->requestWithRetry("StartRecord", $query);
     }
 
-    public function listRoomInformation(array $query = []): string
+    public function getRecordTask(array $query = []): string
     {
-        return $this->requestWithRetry("ListRoomInformation", $query);
+        return $this->requestWithRetry("GetRecordTask", $query);
     }
 }
