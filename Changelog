@@ -1,5 +1,8 @@
 Change log
 
+2022-08-11 Bumped to version v1.0.47
+- Updated apis for vod
+
 2022-08-04 Bumped to version v1.0.46
 - Added apis for sts
 - Updated demo for rtc
