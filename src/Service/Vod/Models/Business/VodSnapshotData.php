@@ -55,6 +55,12 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSpriteSnapshot SpriteSnapshots = 7;</code>
      */
     private $SpriteSnapshots;
+    /**
+     *视频采样截图
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSamplePosterSnapshot VSamplePosterSnapshots = 8;</code>
+     */
+    private $VSamplePosterSnapshots;
 
     /**
      * Constructor.
@@ -76,6 +82,8 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
      *           Ai动图
      *     @type \Volc\Service\Vod\Models\Business\VodSpriteSnapshot[]|\Google\Protobuf\Internal\RepeatedField $SpriteSnapshots
      *          雪碧图
+     *     @type \Volc\Service\Vod\Models\Business\VodSamplePosterSnapshot[]|\Google\Protobuf\Internal\RepeatedField $VSamplePosterSnapshots
+     *          视频采样截图
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +269,32 @@ class VodSnapshotData extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodSpriteSnapshot::class);
         $this->SpriteSnapshots = $arr;
+
+        return $this;
+    }
+
+    /**
+     *视频采样截图
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSamplePosterSnapshot VSamplePosterSnapshots = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVSamplePosterSnapshots()
+    {
+        return $this->VSamplePosterSnapshots;
+    }
+
+    /**
+     *视频采样截图
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSamplePosterSnapshot VSamplePosterSnapshots = 8;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodSamplePosterSnapshot[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setVSamplePosterSnapshots($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodSamplePosterSnapshot::class);
+        $this->VSamplePosterSnapshots = $arr;
 
         return $this;
     }
