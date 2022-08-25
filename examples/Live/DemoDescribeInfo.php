@@ -183,3 +183,16 @@ $body = [
 $response = $client->describePullToPushBandwidthData(['json' => $body]);
 echo $response;
 echo '<br>';
+
+
+$body = [
+    "DomainList" => ["example.com", "example2.com"],
+    "DetailField" => ["Domain"],
+    "StartTime" => "2022-07-13T00:00:00+08:00",
+    "EndTime" => "2022-07-14T00:00:00+08:00",
+    "Aggregation" => 86400,
+];
+
+$response = $client->describeLiveAuditData(['json' => $body]);
+echo $response;
+echo '<br>';
