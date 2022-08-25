@@ -507,6 +507,56 @@ class Live extends V4Curl
                 ],
             ]
         ],
+        'CreateSnapshotAuditPreset' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateSnapshotAuditPreset',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateSnapshotAuditPreset' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateSnapshotAuditPreset',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DeleteSnapshotAuditPreset' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteSnapshotAuditPreset',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'ListVhostSnapshotAuditPreset' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListVhostSnapshotAuditPreset',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeLiveAuditData' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeLiveAuditData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
     ];
 
     public function __construct()
@@ -792,5 +842,30 @@ class Live extends V4Curl
     public function describePullToPushBandwidthData(array $query = []): string
     {
         return $this->requestWithRetry("DescribePullToPushBandwidthData", $query);
+    }
+
+    public function createSnapshotAuditPreset(array $query = []): string
+    {
+        return $this->requestWithRetry("CreateSnapshotAuditPreset", $query);
+    }
+
+    public function updateSnapshotAuditPreset(array $query = []): string
+    {
+        return $this->requestWithRetry("UpdateSnapshotAuditPreset", $query);
+    }
+
+    public function deleteSnapshotAuditPreset(array $query = []): string
+    {
+        return $this->requestWithRetry("DeleteSnapshotAuditPreset", $query);
+    }
+
+    public function listVhostSnapshotAuditPreset(array $query = []): string
+    {
+        return $this->requestWithRetry("ListVhostSnapshotAuditPreset", $query);
+    }
+
+    public function describeLiveAuditData(array $query = []): string
+    {
+        return $this->requestWithRetry("DescribeLiveAuditData", $query);
     }
 }
