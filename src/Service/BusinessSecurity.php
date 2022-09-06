@@ -141,6 +141,86 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'AsyncAudioRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncAudioRisk',
+                    'Version' => '2022-04-01',
+                ],
+            ]
+        ],
+        'AudioResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioResult',
+                    'Version' => '2022-04-01',
+                ],
+            ]
+        ],
+        'AsyncVideoRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncVideoRisk',
+                    'Version' => '2021-11-29',
+                ],
+            ]
+        ],
+        'VideoResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'VideoResult',
+                    'Version' => '2022-08-26',
+                ],
+            ]
+        ],
+        'AsyncLiveAudioRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncLiveAudioRisk',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
+        'AudioLiveResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAudioLiveResult',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
+        'AsyncLiveVideoRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncLiveVideoRisk',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
+        'GetVideoLiveResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetVideoLiveResult',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -289,4 +369,99 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("TextRisk", $commitReq);
     }
 
+    public function AsyncAudioRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncAudioRisk", $commitReq);
+    }
+
+    public function AsyncLiveAudioRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncLiveAudioRisk", $commitReq);
+    }
+
+    public function GetAudioResult(int $appId, string $service, string $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("AudioResult", $commitReq);
+    }
+
+    public function GetAudioLiveResult(int $appId, string $service, string  $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("GetAudioLiveResult", $commitReq);
+    }
+
+    public function AsyncVideoRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncVideoRisk", $commitReq);
+    }
+
+    public function AsyncLiveVideoRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncLiveVideoRisk", $commitReq);
+    }
+
+    public function GetVideoResult(int $appId, string $service, string  $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("GetVideoResult", $commitReq);
+    }
+
+    public function GetVideoLiveResult(int $appId, string $service, string  $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("GetVideoLiveResult", $commitReq);
+    }
 }

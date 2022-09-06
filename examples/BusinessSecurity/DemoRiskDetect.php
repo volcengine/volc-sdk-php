@@ -28,3 +28,6 @@ echo $response;
 
 $response = $client->TextRisk(5461, "text_risk",  "{\"operate_time\": 1652154752, \"text\": \"待检测文本\", \"did\":1357924680, \"account_id\": \"123\"}");
 echo $response;
+
+$response = $client->GetAudioResult(334361, "audio_risk",  "70");
+echo $response;
