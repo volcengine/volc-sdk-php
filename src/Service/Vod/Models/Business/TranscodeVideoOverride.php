@@ -25,6 +25,18 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
      */
     protected $Clip = null;
+    /**
+     * 模板组下标，仅对模板组生效
+     *
+     * Generated from protobuf field <code>repeated int32 OutputIndex = 3;</code>
+     */
+    private $OutputIndex;
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     */
+    protected $FileName = '';
 
     /**
      * Constructor.
@@ -36,6 +48,10 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      *           被覆盖的视频模板Id, 支持ALL
      *     @type \Volc\Service\Vod\Models\Business\Clip $Clip
      *           裁剪参数
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $OutputIndex
+     *           模板组下标，仅对模板组生效
+     *     @type string $FileName
+     *           FileName
      * }
      */
     public function __construct($data = NULL) {
@@ -101,6 +117,58 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\Clip::class);
         $this->Clip = $var;
+
+        return $this;
+    }
+
+    /**
+     * 模板组下标，仅对模板组生效
+     *
+     * Generated from protobuf field <code>repeated int32 OutputIndex = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOutputIndex()
+    {
+        return $this->OutputIndex;
+    }
+
+    /**
+     * 模板组下标，仅对模板组生效
+     *
+     * Generated from protobuf field <code>repeated int32 OutputIndex = 3;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOutputIndex($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT32);
+        $this->OutputIndex = $arr;
+
+        return $this;
+    }
+
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
 
         return $this;
     }

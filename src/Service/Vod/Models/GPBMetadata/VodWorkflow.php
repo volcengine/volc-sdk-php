@@ -16,7 +16,7 @@ class VodWorkflow
         }
         $pool->internalAddGeneratedFile(
             '
-†
+À
 vod/business/vod_workflow.protoVolcengine.Vod.Models.Business"\'
 VodStartWorkflowResult
 RunId (	"Ü
@@ -37,18 +37,21 @@ TemplateId (	D
 Vars (26.Volcengine.Vod.Models.Business.LogoOverride.VarsEntry+
 	VarsEntry
 key (	
-value (	:8"`
+value (	:8"‡
 TranscodeVideoOverride
 
 TemplateId (	2
-Clip (2$.Volcengine.Vod.Models.Business.Clip"*
+Clip (2$.Volcengine.Vod.Models.Business.Clip
+OutputIndex (
+FileName (	"*
 Clip
 	StartTime (
-EndTime ("`
+EndTime ("r
 TranscodeAudioOverride
 
 TemplateId (	2
-Clip (2$.Volcengine.Vod.Models.Business.Clip"R
+Clip (2$.Volcengine.Vod.Models.Business.Clip
+FileName (	"R
 SnapshotOverride
 
 TemplateId (	
