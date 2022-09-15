@@ -23,6 +23,12 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.Clip Clip = 2;</code>
      */
     protected $Clip = null;
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 3;</code>
+     */
+    protected $FileName = '';
 
     /**
      * Constructor.
@@ -33,6 +39,8 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $TemplateId
      *           被覆盖的音频模板Id, 支持ALL
      *     @type \Volc\Service\Vod\Models\Business\Clip $Clip
+     *     @type string $FileName
+     *           FileName
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +102,32 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\Clip::class);
         $this->Clip = $var;
+
+        return $this;
+    }
+
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 3;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     * FileName
+     *
+     * Generated from protobuf field <code>string FileName = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
 
         return $this;
     }
