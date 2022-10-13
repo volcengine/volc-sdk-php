@@ -44,7 +44,7 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
      */
     protected $HttpsStatus = '';
     /**
-     * 证书过期时间
+     * 证书过期时间，格式为"yyyy-MM-dd HH:mm:ss"
      *
      * Generated from protobuf field <code>string ExpiredAt = 6;</code>
      */
@@ -67,7 +67,7 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
      *     @type string $HttpsStatus
      *           Http开启状态
      *     @type string $ExpiredAt
-     *           证书过期时间
+     *           证书过期时间，格式为"yyyy-MM-dd HH:mm:ss"
      * }
      */
     public function __construct($data = NULL) {
@@ -206,7 +206,7 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 证书过期时间
+     * 证书过期时间，格式为"yyyy-MM-dd HH:mm:ss"
      *
      * Generated from protobuf field <code>string ExpiredAt = 6;</code>
      * @return string
@@ -217,7 +217,7 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 证书过期时间
+     * 证书过期时间，格式为"yyyy-MM-dd HH:mm:ss"
      *
      * Generated from protobuf field <code>string ExpiredAt = 6;</code>
      * @param string $var

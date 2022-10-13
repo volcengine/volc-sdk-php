@@ -27,7 +27,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodAppsManage::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ËN
+¼T
 vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -125,10 +125,22 @@ $VodDeleteVideoClassificationResponseG
 Result (26.Volcengine.Vod.Models.Business.VodStartWorkflowResult"®
 "VodRetrieveTranscodeResultResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
-Result (2/.Volcengine.Vod.Models.Business.TranscodeResult"À
+Result (2/.Volcengine.Vod.Models.Business.TranscodeResult"»
+ VodListWorkflowExecutionResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataN
+Result (2>.Volcengine.Vod.Models.Business.VodListWorkflowExecutionResult"Å
+%VodGetWorkflowExecutionDetailResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataS
+Result (2C.Volcengine.Vod.Models.Business.VodGetWorkflowExecutionDetailResult"³
+%VodGetWorkflowExecutionStatusResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataA
+Result (21.Volcengine.Vod.Models.Business.WorkflowExecution"À
 $VodSubmitDirectEditTaskAsyncResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
-Result (2?.Volcengine.Vod.Models.Business.SubmitDirectEditTaskAsyncResult"®
+Result (2?.Volcengine.Vod.Models.Business.SubmitDirectEditTaskAsyncResult"²
+ VodGetDirectEditProgressResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataE
+Result (25.Volcengine.Vod.Models.Business.GetDirectEditProgress"®
 VodGetDirectEditResultResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
 Result (23.Volcengine.Vod.Models.Business.GetDirectEditResult"a
