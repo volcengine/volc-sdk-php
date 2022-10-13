@@ -16,10 +16,12 @@ class VodEdit
         }
         $pool->internalAddGeneratedFile(
             '
-Ü
+…
 vod/business/vod_edit.protoVolcengine.Vod.Models.Business"0
 SubmitDirectEditTaskAsyncResult
-ReqId (	"—
+ReqId (	"\'
+GetDirectEditProgress
+Result ("—
 GetDirectEditResult
 ReqId (	
 	EditParam (

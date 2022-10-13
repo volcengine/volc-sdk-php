@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¶:
+ø=
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -233,7 +233,30 @@ TemplateId (	=
 !VodRetrieveTranscodeResultRequest
 Vid (	
 
-ResultType (	"œ
+ResultType (	"Ÿ
+VodListWorkflowExecutionRequest
+RunId (	
+Vid (	
+	SpaceName (	
+
+TemplateId (	
+
+TaskListId (	
+EnableLowPriority (	
+	JobSource (	
+Status (	
+	StartTime	 (	
+EndTime
+ (	
+PageSize (	
+Offset (	
+
+OrderByKey (	
+Order (	"5
+$VodGetWorkflowExecutionDetailRequest
+RunId (	"5
+$VodGetWorkflowExecutionStatusRequest
+RunId (	"œ
 #VodSubmitDirectEditTaskAsyncRequest
 Uploader (	
 Application (	
@@ -242,7 +265,9 @@ ResultType (	"œ
 CallbackUri (	
 CallbackArgs (	"/
 VodGetDirectEditResultRequest
-ReqIds (	"v
+ReqIds (	"0
+VodGetDirectEditProgressRequest
+ReqId (	"v
 VodCreateSpaceRequest
 	SpaceName (	
 ProjectName (	
