@@ -357,6 +357,39 @@ class VodOption
             ]
         ],
         // **********************************************************************
+        // 视频编辑
+        // **********************************************************************
+        'SubmitDirectEditTaskAsync' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SubmitDirectEditTaskAsync',
+                    'Version' => '2018-01-01',
+                ],
+            ]
+        ],
+        'GetDirectEditResult' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetDirectEditResult',
+                    'Version' => '2018-01-01',
+                ],
+            ]
+        ],
+        'GetDirectEditProgress' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetDirectEditProgress',
+                    'Version' => '2018-01-01',
+                ],
+            ]
+        ],
+        // **********************************************************************
         // 空间管理
         // **********************************************************************
         'CreateSpace' => [
