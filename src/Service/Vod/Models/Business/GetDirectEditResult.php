@@ -22,7 +22,7 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>bytes EditParam = 2;</code>
+     * Generated from protobuf field <code>string EditParam = 2;</code>
      */
     protected $EditParam = '';
     /**
@@ -112,7 +112,7 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>bytes EditParam = 2;</code>
+     * Generated from protobuf field <code>string EditParam = 2;</code>
      * @return string
      */
     public function getEditParam()
@@ -123,13 +123,13 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>bytes EditParam = 2;</code>
+     * Generated from protobuf field <code>string EditParam = 2;</code>
      * @param string $var
      * @return $this
      */
     public function setEditParam($var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, True);
         $this->EditParam = $var;
 
         return $this;
