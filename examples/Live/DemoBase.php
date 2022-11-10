@@ -6,7 +6,7 @@ require('../../vendor/autoload.php');
 
 $client = Live::getInstance();
 
-$ak = 'your ak';
-$sk = 'your sk';
+$ak = '';
+$sk = '';
 $client->setAccessKey($ak);
 $client->setSecretKey($sk);
