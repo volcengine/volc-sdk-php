@@ -31,3 +31,6 @@ echo $response;
 
 $response = $client->GetAudioResult(334361, "audio_risk",  "70");
 echo $response;
+
+$response = $client->TextSliceRisk(415493, "text_risk",  "{}");
+echo $response;
