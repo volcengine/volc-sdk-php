@@ -9,7 +9,7 @@ class AdBlocker extends V4Curl
         switch ($region) {
             case 'cn-north-1':
                 $config = [
-                    'host' => 'https://open.volcengineapi.com',
+                    'host' => 'https://riskcontrol.volcengineapi.com',
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [

@@ -221,6 +221,16 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'TextSliceRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'TextSliceRisk',
+                    'Version' => '2022-11-07',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -463,5 +473,17 @@ class BusinessSecurity extends V4Curl
             "query" => $commitBody
         ];
         return $this->requestWithRetry("GetVideoLiveResult", $commitReq);
+    }
+
+    public function TextSliceRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("TextSliceRisk", $commitReq);
     }
 }
