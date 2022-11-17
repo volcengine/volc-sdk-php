@@ -8,403 +8,500 @@ class Cdn extends V4Curl
 {
 
     protected $apiList = [
-#添加加速域名: https://www.volcengine.com/docs/6454/97340
+        #添加加速域名: https://www.volcengine.com/docs/6454/97340
         'AddCdnDomain' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'AddCdnDomain',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'AddCdnDomain',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#上线加速域名: https://www.volcengine.com/docs/6454/74667
+
+        #上线加速域名: https://www.volcengine.com/docs/6454/74667
         'StartCdnDomain' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'StartCdnDomain',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'StartCdnDomain',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#下线加速域名: https://www.volcengine.com/docs/6454/75129
+
+        #下线加速域名: https://www.volcengine.com/docs/6454/75129
         'StopCdnDomain' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'StopCdnDomain',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'StopCdnDomain',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#删除加速域名: https://www.volcengine.com/docs/6454/75130
+
+        #删除加速域名: https://www.volcengine.com/docs/6454/75130
         'DeleteCdnDomain' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DeleteCdnDomain',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteCdnDomain',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取域名列表: https://www.volcengine.com/docs/6454/75269
+
+        #获取域名列表: https://www.volcengine.com/docs/6454/75269
         'ListCdnDomains' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'ListCdnDomains',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListCdnDomains',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取域名配置详情: https://www.volcengine.com/docs/6454/80320
+
+        #获取域名配置详情: https://www.volcengine.com/docs/6454/80320
         'DescribeCdnConfig' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnConfig',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#修改加速域名配置: https://www.volcengine.com/docs/6454/97266
+
+        #修改加速域名配置: https://www.volcengine.com/docs/6454/97266
         'UpdateCdnConfig' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'UpdateCdnConfig',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'UpdateCdnConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取访问统计的细分数据: https://www.volcengine.com/docs/6454/70442
+
+        #获取访问统计的细分数据: https://www.volcengine.com/docs/6454/70442
         'DescribeCdnData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取访问统计的汇总数据: https://www.volcengine.com/docs/6454/96132
+
+        #获取访问统计的汇总数据: https://www.volcengine.com/docs/6454/96132
         'DescribeEdgeNrtDataSummary' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeEdgeNrtDataSummary',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeNrtDataSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取回源统计的细分数据: https://www.volcengine.com/docs/6454/70443
+
+        #获取回源统计的细分数据: https://www.volcengine.com/docs/6454/70443
         'DescribeCdnOriginData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnOriginData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnOriginData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取回源统计的汇总数据: https://www.volcengine.com/docs/6454/96133
+
+        #获取回源统计的汇总数据: https://www.volcengine.com/docs/6454/96133
         'DescribeOriginNrtDataSummary' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeOriginNrtDataSummary',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginNrtDataSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取省份运营商的细分数据: https://www.volcengine.com/docs/6454/75159
+
+        #获取省份运营商的细分数据: https://www.volcengine.com/docs/6454/75159
         'DescribeCdnDataDetail' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnDataDetail',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnDataDetail',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取独立访客的细分数据: https://www.volcengine.com/docs/6454/79321
+
+        #获取独立访客的细分数据: https://www.volcengine.com/docs/6454/79321
         'DescribeEdgeStatisticalData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeEdgeStatisticalData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeStatisticalData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取访问统计的排行数据: https://www.volcengine.com/docs/6454/96145
+
+        #获取访问统计的排行数据: https://www.volcengine.com/docs/6454/96145
         'DescribeEdgeTopNrtData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeEdgeTopNrtData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeTopNrtData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取回源数据的统计排序: https://www.volcengine.com/docs/6454/104892
+
+        #获取回源数据的统计排序: https://www.volcengine.com/docs/6454/104892
         'DescribeOriginTopNrtData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeOriginTopNrtData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginTopNrtData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取访问状态码的统计排序: https://www.volcengine.com/docs/6454/104888
+
+        #获取访问状态码的统计排序: https://www.volcengine.com/docs/6454/104888
         'DescribeEdgeTopStatusCode' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeEdgeTopStatusCode',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeTopStatusCode',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取回源状态码的统计排序: https://www.volcengine.com/docs/6454/104891
+
+        #获取回源状态码的统计排序: https://www.volcengine.com/docs/6454/104891
         'DescribeOriginTopStatusCode' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeOriginTopStatusCode',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginTopStatusCode',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取热点及访客排行数据: https://www.volcengine.com/docs/6454/79322
+
+        #获取热点及访客排行数据: https://www.volcengine.com/docs/6454/79322
         'DescribeEdgeTopStatisticalData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeEdgeTopStatisticalData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeTopStatisticalData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取区域和 ISP 列表: https://www.volcengine.com/docs/6454/70445
+
+        #获取区域和 ISP 列表: https://www.volcengine.com/docs/6454/70445
         'DescribeCdnRegionAndIsp' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnRegionAndIsp',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnRegionAndIsp',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#（Deprecated）查询域名排行数据: https://www.volcengine.com/docs/6454/70447?type=preview
-        'DescribeCdnDomainTopData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnDomainTopData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
-        ],
-#查询账号计费方式: https://www.volcengine.com/docs/6454/78999
+
+        #查询账号计费方式: https://www.volcengine.com/docs/6454/78999
         'DescribeCdnService' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnService',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnService',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取计费指标的细分数据: https://www.volcengine.com/docs/6454/96167
+
+        #获取计费指标的细分数据: https://www.volcengine.com/docs/6454/96167
         'DescribeAccountingData' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeAccountingData',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeAccountingData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#提交刷新任务: https://www.volcengine.com/docs/6454/70438
+
+        #提交刷新任务: https://www.volcengine.com/docs/6454/70438
         'SubmitRefreshTask' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'SubmitRefreshTask',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'SubmitRefreshTask',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#提交预热任务: https://www.volcengine.com/docs/6454/70436
+
+        #提交预热任务: https://www.volcengine.com/docs/6454/70436
         'SubmitPreloadTask' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'SubmitPreloadTask',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'SubmitPreloadTask',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取刷新预热任务信息: https://www.volcengine.com/docs/6454/70437
+
+        #获取刷新预热任务信息: https://www.volcengine.com/docs/6454/70437
         'DescribeContentTasks' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeContentTasks',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeContentTasks',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取刷新预热配额信息: https://www.volcengine.com/docs/6454/70439
+
+        #获取刷新预热配额信息: https://www.volcengine.com/docs/6454/70439
         'DescribeContentQuota' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeContentQuota',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeContentQuota',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#提交封禁任务: https://www.volcengine.com/docs/6454/79890
+
+        #提交封禁任务: https://www.volcengine.com/docs/6454/79890
         'SubmitBlockTask' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'SubmitBlockTask',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'SubmitBlockTask',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#提交解封任务: https://www.volcengine.com/docs/6454/79893
+
+        #提交解封任务: https://www.volcengine.com/docs/6454/79893
         'SubmitUnblockTask' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'SubmitUnblockTask',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'SubmitUnblockTask',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取封禁解封任务信息: https://www.volcengine.com/docs/6454/79906
+
+        #获取封禁解封任务信息: https://www.volcengine.com/docs/6454/79906
         'DescribeContentBlockTasks' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeContentBlockTasks',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeContentBlockTasks',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取访问日志下载链接: https://www.volcengine.com/docs/6454/70446
+
+        #获取访问日志下载链接: https://www.volcengine.com/docs/6454/70446
         'DescribeCdnAccessLog' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnAccessLog',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnAccessLog',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取 IP 归属信息: https://www.volcengine.com/docs/6454/75233
+
+        #获取 IP 归属信息: https://www.volcengine.com/docs/6454/75233
         'DescribeIPInfo' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeIPInfo',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeIPInfo',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#获取回源节点 IP 列表: https://www.volcengine.com/docs/6454/75273
+
+        #批量获取 IP 归属信息: https://www.volcengine.com/docs/6454/106852
+        'DescribeIPListInfo' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeIPListInfo',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取回源节点 IP 列表: https://www.volcengine.com/docs/6454/75273
         'DescribeCdnUpperIp' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DescribeCdnUpperIp',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnUpperIp',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#添加资源标签: https://www.volcengine.com/docs/6454/80308
+
+        #添加资源标签: https://www.volcengine.com/docs/6454/80308
         'AddResourceTags' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'AddResourceTags',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'AddResourceTags',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#更新资源标签: https://www.volcengine.com/docs/6454/80313
+
+        #更新资源标签: https://www.volcengine.com/docs/6454/80313
         'UpdateResourceTags' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'UpdateResourceTags',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'UpdateResourceTags',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#查询标签清单: https://www.volcengine.com/docs/6454/80315
+
+        #查询标签清单: https://www.volcengine.com/docs/6454/80315
         'ListResourceTags' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'ListResourceTags',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListResourceTags',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-#删除资源标签: https://www.volcengine.com/docs/6454/80316
+
+        #删除资源标签: https://www.volcengine.com/docs/6454/80316
         'DeleteResourceTags' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DeleteResourceTags',
-                    'Version' => '2021-03-01',
-                ],
-            ]
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteResourceTags',
+                  'Version' => '2021-03-01',
+              ],
+          ]
         ],
-    ];
+
+        #上传证书: https://www.volcengine.com/docs/6454/125708
+        'AddCdnCertificate' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'AddCdnCertificate',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #查询CDN证书列表: https://www.volcengine.com/docs/6454/125709
+        'ListCertInfo' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListCertInfo',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #查询CDN有关联域名的证书列表: https://www.volcengine.com/docs/6454/125710
+        'ListCdnCertInfo' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListCdnCertInfo',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取特定证书的域名关联信息: https://www.volcengine.com/docs/6454/125711
+        'DescribeCertConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCertConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #批量关联证书: https://www.volcengine.com/docs/6454/125712
+        'BatchDeployCert' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'BatchDeployCert',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+
+];
 
     public function __construct()
     {
@@ -593,14 +690,6 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeCdnRegionAndIsp", ['json' => $data]);
     }
 
-    public function describeCdnDomainTopData(array $data = []): string
-    {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnDomainTopData", ['json' => $data]);
-    }
-
     public function describeCdnService(array $data = []): string
     {
         if (empty($data)) {
@@ -689,6 +778,14 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeIPInfo", ['json' => $data]);
     }
 
+    public function describeIPListInfo(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeIPListInfo", ['json' => $data]);
+    }
+
     public function describeCdnUpperIp(array $data = []): string
     {
         if (empty($data)) {
@@ -728,6 +825,45 @@ class Cdn extends V4Curl
         }
         return $this->requestWithRetry("DeleteResourceTags", ['json' => $data]);
     }
+
+    public function addCdnCertificate(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("AddCdnCertificate", ['json' => $data]);
+    }
+
+    public function listCertInfo(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("ListCertInfo", ['json' => $data]);
+    }
+
+    public function listCdnCertInfo(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("ListCdnCertInfo", ['json' => $data]);
+    }
+
+    public function describeCertConfig(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeCertConfig", ['json' => $data]);
+    }
+
+    public function batchDeployCert(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("BatchDeployCert", ['json' => $data]);
+    }
+
 }
-
-
