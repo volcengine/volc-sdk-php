@@ -2,249 +2,50 @@
 
 namespace Volc\Service;
 
+use GuzzleHttp\Handler\CurlHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use Volc\Base\V4Curl;
 use GuzzleHttp\Client;
+use Volc\Service\ImageX\ImageXConfig;
+use Volc\Service\ImageX\ImageXUtil;
 
 const ResourceServiceIdTRN = "trn:ImageX:*:*:ServiceId/%s";
 const ResourceStoreKeyTRN = "trn:ImageX:*:*:StoreKeys/%s";
 
 class ImageX extends V4Curl
 {
+    const MinChunkSize = 1024 * 1024 * 20;
+    const LargeFileSize = 1024 * 1024 * 1024;
+
+    /**
+     * @throws \Exception
+     */
     protected function getConfig(string $region)
     {
-        switch ($region) {
-            case 'cn-north-1':
-                $config = [
-                    'host' => 'https://imagex.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'cn-north-1',
-                            'service' => 'ImageX',
-                        ],
-                    ],
-                ];
-                break;
-            case 'ap-singapore-1':
-                $config = [
-                    'host' => 'https://imagex-ap-singapore-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'ap-singapore-1',
-                            'service' => 'ImageX',
-                        ],
-                    ],
-                ];
-                break;
-            case 'us-east-1':
-                $config = [
-                    'host' => 'https://imagex-us-east-1.volcengineapi.com',
-                    'config' => [
-                        'timeout' => 5.0,
-                        'headers' => [
-                            'Accept' => 'application/json'
-                        ],
-                        'v4_credentials' => [
-                            'region' => 'us-east-1',
-                            'service' => 'ImageX',
-                        ],
-                    ],
-                ];
-                break;
-            default:
-                throw new \Exception(sprintf("ImageX not support region, %s", $region));
+        if (!isset(ImageXConfig::region[$region])) {
+            throw new \Exception(sprintf("ImageX not support region, %s", $region));
         }
-        return $config;
+        return ImageXConfig::region[$region];
     }
 
-    protected $apiList = [
-        // 模板管理
-        'CreateImageTemplate' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'CreateImageTemplate',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'DeleteImageTemplate' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DeleteImageTemplate',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'PreviewImageTemplate' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'PreviewImageTemplate',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetImageTemplate' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetImageTemplate',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetAllImageTemplates' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetAllImageTemplates',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        // 资源管理
-        'ApplyImageUpload' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'ApplyImageUpload',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'CommitImageUpload' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'CommitImageUpload',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'UpdateImageUploadFiles' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'UpdateImageUploadFiles',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'DeleteImageUploadFiles' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'DeleteImageUploadFiles',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetImageUploadFile' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetImageUploadFile',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetImageUploadFiles' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetImageUploadFiles',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'PreviewImageUploadFile' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'PreviewImageUploadFile',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetImageUpdateFiles' => [
-            'url' => '/',
-            'method' => 'get',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetImageUpdateFiles',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'FetchImageUrl' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'FetchImageUrl',
-                    'Version' => '2018-08-01',
-                ],
-            ]
-        ],
-        'GetImageOCR' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetImageOCR',
-                    'Version'=> '2018-08-01',
-                ]
-            ]
-        ],
-        'GetSegmentImage' => [
-            'url' => '/',
-            'method' => 'post',
-            'config' => [
-                'query' => [
-                    'Action' => 'GetSegmentImage',
-                    'Version'=> '2018-08-01',
-                ]
-            ]
-        ]
-    ];
+    protected $apiList = ImageXConfig::apiList;
 
     public function applyUploadImage(array $query)
     {
         $response = $this->request('ApplyImageUpload', $query);
-        return (string) $response->getBody();
+        return (string)$response->getBody();
     }
 
     public function commitUploadImage(array $query)
     {
         $response = $this->request('CommitImageUpload', $query);
-        return (string) $response->getBody();
+        return (string)$response->getBody();
     }
 
     public function updateImageUrls($serviceID, $urls, $action = 0)
     {
-        if ($action < 0 || $action > 2)
-        {
+        if ($action < 0 || $action > 2) {
             throw new \Exception(sprintf("update action should be [0,2], %d", $action));
         }
         $config = [
@@ -258,22 +59,159 @@ class ImageX extends V4Curl
         return (string)$response->getBody();
     }
 
-    public function upload(string $uploadHost, $storeInfo, string $filePath)
+    public function upload(string $uploadHost, $storeInfo, string $file)
     {
-        if (!file_exists($filePath)) {
+        /** @noinspection PhpUnusedLocalVariableInspection */
+        $fileResource = null;
+        /** @noinspection PhpUnusedLocalVariableInspection */
+        $fileSize = 0;
+
+        if (file_exists($file)) {
+            // 如果传入是一个文件
+            $fileResource = fopen($file, 'rb');
+            if ($fileResource === false) {
+                return -1;
+            }
+
+            $fileSize = filesize($file);
+            if ($fileSize === false) {
+                return -1;
+            }
+        } else {
             return -1;
         }
-        $content = file_get_contents($filePath);
-        $crc32 = sprintf("%08x", crc32($content));
 
-        $body = fopen($filePath, "r");
+        if ($fileSize == 0) {
+            return -1;
+        }
+
+        if ($fileSize <= static::MinChunkSize) {
+            $content = stream_get_contents($fileResource);
+            if (strlen($content) != $fileSize) {
+                return $this->directUpload($uploadHost, $storeInfo, $content);
+            }
+        } else {
+            $isLargeFile = $fileSize > static::LargeFileSize;
+            $handlerStack = HandlerStack::create(new CurlHandler());
+            $handlerStack->push(Middleware::retry(ImageXUtil::retryDecider(), ImageXUtil::retryDelay()));
+            $client = new Client([
+                'base_uri' => "https://" . $uploadHost,
+                'timeout' => $isLargeFile ? 600.0 : 30.0,
+                'handler' => $handlerStack,
+            ]);
+
+            return $this->chunkUpload($storeInfo, $fileResource, $fileSize, $client);
+        }
+
+        return 0;
+    }
+
+    /**
+     * @param array $storeInfo
+     * @param resource $fileResource
+     * @param int $fileSize
+     * @param Client $httpClient
+     * @return int
+     */
+    private function chunkUpload(array $storeInfo, $fileResource, int $fileSize, Client $httpClient)
+    {
+        $isLargeFile = $fileSize > static::LargeFileSize;
+        $uploadID = $this->initUploadPart($storeInfo, $isLargeFile, $httpClient);
+        if ($uploadID == "") {
+            return -1;
+        }
+
+        $num = floor($fileSize /  static::MinChunkSize);
+        $lastNum = $num - 1;
+        $checkSum = [];
+        for ($i = 0; $i < $lastNum; $i++) {
+            $data = stream_get_contents($fileResource,  static::MinChunkSize, $i *  static::MinChunkSize);
+            $partNumber = $i;
+            if ($isLargeFile) {
+                $partNumber = $partNumber + 1;
+            }
+            $crc32 = $this->uploadPart($storeInfo, $uploadID, $partNumber, $data, $isLargeFile, $httpClient);
+            if ($crc32 == "") {
+                return -1;
+            }
+            $checkSum[] = $crc32;
+        }
+        $maxLength = $fileSize - $lastNum *  static::MinChunkSize;
+        $data = stream_get_contents($fileResource, $maxLength, $lastNum *  static::MinChunkSize);
+        if ($isLargeFile) {
+            $lastNum = $lastNum + 1;
+        }
+        $crc32 = $this->uploadPart($storeInfo, $uploadID, $lastNum, $data, $isLargeFile, $httpClient);
+        if ($crc32 == "") {
+            return -1;
+        }
+        $checkSum[] = $crc32;
+        return $this->uploadMergePart($storeInfo, $uploadID, $checkSum, $isLargeFile, $httpClient);
+    }
+
+    private function initUploadPart(array $storeInfo, bool $isLargeFile, Client $httpClient)
+    {
+        $headers = ['Authorization' => $storeInfo["Auth"]];
+        if ($isLargeFile) {
+            $headers[] = ['X-Storage-Mode' => 'gateway'];
+        }
+        $response = $httpClient->put( $storeInfo["StoreUri"] . '?uploads', ['headers' => $headers]);
+        $initUploadResponse = json_decode((string)$response->getBody(), true);
+        if (!isset($initUploadResponse["success"]) || $initUploadResponse["success"] != 0) {
+            return "";
+        }
+        return $initUploadResponse['payload']['uploadID'];
+    }
+
+    private function uploadPart(array $storeInfo, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client): string
+    {
+        $uri = sprintf("%s?partNumber=%d&uploadID=%s", $storeInfo["StoreUri"] , $partNumber, $uploadID);
+        $crc32 = sprintf("%08x", crc32($data));
+        $headers = ['Authorization' => ['Authorization' => $storeInfo["Auth"]], 'Content-CRC32' => $crc32];
+        if ($isLargeFile) {
+            $headers[] = ['X-Storage-Mode' => 'gateway'];
+        }
+        $response = $client->put($uri, ['headers' => $headers, 'body' => $data]);
+        $uploadPartResponse = json_decode((string)$response->getBody(), true);
+        if (!isset($uploadPartResponse["success"]) || $uploadPartResponse["success"] != 0) {
+            return "";
+        }
+        return $crc32;
+    }
+
+    private function uploadMergePart(array $storeInfo, string $uploadID, array $checkSum, bool $isLargeFile, Client $client): int
+    {
+        $uri = sprintf("%s?uploadID=%s", $storeInfo["StoreUri"], $uploadID);
+        $m = [];
+        for ($i = 0; $i < count($checkSum); $i++) {
+            $no = $i;
+            if ($isLargeFile) {
+                $no = $i + 1;
+            }
+            $m[] = sprintf("%d:%s", $no, $checkSum[$i]);
+        }
+        $body = implode(",", $m);
+        $headers = ['Authorization' =>  $storeInfo["Auth"]];
+        if ($isLargeFile) {
+            $headers[] = ['X-Storage-Mode' => 'gateway'];
+        }
+        $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);
+        $uploadPartResponse = json_decode((string)$response->getBody(), true);
+        if (!isset($uploadPartResponse["success"]) || $uploadPartResponse["success"] != 0) {
+            return -1;
+        }
+        return 0;
+    }
+
+    private function directUpload(string $uploadHost, array $storeInfo, $content)
+    {
+        $crc32 = sprintf("%08x", crc32($content));
         $tosClient = new Client([
             'base_uri' => "https://" . $uploadHost,
             'timeout' => 5.0,
         ]);
-
-        $response = $tosClient->request('PUT', $storeInfo["StoreUri"], ["body" => $body, "headers" => ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32]]);
-        $uploadResponse = json_decode((string) $response->getBody(), true);
+        $response = $tosClient->request('PUT', $storeInfo["StoreUri"], ["body" => $content, "headers" => ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32]]);
+        $uploadResponse = json_decode((string)$response->getBody(), true);
         if (!isset($uploadResponse["success"]) || $uploadResponse["success"] != 0) {
             return -2;
         }
@@ -344,7 +282,7 @@ class ImageX extends V4Curl
         ];
 
         $response = $this->commitUploadImage($commitReq);
-        return (string) $response;
+        return (string)$response;
     }
 
     public function getUploadAuthToken($query)
@@ -368,15 +306,11 @@ class ImageX extends V4Curl
     {
         $applyRes = [];
         $commitRes = [];
-        if (sizeof($serviceIDList) == 0)
-        {
+        if (sizeof($serviceIDList) == 0) {
             $applyRes[] = sprintf(ResourceServiceIdTRN, "*");
             $commitRes[] = sprintf(ResourceServiceIdTRN, "*");
-        }
-        else
-        {
-            foreach ($serviceIDList as $serviceID)
-            {
+        } else {
+            foreach ($serviceIDList as $serviceID) {
                 $applyRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
                 $commitRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
             }
@@ -411,7 +345,7 @@ class ImageX extends V4Curl
         $params["Version"] = "2018-08-01";
         $queryStr = http_build_query($params);
         $response = $this->request('GetImageOCR', ['query' => $queryStr]);
-        $ocrResponse = json_decode((string) $response->getBody(), true);
+        $ocrResponse = json_decode((string)$response->getBody(), true);
         if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
             return sprintf("getImageOCR: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
         }
@@ -424,10 +358,11 @@ class ImageX extends V4Curl
         $params["Version"] = "2018-08-01";
         $queryStr = http_build_query($params);
         $response = $this->request('GetSegmentImage', ['query' => $queryStr, 'json' => $params]);
-        $segmentResponse = json_decode((string) $response->getBody(), true);
+        $segmentResponse = json_decode((string)$response->getBody(), true);
         if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
             return sprintf("getSegmentImage: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
         }
         return $segmentResponse["Result"];
     }
+
 }

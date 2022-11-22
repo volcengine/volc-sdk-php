@@ -1,5 +1,6 @@
 <?php
-require('../../vendor/autoload.php');
+include_once(__DIR__ . '/../../vendor/autoload.php');
+
 use Volc\Service\ImageX;
 
 $client = ImageX::getInstance();
