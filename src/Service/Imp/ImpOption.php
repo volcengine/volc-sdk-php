@@ -49,7 +49,7 @@ class ImpOption
         switch ($region) {
             case 'cn-north-1':
                 $config = [
-                    'host' => 'http://open.volcengineapi.com',
+                    'host' => 'http://imp.volcengineapi.com',
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [
