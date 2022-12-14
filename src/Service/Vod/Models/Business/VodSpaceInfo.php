@@ -73,6 +73,12 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string MediaSyncLevel = 11;</code>
      */
     protected $MediaSyncLevel = '';
+    /**
+     *是否可使用归档存储
+     *
+     * Generated from protobuf field <code>bool CanUseArchive = 12;</code>
+     */
+    protected $CanUseArchive = false;
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
      *           类型
      *     @type string $MediaSyncLevel
      *           媒资同步类型
+     *     @type bool $CanUseArchive
+     *          是否可使用归档存储
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class VodSpaceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->MediaSyncLevel = $var;
+
+        return $this;
+    }
+
+    /**
+     *是否可使用归档存储
+     *
+     * Generated from protobuf field <code>bool CanUseArchive = 12;</code>
+     * @return bool
+     */
+    public function getCanUseArchive()
+    {
+        return $this->CanUseArchive;
+    }
+
+    /**
+     *是否可使用归档存储
+     *
+     * Generated from protobuf field <code>bool CanUseArchive = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCanUseArchive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->CanUseArchive = $var;
 
         return $this;
     }

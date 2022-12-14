@@ -67,6 +67,12 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodClassification Classification = 9;</code>
      */
     protected $Classification = null;
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 10;</code>
+     */
+    protected $TosStorageClass = '';
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *          创建时间
      *     @type \Volc\Service\Vod\Models\Business\VodClassification $Classification
      *          分类串
+     *     @type string $TosStorageClass
+     *           Tos存储类型:STANDARD, ARCHIVE
      * }
      */
     public function __construct($data = NULL) {
@@ -339,6 +347,32 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodClassification::class);
         $this->Classification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 10;</code>
+     * @return string
+     */
+    public function getTosStorageClass()
+    {
+        return $this->TosStorageClass;
+    }
+
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTosStorageClass($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->TosStorageClass = $var;
 
         return $this;
     }

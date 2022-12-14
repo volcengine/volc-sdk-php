@@ -32,13 +32,14 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
+     * @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
      *          响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\GetDirectEditProgress $Result
+     * @type \Volc\Service\Vod\Models\Business\GetDirectEditProgress $Result
      *          响应结果
      * }
      */
-    public function __construct($data = NULL) {
+    public function __construct($data = NULL)
+    {
         \Volc\Service\Vod\Models\GPBMetadata\ResponseVod::initOnce();
         parent::__construct($data);
     }
@@ -115,5 +116,15 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+    public function JsonSerialize(): array
+    {
+        $meta = json_decode($this->getResponseMetadata()->serializeToJsonString());
+        return [
+            'ResponseMetadata'=> $meta,
+            'Result' => [
+                'Result' => $this->getResult()->getResult()
+            ]
+        ];
+    }
 }
 

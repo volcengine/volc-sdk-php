@@ -43,6 +43,12 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileName = 5;</code>
      */
     protected $FileName = '';
+    /**
+     * 上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 6;</code>
+     */
+    protected $StorageClass = 0;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           上传的功能函数 
      *     @type string $FileName
      *           上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *     @type int $StorageClass
+     *           上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 6;</code>
+     * @return int
+     */
+    public function getStorageClass()
+    {
+        return $this->StorageClass;
+    }
+
+    /**
+     * 上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageClass($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->StorageClass = $var;
 
         return $this;
     }

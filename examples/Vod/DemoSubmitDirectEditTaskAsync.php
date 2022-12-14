@@ -9,10 +9,9 @@ $client->setAccessKey('your ak');
 $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest();
-$request->setUploader("your uploader");
-$request->setApplication("VideoTrackToB");
-
-$request->setEditParam("your editParam");
+$request->setUploader("your Uploader");
+$request->setApplication("your Application");
+$request->setEditParam();
 $request->setPriority(0);
 $request->setCallbackUri("your CallbackUri");
 $request->setCallbackArgs("your CallbackArgs");

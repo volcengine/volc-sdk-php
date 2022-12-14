@@ -19,6 +19,12 @@ class VodGetWorkflowExecutionStatusRequest extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>string RunId = 1;</code>
      */
     protected $RunId = '';
+    /**
+     * 是否需要子任务详情: true/false
+     *
+     * Generated from protobuf field <code>string NeedTasksDetail = 2;</code>
+     */
+    protected $NeedTasksDetail = '';
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class VodGetWorkflowExecutionStatusRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type string $RunId
      *           工作流执行Id
+     *     @type string $NeedTasksDetail
+     *           是否需要子任务详情: true/false
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +65,32 @@ class VodGetWorkflowExecutionStatusRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, True);
         $this->RunId = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否需要子任务详情: true/false
+     *
+     * Generated from protobuf field <code>string NeedTasksDetail = 2;</code>
+     * @return string
+     */
+    public function getNeedTasksDetail()
+    {
+        return $this->NeedTasksDetail;
+    }
+
+    /**
+     * 是否需要子任务详情: true/false
+     *
+     * Generated from protobuf field <code>string NeedTasksDetail = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNeedTasksDetail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->NeedTasksDetail = $var;
 
         return $this;
     }

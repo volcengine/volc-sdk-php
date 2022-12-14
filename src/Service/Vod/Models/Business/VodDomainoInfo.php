@@ -67,6 +67,12 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Region = 9;</code>
      */
     protected $Region = '';
+    /**
+     * 源站信息
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodDomainSourceInfo Sources = 10;</code>
+     */
+    private $Sources;
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *          更新时间
      *     @type string $Region
      *          加速区域，cn:国内,overseas:海外，global:全球
+     *     @type \Volc\Service\Vod\Models\Business\VodDomainSourceInfo[]|\Google\Protobuf\Internal\RepeatedField $Sources
+     *           源站信息
      * }
      */
     public function __construct($data = NULL) {
@@ -339,6 +347,32 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Region = $var;
+
+        return $this;
+    }
+
+    /**
+     * 源站信息
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodDomainSourceInfo Sources = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSources()
+    {
+        return $this->Sources;
+    }
+
+    /**
+     * 源站信息
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodDomainSourceInfo Sources = 10;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodDomainSourceInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSources($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodDomainSourceInfo::class);
+        $this->Sources = $arr;
 
         return $this;
     }

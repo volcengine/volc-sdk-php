@@ -103,6 +103,30 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Quality = 15;</code>
      */
     protected $Quality = '';
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 16;</code>
+     */
+    protected $DynamicRange = '';
+    /**
+     *视频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 17;</code>
+     */
+    protected $VideoStreamMeta = null;
+    /**
+     *音频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 18;</code>
+     */
+    protected $AudioStreamMeta = null;
+    /**
+     *存储类型，STANDARD or ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 19;</code>
+     */
+    protected $TosStorageClass = '';
 
     /**
      * Constructor.
@@ -140,6 +164,14 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      *          创建时间
      *     @type string $Quality
      *          音频质量
+     *     @type string $DynamicRange
+     *          动态范围，"HDR" or "SDR"
+     *     @type \Volc\Service\Vod\Models\Business\VodVideoStreamMeta $VideoStreamMeta
+     *          视频流信息
+     *     @type \Volc\Service\Vod\Models\Business\VodAudioStreamMeta $AudioStreamMeta
+     *          音频流信息
+     *     @type string $TosStorageClass
+     *          存储类型，STANDARD or ARCHIVE
      * }
      */
     public function __construct($data = NULL) {
@@ -533,6 +565,130 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Quality = $var;
+
+        return $this;
+    }
+
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 16;</code>
+     * @return string
+     */
+    public function getDynamicRange()
+    {
+        return $this->DynamicRange;
+    }
+
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDynamicRange($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DynamicRange = $var;
+
+        return $this;
+    }
+
+    /**
+     *视频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 17;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodVideoStreamMeta|null
+     */
+    public function getVideoStreamMeta()
+    {
+        return $this->VideoStreamMeta;
+    }
+
+    public function hasVideoStreamMeta()
+    {
+        return isset($this->VideoStreamMeta);
+    }
+
+    public function clearVideoStreamMeta()
+    {
+        unset($this->VideoStreamMeta);
+    }
+
+    /**
+     *视频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVideoStreamMeta VideoStreamMeta = 17;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodVideoStreamMeta $var
+     * @return $this
+     */
+    public function setVideoStreamMeta($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodVideoStreamMeta::class);
+        $this->VideoStreamMeta = $var;
+
+        return $this;
+    }
+
+    /**
+     *音频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 18;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodAudioStreamMeta|null
+     */
+    public function getAudioStreamMeta()
+    {
+        return $this->AudioStreamMeta;
+    }
+
+    public function hasAudioStreamMeta()
+    {
+        return isset($this->AudioStreamMeta);
+    }
+
+    public function clearAudioStreamMeta()
+    {
+        unset($this->AudioStreamMeta);
+    }
+
+    /**
+     *音频流信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAudioStreamMeta AudioStreamMeta = 18;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodAudioStreamMeta $var
+     * @return $this
+     */
+    public function setAudioStreamMeta($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodAudioStreamMeta::class);
+        $this->AudioStreamMeta = $var;
+
+        return $this;
+    }
+
+    /**
+     *存储类型，STANDARD or ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 19;</code>
+     * @return string
+     */
+    public function getTosStorageClass()
+    {
+        return $this->TosStorageClass;
+    }
+
+    /**
+     *存储类型，STANDARD or ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTosStorageClass($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->TosStorageClass = $var;
 
         return $this;
     }

@@ -31,6 +31,12 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainInstanceInfos ImageInstanceInfo = 3;</code>
      */
     protected $ImageInstanceInfo = null;
+    /**
+     *默认播放域名
+     *
+     * Generated from protobuf field <code>string DefaultPlayDomain = 4;</code>
+     */
+    protected $DefaultPlayDomain = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      *           播放分发加速配置
      *     @type \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos $ImageInstanceInfo
      *           图片分发加速配置
+     *     @type string $DefaultPlayDomain
+     *          默认播放域名
      * }
      */
     public function __construct($data = NULL) {
@@ -145,6 +153,32 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodDomainInstanceInfos::class);
         $this->ImageInstanceInfo = $var;
+
+        return $this;
+    }
+
+    /**
+     *默认播放域名
+     *
+     * Generated from protobuf field <code>string DefaultPlayDomain = 4;</code>
+     * @return string
+     */
+    public function getDefaultPlayDomain()
+    {
+        return $this->DefaultPlayDomain;
+    }
+
+    /**
+     *默认播放域名
+     *
+     * Generated from protobuf field <code>string DefaultPlayDomain = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDefaultPlayDomain($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DefaultPlayDomain = $var;
 
         return $this;
     }

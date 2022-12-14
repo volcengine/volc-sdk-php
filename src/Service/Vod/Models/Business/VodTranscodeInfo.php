@@ -85,6 +85,18 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CreateTime = 12;</code>
      */
     protected $CreateTime = '';
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 13;</code>
+     */
+    protected $DynamicRange = '';
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 14;</code>
+     */
+    protected $TosStorageClass = '';
 
     /**
      * Constructor.
@@ -116,6 +128,10 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *          音频流信息
      *     @type string $CreateTime
      *          创建时间
+     *     @type string $DynamicRange
+     *          动态范围，"HDR" or "SDR"
+     *     @type string $TosStorageClass
+     *           Tos存储类型:STANDARD, ARCHIVE
      * }
      */
     public function __construct($data = NULL) {
@@ -451,6 +467,58 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CreateTime = $var;
+
+        return $this;
+    }
+
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 13;</code>
+     * @return string
+     */
+    public function getDynamicRange()
+    {
+        return $this->DynamicRange;
+    }
+
+    /**
+     *动态范围，"HDR" or "SDR"
+     *
+     * Generated from protobuf field <code>string DynamicRange = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDynamicRange($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DynamicRange = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 14;</code>
+     * @return string
+     */
+    public function getTosStorageClass()
+    {
+        return $this->TosStorageClass;
+    }
+
+    /**
+     * Tos存储类型:STANDARD, ARCHIVE
+     *
+     * Generated from protobuf field <code>string TosStorageClass = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTosStorageClass($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->TosStorageClass = $var;
 
         return $this;
     }
