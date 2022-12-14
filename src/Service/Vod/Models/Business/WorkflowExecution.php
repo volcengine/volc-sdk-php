@@ -103,6 +103,12 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string CallbackArgs = 15;</code>
      */
     protected $CallbackArgs = '';
+    /**
+     * 子任务详情
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TaskDetail TasksDetail = 16;</code>
+     */
+    private $TasksDetail;
 
     /**
      * Constructor.
@@ -140,6 +146,8 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
      *          转码记录优先级
      *     @type string $CallbackArgs
      *          回调透传参数
+     *     @type \Volc\Service\Vod\Models\Business\TaskDetail[]|\Google\Protobuf\Internal\RepeatedField $TasksDetail
+     *           子任务详情
      * }
      */
     public function __construct($data = NULL) {
@@ -573,6 +581,32 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->CallbackArgs = $var;
+
+        return $this;
+    }
+
+    /**
+     * 子任务详情
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TaskDetail TasksDetail = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTasksDetail()
+    {
+        return $this->TasksDetail;
+    }
+
+    /**
+     * 子任务详情
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TaskDetail TasksDetail = 16;</code>
+     * @param \Volc\Service\Vod\Models\Business\TaskDetail[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTasksDetail($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\TaskDetail::class);
+        $this->TasksDetail = $arr;
 
         return $this;
     }

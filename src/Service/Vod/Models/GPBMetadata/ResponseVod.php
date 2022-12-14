@@ -25,10 +25,11 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodCommon::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodSmartStrategy::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodAppsManage::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodMeasure::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¼T
-vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.proto"ª
+ÈU
+vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.protovod/business/vod_measure.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
 Result (24.Volcengine.Vod.Models.Business.VodAllPlayInfoResult"£
@@ -119,7 +120,9 @@ $VodDeleteVideoClassificationResponseG
 Result (2;.Volcengine.Vod.Models.Business.VodVideoClassificationsData"¤
 VodListSnapshotsResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata?
-Result (2/.Volcengine.Vod.Models.Business.VodSnapshotData"«
+Result (2/.Volcengine.Vod.Models.Business.VodSnapshotData"j
+VodExtractMediaMetaTaskResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"«
 VodStartWorkflowResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataF
 Result (26.Volcengine.Vod.Models.Business.VodStartWorkflowResult"®

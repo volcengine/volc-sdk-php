@@ -24,7 +24,7 @@ class VodEdit
 Result ("—
 GetDirectEditResult
 ReqId (	
-	EditParam (	
+	EditParam (
 Priority (
 CallbackUri (	
 CallbackArgs (	

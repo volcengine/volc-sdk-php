@@ -112,6 +112,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Quality = 16;</code>
      */
     protected $Quality = '';
+    /**
+     *播放配置,可指定播放域名
+     *
+     * Generated from protobuf field <code>string PlayConfig = 17;</code>
+     */
+    protected $PlayConfig = '';
 
     /**
      * Constructor.
@@ -154,6 +160,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Quality
      *           音频音质。当FileType为audio和eaudio时起作用,表示音频音质参数.支持: medium,
      *           higher, highest.默认返回所有音频流
+     *     @type string $PlayConfig
+     *          播放配置,可指定播放域名
      * }
      */
     public function __construct($data = NULL) {
@@ -579,6 +587,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Quality = $var;
+
+        return $this;
+    }
+
+    /**
+     *播放配置,可指定播放域名
+     *
+     * Generated from protobuf field <code>string PlayConfig = 17;</code>
+     * @return string
+     */
+    public function getPlayConfig()
+    {
+        return $this->PlayConfig;
+    }
+
+    /**
+     *播放配置,可指定播放域名
+     *
+     * Generated from protobuf field <code>string PlayConfig = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlayConfig($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->PlayConfig = $var;
 
         return $this;
     }

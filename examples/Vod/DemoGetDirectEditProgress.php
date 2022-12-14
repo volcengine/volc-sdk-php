@@ -7,8 +7,9 @@ require('../../vendor/autoload.php');
 $client = Volc\Service\Vod\Vod::getInstance();
 $client->setAccessKey('your ak');
 $client->setSecretKey('your sk');
+
 $request = new Volc\Service\Vod\Models\Request\VodGetDirectEditProgressRequest();
-$request->setReqId("your reqId");
+$request->setReqId("your ReqId");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse();
@@ -22,5 +23,6 @@ try {
 if ($response != null && $response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
     echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 } else {
-    echo $response->serializeToJsonString(), "\n";
+    //echo $response->serializeToJsonString()
+    echo json_encode($response->JsonSerialize()), "\n";
 }

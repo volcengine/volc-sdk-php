@@ -73,6 +73,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 ClassificationId = 10;</code>
      */
     protected $ClassificationId = 0;
+    /**
+     * 设置存储类型 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 11;</code>
+     */
+    protected $StorageClass = 0;
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           设置文件名 
      *     @type int|string $ClassificationId
      *           设置分类Id 
+     *     @type int $StorageClass
+     *           设置存储类型 
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->ClassificationId = $var;
+
+        return $this;
+    }
+
+    /**
+     * 设置存储类型 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 11;</code>
+     * @return int
+     */
+    public function getStorageClass()
+    {
+        return $this->StorageClass;
+    }
+
+    /**
+     * 设置存储类型 
+     *
+     * Generated from protobuf field <code>int32 StorageClass = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStorageClass($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->StorageClass = $var;
 
         return $this;
     }

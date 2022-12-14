@@ -14,6 +14,7 @@ $request->setSessionKey("your SessionKey");
 $request->setFileSize(0);
 $request->setFileType("your FileType");
 $request->setFileName("your FileName");
+$request->setStorageClass(0);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodApplyUploadInfoResponse();

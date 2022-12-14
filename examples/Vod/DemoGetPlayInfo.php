@@ -25,6 +25,7 @@ $request->setHDRDefinition("your HDRDefinition");
 $request->setPlayScene("your PlayScene");
 $request->setDrmExpireTimestamp("your DrmExpireTimestamp");
 $request->setQuality("your Quality");
+$request->setPlayConfig("your PlayConfig");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetPlayInfoResponse();

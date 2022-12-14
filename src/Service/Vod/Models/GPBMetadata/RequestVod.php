@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¯=
+ù?
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -42,7 +42,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"¿
+Quality (	"‘
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -62,7 +62,9 @@ NeedThumbs	 (	
 HDRDefinition (	
 	PlayScene (	
 DrmExpireTimestamp (	
-Quality (	"g
+Quality (	
+
+PlayConfig (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -83,20 +85,22 @@ NeedThumbs	 (	
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
 VodQueryUploadTaskInfoRequest
-JobIds (	"x
+JobIds (	"é
 VodApplyUploadInfoRequest
 	SpaceName (	
 
 SessionKey (	
 FileSize (
 FileType (	
-FileName (	"w
+FileName (	
+StorageClass ("ç
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
 CallbackArgs (	
 	Functions (	
-FileName (	"å
+FileName (	
+StorageClass ("å
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -133,7 +137,7 @@ SessionKey (	
 VodDeleteTranscodesRequest
 Vid (	
 FileIds (	
-CallbackArgs (	"∆
+CallbackArgs (	"·
 VodGetMediaListRequest
 	SpaceName (	
 Vid (	
@@ -145,7 +149,8 @@ SessionKey (	
 Offset (	
 PageSize	 (	
 ClassificationIds
- (	"Ê
+ (	
+TosStorageClasses (	"Ê
 VodGetSubtitleInfoListRequest
 Vid (	
 FileIds (	
@@ -221,6 +226,8 @@ SessionKey (	
 	SpaceName (	
 ClassificationId ("&
 VodListSnapshotsRequest
+Vid (	"-
+VodExtractMediaMetaTaskRequest
 Vid (	"º
 VodStartWorkflowRequest
 Vid (	
@@ -254,9 +261,10 @@ TaskListId (	
 OrderByKey (	
 Order (	"5
 $VodGetWorkflowExecutionDetailRequest
-RunId (	"5
+RunId (	"N
 $VodGetWorkflowExecutionStatusRequest
-RunId (	"ú
+RunId (	
+NeedTasksDetail (	"ú
 #VodSubmitDirectEditTaskAsyncRequest
 Uploader (	
 Application (	

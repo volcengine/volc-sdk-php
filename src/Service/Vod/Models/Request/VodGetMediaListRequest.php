@@ -73,6 +73,12 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ClassificationIds = 10;</code>
      */
     protected $ClassificationIds = '';
+    /**
+     * tos存储类型(Standard, Archive)，多个用","隔开
+     *
+     * Generated from protobuf field <code>string TosStorageClasses = 11;</code>
+     */
+    protected $TosStorageClasses = '';
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      *          分页大小
      *     @type string $ClassificationIds
      *          分类id列表
+     *     @type string $TosStorageClasses
+     *           tos存储类型(Standard, Archive)，多个用","隔开
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ClassificationIds = $var;
+
+        return $this;
+    }
+
+    /**
+     * tos存储类型(Standard, Archive)，多个用","隔开
+     *
+     * Generated from protobuf field <code>string TosStorageClasses = 11;</code>
+     * @return string
+     */
+    public function getTosStorageClasses()
+    {
+        return $this->TosStorageClasses;
+    }
+
+    /**
+     * tos存储类型(Standard, Archive)，多个用","隔开
+     *
+     * Generated from protobuf field <code>string TosStorageClasses = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTosStorageClasses($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->TosStorageClasses = $var;
 
         return $this;
     }
