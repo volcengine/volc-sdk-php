@@ -152,6 +152,18 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #获取多个域名的省份和运营商的细分数据: https://www.volcengine.com/docs/6454/145577
+        'DescribeDistrictIspData' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDistrictIspData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
         #获取独立访客的细分数据: https://www.volcengine.com/docs/6454/79321
         'DescribeEdgeStatisticalData' => [
           'url' => '/',
@@ -236,7 +248,7 @@ class Cdn extends V4Curl
           ]
         ],
 
-        #查询账号计费方式: https://www.volcengine.com/docs/6454/78999
+        #获取服务相关信息: https://www.volcengine.com/docs/6454/78999
         'DescribeCdnService' => [
           'url' => '/',
           'method' => 'post',
@@ -632,6 +644,14 @@ class Cdn extends V4Curl
             $data = new \ArrayObject();
         }
         return $this->requestWithRetry("DescribeCdnDataDetail", ['json' => $data]);
+    }
+
+    public function describeDistrictIspData(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeDistrictIspData", ['json' => $data]);
     }
 
     public function describeEdgeStatisticalData(array $data = []): string
