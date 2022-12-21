@@ -45,9 +45,6 @@ class ImageX extends V4Curl
 
     public function updateImageUrls($serviceID, $urls, $action = 0)
     {
-        if ($action < 0 || $action > 2) {
-            throw new \Exception(sprintf("update action should be [0,2], %d", $action));
-        }
         $config = [
             "query" => ["ServiceId" => $serviceID],
             "json" => [
