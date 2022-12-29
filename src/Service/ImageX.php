@@ -84,8 +84,10 @@ class ImageX extends V4Curl
 
         if ($fileSize <= static::MinChunkSize) {
             $content = stream_get_contents($fileResource);
-            if (strlen($content) != $fileSize) {
+            if (strlen($content) == $fileSize) {
                 return $this->directUpload($uploadHost, $storeInfo, $content);
+            } else {
+                return -1;
             }
         } else {
             $isLargeFile = $fileSize > static::LargeFileSize;
@@ -100,6 +102,7 @@ class ImageX extends V4Curl
             return $this->chunkUpload($storeInfo, $fileResource, $fileSize, $client);
         }
 
+        /** @noinspection PhpUnreachableStatementInspection */
         return 0;
     }
 
