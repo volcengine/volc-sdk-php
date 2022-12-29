@@ -26,7 +26,7 @@ class SignatureV4
         $parsed['query']['X-Date'] = $ldt;
         $parsed['query']['X-NotSignBody'] = "";
         $parsed['query']['X-Algorithm'] = "HMAC-SHA256";
-        $parsed['query']['X-Credential'] = "{$ak}/${cs}";
+        $parsed['query']['X-Credential'] = "$ak/$cs";
         $parsed['query']['X-SignedHeaders'] = '';
 
         $signedQueries = array_keys($parsed['query']);

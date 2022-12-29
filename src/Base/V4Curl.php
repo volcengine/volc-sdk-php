@@ -22,6 +22,7 @@ abstract class V4Curl extends Singleton
     protected $region = '';
     protected $ak = '';
     protected $sk = '';
+    protected $version = '';
 
 
     public function __construct()
