@@ -77,6 +77,29 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
+    public function SetAPI($action, $version)
+    {
+        $addApi = [
+            $action => [
+                'url' => '/',
+                'method' => 'post',
+                'config' => [
+                    'query' => [
+                        'Action' => $action,
+                        'Version' => $version,
+                    ],
+                ],
+            ],
+        ];
+        $this->apiList = array_merge($this->apiList, $addApi);
+    }
+
+    public function CallAPI($action, array $query = [])
+    {
+        $response = $this->request($action, $query);
+        return $response->getBody();
+    }
+
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
