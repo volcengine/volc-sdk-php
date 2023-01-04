@@ -13,4 +13,4 @@ $serviceID = "imagex service id";
 $urls = ["image url 1"];
 
 $resp = $client->updateImageUrls($serviceID, $urls);
-var_dump($resp);
+print_r($resp);
