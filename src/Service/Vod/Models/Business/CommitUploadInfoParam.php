@@ -29,6 +29,10 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadFunction Functions = 4;</code>
      */
     private $Functions;
+    /**
+     * Generated from protobuf field <code>string GetMetaMode = 5;</code>
+     */
+    protected $GetMetaMode = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
      *     @type string $CallbackArgs
      *     @type string $SessionKey
      *     @type \Volc\Service\Vod\Models\Business\VodUploadFunction[]|\Google\Protobuf\Internal\RepeatedField $Functions
+     *     @type string $GetMetaMode
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodUploadFunction::class);
         $this->Functions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string GetMetaMode = 5;</code>
+     * @return string
+     */
+    public function getGetMetaMode()
+    {
+        return $this->GetMetaMode;
+    }
+
+    /**
+     * Generated from protobuf field <code>string GetMetaMode = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGetMetaMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->GetMetaMode = $var;
 
         return $this;
     }

@@ -79,6 +79,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 StorageClass = 11;</code>
      */
     protected $StorageClass = 0;
+    /**
+     * 设置文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 12;</code>
+     */
+    protected $FileExtension = '';
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           设置分类Id 
      *     @type int $StorageClass
      *           设置存储类型 
+     *     @type string $FileExtension
+     *           设置文件后缀 
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->StorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     * 设置文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 12;</code>
+     * @return string
+     */
+    public function getFileExtension()
+    {
+        return $this->FileExtension;
+    }
+
+    /**
+     * 设置文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileExtension($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileExtension = $var;
 
         return $this;
     }

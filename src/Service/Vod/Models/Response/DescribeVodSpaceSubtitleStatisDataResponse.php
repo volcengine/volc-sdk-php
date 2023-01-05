@@ -9,20 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetDirectEditProgressResponse</code>
+ * 智能字幕用量
+ *
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.DescribeVodSpaceSubtitleStatisDataResponse</code>
  */
-class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
+class DescribeVodSpaceSubtitleStatisDataResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     *响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     *响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -33,9 +31,7 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *          响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\GetDirectEditProgress $Result
-     *          响应结果
+     *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataResult $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +40,6 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
      */
@@ -65,8 +59,6 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应通用信息
-     *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
      * @return $this
@@ -80,10 +72,8 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\GetDirectEditProgress|null
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataResult|null
      */
     public function getResult()
     {
@@ -101,15 +91,13 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应结果
-     *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\GetDirectEditProgress $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\GetDirectEditProgress::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataResult::class);
         $this->Result = $var;
 
         return $this;

@@ -49,6 +49,12 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 StorageClass = 6;</code>
      */
     protected $StorageClass = 0;
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     */
+    protected $FileExtension = '';
 
     /**
      * Constructor.
@@ -68,6 +74,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *           上传的文件在存储中的名字，即 bucket/key 中的 key 
      *     @type int $StorageClass
      *           上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
+     *     @type string $FileExtension
+     *           上传中文件的文件后缀 
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +235,32 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->StorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * @return string
+     */
+    public function getFileExtension()
+    {
+        return $this->FileExtension;
+    }
+
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileExtension($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileExtension = $var;
 
         return $this;
     }

@@ -9,7 +9,7 @@ class Functions
 //[{"Name": "GetMeta"},{"Name":"Snapshot","Input":{"SnapshotTime": 2.0}}]
     public function addGetMetaFunc()
     {
-        $this->funcs[] = new FunctionInner("GetMeta", "");
+        $this->funcs[] = new FunctionInner("GetMeta", null);
     }
 
     public function addSnapshotTimeFunc(float $snapshotTime)

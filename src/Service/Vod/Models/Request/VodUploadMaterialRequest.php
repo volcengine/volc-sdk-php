@@ -49,6 +49,12 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileName = 6;</code>
      */
     protected $FileName = '';
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     */
+    protected $FileExtension = '';
 
     /**
      * Constructor.
@@ -68,6 +74,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      *           上传的类型，media、image、object 默认为 media 
      *     @type string $FileName
      *           上传的文件在存储中的名字，即 bucket/key 中的 key 
+     *     @type string $FileExtension
+     *           上传中文件的文件后缀 
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +235,32 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * @return string
+     */
+    public function getFileExtension()
+    {
+        return $this->FileExtension;
+    }
+
+    /**
+     * 上传中文件的文件后缀 
+     *
+     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileExtension($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileExtension = $var;
 
         return $this;
     }

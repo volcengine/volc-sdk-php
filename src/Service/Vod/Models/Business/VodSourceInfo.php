@@ -127,6 +127,12 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TosStorageClass = 19;</code>
      */
     protected $TosStorageClass = '';
+    /**
+     *文件名
+     *
+     * Generated from protobuf field <code>string FileName = 20;</code>
+     */
+    protected $FileName = '';
 
     /**
      * Constructor.
@@ -172,6 +178,8 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      *          音频流信息
      *     @type string $TosStorageClass
      *          存储类型，STANDARD or ARCHIVE
+     *     @type string $FileName
+     *          文件名
      * }
      */
     public function __construct($data = NULL) {
@@ -689,6 +697,32 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     *文件名
+     *
+     * Generated from protobuf field <code>string FileName = 20;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     *文件名
+     *
+     * Generated from protobuf field <code>string FileName = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
 
         return $this;
     }
