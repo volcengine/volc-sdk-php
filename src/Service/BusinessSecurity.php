@@ -2,6 +2,7 @@
 
 
 namespace Volc\Service;
+
 use Volc\Base\V4Curl;
 
 class BusinessSecurity extends V4Curl
@@ -121,6 +122,16 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'AsyncImageRiskV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AsyncImageRisk',
+                    'Version' => '2022-08-26',
+                ],
+            ]
+        ],
         'GetImageResult' => [
             'url' => '/',
             'method' => 'get',
@@ -128,6 +139,16 @@ class BusinessSecurity extends V4Curl
                 'query' => [
                     'Action' => 'GetImageResult',
                     'Version' => '2021-11-29',
+                ],
+            ]
+        ],
+        'GetImageResultV2' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageResult',
+                    'Version' => '2022-08-26',
                 ],
             ]
         ],
@@ -256,7 +277,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("RiskDetection", $commitReq);
     }
 
-    public function AsyncRiskDetect(int $appId, string  $service, string $parameters): string
+    public function AsyncRiskDetect(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -343,7 +364,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("ImageContentRisk", $commitReq);
     }
 
-    public function AsyncImageRisk(int $appId, string  $service, string $parameters): string
+    public function AsyncImageRisk(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -355,7 +376,19 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("AsyncImageRisk", $commitReq);
     }
 
-    public function GetImageResult(int $appId, string $service, string  $dataId): string
+    public function AsyncImageRiskV2(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AsyncImageRiskV2", $commitReq);
+    }
+
+    public function GetImageResult(int $appId, string $service, string $dataId): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -365,6 +398,18 @@ class BusinessSecurity extends V4Curl
             "query" => $commitBody
         ];
         return $this->requestWithRetry("GetImageResult", $commitReq);
+    }
+
+    public function GetImageResultV2(int $appId, string $service, string $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("GetImageResultV2", $commitReq);
     }
 
     public function TextRisk(int $appId, string $service, string $parameters): string
@@ -415,7 +460,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("AudioResult", $commitReq);
     }
 
-    public function GetAudioLiveResult(int $appId, string $service, string  $dataId): string
+    public function GetAudioLiveResult(int $appId, string $service, string $dataId): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -451,7 +496,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("AsyncLiveVideoRisk", $commitReq);
     }
 
-    public function GetVideoResult(int $appId, string $service, string  $dataId): string
+    public function GetVideoResult(int $appId, string $service, string $dataId): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
@@ -463,7 +508,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("GetVideoResult", $commitReq);
     }
 
-    public function GetVideoLiveResult(int $appId, string $service, string  $dataId): string
+    public function GetVideoLiveResult(int $appId, string $service, string $dataId): string
     {
         $commitBody = array();
         $commitBody["AppId"] = $appId;
