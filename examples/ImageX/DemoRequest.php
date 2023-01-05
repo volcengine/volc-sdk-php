@@ -16,4 +16,4 @@ $config = [
 
 // ImageX api doc: https://www.volcengine.cn/docs/508/14106
 $response = $client->requestImageX("Action", $config);
-echo $response;
+print_r($response);

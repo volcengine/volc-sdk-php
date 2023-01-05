@@ -14,4 +14,4 @@ $params["ServiceId"] = "imagex service id";
 $filePaths = array("image path 1");
 
 $response = $client->uploadImages($params, $filePaths);
-echo $response;
+print_r($response);

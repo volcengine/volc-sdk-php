@@ -121,11 +121,11 @@ class ImageX extends V4Curl
             return -1;
         }
 
-        $num = floor($fileSize /  static::MinChunkSize);
+        $num = floor($fileSize / static::MinChunkSize);
         $lastNum = $num - 1;
         $checkSum = [];
         for ($i = 0; $i < $lastNum; $i++) {
-            $data = stream_get_contents($fileResource,  static::MinChunkSize, $i *  static::MinChunkSize);
+            $data = stream_get_contents($fileResource, static::MinChunkSize, $i * static::MinChunkSize);
             $partNumber = $i;
             if ($isLargeFile) {
                 $partNumber = $partNumber + 1;
@@ -136,8 +136,8 @@ class ImageX extends V4Curl
             }
             $checkSum[] = $crc32;
         }
-        $maxLength = $fileSize - $lastNum *  static::MinChunkSize;
-        $data = stream_get_contents($fileResource, $maxLength, $lastNum *  static::MinChunkSize);
+        $maxLength = $fileSize - $lastNum * static::MinChunkSize;
+        $data = stream_get_contents($fileResource, $maxLength, $lastNum * static::MinChunkSize);
         if ($isLargeFile) {
             $lastNum = $lastNum + 1;
         }
@@ -155,7 +155,7 @@ class ImageX extends V4Curl
         if ($isLargeFile) {
             $headers[] = ['X-Storage-Mode' => 'gateway'];
         }
-        $response = $httpClient->put( $storeInfo["StoreUri"] . '?uploads', ['headers' => $headers]);
+        $response = $httpClient->put($storeInfo["StoreUri"] . '?uploads', ['headers' => $headers]);
         $initUploadResponse = json_decode((string)$response->getBody(), true);
         if (!isset($initUploadResponse["success"]) || $initUploadResponse["success"] != 0) {
             return "";
@@ -165,7 +165,7 @@ class ImageX extends V4Curl
 
     private function uploadPart(array $storeInfo, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client): string
     {
-        $uri = sprintf("%s?partNumber=%d&uploadID=%s", $storeInfo["StoreUri"] , $partNumber, $uploadID);
+        $uri = sprintf("%s?partNumber=%d&uploadID=%s", $storeInfo["StoreUri"], $partNumber, $uploadID);
         $crc32 = sprintf("%08x", crc32($data));
         $headers = ['Authorization' => ['Authorization' => $storeInfo["Auth"]], 'Content-CRC32' => $crc32];
         if ($isLargeFile) {
@@ -191,7 +191,7 @@ class ImageX extends V4Curl
             $m[] = sprintf("%d:%s", $no, $checkSum[$i]);
         }
         $body = implode(",", $m);
-        $headers = ['Authorization' =>  $storeInfo["Auth"]];
+        $headers = ['Authorization' => $storeInfo["Auth"]];
         if ($isLargeFile) {
             $headers[] = ['X-Storage-Mode' => 'gateway'];
         }
@@ -337,6 +337,19 @@ class ImageX extends V4Curl
     {
         $response = $this->request($action, $config);
         return (string)$response->getBody();
+    }
+
+    public function fetchImageUrl(array $params = [])
+    {
+        $params["Action"] = "FetchImageUrl";
+        $params["Version"] = "2018-08-01";
+        $queryStr = http_build_query($params);
+        $response = $this->request('FetchImageUrl', ['query' => $queryStr, 'json' => $params]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("getSegmentImage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
     }
 
     public function getImageOCR(array $params = [])

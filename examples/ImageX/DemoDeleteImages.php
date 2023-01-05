@@ -13,4 +13,4 @@ $serviceID = "imagex service id";
 $uris = ["image uri 1", "image uri 2"];
 
 $response = $client->deleteImages($serviceID, $uris);
-echo $response;
+print_r($response);

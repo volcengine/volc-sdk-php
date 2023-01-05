@@ -17,4 +17,4 @@ echo "\n=======================\n";
 
 $query = ['query' => ['ServiceId' => "imagex service id"]];
 $response = $xclient->getUploadAuthToken($query);
-echo $response;
+print_r($response);

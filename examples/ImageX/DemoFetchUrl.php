@@ -9,12 +9,10 @@ $client = ImageX::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$config = [
-    "json" => [
-        'Url' => 'image url',
-        'ServiceId' => 'imagex service id',
-    ],
+$req = [
+    'Url' => 'image url',
+    'ServiceId' => 'imagex service id',
 ];
 
-$response = $client->requestImageX("FetchImageUrl", $config);
-echo $response;
+$response = $client->fetchImageUrl($req);
+print_r($response);
