@@ -95,7 +95,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ApplyUploadInfo',
-                    'Version' => '2020-08-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
@@ -106,7 +106,7 @@ class VodOption
                 'timeout' => 8.0,
                 'query' => [
                     'Action' => 'CommitUploadInfo',
-                    'Version' => '2020-08-01',
+                    'Version' => '2022-01-01',
                 ],
             ]
         ],
@@ -130,6 +130,16 @@ class VodOption
                 'query' => [
                     'Action' => 'UpdateMediaPublishStatus',
                     'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'UpdateMediaStorageClass' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateMediaStorageClass',
+                    'Version' => '2022-10-01',
                 ],
             ]
         ],
@@ -599,6 +609,60 @@ class VodOption
                 ],
             ]
         ],
+        // **********************************************************************
+        // 计量计费
+        // **********************************************************************
+        'DescribeVodSpaceTranscodeData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceTranscodeData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodSpaceAIStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceAIStatisData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodSpaceSubtitleStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceSubtitleStatisData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodSpaceDetectStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceDetectStatisData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodSnapshotData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSnapshotData',
+                    'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+
     ];
 
     /**

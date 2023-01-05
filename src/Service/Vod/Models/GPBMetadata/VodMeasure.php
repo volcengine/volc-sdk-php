@@ -16,8 +16,110 @@ class VodMeasure
         }
         $pool->internalAddGeneratedFile(
             '
-–
-vod/business/vod_measure.protoVolcengine.Vod.Models.BusinessBË
+þ
+vod/business/vod_measure.protoVolcengine.Vod.Models.Business"<
+DescribeVodSpaceTranscodeItem
+Name (	
+Value ("
+%DescribeVodSpaceTranscodeDetailTVUnit
+Time (	X
+TranscodeItemList (2=.Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem"µ
+DescribeVodSpaceTranscodeDetail
+Space (	
+	TaskStage (	
+Total (a
+TranscodeUsageList (2E.Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetailTVUnit"¬
+#DescribeVodSpaceTranscodeDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+TranscodeType (	
+Specification (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	
+TotalTranscodeData	 (]
+TotalTranscodeDataList
+ (2=.Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem`
+TranscodeDataDetailList (2?.Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail"B
+ DescribeVodSpaceAIStatisDataItem
+Time (	
+Duration ("¡
+"DescribeVodSpaceAIStatisDataDetail
+Space (	
+	TaskStage (	Y
+AiUsageDataList (2@.Volcengine.Vod.Models.Business.DescribeVodSpaceAIStatisDataItem"
+"DescribeVodSpaceAIStatisDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+MediaAiType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	
+TotalAiUsageData (Y
+AiUsageDataList	 (2@.Volcengine.Vod.Models.Business.DescribeVodSpaceAIStatisDataItema
+AiUsageDataDetailList
+ (2B.Volcengine.Vod.Models.Business.DescribeVodSpaceAIStatisDataDetail"E
+&DescribeVodSpaceSubtitleStatisDataItem
+Time (	
+Usage ("³
+(DescribeVodSpaceSubtitleStatisDataDetail
+Space (	
+	TaskStage (	e
+SubtitleUsageDataList (2F.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem"²
+(DescribeVodSpaceSubtitleStatisDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+SubtitleType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	
+TotalSubtitleUsageData (e
+SubtitleUsageDataList	 (2F.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItemm
+SubtitleUsageDataDetailList
+ (2H.Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail"C
+$DescribeVodSpaceDetectStatisDataItem
+Time (	
+Usage ("­
+&DescribeVodSpaceDetectStatisDataDetail
+Space (	
+	TaskStage (	a
+DetectUsageDataList (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem"¤
+&DescribeVodSpaceDetectStatisDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+
+DetectType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	
+TotalDetectUsageData (a
+DetectUsageDataList	 (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItemi
+DetectUsageDataDetailList
+ (2F.Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail":
+DescribeVodSnapshotDataItem
+Time (	
+Count ("§
+DescribeVodSnapshotDataDetail
+Space (	
+	TaskStage (	
+Total (	U
+SnapshotDataList (2;.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataItem"‚
+DescribeVodSnapshotDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+SnapshotType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	
+TotalSnapshotData (U
+SnapshotDataList	 (2;.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataItem]
+SnapshotDetailDataList
+ (2=.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataDetailBË
 )com.volcengine.service.vod.model.businessB
 VodMeasurePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

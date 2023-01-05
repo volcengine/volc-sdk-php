@@ -38,6 +38,7 @@ class VodUpload extends Vod
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($vodUploadMediaRequest->getSpaceName());
         $applyRequest->setFileName($vodUploadMediaRequest->getFileName());
+        $applyRequest->setFileExtension($vodUploadMediaRequest->getFileExtension());
         $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -60,6 +61,7 @@ class VodUpload extends Vod
         $applyRequest->setSpaceName($vodUploadMaterialRequest->getSpaceName());
         $applyRequest->setFileType($vodUploadMaterialRequest->getFileType());
         $applyRequest->setFileName($vodUploadMaterialRequest->getFileName());
+        $applyRequest->setFileExtension($vodUploadMaterialRequest->getFileExtension());
         $resp = $this->upload($applyRequest, $vodUploadMaterialRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -133,10 +135,8 @@ class VodUpload extends Vod
 
         if ($fileSize < MinChunkSize) {
             return $this->directUpload($oid, $auth, $filePath, $client);
-        } elseif ($fileSize > LargeFileSize) {
-            return $this->chunkUpload($oid, $auth, $filePath, true, $client);
         } else {
-            return $this->chunkUpload($oid, $auth, $filePath, false, $client);
+            return $this->chunkUpload($oid, $auth, $filePath, true, $client);
         }
     }
 

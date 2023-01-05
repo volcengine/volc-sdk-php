@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodGetDirectEditProgressResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodSubmitBlockTasksResponse</code>
  */
-class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
+class VodSubmitBlockTasksResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      *响应通用信息
@@ -22,7 +22,7 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSubmitBlockTasksResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -34,7 +34,7 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
      *          响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\GetDirectEditProgress $Result
+     *     @type \Volc\Service\Vod\Models\Business\VodSubmitBlockTasksResult $Result
      *          响应结果
      * }
      */
@@ -82,8 +82,8 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\GetDirectEditProgress|null
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSubmitBlockTasksResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodSubmitBlockTasksResult|null
      */
     public function getResult()
     {
@@ -103,13 +103,13 @@ class VodGetDirectEditProgressResponse extends \Google\Protobuf\Internal\Message
     /**
      *响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.GetDirectEditProgress Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\GetDirectEditProgress $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSubmitBlockTasksResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodSubmitBlockTasksResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\GetDirectEditProgress::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodSubmitBlockTasksResult::class);
         $this->Result = $var;
 
         return $this;

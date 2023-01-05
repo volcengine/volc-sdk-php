@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ù?
+÷J
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -85,7 +85,7 @@ PlayConfig (	"g
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
 VodQueryUploadTaskInfoRequest
-JobIds (	"é
+JobIds (	"•
 VodApplyUploadInfoRequest
 	SpaceName (	
 
@@ -93,21 +93,24 @@ SessionKey (	
 FileSize (
 FileType (	
 FileName (	
-StorageClass ("ç
+StorageClass (
+FileExtension (	"§
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
 CallbackArgs (	
 	Functions (	
 FileName (	
-StorageClass ("å
+StorageClass (
+FileExtension (	"£
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
 CallbackArgs (	
 	Functions (	
 FileType (	
-FileName (	"l
+FileName (	
+FileExtension (	"l
 VodCommitUploadInfoRequest
 	SpaceName (	
 
@@ -121,7 +124,11 @@ SessionKey (	
 Vids (	"A
 "VodUpdateMediaPublishStatusRequest
 Vid (	
-Status (	"ú
+Status (	"]
+!VodUpdateMediaStorageClassRequest
+Vids (	
+StorageClass (	
+CallbackArgs (	"ú
 VodUpdateMediaInfoRequest
 Vid (	/
 	PosterUri (2.google.protobuf.StringValue+
@@ -226,7 +233,12 @@ SessionKey (	
 	SpaceName (	
 ClassificationId ("&
 VodListSnapshotsRequest
-Vid (	"-
+Vid (	"Z
+VodGetFileListRequest
+	SpaceName (	
+Prefix (	
+Limit (	
+Starter (	"-
 VodExtractMediaMetaTaskRequest
 Vid (	"º
 VodStartWorkflowRequest
@@ -368,7 +380,20 @@ DomainList (	
 	StartTime (	
 EndTime (	
 Aggregation (
-TrafficType (	"X
+TrafficType (	"A
+VodSubmitBlockTasksRequest
+FileUrls (	
+	Operation (	"∂
+VodGetContentBlockTasksRequest
+Url (	
+Domain (	
+TaskID (	
+TaskType (	
+Status (	
+	StartTime (
+EndTime (
+PageNum (
+PageSize	 ("X
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
 Url (	
@@ -395,7 +420,49 @@ NeedThumbs (	
  (	
 HDRDefinition (	"%
 VodGetAppInfoRequest
-AppId (B»
+AppId ("–
+$DescribeVodSpaceTranscodeDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+TranscodeType (	
+Specification (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	"∂
+#DescribeVodSpaceAIStatisDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+MediaAiType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	"Ω
+)DescribeVodSpaceSubtitleStatisDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+SubtitleType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	"π
+\'DescribeVodSpaceDetectStatisDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+
+DetectType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	"≤
+DescribeVodSnapshotDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+SnapshotType (	
+TaskStageList (	
+Aggregation (
+DetailFieldList (	B»
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request†ÿ Volc\\Service\\Vod\\Models\\Request‚#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
