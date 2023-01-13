@@ -202,6 +202,28 @@ class Notify extends V4Curl
                 ],
             ]
         ],
+
+        'OpenUpdateResource' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'OpenUpdateResource',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+
+        'QueryUsableResource' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'QueryUsableResource',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -320,5 +342,15 @@ class Notify extends V4Curl
             $data = new ArrayObject();
         }
         return $this->requestWithRetry("QueryOpenGetResource", ['json' => $data]);
+    }
+
+    public function QueryUsableResource(int $type): string
+    {
+        return $this->requestWithRetry("QueryUsableResource", ['query' => ['Type' => $type]]);
+    }
+
+    public function OpenUpdateResource(string $resourceKey, string $name): string
+    {
+        return $this->requestWithRetry("OpenUpdateResource", ['query' => ['ResourceKey' => $resourceKey, 'Name' => $name]]);
     }
 }

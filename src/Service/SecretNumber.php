@@ -169,6 +169,105 @@ class SecretNumber extends V4Curl
                 ],
             ]
         ],
+
+        'SelectNumberAndBindAXN' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SelectNumberAndBindAXN',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'BindAXNE' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BindAXNE',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'UnbindAXNE' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UnbindAXNE',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'UpdateAXNE' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateAXNE',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'BindAXBForAXNE' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BindAXBForAXNE',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'BindAXYB' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BindAXYB',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'BindYBForAXYB' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BindYBForAXYB',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'UpdateAXYB' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateAXYB',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
+
+        'UnbindAXYB' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UnbindAXYB',
+                    'Version' => '2020-09-01',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -278,5 +377,77 @@ class SecretNumber extends V4Curl
             $data = new ArrayObject();
         }
         return $this->requestWithRetry("Click2CallLite", ['form_params' => $data]);
+    }
+
+    public function SelectNumberAndBindAXN(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("SelectNumberAndBindAXN", ['form_params' => $data]);
+    }
+
+    public function BindAXNE(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("BindAXNE", ['form_params' => $data]);
+    }
+
+    public function UnbindAXNE(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("UnbindAXNE", ['form_params' => $data]);
+    }
+
+    public function UpdateAXNE(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("UpdateAXNE", ['form_params' => $data]);
+    }
+
+    public function BindAXBForAXNE(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("BindAXBForAXNE", ['form_params' => $data]);
+    }
+
+    public function BindAXYB(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("BindAXYB", ['form_params' => $data]);
+    }
+
+    public function BindYBForAXYB(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("BindYBForAXYB", ['form_params' => $data]);
+    }
+
+    public function UpdateAXYB(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("UpdateAXYB", ['form_params' => $data]);
+    }
+
+    public function UnbindAXYB(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("UnbindAXYB", ['form_params' => $data]);
     }
 }
