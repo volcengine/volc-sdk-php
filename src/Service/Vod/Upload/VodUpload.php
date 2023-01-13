@@ -212,7 +212,7 @@ class VodUpload extends Vod
     {
         $headers = ['Authorization' => $auth];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = ['gateway'];
         }
         $response = $client->put($oid . '?uploads', ['headers' => $headers]);
         $initUploadResponse = json_decode((string)$response->getBody(), true);
@@ -228,7 +228,7 @@ class VodUpload extends Vod
         $crc32 = sprintf("%08x", crc32($data));
         $headers = ['Authorization' => $auth, 'Content-CRC32' => $crc32];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = ['gateway'];
         }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $data]);
         $uploadPartResponse = json_decode((string)$response->getBody(), true);
@@ -252,7 +252,7 @@ class VodUpload extends Vod
         $body = implode(",", $m);
         $headers = ['Authorization' => $auth];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = ['gateway'];
         }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);
         $uploadPartResponse = json_decode((string)$response->getBody(), true);
