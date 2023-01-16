@@ -347,7 +347,21 @@ class ImageX extends V4Curl
         $response = $this->request('FetchImageUrl', ['query' => $queryStr, 'json' => $params]);
         $responseBody = json_decode((string)$response->getBody(), true);
         if (isset($responseBody["ResponseMetadata"]["Error"])) {
-            return sprintf("getSegmentImage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+            return sprintf("FetchImageUrl: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function updateImageFileKey(string $serviceId = "", array $params = [])
+    {
+        $params["Action"] = "UpdateImageFileKey";
+        $params["Version"] = "2018-08-01";
+        $params["ServiceId"] = $serviceId;
+        $queryStr = http_build_query($params);
+        $response = $this->request('UpdateImageFileKey', ['query' => $queryStr, 'json' => $params]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("UpdateImageFileKey: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
         }
         return $responseBody["Result"];
     }

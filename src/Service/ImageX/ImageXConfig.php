@@ -337,6 +337,16 @@ class ImageXConfig
                 ],
             ],
         ],
+        'UpdateImageFileKey' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateImageFileKey',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
         'PreviewImageUploadFile' => [
             'method' => 'get',
             'url' => '/',
