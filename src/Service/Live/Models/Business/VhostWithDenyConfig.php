@@ -34,9 +34,9 @@ class VhostWithDenyConfig extends \Google\Protobuf\Internal\Message
     /**
      *配置详情列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfig = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigDetail = 4;</code>
      */
-    private $DenyConfig;
+    private $DenyConfigDetail;
 
     /**
      * Constructor.
@@ -50,7 +50,7 @@ class VhostWithDenyConfig extends \Google\Protobuf\Internal\Message
      *          推拉流域名
      *     @type string $App
      *           App的名称，由 1 到 30 位数字、字母、下划线及"-"和"."组成。
-     *     @type \Volc\Service\Live\Models\Business\DenyConfigDetail[]|\Google\Protobuf\Internal\RepeatedField $DenyConfig
+     *     @type \Volc\Service\Live\Models\Business\DenyConfigDetail[]|\Google\Protobuf\Internal\RepeatedField $DenyConfigDetail
      *          配置详情列表
      * }
      */
@@ -140,25 +140,25 @@ class VhostWithDenyConfig extends \Google\Protobuf\Internal\Message
     /**
      *配置详情列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfig = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigDetail = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getDenyConfig()
+    public function getDenyConfigDetail()
     {
-        return $this->DenyConfig;
+        return $this->DenyConfigDetail;
     }
 
     /**
      *配置详情列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfig = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigDetail = 4;</code>
      * @param \Volc\Service\Live\Models\Business\DenyConfigDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setDenyConfig($var)
+    public function setDenyConfigDetail($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Live\Models\Business\DenyConfigDetail::class);
-        $this->DenyConfig = $arr;
+        $this->DenyConfigDetail = $arr;
 
         return $this;
     }

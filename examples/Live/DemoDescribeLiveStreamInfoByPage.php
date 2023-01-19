@@ -5,18 +5,15 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\DescribeLiveStreamInfoByPageRequest();
 $request->setPageNum(0);
 $request->setPageSize(0);
-$request->setVhost("your Vhost");
-$request->setDomain("your Domain");
-$request->setApp("your App");
-$request->setStream("your Stream");
-$request->setStreamType("your StreamType");
-$request->setInfoType("your InfoType");
+$request->setVhost("");
+$request->setApp("");
+$request->setStream("");
 
 
 $response = new Volc\Service\Live\Models\Response\DescribeLiveStreamInfoByPageResponse();

@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.ListVQScoreTaskRequest</code>
  */
-class ListVQScoreTaskRequest extends \Google\Protobuf\Internal\Message
+class ListVQScoreTaskRequest
 {
     /**
      *查询开始时间，UTC时间格式，支持查询最近30天内的数据
@@ -42,7 +42,7 @@ class ListVQScoreTaskRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 Status = 5;</code>
      */
-    public $Status = 0;
+    public $Status;
 
     /**
      * Constructor.
@@ -62,11 +62,6 @@ class ListVQScoreTaskRequest extends \Google\Protobuf\Internal\Message
      *          测评状态，0：全部，1：测试中，2：成功，3：失败
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
-
     /**
      *查询开始时间，UTC时间格式，支持查询最近30天内的数据
      *

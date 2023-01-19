@@ -2,22 +2,26 @@
 // source: generatePushURL
 // DO NOT EDIT!
 <?php
+
+use Volc\Service\Live\Models\Response\GeneratePushURLResponse;
+
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\GeneratePushURLRequest();
-$request->setVhost("your Vhost");
-$request->setDomain("your Domain");
-$request->setApp("your App");
-$request->setStream("your Stream");
-$request->setValidDuration(0);
-$request->setExpiredTime("your ExpiredTime");
+$request->setVhost("");
+$request->setDomain("");
+$request->setApp("");
+$request->setStream("");
+$request->setExpiredTime("");
+
+$response = new GeneratePushURLResponse();
 
 
-$response = new Volc\Service\Live\Models\Response\GeneratePushURLResponse();
 try {
     $response = $client->generatePushURL($request);
 } catch (Exception $e) {

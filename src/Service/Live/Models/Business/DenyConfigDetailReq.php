@@ -9,64 +9,64 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Live.Models.Business.DenyConfigDetail</code>
+ * Generated from protobuf message <code>Volcengine.Live.Models.Business.DenyConfigDetailReq</code>
  */
-class DenyConfigDetail extends \Google\Protobuf\Internal\Message
+class DenyConfigDetailReq
 {
     /**
      *协议类型，比如tcp,kcp,quic
      *
      * Generated from protobuf field <code>repeated string ProType = 1;</code>
      */
-    private $ProType;
+    public $ProType;
     /**
      *格式类型，比如http，rtmp
      *
      * Generated from protobuf field <code>repeated string FmtType = 2;</code>
      */
-    private $FmtType;
+    public $FmtType;
     /**
      *大洲
      *
      * Generated from protobuf field <code>string Continent = 3;</code>
      */
-    protected $Continent = '';
+    public $Continent = '';
     /**
      *国家码
      *
      * Generated from protobuf field <code>string Country = 4;</code>
      */
-    protected $Country = '';
+    public $Country = '';
     /**
      *区域
      *
      * Generated from protobuf field <code>string Region = 5;</code>
      */
-    protected $Region = '';
+    public $Region = '';
     /**
      *城市
      *
      * Generated from protobuf field <code>string City = 6;</code>
      */
-    protected $City = '';
+    public $City = '';
     /**
      *运营商
      *
      * Generated from protobuf field <code>string ISP = 7;</code>
      */
-    protected $ISP = '';
+    public $ISP = '';
     /**
      *黑名单
      *
      * Generated from protobuf field <code>repeated string DenyList = 8;</code>
      */
-    private $DenyList;
+    public $DenyList;
     /**
      *白名单
      *
      * Generated from protobuf field <code>repeated string AllowList = 9;</code>
      */
-    private $AllowList;
+    public $AllowList;
 
     /**
      * Constructor.
@@ -94,10 +94,10 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      *          白名单
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\DenyConfig::initOnce();
-        parent::__construct($data);
-    }
+//    public function __construct($data = NULL) {
+//        \Volc\Service\Live\Models\GPBMetadata\DenyConfig::initOnce();
+//        parent::__construct($data);
+//    }
 
     /**
      *协议类型，比如tcp,kcp,quic
@@ -119,8 +119,7 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setProType($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ProType = $arr;
+        $this->ProType = $var;
 
         return $this;
     }
@@ -145,8 +144,7 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setFmtType($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->FmtType = $arr;
+        $this->FmtType = $var;
 
         return $this;
     }
@@ -171,7 +169,6 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setContinent($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Continent = $var;
 
         return $this;
@@ -197,7 +194,6 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setCountry($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Country = $var;
 
         return $this;
@@ -223,7 +219,6 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setRegion($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Region = $var;
 
         return $this;
@@ -249,7 +244,6 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setCity($var)
     {
-        GPBUtil::checkString($var, True);
         $this->City = $var;
 
         return $this;
@@ -275,7 +269,6 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setISP($var)
     {
-        GPBUtil::checkString($var, True);
         $this->ISP = $var;
 
         return $this;
@@ -301,8 +294,7 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setDenyList($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->DenyList = $arr;
+        $this->DenyList = $var;
 
         return $this;
     }
@@ -327,8 +319,7 @@ class DenyConfigDetail extends \Google\Protobuf\Internal\Message
      */
     public function setAllowList($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->AllowList = $arr;
+        $this->AllowList = $var;
 
         return $this;
     }

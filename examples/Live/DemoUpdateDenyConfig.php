@@ -5,17 +5,37 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\UpdateDenyConfigRequest();
-$request->setVhost("your Vhost");
-$request->setDomain("your Domain");
-$request->setApp("your App");
-$request->setDenyConfigList([new Volc\Service\Live\Models\Business\DenyConfigList()]);
+$request->setVhost("");
+$request->setDomain("");
+
+
+
+$detail = new Volc\Service\Live\Models\Business\DenyConfigDetailReq();
+$setProType = array();
+$setProType[0] = "";
+$setFmtType=array();
+$setFmtType[0] = "";
+$setAllowList=array();
+$setAllowList[0] = "";
+//        $setDenyList=array();
+//        $setDenyList[0] = "10.255.194.70";
+$detail->setProType($setProType);
+$detail->setFmtType($setFmtType);
+$detail->setAllowList($setAllowList);
+//        $detail->setDenyList($setDenyList);
+$details = array(new Volc\Service\Live\Models\Business\DenyConfigDetailReq());
+$details[0] = $detail;
+
+$request->setDenyConfigList($details);
 
 
 $response = new Volc\Service\Live\Models\Response\UpdateDenyConfigResponse();
+
+
 try {
     $response = $client->updateDenyConfig($request);
 } catch (Exception $e) {
@@ -27,4 +47,25 @@ if ($response != null && $response->getResponseMetadata() != null && $response->
     echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 } else {
     echo $response->serializeToJsonString(), "\n";
+}
+
+function objectToArray($d) {
+    if (is_object($d)) {
+        // Gets the properties of the given object
+        // with get_object_vars function
+        $d = get_object_vars($d);
+    }
+
+    if (is_array($d)) {
+        /*
+        * Return array converted to object
+        * Using __FUNCTION__ (Magic constant)
+        * for recursive call
+        */
+        return array_map(__FUNCTION__, $d);
+    }
+    else {
+        // Return array
+        return $d;
+    }
 }

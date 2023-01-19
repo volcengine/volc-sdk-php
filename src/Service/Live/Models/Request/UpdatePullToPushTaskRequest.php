@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.UpdatePullToPushTaskRequest</code>
  */
-class UpdatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
+class UpdatePullToPushTaskRequest
 {
     /**
      *任务标题
@@ -102,10 +102,6 @@ class UpdatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
      *          点播拉流地址，Type=1时必填
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
 
     /**
      *任务标题
@@ -130,9 +126,7 @@ class UpdatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
         GPBUtil::checkString($var, True);
         $this->Title = $var;
 
-        var_dump( "#####################");
         var_dump( $var);
-        var_dump( "#####################");
         return $this;
     }
 
@@ -184,9 +178,7 @@ class UpdatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->StartTime = $var;
-        var_dump( "#####################");
         var_dump( $this->StartTime);
-        var_dump( "#####################");
         return $this;
     }
 
@@ -264,10 +256,7 @@ class UpdatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->Type = $var;
-        var_dump( "#####################");
         var_dump( $var);
-        var_dump( "#####################");
-
         return $this;
     }
 

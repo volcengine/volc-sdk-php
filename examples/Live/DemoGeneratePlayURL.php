@@ -5,18 +5,18 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\GeneratePlayURLRequest();
-$request->setVhost("your Vhost");
-$request->setDomain("your Domain");
-$request->setApp("your App");
-$request->setStream("your Stream");
-$request->setSuffix("your Suffix");
-$request->setType("your Type");
+$request->setVhost("");
+$request->setDomain("");
+$request->setApp("");
+$request->setStream("");
+$request->setSuffix("");
+$request->setType("");
 $request->setValidDuration(0);
-$request->setExpiredTime("your ExpiredTime");
+$request->setExpiredTime("");
 
 
 $response = new Volc\Service\Live\Models\Response\GeneratePlayURLResponse();

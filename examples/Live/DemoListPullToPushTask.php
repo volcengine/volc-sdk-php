@@ -5,13 +5,13 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\ListPullToPushTaskRequest();
 $request->setPage(0);
 $request->setSize(0);
-$request->setTitle("your Title");
+$request->setTitle("");
 
 
 $response = new Volc\Service\Live\Models\Response\ListPullToPushTaskResponse();

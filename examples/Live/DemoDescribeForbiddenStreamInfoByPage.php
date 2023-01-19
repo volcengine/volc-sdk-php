@@ -5,17 +5,15 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
+
 
 $request = new Volc\Service\Live\Models\Request\DescribeForbiddenStreamInfoByPageRequest();
 $request->setPageNum(0);
 $request->setPageSize(0);
-$request->setVhost("your Vhost");
-$request->setApp("your App");
-$request->setStream("your Stream");
-$request->setSort("your Sort");
-
+$request->setApp("");
+$request->setStream("");
 
 $response = new Volc\Service\Live\Models\Response\DescribeForbiddenStreamInfoByPageResponse();
 try {
