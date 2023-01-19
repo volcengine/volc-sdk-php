@@ -5,12 +5,12 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\ListVQScoreTaskRequest();
-$request->setStartTime("your StartTime");
-$request->setEndTime("your EndTime");
+$request->setStartTime("");
+$request->setEndTime("");
 $request->setPageNum(0);
 $request->setPageSize(0);
 $request->setStatus(0);

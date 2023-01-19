@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.UpdateDenyConfigRequest</code>
  */
-class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
+class UpdateDenyConfigRequest
 {
     /**
      *域名空间名称
@@ -35,7 +35,7 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
     /**
      *黑白名称配置列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigList = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetailReq DenyConfigList = 4;</code>
      */
     public $DenyConfigList;
 
@@ -52,14 +52,14 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
      *     @type string $App
      *           App的名称，由 1 到 30
      *           位数字、字母、下划线及"-"和"."组成。domain和app二选一填。
-     *     @type \Volc\Service\Live\Models\Business\DenyConfigDetail[]|\Google\Protobuf\Internal\RepeatedField $DenyConfigList
+     *     @type \Volc\Service\Live\Models\Business\DenyConfigDetailReq[]|\Google\Protobuf\Internal\RepeatedField $DenyConfigList
      *          黑白名称配置列表
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
+//    public function __construct($data = NULL) {
+//        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
+//        parent::__construct($data);
+//    }
 
     /**
      *域名空间名称
@@ -81,7 +81,6 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
      */
     public function setVhost($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Vhost = $var;
 
         return $this;
@@ -107,7 +106,6 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
      */
     public function setDomain($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Domain = $var;
 
         return $this;
@@ -135,7 +133,6 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
      */
     public function setApp($var)
     {
-        GPBUtil::checkString($var, True);
         $this->App = $var;
 
         return $this;
@@ -144,7 +141,7 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
     /**
      *黑白名称配置列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigList = 4;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetailReq DenyConfigList = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDenyConfigList()
@@ -155,13 +152,12 @@ class UpdateDenyConfigRequest extends \Google\Protobuf\Internal\Message
     /**
      *黑白名称配置列表
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetail DenyConfigList = 4;</code>
-     * @param \Volc\Service\Live\Models\Business\DenyConfigDetail[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .Volcengine.Live.Models.Business.DenyConfigDetailReq DenyConfigList = 4;</code>
+     * @param \Volc\Service\Live\Models\Business\DenyConfigDetailReq[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDenyConfigList($var)
     {
-//        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Live\Models\Business\DenyConfigDetail::class);
         $this->DenyConfigList = $var;
         return $this;
     }

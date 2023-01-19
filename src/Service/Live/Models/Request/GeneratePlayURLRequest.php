@@ -11,56 +11,56 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.GeneratePlayURLRequest</code>
  */
-class GeneratePlayURLRequest extends \Google\Protobuf\Internal\Message
+class GeneratePlayURLRequest
 {
     /**
      *域名空间名称
      *
      * Generated from protobuf field <code>string Vhost = 1;</code>
      */
-    protected $Vhost = '';
+    public $Vhost = '';
     /**
      *拉流域名名称，需要生成拉流地址的域名
      *
      * Generated from protobuf field <code>string Domain = 2;</code>
      */
-    protected $Domain = '';
+    public $Domain = '';
     /**
      * App名称
      *
      * Generated from protobuf field <code>string App = 3;</code>
      */
-    protected $App = '';
+    public $App = '';
     /**
      * Stream名称
      *
      * Generated from protobuf field <code>string Stream = 4;</code>
      */
-    protected $Stream = '';
+    public $Stream = '';
     /**
      *转码流后缀，不填源流
      *
      * Generated from protobuf field <code>string Suffix = 5;</code>
      */
-    protected $Suffix = '';
+    public $Suffix = '';
     /**
      * cdn类型，fcdn/3rd（第二方cdn）二选一填，不填默认fcdn
      *
      * Generated from protobuf field <code>string Type = 6;</code>
      */
-    protected $Type = '';
+    public $Type = '';
     /**
      *生成的地址鉴权的有效时间，单位s，不填默认使用鉴权配置的过期时间，没有鉴权时间则默认7天过期
      *
      * Generated from protobuf field <code>int64 ValidDuration = 7;</code>
      */
-    protected $ValidDuration = 0;
+    public $ValidDuration ;
     /**
      *绝对有效时间，UTC格式，优先级比ValidDuration低
      *
      * Generated from protobuf field <code>string ExpiredTime = 8;</code>
      */
-    protected $ExpiredTime = '';
+    public $ExpiredTime = '';
 
     /**
      * Constructor.
@@ -86,10 +86,7 @@ class GeneratePlayURLRequest extends \Google\Protobuf\Internal\Message
      *          绝对有效时间，UTC格式，优先级比ValidDuration低
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
+
 
     /**
      *域名空间名称

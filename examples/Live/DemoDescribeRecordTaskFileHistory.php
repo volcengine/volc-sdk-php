@@ -5,18 +5,18 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
+
 
 $request = new Volc\Service\Live\Models\Request\DescribeRecordTaskFileHistoryRequest();
-$request->setVhost("your Vhost");
-$request->setApp("your App");
-$request->setStream("your Stream");
-$request->setDateFrom("your DateFrom");
-$request->setDateTo("your DateTo");
+$request->setVhost("");
+$request->setApp("");
+$request->setDateFrom("");
+$request->setDateTo("");
 $request->setPageNum(0);
 $request->setPageSize(0);
-$request->setType("your Type");
+$request->setType("");
 
 
 $response = new Volc\Service\Live\Models\Response\DescribeRecordTaskFileHistoryResponse();

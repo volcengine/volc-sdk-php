@@ -20,6 +20,7 @@ class LiveUtils {
                     case 'string':
                     case 'double':
                     case 'NULL':
+                    case 'array':
                     case 'boolean':
                         break;
                     default:

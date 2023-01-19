@@ -4,23 +4,23 @@
 <?php
 require('../../vendor/autoload.php');
 
+
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\CreatePullToPushTaskRequest();
-$request->setTitle("your Title");
-$request->setStartTime(0);
-$request->setEndTime(0);
-$request->setCallbackURL("your CallbackURL");
+$request->setTitle("");
 $request->setType(0);
 $request->setCycleMode(0);
-$request->setDstAddr("your DstAddr");
-$request->setSrcAddr("your SrcAddr");
-$request->setSrcAddrS([new Volc\Service\Live\Models\Business\SrcAddrS()]);
+$request->setDstAddr("");
+$request->setSrcAddr("");
+$setSrcAddrS=array();
 
+$setSrcAddrS[0] = "";
+$request->setSrcAddrS($setSrcAddrS);
 
-$response = new Volc\Service\Live\Models\Response\CreatePullToPushTaskResponse();
+//$response = new Volc\Service\Live\Models\Response\CreatePullToPushTaskResponse();
 try {
     $response = $client->createPullToPushTask($request);
 } catch (Exception $e) {

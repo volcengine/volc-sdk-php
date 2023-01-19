@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.CreatePullToPushTaskRequest</code>
  */
-class CreatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
+class CreatePullToPushTaskRequest
 {
 
     /**
@@ -95,10 +95,10 @@ class CreatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
      *          点播拉流地址，Type=1时必填
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
+//    public function __construct($data = NULL) {
+//        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
+//        parent::__construct($data);
+//    }
 
     /**
      *标题
@@ -301,7 +301,7 @@ class CreatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
      */
     public function setSrcAddr($var)
     {
-        GPBUtil::checkString($var, True);
+//        GPBUtil::checkString($var, True);
         $this->SrcAddr = $var;
 
         return $this;
@@ -327,7 +327,6 @@ class CreatePullToPushTaskRequest extends \Google\Protobuf\Internal\Message
      */
     public function setSrcAddrS($var)
     {
-//        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->SrcAddrS = $var;
 
         return $this;

@@ -11,27 +11,27 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.DescribeDenyConfigRequest</code>
  */
-class DescribeDenyConfigRequest extends \Google\Protobuf\Internal\Message
+class DescribeDenyConfigRequest
 {
     /**
      *域名空间名称
      *
      * Generated from protobuf field <code>string Vhost = 1;</code>
      */
-    protected $Vhost = '';
+    public $Vhost = '';
     /**
      *推拉流域名，domain和app二选一填
      *
      * Generated from protobuf field <code>string Domain = 2;</code>
      */
-    protected $Domain = '';
+    public $Domain = '';
     /**
      * App的名称，由 1 到 30
      * 位数字、字母、下划线及"-"和"."组成。domain和app二选一填。
      *
      * Generated from protobuf field <code>string App = 3;</code>
      */
-    protected $App = '';
+    public $App = '';
 
     /**
      * Constructor.
@@ -48,10 +48,6 @@ class DescribeDenyConfigRequest extends \Google\Protobuf\Internal\Message
      *           位数字、字母、下划线及"-"和"."组成。domain和app二选一填。
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
 
     /**
      *域名空间名称

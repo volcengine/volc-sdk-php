@@ -5,13 +5,13 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\KillStreamRequest();
-$request->setVhost("your Vhost");
-$request->setApp("your App");
-$request->setStream("your Stream");
+$request->setVhost("");
+$request->setApp("");
+$request->setStream("");
 
 
 $response = new Volc\Service\Live\Models\Response\KillStreamResponse();

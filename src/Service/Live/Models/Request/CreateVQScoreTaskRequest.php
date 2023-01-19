@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.CreateVQScoreTaskRequest</code>
  */
-class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
+class CreateVQScoreTaskRequest
 {
     /**
      * 主拉流地址。 支持输入FCDN拉流地址和第三方CDN拉流地址。
@@ -68,10 +68,10 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      *           测评算法，支持vqscore分数计算
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
+//    public function __construct($data = NULL) {
+//        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
+//        parent::__construct($data);
+//    }
 
     /**
      * 主拉流地址。 支持输入FCDN拉流地址和第三方CDN拉流地址。
@@ -93,7 +93,6 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      */
     public function setMainAddr($var)
     {
-        GPBUtil::checkString($var, True);
         $this->MainAddr = $var;
 
         return $this;
@@ -119,7 +118,6 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      */
     public function setContrastAddr($var)
     {
-        GPBUtil::checkString($var, True);
         $this->ContrastAddr = $var;
 
         return $this;
@@ -145,7 +143,6 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      */
     public function setFrameInterval(int $var)
     {
-        GPBUtil::checkInt64($var);
         $this->FrameInterval = $var;
 
         return $this;
@@ -177,7 +174,6 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      */
     public function setDuration(int $var)
     {
-        GPBUtil::checkInt32($var);
         $this->Duration = $var;
 
         return $this;
@@ -203,7 +199,6 @@ class CreateVQScoreTaskRequest  extends \Google\Protobuf\Internal\Message
      */
     public function setAlgorithm($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Algorithm = $var;
 
         return $this;

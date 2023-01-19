@@ -5,12 +5,12 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\DeleteRelaySourceRequest();
-$request->setVhost("your Vhost");
-$request->setApp("your App");
+$request->setVhost("");
+$request->setApp("");
 
 
 $response = new Volc\Service\Live\Models\Response\DeleteRelaySourceResponse();

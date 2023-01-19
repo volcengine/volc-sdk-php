@@ -5,20 +5,19 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\UpdatePullToPushTaskRequest();
-$request->setTitle("your Title");
-$request->setTaskId("your TaskId");
-$request->setStartTime(0);
-$request->setEndTime(0);
-$request->setCallbackURL("your CallbackURL");
+$request->setTitle("");
 $request->setType(0);
-$request->setCycleMode(0);
-$request->setDstAddr("your DstAddr");
-$request->setSrcAddr("your SrcAddr");
-$request->setSrcAddrS([new Volc\Service\Live\Models\Business\SrcAddrS()]);
+$request->setCycleMode(01);
+$setSrcAddrS=array();
+$setSrcAddrS[0] = "";
+$request->setDstAddr("");
+$request->setSrcAddr("");
+$request->setSrcAddrS($setSrcAddrS);
+$request->setTaskId("");
 
 
 $response = new Volc\Service\Live\Models\Response\UpdatePullToPushTaskResponse();

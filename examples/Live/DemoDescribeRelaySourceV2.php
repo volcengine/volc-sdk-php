@@ -5,11 +5,11 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\DescribeRelaySourceRequest();
-$request->setVhost("your Vhost");
+$request->setVhost("");
 
 
 $response = new Volc\Service\Live\Models\Response\DescribeRelaySourceResponse();

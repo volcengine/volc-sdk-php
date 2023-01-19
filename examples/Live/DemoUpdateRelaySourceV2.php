@@ -5,15 +5,18 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\UpdateRelaySourceRequest();
-$request->setVhost("your Vhost");
-$request->setApp("your App");
-$request->setRelaySourceDomainList([new Volc\Service\Live\Models\Business\RelaySourceDomainList()]);
-$request->setRelaySourceParams([new Volc\Service\Live\Models\Business\RelaySourceParams()]);
-$request->setRelaySourceProtocol("your RelaySourceProtocol");
+$request->setVhost("");
+$request->setApp("");
+$setRelaySourceDomainList=array();
+$setRelaySourceDomainList[0] = "";
+$request->setRelaySourceDomainList($setRelaySourceDomainList);
+$result = array('name' => 'a', 'age' => "1");
+$request->setRelaySourceParams($result);
+$request->setRelaySourceProtocol("");
 
 
 $response = new Volc\Service\Live\Models\Response\UpdateRelaySourceResponse();

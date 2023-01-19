@@ -13,6 +13,7 @@ use Volc\Service\Live\Models\Response\CreateDomainResponse;
 use Volc\Service\Live\Models\Request\ListDomainDetailRequest;
 use Volc\Service\Live\Models\Response\DescribeCDNSnapshotHistoryResponse;
 use Volc\Service\Live\Models\Response\DescribeClosedStreamInfoByPageResponse;
+use Volc\Service\Live\Models\Response\DescribeDenyConfigResponse;
 use Volc\Service\Live\Models\Response\DescribeLiveStreamStateResponse;
 use Volc\Service\Live\Models\Response\ListDomainDetailResponse;
 use Volc\Service\Live\Models\Request\DisableDomainRequest;
@@ -68,7 +69,6 @@ use Volc\Service\Live\Models\Response\DeletePullToPushTaskResponse;
 use Volc\Service\Live\Models\Request\UpdateDenyConfigRequest;
 use Volc\Service\Live\Models\Response\UpdateDenyConfigResponse;
 use Volc\Service\Live\Models\Request\DescribeDenyConfigRequest;
-use Volc\Service\Live\Models\Response\DescribeDenyConfigResponse;
 use Volc\Service\Live\Models\Request\DeleteDenyConfigRequest;
 use Volc\Service\Live\Models\Response\DeleteDenyConfigResponse;
 use Volc\Service\Vod\VodOption;
@@ -853,7 +853,7 @@ class Live extends V4Curl
 	public function generatePlayURL (GeneratePlayURLRequest $req): GeneratePlayURLResponse
 	{
 		try {
-			$query = LiveUtils::formatRequestParam($req);
+			$query = LiveUtils::formatRequestParamV2($req);
 			$response = $this->request('GeneratePlayURL', ['json' => $query]);
 		} catch (Exception $e) {
             throw $e;
@@ -874,31 +874,25 @@ class Live extends V4Curl
         }
         return $respData;
 	}
-	
-	/**
-     * GeneratePushURL.
-     *
-     * @param $req GeneratePushURLRequest
-     * @return GeneratePushURLResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function generatePushURL (GeneratePushURLRequest $req): GeneratePushURLResponse
-	{
-		try {
-			$query = LiveUtils::formatRequestParam($req);
-			$response = $this->request('GeneratePushURL', ['json' => $query]);
-		} catch (Exception $e) {
+
+    public function generatePushURL (GeneratePushURLRequest $req): GeneratePushURLResponse
+    {
+        try {
+            $query = LiveUtils::formatRequestParamV2($req);
+            $response = $this->request('GeneratePushURL', ['json' => $query]);
+
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new GeneratePushURLResponse();
-		try {
+        }
+        $respData = new GeneratePushURLResponse();
+        try {
+
             $respData = LiveUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -906,8 +900,7 @@ class Live extends V4Curl
             throw $t;
         }
         return $respData;
-	}
-	
+    }
 	/**
      * CreatePullToPushTask.
      *
@@ -1133,17 +1126,10 @@ class Live extends V4Curl
 	public function updateDenyConfig (UpdateDenyConfigRequest $req): UpdateDenyConfigResponse
 	{
 		try {
-			$query = LiveUtils::formatRequestParamV2($req);
-            foreach ($query as $key => $value) {
-                if ($key == "DenyConfigList"){
-                    $denyConfigList = $req->DenyConfigList;
-                    $json_encode = json_encode($denyConfigList);
-                    $json_decode = json_decode($json_encode);
-                    $query[$key] = $json_decode;
-                }
-            }
+            $query = LiveUtils::formatRequestParamV2($req);
+
             $response = $this->request('UpdateDenyConfig', ['json' => $query]);
-		} catch (Exception $e) {
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
@@ -1174,8 +1160,8 @@ class Live extends V4Curl
 	public function describeDenyConfig (DescribeDenyConfigRequest $req): DescribeDenyConfigResponse
 	{
 		try {
-			$query = LiveUtils::formatRequestParam($req);
-			$response = $this->request('DescribeDenyConfig', ['json' => $query]);
+            $query = LiveUtils::formatRequestParamV2($req);
+            $response = $this->request('DescribeDenyConfig', ['json' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {

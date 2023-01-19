@@ -4,51 +4,48 @@
 
 namespace Volc\Service\Live\Models\Request;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Generated from protobuf message <code>Volcengine.Live.Models.Request.GeneratePushURLRequest</code>
  */
-class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
-{
+class GeneratePushURLRequest{
     /**
      *域名空间名称
      *
      * Generated from protobuf field <code>string Vhost = 1;</code>
      */
-    protected $Vhost = '';
+    public $Vhost = '';
     /**
      *推流域名名称，需要推流地址的域名，不填返回Vhost下所有推流域名生成的地址
      *
      * Generated from protobuf field <code>string Domain = 2;</code>
      */
-    protected $Domain = '';
+    public $Domain = '';
     /**
      * App名称
      *
      * Generated from protobuf field <code>string App = 3;</code>
      */
-    protected $App = '';
+    public $App = '';
     /**
      * App名称
      *
      * Generated from protobuf field <code>string Stream = 4;</code>
      */
-    protected $Stream = '';
+    public $Stream = '';
     /**
      *生成的地址鉴权的有效时间，单位s，不填默认使用鉴权配置的过期时间，没有鉴权时间则默认7天过期
      *
      * Generated from protobuf field <code>int64 ValidDuration = 5;</code>
      */
-    protected $ValidDuration = 0;
+    public $ValidDuration ;
     /**
      *绝对有效时间，UTC格式，优先级比ValidDuration低
      *
      * Generated from protobuf field <code>string ExpiredTime = 6;</code>
      */
-    protected $ExpiredTime = '';
+    public $ExpiredTime = '';
 
     /**
      * Constructor.
@@ -70,10 +67,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      *          绝对有效时间，UTC格式，优先级比ValidDuration低
      * }
      */
-    public function __construct($data = NULL) {
-        \Volc\Service\Live\Models\GPBMetadata\RequestLive::initOnce();
-        parent::__construct($data);
-    }
 
     /**
      *域名空间名称
@@ -95,7 +88,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setVhost($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Vhost = $var;
 
         return $this;
@@ -121,7 +113,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setDomain($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Domain = $var;
 
         return $this;
@@ -147,7 +138,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setApp($var)
     {
-        GPBUtil::checkString($var, True);
         $this->App = $var;
 
         return $this;
@@ -173,7 +163,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setStream($var)
     {
-        GPBUtil::checkString($var, True);
         $this->Stream = $var;
 
         return $this;
@@ -187,6 +176,7 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function getValidDuration()
     {
+        GPBUtil::checkInt64($var);
         return $this->ValidDuration;
     }
 
@@ -199,7 +189,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setValidDuration($var)
     {
-        GPBUtil::checkInt64($var);
         $this->ValidDuration = $var;
 
         return $this;
@@ -225,7 +214,6 @@ class GeneratePushURLRequest extends \Google\Protobuf\Internal\Message
      */
     public function setExpiredTime($var)
     {
-        GPBUtil::checkString($var, True);
         $this->ExpiredTime = $var;
 
         return $this;

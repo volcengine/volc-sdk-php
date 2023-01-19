@@ -5,16 +5,15 @@
 require('../../vendor/autoload.php');
 
 $client = Volc\Service\Live\Live::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+$client->setAccessKey('');
+$client->setSecretKey('');
 
 $request = new Volc\Service\Live\Models\Request\CreateVQScoreTaskRequest();
-$request->setMainAddr("your MainAddr");
-$request->setContrastAddr("your ContrastAddr");
 $request->setFrameInterval(0);
 $request->setDuration(0);
-$request->setAlgorithm("your Algorithm");
-
+$request->setMainAddr("");
+$request->setContrastAddr("");
+$request->setAlgorithm("");
 
 $response = new Volc\Service\Live\Models\Response\CreateVQScoreTaskResponse();
 try {
