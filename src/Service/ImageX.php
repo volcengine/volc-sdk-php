@@ -18,6 +18,10 @@ class ImageX extends V4Curl
     const MinChunkSize = 1024 * 1024 * 20;
     const LargeFileSize = 1024 * 1024 * 1024;
 
+    public $config = ImageXConfig::region;
+
+    public $apiList = ImageXConfig::apiList;
+
     /**
      * @throws \Exception
      */
@@ -26,10 +30,8 @@ class ImageX extends V4Curl
         if (!isset(ImageXConfig::region[$region])) {
             throw new \Exception(sprintf("ImageX not support region, %s", $region));
         }
-        return ImageXConfig::region[$region];
+        return $this->config[$region];
     }
-
-    protected $apiList = ImageXConfig::apiList;
 
     public function applyUploadImage(array $query)
     {
@@ -388,6 +390,32 @@ class ImageX extends V4Curl
         $segmentResponse = json_decode((string)$response->getBody(), true);
         if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
             return sprintf("getSegmentImage: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $segmentResponse["Result"];
+    }
+
+    public function updateImageDomainIPAuth(array $query = [], array $body = [])
+    {
+        $query["Action"] = "UpdateImageDomainIPAuth";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('UpdateImageDomainIPAuth', ['query' => $queryStr, 'json' => $body]);
+        $segmentResponse = json_decode((string)$response->getBody(), true);
+        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("updateImageDomainIPAuth: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $segmentResponse["Result"];
+    }
+
+    public function updateRefer(array $query = [], array $body = [])
+    {
+        $query["Action"] = "UpdateRefer";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('UpdateRefer', ['query' => $queryStr, 'json' => $body]);
+        $segmentResponse = json_decode((string)$response->getBody(), true);
+        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("updateRefer: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
         }
         return $segmentResponse["Result"];
     }
