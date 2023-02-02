@@ -124,7 +124,6 @@ abstract class V4Curl extends Singleton
     public function request($api, array $config = [])
     {
         $config_api = isset($this->apiList[$api]) ? $this->apiList[$api] : false;
-
         $defaultConfig = $this->getConfig($this->region);
         $config = $this->configMerge($defaultConfig['config'], $config_api['config'], $config);
         $config['headers']['User-Agent'] = 'volc-sdk-php/' . $this->version;
@@ -205,7 +204,6 @@ abstract class V4Curl extends Singleton
             "Resource" => $resources,
         ];
     }
-
     protected function configMerge($c1, $c2, $c3)
     {
         $result = $c1;
