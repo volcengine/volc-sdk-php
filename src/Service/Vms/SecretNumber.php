@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service;
+namespace Volc\Service\Vms;
 
 use ArrayObject;
 use Exception;

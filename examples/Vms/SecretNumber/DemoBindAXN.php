@@ -1,22 +1,21 @@
 <?php
+use Volc\Service\Vms\SecretNumber;
 
-use Volc\Service\SecretNumber;
-
-require('../../vendor/autoload.php');
-require('../../src/Service/SecretNumber.php');
+require('../../../vendor/autoload.php');
+require('../../../src/Service/Vms/SecretNumber.php');
 
 $client = SecretNumber::getInstance();
 $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
 $body = [
-    'NumberPoolNo' => 'NP161156328504091435',
+    'NumberPoolNo' => 'NP162981168404095092',
     'PhoneNoA' => '13700000001',
     'PhoneNoB' => '13700000002',
-    'PhoneNoX' => '13700000003',
+    'PhoneNoX' => '13700000005',
     'ExpireTime' => '1632920195',
     'UserData' => 'this is my user data',
 ];
 
-$response = $client->BindAXB($body);
+$response = $client->BindAXN($body);
 echo $response;
