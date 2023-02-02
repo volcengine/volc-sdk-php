@@ -567,6 +567,16 @@ class ImageXConfig
                 ],
             ],
         ],
-    ];
 
+        'UpdateImageDomainIPAuth' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateImageDomainIPAuth',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+    ];
 }
