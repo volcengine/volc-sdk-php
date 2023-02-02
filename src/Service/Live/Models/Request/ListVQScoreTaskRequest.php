@@ -30,13 +30,13 @@ class ListVQScoreTaskRequest
      *
      * Generated from protobuf field <code>int64 PageNum = 3;</code>
      */
-    public $PageNum = 0;
+    public $PageNum;
     /**
      *分页大小，取值范围为 。
      *
      * Generated from protobuf field <code>int64 PageSize = 4;</code>
      */
-    public $PageSize = 0;
+    public $PageSize;
     /**
      *测评状态，0：全部，1：测试中，2：成功，3：失败
      *

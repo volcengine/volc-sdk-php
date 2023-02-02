@@ -51,13 +51,13 @@ class DescribeRecordTaskFileHistoryRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>int64 PageNum = 6;</code>
      */
-    public float $PageNum = 0;
+    public $PageNum = 0;
     /**
      *分页大小，取值范围为 。
      *
      * Generated from protobuf field <code>int64 PageSize = 7;</code>
      */
-    public float $PageSize = 0;
+    public $PageSize = 0;
     /**
      * 录制文件保存位置。默认取值为 ToS。
      *<li>ToS
@@ -257,11 +257,7 @@ class DescribeRecordTaskFileHistoryRequest extends \Google\Protobuf\Internal\Mes
      */
     public function setPageNum($var)
     {
-        GPBUtil::checkFloat($var);
         $this->PageNum = $var;
-        var_dump( "$this->PageNum");
-        var_dump( $this->PageNum);
-
         return $this;
     }
 
@@ -285,11 +281,7 @@ class DescribeRecordTaskFileHistoryRequest extends \Google\Protobuf\Internal\Mes
      */
     public function setPageSize($var)
     {
-        GPBUtil::checkFloat($var);
         $this->PageSize = $var;
-        var_dump( "$this->PageSize");
-        var_dump( $this->PageSize);
-
         return $this;
     }
 

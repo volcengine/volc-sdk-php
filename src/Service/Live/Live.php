@@ -892,7 +892,6 @@ class Live extends V4Curl
         }
         $respData = new GeneratePushURLResponse();
         try {
-
             $respData = LiveUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -901,6 +900,7 @@ class Live extends V4Curl
         }
         return $respData;
     }
+
 	/**
      * CreatePullToPushTask.
      *
