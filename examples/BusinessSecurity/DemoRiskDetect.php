@@ -2,6 +2,7 @@
 require('../../vendor/autoload.php');
 
 use Volc\Service\BusinessSecurity;
+
 $client = BusinessSecurity::getInstance();
 
 // call below method if you dont set ak and sk in ～/.volc/config
