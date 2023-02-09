@@ -252,6 +252,26 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'CloseVideoLiveRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CloseVideoLive',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
+        'CloseAudioLiveRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CloseAudioLive',
+                    'Version' => '2022-04-25',
+                ],
+            ]
+        ],
     ];
 
     protected function requestWithRetry(string $api, array $configs): string
@@ -530,5 +550,29 @@ class BusinessSecurity extends V4Curl
             "json" => $commitBody
         ];
         return $this->requestWithRetry("TextSliceRisk", $commitReq);
+    }
+
+    public function CloseVideoLiveRisk(int $appId, string $service, string $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("CloseVideoLiveRisk", $commitReq);
+    }
+
+    public function CloseAudioLiveRisk(int $appId, string $service, string $dataId): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["DataId"] = $dataId;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("CloseAudioLiveRisk", $commitReq);
     }
 }
