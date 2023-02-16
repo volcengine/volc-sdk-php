@@ -5,6 +5,8 @@ namespace Volc\Service;
 
 use Volc\Base\V4Curl;
 
+const ServiceVersion20210111 = "2021-01-11";
+
 class Sms extends V4Curl
 {
 
@@ -46,6 +48,146 @@ class Sms extends V4Curl
                 ],
             ]
         ],
+        'Conversion' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Conversion',
+                    'Version' => '2020-01-01',
+                ],
+            ]
+        ],
+        'SendSmsVerifyCode' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SendSmsVerifyCode',
+                    'Version' => '2020-01-01',
+                ],
+            ]
+        ],
+        'CheckSmsVerifyCode' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CheckSmsVerifyCode',
+                    'Version' => '2020-01-01',
+                ],
+            ]
+        ],
+        'SendBatchSms' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SendBatchSms',
+                    'Version' => '2021-01-01',
+                ],
+            ]
+        ],
+        'GetSubAccountList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSubAccountList',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'GetSubAccountDetail' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSubAccountDetail',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'GetSmsTemplateAndOrderList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSmsTemplateAndOrderList',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'ApplySmsTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ApplySmsTemplate',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'DeleteSmsTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteSmsTemplate',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'GetSignatureAndOrderList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSignatureAndOrderList',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'ApplySmsSignature' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ApplySmsSignature',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'DeleteSignature' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteSignature',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'ApplyVmsTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ApplyVmsTemplate',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        'GetVmsTemplateStatus' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetVmsTemplateStatus',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
     ];
 
     public function sendSms(array $query = [])
@@ -57,4 +199,129 @@ class Sms extends V4Curl
         return $response->getBody();
     }
 
+    public function conversion(array $query = [])
+    {
+        $response = $this->request('Conversion', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('Conversion', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function sendSmsVerifyCode(array $query = [])
+    {
+        $response = $this->request('SendSmsVerifyCode', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('SendSmsVerifyCode', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function checkSmsVerifyCode(array $query = [])
+    {
+        $response = $this->request('CheckSmsVerifyCode', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('CheckSmsVerifyCode', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function sendBatchSms(array $query = [])
+    {
+        $response = $this->request('SendBatchSms', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('SendBatchSms', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getSubAccountList(array $query = [])
+    {
+        $response = $this->request('GetSubAccountList', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetSubAccountList', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getSubAccountDetail(array $query = [])
+    {
+        $response = $this->request('GetSubAccountDetail', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetSubAccountDetail', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getSmsTemplateAndOrderList(array $query = [])
+    {
+        $response = $this->request('GetSmsTemplateAndOrderList', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetSmsTemplateAndOrderList', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function applySmsTemplate(array $query = [])
+    {
+        $response = $this->request('ApplySmsTemplate', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('ApplySmsTemplate', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function deleteSmsTemplate(array $query = [])
+    {
+        $response = $this->request('DeleteSmsTemplate', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('DeleteSmsTemplate', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getSignatureAndOrderList(array $query = [])
+    {
+        $response = $this->request('GetSignatureAndOrderList', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetSignatureAndOrderList', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function applySmsSignature(array $query = [])
+    {
+        $response = $this->request('ApplySmsSignature', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('ApplySmsSignature', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function deleteSignature(array $query = [])
+    {
+        $response = $this->request('DeleteSignature', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('DeleteSignature', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function applyVmsTemplate(array $query = [])
+    {
+        $response = $this->request('ApplyVmsTemplate', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('ApplyVmsTemplate', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getVmsTemplateStatus(array $query = [])
+    {
+        $response = $this->request('GetVmsTemplateStatus', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetVmsTemplateStatus', $query);
+        }
+        return $response->getBody();
+    }
 }
