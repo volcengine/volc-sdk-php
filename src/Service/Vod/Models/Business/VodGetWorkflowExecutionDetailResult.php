@@ -63,6 +63,10 @@ class VodGetWorkflowExecutionDetailResult extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.google.protobuf.Timestamp EndTime = 13;</code>
      */
     protected $EndTime = null;
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 14;</code>
+     */
+    protected $DirectUrl = null;
 
     /**
      * Constructor.
@@ -83,6 +87,7 @@ class VodGetWorkflowExecutionDetailResult extends \Google\Protobuf\Internal\Mess
      *     @type \Google\Protobuf\Timestamp $CreateTime
      *     @type \Google\Protobuf\Timestamp $StartTime
      *     @type \Google\Protobuf\Timestamp $EndTime
+     *     @type \Volc\Service\Vod\Models\Business\DirectUrl $DirectUrl
      * }
      */
     public function __construct($data = NULL) {
@@ -384,6 +389,38 @@ class VodGetWorkflowExecutionDetailResult extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->EndTime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 14;</code>
+     * @return \Volc\Service\Vod\Models\Business\DirectUrl|null
+     */
+    public function getDirectUrl()
+    {
+        return $this->DirectUrl;
+    }
+
+    public function hasDirectUrl()
+    {
+        return isset($this->DirectUrl);
+    }
+
+    public function clearDirectUrl()
+    {
+        unset($this->DirectUrl);
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 14;</code>
+     * @param \Volc\Service\Vod\Models\Business\DirectUrl $var
+     * @return $this
+     */
+    public function setDirectUrl($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DirectUrl::class);
+        $this->DirectUrl = $var;
 
         return $this;
     }

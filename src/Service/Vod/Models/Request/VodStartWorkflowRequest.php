@@ -53,6 +53,12 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool EnableLowPriority = 6;</code>
      */
     protected $EnableLowPriority = false;
+    /**
+     * DirectUrl输入
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 7;</code>
+     */
+    protected $DirectUrl = null;
 
     /**
      * Constructor.
@@ -72,6 +78,8 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      *           回调参数
      *     @type bool $EnableLowPriority
      *           是否使能闲时转码
+     *     @type \Volc\Service\Vod\Models\Business\DirectUrl $DirectUrl
+     *           DirectUrl输入
      * }
      */
     public function __construct($data = NULL) {
@@ -241,6 +249,42 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->EnableLowPriority = $var;
+
+        return $this;
+    }
+
+    /**
+     * DirectUrl输入
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 7;</code>
+     * @return \Volc\Service\Vod\Models\Business\DirectUrl|null
+     */
+    public function getDirectUrl()
+    {
+        return $this->DirectUrl;
+    }
+
+    public function hasDirectUrl()
+    {
+        return isset($this->DirectUrl);
+    }
+
+    public function clearDirectUrl()
+    {
+        unset($this->DirectUrl);
+    }
+
+    /**
+     * DirectUrl输入
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 7;</code>
+     * @param \Volc\Service\Vod\Models\Business\DirectUrl $var
+     * @return $this
+     */
+    public function setDirectUrl($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DirectUrl::class);
+        $this->DirectUrl = $var;
 
         return $this;
     }

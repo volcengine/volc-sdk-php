@@ -80,7 +80,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
     protected $UnionInfo = '';
     /**
      * HDR清晰度，默认不查询，支持：all,
-     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k, od, oe
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      */
@@ -115,7 +115,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
      *           唯一性标识信息 
      *     @type string $HDRDefinition
      *           HDR清晰度，默认不查询，支持：all,
-     *           240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     *           240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k, od, oe
      * }
      */
     public function __construct($data = NULL) {
@@ -387,7 +387,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
 
     /**
      * HDR清晰度，默认不查询，支持：all,
-     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k, od, oe
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      * @return string
@@ -399,7 +399,7 @@ class VodGetSmartStrategyLitePlayInfoRequest extends \Google\Protobuf\Internal\M
 
     /**
      * HDR清晰度，默认不查询，支持：all,
-     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k
+     * 240p，360p, 420p，480p，540p，720p，1080p, 2k, 4k, od, oe
      *
      * Generated from protobuf field <code>string HDRDefinition = 11;</code>
      * @param string $var

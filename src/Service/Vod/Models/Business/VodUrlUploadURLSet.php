@@ -85,6 +85,18 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileExtension = 12;</code>
      */
     protected $FileExtension = '';
+    /**
+     * URL加密算法 
+     *
+     * Generated from protobuf field <code>string UrlEncryptionAlgorithm = 13;</code>
+     */
+    protected $UrlEncryptionAlgorithm = '';
+    /**
+     * 是否闲时转码 
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 14;</code>
+     */
+    protected $EnableLowPriority = false;
 
     /**
      * Constructor.
@@ -116,6 +128,10 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           设置存储类型 
      *     @type string $FileExtension
      *           设置文件后缀 
+     *     @type string $UrlEncryptionAlgorithm
+     *           URL加密算法 
+     *     @type bool $EnableLowPriority
+     *           是否闲时转码 
      * }
      */
     public function __construct($data = NULL) {
@@ -431,6 +447,58 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileExtension = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL加密算法 
+     *
+     * Generated from protobuf field <code>string UrlEncryptionAlgorithm = 13;</code>
+     * @return string
+     */
+    public function getUrlEncryptionAlgorithm()
+    {
+        return $this->UrlEncryptionAlgorithm;
+    }
+
+    /**
+     * URL加密算法 
+     *
+     * Generated from protobuf field <code>string UrlEncryptionAlgorithm = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrlEncryptionAlgorithm($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UrlEncryptionAlgorithm = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否闲时转码 
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 14;</code>
+     * @return bool
+     */
+    public function getEnableLowPriority()
+    {
+        return $this->EnableLowPriority;
+    }
+
+    /**
+     * 是否闲时转码 
+     *
+     * Generated from protobuf field <code>bool EnableLowPriority = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableLowPriority($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->EnableLowPriority = $var;
 
         return $this;
     }

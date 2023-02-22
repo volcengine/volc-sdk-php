@@ -32,7 +32,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Codec = '';
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      */
@@ -132,7 +132,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Codec
      *           编码格式，支持 mp3、aac、opus、H264、H265、H266, 视频默认H264，音频默认aac
      *     @type string $Definition
-     *           视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k.默认返回全部
+     *           视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
      *     @type string $FileType
      *           流文件类型,支持:
      *           加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
@@ -248,7 +248,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @return string
@@ -259,7 +259,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @param string $var
