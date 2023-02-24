@@ -91,6 +91,12 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodSubtitleInfo SubtitleInfoList = 13;</code>
      */
     private $SubtitleInfoList;
+    /**
+     *蒙板弹幕
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.BarrageMaskInfo BarrageMaskInfo = 14;</code>
+     */
+    protected $BarrageMaskInfo = null;
 
     /**
      * Constructor.
@@ -124,6 +130,8 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
      *           弹幕蒙版url
      *     @type \Volc\Service\Vod\Models\Business\VodSubtitleInfo[]|\Google\Protobuf\Internal\RepeatedField $SubtitleInfoList
      *           字幕信息列表
+     *     @type \Volc\Service\Vod\Models\Business\BarrageMaskInfo $BarrageMaskInfo
+     *          蒙板弹幕
      * }
      */
     public function __construct($data = NULL) {
@@ -475,6 +483,42 @@ class VodPlayInfoModel extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodSubtitleInfo::class);
         $this->SubtitleInfoList = $arr;
+
+        return $this;
+    }
+
+    /**
+     *蒙板弹幕
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.BarrageMaskInfo BarrageMaskInfo = 14;</code>
+     * @return \Volc\Service\Vod\Models\Business\BarrageMaskInfo|null
+     */
+    public function getBarrageMaskInfo()
+    {
+        return $this->BarrageMaskInfo;
+    }
+
+    public function hasBarrageMaskInfo()
+    {
+        return isset($this->BarrageMaskInfo);
+    }
+
+    public function clearBarrageMaskInfo()
+    {
+        unset($this->BarrageMaskInfo);
+    }
+
+    /**
+     *蒙板弹幕
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.BarrageMaskInfo BarrageMaskInfo = 14;</code>
+     * @param \Volc\Service\Vod\Models\Business\BarrageMaskInfo $var
+     * @return $this
+     */
+    public function setBarrageMaskInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\BarrageMaskInfo::class);
+        $this->BarrageMaskInfo = $var;
 
         return $this;
     }

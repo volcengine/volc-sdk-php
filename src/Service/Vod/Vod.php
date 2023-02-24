@@ -84,6 +84,8 @@ use Volc\Service\Vod\Models\Request\VodRetrieveTranscodeResultRequest;
 use Volc\Service\Vod\Models\Response\VodRetrieveTranscodeResultResponse;
 use Volc\Service\Vod\Models\Request\VodGetWorkflowExecutionStatusRequest;
 use Volc\Service\Vod\Models\Response\VodGetWorkflowExecutionStatusResponse;
+use Volc\Service\Vod\Models\Request\VodGetWorkflowResultRequest;
+use Volc\Service\Vod\Models\Response\VodGetWorkflowResultResponse;
 use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
@@ -1554,6 +1556,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetWorkflowExecutionStatusResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetWorkflowExecutionResult.
+     *
+     * @param $req VodGetWorkflowResultRequest
+     * @return VodGetWorkflowResultResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function GetWorkflowExecutionResult (VodGetWorkflowResultRequest $req): VodGetWorkflowResultResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetWorkflowExecutionResult', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetWorkflowResultResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

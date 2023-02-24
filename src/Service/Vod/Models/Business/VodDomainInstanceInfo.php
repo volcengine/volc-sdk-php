@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     *实例ID
+     *实例ID，废弃
      *
      * Generated from protobuf field <code>string InstanceId = 1;</code>
      */
@@ -26,13 +26,13 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
      */
     private $Domains;
     /**
-     *是否可自助配置
+     *是否可自助配置，废弃
      *
      * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
      */
     protected $CanSelfEditing = false;
     /**
-     *实例配置状态
+     *实例配置状态，废弃
      *
      * Generated from protobuf field <code>string ConfigStatus = 4;</code>
      */
@@ -45,13 +45,13 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $InstanceId
-     *          实例ID
+     *          实例ID，废弃
      *     @type \Volc\Service\Vod\Models\Business\VodDomainoInfo[]|\Google\Protobuf\Internal\RepeatedField $Domains
      *          域名列表
      *     @type bool $CanSelfEditing
-     *          是否可自助配置
+     *          是否可自助配置，废弃
      *     @type string $ConfigStatus
-     *          实例配置状态
+     *          实例配置状态，废弃
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *实例ID
+     *实例ID，废弃
      *
      * Generated from protobuf field <code>string InstanceId = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *实例ID
+     *实例ID，废弃
      *
      * Generated from protobuf field <code>string InstanceId = 1;</code>
      * @param string $var
@@ -112,7 +112,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *是否可自助配置
+     *是否可自助配置，废弃
      *
      * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
      * @return bool
@@ -123,7 +123,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *是否可自助配置
+     *是否可自助配置，废弃
      *
      * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
      * @param bool $var
@@ -138,7 +138,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *实例配置状态
+     *实例配置状态，废弃
      *
      * Generated from protobuf field <code>string ConfigStatus = 4;</code>
      * @return string
@@ -149,7 +149,7 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *实例配置状态
+     *实例配置状态，废弃
      *
      * Generated from protobuf field <code>string ConfigStatus = 4;</code>
      * @param string $var

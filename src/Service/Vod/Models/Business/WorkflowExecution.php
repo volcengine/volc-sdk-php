@@ -109,6 +109,10 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.TaskDetail TasksDetail = 16;</code>
      */
     private $TasksDetail;
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 17;</code>
+     */
+    protected $DirectUrl = null;
 
     /**
      * Constructor.
@@ -148,6 +152,7 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
      *          回调透传参数
      *     @type \Volc\Service\Vod\Models\Business\TaskDetail[]|\Google\Protobuf\Internal\RepeatedField $TasksDetail
      *           子任务详情
+     *     @type \Volc\Service\Vod\Models\Business\DirectUrl $DirectUrl
      * }
      */
     public function __construct($data = NULL) {
@@ -607,6 +612,38 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\TaskDetail::class);
         $this->TasksDetail = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 17;</code>
+     * @return \Volc\Service\Vod\Models\Business\DirectUrl|null
+     */
+    public function getDirectUrl()
+    {
+        return $this->DirectUrl;
+    }
+
+    public function hasDirectUrl()
+    {
+        return isset($this->DirectUrl);
+    }
+
+    public function clearDirectUrl()
+    {
+        unset($this->DirectUrl);
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 17;</code>
+     * @param \Volc\Service\Vod\Models\Business\DirectUrl $var
+     * @return $this
+     */
+    public function setDirectUrl($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DirectUrl::class);
+        $this->DirectUrl = $var;
 
         return $this;
     }

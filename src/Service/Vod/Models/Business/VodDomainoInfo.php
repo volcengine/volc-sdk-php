@@ -73,6 +73,12 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodDomainSourceInfo Sources = 10;</code>
      */
     private $Sources;
+    /**
+     *是否锁定，可否配置
+     *
+     * Generated from protobuf field <code>string LockStatus = 11;</code>
+     */
+    protected $LockStatus = '';
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *          加速区域，cn:国内,overseas:海外，global:全球
      *     @type \Volc\Service\Vod\Models\Business\VodDomainSourceInfo[]|\Google\Protobuf\Internal\RepeatedField $Sources
      *           源站信息
+     *     @type string $LockStatus
+     *          是否锁定，可否配置
      * }
      */
     public function __construct($data = NULL) {
@@ -373,6 +381,32 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodDomainSourceInfo::class);
         $this->Sources = $arr;
+
+        return $this;
+    }
+
+    /**
+     *是否锁定，可否配置
+     *
+     * Generated from protobuf field <code>string LockStatus = 11;</code>
+     * @return string
+     */
+    public function getLockStatus()
+    {
+        return $this->LockStatus;
+    }
+
+    /**
+     *是否锁定，可否配置
+     *
+     * Generated from protobuf field <code>string LockStatus = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLockStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->LockStatus = $var;
 
         return $this;
     }
