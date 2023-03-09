@@ -10,6 +10,7 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodGetWorkflowExecutionStatusRequest();
 $request->setRunId("your RunId");
+$request->setNeedTasksDetail("your NeedTasksDetail");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetWorkflowExecutionStatusResponse();

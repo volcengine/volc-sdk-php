@@ -10,7 +10,11 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodUrlUploadRequest();
 $request->setSpaceName("your SpaceName");
-$request->setURLSets([new Volc\Service\Vod\Models\Business\URLSets()]);
+
+$urlSet = new Volc\Service\Vod\Models\Business\VodUrlUploadURLSet();
+$urlSet->setSourceUrl("");
+$urlSet->setStorageClass(0);
+$request->setURLSets([$urlSet]);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodUrlUploadResponse();

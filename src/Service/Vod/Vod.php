@@ -124,6 +124,12 @@ use Volc\Service\Vod\Models\Request\VodSubmitBlockTasksRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitBlockTasksResponse;
 use Volc\Service\Vod\Models\Request\VodGetContentBlockTasksRequest;
 use Volc\Service\Vod\Models\Response\VodGetContentBlockTasksResponse;
+use Volc\Service\Vod\Models\Request\VodCreateDomainV2Request;
+use Volc\Service\Vod\Models\Response\VodCreateDomainV2Response;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainExpireV2Request;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainExpireV2Response;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainAuthConfigV2Request;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainAuthConfigV2Response;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -2205,7 +2211,7 @@ class Vod extends V4Curl
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('SubmitBlockTasks', ['query' => $query]);
+			$response = $this->request('SubmitBlockTasks', ['form_params' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2238,7 +2244,7 @@ class Vod extends V4Curl
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('GetContentBlockTasks', ['query' => $query]);
+			$response = $this->request('GetContentBlockTasks', ['form_params' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2249,6 +2255,105 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetContentBlockTasksResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateDomain.
+     *
+     * @param $req VodCreateDomainV2Request
+     * @return VodCreateDomainV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function createDomain (VodCreateDomainV2Request $req): VodCreateDomainV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateDomain', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateDomainV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainExpire.
+     *
+     * @param $req VodUpdateDomainExpireV2Request
+     * @return VodUpdateDomainExpireV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainExpire (VodUpdateDomainExpireV2Request $req): VodUpdateDomainExpireV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainExpire', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainExpireV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainAuthConfig.
+     *
+     * @param $req VodUpdateDomainAuthConfigV2Request
+     * @return VodUpdateDomainAuthConfigV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainAuthConfig (VodUpdateDomainAuthConfigV2Request $req): VodUpdateDomainAuthConfigV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainAuthConfig', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainAuthConfigV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

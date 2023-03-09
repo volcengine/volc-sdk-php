@@ -28,7 +28,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMeasure::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¹d
+ûf
 vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.protovod/business/vod_measure.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -206,7 +206,13 @@ $VodSubmitDirectEditTaskAsyncResponseG
 Result (29.Volcengine.Vod.Models.Business.VodSubmitBlockTasksResult"¹
 VodGetContentBlockTasksResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
-Result (2=.Volcengine.Vod.Models.Business.VodGetContentBlockTasksResult"m
+Result (2=.Volcengine.Vod.Models.Business.VodGetContentBlockTasksResult"d
+VodCreateDomainV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"j
+VodUpdateDomainExpireV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"n
+#VodUpdateDomainAuthConfigV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"m
 "VodAddCallbackSubscriptionResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f
 VodSetCallbackEventResponseG

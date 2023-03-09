@@ -376,6 +376,16 @@ class VodOption
                 ],
             ]
         ],
+        'GetWorkflowExecutionResult' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetWorkflowExecutionResult',
+                    'Version' => '2022-12-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 视频编辑
         // **********************************************************************
@@ -591,6 +601,26 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnPvData',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'SubmitBlockTasks' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SubmitBlockTasks',
+                    'Version' => '2022-01-01',
+                ],
+            ]
+        ],
+        'GetContentBlockTasks' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetContentBlockTasks',
                     'Version' => '2022-01-01',
                 ],
             ]

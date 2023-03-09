@@ -14,7 +14,7 @@ $request->setTemplateId("your TemplateId");
 $request->setInput(new Volc\Service\Vod\Models\Business\WorkflowParams());$request->setPriority(0);
 $request->setCallbackArgs("your CallbackArgs");
 $request->setEnableLowPriority(false);
-
+$request->setDirectUrl(new Volc\Service\Vod\Models\Business\DirectUrl());
 
 $response = new Volc\Service\Vod\Models\Response\VodStartWorkflowResponse();
 try {
