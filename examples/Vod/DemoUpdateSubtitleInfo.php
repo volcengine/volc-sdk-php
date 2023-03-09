@@ -13,8 +13,8 @@ $request->setVid("your Vid");
 $request->setFileId("your FileId");
 $request->setLanguage("your Language");
 $request->setFormat("your Format");
-$request->setTitleUnwrapped("your Title");
-$request->setTagUnwrapped("your Tag");
+$request->setTitleUnwrapped();
+$request->setTagUnwrapped();
 
 
 $response = new Volc\Service\Vod\Models\Response\VodUpdateSubtitleInfoResponse();

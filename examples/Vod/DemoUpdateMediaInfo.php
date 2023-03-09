@@ -10,11 +10,11 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodUpdateMediaInfoRequest();
 $request->setVid("your Vid");
-$request->setPosterUriUnwrapped("your PosterUri");
-$request->setTitleUnwrapped("your Title");
-$request->setDescriptionUnwrapped("your Description");
-$request->setTagsUnwrapped("your Tags");
-$request->setClassificationIdUnwrapped(0);
+$request->setPosterUriUnwrapped();
+$request->setTitleUnwrapped();
+$request->setDescriptionUnwrapped();
+$request->setTagsUnwrapped();
+$request->setClassificationIdUnwrapped();
 
 
 $response = new Volc\Service\Vod\Models\Response\VodUpdateMediaInfoResponse();

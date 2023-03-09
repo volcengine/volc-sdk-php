@@ -14,6 +14,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RetryMiddleware;
 use Throwable;
+use Volc\Service\Vod\Models\Business\StorageClassType;
 use Volc\Service\Vod\Models\Business\VodStoreInfo;
 use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
@@ -39,6 +40,7 @@ class VodUpload extends Vod
         $applyRequest->setSpaceName($vodUploadMediaRequest->getSpaceName());
         $applyRequest->setFileName($vodUploadMediaRequest->getFileName());
         $applyRequest->setFileExtension($vodUploadMediaRequest->getFileExtension());
+        $applyRequest->setStorageClass($vodUploadMediaRequest->getStorageClass());
         $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -98,7 +100,7 @@ class VodUpload extends Vod
 
             $storeInfo = new VodStoreInfo();
             $storeInfo->mergeFrom(($uploadAddress->getStoreInfos())[0]);
-            $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath);
+            $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
             if ($respCode != 0) {
                 return array(-1, "upload " . $filePath . " error", "", "");
             }
@@ -109,7 +111,7 @@ class VodUpload extends Vod
         }
     }
 
-    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath): int
+    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath, int $storageClass): int
     {
         if (!file_exists($filePath)) {
             return -1;
@@ -134,9 +136,9 @@ class VodUpload extends Vod
         ]);
 
         if ($fileSize < MinChunkSize) {
-            return $this->directUpload($oid, $auth, $filePath, $client);
+            return $this->directUpload($oid, $auth, $filePath, $client, $storageClass);
         } else {
-            return $this->chunkUpload($oid, $auth, $filePath, true, $client);
+            return $this->chunkUpload($oid, $auth, $filePath, true, $client, $storageClass);
         }
     }
 
@@ -160,11 +162,17 @@ class VodUpload extends Vod
         };
     }
 
-    private function directUpload(string $oid, string $auth, string $filePath, Client $client): int
+    private function directUpload(string $oid, string $auth, string $filePath, Client $client, int $storageClass): int
     {
         $content = file_get_contents($filePath);
         $crc32 = sprintf("%08x", crc32($content));
-        $response = $client->put($oid, ["body" => $content, "headers" => ['Authorization' => $auth, 'Content-CRC32' => $crc32]]);
+        $headers = ['Authorization' => $auth, 'Content-CRC32' => $crc32];
+
+        if ($storageClass == StorageClassType::Archive) {
+            $headers['X-Upload-Storage-Class'] = "archive";
+        }
+
+        $response = $client->put($oid, ["body" => $content, "headers" => $headers]);
         $directUploadResponse = json_decode((string)$response->getBody(), true);
         if (!isset($directUploadResponse["success"]) || $directUploadResponse["success"] != 0) {
             return -2;
@@ -172,9 +180,9 @@ class VodUpload extends Vod
         return 0;
     }
 
-    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client): int
+    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client, int $storageClass): int
     {
-        $uploadID = $this->initUploadPart($oid, $auth, $isLargeFile, $client);
+        $uploadID = $this->initUploadPart($oid, $auth, $isLargeFile, $client, $storageClass);
         if ($uploadID == "") {
             return -1;
         }
@@ -183,13 +191,19 @@ class VodUpload extends Vod
         $lastNum = $num - 1;
         $fp = fopen($filePath, 'r');
         $checkSum = [];
+        $objectContentType = "";
         for ($i = 0; $i < $lastNum; $i++) {
             $data = stream_get_contents($fp, MinChunkSize, $i * MinChunkSize);
             $partNumber = $i;
             if ($isLargeFile) {
                 $partNumber = $partNumber + 1;
             }
-            $crc32 = $this->uploadPart($oid, $auth, $uploadID, $partNumber, $data, $isLargeFile, $client);
+            $uploadPartResp = $this->uploadPart($oid, $auth, $uploadID, $partNumber, $data, $isLargeFile, $client, $storageClass);
+            $crc32 = $uploadPartResp[0];
+            $oct = $uploadPartResp[1];
+            if ($partNumber == 1) {
+                $objectContentType = $oct;
+            }
             if ($crc32 == "") {
                 return -1;
             }
@@ -200,19 +214,23 @@ class VodUpload extends Vod
         if ($isLargeFile) {
             $lastNum = $lastNum + 1;
         }
-        $crc32 = $this->uploadPart($oid, $auth, $uploadID, $lastNum, $data, $isLargeFile, $client);
+        $uploadPartResp = $this->uploadPart($oid, $auth, $uploadID, $lastNum, $data, $isLargeFile, $client, $storageClass);
+        $crc32 = $uploadPartResp[0];
         if ($crc32 == "") {
             return -1;
         }
         $checkSum[] = $crc32;
-        return $this->uploadMergePart($oid, $auth, $uploadID, $checkSum, $isLargeFile, $client);
+        return $this->uploadMergePart($oid, $auth, $uploadID, $objectContentType, $checkSum, $isLargeFile, $client, $storageClass);
     }
 
-    private function initUploadPart(string $oid, string $auth, bool $isLargeFile, Client $client)
+    private function initUploadPart(string $oid, string $auth, bool $isLargeFile, Client $client, int $storageClass)
     {
         $headers = ['Authorization' => $auth];
         if ($isLargeFile) {
             $headers['X-Storage-Mode'] = ['gateway'];
+        }
+        if ($storageClass == StorageClassType::Archive) {
+            $headers['X-Upload-Storage-Class'] = ['archive'];
         }
         $response = $client->put($oid . '?uploads', ['headers' => $headers]);
         $initUploadResponse = json_decode((string)$response->getBody(), true);
@@ -222,7 +240,7 @@ class VodUpload extends Vod
         return $initUploadResponse['payload']['uploadID'];
     }
 
-    private function uploadPart(string $oid, string $auth, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client): string
+    private function uploadPart(string $oid, string $auth, string $uploadID, int $partNumber, $data, bool $isLargeFile, Client $client, int $storageClass): array
     {
         $uri = sprintf("%s?partNumber=%d&uploadID=%s", $oid, $partNumber, $uploadID);
         $crc32 = sprintf("%08x", crc32($data));
@@ -230,17 +248,20 @@ class VodUpload extends Vod
         if ($isLargeFile) {
             $headers['X-Storage-Mode'] = ['gateway'];
         }
+        if ($storageClass == StorageClassType::Archive) {
+            $headers['X-Upload-Storage-Class'] = ['archive'];
+        }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $data]);
         $uploadPartResponse = json_decode((string)$response->getBody(), true);
         if (!isset($uploadPartResponse["success"]) || $uploadPartResponse["success"] != 0) {
-            return "";
+            return ["", ""];
         }
-        return $crc32;
+        return [$crc32, $uploadPartResponse["payload"]["meta"]["ObjectContentType"]];
     }
 
-    private function uploadMergePart(string $oid, string $auth, string $uploadID, array $checkSum, bool $isLargeFile, Client $client): int
+    private function uploadMergePart(string $oid, string $auth, string $uploadID, string $objectContentType, array $checkSum, bool $isLargeFile, Client $client, int $storageClass): int
     {
-        $uri = sprintf("%s?uploadID=%s", $oid, $uploadID);
+        $uri = sprintf("%s?uploadID=%s&ObjectContentType=%s", $oid, $uploadID, $objectContentType);
         $m = [];
         for ($i = 0; $i < count($checkSum); $i++) {
             $no = $i;
@@ -254,6 +275,10 @@ class VodUpload extends Vod
         if ($isLargeFile) {
             $headers['X-Storage-Mode'] = ['gateway'];
         }
+        if ($storageClass == StorageClassType::Archive) {
+            $headers['X-Upload-Storage-Class'] = ['archive'];
+        }
+
         $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);
         $uploadPartResponse = json_decode((string)$response->getBody(), true);
         if (!isset($uploadPartResponse["success"]) || $uploadPartResponse["success"] != 0) {

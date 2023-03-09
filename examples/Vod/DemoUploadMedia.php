@@ -24,6 +24,7 @@ $request->setFilePath($filePath);
 $request->setFunctions($functions);
 $request->setCallbackArgs("my callback");
 $request->setFileName("hello/vod");
+$request->setStorageClass(0);
 
 $response = new VodCommitUploadInfoResponse();
 try {

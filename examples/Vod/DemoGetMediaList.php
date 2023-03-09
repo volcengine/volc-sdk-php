@@ -19,6 +19,7 @@ $request->setEndTime("your EndTime");
 $request->setOffset("your Offset");
 $request->setPageSize("your PageSize");
 $request->setClassificationIds("your ClassificationIds");
+$request->setTosStorageClasses("your TosStorageClasses");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetMediaListResponse();
