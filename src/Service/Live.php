@@ -13,7 +13,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListCommonTransPresetDetail',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -23,7 +23,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateCallback',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -33,7 +33,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeCallback',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -43,7 +43,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteCallback',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -53,7 +53,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateDomain',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -63,7 +63,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteDomain',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -73,7 +73,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListDomainDetail',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -83,7 +83,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeDomain',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -93,7 +93,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'EnableDomain',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -103,7 +103,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DisableDomain',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -113,7 +113,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ManagerPullPushDomainBind',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -123,7 +123,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateAuthKey',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -133,7 +133,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeAuth',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -143,7 +143,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ForbidStream',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -153,7 +153,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ResumeStream',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -163,7 +163,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -173,7 +173,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -183,7 +183,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -193,7 +193,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'BindCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -203,7 +203,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UnbindCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -213,7 +213,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteCert',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -223,7 +223,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateReferer',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -233,7 +233,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteReferer',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -243,7 +243,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DescribeReferer',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -253,7 +253,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateRecordPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -263,7 +263,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateRecordPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -273,7 +273,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteRecordPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -283,7 +283,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListVhostRecordPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -293,7 +293,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateTranscodePreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -303,7 +303,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateTranscodePreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -313,7 +313,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteTranscodePreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -323,7 +323,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListVhostTransCodePreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -333,7 +333,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateSnapshotPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -343,7 +343,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSnapshotPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -353,7 +353,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteSnapshotPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -363,7 +363,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListVhostSnapshotPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -513,7 +513,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'CreateSnapshotAuditPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -523,7 +523,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSnapshotAuditPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -533,7 +533,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'DeleteSnapshotAuditPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -543,7 +543,7 @@ class Live extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'ListVhostSnapshotAuditPreset',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
