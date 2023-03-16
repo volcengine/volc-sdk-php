@@ -357,12 +357,32 @@ class ImageXConfig
                 ],
             ],
         ],
-        'UpdateImageUploadFiles' => [
+        'CreateImageContentTask' => [
             'method' => 'post',
             'url' => '/',
             'config' => [
                 'query' => [
-                    'Action' => 'UpdateImageUploadFiles',
+                    'Action' => 'CreateImageContentTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetImageContentTaskDetail' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageContentTaskDetail',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetImageContentBlockList' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageContentBlockList',
                     'Version' => '2018-08-01',
                 ],
             ],

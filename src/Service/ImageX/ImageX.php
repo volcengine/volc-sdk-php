@@ -43,16 +43,33 @@ class ImageX extends V4Curl
         return (string)$response->getBody();
     }
 
-    public function updateImageUrls($serviceID, $urls, $action = 0)
+    public function createImageContentTask($args)
     {
         $config = [
-            "query" => ["ServiceId" => $serviceID],
-            "json" => [
-                "Action" => $action,
-                "ImageUrls" => $urls,
-            ],
+            "query" => ["ServiceId" => $args['ServiceId']],
+            "json" => $args,
         ];
-        $response = $this->request('UpdateImageUploadFiles', $config);
+        $response = $this->request('CreateImageContentTask', $config);
+        return (string)$response->getBody();
+    }
+
+    public function getImageContentTaskDetail($args)
+    {
+        $config = [
+            "query" => ["ServiceId" => $args['ServiceId']],
+            "json" => $args,
+        ];
+        $response = $this->request('GetImageContentTaskDetail', $config);
+        return (string)$response->getBody();
+    }
+
+    public function getImageContentBlockList($args)
+    {
+        $config = [
+            "query" => ["ServiceId" => $args['ServiceId']],
+            "json" => $args,
+        ];
+        $response = $this->request('GetImageContentBlockList', $config);
         return (string)$response->getBody();
     }
 

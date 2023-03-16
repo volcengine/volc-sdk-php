@@ -9,8 +9,11 @@ $client = ImageX::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$serviceID = "imagex service id";
-$urls = ["image url 1"];
+$args = ['ServiceId' => "",
+    'TaskType' => 'block_url',
+    'StartTime' => 0,
+    'EndTime' => 2147483647,
+];
 
-$resp = $client->updateImageUrls($serviceID, $urls);
+$resp = $client->getImageContentTaskDetail($args);
 print_r($resp);
