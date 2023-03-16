@@ -18,7 +18,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeCDNSnapshotHistory',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -28,7 +28,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeRecordTaskFileHistory',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -38,7 +38,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeLiveStreamInfoByPage',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -48,7 +48,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'KillStream',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -58,7 +58,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeClosedStreamInfoByPage',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -68,7 +68,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeLiveStreamState',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -78,7 +78,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeForbiddenStreamInfoByPage',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -88,7 +88,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateRelaySourceV2',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -98,7 +98,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DeleteRelaySourceV2',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -108,7 +108,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeRelaySourceV2',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -118,7 +118,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'CreateVQScoreTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -128,7 +128,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVQScoreTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -138,7 +138,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'ListVQScoreTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -148,7 +148,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'GeneratePlayURL',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -158,7 +158,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'GeneratePushURL',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -168,7 +168,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'CreatePullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -178,7 +178,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'ListPullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -188,7 +188,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdatePullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -198,7 +198,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'StopPullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -208,7 +208,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'RestartPullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -218,7 +218,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DeletePullToPushTask',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ], 'UpdateDenyConfig' => [
@@ -227,7 +227,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDenyConfig',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -237,7 +237,7 @@ class LiveOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeDenyConfig',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
