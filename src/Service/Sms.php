@@ -188,6 +188,16 @@ class Sms extends V4Curl
                 ],
             ]
         ],
+        'InsertSubAccount' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'InsertSubAccount',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ]
     ];
 
     public function sendSms(array $query = [])
@@ -321,6 +331,15 @@ class Sms extends V4Curl
         $response = $this->request('GetVmsTemplateStatus', $query);
         if ($response->getStatusCode() >= 500) {
             $response = $this->request('GetVmsTemplateStatus', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function insertSubAccount(array $query = [])
+    {
+        $response = $this->request('InsertSubAccount', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('InsertSubAccount', $query);
         }
         return $response->getBody();
     }
