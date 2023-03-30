@@ -139,7 +139,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateMediaStorageClass',
-                    'Version' => '2022-10-01',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],
@@ -699,6 +699,16 @@ class VodOption
                 'query' => [
                     'Action' => 'DescribeVodSnapshotData',
                     'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DescribeVodSpaceWorkflowDetailData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceWorkflowDetailData',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],

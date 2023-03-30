@@ -16,7 +16,7 @@ class VodMeasure
         }
         $pool->internalAddGeneratedFile(
             '
-þ
+¬\'
 vod/business/vod_measure.protoVolcengine.Vod.Models.Business"<
 DescribeVodSpaceTranscodeItem
 Name (	
@@ -119,7 +119,56 @@ DetectType (	
 TotalSnapshotData (U
 SnapshotDataList	 (2;.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataItem]
 SnapshotDetailDataList
- (2=.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataDetailBË
+ (2=.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataDetail"Ø
+%DescribeVodSpaceWorkflowTranscodeInfo
+TemplateType (	
+FileType (	
+Duration (
+Codec (	
+Remux (
+
+Definition (	
+Width (
+Height (
+Slice	 (
+IsLowPriority
+ ("c
+$DescribeVodSpaceWorkflowSnapshotInfo
+TemplateType (	
+Number (
+IsLowPriority ("h
+\'DescribeVodSpaceWorkflowEnhanceExecInfo
+TemplateType (	
+Duration (
+IsLowPriority ("t
+#DescribeVodSpaceWorkflowVideoAIInfo
+TemplateType (	
+Duration (
+Number (
+IsLowPriority ("
+DescribeVodSpaceWorkflowDetail
+RunId (	
+Vid (	
+
+TemplateId (	
+	SpaceName (	
+Status (	
+	StartTime (	
+EndTime (	\\
+TranscodeInfo (2E.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowTranscodeInfoZ
+SnapshotInfo	 (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowSnapshotInfo`
+EnhanceExecInfo
+ (2G.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowEnhanceExecInfoX
+VideoAIInfo (2C.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowVideoAIInfo"û
+(DescribeVodSpaceWorkflowDetailDataResult
+Region (	
+Space (	
+	StartTime (	
+EndTime (	
+PageSize (
+PageNum (
+Total (Z
+WorkflowDetailData (2>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailBË
 )com.volcengine.service.vod.model.businessB
 VodMeasurePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

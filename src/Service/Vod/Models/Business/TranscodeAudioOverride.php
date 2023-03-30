@@ -24,7 +24,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
      */
     protected $Clip = null;
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 3;</code>
      */
@@ -40,7 +40,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
      *           被覆盖的音频模板Id, 支持ALL
      *     @type \Volc\Service\Vod\Models\Business\Clip $Clip
      *     @type string $FileName
-     *           FileName
+     *           文件名
      * }
      */
     public function __construct($data = NULL) {
@@ -107,7 +107,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 3;</code>
      * @return string
@@ -118,7 +118,7 @@ class TranscodeAudioOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 3;</code>
      * @param string $var

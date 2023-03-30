@@ -28,7 +28,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMeasure::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ûf
+‡m
 vod/response/response_vod.protoVolcengine.Vod.Models.Responsevod/business/vod_play.protovod/business/vod_media.protovod/business/vod_upload.protovod/business/vod_workflow.protovod/business/vod_edit.protovod/business/vod_space.protovod/business/vod_cdn.protovod/business/vod_common.proto%vod/business/vod_smart_strategy.proto"vod/business/vod_apps_manage.protovod/business/vod_measure.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -237,7 +237,19 @@ $DescribeVodSpaceAIStatisDataResponseG
 Result (2F.Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataResult"¹
 DescribeVodSnapshotDataResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
-Result (2=.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataResultBÌ
+Result (2=.Volcengine.Vod.Models.Business.DescribeVodSnapshotDataResult"Ï
+*DescribeVodSpaceWorkflowDetailDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataX
+Result (2H.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailDataResult"¹
+VodSubmitBlockMediaTaskResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
+Result (2=.Volcengine.Vod.Models.Business.VodSubmitBlockMediaTaskResult"½
+!VodSubmitUnblockMediaTaskResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
+Result (2?.Volcengine.Vod.Models.Business.VodSubmitUnblockMediaTaskResult"»
+ VodQueryMediaBlockStatusResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataN
+Result (2>.Volcengine.Vod.Models.Business.VodQueryMediaBlockStatusResultBÌ
 )com.volcengine.service.vod.model.responseBVodResponsePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/response ØÊ Volc\\Service\\Vod\\Models\\Responseâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 

@@ -32,7 +32,7 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      */
     private $OutputIndex;
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 4;</code>
      */
@@ -51,7 +51,7 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $OutputIndex
      *           模板组下标，仅对模板组生效
      *     @type string $FileName
-     *           FileName
+     *           文件名
      * }
      */
     public function __construct($data = NULL) {
@@ -148,7 +148,7 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 4;</code>
      * @return string
@@ -159,7 +159,7 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * FileName
+     * 文件名
      *
      * Generated from protobuf field <code>string FileName = 4;</code>
      * @param string $var

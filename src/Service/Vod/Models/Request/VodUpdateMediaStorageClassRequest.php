@@ -31,6 +31,12 @@ class VodUpdateMediaStorageClassRequest extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>string CallbackArgs = 3;</code>
      */
     protected $CallbackArgs = '';
+    /**
+     *转码视频ID列表,多个用英文逗号分隔，最多支持20个，传入该参数时，Vids只允许传一个视频ID
+     *
+     * Generated from protobuf field <code>string FileIds = 4;</code>
+     */
+    protected $FileIds = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class VodUpdateMediaStorageClassRequest extends \Google\Protobuf\Internal\Messag
      *          文件存储类型，STANDARD-标准存储，ARCHIVE-归档存储
      *     @type string $CallbackArgs
      *          回调回传参数
+     *     @type string $FileIds
+     *          转码视频ID列表,多个用英文逗号分隔，最多支持20个，传入该参数时，Vids只允许传一个视频ID
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class VodUpdateMediaStorageClassRequest extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkString($var, True);
         $this->CallbackArgs = $var;
+
+        return $this;
+    }
+
+    /**
+     *转码视频ID列表,多个用英文逗号分隔，最多支持20个，传入该参数时，Vids只允许传一个视频ID
+     *
+     * Generated from protobuf field <code>string FileIds = 4;</code>
+     * @return string
+     */
+    public function getFileIds()
+    {
+        return $this->FileIds;
+    }
+
+    /**
+     *转码视频ID列表,多个用英文逗号分隔，最多支持20个，传入该参数时，Vids只允许传一个视频ID
+     *
+     * Generated from protobuf field <code>string FileIds = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileIds($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileIds = $var;
 
         return $this;
     }

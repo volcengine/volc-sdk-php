@@ -59,6 +59,10 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DirectUrl DirectUrl = 7;</code>
      */
     protected $DirectUrl = null;
+    /**
+     * Generated from protobuf field <code>string TaskListId = 8;</code>
+     */
+    protected $TaskListId = '';
 
     /**
      * Constructor.
@@ -80,6 +84,7 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
      *           是否使能闲时转码
      *     @type \Volc\Service\Vod\Models\Business\DirectUrl $DirectUrl
      *           DirectUrl输入
+     *     @type string $TaskListId
      * }
      */
     public function __construct($data = NULL) {
@@ -285,6 +290,28 @@ class VodStartWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DirectUrl::class);
         $this->DirectUrl = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string TaskListId = 8;</code>
+     * @return string
+     */
+    public function getTaskListId()
+    {
+        return $this->TaskListId;
+    }
+
+    /**
+     * Generated from protobuf field <code>string TaskListId = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskListId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->TaskListId = $var;
 
         return $this;
     }
