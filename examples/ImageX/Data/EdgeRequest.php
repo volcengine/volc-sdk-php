@@ -2,15 +2,12 @@
 include_once(__DIR__ . '/../../../vendor/autoload.php');
 
 use Volc\Service\ImageX;
-use Volc\Service\ImageX\ImageXData;
 
 $client = ImageX::getInstance();
 
 // call below method if you dont set ak and sk in ～/.volc/config
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
-
-ImageXData::AddDataModule($client);
 
 $body = [
     'DataTypes' => '2xx,3xx,4xx,5xx',
@@ -20,5 +17,5 @@ $body = [
     'Interval' => "300",
 ];
 
-$response = ImageXData::describeImageXEdgeRequest($client, $body);
+$response = $client->describeImageXEdgeRequest($body);
 print_r($response);

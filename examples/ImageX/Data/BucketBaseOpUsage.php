@@ -2,7 +2,6 @@
 include_once(__DIR__ . '/../../../vendor/autoload.php');
 
 use Volc\Service\ImageX;
-use Volc\Service\ImageX\ImageXData;
 
 $client = ImageX::getInstance();
 
@@ -10,7 +9,6 @@ $client = ImageX::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-ImageXData::AddDataModule($client);
 
 $query = [
     'StartTime' => "2023-01-21T00:00:00+08:00",
@@ -18,5 +16,5 @@ $query = [
     'Interval' => "300",
 ];
 
-$response = ImageXData::describeImageXBaseOpUsage($client, $query);
+$response = $client->describeImageXBaseOpUsage($query);
 print_r($response);

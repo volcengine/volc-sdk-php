@@ -2,6 +2,7 @@
 
 namespace Volc\Service\ImageX;
 
+use Exception;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
@@ -16,16 +17,23 @@ class ImageX extends V4Curl
     const MinChunkSize = 1024 * 1024 * 20;
     const LargeFileSize = 1024 * 1024 * 1024;
 
-    public $config = ImageXConfig::region;
+    public $config = [];
 
-    public $apiList = ImageXConfig::apiList;
+    public $apiList = [];
+
+    public function __construct($config)
+    {
+        $this->config = ImageXConfig::$region;
+        $this->apiList = ImageXConfig::$apiList;
+        parent::__construct($config);
+    }
 
     /**
      * @throws \Exception
      */
     protected function getConfig(string $region)
     {
-        if (!isset(ImageXConfig::region[$region])) {
+        if (!isset($this->config[$region])) {
             throw new \Exception(sprintf("ImageX not support region, %s", $region));
         }
         return $this->config[$region];
@@ -435,4 +443,1137 @@ class ImageX extends V4Curl
         return $segmentResponse["Result"];
     }
 
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXDomainTrafficData($query)
+    {
+        $query["Action"] = "DescribeImageXDomainTrafficData";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXDomainTrafficData', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXDomainTrafficData: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXDomainBandwidthData($query)
+    {
+        $query["Action"] = "DescribeImageXDomainBandwidthData";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXDomainBandwidthData', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXDomainBandwidthData: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXBucketUsage($query)
+    {
+        $query["Action"] = "DescribeImageXBucketUsage";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXBucketUsage', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXBucketUsage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXRequestCntUsage($query)
+    {
+        $query["Action"] = "DescribeImageXRequestCntUsage";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXRequestCntUsage', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXRequestCntUsage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXBaseOpUsage($query)
+    {
+        $query["Action"] = "DescribeImageXBaseOpUsage";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXBaseOpUsage', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXBaseOpUsage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCompressUsage($query)
+    {
+        $query["Action"] = "DescribeImageXCompressUsage";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCompressUsage', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCompressUsage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXEdgeRequest($query)
+    {
+        $query["Action"] = "DescribeImageXEdgeRequest";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXEdgeRequest', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXEdgeRequest: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXHitRateTrafficData($query)
+    {
+        $query["Action"] = "DescribeImageXHitRateTrafficData";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXHitRateTrafficData', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXHitRateTrafficData: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXHitRateRequestData($query)
+    {
+        $query["Action"] = "DescribeImageXHitRateRequestData";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXHitRateRequestData', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXHitRateRequestData: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCDNTopRequestData($query)
+    {
+        $query["Action"] = "DescribeImageXCDNTopRequestData";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCDNTopRequestData', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCDNTopRequestData: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSummary($query)
+    {
+        $query["Action"] = "DescribeImageXSummary";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSummary', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSummary: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXEdgeRequestBandwidth($query)
+    {
+        $query["Action"] = "DescribeImageXEdgeRequestBandwidth";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXEdgeRequestBandwidth', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXEdgeRequestBandwidth: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXEdgeRequestTraffic($query)
+    {
+        $query["Action"] = "DescribeImageXEdgeRequestTraffic";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXEdgeRequestTraffic', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXEdgeRequestTraffic: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXEdgeRequestRegions($query)
+    {
+        $query["Action"] = "DescribeImageXEdgeRequestRegions";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXEdgeRequestRegions', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXEdgeRequestRegions: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXMirrorRequestTraffic($body)
+    {
+        $query["Action"] = "DescribeImageXMirrorRequestTraffic";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXMirrorRequestTraffic', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXMirrorRequestTraffic: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXMirrorRequestBandwidth($body)
+    {
+        $query["Action"] = "DescribeImageXMirrorRequestBandwidth";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXMirrorRequestBandwidth', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXMirrorRequestBandwidth: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXMirrorRequestHttpCodeByTime($body)
+    {
+        $query["Action"] = "DescribeImageXMirrorRequestHttpCodeByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXMirrorRequestHttpCodeByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXMirrorRequestHttpCodeByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXMirrorRequestHttpCodeOverview($body)
+    {
+        $query["Action"] = "DescribeImageXMirrorRequestHttpCodeOverview";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXMirrorRequestHttpCodeOverview', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXMirrorRequestHttpCodeOverview: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXServiceQuality($query)
+    {
+        $query["Action"] = "DescribeImageXServiceQuality";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXServiceQuality', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXServiceQuality: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function getImageXQueryApps($query)
+    {
+        $query["Action"] = "GetImageXQueryApps";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageXQueryApps', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("GetImageXQueryApps: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function getImageXQueryRegions($query)
+    {
+        $query["Action"] = "GetImageXQueryRegions";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageXQueryRegions', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("GetImageXQueryRegions: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function getImageXQueryDims($query)
+    {
+        $query["Action"] = "GetImageXQueryDims";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageXQueryDims', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("GetImageXQueryDims: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $query array
+     * @return array
+     * @throws Exception
+     */
+    public function getImageXQueryVals($query)
+    {
+        $query["Action"] = "GetImageXQueryVals";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageXQueryVals', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("GetImageXQueryVals: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadSuccessRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXUploadSuccessRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadSuccessRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadSuccessRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadErrorCodeAll($body)
+    {
+        $query["Action"] = "DescribeImageXUploadErrorCodeAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadErrorCodeAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadErrorCodeAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadErrorCodeByTime($body)
+    {
+        $query["Action"] = "DescribeImageXUploadErrorCodeByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadErrorCodeByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadErrorCodeByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadCountByTime($body)
+    {
+        $query["Action"] = "DescribeImageXUploadCountByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadCountByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadCountByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadFileSize($body)
+    {
+        $query["Action"] = "DescribeImageXUploadFileSize";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadFileSize', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadFileSize: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadSpeed($body)
+    {
+        $query["Action"] = "DescribeImageXUploadSpeed";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadSpeed', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadSpeed: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadDuration($body)
+    {
+        $query["Action"] = "DescribeImageXUploadDuration";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadDuration', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadDuration: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXUploadSegmentSpeedByTime($body)
+    {
+        $query["Action"] = "DescribeImageXUploadSegmentSpeedByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXUploadSegmentSpeedByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXUploadSegmentSpeedByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnSuccessRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXCdnSuccessRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnSuccessRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnSuccessRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnSuccessRateAll($body)
+    {
+        $query["Action"] = "DescribeImageXCdnSuccessRateAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnSuccessRateAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnSuccessRateAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnErrorCodeByTime($body)
+    {
+        $query["Action"] = "DescribeImageXCdnErrorCodeByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnErrorCodeByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnErrorCodeByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnErrorCodeAll($body)
+    {
+        $query["Action"] = "DescribeImageXCdnErrorCodeAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnErrorCodeAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnErrorCodeAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnDurationDetailByTime($body)
+    {
+        $query["Action"] = "DescribeImageXCdnDurationDetailByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnDurationDetailByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnDurationDetailByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnDurationAll($body)
+    {
+        $query["Action"] = "DescribeImageXCdnDurationAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnDurationAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnDurationAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnReuseRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXCdnReuseRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnReuseRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnReuseRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnReuseRateAll($body)
+    {
+        $query["Action"] = "DescribeImageXCdnReuseRateAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnReuseRateAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnReuseRateAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXCdnProtocolRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXCdnProtocolRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXCdnProtocolRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXCdnProtocolRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientErrorCodeAll($body)
+    {
+        $query["Action"] = "DescribeImageXClientErrorCodeAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientErrorCodeAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientErrorCodeAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientErrorCodeByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientErrorCodeByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientErrorCodeByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientErrorCodeByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientDecodeSuccessRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientDecodeSuccessRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientDecodeSuccessRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientDecodeSuccessRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientDecodeDurationByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientDecodeDurationByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientDecodeDurationByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientDecodeDurationByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientQueueDurationByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientQueueDurationByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientQueueDurationByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientQueueDurationByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientLoadDurationAll($body)
+    {
+        $query["Action"] = "DescribeImageXClientLoadDurationAll";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientLoadDurationAll', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientLoadDurationAll: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientLoadDuration($body)
+    {
+        $query["Action"] = "DescribeImageXClientLoadDuration";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientLoadDuration', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientLoadDuration: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientFailureRate($body)
+    {
+        $query["Action"] = "DescribeImageXClientFailureRate";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientFailureRate', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientFailureRate: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientSdkVerByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientSdkVerByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientSdkVerByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientSdkVerByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientFileSize($body)
+    {
+        $query["Action"] = "DescribeImageXClientFileSize";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientFileSize', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientFileSize: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientTopFileSize($body)
+    {
+        $query["Action"] = "DescribeImageXClientTopFileSize";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientTopFileSize', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientTopFileSize: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientCountByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientCountByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientCountByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientCountByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientScoreByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientScoreByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientScoreByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientScoreByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientDemotionRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientDemotionRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientDemotionRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientDemotionRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientTopDemotionURL($body)
+    {
+        $query["Action"] = "DescribeImageXClientTopDemotionURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientTopDemotionURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientTopDemotionURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientQualityRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXClientQualityRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientQualityRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientQualityRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXClientTopQualityURL($body)
+    {
+        $query["Action"] = "DescribeImageXClientTopQualityURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXClientTopQualityURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXClientTopQualityURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleCountByTime($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleCountByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleCountByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleCountByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleCacheHitRateByTime($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleCacheHitRateByTime";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleCacheHitRateByTime', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleCacheHitRateByTime: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleTopSizeURL($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleTopSizeURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleTopSizeURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleTopSizeURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleTopRamURL($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleTopRamURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleTopRamURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleTopRamURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleTopResolutionURL($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleTopResolutionURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleTopResolutionURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleTopResolutionURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
+
+    /**
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageXSensibleTopUnknownURL($body)
+    {
+        $query["Action"] = "DescribeImageXSensibleTopUnknownURL";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DescribeImageXSensibleTopUnknownURL', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageXSensibleTopUnknownURL: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
 }

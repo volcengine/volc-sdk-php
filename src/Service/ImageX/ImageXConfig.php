@@ -4,7 +4,7 @@ namespace Volc\Service\ImageX;
 
 class ImageXConfig
 {
-    const region = [
+    public static $region = [
         'cn-north-1' => [
             'host' => 'https://imagex.volcengineapi.com',
             'config' => [
@@ -46,7 +46,7 @@ class ImageXConfig
         ],
     ];
 
-    const apiList = [
+    public static $apiList = [
         'GetImageServiceSubscription' => [
             'method' => 'get',
             'url' => '/',
@@ -600,3 +600,5 @@ class ImageXConfig
         ],
     ];
 }
+
+require_once "configgen.php";

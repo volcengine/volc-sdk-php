@@ -2,7 +2,6 @@
 include_once(__DIR__ . '/../../../vendor/autoload.php');
 
 use Volc\Service\ImageX;
-use Volc\Service\ImageX\ImageXData;
 
 $client = ImageX::getInstance();
 
@@ -10,13 +9,11 @@ $client = ImageX::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-ImageXData::AddDataModule($client);
-
 $body = [
     'StartTime' => "2023-01-21T00:00:00+08:00",
     'EndTime' => "2023-01-28T00:00:00+08:00",
     'AggregateCode' => "false",
 ];
 
-$response = ImageXData::describeImageXMirrorRequestHttpCodeOverview($client, $body);
+$response = $client->describeImageXMirrorRequestHttpCodeOverview($body);
 print_r($response);
