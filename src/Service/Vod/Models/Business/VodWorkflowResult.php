@@ -18,6 +18,10 @@ class VodWorkflowResult extends \Google\Protobuf\Internal\Message
      */
     protected $DirectUrl = null;
     /**
+     * Generated from protobuf field <code>string Vid = 2;</code>
+     */
+    protected $Vid = '';
+    /**
      * Generated from protobuf field <code>string RunId = 3;</code>
      */
     protected $RunId = '';
@@ -53,6 +57,7 @@ class VodWorkflowResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Vod\Models\Business\DirectUrl $DirectUrl
+     *     @type string $Vid
      *     @type string $RunId
      *     @type string $SpaceName
      *     @type string $TemplateId
@@ -95,6 +100,28 @@ class VodWorkflowResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DirectUrl::class);
         $this->DirectUrl = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Vid = 2;</code>
+     * @return string
+     */
+    public function getVid()
+    {
+        return $this->Vid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Vid = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Vid = $var;
 
         return $this;
     }

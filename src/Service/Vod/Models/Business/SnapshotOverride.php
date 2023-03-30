@@ -31,6 +31,12 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated int32 OffsetTimeList = 3;</code>
      */
     private $OffsetTimeList;
+    /**
+     * 文件名
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     */
+    protected $FileName = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      *           截图时间, 单位ms, AIDynpost和Sprite类型不支持
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $OffsetTimeList
      *           多Dynpost类型截取时间，单位ms
+     *     @type string $FileName
+     *           文件名
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT32);
         $this->OffsetTimeList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 文件名
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->FileName;
+    }
+
+    /**
+     * 文件名
+     *
+     * Generated from protobuf field <code>string FileName = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileName = $var;
 
         return $this;
     }

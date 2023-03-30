@@ -37,6 +37,12 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.SnapshotOverride Snapshot = 4;</code>
      */
     private $Snapshot;
+    /**
+     * 增强覆盖参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EnhanceOverride Enhance = 5;</code>
+     */
+    protected $Enhance = null;
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
      *           音频转码覆盖参数
      *     @type \Volc\Service\Vod\Models\Business\SnapshotOverride[]|\Google\Protobuf\Internal\RepeatedField $Snapshot
      *           截图覆盖参数
+     *     @type \Volc\Service\Vod\Models\Business\EnhanceOverride $Enhance
+     *           增强覆盖参数
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,42 @@ class OverrideParams extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\SnapshotOverride::class);
         $this->Snapshot = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 增强覆盖参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EnhanceOverride Enhance = 5;</code>
+     * @return \Volc\Service\Vod\Models\Business\EnhanceOverride|null
+     */
+    public function getEnhance()
+    {
+        return $this->Enhance;
+    }
+
+    public function hasEnhance()
+    {
+        return isset($this->Enhance);
+    }
+
+    public function clearEnhance()
+    {
+        unset($this->Enhance);
+    }
+
+    /**
+     * 增强覆盖参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EnhanceOverride Enhance = 5;</code>
+     * @param \Volc\Service\Vod\Models\Business\EnhanceOverride $var
+     * @return $this
+     */
+    public function setEnhance($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\EnhanceOverride::class);
+        $this->Enhance = $var;
 
         return $this;
     }
