@@ -598,6 +598,16 @@ class ImageXConfig
                 ],
             ],
         ],
+        'DescribeImageVolcCdnAccessLog' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeImageVolcCdnAccessLog',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
     ];
 }
 

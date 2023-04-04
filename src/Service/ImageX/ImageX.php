@@ -1576,4 +1576,20 @@ class ImageX extends V4Curl
         }
         return $responseBody["Result"];
     }
+
+    /**
+     * @param $query array
+     * @param $body array
+     * @return array
+     * @throws Exception
+     */
+    public function describeImageVolcCdnAccessLog($query, $body)
+    {
+        $response = $this->request('DescribeImageVolcCdnAccessLog', ['query' => $query, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("DescribeImageVolcCdnAccessLog: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
+        }
+        return $responseBody["Result"];
+    }
 }
