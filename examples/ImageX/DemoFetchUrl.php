@@ -18,7 +18,7 @@ $req = [
 $response = $client->fetchImageUrl($req);
 print_r($response);
 
-if (is_string($response) || isset($response['TaskId'])) {
+if (is_string($response) || !isset($response['TaskId'])) {
     exit();
 }
 
