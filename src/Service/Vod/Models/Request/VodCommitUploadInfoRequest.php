@@ -37,6 +37,12 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Functions = 4;</code>
      */
     protected $Functions = '';
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 5;</code>
+     */
+    protected $VodUploadSource = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *           业务希望上传透传的信息，会在上传成功时返回给用户 
      *     @type string $Functions
      *           上传的功能函数 
+     *     @type string $VodUploadSource
+     *           上传中文件的来源 
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class VodCommitUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Functions = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 5;</code>
+     * @return string
+     */
+    public function getVodUploadSource()
+    {
+        return $this->VodUploadSource;
+    }
+
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVodUploadSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->VodUploadSource = $var;
 
         return $this;
     }

@@ -16,7 +16,7 @@ class VodMeasure
         }
         $pool->internalAddGeneratedFile(
             '
-¨\'
+¢*
 vod/business/vod_measure.protoVolcengine.Vod.Models.Business"<
 DescribeVodSpaceTranscodeItem
 Name (	
@@ -168,7 +168,24 @@ TemplateId (	
 PageSize (
 PageNum (
 Total (Z
-WorkflowDetailData (2>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailBÀ
+WorkflowDetailData (2>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetail"Å
+DescribeVodSpaceEditDetail
+Time (	
+	OutputVid (	
+Space (	
+Codec (	
+
+Definition (	
+Duration ("Ô
+$DescribeVodSpaceEditDetailDataResult
+Region (	
+Space (	
+	StartTime (	
+EndTime (	
+PageSize (
+PageNum (
+Total (R
+EditDetailData (2:.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailBÀ
 )com.volcengine.service.vod.model.businessB
 VodMeasurePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business†ÿ  Volc\\Service\\Vod\\Models\\Business‚#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

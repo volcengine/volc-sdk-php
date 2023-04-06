@@ -33,6 +33,10 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string GetMetaMode = 5;</code>
      */
     protected $GetMetaMode = '';
+    /**
+     * Generated from protobuf field <code>string VodUploadSource = 6;</code>
+     */
+    protected $VodUploadSource = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
      *     @type string $SessionKey
      *     @type \Volc\Service\Vod\Models\Business\VodUploadFunction[]|\Google\Protobuf\Internal\RepeatedField $Functions
      *     @type string $GetMetaMode
+     *     @type string $VodUploadSource
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class CommitUploadInfoParam extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->GetMetaMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string VodUploadSource = 6;</code>
+     * @return string
+     */
+    public function getVodUploadSource()
+    {
+        return $this->VodUploadSource;
+    }
+
+    /**
+     * Generated from protobuf field <code>string VodUploadSource = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVodUploadSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->VodUploadSource = $var;
 
         return $this;
     }
