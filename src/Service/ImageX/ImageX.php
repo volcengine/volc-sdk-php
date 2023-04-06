@@ -364,15 +364,22 @@ class ImageX extends V4Curl
         return (string)$response->getBody();
     }
 
-    public function fetchImageUrl(array $params = [])
+    public function fetchImageUrl(array $json = [])
     {
-        $params["Action"] = "FetchImageUrl";
-        $params["Version"] = "2018-08-01";
-        $queryStr = http_build_query($params);
-        $response = $this->request('FetchImageUrl', ['query' => $queryStr, 'json' => $params]);
+        $response = $this->request('FetchImageUrl', ['json' => $json]);
         $responseBody = json_decode((string)$response->getBody(), true);
         if (isset($responseBody["ResponseMetadata"]["Error"])) {
             return sprintf("FetchImageUrl: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function getUrlFetchTask(array $query)
+    {
+        $response = $this->request('GetUrlFetchTask', ['query' => $query]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("GetUrlFetchTask: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
         }
         return $responseBody["Result"];
     }

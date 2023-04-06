@@ -407,6 +407,16 @@ class ImageXConfig
                 ],
             ],
         ],
+        'GetUrlFetchTask' => [
+            'method' => 'get',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetUrlFetchTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
         'UpdateServiceName' => [
             'method' => 'post',
             'url' => '/',

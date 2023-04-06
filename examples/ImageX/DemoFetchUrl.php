@@ -12,7 +12,19 @@ $client->setSecretKey("sk");
 $req = [
     'Url' => 'image url',
     'ServiceId' => 'imagex service id',
+//    'Async' => true,
 ];
 
 $response = $client->fetchImageUrl($req);
 print_r($response);
+
+if (is_string($response) || isset($response['TaskId'])) {
+    exit();
+}
+
+$req2 = [
+    'Id' => $response['TaskId'],
+];
+
+$response2 = $client->getUrlFetchTask($req2);
+print_r($response2);
