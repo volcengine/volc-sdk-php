@@ -55,6 +55,12 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileExtension = 7;</code>
      */
     protected $FileExtension = '';
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 8;</code>
+     */
+    protected $VodUploadSource = '';
 
     /**
      * Constructor.
@@ -76,6 +82,8 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
      *     @type string $FileExtension
      *           上传中文件的文件后缀 
+     *     @type string $VodUploadSource
+     *           上传中文件的来源 
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +269,32 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileExtension = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 8;</code>
+     * @return string
+     */
+    public function getVodUploadSource()
+    {
+        return $this->VodUploadSource;
+    }
+
+    /**
+     * 上传中文件的来源 
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVodUploadSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->VodUploadSource = $var;
 
         return $this;
     }

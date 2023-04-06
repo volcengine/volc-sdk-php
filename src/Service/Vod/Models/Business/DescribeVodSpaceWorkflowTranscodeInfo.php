@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * 点播工作流用量明细
+ *
  * Generated from protobuf message <code>Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowTranscodeInfo</code>
  */
 class DescribeVodSpaceWorkflowTranscodeInfo extends \Google\Protobuf\Internal\Message

@@ -712,7 +712,16 @@ class VodOption
                 ],
             ]
         ],
-
+        'DescribeVodSpaceEditDetailData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceEditDetailData',
+                    'Version' => '2022-12-01',
+                ],
+            ]
+        ],
     ];
 
     /**

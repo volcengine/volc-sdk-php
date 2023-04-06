@@ -142,6 +142,8 @@ use Volc\Service\Vod\Models\Request\DescribeVodSpaceDetectStatisDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSpaceDetectStatisDataResponse;
 use Volc\Service\Vod\Models\Request\DescribeVodSpaceWorkflowDetailDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSpaceWorkflowDetailDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodSpaceEditDetailDataRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodSpaceEditDetailDataResponse;
 use Volc\Service\Vod\Models\Request\DescribeVodSnapshotDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSnapshotDataResponse;
 
@@ -2548,6 +2550,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new DescribeVodSpaceWorkflowDetailDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodSpaceEditDetailData.
+     *
+     * @param $req DescribeVodSpaceEditDetailDataRequest
+     * @return DescribeVodSpaceEditDetailDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodSpaceEditDetailData (DescribeVodSpaceEditDetailDataRequest $req): DescribeVodSpaceEditDetailDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodSpaceEditDetailData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodSpaceEditDetailDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

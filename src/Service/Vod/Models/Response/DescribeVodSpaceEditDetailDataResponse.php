@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * 工作流明细用量
+ * 点播编辑明细用量
  *
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.DescribeVodSpaceWorkflowDetailDataResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.DescribeVodSpaceEditDetailDataResponse</code>
  */
-class DescribeVodSpaceWorkflowDetailDataResponse extends \Google\Protobuf\Internal\Message
+class DescribeVodSpaceEditDetailDataResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailDataResult Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -31,7 +31,7 @@ class DescribeVodSpaceWorkflowDetailDataResponse extends \Google\Protobuf\Intern
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceWorkflowDetailDataResult $Result
+     *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceEditDetailDataResult $Result
      * }
      */
     public function __construct($data = NULL) {
@@ -72,8 +72,8 @@ class DescribeVodSpaceWorkflowDetailDataResponse extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailDataResult Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\DescribeVodSpaceWorkflowDetailDataResult|null
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\DescribeVodSpaceEditDetailDataResult|null
      */
     public function getResult()
     {
@@ -91,13 +91,13 @@ class DescribeVodSpaceWorkflowDetailDataResponse extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailDataResult Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceWorkflowDetailDataResult $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceEditDetailDataResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DescribeVodSpaceWorkflowDetailDataResult::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DescribeVodSpaceEditDetailDataResult::class);
         $this->Result = $var;
 
         return $this;
