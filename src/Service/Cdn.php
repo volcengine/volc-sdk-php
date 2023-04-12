@@ -512,6 +512,18 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #查询计费结果数据: 
+        'DescribeAccountingSummary' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeAccountingSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
 
 ];
 
@@ -884,6 +896,14 @@ class Cdn extends V4Curl
             $data = new \ArrayObject();
         }
         return $this->requestWithRetry("BatchDeployCert", ['json' => $data]);
+    }
+
+    public function describeAccountingSummary(array $data = []): string
+    {
+        if (empty($data)) {
+            $data = new \ArrayObject();
+        }
+        return $this->requestWithRetry("DescribeAccountingSummary", ['json' => $data]);
     }
 
 }
