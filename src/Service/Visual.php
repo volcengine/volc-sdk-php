@@ -11,7 +11,7 @@ class Visual extends V4Curl
         return [
             'host' => 'https://visual.volcengineapi.com',
             'config' => [
-                'timeout' => 10.0,
+                'timeout' => 60.0,
                 'headers' => [
                     'Accept' => 'application/json'
                 ],
@@ -59,6 +59,54 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
+    public function TGameCartoon(array $query = [])
+    {
+        $response = $this->request('TGameCartoon', $query);
+        return $response->getBody();
+    }
+
+    public function AllAgeGeneration(array $query = [])
+    {
+        $response = $this->request('AllAgeGeneration', $query);
+        return $response->getBody();
+    }
+
+    public function FaceFusionMovieSubmitTask(array $query = [])
+    {
+        $response = $this->request('FaceFusionMovieSubmitTask', $query);
+        return $response->getBody();
+    }
+
+    public function FaceFusionMovieGetResult(array $query = [])
+    {
+        $response = $this->request('FaceFusionMovieGetResult', $query);
+        return $response->getBody();
+    }
+
+    public function FaceFusionMovieSync(array $query = [])
+    {
+        $response = $this->request('FaceFusionMovieSync', $query);
+        return $response->getBody();
+    }
+
+    public function T2ILDM(array $query = [])
+    {
+        $response = $this->request('T2ILDM', $query);
+        return $response->getBody();
+    }
+
+    public function Img2ImgStyle(array $query = [])
+    {
+        $response = $this->request('Img2ImgStyle', $query);
+        return $response->getBody();
+    }
+    
+    public function Img2ImgAnime(array $query = [])
+    {
+        $response = $this->request('Img2ImgAnime', $query);
+        return $response->getBody();
+    }
+    
     public function OCRNormal(array $query = [])
     {
         $response = $this->request('OCRNormal', $query);
@@ -161,6 +209,108 @@ class Visual extends V4Curl
                 ],
             ],
         ],
+        'TGameCartoon' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => '3DGameCartoon',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'AllAgeGeneration' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AllAgeGeneration',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'FaceFusionMovieSubmitTask' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceFusionMovieSubmitTask',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'FaceFusionMovieGetResult' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceFusionMovieGetResult',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'FaceFusionMovieSync' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceFusionMovie',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'T2ILDM' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'T2ILDM',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'Img2ImgStyle' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgStyle',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'Img2ImgAnime' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgAnime',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+
         'OCRNormal' => [
             'url' => '/',
             'method' => 'post',
