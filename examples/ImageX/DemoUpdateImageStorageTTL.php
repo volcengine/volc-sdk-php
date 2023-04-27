@@ -10,9 +10,8 @@ $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
 $params = array();
-$params["ServiceId"] = "xx";
-$params["StoreUri"] = "xx";
-$params["Scene"] = "license";
+$params["ServiceId"] = "service id";
+$params["TTL"] = 0;
 
-$response = $client->getImageOCRV2($params);
+$response = $client->updateImageStorageTTL($params);
 print_r($response);

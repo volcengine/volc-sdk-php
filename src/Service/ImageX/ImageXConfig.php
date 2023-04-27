@@ -427,12 +427,22 @@ class ImageXConfig
                 ],
             ],
         ],
-        'GetImageOCR' => [
+        'UpdateImageStorageTTL' => [
             'method' => 'post',
             'url' => '/',
             'config' => [
                 'query' => [
-                    'Action' => 'GetImageOCR',
+                    'Action' => 'UpdateImageStorageTTL',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetImageOCRV2' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageOCRV2',
                     'Version' => '2018-08-01',
                 ],
             ],
@@ -483,6 +493,16 @@ class ImageXConfig
             'config' => [
                 'query' => [
                     'Action' => 'GetImageDuplicateDetection',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetDedupTaskStatus' => [
+            'method' => 'get',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetDedupTaskStatus',
                     'Version' => '2018-08-01',
                 ],
             ],

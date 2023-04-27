@@ -398,15 +398,28 @@ class ImageX extends V4Curl
         return $responseBody["Result"];
     }
 
-    public function getImageOCR(array $params = [])
+    public function updateImageStorageTTL(array $params = [])
     {
-        $params["Action"] = "GetImageOCR";
+        $params["Action"] = "UpdateImageStorageTTL";
         $params["Version"] = "2018-08-01";
         $queryStr = http_build_query($params);
-        $response = $this->request('GetImageOCR', ['query' => $queryStr]);
+        $response = $this->request('UpdateImageStorageTTL', ['query' => $queryStr, 'json' => $params]);
         $ocrResponse = json_decode((string)$response->getBody(), true);
         if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
             return sprintf("getImageOCR: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $ocrResponse["Result"];
+    }
+
+    public function getImageOCRV2(array $params = [])
+    {
+        $params["Action"] = "GetImageOCRV2";
+        $params["Version"] = "2018-08-01";
+        $queryStr = http_build_query($params);
+        $response = $this->request('GetImageOCRV2', ['query' => $queryStr, 'json' => $params]);
+        $ocrResponse = json_decode((string)$response->getBody(), true);
+        if (isset($ocrResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("GetImageOCRV2: request id %s error %s", $ocrResponse["ResponseMetadata"]["RequestId"], $ocrResponse["ResponseMetadata"]["Error"]["Message"]);
         }
         return $ocrResponse["Result"];
     }
@@ -446,6 +459,32 @@ class ImageX extends V4Curl
         $segmentResponse = json_decode((string)$response->getBody(), true);
         if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
             return sprintf("updateRefer: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $segmentResponse["Result"];
+    }
+
+    public function getImageDuplicateDetection(array $body = [])
+    {
+        $body["Action"] = "GetImageDuplicateDetection";
+        $body["Version"] = "2018-08-01";
+        $queryStr = http_build_query($body);
+        $response = $this->request('GetImageDuplicateDetection', ['query' => $queryStr, 'json' => $body]);
+        $segmentResponse = json_decode((string)$response->getBody(), true);
+        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("GetImageDuplicateDetection: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $segmentResponse["Result"];
+    }
+
+    public function getImageDuplicateDetectionTaskStatus(array $query = [])
+    {
+        $query["Action"] = "GetDedupTaskStatus";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetDedupTaskStatus', ['query' => $queryStr]);
+        $segmentResponse = json_decode((string)$response->getBody(), true);
+        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
+            return sprintf("GetDedupTaskStatus: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
         }
         return $segmentResponse["Result"];
     }
