@@ -1,7 +1,7 @@
 {
     "name": "volcengine/volc-sdk-php",
     "type": "library",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "authors": [
       {
         "name": "bytedance"
