@@ -61,6 +61,24 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string Urls = 8;</code>
      */
     private $Urls;
+    /**
+     *大量截图结果文件uri
+     *
+     * Generated from protobuf field <code>string LargeSnapshotUri = 9;</code>
+     */
+    protected $LargeSnapshotUri = '';
+    /**
+     *大量截图结果文件下载地址
+     *
+     * Generated from protobuf field <code>string LargeSnapshotDownloadUrl = 10;</code>
+     */
+    protected $LargeSnapshotDownloadUrl = '';
+    /**
+     *大量截图结果处理模版
+     *
+     * Generated from protobuf field <code>string LargeSnapshotFillType = 11;</code>
+     */
+    protected $LargeSnapshotFillType = '';
 
     /**
      * Constructor.
@@ -84,6 +102,12 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
      *          视频时长
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $Urls
      *          图片地址列表
+     *     @type string $LargeSnapshotUri
+     *          大量截图结果文件uri
+     *     @type string $LargeSnapshotDownloadUrl
+     *          大量截图结果文件下载地址
+     *     @type string $LargeSnapshotFillType
+     *          大量截图结果处理模版
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +319,84 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->Urls = $arr;
+
+        return $this;
+    }
+
+    /**
+     *大量截图结果文件uri
+     *
+     * Generated from protobuf field <code>string LargeSnapshotUri = 9;</code>
+     * @return string
+     */
+    public function getLargeSnapshotUri()
+    {
+        return $this->LargeSnapshotUri;
+    }
+
+    /**
+     *大量截图结果文件uri
+     *
+     * Generated from protobuf field <code>string LargeSnapshotUri = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLargeSnapshotUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->LargeSnapshotUri = $var;
+
+        return $this;
+    }
+
+    /**
+     *大量截图结果文件下载地址
+     *
+     * Generated from protobuf field <code>string LargeSnapshotDownloadUrl = 10;</code>
+     * @return string
+     */
+    public function getLargeSnapshotDownloadUrl()
+    {
+        return $this->LargeSnapshotDownloadUrl;
+    }
+
+    /**
+     *大量截图结果文件下载地址
+     *
+     * Generated from protobuf field <code>string LargeSnapshotDownloadUrl = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLargeSnapshotDownloadUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->LargeSnapshotDownloadUrl = $var;
+
+        return $this;
+    }
+
+    /**
+     *大量截图结果处理模版
+     *
+     * Generated from protobuf field <code>string LargeSnapshotFillType = 11;</code>
+     * @return string
+     */
+    public function getLargeSnapshotFillType()
+    {
+        return $this->LargeSnapshotFillType;
+    }
+
+    /**
+     *大量截图结果处理模版
+     *
+     * Generated from protobuf field <code>string LargeSnapshotFillType = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLargeSnapshotFillType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->LargeSnapshotFillType = $var;
 
         return $this;
     }

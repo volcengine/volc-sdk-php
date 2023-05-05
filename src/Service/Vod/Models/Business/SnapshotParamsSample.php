@@ -41,6 +41,10 @@ class SnapshotParamsSample extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float Duration = 7;</code>
      */
     protected $Duration = 0.0;
+    /**
+     * Generated from protobuf field <code>string IndexUri = 8;</code>
+     */
+    protected $IndexUri = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class SnapshotParamsSample extends \Google\Protobuf\Internal\Message
      *     @type float $Interval
      *     @type int $CaptureNum
      *     @type float $Duration
+     *     @type string $IndexUri
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class SnapshotParamsSample extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->Duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string IndexUri = 8;</code>
+     * @return string
+     */
+    public function getIndexUri()
+    {
+        return $this->IndexUri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string IndexUri = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIndexUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->IndexUri = $var;
 
         return $this;
     }

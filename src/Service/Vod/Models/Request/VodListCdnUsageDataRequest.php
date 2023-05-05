@@ -49,6 +49,10 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Metric = 6;</code>
      */
     protected $Metric = '';
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 7;</code>
+     */
+    protected $NeedDetail = false;
 
     /**
      * Constructor.
@@ -68,6 +72,7 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
      *           统计数据类别 
      *     @type string $Metric
      *           指标类别 
+     *     @type bool $NeedDetail
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +232,28 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Metric = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 7;</code>
+     * @return bool
+     */
+    public function getNeedDetail()
+    {
+        return $this->NeedDetail;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNeedDetail($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->NeedDetail = $var;
 
         return $this;
     }
