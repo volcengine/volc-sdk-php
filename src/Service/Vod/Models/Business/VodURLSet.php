@@ -61,6 +61,12 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodSourceInfo SourceInfo = 8;</code>
      */
     protected $SourceInfo = null;
+    /**
+     * 用户透传信息 
+     *
+     * Generated from protobuf field <code>string CallbackArgs = 9;</code>
+     */
+    protected $CallbackArgs = '';
 
     /**
      * Constructor.
@@ -84,6 +90,8 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
      *           用户账号的 Id 
      *     @type \Volc\Service\Vod\Models\Business\VodSourceInfo $SourceInfo
      *           视频的元信息 
+     *     @type string $CallbackArgs
+     *           用户透传信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -305,6 +313,32 @@ class VodURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodSourceInfo::class);
         $this->SourceInfo = $var;
+
+        return $this;
+    }
+
+    /**
+     * 用户透传信息 
+     *
+     * Generated from protobuf field <code>string CallbackArgs = 9;</code>
+     * @return string
+     */
+    public function getCallbackArgs()
+    {
+        return $this->CallbackArgs;
+    }
+
+    /**
+     * 用户透传信息 
+     *
+     * Generated from protobuf field <code>string CallbackArgs = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCallbackArgs($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->CallbackArgs = $var;
 
         return $this;
     }

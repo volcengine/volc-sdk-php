@@ -73,6 +73,12 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TosStorageClass = 10;</code>
      */
     protected $TosStorageClass = '';
+    /**
+     * 音视频来源
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 11;</code>
+     */
+    protected $VodUploadSource = '';
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *          分类串
      *     @type string $TosStorageClass
      *           Tos存储类型:STANDARD, ARCHIVE
+     *     @type string $VodUploadSource
+     *           音视频来源
      * }
      */
     public function __construct($data = NULL) {
@@ -373,6 +381,32 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     * 音视频来源
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 11;</code>
+     * @return string
+     */
+    public function getVodUploadSource()
+    {
+        return $this->VodUploadSource;
+    }
+
+    /**
+     * 音视频来源
+     *
+     * Generated from protobuf field <code>string VodUploadSource = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVodUploadSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->VodUploadSource = $var;
 
         return $this;
     }

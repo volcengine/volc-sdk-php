@@ -14,6 +14,8 @@ $request->setSpaceName("your SpaceName");
 $urlSet = new Volc\Service\Vod\Models\Business\VodUrlUploadURLSet();
 $urlSet->setSourceUrl("");
 $urlSet->setStorageClass(0);
+$urlSet->setFileExtension(".mp4");
+$urlSet->setCallbackArgs("");
 $request->setURLSets([$urlSet]);
 
 

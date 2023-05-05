@@ -43,6 +43,10 @@ class VodListCdnPvDataRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string DataType = 5;</code>
      */
     protected $DataType = '';
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 6;</code>
+     */
+    protected $NeedDetail = false;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class VodListCdnPvDataRequest extends \Google\Protobuf\Internal\Message
      *           查询范围截止时间 
      *     @type string $DataType
      *           统计数据类别, 可选edge-边缘数据,origin-回源数据 
+     *     @type bool $NeedDetail
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +198,28 @@ class VodListCdnPvDataRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->DataType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 6;</code>
+     * @return bool
+     */
+    public function getNeedDetail()
+    {
+        return $this->NeedDetail;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool NeedDetail = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNeedDetail($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->NeedDetail = $var;
 
         return $this;
     }

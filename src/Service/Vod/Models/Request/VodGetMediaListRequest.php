@@ -79,6 +79,12 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TosStorageClasses = 11;</code>
      */
     protected $TosStorageClasses = '';
+    /**
+     * 音视频上传来源，多个用","隔开
+     *
+     * Generated from protobuf field <code>string VodUploadSources = 12;</code>
+     */
+    protected $VodUploadSources = '';
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
      *          分类id列表
      *     @type string $TosStorageClasses
      *           tos存储类型(Standard, Archive)，多个用","隔开
+     *     @type string $VodUploadSources
+     *           音视频上传来源，多个用","隔开
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodGetMediaListRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClasses = $var;
+
+        return $this;
+    }
+
+    /**
+     * 音视频上传来源，多个用","隔开
+     *
+     * Generated from protobuf field <code>string VodUploadSources = 12;</code>
+     * @return string
+     */
+    public function getVodUploadSources()
+    {
+        return $this->VodUploadSources;
+    }
+
+    /**
+     * 音视频上传来源，多个用","隔开
+     *
+     * Generated from protobuf field <code>string VodUploadSources = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVodUploadSources($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->VodUploadSources = $var;
 
         return $this;
     }
