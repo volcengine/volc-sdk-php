@@ -617,6 +617,16 @@ class ImageXConfig
                 ],
             ],
         ],
+        'GetImageStyleResult' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageStyleResult',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
 
         'UpdateImageDomainIPAuth' => [
             'method' => 'post',
