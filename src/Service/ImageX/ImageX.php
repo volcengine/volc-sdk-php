@@ -426,15 +426,31 @@ class ImageX extends V4Curl
 
     public function getSegmentImage(array $params = [])
     {
-        $params["Action"] = "GetSegmentImage";
-        $params["Version"] = "2018-08-01";
-        $queryStr = http_build_query($params);
+        $query = [
+          "ServiceId" => $params["ServiceId"],
+        ];
+        $query["Action"] = "GetSegmentImage";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
         $response = $this->request('GetSegmentImage', ['query' => $queryStr, 'json' => $params]);
-        $segmentResponse = json_decode((string)$response->getBody(), true);
-        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
-            return sprintf("getSegmentImage: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("getSegmentImage: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
         }
-        return $segmentResponse["Result"];
+        return $responseBody["Result"];
+    }
+
+    public function getImageStyleResult(array $query = [], array $body = [])
+    {
+        $query["Action"] = "GetImageStyleResult";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageStyleResult', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("GetImageStyleResult: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
     }
 
     public function updateImageDomainIPAuth(array $query = [], array $body = [])
@@ -443,11 +459,11 @@ class ImageX extends V4Curl
         $query["Version"] = "2018-08-01";
         $queryStr = http_build_query($query);
         $response = $this->request('UpdateImageDomainIPAuth', ['query' => $queryStr, 'json' => $body]);
-        $segmentResponse = json_decode((string)$response->getBody(), true);
-        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
-            return sprintf("updateImageDomainIPAuth: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("UpdateImageDomainIPAuth: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]));
         }
-        return $segmentResponse["Result"];
+        return $responseBody["Result"];
     }
 
     public function updateRefer(array $query = [], array $body = [])
@@ -456,11 +472,11 @@ class ImageX extends V4Curl
         $query["Version"] = "2018-08-01";
         $queryStr = http_build_query($query);
         $response = $this->request('UpdateRefer', ['query' => $queryStr, 'json' => $body]);
-        $segmentResponse = json_decode((string)$response->getBody(), true);
-        if (isset($segmentResponse["ResponseMetadata"]["Error"])) {
-            return sprintf("updateRefer: request id %s error %s", $segmentResponse["ResponseMetadata"]["RequestId"], $segmentResponse["ResponseMetadata"]["Error"]["Message"]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("updateRefer: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
         }
-        return $segmentResponse["Result"];
+        return $responseBody["Result"];
     }
 
     public function getImageDuplicateDetection(array $body = [])
