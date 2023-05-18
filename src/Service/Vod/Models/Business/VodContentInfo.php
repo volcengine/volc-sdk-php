@@ -49,6 +49,12 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TaskId = 6;</code>
      */
     protected $TaskId = '';
+    /**
+     *任务信息
+     *
+     * Generated from protobuf field <code>string Message = 7;</code>
+     */
+    protected $Message = '';
 
     /**
      * Constructor.
@@ -68,6 +74,8 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
      *          任务创建时间，单位：Unix秒级时间戳
      *     @type string $TaskId
      *          任务ID
+     *     @type string $Message
+     *          任务信息
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +235,32 @@ class VodContentInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TaskId = $var;
+
+        return $this;
+    }
+
+    /**
+     *任务信息
+     *
+     * Generated from protobuf field <code>string Message = 7;</code>
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
+    }
+
+    /**
+     *任务信息
+     *
+     * Generated from protobuf field <code>string Message = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Message = $var;
 
         return $this;
     }

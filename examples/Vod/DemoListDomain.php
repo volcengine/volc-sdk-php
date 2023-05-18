@@ -10,6 +10,9 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodListDomainRequest();
 $request->setSpaceName("your SpaceName");
+$request->setDomainType("your DomainType");
+$request->setSourceStationType(0);
+$request->setOffset(0);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodListDomainResponse();

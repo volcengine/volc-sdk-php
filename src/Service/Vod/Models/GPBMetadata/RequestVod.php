@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¶U
+ÖV
 vod/request/request_vod.protoVolcengine.Vod.Models.Requestvod/business/vod_workflow.protovod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -322,9 +322,13 @@ $VodGetWorkflowExecutionStatusRequest
 	StartTime (	
 EndTime (	
 Aggregation (
-Type (	")
+Type (	"h
 VodListDomainRequest
-	SpaceName (	"O
+	SpaceName (	
+
+DomainType (	
+SourceStationType (
+Offset ("O
 VodCreateCdnRefreshTaskRequest
 	SpaceName (	
 Urls (	
@@ -524,7 +528,12 @@ DetectType (	
 	StartTime (	
 EndTime (	
 PageSize (
-PageNum ("A
+PageNum ("_
+%DescribeVodPlayFileLogByDomainRequest
+	StartTime (	
+EndTime (	
+
+DomainList (	"A
 VodSubmitBlockMediaTaskRequest
 	SpaceName (	
 Vids (	"C
