@@ -23,6 +23,18 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string SpaceName = 1;</code>
      */
     protected $SpaceName = '';
+    /**
+     * Generated from protobuf field <code>string DomainType = 2;</code>
+     */
+    protected $DomainType = '';
+    /**
+     * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
+     */
+    protected $SourceStationType = 0;
+    /**
+     * Generated from protobuf field <code>int64 Offset = 4;</code>
+     */
+    protected $Offset = 0;
 
     /**
      * Constructor.
@@ -32,6 +44,9 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $SpaceName
      *           空间名 
+     *     @type string $DomainType
+     *     @type int $SourceStationType
+     *     @type int|string $Offset
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +76,72 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->SpaceName = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string DomainType = 2;</code>
+     * @return string
+     */
+    public function getDomainType()
+    {
+        return $this->DomainType;
+    }
+
+    /**
+     * Generated from protobuf field <code>string DomainType = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDomainType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DomainType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
+     * @return int
+     */
+    public function getSourceStationType()
+    {
+        return $this->SourceStationType;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSourceStationType($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->SourceStationType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 Offset = 4;</code>
+     * @return int|string
+     */
+    public function getOffset()
+    {
+        return $this->Offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 Offset = 4;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->Offset = $var;
 
         return $this;
     }

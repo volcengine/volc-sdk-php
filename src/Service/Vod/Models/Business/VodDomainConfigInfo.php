@@ -37,6 +37,18 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string DefaultPlayDomain = 4;</code>
      */
     protected $DefaultPlayDomain = '';
+    /**
+     *符合要求的域名总数
+     *
+     * Generated from protobuf field <code>int64 Total = 5;</code>
+     */
+    protected $Total = 0;
+    /**
+     *已显示多少条域名
+     *
+     * Generated from protobuf field <code>int64 Offset = 6;</code>
+     */
+    protected $Offset = 0;
 
     /**
      * Constructor.
@@ -52,6 +64,10 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
      *           图片分发加速配置
      *     @type string $DefaultPlayDomain
      *          默认播放域名
+     *     @type int|string $Total
+     *          符合要求的域名总数
+     *     @type int|string $Offset
+     *          已显示多少条域名
      * }
      */
     public function __construct($data = NULL) {
@@ -179,6 +195,58 @@ class VodDomainConfigInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->DefaultPlayDomain = $var;
+
+        return $this;
+    }
+
+    /**
+     *符合要求的域名总数
+     *
+     * Generated from protobuf field <code>int64 Total = 5;</code>
+     * @return int|string
+     */
+    public function getTotal()
+    {
+        return $this->Total;
+    }
+
+    /**
+     *符合要求的域名总数
+     *
+     * Generated from protobuf field <code>int64 Total = 5;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->Total = $var;
+
+        return $this;
+    }
+
+    /**
+     *已显示多少条域名
+     *
+     * Generated from protobuf field <code>int64 Offset = 6;</code>
+     * @return int|string
+     */
+    public function getOffset()
+    {
+        return $this->Offset;
+    }
+
+    /**
+     *已显示多少条域名
+     *
+     * Generated from protobuf field <code>int64 Offset = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->Offset = $var;
 
         return $this;
     }
