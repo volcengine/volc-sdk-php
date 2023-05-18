@@ -112,6 +112,16 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'ImageContentRiskV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageContentRiskV2',
+                    'Version' => '2021-11-29',
+                ],
+            ]
+        ],
         'AsyncImageRisk' => [
             'url' => '/',
             'method' => 'post',
@@ -382,6 +392,18 @@ class BusinessSecurity extends V4Curl
             "json" => $commitBody
         ];
         return $this->requestWithRetry("ImageContentRisk", $commitReq);
+    }
+
+    public function ImageContentRiskV2(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("ImageContentRiskV2", $commitReq);
     }
 
     public function AsyncImageRisk(int $appId, string $service, string $parameters): string
