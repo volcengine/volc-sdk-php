@@ -2,12 +2,12 @@
 
 
 
-use Volc\Service\Notify;
+use Volc\Service\Vms\Vms;
 
 require('../../../vendor/autoload.php');
-require('../../src/Service/Notify.php');
+require('../../../src/Service/Vms/Vms.php');
 
-$client = Notify::getInstance();
+$client = Vms::getInstance();
 $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 

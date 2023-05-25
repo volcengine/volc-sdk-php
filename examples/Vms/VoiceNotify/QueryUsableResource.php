@@ -6,12 +6,9 @@ require('../../../vendor/autoload.php');
 require('../../../src/Service/Vms/Vms.php');
 
 $client = Vms::getInstance();
-$client->setAccessKey("your ak");
-$client->setSecretKey("your sk");
+$client->setAccessKey("");
+$client->setSecretKey("");
 
-$body = [
-    'NumberPoolNo' => 'xxx',
-];
 
-$response = $client->SelectNumber($body);
+$response = $client->QueryUsableResource(0);
 echo $response;

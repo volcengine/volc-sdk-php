@@ -1,11 +1,11 @@
 <?php
 
-use Volc\Service\Vms\Risk;
+use Volc\Service\Vms\Vms;
 
 require('../../../vendor/autoload.php');
-require('../../../src/Service/Vms/Risk.php');
+require('../../../src/Service/Vms/Vms.php');
 
-$client = Risk::getInstance();
+$client = Vms::getInstance();
 $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
