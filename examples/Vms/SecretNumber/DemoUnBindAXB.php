@@ -1,10 +1,10 @@
 <?php
-use Volc\Service\Vms\SecretNumber;
+use Volc\Service\Vms\Vms;
 
 require('../../../vendor/autoload.php');
-require('../../../src/Service/Vms/SecretNumber.php');
+require('../../../src/Service/Vms/Vms.php');
 
-$client = SecretNumber::getInstance();
+$client = Vms::getInstance();
 $client->setAccessKey("");
 $client->setSecretKey("");
 

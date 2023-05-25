@@ -1,11 +1,11 @@
 <?php
 
-use Volc\Service\Vms\NumberPool;
+use Volc\Service\Vms\Vms;
 
 require('../../../vendor/autoload.php');
-require('../../../src/Service/Vms/NumberPool.php');
+require('../../../src/Service/Vms/Vms.php');
 
-$client = NumberPool::getInstance();
+$client = Vms::getInstance();
 $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 

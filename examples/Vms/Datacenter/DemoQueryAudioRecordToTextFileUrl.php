@@ -1,11 +1,11 @@
 <?php
 
-use Volc\Service\Vms\DataCenter;
+use Volc\Service\Vms\Vms;
 
 require('../../../vendor/autoload.php');
-require('../../../src/Service/Vms/DataCenter.php');
+require('../../../src/Service/Vms/Vms.php');
 
-$client = DataCenter::getInstance();
+$client = Vms::getInstance();
 $client->setAccessKey("your ak");
 $client->setSecretKey("your sk");
 
