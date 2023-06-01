@@ -233,7 +233,7 @@ class ImageX extends V4Curl
         $crc32 = sprintf("%08x", crc32($content));
         $tosClient = new Client([
             'base_uri' => "https://" . $uploadHost,
-            'timeout' => 5.0,
+            'timeout' => 30.0,
         ]);
         $response = $tosClient->request('PUT', $storeInfo["StoreUri"], ["body" => $content, "headers" => ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32]]);
         $uploadResponse = json_decode((string)$response->getBody(), true);
@@ -284,16 +284,50 @@ class ImageX extends V4Curl
             return "uploadImages: store infos num != upload num";
         }
 
+        $successOids = [];
+        $skippedCommitResult = [];
         for ($i = 0; $i < count($filePaths); ++$i) {
-            $respCode = $this->upload($uploadHost, $uploadAddr['StoreInfos'][$i], $filePaths[$i]);
-            if ($respCode != 0) {
-                return "upload " . $filePaths[$i] . " error";
+            $storeInfo = $uploadAddr['StoreInfos'][$i];
+            try {
+                $respCode = $this->upload($uploadHost, $storeInfo, $filePaths[$i]);
+                if ($respCode == 0) {
+                    // succeed
+                    $successOids[] = $storeInfo['StoreUri'];
+                    $skippedCommitResult[] = [
+                        'Uri' => $storeInfo['StoreUri'],
+                        'UriStatus' => 2000,
+                    ];
+                } else {
+                    // failed
+                    $skippedCommitResult[] = [
+                        'Uri' => $storeInfo['StoreUri'],
+                        'UriStatus' => 2001,
+                        'Error' => "upload " . $filePaths[$i] . " error",
+                    ];
+                }
+            } catch (\Exception $e) {
+                // failed
+                $skippedCommitResult[] = [
+                    'Uri' => $storeInfo['StoreUri'],
+                    'UriStatus' => 2001,
+                    'Error' => $e,
+                ];
             }
+        }
+        if (count($successOids) == 0) {
+            throw new Exception("no file uploaded");
+        }
+        if (isset($params["SkipCommit"]) && $params["SkipCommit"] === true) {
+            return json_encode(["Result" => ["Results" => $skippedCommitResult]]);
         }
 
         $commitParams = array();
         $commitParams["ServiceId"] = $params["ServiceId"];
+        if (isset($params["SkipMeta"])) {
+            $commitParams["SkipMeta"] = $params["SkipMeta"];
+        }
         $commitBody = array();
+        $commitBody["SuccessOids"] = $successOids;
         $commitBody["SessionKey"] = $uploadAddr['SessionKey'];
         if (isset($params["OptionInfos"])) {
             $commitBody["OptionInfos"] = $params["OptionInfos"];
@@ -427,7 +461,7 @@ class ImageX extends V4Curl
     public function getSegmentImage(array $params = [])
     {
         $query = [
-          "ServiceId" => $params["ServiceId"],
+            "ServiceId" => $params["ServiceId"],
         ];
         $query["Action"] = "GetSegmentImage";
         $query["Version"] = "2018-08-01";
