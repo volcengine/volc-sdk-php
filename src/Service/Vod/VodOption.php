@@ -119,7 +119,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'UpdateMediaInfo',
-                    'Version' => '2020-08-01',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],
@@ -149,7 +149,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaInfos',
-                    'Version' => '2020-08-01',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],

@@ -10,6 +10,7 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodUpdateMediaStorageClassRequest();
 $request->setVids("your Vids");
+$request->setFileIds("your FileIds");
 $request->setStorageClass("your StorageClass");
 $request->setCallbackArgs("your CallbackArgs");
 
