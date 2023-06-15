@@ -171,6 +171,9 @@ class VodUpload extends Vod
         if ($storageClass == StorageClassType::Archive) {
             $headers['X-Upload-Storage-Class'] = "archive";
         }
+        if ($storageClass == StorageClassType::IA) {
+            $headers['X-Upload-Storage-Class'] = "ia";
+        }
 
         $response = $client->put($oid, ["body" => $content, "headers" => $headers]);
         $directUploadResponse = json_decode((string)$response->getBody(), true);
@@ -232,6 +235,9 @@ class VodUpload extends Vod
         if ($storageClass == StorageClassType::Archive) {
             $headers['X-Upload-Storage-Class'] = ['archive'];
         }
+        if ($storageClass == StorageClassType::IA) {
+            $headers['X-Upload-Storage-Class'] = "ia";
+        }
         $response = $client->put($oid . '?uploads', ['headers' => $headers]);
         $initUploadResponse = json_decode((string)$response->getBody(), true);
         if (!isset($initUploadResponse["success"]) || $initUploadResponse["success"] != 0) {
@@ -250,6 +256,9 @@ class VodUpload extends Vod
         }
         if ($storageClass == StorageClassType::Archive) {
             $headers['X-Upload-Storage-Class'] = ['archive'];
+        }
+        if ($storageClass == StorageClassType::IA) {
+            $headers['X-Upload-Storage-Class'] = "ia";
         }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $data]);
         $uploadPartResponse = json_decode((string)$response->getBody(), true);
@@ -277,6 +286,9 @@ class VodUpload extends Vod
         }
         if ($storageClass == StorageClassType::Archive) {
             $headers['X-Upload-Storage-Class'] = ['archive'];
+        }
+        if ($storageClass == StorageClassType::IA) {
+            $headers['X-Upload-Storage-Class'] = "ia";
         }
 
         $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);

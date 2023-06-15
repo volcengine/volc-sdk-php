@@ -24,14 +24,24 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      */
     protected $SpaceName = '';
     /**
+     *域名类型
+     *播放域名:play
+     *封面域名:image
+     *
      * Generated from protobuf field <code>string DomainType = 2;</code>
      */
     protected $DomainType = '';
     /**
+     *源站类型
+     *回点播源站:1
+     *第三方源站:2
+     *
      * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
      */
     protected $SourceStationType = 0;
     /**
+     *跨过多少条域名
+     *
      * Generated from protobuf field <code>int64 Offset = 4;</code>
      */
     protected $Offset = 0;
@@ -45,8 +55,15 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *           空间名 
      *     @type string $DomainType
+     *          域名类型
+     *          播放域名:play
+     *          封面域名:image
      *     @type int $SourceStationType
+     *          源站类型
+     *          回点播源站:1
+     *          第三方源站:2
      *     @type int|string $Offset
+     *          跨过多少条域名
      * }
      */
     public function __construct($data = NULL) {
@@ -81,6 +98,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *域名类型
+     *播放域名:play
+     *封面域名:image
+     *
      * Generated from protobuf field <code>string DomainType = 2;</code>
      * @return string
      */
@@ -90,6 +111,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *域名类型
+     *播放域名:play
+     *封面域名:image
+     *
      * Generated from protobuf field <code>string DomainType = 2;</code>
      * @param string $var
      * @return $this
@@ -103,6 +128,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *源站类型
+     *回点播源站:1
+     *第三方源站:2
+     *
      * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
      * @return int
      */
@@ -112,6 +141,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *源站类型
+     *回点播源站:1
+     *第三方源站:2
+     *
      * Generated from protobuf field <code>int32 SourceStationType = 3;</code>
      * @param int $var
      * @return $this
@@ -125,6 +158,8 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *跨过多少条域名
+     *
      * Generated from protobuf field <code>int64 Offset = 4;</code>
      * @return int|string
      */
@@ -134,6 +169,8 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *跨过多少条域名
+     *
      * Generated from protobuf field <code>int64 Offset = 4;</code>
      * @param int|string $var
      * @return $this

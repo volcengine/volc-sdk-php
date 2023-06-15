@@ -29,11 +29,18 @@ class StorageClassType
      * Generated from protobuf enum <code>Archive = 2;</code>
      */
     const Archive = 2;
+    /**
+     * 低频存储
+     *
+     * Generated from protobuf enum <code>IA = 3;</code>
+     */
+    const IA = 3;
 
     private static $valueToName = [
         self::PBDefault => 'PBDefault',
         self::Standard => 'Standard',
         self::Archive => 'Archive',
+        self::IA => 'IA',
     ];
 
     public static function name($value)
