@@ -23,6 +23,7 @@ if (is_string($response) || !isset($response['TaskId'])) {
 }
 
 $req2 = [
+    'ServiceId' => $req['ServiceId'],
     'Id' => $response['TaskId'],
 ];
 
