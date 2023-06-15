@@ -12,7 +12,7 @@ class BusinessSecurity extends V4Curl
         switch ($region) {
             case 'cn-north-1':
                 $config = [
-                    'host' => 'https://open.volcengineapi.com',
+                    'host' => 'https://riskcontrol.volcengineapi.com',
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [
@@ -26,7 +26,7 @@ class BusinessSecurity extends V4Curl
                 ];
                 break;
             default:
-                throw new \Exception(sprintf("AdBlocker not support region, %s", $region));
+                throw new \Exception(sprintf("business security not support region, %s", $region));
         }
         return $config;
     }
@@ -279,6 +279,26 @@ class BusinessSecurity extends V4Curl
                 'query' => [
                     'Action' => 'CloseAudioLive',
                     'Version' => '2022-04-25',
+                ],
+            ]
+        ],
+        'SimpleRiskStat' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'SimpleRiskStat',
+                    'Version' => '2022-12-23',
+                ],
+            ]
+        ],
+        'ContentRiskStat' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ContentRiskStat',
+                    'Version' => '2022-12-23',
                 ],
             ]
         ],
@@ -596,5 +616,41 @@ class BusinessSecurity extends V4Curl
             "json" => $commitBody
         ];
         return $this->requestWithRetry("CloseAudioLiveRisk", $commitReq);
+    }
+
+    public function SimpleRiskStat(int $appId, string $service, string $parameters, string $product, string $unitType): string
+    {
+        $commitBody = array();
+        if ($appId != 0) {
+            $commitBody["AppId"] = $appId;
+        }
+        if ($service != "") {
+            $commitBody["Service"] = $service;
+        }
+        $commitBody["Product"] = $product;
+        $commitBody["UnitType"] = $unitType;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("SimpleRiskStat", $commitReq);
+    }
+
+    public function ContentRiskStat(int $appId, string $service, string $parameters, string $product, string $unitType): string
+    {
+        $commitBody = array();
+        if ($appId != 0) {
+            $commitBody["AppId"] = $appId;
+        }
+        if ($service != "") {
+            $commitBody["Service"] = $service;
+        }
+        $commitBody["Product"] = $product;
+        $commitBody["UnitType"] = $unitType;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "query" => $commitBody
+        ];
+        return $this->requestWithRetry("ContentRiskStat", $commitReq);
     }
 }
