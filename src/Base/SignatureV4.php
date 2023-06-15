@@ -58,6 +58,9 @@ class SignatureV4
         $sdt = substr($ldt, 0, 8);
         $parsed = $this->parseRequest($request);
         $parsed['headers']['X-Date'] = [$ldt];
+        if ($credentials['st'] != '') {
+            $parsed['headers']['X-Security-Token'] = [$credentials['st']];
+        }
 
         $cs = $this->createScope($sdt, $credentials['region'], $credentials['service']);
         $payload = $this->getPayload($request);

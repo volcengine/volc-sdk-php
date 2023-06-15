@@ -22,6 +22,7 @@ abstract class V4Curl extends Singleton
     protected $region = '';
     protected $ak = '';
     protected $sk = '';
+    protected $st = '';
     protected $version = '';
 
 
@@ -70,6 +71,13 @@ abstract class V4Curl extends Singleton
         }
     }
 
+    public function setSessionToken($st)
+    {
+        if ($st != "") {
+            $this->st = $st;
+        }
+    }
+
     protected function v4Sign()
     {
         return function (callable $handler) {
@@ -86,13 +94,18 @@ abstract class V4Curl extends Singleton
 
     private function prepareCredentials(array $credentials)
     {
+        if (!isset($credentials['st'])) {
+            $credentials['st'] = '';
+        }
         if (!isset($credentials['ak']) || !isset($credentials['sk'])) {
             if ($this->ak != "" && $this->sk != "") {
                 $credentials['ak'] = $this->ak;
                 $credentials['sk'] = $this->sk;
+                $credentials['st'] = $this->st;
             } elseif (getenv("VOLC_ACCESSKEY") != "" && getenv("VOLC_SECRETKEY") != "") {
                 $credentials['ak'] = getenv("VOLC_ACCESSKEY");
                 $credentials['sk'] = getenv("VOLC_SECRETKEY");
+                $credentials['st'] = '';
             } else {
                 $json = json_decode(file_get_contents(getenv('HOME') . '/.volc/config'), true);
                 if (is_array($json) && isset($json['ak']) && isset($json['sk'])) {
