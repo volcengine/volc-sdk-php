@@ -68,7 +68,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      */
     protected $Classification = null;
     /**
-     * Tos存储类型:STANDARD, ARCHIVE
+     * Tos存储类型:STANDARD, ARCHIVE, IA
      *
      * Generated from protobuf field <code>string TosStorageClass = 10;</code>
      */
@@ -105,7 +105,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\VodClassification $Classification
      *          分类串
      *     @type string $TosStorageClass
-     *           Tos存储类型:STANDARD, ARCHIVE
+     *           Tos存储类型:STANDARD, ARCHIVE, IA
      *     @type string $VodUploadSource
      *           音视频来源
      * }
@@ -360,7 +360,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Tos存储类型:STANDARD, ARCHIVE
+     * Tos存储类型:STANDARD, ARCHIVE, IA
      *
      * Generated from protobuf field <code>string TosStorageClass = 10;</code>
      * @return string
@@ -371,7 +371,7 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Tos存储类型:STANDARD, ARCHIVE
+     * Tos存储类型:STANDARD, ARCHIVE, IA
      *
      * Generated from protobuf field <code>string TosStorageClass = 10;</code>
      * @param string $var

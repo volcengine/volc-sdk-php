@@ -53,6 +53,30 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool NeedDetail = 7;</code>
      */
     protected $NeedDetail = false;
+    /**
+     * Generated from protobuf field <code>string Area = 8;</code>
+     */
+    protected $Area = '';
+    /**
+     * Generated from protobuf field <code>string Region = 9;</code>
+     */
+    protected $Region = '';
+    /**
+     * Generated from protobuf field <code>string Isp = 10;</code>
+     */
+    protected $Isp = '';
+    /**
+     * Generated from protobuf field <code>string Protocol = 11;</code>
+     */
+    protected $Protocol = '';
+    /**
+     * Generated from protobuf field <code>string IpVersion = 12;</code>
+     */
+    protected $IpVersion = '';
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 13;</code>
+     */
+    protected $BillingRegion = '';
 
     /**
      * Constructor.
@@ -73,6 +97,12 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Metric
      *           指标类别 
      *     @type bool $NeedDetail
+     *     @type string $Area
+     *     @type string $Region
+     *     @type string $Isp
+     *     @type string $Protocol
+     *     @type string $IpVersion
+     *     @type string $BillingRegion
      * }
      */
     public function __construct($data = NULL) {
@@ -254,6 +284,138 @@ class VodListCdnUsageDataRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->NeedDetail = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Area = 8;</code>
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->Area;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Area = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArea($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Area = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Region = 9;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->Region;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Region = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Region = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Isp = 10;</code>
+     * @return string
+     */
+    public function getIsp()
+    {
+        return $this->Isp;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Isp = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIsp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Isp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Protocol = 11;</code>
+     * @return string
+     */
+    public function getProtocol()
+    {
+        return $this->Protocol;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Protocol = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProtocol($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Protocol = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string IpVersion = 12;</code>
+     * @return string
+     */
+    public function getIpVersion()
+    {
+        return $this->IpVersion;
+    }
+
+    /**
+     * Generated from protobuf field <code>string IpVersion = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIpVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->IpVersion = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 13;</code>
+     * @return string
+     */
+    public function getBillingRegion()
+    {
+        return $this->BillingRegion;
+    }
+
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBillingRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BillingRegion = $var;
 
         return $this;
     }

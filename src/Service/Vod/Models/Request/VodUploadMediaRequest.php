@@ -61,6 +61,18 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string VodUploadSource = 8;</code>
      */
     protected $VodUploadSource = '';
+    /**
+     * 上传策略 
+     *
+     * Generated from protobuf field <code>int32 UploadStrategy = 9;</code>
+     */
+    protected $UploadStrategy = 0;
+    /**
+     * 分片并发数 
+     *
+     * Generated from protobuf field <code>int32 ParallelNum = 10;</code>
+     */
+    protected $ParallelNum = 0;
 
     /**
      * Constructor.
@@ -84,6 +96,10 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           上传中文件的文件后缀 
      *     @type string $VodUploadSource
      *           上传中文件的来源 
+     *     @type int $UploadStrategy
+     *           上传策略 
+     *     @type int $ParallelNum
+     *           分片并发数 
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +311,58 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->VodUploadSource = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传策略 
+     *
+     * Generated from protobuf field <code>int32 UploadStrategy = 9;</code>
+     * @return int
+     */
+    public function getUploadStrategy()
+    {
+        return $this->UploadStrategy;
+    }
+
+    /**
+     * 上传策略 
+     *
+     * Generated from protobuf field <code>int32 UploadStrategy = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUploadStrategy($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->UploadStrategy = $var;
+
+        return $this;
+    }
+
+    /**
+     * 分片并发数 
+     *
+     * Generated from protobuf field <code>int32 ParallelNum = 10;</code>
+     * @return int
+     */
+    public function getParallelNum()
+    {
+        return $this->ParallelNum;
+    }
+
+    /**
+     * 分片并发数 
+     *
+     * Generated from protobuf field <code>int32 ParallelNum = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParallelNum($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->ParallelNum = $var;
 
         return $this;
     }

@@ -571,7 +571,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnUsageData',
-                    'Version' => '2022-01-01',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],
