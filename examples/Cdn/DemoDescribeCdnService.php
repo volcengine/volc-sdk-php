@@ -13,3 +13,7 @@ $client->setSecretKey($config->sk);
 
 $response = $client->describeCdnService();
 var_dump($response);
+
+# use method get
+$response = $client->describeCdnService($client->useGet());
+var_dump($response);
