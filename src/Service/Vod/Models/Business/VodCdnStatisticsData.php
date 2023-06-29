@@ -29,6 +29,18 @@ class VodCdnStatisticsData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodPoint Points = 4;</code>
      */
     private $Points;
+    /**
+     * Generated from protobuf field <code>string Region = 5;</code>
+     */
+    protected $Region = '';
+    /**
+     * Generated from protobuf field <code>string Isp = 6;</code>
+     */
+    protected $Isp = '';
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 7;</code>
+     */
+    protected $BillingRegion = '';
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class VodCdnStatisticsData extends \Google\Protobuf\Internal\Message
      *     @type string $Metric
      *     @type string $DataType
      *     @type \Volc\Service\Vod\Models\Business\VodPoint[]|\Google\Protobuf\Internal\RepeatedField $Points
+     *     @type string $Region
+     *     @type string $Isp
+     *     @type string $BillingRegion
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,72 @@ class VodCdnStatisticsData extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodPoint::class);
         $this->Points = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Region = 5;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->Region;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Region = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Region = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Isp = 6;</code>
+     * @return string
+     */
+    public function getIsp()
+    {
+        return $this->Isp;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Isp = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIsp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Isp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 7;</code>
+     * @return string
+     */
+    public function getBillingRegion()
+    {
+        return $this->BillingRegion;
+    }
+
+    /**
+     * Generated from protobuf field <code>string BillingRegion = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBillingRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BillingRegion = $var;
 
         return $this;
     }

@@ -26,7 +26,7 @@ class FileBasicInfo extends \Google\Protobuf\Internal\Message
      */
     protected $Size = 0;
     /**
-     *存储类型(STANDARD/ARCHIVE)
+     *存储类型(STANDARD/ARCHIVE/IA)
      *
      * Generated from protobuf field <code>string StorageClass = 3;</code>
      */
@@ -49,7 +49,7 @@ class FileBasicInfo extends \Google\Protobuf\Internal\Message
      *     @type int|string $Size
      *          对象大小
      *     @type string $StorageClass
-     *          存储类型(STANDARD/ARCHIVE)
+     *          存储类型(STANDARD/ARCHIVE/IA)
      *     @type string $UpdatedTime
      *          最近修改时间
      * }
@@ -112,7 +112,7 @@ class FileBasicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *存储类型(STANDARD/ARCHIVE)
+     *存储类型(STANDARD/ARCHIVE/IA)
      *
      * Generated from protobuf field <code>string StorageClass = 3;</code>
      * @return string
@@ -123,7 +123,7 @@ class FileBasicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *存储类型(STANDARD/ARCHIVE)
+     *存储类型(STANDARD/ARCHIVE/IA)
      *
      * Generated from protobuf field <code>string StorageClass = 3;</code>
      * @param string $var

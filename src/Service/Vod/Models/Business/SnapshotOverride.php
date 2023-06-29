@@ -37,6 +37,12 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileName = 4;</code>
      */
     protected $FileName = '';
+    /**
+     * index文件自定义路径
+     *
+     * Generated from protobuf field <code>string FileIndex = 5;</code>
+     */
+    protected $FileIndex = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      *           多Dynpost类型截取时间，单位ms
      *     @type string $FileName
      *           文件名
+     *     @type string $FileIndex
+     *           index文件自定义路径
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     * index文件自定义路径
+     *
+     * Generated from protobuf field <code>string FileIndex = 5;</code>
+     * @return string
+     */
+    public function getFileIndex()
+    {
+        return $this->FileIndex;
+    }
+
+    /**
+     * index文件自定义路径
+     *
+     * Generated from protobuf field <code>string FileIndex = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileIndex($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->FileIndex = $var;
 
         return $this;
     }

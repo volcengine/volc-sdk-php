@@ -15,6 +15,13 @@ $request->setStartTimestamp(0);
 $request->setEndTimestamp(0);
 $request->setDataType("your DataType");
 $request->setMetric("your Metric");
+$request->setNeedDetail(false);
+$request->setArea("your Area");
+$request->setRegion("your Region");
+$request->setIsp("your Isp");
+$request->setProtocol("your Protocol");
+$request->setIpVersion("your IpVersion");
+$request->setBillingRegion("your BillingRegion");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse();
