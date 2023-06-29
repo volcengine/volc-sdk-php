@@ -25,3 +25,6 @@ $body = [
 
 $response = $client->describeCdnData($body);
 var_dump($response);
+
+$response = $client->describeCdnData($body, $client->useGet());
+var_dump($response);

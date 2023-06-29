@@ -550,360 +550,256 @@ class Cdn extends V4Curl
             ],
         ];
     }
+    public function useGet(): string
+    {
+        return 'get';
+    }
 
-    public function requestWithRetry(string $api, array $configs): string
+    public function usePost(): string
+    {
+        return 'post';
+    }
+
+    public function requestWithRetry(string $api, array $configs, string $option='post'): string
     {
         try {
-            $response = $this->request($api, $configs);
+            $flag = false;
+            if (empty($configs) && $option == $this->usePost()) {
+                $configs = new \ArrayObject();
+            }
+            $data = ["json" => $configs];
+            if ($option == 'get') {
+                $this->apiList[$api]['method'] = 'get';
+                $flag = true;
+                $data = ["query" => $configs];
+            }
+            $response = $this->request($api, $data);
+            if ($flag == true) {
+                $this->apiList[$api]['method'] = 'get';
+            }
             return $response->getBody()->getContents();
         } catch (\Exception $e) {
-            $response = $this->request($api, $configs);
+            $response = $this->request($api, $data);
             return $response->getBody()->getContents();
         }
     }
 
     public function addCdnDomain(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("AddCdnDomain", ['json' => $data]);
+        return $this->requestWithRetry("AddCdnDomain", $data);
     }
 
     public function startCdnDomain(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("StartCdnDomain", ['json' => $data]);
+        return $this->requestWithRetry("StartCdnDomain", $data);
     }
 
     public function stopCdnDomain(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("StopCdnDomain", ['json' => $data]);
+        return $this->requestWithRetry("StopCdnDomain", $data);
     }
 
     public function deleteCdnDomain(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DeleteCdnDomain", ['json' => $data]);
+        return $this->requestWithRetry("DeleteCdnDomain", $data);
     }
 
-    public function listCdnDomains(array $data = []): string
+    public function listCdnDomains(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("ListCdnDomains", ['json' => $data]);
+        return $this->requestWithRetry("ListCdnDomains", $data, $option);
     }
 
     public function describeCdnConfig(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnConfig", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnConfig", $data);
     }
 
     public function updateCdnConfig(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("UpdateCdnConfig", ['json' => $data]);
+        return $this->requestWithRetry("UpdateCdnConfig", $data);
     }
 
-    public function describeCdnData(array $data = []): string
+    public function describeCdnData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnData", $data, $option);
     }
 
-    public function describeEdgeNrtDataSummary(array $data = []): string
+    public function describeEdgeNrtDataSummary(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeEdgeNrtDataSummary", ['json' => $data]);
+        return $this->requestWithRetry("DescribeEdgeNrtDataSummary", $data, $option);
     }
 
-    public function describeCdnOriginData(array $data = []): string
+    public function describeCdnOriginData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnOriginData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnOriginData", $data, $option);
     }
 
-    public function describeOriginNrtDataSummary(array $data = []): string
+    public function describeOriginNrtDataSummary(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeOriginNrtDataSummary", ['json' => $data]);
+        return $this->requestWithRetry("DescribeOriginNrtDataSummary", $data, $option);
     }
 
-    public function describeCdnDataDetail(array $data = []): string
+    public function describeCdnDataDetail(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnDataDetail", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnDataDetail", $data, $option);
     }
 
-    public function describeDistrictIspData(array $data = []): string
+    public function describeDistrictIspData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeDistrictIspData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeDistrictIspData", $data, $option);
     }
 
-    public function describeEdgeStatisticalData(array $data = []): string
+    public function describeEdgeStatisticalData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeEdgeStatisticalData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeEdgeStatisticalData", $data, $option);
     }
 
-    public function describeEdgeTopNrtData(array $data = []): string
+    public function describeEdgeTopNrtData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeEdgeTopNrtData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeEdgeTopNrtData", $data, $option);
     }
 
-    public function describeOriginTopNrtData(array $data = []): string
+    public function describeOriginTopNrtData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeOriginTopNrtData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeOriginTopNrtData", $data, $option);
     }
 
-    public function describeEdgeTopStatusCode(array $data = []): string
+    public function describeEdgeTopStatusCode(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeEdgeTopStatusCode", ['json' => $data]);
+        return $this->requestWithRetry("DescribeEdgeTopStatusCode", $data, $option);
     }
 
-    public function describeOriginTopStatusCode(array $data = []): string
+    public function describeOriginTopStatusCode(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeOriginTopStatusCode", ['json' => $data]);
+        return $this->requestWithRetry("DescribeOriginTopStatusCode", $data, $option);
     }
 
-    public function describeEdgeTopStatisticalData(array $data = []): string
+    public function describeEdgeTopStatisticalData(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeEdgeTopStatisticalData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeEdgeTopStatisticalData", $data, $option);
     }
 
-    public function describeCdnRegionAndIsp(array $data = []): string
+    public function describeCdnRegionAndIsp(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnRegionAndIsp", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnRegionAndIsp", $data, $option);
     }
 
-    public function describeCdnService(array $data = []): string
+    public function describeCdnService(): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnService", ['json' => $data]);
+        $data = [];
+        return $this->requestWithRetry("DescribeCdnService", $data);
     }
 
     public function describeAccountingData(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeAccountingData", ['json' => $data]);
+        return $this->requestWithRetry("DescribeAccountingData", $data);
     }
 
     public function submitRefreshTask(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("SubmitRefreshTask", ['json' => $data]);
+        return $this->requestWithRetry("SubmitRefreshTask", $data);
     }
 
     public function submitPreloadTask(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("SubmitPreloadTask", ['json' => $data]);
+        return $this->requestWithRetry("SubmitPreloadTask", $data);
     }
 
     public function describeContentTasks(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeContentTasks", ['json' => $data]);
+        return $this->requestWithRetry("DescribeContentTasks", $data);
     }
 
-    public function describeContentQuota(array $data = []): string
+    public function describeContentQuota(string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeContentQuota", ['json' => $data]);
+        $data = [];
+        return $this->requestWithRetry("DescribeContentQuota", $data, $option);
     }
 
     public function submitBlockTask(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("SubmitBlockTask", ['json' => $data]);
+        return $this->requestWithRetry("SubmitBlockTask", $data);
     }
 
     public function submitUnblockTask(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("SubmitUnblockTask", ['json' => $data]);
+        return $this->requestWithRetry("SubmitUnblockTask", $data);
     }
 
     public function describeContentBlockTasks(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeContentBlockTasks", ['json' => $data]);
+        return $this->requestWithRetry("DescribeContentBlockTasks", $data);
     }
 
-    public function describeCdnAccessLog(array $data = []): string
+    public function describeCdnAccessLog(array $data = [], string $option='post'): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnAccessLog", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnAccessLog", $data, $option);
     }
 
     public function describeIPInfo(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeIPInfo", ['json' => $data]);
+        return $this->requestWithRetry("DescribeIPInfo", $data);
     }
 
     public function describeIPListInfo(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeIPListInfo", ['json' => $data]);
+        return $this->requestWithRetry("DescribeIPListInfo", $data);
     }
 
     public function describeCdnUpperIp(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCdnUpperIp", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCdnUpperIp", $data);
     }
 
     public function addResourceTags(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("AddResourceTags", ['json' => $data]);
+        return $this->requestWithRetry("AddResourceTags", $data);
     }
 
     public function updateResourceTags(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("UpdateResourceTags", ['json' => $data]);
+        return $this->requestWithRetry("UpdateResourceTags", $data);
     }
 
-    public function listResourceTags(array $data = []): string
+    public function listResourceTags(): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("ListResourceTags", ['json' => $data]);
+        $data = [];
+        return $this->requestWithRetry("ListResourceTags", $data);
     }
 
     public function deleteResourceTags(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DeleteResourceTags", ['json' => $data]);
+        return $this->requestWithRetry("DeleteResourceTags", $data);
     }
 
     public function addCdnCertificate(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("AddCdnCertificate", ['json' => $data]);
+        return $this->requestWithRetry("AddCdnCertificate", $data);
     }
 
     public function listCertInfo(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("ListCertInfo", ['json' => $data]);
+        return $this->requestWithRetry("ListCertInfo", $data);
     }
 
     public function listCdnCertInfo(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("ListCdnCertInfo", ['json' => $data]);
+        return $this->requestWithRetry("ListCdnCertInfo", $data);
     }
 
     public function describeCertConfig(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeCertConfig", ['json' => $data]);
+        return $this->requestWithRetry("DescribeCertConfig", $data);
     }
 
     public function batchDeployCert(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("BatchDeployCert", ['json' => $data]);
+        return $this->requestWithRetry("BatchDeployCert", $data);
     }
 
     public function describeAccountingSummary(array $data = []): string
     {
-        if (empty($data)) {
-            $data = new \ArrayObject();
-        }
-        return $this->requestWithRetry("DescribeAccountingSummary", ['json' => $data]);
+        return $this->requestWithRetry("DescribeAccountingSummary", $data);
     }
 
 }

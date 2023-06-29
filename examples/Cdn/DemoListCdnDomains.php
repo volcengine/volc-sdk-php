@@ -20,3 +20,7 @@ $body = [
 
 $response = $client->listCdnDomains($body);
 var_dump($response);
+
+# use method get
+$response = $client->listCdnDomains($body, $client->useGet());
+var_dump($response);
