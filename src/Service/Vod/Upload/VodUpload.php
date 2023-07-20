@@ -219,6 +219,10 @@ class VodUpload extends Vod
         }
         $uploadPartResp = $this->uploadPart($oid, $auth, $uploadID, $lastNum, $data, $isLargeFile, $client, $storageClass);
         $crc32 = $uploadPartResp[0];
+        $oct = $uploadPartResp[1];
+        if ($lastNum == 1) {
+            $objectContentType = $oct;
+        }
         if ($crc32 == "") {
             return -1;
         }
