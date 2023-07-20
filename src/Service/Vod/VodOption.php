@@ -386,6 +386,156 @@ class VodOption
                 ],
             ]
         ],
+        'GetTaskTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetTaskTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'CreateTaskTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateTaskTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateTaskTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateTaskTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'ListTaskTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListTaskTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DeleteTaskTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteTaskTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'GetWorkflowTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetWorkflowTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'CreateWorkflowTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateWorkflowTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateWorkflowTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateWorkflowTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'ListWorkflowTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListWorkflowTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DeleteWorkflowTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteWorkflowTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'GetWatermarkTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetWatermarkTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'CreateWatermarkTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateWatermarkTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateWatermarkTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateWatermarkTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'ListWatermarkTemplate' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListWatermarkTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DeleteWatermarkTemplate' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteWatermarkTemplate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 视频编辑
         // **********************************************************************
@@ -625,6 +775,39 @@ class VodOption
                 ],
             ]
         ],
+        'CreateDomain' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateDomain',
+                    'Version' => '2023-02-01',
+                ],
+            ]
+        ],
+
+        'UpdateDomainExpire' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateDomainExpire',
+                    'Version' => '2023-02-01',
+                ],
+            ]
+        ],
+
+        'UpdateDomainAuthConfig' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateDomainAuthConfig',
+                    'Version' => '2023-02-01',
+                ],
+            ]
+        ],
+
 
         // **********************************************************************
         // 回调管理

@@ -86,6 +86,36 @@ use Volc\Service\Vod\Models\Request\VodGetWorkflowExecutionStatusRequest;
 use Volc\Service\Vod\Models\Response\VodGetWorkflowExecutionStatusResponse;
 use Volc\Service\Vod\Models\Request\VodGetWorkflowResultRequest;
 use Volc\Service\Vod\Models\Response\VodGetWorkflowResultResponse;
+use Volc\Service\Vod\Models\Request\VodCreateTaskTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodCreateTaskTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateTaskTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateTaskTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodGetTaskTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodGetTaskTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodListTaskTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodListTaskTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteTaskTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteTaskTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodCreateWorkflowTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodCreateWorkflowTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateWorkflowTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateWorkflowTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodGetWorkflowTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodGetWorkflowTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodListWorkflowTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodListWorkflowTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteWorkflowTemplateRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteWorkflowTemplateResponse;
+use Volc\Service\Vod\Models\Request\VodCreateWatermarkRequest;
+use Volc\Service\Vod\Models\Response\VodCreateWatermarkResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateWatermarkRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateWatermarkResponse;
+use Volc\Service\Vod\Models\Request\VodGetWatermarkRequest;
+use Volc\Service\Vod\Models\Response\VodGetWatermarkResponse;
+use Volc\Service\Vod\Models\Request\VodListWatermarkRequest;
+use Volc\Service\Vod\Models\Response\VodListWatermarkResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteWatermarkRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteWatermarkResponse;
 use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
@@ -124,6 +154,12 @@ use Volc\Service\Vod\Models\Request\VodSubmitBlockTasksRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitBlockTasksResponse;
 use Volc\Service\Vod\Models\Request\VodGetContentBlockTasksRequest;
 use Volc\Service\Vod\Models\Response\VodGetContentBlockTasksResponse;
+use Volc\Service\Vod\Models\Request\VodCreateDomainV2Request;
+use Volc\Service\Vod\Models\Response\VodCreateDomainV2Response;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainExpireV2Request;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainExpireV2Response;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainAuthConfigV2Request;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainAuthConfigV2Response;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -148,7 +184,7 @@ use Volc\Service\Vod\Models\Request\DescribeVodSnapshotDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSnapshotDataResponse;
 
 /**
- * Generated from protobuf service <code>vod/service/service_vod.proto</code>
+ * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
  */
 class Vod extends V4Curl
 {
@@ -1604,6 +1640,501 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * CreateTaskTemplate.
+     *
+     * @param $req VodCreateTaskTemplateRequest
+     * @return VodCreateTaskTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function CreateTaskTemplate (VodCreateTaskTemplateRequest $req): VodCreateTaskTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateTaskTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateTaskTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateTaskTemplate.
+     *
+     * @param $req VodUpdateTaskTemplateRequest
+     * @return VodUpdateTaskTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function UpdateTaskTemplate (VodUpdateTaskTemplateRequest $req): VodUpdateTaskTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateTaskTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateTaskTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetTaskTemplate.
+     *
+     * @param $req VodGetTaskTemplateRequest
+     * @return VodGetTaskTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function GetTaskTemplate (VodGetTaskTemplateRequest $req): VodGetTaskTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetTaskTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetTaskTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListTaskTemplate.
+     *
+     * @param $req VodListTaskTemplateRequest
+     * @return VodListTaskTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function ListTaskTemplate (VodListTaskTemplateRequest $req): VodListTaskTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListTaskTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListTaskTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteTaskTemplate.
+     *
+     * @param $req VodDeleteTaskTemplateRequest
+     * @return VodDeleteTaskTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function DeleteTaskTemplate (VodDeleteTaskTemplateRequest $req): VodDeleteTaskTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteTaskTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteTaskTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateWorkflowTemplate.
+     *
+     * @param $req VodCreateWorkflowTemplateRequest
+     * @return VodCreateWorkflowTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function CreateWorkflowTemplate (VodCreateWorkflowTemplateRequest $req): VodCreateWorkflowTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateWorkflowTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateWorkflowTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateWorkflowTemplate.
+     *
+     * @param $req VodUpdateWorkflowTemplateRequest
+     * @return VodUpdateWorkflowTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function UpdateWorkflowTemplate (VodUpdateWorkflowTemplateRequest $req): VodUpdateWorkflowTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateWorkflowTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateWorkflowTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetWorkflowTemplate.
+     *
+     * @param $req VodGetWorkflowTemplateRequest
+     * @return VodGetWorkflowTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function GetWorkflowTemplate (VodGetWorkflowTemplateRequest $req): VodGetWorkflowTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetWorkflowTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetWorkflowTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListWorkflowTemplate.
+     *
+     * @param $req VodListWorkflowTemplateRequest
+     * @return VodListWorkflowTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function ListWorkflowTemplate (VodListWorkflowTemplateRequest $req): VodListWorkflowTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListWorkflowTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListWorkflowTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteWorkflowTemplate.
+     *
+     * @param $req VodDeleteWorkflowTemplateRequest
+     * @return VodDeleteWorkflowTemplateResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function DeleteWorkflowTemplate (VodDeleteWorkflowTemplateRequest $req): VodDeleteWorkflowTemplateResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteWorkflowTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteWorkflowTemplateResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateWatermarkTemplate.
+     *
+     * @param $req VodCreateWatermarkRequest
+     * @return VodCreateWatermarkResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function CreateWatermarkTemplate (VodCreateWatermarkRequest $req): VodCreateWatermarkResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateWatermarkTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateWatermarkResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateWatermarkTemplate.
+     *
+     * @param $req VodUpdateWatermarkRequest
+     * @return VodUpdateWatermarkResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function UpdateWatermarkTemplate (VodUpdateWatermarkRequest $req): VodUpdateWatermarkResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateWatermarkTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateWatermarkResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetWatermarkTemplate.
+     *
+     * @param $req VodGetWatermarkRequest
+     * @return VodGetWatermarkResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function GetWatermarkTemplate (VodGetWatermarkRequest $req): VodGetWatermarkResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetWatermarkTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetWatermarkResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListWatermarkTemplate.
+     *
+     * @param $req VodListWatermarkRequest
+     * @return VodListWatermarkResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function ListWatermarkTemplate (VodListWatermarkRequest $req): VodListWatermarkResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListWatermarkTemplate', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListWatermarkResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteWatermarkTemplate.
+     *
+     * @param $req VodDeleteWatermarkRequest
+     * @return VodDeleteWatermarkResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function DeleteWatermarkTemplate (VodDeleteWatermarkRequest $req): VodDeleteWatermarkResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteWatermarkTemplate', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteWatermarkResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * CreateSpace.
      *
      * @param $req VodCreateSpaceRequest
@@ -2253,6 +2784,105 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetContentBlockTasksResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateDomain.
+     *
+     * @param $req VodCreateDomainV2Request
+     * @return VodCreateDomainV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function createDomain (VodCreateDomainV2Request $req): VodCreateDomainV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateDomain', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateDomainV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainExpire.
+     *
+     * @param $req VodUpdateDomainExpireV2Request
+     * @return VodUpdateDomainExpireV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainExpire (VodUpdateDomainExpireV2Request $req): VodUpdateDomainExpireV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainExpire', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainExpireV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainAuthConfig.
+     *
+     * @param $req VodUpdateDomainAuthConfigV2Request
+     * @return VodUpdateDomainAuthConfigV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainAuthConfig (VodUpdateDomainAuthConfigV2Request $req): VodUpdateDomainAuthConfigV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainAuthConfig', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainAuthConfigV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
