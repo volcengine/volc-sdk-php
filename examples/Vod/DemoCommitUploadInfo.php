@@ -13,6 +13,7 @@ $request->setSpaceName("your SpaceName");
 $request->setSessionKey("your SessionKey");
 $request->setCallbackArgs("your CallbackArgs");
 $request->setFunctions("your Functions");
+$request->setVodUploadSource("your VodUploadSource");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse();

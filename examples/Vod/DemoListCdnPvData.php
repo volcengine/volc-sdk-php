@@ -14,6 +14,7 @@ $request->setInterval("your Interval");
 $request->setStartTimestamp(0);
 $request->setEndTimestamp(0);
 $request->setDataType("your DataType");
+$request->setNeedDetail(false);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse();

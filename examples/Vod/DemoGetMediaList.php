@@ -20,6 +20,7 @@ $request->setOffset("your Offset");
 $request->setPageSize("your PageSize");
 $request->setClassificationIds("your ClassificationIds");
 $request->setTosStorageClasses("your TosStorageClasses");
+$request->setVodUploadSources("your VodUploadSources");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetMediaListResponse();

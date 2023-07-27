@@ -151,6 +151,18 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodVolumeInfo Volume = 23;</code>
      */
     protected $Volume = null;
+    /**
+     * MainPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string MainUrlExpire = 24;</code>
+     */
+    protected $MainUrlExpire = '';
+    /**
+     * BackupPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string BackupUrlExpire = 25;</code>
+     */
+    protected $BackupUrlExpire = '';
 
     /**
      * Constructor.
@@ -204,6 +216,10 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
      *           在转对齐,使用的帧对齐转码版本
      *     @type \Volc\Service\Vod\Models\Business\VodVolumeInfo $Volume
      *          响度信息
+     *     @type string $MainUrlExpire
+     *           MainPlayUrl的过期时间
+     *     @type string $BackupUrlExpire
+     *           BackupPlayUrl的过期时间
      * }
      */
     public function __construct($data = NULL) {
@@ -815,6 +831,58 @@ class VodPlayInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodVolumeInfo::class);
         $this->Volume = $var;
+
+        return $this;
+    }
+
+    /**
+     * MainPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string MainUrlExpire = 24;</code>
+     * @return string
+     */
+    public function getMainUrlExpire()
+    {
+        return $this->MainUrlExpire;
+    }
+
+    /**
+     * MainPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string MainUrlExpire = 24;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMainUrlExpire($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->MainUrlExpire = $var;
+
+        return $this;
+    }
+
+    /**
+     * BackupPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string BackupUrlExpire = 25;</code>
+     * @return string
+     */
+    public function getBackupUrlExpire()
+    {
+        return $this->BackupUrlExpire;
+    }
+
+    /**
+     * BackupPlayUrl的过期时间
+     *
+     * Generated from protobuf field <code>string BackupUrlExpire = 25;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBackupUrlExpire($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BackupUrlExpire = $var;
 
         return $this;
     }
