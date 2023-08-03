@@ -28,7 +28,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMeasure::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¤…
+Ø†
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -232,7 +232,10 @@ $VodSubmitDirectEditTaskAsyncResponseG
 Result (29.Volcengine.Vod.Models.Business.VodListCdnAccessLogResult"·
 VodListCdnTopAccessUrlResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataL
-Result (2<.Volcengine.Vod.Models.Business.VodListCdnTopAccessUrlResult"Í
+Result (2<.Volcengine.Vod.Models.Business.VodListCdnTopAccessUrlResult"±
+VodListCdnTopAccessResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataI
+Result (29.Volcengine.Vod.Models.Business.VodListCdnTopAccessResult"Í
 )VodDescribeVodDomainBandwidthDataResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataW
 Result (2G.Volcengine.Vod.Models.Business.VodDescribeVodDomainBandwidthDataResult"·

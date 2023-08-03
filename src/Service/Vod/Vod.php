@@ -140,6 +140,8 @@ use Volc\Service\Vod\Models\Request\VodListCdnAccessLogRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnAccessLogResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnTopAccessUrlRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
+use Volc\Service\Vod\Models\Request\VodListCdnTopAccessRequest;
+use Volc\Service\Vod\Models\Response\VodListCdnTopAccessResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
@@ -2520,6 +2522,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodListCdnTopAccessUrlResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListCdnTopAccess.
+     *
+     * @param $req VodListCdnTopAccessRequest
+     * @return VodListCdnTopAccessResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listCdnTopAccess (VodListCdnTopAccessRequest $req): VodListCdnTopAccessResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListCdnTopAccess', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListCdnTopAccessResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
