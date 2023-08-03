@@ -695,6 +695,16 @@ class VodOption
                 ],
             ]
         ],
+        'ListCdnTopAccess' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListCdnTopAccess',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'DescribeVodDomainBandwidthData' => [
             'url' => '/',
             'method' => 'get',

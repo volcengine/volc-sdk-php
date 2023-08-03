@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-³m
+°n
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -468,7 +468,13 @@ DomainName (	
 Domains (	
 StartTimestamp (
 EndTimestamp (
-SortType (	"œ
+SortType (	"{
+VodListCdnTopAccessRequest
+Domains (	
+StartTimestamp (
+EndTimestamp (
+SortType (	
+Item (	"œ
 (VodDescribeVodDomainBandwidthDataRequest
 
 DomainList (	
