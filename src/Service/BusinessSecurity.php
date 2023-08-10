@@ -192,6 +192,16 @@ class BusinessSecurity extends V4Curl
                 ],
             ]
         ],
+        'AudioRisk' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AudioRisk',
+                    'Version' => '2022-04-01',
+                ],
+            ]
+        ],
         'AsyncVideoRisk' => [
             'url' => '/',
             'method' => 'post',
@@ -520,6 +530,18 @@ class BusinessSecurity extends V4Curl
             "query" => $commitBody
         ];
         return $this->requestWithRetry("AudioResult", $commitReq);
+    }
+
+    public function AudioRisk(int $appId, string $service, string $parameters): string
+    {
+        $commitBody = array();
+        $commitBody["AppId"] = $appId;
+        $commitBody["Service"] = $service;
+        $commitBody["Parameters"] = $parameters;
+        $commitReq = [
+            "json" => $commitBody
+        ];
+        return $this->requestWithRetry("AudioRisk", $commitReq);
     }
 
     public function GetAudioLiveResult(int $appId, string $service, string $dataId): string
