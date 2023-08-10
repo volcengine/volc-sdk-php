@@ -130,7 +130,7 @@ class VodUpload extends Vod
             $timeout = 600.0;
         }
         $client = new Client([
-            'base_uri' => "http://" . $uploadHost,
+            'base_uri' => "https://" . $uploadHost,
             'timeout' => $timeout,
             'handler' => $handlerStack,
         ]);

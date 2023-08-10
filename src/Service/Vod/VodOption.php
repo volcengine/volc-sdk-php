@@ -103,7 +103,7 @@ class VodOption
             'url' => '/',
             'method' => 'get',
             'config' => [
-                'timeout' => 8.0,
+                'timeout' => 30.0,
                 'query' => [
                     'Action' => 'CommitUploadInfo',
                     'Version' => '2022-01-01',
