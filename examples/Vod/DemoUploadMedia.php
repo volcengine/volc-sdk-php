@@ -5,6 +5,7 @@ use Volc\Service\Vod\Models\Request\VodUploadMediaRequest;
 use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
 use Volc\Service\Vod\Upload\Functions;
 use Volc\Service\Vod\Upload\VodUpload;
+use Volc\Service\Vod\Upload\OptionInfo;
 
 $client = VodUpload::getInstance();
 $client->setAccessKey('your ak');
@@ -16,6 +17,9 @@ $filePath = "file path";
 $functions = new Functions();
 $functions->addGetMetaFunc();
 $functions->addSnapshotTimeFunc(2.1);
+$optionInfo = new OptionInfo();
+$optionInfo->IsHlsIndexOnly = true;
+$functions->addOptionInfoFunc($optionInfo);
 $functions = $functions->getFunctionsString();
 
 $request = new VodUploadMediaRequest();

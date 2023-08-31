@@ -11,4 +11,5 @@ class OptionInfo
     public $RecordType;
     public $Format;
     public $ClassificationId;
+    public $IsHlsIndexOnly;
 }

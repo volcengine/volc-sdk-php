@@ -79,6 +79,12 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string LargeSnapshotFillType = 11;</code>
      */
     protected $LargeSnapshotFillType = '';
+    /**
+     *偏移量
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 12;</code>
+     */
+    private $Offsets;
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
      *          大量截图结果文件下载地址
      *     @type string $LargeSnapshotFillType
      *          大量截图结果处理模版
+     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $Offsets
+     *          偏移量
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodSamplePosterSnapshot extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->LargeSnapshotFillType = $var;
+
+        return $this;
+    }
+
+    /**
+     *偏移量
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOffsets()
+    {
+        return $this->Offsets;
+    }
+
+    /**
+     *偏移量
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 12;</code>
+     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOffsets($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->Offsets = $arr;
 
         return $this;
     }
