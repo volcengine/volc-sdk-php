@@ -43,6 +43,12 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileIndex = 5;</code>
      */
     protected $FileIndex = '';
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float SampleOffsets = 6;</code>
+     */
+    private $SampleOffsets;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
      *           文件名
      *     @type string $FileIndex
      *           index文件自定义路径
+     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $SampleOffsets
+     *          采样截图自定义采样时间点
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class SnapshotOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileIndex = $var;
+
+        return $this;
+    }
+
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float SampleOffsets = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSampleOffsets()
+    {
+        return $this->SampleOffsets;
+    }
+
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float SampleOffsets = 6;</code>
+     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSampleOffsets($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->SampleOffsets = $arr;
 
         return $this;
     }

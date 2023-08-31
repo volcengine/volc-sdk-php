@@ -81,6 +81,10 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ActionType = 17;</code>
      */
     protected $ActionType = '';
+    /**
+     * Generated from protobuf field <code>bool IsHlsIndexOnly = 18;</code>
+     */
+    protected $IsHlsIndexOnly = false;
 
     /**
      * Constructor.
@@ -105,6 +109,7 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      *     @type string $Tag
      *     @type bool $AutoPublish
      *     @type string $ActionType
+     *     @type bool $IsHlsIndexOnly
      * }
      */
     public function __construct($data = NULL) {
@@ -482,6 +487,28 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ActionType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool IsHlsIndexOnly = 18;</code>
+     * @return bool
+     */
+    public function getIsHlsIndexOnly()
+    {
+        return $this->IsHlsIndexOnly;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool IsHlsIndexOnly = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsHlsIndexOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->IsHlsIndexOnly = $var;
 
         return $this;
     }

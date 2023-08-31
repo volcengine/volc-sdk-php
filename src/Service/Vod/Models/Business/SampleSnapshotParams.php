@@ -53,6 +53,12 @@ class SampleSnapshotParams extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FillType = 10;</code>
      */
     protected $FillType = '';
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 11;</code>
+     */
+    private $Offsets;
 
     /**
      * Constructor.
@@ -70,6 +76,8 @@ class SampleSnapshotParams extends \Google\Protobuf\Internal\Message
      *     @type float $Interval
      *     @type string $OutMode
      *     @type string $FillType
+     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $Offsets
+     *          采样截图自定义采样时间点
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +301,32 @@ class SampleSnapshotParams extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FillType = $var;
+
+        return $this;
+    }
+
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOffsets()
+    {
+        return $this->Offsets;
+    }
+
+    /**
+     *采样截图自定义采样时间点
+     *
+     * Generated from protobuf field <code>repeated float Offsets = 11;</code>
+     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOffsets($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->Offsets = $arr;
 
         return $this;
     }
