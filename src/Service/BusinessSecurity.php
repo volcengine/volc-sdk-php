@@ -589,7 +589,7 @@ class BusinessSecurity extends V4Curl
         $commitReq = [
             "query" => $commitBody
         ];
-        return $this->requestWithRetry("GetVideoResult", $commitReq);
+        return $this->requestWithRetry("VideoResult", $commitReq);
     }
 
     public function GetVideoLiveResult(int $appId, string $service, string $dataId): string
