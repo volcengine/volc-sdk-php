@@ -35,3 +35,6 @@ echo $response;
 
 $response = $client->TextSliceRisk(415493, "text_risk",  "{}");
 echo $response;
+
+$response = $client->GetVideoResult(222572, "video_risk",  "test");
+echo $response;
