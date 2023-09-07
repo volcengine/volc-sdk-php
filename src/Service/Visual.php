@@ -106,6 +106,30 @@ class Visual extends V4Curl
         $response = $this->request('Img2ImgAnime', $query);
         return $response->getBody();
     }
+
+    public function CertToken(array $query = [])
+    {
+        $response = $this->request('CertToken', $query);
+        return $response->getBody();
+    }
+
+    public function CertVerify(array $query = [])
+    {
+        $response = $this->request('CertVerify', $query);
+        return $response->getBody();
+    }
+
+    public function CertVerifyQuery(array $query = [])
+    {
+        $response = $this->request('CertVerifyQuery', $query);
+        return $response->getBody();
+    }
+
+    public function CertConfigInit(array $query = [])
+    {
+        $response = $this->request('CertConfigInit', $query);
+        return $response->getBody();
+    }
     
     public function OCRNormal(array $query = [])
     {
@@ -303,6 +327,58 @@ class Visual extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'Img2ImgAnime',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'CertToken' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertToken',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'CertVerify' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertVerify',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'CertVerifyQuery' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertVerifyQuery',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ],
+        'CertConfigInit' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertConfigInit',
                     'Version' => '2022-08-31',
                 ],
                 'header' => [
