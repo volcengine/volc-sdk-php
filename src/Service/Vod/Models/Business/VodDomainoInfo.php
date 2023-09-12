@@ -38,7 +38,7 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      */
     protected $CnameStatus = '';
     /**
-     *运行状态
+     *是否开启点播调度
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      */
@@ -101,7 +101,7 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *     @type string $CnameStatus
      *          解析状态
      *     @type string $Status
-     *          运行状态
+     *          是否开启点播调度
      *     @type \Volc\Service\Vod\Models\Business\VodDomainCertificateInfo $Certificate
      *          证书
      *     @type string $CreateTime
@@ -228,7 +228,7 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *运行状态
+     *是否开启点播调度
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      * @return string
@@ -239,7 +239,7 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *运行状态
+     *是否开启点播调度
      *
      * Generated from protobuf field <code>string Status = 5;</code>
      * @param string $var

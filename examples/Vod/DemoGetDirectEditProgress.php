@@ -23,6 +23,5 @@ try {
 if ($response != null && $response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
     echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 } else {
-    //echo $response->serializeToJsonString()
-    echo json_encode($response->JsonSerialize()), "\n";
+    echo $response->serializeToJsonString(),"\n";
 }
