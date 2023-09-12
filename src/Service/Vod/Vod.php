@@ -348,30 +348,6 @@ class Vod extends V4Curl
             $query = VodUtils::formatRequestParam($req);
             $query["ReqIds"] = json_decode($query["ReqIds"]);
             $response = $this->request('GetDirectEditResult', ['json' => $query]);
-            $json_decode = json_decode($response->getBody());
-            $results = null;
-            if (!empty($json_decode->Result)) {
-                $results = $json_decode->Result;
-                foreach ($results as $key => $result) {
-                    $result->EditParam = json_encode($result->EditParam);
-                }
-            }
-
-            $resp = new class($json_decode->ResponseMetadata, $results) {
-                public function __construct($ResponseMetadata, $Result)
-                {
-                    $this->ResponseMetadata = $ResponseMetadata;
-                    $this->Result = $Result;
-                }
-
-                public $ResponseMetadata = null;
-                public $Result = null;
-
-                public function getBody()
-                {
-                    return json_encode($this);
-                }
-            };
         } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -383,7 +359,7 @@ class Vod extends V4Curl
         }
         $respData = new VodGetDirectEditResultResponse();
         try {
-            $respData = VodUtils::parseResponseData($resp, $respData);
+            $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
