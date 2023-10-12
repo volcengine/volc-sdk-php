@@ -364,6 +364,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("RiskResult", $commitReq);
     }
 
+    // Deprecated use ElementVerifyV2 replace
     public function ElementVerify(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
@@ -388,6 +389,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("ElementVerifyV2", $commitReq);
     }
 
+    // Deprecated use MobileStatusV2 replace
     public function MobileStatus(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
@@ -412,6 +414,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("MobileStatusV2", $commitReq);
     }
 
+    // Deprecated use ImageContentRiskV2 replace
     public function ImageContentRisk(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
@@ -484,6 +487,7 @@ class BusinessSecurity extends V4Curl
         return $this->requestWithRetry("GetImageResultV2", $commitReq);
     }
 
+    // Deprecated use TextSliceRisk replace
     public function TextRisk(int $appId, string $service, string $parameters): string
     {
         $commitBody = array();
