@@ -314,8 +314,14 @@ class BusinessSecurity extends V4Curl
         ],
     ];
 
+    private $customerTimeout = 0;
+
     protected function requestWithRetry(string $api, array $configs): string
     {
+        if ($this->customerTimeout != 0)
+        {
+            $configs["timeout"] = $this->customerTimeout;
+        }
         try {
             $response = $this->request($api, $configs);
             return (string)$response->getBody();
@@ -323,6 +329,11 @@ class BusinessSecurity extends V4Curl
             $response = $this->request($api, $configs);
             return (string)$response->getBody();
         }
+    }
+
+    public function SetCustomerTimeout(int $timeout)
+    {
+        $this->customerTimeout = &$timeout;
     }
 
     public function RiskDetect(int $appId, string $service, string $parameters): string
