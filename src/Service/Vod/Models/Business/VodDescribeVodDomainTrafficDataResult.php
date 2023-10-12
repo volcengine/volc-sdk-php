@@ -18,27 +18,35 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
      */
     private $DomainList;
     /**
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     */
+    private $DomainInSpaceList;
+    /**
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      */
     protected $StartTime = '';
     /**
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      */
     protected $EndTime = '';
     /**
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      */
     protected $Aggregation = 0;
     /**
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      */
     protected $TrafficType = '';
     /**
-     * Generated from protobuf field <code>double TotalTraffic = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
+     */
+    protected $Area = '';
+    /**
+     * Generated from protobuf field <code>double TotalTraffic = 8;</code>
      */
     protected $TotalTraffic = 0.0;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 9;</code>
      */
     private $TrafficDataList;
 
@@ -49,10 +57,12 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
      *     Optional. Data for populating the Message object.
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DomainList
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DomainInSpaceList
      *     @type string $StartTime
      *     @type string $EndTime
      *     @type int $Aggregation
      *     @type string $TrafficType
+     *     @type string $Area
      *     @type float $TotalTraffic
      *     @type \Volc\Service\Vod\Models\Business\VodTrafficData[]|\Google\Protobuf\Internal\RepeatedField $TrafficDataList
      * }
@@ -85,7 +95,29 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDomainInSpaceList()
+    {
+        return $this->DomainInSpaceList;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDomainInSpaceList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->DomainInSpaceList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @return string
      */
     public function getStartTime()
@@ -94,7 +126,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -107,7 +139,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @return string
      */
     public function getEndTime()
@@ -116,7 +148,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -129,7 +161,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @return int
      */
     public function getAggregation()
@@ -138,7 +170,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -151,7 +183,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      * @return string
      */
     public function getTrafficType()
@@ -160,7 +192,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +205,29 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>double TotalTraffic = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->Area;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArea($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Area = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double TotalTraffic = 8;</code>
      * @return float
      */
     public function getTotalTraffic()
@@ -182,7 +236,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>double TotalTraffic = 6;</code>
+     * Generated from protobuf field <code>double TotalTraffic = 8;</code>
      * @param float $var
      * @return $this
      */
@@ -195,7 +249,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTrafficDataList()
@@ -204,7 +258,7 @@ class VodDescribeVodDomainTrafficDataResult extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodTrafficData TrafficDataList = 9;</code>
      * @param \Volc\Service\Vod\Models\Business\VodTrafficData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

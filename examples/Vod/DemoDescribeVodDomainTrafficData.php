@@ -10,10 +10,12 @@ $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest();
 $request->setDomainList("your DomainList");
+$request->setDomainInSpaceList("your DomainInSpaceList");
 $request->setStartTime("your StartTime");
 $request->setEndTime("your EndTime");
 $request->setAggregation(0);
 $request->setTrafficType("your TrafficType");
+$request->setArea("your Area");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse();

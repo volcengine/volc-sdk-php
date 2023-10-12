@@ -126,8 +126,6 @@ use Volc\Service\Vod\Models\Request\VodUpdateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
-use Volc\Service\Vod\Models\Request\VodDescribeVodSpaceStorageDataRequest;
-use Volc\Service\Vod\Models\Response\VodDescribeVodSpaceStorageDataResponse;
 use Volc\Service\Vod\Models\Request\VodListDomainRequest;
 use Volc\Service\Vod\Models\Response\VodListDomainResponse;
 use Volc\Service\Vod\Models\Request\VodCreateCdnRefreshTaskRequest;
@@ -142,15 +140,11 @@ use Volc\Service\Vod\Models\Request\VodListCdnTopAccessUrlRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTopAccessUrlResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnTopAccessRequest;
 use Volc\Service\Vod\Models\Response\VodListCdnTopAccessResponse;
-use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
-use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnUsageDataRequest;
 use Volc\Service\Vod\Models\Response\VodCdnStatisticsCommonResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnStatusDataRequest;
 use Volc\Service\Vod\Models\Request\VodDescribeIPInfoRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeIPInfoResponse;
-use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
-use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodListCdnPvDataRequest;
 use Volc\Service\Vod\Models\Request\VodSubmitBlockTasksRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitBlockTasksResponse;
@@ -162,6 +156,8 @@ use Volc\Service\Vod\Models\Request\VodUpdateDomainExpireV2Request;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainExpireV2Response;
 use Volc\Service\Vod\Models\Request\VodUpdateDomainAuthConfigV2Request;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainAuthConfigV2Response;
+use Volc\Service\Vod\Models\Request\AddOrUpdateCertificateV2Request;
+use Volc\Service\Vod\Models\Response\AddOrUpdateCertificateV2Response;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -184,6 +180,12 @@ use Volc\Service\Vod\Models\Request\DescribeVodSpaceEditDetailDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSpaceEditDetailDataResponse;
 use Volc\Service\Vod\Models\Request\DescribeVodSnapshotDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodSnapshotDataResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeVodSpaceStorageDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodSpaceStorageDataResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
@@ -1559,7 +1561,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function GetWorkflowExecution (VodGetWorkflowExecutionStatusRequest $req): VodGetWorkflowExecutionStatusResponse
+	public function getWorkflowExecution (VodGetWorkflowExecutionStatusRequest $req): VodGetWorkflowExecutionStatusResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1592,7 +1594,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function GetWorkflowExecutionResult (VodGetWorkflowResultRequest $req): VodGetWorkflowResultResponse
+	public function getWorkflowExecutionResult (VodGetWorkflowResultRequest $req): VodGetWorkflowResultResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1625,7 +1627,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function CreateTaskTemplate (VodCreateTaskTemplateRequest $req): VodCreateTaskTemplateResponse
+	public function createTaskTemplate (VodCreateTaskTemplateRequest $req): VodCreateTaskTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1658,7 +1660,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function UpdateTaskTemplate (VodUpdateTaskTemplateRequest $req): VodUpdateTaskTemplateResponse
+	public function updateTaskTemplate (VodUpdateTaskTemplateRequest $req): VodUpdateTaskTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1691,7 +1693,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function GetTaskTemplate (VodGetTaskTemplateRequest $req): VodGetTaskTemplateResponse
+	public function getTaskTemplate (VodGetTaskTemplateRequest $req): VodGetTaskTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1724,7 +1726,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function ListTaskTemplate (VodListTaskTemplateRequest $req): VodListTaskTemplateResponse
+	public function listTaskTemplate (VodListTaskTemplateRequest $req): VodListTaskTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1757,7 +1759,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function DeleteTaskTemplate (VodDeleteTaskTemplateRequest $req): VodDeleteTaskTemplateResponse
+	public function deleteTaskTemplate (VodDeleteTaskTemplateRequest $req): VodDeleteTaskTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1790,7 +1792,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function CreateWorkflowTemplate (VodCreateWorkflowTemplateRequest $req): VodCreateWorkflowTemplateResponse
+	public function createWorkflowTemplate (VodCreateWorkflowTemplateRequest $req): VodCreateWorkflowTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1823,7 +1825,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function UpdateWorkflowTemplate (VodUpdateWorkflowTemplateRequest $req): VodUpdateWorkflowTemplateResponse
+	public function updateWorkflowTemplate (VodUpdateWorkflowTemplateRequest $req): VodUpdateWorkflowTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1856,7 +1858,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function GetWorkflowTemplate (VodGetWorkflowTemplateRequest $req): VodGetWorkflowTemplateResponse
+	public function getWorkflowTemplate (VodGetWorkflowTemplateRequest $req): VodGetWorkflowTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1889,7 +1891,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function ListWorkflowTemplate (VodListWorkflowTemplateRequest $req): VodListWorkflowTemplateResponse
+	public function listWorkflowTemplate (VodListWorkflowTemplateRequest $req): VodListWorkflowTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1922,7 +1924,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function DeleteWorkflowTemplate (VodDeleteWorkflowTemplateRequest $req): VodDeleteWorkflowTemplateResponse
+	public function deleteWorkflowTemplate (VodDeleteWorkflowTemplateRequest $req): VodDeleteWorkflowTemplateResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1955,7 +1957,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function CreateWatermarkTemplate (VodCreateWatermarkRequest $req): VodCreateWatermarkResponse
+	public function createWatermarkTemplate (VodCreateWatermarkRequest $req): VodCreateWatermarkResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -1988,7 +1990,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function UpdateWatermarkTemplate (VodUpdateWatermarkRequest $req): VodUpdateWatermarkResponse
+	public function updateWatermarkTemplate (VodUpdateWatermarkRequest $req): VodUpdateWatermarkResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -2021,7 +2023,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function GetWatermarkTemplate (VodGetWatermarkRequest $req): VodGetWatermarkResponse
+	public function getWatermarkTemplate (VodGetWatermarkRequest $req): VodGetWatermarkResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -2054,7 +2056,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function ListWatermarkTemplate (VodListWatermarkRequest $req): VodListWatermarkResponse
+	public function listWatermarkTemplate (VodListWatermarkRequest $req): VodListWatermarkResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -2087,7 +2089,7 @@ class Vod extends V4Curl
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function DeleteWatermarkTemplate (VodDeleteWatermarkRequest $req): VodDeleteWatermarkResponse
+	public function deleteWatermarkTemplate (VodDeleteWatermarkRequest $req): VodDeleteWatermarkResponse
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
@@ -2267,39 +2269,6 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateSpaceUploadConfigResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
-     * DescribeVodSpaceStorageData.
-     *
-     * @param $req VodDescribeVodSpaceStorageDataRequest
-     * @return VodDescribeVodSpaceStorageDataResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function describeVodSpaceStorageData (VodDescribeVodSpaceStorageDataRequest $req): VodDescribeVodSpaceStorageDataResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DescribeVodSpaceStorageData', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDescribeVodSpaceStorageDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -2542,39 +2511,6 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * DescribeVodDomainBandwidthData.
-     *
-     * @param $req VodDescribeVodDomainBandwidthDataRequest
-     * @return VodDescribeVodDomainBandwidthDataResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function describeVodDomainBandwidthData (VodDescribeVodDomainBandwidthDataRequest $req): VodDescribeVodDomainBandwidthDataResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DescribeVodDomainBandwidthData', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDescribeVodDomainBandwidthDataResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
      * ListCdnUsageData.
      *
      * @param $req VodListCdnUsageDataRequest
@@ -2663,39 +2599,6 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDescribeIPInfoResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
-     * DescribeVodDomainTrafficData.
-     *
-     * @param $req VodDescribeVodDomainTrafficDataRequest
-     * @return VodDescribeVodDomainTrafficDataResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function describeVodDomainTrafficData (VodDescribeVodDomainTrafficDataRequest $req): VodDescribeVodDomainTrafficDataResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DescribeVodDomainTrafficData', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDescribeVodDomainTrafficDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -2817,7 +2720,7 @@ class Vod extends V4Curl
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('CreateDomain', ['form_params' => $query]);
+			$response = $this->request('CreateDomain', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2850,7 +2753,7 @@ class Vod extends V4Curl
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateDomainExpire', ['form_params' => $query]);
+			$response = $this->request('UpdateDomainExpire', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2883,7 +2786,7 @@ class Vod extends V4Curl
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateDomainAuthConfig', ['form_params' => $query]);
+			$response = $this->request('UpdateDomainAuthConfig', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2894,6 +2797,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateDomainAuthConfigV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * AddOrUpdateCertificate20230701.
+     *
+     * @param $req AddOrUpdateCertificateV2Request
+     * @return AddOrUpdateCertificateV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function addOrUpdateCertificate20230701 (AddOrUpdateCertificateV2Request $req): AddOrUpdateCertificateV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('AddOrUpdateCertificate20230701', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new AddOrUpdateCertificateV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -3257,6 +3193,105 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new DescribeVodSnapshotDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodSpaceStorageData.
+     *
+     * @param $req VodDescribeVodSpaceStorageDataRequest
+     * @return VodDescribeVodSpaceStorageDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodSpaceStorageData (VodDescribeVodSpaceStorageDataRequest $req): VodDescribeVodSpaceStorageDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodSpaceStorageData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeVodSpaceStorageDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodDomainTrafficData.
+     *
+     * @param $req VodDescribeVodDomainTrafficDataRequest
+     * @return VodDescribeVodDomainTrafficDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodDomainTrafficData (VodDescribeVodDomainTrafficDataRequest $req): VodDescribeVodDomainTrafficDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodDomainTrafficData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeVodDomainTrafficDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodDomainBandwidthData.
+     *
+     * @param $req VodDescribeVodDomainBandwidthDataRequest
+     * @return VodDescribeVodDomainBandwidthDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodDomainBandwidthData (VodDescribeVodDomainBandwidthDataRequest $req): VodDescribeVodDomainBandwidthDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodDomainBandwidthData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeVodDomainBandwidthDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
