@@ -49,6 +49,12 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ExpiredAt = 6;</code>
      */
     protected $ExpiredAt = '';
+    /**
+     *证书中心证书ID
+     *
+     * Generated from protobuf field <code>string CertificateCenterCertificateId = 7;</code>
+     */
+    protected $CertificateCenterCertificateId = '';
 
     /**
      * Constructor.
@@ -68,6 +74,8 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
      *           Http开启状态
      *     @type string $ExpiredAt
      *           证书过期时间，格式为"yyyy-MM-dd HH:mm:ss"
+     *     @type string $CertificateCenterCertificateId
+     *          证书中心证书ID
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +235,32 @@ class VodDomainCertificateInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ExpiredAt = $var;
+
+        return $this;
+    }
+
+    /**
+     *证书中心证书ID
+     *
+     * Generated from protobuf field <code>string CertificateCenterCertificateId = 7;</code>
+     * @return string
+     */
+    public function getCertificateCenterCertificateId()
+    {
+        return $this->CertificateCenterCertificateId;
+    }
+
+    /**
+     *证书中心证书ID
+     *
+     * Generated from protobuf field <code>string CertificateCenterCertificateId = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCertificateCenterCertificateId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->CertificateCenterCertificateId = $var;
 
         return $this;
     }

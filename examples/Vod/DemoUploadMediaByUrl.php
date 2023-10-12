@@ -16,6 +16,8 @@ $urlSet->setSourceUrl("");
 $urlSet->setStorageClass(0);
 $urlSet->setFileExtension(".mp4");
 $urlSet->setCallbackArgs("");
+$customHeaders = ['your header key' => "your header value"]; // 自定义Header，业务希望访问源视频URL携带的Header(例如User-Agent)可以通过该参数传入，非必须字段
+$urlSet->setCustomURLHeaders($customHeaders);
 $request->setURLSets([$urlSet]);
 
 

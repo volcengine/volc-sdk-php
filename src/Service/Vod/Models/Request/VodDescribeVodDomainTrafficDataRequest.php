@@ -20,29 +20,39 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
      */
     protected $DomainList = '';
     /**
+     * list of space:domain to query
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     */
+    protected $DomainInSpaceList = '';
+    /**
      * rfc339
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      */
     protected $StartTime = '';
     /**
      * rfc339
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      */
     protected $EndTime = '';
     /**
      * default 300, supports 1800, 3600 and 86400
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      */
     protected $Aggregation = 0;
     /**
-     * PCDN, CDN, or ALL
+     * ECDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      */
     protected $TrafficType = '';
+    /**
+     * Generated from protobuf field <code>string Area = 7;</code>
+     */
+    protected $Area = '';
 
     /**
      * Constructor.
@@ -52,6 +62,8 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
      *
      *     @type string $DomainList
      *           list of domains to query
+     *     @type string $DomainInSpaceList
+     *           list of space:domain to query
      *     @type string $StartTime
      *           rfc339
      *     @type string $EndTime
@@ -59,7 +71,8 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
      *     @type int $Aggregation
      *           default 300, supports 1800, 3600 and 86400
      *     @type string $TrafficType
-     *           PCDN, CDN, or ALL
+     *           ECDN, CDN, or ALL
+     *     @type string $Area
      * }
      */
     public function __construct($data = NULL) {
@@ -94,9 +107,35 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * list of space:domain to query
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     * @return string
+     */
+    public function getDomainInSpaceList()
+    {
+        return $this->DomainInSpaceList;
+    }
+
+    /**
+     * list of space:domain to query
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDomainInSpaceList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DomainInSpaceList = $var;
+
+        return $this;
+    }
+
+    /**
      * rfc339
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @return string
      */
     public function getStartTime()
@@ -107,7 +146,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     /**
      * rfc339
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -122,7 +161,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     /**
      * rfc339
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @return string
      */
     public function getEndTime()
@@ -133,7 +172,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     /**
      * rfc339
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -148,7 +187,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     /**
      * default 300, supports 1800, 3600 and 86400
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @return int
      */
     public function getAggregation()
@@ -159,7 +198,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     /**
      * default 300, supports 1800, 3600 and 86400
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -172,9 +211,9 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * PCDN, CDN, or ALL
+     * ECDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      * @return string
      */
     public function getTrafficType()
@@ -183,9 +222,9 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * PCDN, CDN, or ALL
+     * ECDN, CDN, or ALL
      *
-     * Generated from protobuf field <code>string TrafficType = 5;</code>
+     * Generated from protobuf field <code>string TrafficType = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -193,6 +232,28 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->TrafficType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->Area;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArea($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Area = $var;
 
         return $this;
     }

@@ -40,11 +40,17 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      */
     protected $SourceStationType = 0;
     /**
-     *跨过多少条域名
+     *跳过域名组的游标
      *
-     * Generated from protobuf field <code>int64 Offset = 4;</code>
+     * Generated from protobuf field <code>int32 Offset = 4;</code>
      */
     protected $Offset = 0;
+    /**
+     *单次查询域名组数量
+     *
+     * Generated from protobuf field <code>int32 Limit = 5;</code>
+     */
+    protected $Limit = 0;
 
     /**
      * Constructor.
@@ -62,8 +68,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
      *          源站类型
      *          回点播源站:1
      *          第三方源站:2
-     *     @type int|string $Offset
-     *          跨过多少条域名
+     *     @type int $Offset
+     *          跳过域名组的游标
+     *     @type int $Limit
+     *          单次查询域名组数量
      * }
      */
     public function __construct($data = NULL) {
@@ -158,10 +166,10 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *跨过多少条域名
+     *跳过域名组的游标
      *
-     * Generated from protobuf field <code>int64 Offset = 4;</code>
-     * @return int|string
+     * Generated from protobuf field <code>int32 Offset = 4;</code>
+     * @return int
      */
     public function getOffset()
     {
@@ -169,16 +177,42 @@ class VodListDomainRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *跨过多少条域名
+     *跳过域名组的游标
      *
-     * Generated from protobuf field <code>int64 Offset = 4;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>int32 Offset = 4;</code>
+     * @param int $var
      * @return $this
      */
     public function setOffset($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkInt32($var);
         $this->Offset = $var;
+
+        return $this;
+    }
+
+    /**
+     *单次查询域名组数量
+     *
+     * Generated from protobuf field <code>int32 Limit = 5;</code>
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->Limit;
+    }
+
+    /**
+     *单次查询域名组数量
+     *
+     * Generated from protobuf field <code>int32 Limit = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->Limit = $var;
 
         return $this;
     }

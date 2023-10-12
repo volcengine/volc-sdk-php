@@ -20,45 +20,69 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
      */
     private $DomainList;
     /**
+     * 域名列表
+     *
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     */
+    private $DomainInSpaceList;
+    /**
      * 查询的起始时间
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      */
     protected $StartTime = '';
     /**
      * 查询的结束时间
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      */
     protected $EndTime = '';
     /**
      * 聚合的时间粒度
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      */
     protected $Aggregation = 0;
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、ECDN、ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      */
     protected $BandwidthType = '';
     /**
-     * 带宽峰值，单位为Mbps
+     * 区域
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
+     */
+    protected $Area = '';
+    /**
+     * 带宽峰值，单位为bps
+     *
+     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
      */
     protected $PeakBandwidth = 0.0;
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 7;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
      */
     protected $PeakBandwidthTime = '';
     /**
+     * 带宽95峰值，单位为bps
+     *
+     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     */
+    protected $Peak95Bandwidth = 0.0;
+    /**
+     * 带宽95峰值出现的时间
+     *
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     */
+    protected $Peak95BandwidthTime = '';
+    /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 8;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
      */
     private $BandwidthDataList;
 
@@ -70,6 +94,8 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DomainList
      *           域名列表
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DomainInSpaceList
+     *           域名列表
      *     @type string $StartTime
      *           查询的起始时间
      *     @type string $EndTime
@@ -77,11 +103,17 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
      *     @type int $Aggregation
      *           聚合的时间粒度
      *     @type string $BandwidthType
-     *           默认是CDN，支持CDN、PCDN、ALL
+     *           默认是CDN，支持CDN、ECDN、ALL
+     *     @type string $Area
+     *           区域
      *     @type float $PeakBandwidth
-     *           带宽峰值，单位为Mbps
+     *           带宽峰值，单位为bps
      *     @type string $PeakBandwidthTime
      *           带宽峰值出现的时间
+     *     @type float $Peak95Bandwidth
+     *           带宽95峰值，单位为bps
+     *     @type string $Peak95BandwidthTime
+     *           带宽95峰值出现的时间
      *     @type \Volc\Service\Vod\Models\Business\VodBandwidthData[]|\Google\Protobuf\Internal\RepeatedField $BandwidthDataList
      *           所有时间粒度数据
      * }
@@ -118,9 +150,35 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
+     * 域名列表
+     *
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDomainInSpaceList()
+    {
+        return $this->DomainInSpaceList;
+    }
+
+    /**
+     * 域名列表
+     *
+     * Generated from protobuf field <code>repeated string DomainInSpaceList = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDomainInSpaceList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->DomainInSpaceList = $arr;
+
+        return $this;
+    }
+
+    /**
      * 查询的起始时间
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @return string
      */
     public function getStartTime()
@@ -131,7 +189,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 查询的起始时间
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +204,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 查询的结束时间
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @return string
      */
     public function getEndTime()
@@ -157,7 +215,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 查询的结束时间
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -172,7 +230,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 聚合的时间粒度
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @return int
      */
     public function getAggregation()
@@ -183,7 +241,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 聚合的时间粒度
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -196,9 +254,9 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、ECDN、ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      * @return string
      */
     public function getBandwidthType()
@@ -207,9 +265,9 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL
+     * 默认是CDN，支持CDN、ECDN、ALL
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -222,9 +280,35 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
-     * 带宽峰值，单位为Mbps
+     * 区域
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->Area;
+    }
+
+    /**
+     * 区域
+     *
+     * Generated from protobuf field <code>string Area = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArea($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Area = $var;
+
+        return $this;
+    }
+
+    /**
+     * 带宽峰值，单位为bps
+     *
+     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
      * @return float
      */
     public function getPeakBandwidth()
@@ -233,9 +317,9 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
-     * 带宽峰值，单位为Mbps
+     * 带宽峰值，单位为bps
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 6;</code>
+     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
      * @param float $var
      * @return $this
      */
@@ -250,7 +334,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 7;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
      * @return string
      */
     public function getPeakBandwidthTime()
@@ -261,7 +345,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 7;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -274,9 +358,61 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
+     * 带宽95峰值，单位为bps
+     *
+     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     * @return float
+     */
+    public function getPeak95Bandwidth()
+    {
+        return $this->Peak95Bandwidth;
+    }
+
+    /**
+     * 带宽95峰值，单位为bps
+     *
+     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPeak95Bandwidth($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->Peak95Bandwidth = $var;
+
+        return $this;
+    }
+
+    /**
+     * 带宽95峰值出现的时间
+     *
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     * @return string
+     */
+    public function getPeak95BandwidthTime()
+    {
+        return $this->Peak95BandwidthTime;
+    }
+
+    /**
+     * 带宽95峰值出现的时间
+     *
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPeak95BandwidthTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Peak95BandwidthTime = $var;
+
+        return $this;
+    }
+
+    /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 8;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBandwidthDataList()
@@ -287,7 +423,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 8;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
      * @param \Volc\Service\Vod\Models\Business\VodBandwidthData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

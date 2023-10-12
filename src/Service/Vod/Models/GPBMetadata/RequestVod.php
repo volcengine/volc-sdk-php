@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-°n
+ºp
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -42,7 +42,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"Ô
+Quality (	"ê
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -64,7 +64,8 @@ NeedThumbs	 (	
 DrmExpireTimestamp (	
 Quality (	
 
-PlayConfig (	"g
+PlayConfig (	
+NeedOriginal (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -434,13 +435,14 @@ OrderByKey (	
 	StartTime (	
 EndTime (	
 Aggregation (
-Type (	"h
+Type (	"w
 VodListDomainRequest
 	SpaceName (	
 
 DomainType (	
 SourceStationType (
-Offset ("O
+Offset (
+Limit ("O
 VodCreateCdnRefreshTaskRequest
 	SpaceName (	
 Urls (	
@@ -474,15 +476,16 @@ DomainName (	
 StartTimestamp (
 EndTimestamp (
 SortType (	
-Item (	"œ
+Item (	"·
 (VodDescribeVodDomainBandwidthDataRequest
 
-DomainList (	
-	StartTime (	
-EndTime (	
-Aggregation (
-BandwidthType (	
-Area (	"Š
+DomainList (	
+DomainInSpaceList (	
+	StartTime (	
+EndTime (	
+Aggregation (
+BandwidthType (	
+Area (	"Š
 VodListCdnUsageDataRequest
 Domains (	
 Interval (	
@@ -525,14 +528,16 @@ NeedDetail ("“
 EndTimestamp (
 Metric (	
 
-NeedDetail ("Š
+NeedDetail ("³
 &VodDescribeVodDomainTrafficDataRequest
 
-DomainList (	
-	StartTime (	
-EndTime (	
-Aggregation (
-TrafficType (	"A
+DomainList (	
+DomainInSpaceList (	
+	StartTime (	
+EndTime (	
+Aggregation (
+TrafficType (	
+Area (	"A
 VodSubmitBlockTasksRequest
 FileUrls (	
 	Operation (	"¶
@@ -570,7 +575,14 @@ DomainType (	
 Domain (	
 MainKey (	
 	BackupKey (	
-Status (	"X
+Status (	"„
+AddOrUpdateCertificateV2Request
+	SpaceName (	
+Domain (	
+
+DomainType (	
+CertificateId (	
+HttpsStatus (	"X
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
 Url (	
@@ -667,7 +679,8 @@ DomainList (	"A
 Vids (	"B
 VodQueryMediaBlockStatusRequest
 	SpaceName (	
-Vids (	BÈ
+Vids (	"
+VodListProjectsRequestBÈ
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request ØÊVolc\\Service\\Vod\\Models\\Requestâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

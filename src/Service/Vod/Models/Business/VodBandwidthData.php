@@ -20,7 +20,7 @@ class VodBandwidthData extends \Google\Protobuf\Internal\Message
      */
     protected $Time = '';
     /**
-     * 带宽，单位为 Mbps
+     * 带宽，单位为 bps
      *
      * Generated from protobuf field <code>double Bandwidth = 2;</code>
      */
@@ -35,7 +35,7 @@ class VodBandwidthData extends \Google\Protobuf\Internal\Message
      *     @type string $Time
      *           每个时间粒度的时间
      *     @type float $Bandwidth
-     *           带宽，单位为 Mbps
+     *           带宽，单位为 bps
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class VodBandwidthData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 带宽，单位为 Mbps
+     * 带宽，单位为 bps
      *
      * Generated from protobuf field <code>double Bandwidth = 2;</code>
      * @return float
@@ -81,7 +81,7 @@ class VodBandwidthData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 带宽，单位为 Mbps
+     * 带宽，单位为 bps
      *
      * Generated from protobuf field <code>double Bandwidth = 2;</code>
      * @param float $var

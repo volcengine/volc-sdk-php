@@ -26,6 +26,7 @@ $request->setPlayScene("your PlayScene");
 $request->setDrmExpireTimestamp("your DrmExpireTimestamp");
 $request->setQuality("your Quality");
 $request->setPlayConfig("your PlayConfig");
+$request->setNeedOriginal("your NeedOriginal");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetPlayInfoResponse();

@@ -20,33 +20,39 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      */
     protected $DomainList = '';
     /**
+     * 点播空间名和域名列表。格式为空间:域名 
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     */
+    protected $DomainInSpaceList = '';
+    /**
      * 查询的起始时间, rfc3339 
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      */
     protected $StartTime = '';
     /**
      * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      */
     protected $EndTime = '';
     /**
      * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      */
     protected $Aggregation = 0;
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * 默认是CDN，支持CDN、ECDN、ALL 
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      */
     protected $BandwidthType = '';
     /**
      * 加速区域 
      *
-     * Generated from protobuf field <code>string Area = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
      */
     protected $Area = '';
 
@@ -58,6 +64,8 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      *
      *     @type string $DomainList
      *           域名列表,多个域名用逗号分割 
+     *     @type string $DomainInSpaceList
+     *           点播空间名和域名列表。格式为空间:域名 
      *     @type string $StartTime
      *           查询的起始时间, rfc3339 
      *     @type string $EndTime
@@ -65,7 +73,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      *     @type int $Aggregation
      *           聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *     @type string $BandwidthType
-     *           默认是CDN，支持CDN、PCDN、ALL 
+     *           默认是CDN，支持CDN、ECDN、ALL 
      *     @type string $Area
      *           加速区域 
      * }
@@ -102,9 +110,35 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
+     * 点播空间名和域名列表。格式为空间:域名 
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     * @return string
+     */
+    public function getDomainInSpaceList()
+    {
+        return $this->DomainInSpaceList;
+    }
+
+    /**
+     * 点播空间名和域名列表。格式为空间:域名 
+     *
+     * Generated from protobuf field <code>string DomainInSpaceList = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDomainInSpaceList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DomainInSpaceList = $var;
+
+        return $this;
+    }
+
+    /**
      * 查询的起始时间, rfc3339 
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @return string
      */
     public function getStartTime()
@@ -115,7 +149,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 查询的起始时间, rfc3339 
      *
-     * Generated from protobuf field <code>string StartTime = 2;</code>
+     * Generated from protobuf field <code>string StartTime = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +164,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @return string
      */
     public function getEndTime()
@@ -141,7 +175,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 查询的结束时间, rfc3339；查询时间跨度不超过93天 
      *
-     * Generated from protobuf field <code>string EndTime = 3;</code>
+     * Generated from protobuf field <code>string EndTime = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -156,7 +190,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @return int
      */
     public function getAggregation()
@@ -167,7 +201,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 聚合的时间粒度，单位秒，默认300，支持300，1800，3600和86400 
      *
-     * Generated from protobuf field <code>int32 Aggregation = 4;</code>
+     * Generated from protobuf field <code>int32 Aggregation = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -180,9 +214,9 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * 默认是CDN，支持CDN、ECDN、ALL 
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      * @return string
      */
     public function getBandwidthType()
@@ -191,9 +225,9 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * 默认是CDN，支持CDN、PCDN、ALL 
+     * 默认是CDN，支持CDN、ECDN、ALL 
      *
-     * Generated from protobuf field <code>string BandwidthType = 5;</code>
+     * Generated from protobuf field <code>string BandwidthType = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -208,7 +242,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 加速区域 
      *
-     * Generated from protobuf field <code>string Area = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
      * @return string
      */
     public function getArea()
@@ -219,7 +253,7 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     /**
      * 加速区域 
      *
-     * Generated from protobuf field <code>string Area = 6;</code>
+     * Generated from protobuf field <code>string Area = 7;</code>
      * @param string $var
      * @return $this
      */

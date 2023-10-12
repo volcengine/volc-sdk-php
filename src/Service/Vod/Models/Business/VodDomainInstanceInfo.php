@@ -14,29 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     *实例ID，废弃
-     *
-     * Generated from protobuf field <code>string InstanceId = 1;</code>
-     */
-    protected $InstanceId = '';
-    /**
      *域名列表
      *
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodDomainoInfo Domains = 2;</code>
      */
     private $Domains;
-    /**
-     *是否可自助配置，废弃
-     *
-     * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
-     */
-    protected $CanSelfEditing = false;
-    /**
-     *实例配置状态，废弃
-     *
-     * Generated from protobuf field <code>string ConfigStatus = 4;</code>
-     */
-    protected $ConfigStatus = '';
 
     /**
      * Constructor.
@@ -44,45 +26,13 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $InstanceId
-     *          实例ID，废弃
      *     @type \Volc\Service\Vod\Models\Business\VodDomainoInfo[]|\Google\Protobuf\Internal\RepeatedField $Domains
      *          域名列表
-     *     @type bool $CanSelfEditing
-     *          是否可自助配置，废弃
-     *     @type string $ConfigStatus
-     *          实例配置状态，废弃
      * }
      */
     public function __construct($data = NULL) {
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     *实例ID，废弃
-     *
-     * Generated from protobuf field <code>string InstanceId = 1;</code>
-     * @return string
-     */
-    public function getInstanceId()
-    {
-        return $this->InstanceId;
-    }
-
-    /**
-     *实例ID，废弃
-     *
-     * Generated from protobuf field <code>string InstanceId = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInstanceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->InstanceId = $var;
-
-        return $this;
     }
 
     /**
@@ -107,58 +57,6 @@ class VodDomainInstanceInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodDomainoInfo::class);
         $this->Domains = $arr;
-
-        return $this;
-    }
-
-    /**
-     *是否可自助配置，废弃
-     *
-     * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
-     * @return bool
-     */
-    public function getCanSelfEditing()
-    {
-        return $this->CanSelfEditing;
-    }
-
-    /**
-     *是否可自助配置，废弃
-     *
-     * Generated from protobuf field <code>bool CanSelfEditing = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setCanSelfEditing($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->CanSelfEditing = $var;
-
-        return $this;
-    }
-
-    /**
-     *实例配置状态，废弃
-     *
-     * Generated from protobuf field <code>string ConfigStatus = 4;</code>
-     * @return string
-     */
-    public function getConfigStatus()
-    {
-        return $this->ConfigStatus;
-    }
-
-    /**
-     *实例配置状态，废弃
-     *
-     * Generated from protobuf field <code>string ConfigStatus = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setConfigStatus($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ConfigStatus = $var;
 
         return $this;
     }

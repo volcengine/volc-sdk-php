@@ -77,6 +77,14 @@ class Video extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 HDRMode = 21;</code>
      */
     protected $HDRMode = 0;
+    /**
+     * Generated from protobuf field <code>int32 GopSize = 24;</code>
+     */
+    protected $GopSize = 0;
+    /**
+     * Generated from protobuf field <code>bool DisableBFrame = 25;</code>
+     */
+    protected $DisableBFrame = false;
 
     /**
      * Constructor.
@@ -100,6 +108,8 @@ class Video extends \Google\Protobuf\Internal\Message
      *     @type string $Vsync
      *     @type float $Fps
      *     @type int $HDRMode
+     *     @type int $GopSize
+     *     @type bool $DisableBFrame
      * }
      */
     public function __construct($data = NULL) {
@@ -455,6 +465,50 @@ class Video extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->HDRMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 GopSize = 24;</code>
+     * @return int
+     */
+    public function getGopSize()
+    {
+        return $this->GopSize;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 GopSize = 24;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGopSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->GopSize = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool DisableBFrame = 25;</code>
+     * @return bool
+     */
+    public function getDisableBFrame()
+    {
+        return $this->DisableBFrame;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool DisableBFrame = 25;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisableBFrame($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->DisableBFrame = $var;
 
         return $this;
     }

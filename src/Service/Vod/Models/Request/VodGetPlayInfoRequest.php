@@ -118,6 +118,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string PlayConfig = 17;</code>
      */
     protected $PlayConfig = '';
+    /**
+     *控制是否需要将原片信息置于 VideoInfos 中
+     *
+     * Generated from protobuf field <code>string NeedOriginal = 18;</code>
+     */
+    protected $NeedOriginal = '';
 
     /**
      * Constructor.
@@ -162,6 +168,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           higher, highest.默认返回所有音频流
      *     @type string $PlayConfig
      *          播放配置,可指定播放域名
+     *     @type string $NeedOriginal
+     *          控制是否需要将原片信息置于 VideoInfos 中
      * }
      */
     public function __construct($data = NULL) {
@@ -613,6 +621,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->PlayConfig = $var;
+
+        return $this;
+    }
+
+    /**
+     *控制是否需要将原片信息置于 VideoInfos 中
+     *
+     * Generated from protobuf field <code>string NeedOriginal = 18;</code>
+     * @return string
+     */
+    public function getNeedOriginal()
+    {
+        return $this->NeedOriginal;
+    }
+
+    /**
+     *控制是否需要将原片信息置于 VideoInfos 中
+     *
+     * Generated from protobuf field <code>string NeedOriginal = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNeedOriginal($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->NeedOriginal = $var;
 
         return $this;
     }

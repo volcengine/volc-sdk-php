@@ -82,9 +82,9 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     /**
      *在CDN侧是否启用停用
      *
-     * Generated from protobuf field <code>string CDNStatus = 12;</code>
+     * Generated from protobuf field <code>string CdnStatus = 12;</code>
      */
-    protected $CDNStatus = '';
+    protected $CdnStatus = '';
 
     /**
      * Constructor.
@@ -114,7 +114,7 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
      *           源站信息
      *     @type string $LockStatus
      *          是否锁定，可否配置
-     *     @type string $CDNStatus
+     *     @type string $CdnStatus
      *          在CDN侧是否启用停用
      * }
      */
@@ -422,25 +422,25 @@ class VodDomainoInfo extends \Google\Protobuf\Internal\Message
     /**
      *在CDN侧是否启用停用
      *
-     * Generated from protobuf field <code>string CDNStatus = 12;</code>
+     * Generated from protobuf field <code>string CdnStatus = 12;</code>
      * @return string
      */
-    public function getCDNStatus()
+    public function getCdnStatus()
     {
-        return $this->CDNStatus;
+        return $this->CdnStatus;
     }
 
     /**
      *在CDN侧是否启用停用
      *
-     * Generated from protobuf field <code>string CDNStatus = 12;</code>
+     * Generated from protobuf field <code>string CdnStatus = 12;</code>
      * @param string $var
      * @return $this
      */
-    public function setCDNStatus($var)
+    public function setCdnStatus($var)
     {
         GPBUtil::checkString($var, True);
-        $this->CDNStatus = $var;
+        $this->CdnStatus = $var;
 
         return $this;
     }

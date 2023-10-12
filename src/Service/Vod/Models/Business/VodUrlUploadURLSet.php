@@ -97,6 +97,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool EnableLowPriority = 14;</code>
      */
     protected $EnableLowPriority = false;
+    /**
+     * 自定义Header 
+     *
+     * Generated from protobuf field <code>map<string, string> CustomURLHeaders = 15;</code>
+     */
+    private $CustomURLHeaders;
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           URL加密算法 
      *     @type bool $EnableLowPriority
      *           是否闲时转码 
+     *     @type array|\Google\Protobuf\Internal\MapField $CustomURLHeaders
+     *           自定义Header 
      * }
      */
     public function __construct($data = NULL) {
@@ -499,6 +507,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->EnableLowPriority = $var;
+
+        return $this;
+    }
+
+    /**
+     * 自定义Header 
+     *
+     * Generated from protobuf field <code>map<string, string> CustomURLHeaders = 15;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getCustomURLHeaders()
+    {
+        return $this->CustomURLHeaders;
+    }
+
+    /**
+     * 自定义Header 
+     *
+     * Generated from protobuf field <code>map<string, string> CustomURLHeaders = 15;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setCustomURLHeaders($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->CustomURLHeaders = $arr;
 
         return $this;
     }

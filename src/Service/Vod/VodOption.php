@@ -628,7 +628,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceStorageData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -641,7 +641,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'ListDomain',
-                    'Version' => '2021-01-01',
+                    'Version' => '2023-01-01',
                 ],
             ]
         ],
@@ -711,7 +711,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodDomainBandwidthData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -721,7 +721,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodDomainTrafficData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -818,6 +818,17 @@ class VodOption
             ]
         ],
 
+        'AddOrUpdateCertificate20230701' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'AddOrUpdateCertificate',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+
 
         // **********************************************************************
         // 回调管理
@@ -851,7 +862,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceTranscodeData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -861,7 +872,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceAIStatisData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -871,7 +882,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceSubtitleStatisData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -881,7 +892,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceDetectStatisData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -891,7 +902,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSnapshotData',
-                    'Version' => '2020-08-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -901,7 +912,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceWorkflowDetailData',
-                    'Version' => '2022-12-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -911,7 +922,7 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceEditDetailData',
-                    'Version' => '2022-12-01',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
