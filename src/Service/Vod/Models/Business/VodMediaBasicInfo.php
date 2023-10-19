@@ -79,6 +79,12 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string VodUploadSource = 11;</code>
      */
     protected $VodUploadSource = '';
+    /**
+     * Hls媒体Size(m3u8+ts)
+     *
+     * Generated from protobuf field <code>double HlsMediaSize = 12;</code>
+     */
+    protected $HlsMediaSize = 0.0;
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *           Tos存储类型:STANDARD, ARCHIVE, IA
      *     @type string $VodUploadSource
      *           音视频来源
+     *     @type float $HlsMediaSize
+     *           Hls媒体Size(m3u8+ts)
      * }
      */
     public function __construct($data = NULL) {
@@ -407,6 +415,32 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->VodUploadSource = $var;
+
+        return $this;
+    }
+
+    /**
+     * Hls媒体Size(m3u8+ts)
+     *
+     * Generated from protobuf field <code>double HlsMediaSize = 12;</code>
+     * @return float
+     */
+    public function getHlsMediaSize()
+    {
+        return $this->HlsMediaSize;
+    }
+
+    /**
+     * Hls媒体Size(m3u8+ts)
+     *
+     * Generated from protobuf field <code>double HlsMediaSize = 12;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setHlsMediaSize($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->HlsMediaSize = $var;
 
         return $this;
     }

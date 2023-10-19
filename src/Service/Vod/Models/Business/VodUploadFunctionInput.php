@@ -85,6 +85,10 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool IsHlsIndexOnly = 18;</code>
      */
     protected $IsHlsIndexOnly = false;
+    /**
+     * Generated from protobuf field <code>string HlsMediaSize = 19;</code>
+     */
+    protected $HlsMediaSize = '';
 
     /**
      * Constructor.
@@ -110,6 +114,7 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      *     @type bool $AutoPublish
      *     @type string $ActionType
      *     @type bool $IsHlsIndexOnly
+     *     @type string $HlsMediaSize
      * }
      */
     public function __construct($data = NULL) {
@@ -509,6 +514,28 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->IsHlsIndexOnly = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HlsMediaSize = 19;</code>
+     * @return string
+     */
+    public function getHlsMediaSize()
+    {
+        return $this->HlsMediaSize;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HlsMediaSize = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHlsMediaSize($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HlsMediaSize = $var;
 
         return $this;
     }
