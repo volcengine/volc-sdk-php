@@ -13,6 +13,7 @@ $request->setSpaceName("your SpaceName");
 $request->setDomainType("your DomainType");
 $request->setSourceStationType(0);
 $request->setOffset(0);
+$request->setLimit(0);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodListDomainResponse();
