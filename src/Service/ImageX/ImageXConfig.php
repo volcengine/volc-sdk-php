@@ -627,6 +627,106 @@ class ImageXConfig
                 ],
             ],
         ],
+        'CreateImageAuditTask' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateImageAuditTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'DeleteImageAuditTask' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteImageAuditTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'DeleteImageAuditResult' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteImageAuditResult',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'UpdateAuditImageStatus' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateAuditImageStatus',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'UpdateImageAuditTaskStatus' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateImageAuditTaskStatus',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetImageAuditTasks' => [
+            'method' => 'get',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageAuditTasks',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetImageAuditResult' => [
+            'method' => 'get',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetImageAuditResult',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'UpdateImageAuditTask' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateImageAuditTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'CreateImageRetryAuditTask' => [
+            'method' => 'post',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateImageRetryAuditTask',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
+        'GetAuditEntrysCount' => [
+            'method' => 'get',
+            'url' => '/',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAuditEntrysCount',
+                    'Version' => '2018-08-01',
+                ],
+            ],
+        ],
 
         'UpdateImageDomainIPAuth' => [
             'method' => 'post',

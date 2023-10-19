@@ -513,6 +513,137 @@ class ImageX extends V4Curl
         return $responseBody["Result"];
     }
 
+    public function createImageAuditTask(array $query = [], array $body = [])
+    {
+        $query["Action"] = "CreateImageAuditTask";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('CreateImageAuditTask', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("CreateImageAuditTask: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function deleteImageAuditTask(array $query = [], array $body = [])
+    {
+        $query["Action"] = "DeleteImageAuditTask";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DeleteImageAuditTask', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("DeleteImageAuditTask: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function deleteImageAuditResult(array $query = [], array $body = [])
+    {
+        $query["Action"] = "DeleteImageAuditResult";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('DeleteImageAuditResult', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("DeleteImageAuditResult: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function updateAuditImageStatus(array $query = [], array $body = [])
+    {
+        $query["Action"] = "UpdateAuditImageStatus";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('UpdateAuditImageStatus', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("UpdateAuditImageStatus: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function updateImageAuditTaskStatus(array $query = [], array $body = [])
+    {
+        $query["Action"] = "UpdateImageAuditTaskStatus";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('UpdateImageAuditTaskStatus', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("UpdateImageAuditTaskStatus: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function getImageAuditTasks(array $query = [])
+    {
+        $query["Action"] = "GetImageAuditTasks";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageAuditTasks', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("GetImageAuditTasks: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function getImageAuditResult(array $query = [])
+    {
+        $query["Action"] = "GetImageAuditResult";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetImageAuditResult', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("GetImageAuditResult: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function updateImageAuditTask(array $query = [], array $body = [])
+    {
+        $query["Action"] = "UpdateImageAuditTask";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('UpdateImageAuditTask', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("UpdateImageAuditTask: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function createImageRetryAuditTask(array $query = [], array $body = [])
+    {
+        $query["Action"] = "CreateImageRetryAuditTask";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('CreateImageRetryAuditTask', ['query' => $queryStr, 'json' => $body]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("CreateImageRetryAuditTask: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+    public function getAuditEntrysCount(array $query = [])
+    {
+        $query["Action"] = "GetAuditEntrysCount";
+        $query["Version"] = "2018-08-01";
+        $queryStr = http_build_query($query);
+        $response = $this->request('GetAuditEntrysCount', ['query' => $queryStr]);
+        $responseBody = json_decode((string)$response->getBody(), true);
+        if (isset($responseBody["ResponseMetadata"]["Error"])) {
+            return sprintf("GetAuditEntrysCount: request id %s error %s", $responseBody["ResponseMetadata"]["RequestId"], $responseBody["ResponseMetadata"]["Error"]["Message"]);
+        }
+        return $responseBody["Result"];
+    }
+
+
     public function getImageDuplicateDetection(array $body = [])
     {
         $body["Action"] = "GetImageDuplicateDetection";
