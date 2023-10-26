@@ -149,6 +149,19 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
+    public function FacePretty(array $query = [])
+    {
+        $response = $this->request('FacePretty', $query);
+        return $response->getBody();
+    }
+
+    public function PotraitEffect(array $query = [])
+    {
+        $response = $this->request('PotraitEffect', $query);
+        return $response->getBody();
+    }
+
+
     public function SetAPI($action, $version)
     {
         $addApi = [
@@ -417,6 +430,25 @@ class Visual extends V4Curl
                 ],
             ],
         ],
-
+        'FacePretty' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FacePretty',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'PotraitEffect' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'PotraitEffect',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
     ];
 }
