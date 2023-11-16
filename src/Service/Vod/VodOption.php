@@ -775,6 +775,16 @@ class VodOption
                 ],
             ]
         ],
+        'ListFileMetaInfosByFileNames' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListFileMetaInfosByFileNames',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetContentBlockTasks' => [
             'url' => '/',
             'method' => 'post',
@@ -818,7 +828,7 @@ class VodOption
             ]
         ],
 
-        'AddOrUpdateCertificate20230701' => [
+        'AddOrUpdateCertificate' => [
             'url' => '/',
             'method' => 'post',
             'config' => [

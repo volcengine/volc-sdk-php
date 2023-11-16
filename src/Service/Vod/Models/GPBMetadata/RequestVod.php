@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ºp
+Èq
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -127,7 +127,12 @@ SessionKey (	
 VodUploadSource (	"=
 VodUrlUploadJsonRequest
 	SpaceName (	
-URLSets (	".
+URLSets (	"i
+&VodListFileMetaInfosByFileNamesRequest
+	SpaceName (	
+FileNameEncodeds (	
+
+BucketName (	".
 VodGetRecommendedPosterRequest
 Vids (	"A
 "VodUpdateMediaPublishStatusRequest
@@ -680,7 +685,8 @@ DomainList (	"A
 VodQueryMediaBlockStatusRequest
 	SpaceName (	
 Vids (	"
-VodListProjectsRequestBÈ
+VodListProjectsRequest"!
+VodGetTradeConfigurationRequestBÈ
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request ØÊVolc\\Service\\Vod\\Models\\Requestâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

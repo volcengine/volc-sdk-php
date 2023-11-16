@@ -32,6 +32,8 @@ use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Response\VodApplyUploadInfoResponse;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
 use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
+use Volc\Service\Vod\Models\Request\VodListFileMetaInfosByFileNamesRequest;
+use Volc\Service\Vod\Models\Response\VodListFileMetaInfosByFileNamesResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateMediaInfoRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateMediaInfoResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateMediaPublishStatusRequest;
@@ -718,6 +720,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodCommitUploadInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListFileMetaInfosByFileNames.
+     *
+     * @param $req VodListFileMetaInfosByFileNamesRequest
+     * @return VodListFileMetaInfosByFileNamesResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listFileMetaInfosByFileNames (VodListFileMetaInfosByFileNamesRequest $req): VodListFileMetaInfosByFileNamesResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListFileMetaInfosByFileNames', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListFileMetaInfosByFileNamesResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
@@ -2808,18 +2843,18 @@ class Vod extends V4Curl
 	}
 	
 	/**
-     * AddOrUpdateCertificate20230701.
+     * AddOrUpdateCertificate.
      *
      * @param $req AddOrUpdateCertificateV2Request
      * @return AddOrUpdateCertificateV2Response
      * @throws Exception the exception
 	 * @throws Throwable the exception
      */
-	public function addOrUpdateCertificate20230701 (AddOrUpdateCertificateV2Request $req): AddOrUpdateCertificateV2Response
+	public function addOrUpdateCertificate (AddOrUpdateCertificateV2Request $req): AddOrUpdateCertificateV2Response
 	{
 		try {
 			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('AddOrUpdateCertificate20230701', ['form_params' => $query]);
+			$response = $this->request('AddOrUpdateCertificate', ['form_params' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
