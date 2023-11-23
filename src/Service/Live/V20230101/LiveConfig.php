@@ -146,6 +146,30 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'StopPullRecordTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'StopPullRecordTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreatePullRecordTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreatePullRecordTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DeleteRecordPreset' => [
                 'method' => 'post',
                 'url' => '/',
@@ -188,6 +212,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'ListVhostRecordPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListPullRecordTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListPullRecordTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -362,18 +398,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'UpdateAuthKey' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateAuthKey',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DeleteCert' => [
                 'method' => 'post',
                 'url' => '/',
@@ -446,36 +470,24 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DeleteReferer' => [
+            'CreateVerifyContent' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DeleteReferer',
+                        'Action' => 'CreateVerifyContent',
                         'Version' => '2023-01-01',
                     ]
                 ],
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeReferer' => [
+            'VerifyDomainOwner' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DescribeReferer',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'UpdateReferer' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateReferer',
+                        'Action' => 'VerifyDomainOwner',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -548,30 +560,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'ListDomainDetail',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'CreateVerifyContent' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'CreateVerifyContent',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'VerifyDomainOwner' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'VerifyDomainOwner',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -673,30 +661,6 @@ class LiveConfig
                 ],
                 'has_query' => true,
                 'has_json' => false,
-            ],
-            'DescribeDenyConfig' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeDenyConfig',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'UpdateDenyConfig' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateDenyConfig',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
             ],
             'DeleteRelaySourceV3' => [
                 'method' => 'post',
@@ -926,18 +890,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListVqosDimensionValues' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListVqosDimensionValues',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => true,
-            ],
             'ListVqosMetricsDimensions' => [
                 'method' => 'get',
                 'url' => '/',
@@ -950,48 +902,60 @@ class LiveConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
-            'GetVqosRawData' => [
+            'StopPullCDNSnapshotTask' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'GetVqosRawData',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => true,
-            ],
-            'StopPullRecordTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'StopPullRecordTask',
+                        'Action' => 'StopPullCDNSnapshotTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'CreatePullRecordTask' => [
+            'CreatePullCDNSnapshotTask' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'CreatePullRecordTask',
+                        'Action' => 'CreatePullCDNSnapshotTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListPullRecordTask' => [
+            'GetPullCDNSnapshotTask' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'ListPullRecordTask',
+                        'Action' => 'GetPullCDNSnapshotTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListPullCDNSnapshotTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListPullCDNSnapshotTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetPullRecordTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetPullRecordTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1016,6 +980,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateSnapshotAuditPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeSnapshotAuditPresetDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeSnapshotAuditPresetDetail',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1364,6 +1340,114 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLiveTimeShiftData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveCustomizedLogData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveCustomizedLogData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveLogData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveLogData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteReferer' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteReferer',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeReferer' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeReferer',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeDenyConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeDenyConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateReferer' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateReferer',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateAuthKey' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateAuthKey',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateDenyConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateDenyConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveStreamUsageData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveStreamUsageData',
                         'Version' => '2023-01-01',
                     ]
                 ],
