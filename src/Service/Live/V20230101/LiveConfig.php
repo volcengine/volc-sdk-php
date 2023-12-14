@@ -410,24 +410,24 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListCertV2' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListCertV2',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DescribeCertDetailSecretV2' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeCertDetailSecretV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListCertV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListCertV2',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -662,24 +662,24 @@ class LiveConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
-            'DeleteRelaySourceV3' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DeleteRelaySourceV3',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DeleteRelaySourceV4' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'DeleteRelaySourceV4',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteRelaySourceV3' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteRelaySourceV3',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1382,6 +1382,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeDenyConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeDenyConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeReferer' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1394,12 +1406,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeDenyConfig' => [
+            'UpdateDenyConfig' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DescribeDenyConfig',
+                        'Action' => 'UpdateDenyConfig',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1430,12 +1442,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'UpdateDenyConfig' => [
+            'DescribeLiveActivityBandwidthData' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'UpdateDenyConfig',
+                        'Action' => 'DescribeLiveActivityBandwidthData',
                         'Version' => '2023-01-01',
                     ]
                 ],

@@ -100,7 +100,7 @@ class Visual extends V4Curl
         $response = $this->request('Img2ImgStyle', $query);
         return $response->getBody();
     }
-    
+
     public function Img2ImgAnime(array $query = [])
     {
         $response = $this->request('Img2ImgAnime', $query);
@@ -130,7 +130,7 @@ class Visual extends V4Curl
         $response = $this->request('CertConfigInit', $query);
         return $response->getBody();
     }
-    
+
     public function OCRNormal(array $query = [])
     {
         $response = $this->request('OCRNormal', $query);
@@ -161,7 +161,6 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
-
     public function SetAPI($action, $version)
     {
         $addApi = [
@@ -185,6 +184,153 @@ class Visual extends V4Curl
         return $response->getBody();
     }
 
+    public function HairSegment(array $query = [])
+    {
+        $response = $this->request('HairSegment', $query);
+        return $response->getBody();
+    }
+
+    public function DollyZoom(array $query = [])
+    {
+        $response = $this->request('DollyZoom', $query);
+        return $response->getBody();
+    }
+
+    public function Img2Video3D(array $query = [])
+    {
+        $response = $this->request('Img2Video3D', $query);
+        return $response->getBody();
+    }
+    public function HairStyle(array $query = [])
+    {
+        $response = $this->request('HairStyle', $query);
+        return $response->getBody();
+    }
+    public function HairStyleV2(array $query = [])
+    {
+        $response = $this->request('HairStyleV2', $query);
+        return $response->getBody();
+    }
+    public function ImageAnimation(array $query = [])
+    {
+        $response = $this->request('ImageAnimation', $query);
+        return $response->getBody();
+    }
+    public function EmoticonEdit(array $query = [])
+    {
+        $response = $this->request('EmoticonEdit', $query);
+        return $response->getBody();
+    }
+    public function EmotionPortrait(array $query = [])
+    {
+        $response = $this->request('EmotionPortrait', $query);
+        return $response->getBody();
+    }
+    public function EyeClose2Open(array $query = [])
+    {
+        $response = $this->request('EyeClose2Open', $query);
+        return $response->getBody();
+    }
+    public function TupoCartoon(array $query = [])
+    {
+        $response = $this->request('TupoCartoon', $query);
+        return $response->getBody();
+    }
+    public function DistortionFree(array $query = [])
+    {
+        $response = $this->request('DistortionFree', $query);
+        return $response->getBody();
+    }
+    public function BodyDetection(array $query = [])
+    {
+        $response = $this->request('BodyDetection', $query);
+        return $response->getBody();
+    }
+    public function ImageFlow(array $query = [])
+    {
+        $response = $this->request('ImageFlow', $query);
+        return $response->getBody();
+    }
+    public function ImageScoreV2(array $query = [])
+    {
+        $response = $this->request('ImageScoreV2', $query);
+        return $response->getBody();
+    }
+    public function CarPlateDetection(array $query = [])
+    {
+        $response = $this->request('CarPlateDetection', $query);
+        return $response->getBody();
+    }
+    public function CarDetection(array $query = [])
+    {
+        $response = $this->request('CarDetection', $query);
+        return $response->getBody();
+    }
+    public function EntityDetect(array $query = [])
+    {
+        $response = $this->request('EntityDetect', $query);
+        return $response->getBody();
+    }
+    public function GoodsDetect(array $query = [])
+    {
+        $response = $this->request('GoodsDetect', $query);
+        return $response->getBody();
+    }
+    public function PoemMaterial(array $query = [])
+    {
+        $response = $this->request('PoemMaterial', $query);
+        return $response->getBody();
+    }
+    public function CarSegment(array $query = [])
+    {
+        $response = $this->request('CarSegment', $query);
+        return $response->getBody();
+    }
+    public function SkySegment(array $query = [])
+    {
+        $response = $this->request('SkySegment', $query);
+        return $response->getBody();
+    }
+    public function GoodsSegment(array $query = [])
+    {
+        $response = $this->request('SkySegment', $query);
+        return $response->getBody();
+    }
+    public function ImageCorrection(array $query = [])
+    {
+        $response = $this->request('ImageCorrection', $query);
+        return $response->getBody();
+    }
+    public function ImageStyleConversion(array $query = [])
+    {
+        $response = $this->request('ImageStyleConversion', $query);
+        return $response->getBody();
+    }
+    public function ImageCut(array $query = [])
+    {
+        $response = $this->request('ImageCut', $query);
+        return $response->getBody();
+    }
+    public function StretchRecovery(array $query = [])
+    {
+        $response = $this->request('StretchRecovery', $query);
+        return $response->getBody();
+    }
+    public function EnhancePhotoV2(array $query = [])
+    {
+        $response = $this->request('EnhancePhotoV2', $query);
+        return $response->getBody();
+    }
+    public function ConvertPhotoV2(array $query = [])
+    {
+        $response = $this->request('ConvertPhotoV2', $query);
+        return $response->getBody();
+    }
+    public function OverResolutionV2(array $query = [])
+    {
+        $response = $this->request('OverResolutionV2', $query);
+        return $response->getBody();
+    }
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
@@ -192,6 +338,326 @@ class Visual extends V4Curl
             'config' => [
                 'query' => [
                     'Action' => 'JPCartoon',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'OverResolutionV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'OverResolutionV2',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'ConvertPhotoV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ConvertPhotoV2',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'EnhancePhotoV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EnhancePhotoV2',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'StretchRecovery' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'StretchRecovery',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'ImageCut' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageCut',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'ImageStyleConversion' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageStyleConversion',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'ImageCorrection' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageCorrection',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'GoodsSegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GoodsSegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'SkySegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SkySegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'CarSegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CarSegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'PoemMaterial' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'PoemMaterial',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'GoodsDetect' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GoodsDetect',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'EntityDetect' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EntityDetect',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'CarDetection' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CarDetection',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'CarPlateDetection' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CarPlateDetection',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'ImageScoreV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageScoreV2',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'ImageFlow' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageFlow',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'BodyDetection' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BodyDetection',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'DistortionFree' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DistortionFree',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'TupoCartoon' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'TupoCartoon',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'EyeClose2Open' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EyeClose2Open',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'EmotionPortrait' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EmotionPortrait',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'ImageAnimation' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ImageAnimation',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'EmoticonEdit' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EmoticonEdit',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'HairStyle' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'HairStyle',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'HairStyleV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'HairStyle',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2Video3D' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2Video3D',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'HairSegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'HairSegment',
+                    'Version' => '2020-08-26',
+                ],
+            ],
+        ],
+        'DollyZoom' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DollyZoom',
                     'Version' => '2020-08-26',
                 ],
             ],

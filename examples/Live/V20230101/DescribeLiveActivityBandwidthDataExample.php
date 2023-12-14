@@ -9,9 +9,7 @@ $client = Live::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$query = [];
-
 $body = [];
 
-$response = $client->getVqosRawData($query, $body);
+$response = $client->describeLiveActivityBandwidthData($body);
 print_r($response);
