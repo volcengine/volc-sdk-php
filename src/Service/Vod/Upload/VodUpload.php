@@ -41,6 +41,8 @@ class VodUpload extends Vod
         $applyRequest->setFileName($vodUploadMediaRequest->getFileName());
         $applyRequest->setFileExtension($vodUploadMediaRequest->getFileExtension());
         $applyRequest->setStorageClass($vodUploadMediaRequest->getStorageClass());
+        $applyRequest->setClientIDCMode($vodUploadMediaRequest->getClientIDCMode());
+        $applyRequest->setClientNetWorkMode($vodUploadMediaRequest->getClientNetWorkMode());
         $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -64,6 +66,8 @@ class VodUpload extends Vod
         $applyRequest->setFileType($vodUploadMaterialRequest->getFileType());
         $applyRequest->setFileName($vodUploadMaterialRequest->getFileName());
         $applyRequest->setFileExtension($vodUploadMaterialRequest->getFileExtension());
+        $applyRequest->setClientIDCMode($vodUploadMaterialRequest->getClientIDCMode());
+        $applyRequest->setClientNetWorkMode($vodUploadMaterialRequest->getClientNetWorkMode());
         $resp = $this->upload($applyRequest, $vodUploadMaterialRequest->getFilePath());
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);

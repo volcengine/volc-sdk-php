@@ -73,6 +73,18 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 ParallelNum = 10;</code>
      */
     protected $ParallelNum = 0;
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 11;</code>
+     */
+    protected $ClientNetWorkMode = '';
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 12;</code>
+     */
+    protected $ClientIDCMode = '';
 
     /**
      * Constructor.
@@ -100,6 +112,10 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           上传策略 
      *     @type int $ParallelNum
      *           分片并发数 
+     *     @type string $ClientNetWorkMode
+     *           客户端网络环境 
+     *     @type string $ClientIDCMode
+     *           客户端机房环境 
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +379,58 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->ParallelNum = $var;
+
+        return $this;
+    }
+
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 11;</code>
+     * @return string
+     */
+    public function getClientNetWorkMode()
+    {
+        return $this->ClientNetWorkMode;
+    }
+
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientNetWorkMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientNetWorkMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 12;</code>
+     * @return string
+     */
+    public function getClientIDCMode()
+    {
+        return $this->ClientIDCMode;
+    }
+
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientIDCMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientIDCMode = $var;
 
         return $this;
     }

@@ -16,6 +16,8 @@ $request->setFileType("your FileType");
 $request->setFileName("your FileName");
 $request->setStorageClass(0);
 $request->setFileExtension("your FileExtension");
+$request->setClientNetWorkMode("your ClientNetWorkMode");
+$request->setClientIDCMode("your ClientIDCMode");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodApplyUploadInfoResponse();

@@ -9,10 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * **********************************************************************
- * 空间管理
- * **********************************************************************
- *
  * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodCreateSpaceRequest</code>
  */
 class VodCreateSpaceRequest extends \Google\Protobuf\Internal\Message

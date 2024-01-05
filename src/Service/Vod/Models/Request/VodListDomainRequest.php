@@ -9,10 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * **********************************************************************
- * 分发加速管理
- * **********************************************************************
- *
  * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodListDomainRequest</code>
  */
 class VodListDomainRequest extends \Google\Protobuf\Internal\Message

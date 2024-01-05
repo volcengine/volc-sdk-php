@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Èq
+˜z
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -81,12 +81,15 @@ PlayConfig (	
 	SpaceName (	
 Ssl (	
 ExpireTimestamp (	
-NeedComposeBucketName (	"m
+NeedComposeBucketName (	"*
+VodDescribeDrmDataKeyRequest
+
+Ak (	"m
 VodUrlUploadRequest
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
 VodQueryUploadTaskInfoRequest
-JobIds (	"¥
+JobIds (	"×
 VodApplyUploadInfoRequest
 	SpaceName (	
 
@@ -95,7 +98,9 @@ SessionKey (	
 FileType (	
 FileName (	
 StorageClass (
-FileExtension (	"ê
+FileExtension (	
+ClientNetWorkMode (	
+ClientIDCMode	 (	"œ
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -107,7 +112,9 @@ SessionKey (	
 VodUploadSource (	
 UploadStrategy	 (
 ParallelNum
- ("Ð
+ (
+ClientNetWorkMode (	
+ClientIDCMode (	"‚
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -117,7 +124,22 @@ SessionKey (	
 FileName (	
 FileExtension (	
 UploadStrategy (
-ParallelNum	 ("…
+ParallelNum	 (
+ClientNetWorkMode
+ (	
+ClientIDCMode (	"î
+VodUploadObjectRequest
+	SpaceName (	
+FilePath (	
+CallbackArgs (	
+	Functions (	
+FileName (	
+FileExtension (	
+UploadStrategy (
+ParallelNum (
+ClientNetWorkMode	 (	
+ClientIDCMode
+ (	"…
 VodCommitUploadInfoRequest
 	SpaceName (	
 
@@ -414,7 +436,9 @@ OrderByKey (	
 VodGetDirectEditResultRequest
 ReqIds (	"0
 VodGetDirectEditProgressRequest
-ReqId (	"v
+ReqId (	"*
+VodDeleteSpaceRequest
+	SpaceName (	"v
 VodCreateSpaceRequest
 	SpaceName (	
 ProjectName (	
@@ -440,7 +464,40 @@ OrderByKey (	
 	StartTime (	
 EndTime (	
 Aggregation (
-Type (	"w
+Type (	"\\
+VodUpdateDomainPlayRuleRequest
+	SpaceName (	
+DefaultDomain (	
+PlayRule (	"r
+VodAddDomainToSchedulerRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	
+SourceStationType ("w
+#VodRemoveDomainFromSchedulerRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	
+SourceStationType ("O
+VodDeleteDomainRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	"i
+VodStartDomainRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	
+SourceStationType ("h
+VodStopDomainRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	
+SourceStationType ("w
 VodListDomainRequest
 	SpaceName (	
 

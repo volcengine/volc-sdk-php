@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodUploadMaterialRequest</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Request.VodUploadObjectRequest</code>
  */
-class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
+class VodUploadObjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * 上传的空间名 
@@ -38,45 +38,39 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Functions = '';
     /**
-     * 上传的类型，media、image、object 默认为 media 
-     *
-     * Generated from protobuf field <code>string FileType = 5;</code>
-     */
-    protected $FileType = '';
-    /**
      * 上传的文件在存储中的名字，即 bucket/key 中的 key 
      *
-     * Generated from protobuf field <code>string FileName = 6;</code>
+     * Generated from protobuf field <code>string FileName = 5;</code>
      */
     protected $FileName = '';
     /**
      * 上传中文件的文件后缀 
      *
-     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * Generated from protobuf field <code>string FileExtension = 6;</code>
      */
     protected $FileExtension = '';
     /**
      * 上传策略 
      *
-     * Generated from protobuf field <code>int32 UploadStrategy = 8;</code>
+     * Generated from protobuf field <code>int32 UploadStrategy = 7;</code>
      */
     protected $UploadStrategy = 0;
     /**
      * 分片并发数 
      *
-     * Generated from protobuf field <code>int32 ParallelNum = 9;</code>
+     * Generated from protobuf field <code>int32 ParallelNum = 8;</code>
      */
     protected $ParallelNum = 0;
     /**
      * 客户端网络环境 
      *
-     * Generated from protobuf field <code>string ClientNetWorkMode = 10;</code>
+     * Generated from protobuf field <code>string ClientNetWorkMode = 9;</code>
      */
     protected $ClientNetWorkMode = '';
     /**
      * 客户端机房环境 
      *
-     * Generated from protobuf field <code>string ClientIDCMode = 11;</code>
+     * Generated from protobuf field <code>string ClientIDCMode = 10;</code>
      */
     protected $ClientIDCMode = '';
 
@@ -94,8 +88,6 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      *           业务希望上传透传的信息，会在上传成功时返回给用户 
      *     @type string $Functions
      *           上传的功能函数 
-     *     @type string $FileType
-     *           上传的类型，media、image、object 默认为 media 
      *     @type string $FileName
      *           上传的文件在存储中的名字，即 bucket/key 中的 key 
      *     @type string $FileExtension
@@ -220,35 +212,9 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 上传的类型，media、image、object 默认为 media 
-     *
-     * Generated from protobuf field <code>string FileType = 5;</code>
-     * @return string
-     */
-    public function getFileType()
-    {
-        return $this->FileType;
-    }
-
-    /**
-     * 上传的类型，media、image、object 默认为 media 
-     *
-     * Generated from protobuf field <code>string FileType = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFileType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->FileType = $var;
-
-        return $this;
-    }
-
-    /**
      * 上传的文件在存储中的名字，即 bucket/key 中的 key 
      *
-     * Generated from protobuf field <code>string FileName = 6;</code>
+     * Generated from protobuf field <code>string FileName = 5;</code>
      * @return string
      */
     public function getFileName()
@@ -259,7 +225,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传的文件在存储中的名字，即 bucket/key 中的 key 
      *
-     * Generated from protobuf field <code>string FileName = 6;</code>
+     * Generated from protobuf field <code>string FileName = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -274,7 +240,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传中文件的文件后缀 
      *
-     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * Generated from protobuf field <code>string FileExtension = 6;</code>
      * @return string
      */
     public function getFileExtension()
@@ -285,7 +251,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传中文件的文件后缀 
      *
-     * Generated from protobuf field <code>string FileExtension = 7;</code>
+     * Generated from protobuf field <code>string FileExtension = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -300,7 +266,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传策略 
      *
-     * Generated from protobuf field <code>int32 UploadStrategy = 8;</code>
+     * Generated from protobuf field <code>int32 UploadStrategy = 7;</code>
      * @return int
      */
     public function getUploadStrategy()
@@ -311,7 +277,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 上传策略 
      *
-     * Generated from protobuf field <code>int32 UploadStrategy = 8;</code>
+     * Generated from protobuf field <code>int32 UploadStrategy = 7;</code>
      * @param int $var
      * @return $this
      */
@@ -326,7 +292,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 分片并发数 
      *
-     * Generated from protobuf field <code>int32 ParallelNum = 9;</code>
+     * Generated from protobuf field <code>int32 ParallelNum = 8;</code>
      * @return int
      */
     public function getParallelNum()
@@ -337,7 +303,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 分片并发数 
      *
-     * Generated from protobuf field <code>int32 ParallelNum = 9;</code>
+     * Generated from protobuf field <code>int32 ParallelNum = 8;</code>
      * @param int $var
      * @return $this
      */
@@ -352,7 +318,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 客户端网络环境 
      *
-     * Generated from protobuf field <code>string ClientNetWorkMode = 10;</code>
+     * Generated from protobuf field <code>string ClientNetWorkMode = 9;</code>
      * @return string
      */
     public function getClientNetWorkMode()
@@ -363,7 +329,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 客户端网络环境 
      *
-     * Generated from protobuf field <code>string ClientNetWorkMode = 10;</code>
+     * Generated from protobuf field <code>string ClientNetWorkMode = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -378,7 +344,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 客户端机房环境 
      *
-     * Generated from protobuf field <code>string ClientIDCMode = 11;</code>
+     * Generated from protobuf field <code>string ClientIDCMode = 10;</code>
      * @return string
      */
     public function getClientIDCMode()
@@ -389,7 +355,7 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     /**
      * 客户端机房环境 
      *
-     * Generated from protobuf field <code>string ClientIDCMode = 11;</code>
+     * Generated from protobuf field <code>string ClientIDCMode = 10;</code>
      * @param string $var
      * @return $this
      */

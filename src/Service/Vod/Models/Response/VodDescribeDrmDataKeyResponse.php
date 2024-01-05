@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodListDomainResponse</code>
+ * Generated from protobuf message <code>Volcengine.Vod.Models.Response.VodDescribeDrmDataKeyResponse</code>
  */
-class VodListDomainResponse extends \Google\Protobuf\Internal\Message
+class VodDescribeDrmDataKeyResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     *响应通用信息
+     * 响应通用信息
      *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     protected $ResponseMetadata = null;
     /**
-     *响应结果
+     * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult Result = 2;</code>
      */
     protected $Result = null;
 
@@ -33,9 +33,9 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Volc\Service\Base\Models\Base\ResponseMetadata $ResponseMetadata
-     *          响应通用信息
-     *     @type \Volc\Service\Vod\Models\Business\VodDomainConfigInfo $Result
-     *          响应结果
+     *           响应通用信息
+     *     @type \Volc\Service\Vod\Models\Business\VodDescribeDrmDataKeyResult $Result
+     *           响应结果
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应通用信息
+     * 响应通用信息
      *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return \Volc\Service\Base\Models\Base\ResponseMetadata|null
@@ -65,7 +65,7 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应通用信息
+     * 响应通用信息
      *
      * Generated from protobuf field <code>.Volcengine.Base.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @param \Volc\Service\Base\Models\Base\ResponseMetadata $var
@@ -80,10 +80,10 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应结果
+     * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\VodDomainConfigInfo|null
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult Result = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodDescribeDrmDataKeyResult|null
      */
     public function getResult()
     {
@@ -101,15 +101,15 @@ class VodListDomainResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *响应结果
+     * 响应结果
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDomainConfigInfo Result = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\VodDomainConfigInfo $var
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult Result = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodDescribeDrmDataKeyResult $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodDomainConfigInfo::class);
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodDescribeDrmDataKeyResult::class);
         $this->Result = $var;
 
         return $this;

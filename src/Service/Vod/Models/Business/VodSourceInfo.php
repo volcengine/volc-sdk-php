@@ -133,6 +133,12 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileName = 20;</code>
      */
     protected $FileName = '';
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 21;</code>
+     */
+    private $FileExtra;
 
     /**
      * Constructor.
@@ -180,6 +186,8 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      *          存储类型，STANDARD or ARCHIVE
      *     @type string $FileName
      *          文件名
+     *     @type array|\Google\Protobuf\Internal\MapField $FileExtra
+     *          附加属性
      * }
      */
     public function __construct($data = NULL) {
@@ -723,6 +731,32 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 21;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getFileExtra()
+    {
+        return $this->FileExtra;
+    }
+
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 21;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setFileExtra($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->FileExtra = $arr;
 
         return $this;
     }

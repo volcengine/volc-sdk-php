@@ -24,6 +24,8 @@ use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
 use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoWithLiveTimeShiftSceneRequest;
 use Volc\Service\Vod\Models\Response\VodGetPlayInfoWithLiveTimeShiftSceneResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeDrmDataKeyRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeDrmDataKeyResponse;
 use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
 use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
 use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
@@ -118,6 +120,8 @@ use Volc\Service\Vod\Models\Request\VodListWatermarkRequest;
 use Volc\Service\Vod\Models\Response\VodListWatermarkResponse;
 use Volc\Service\Vod\Models\Request\VodDeleteWatermarkRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteWatermarkResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteSpaceRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodCreateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodCreateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodListSpaceRequest;
@@ -128,6 +132,18 @@ use Volc\Service\Vod\Models\Request\VodUpdateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
+use Volc\Service\Vod\Models\Request\VodAddDomainToSchedulerRequest;
+use Volc\Service\Vod\Models\Response\VodAddDomainToSchedulerResponse;
+use Volc\Service\Vod\Models\Request\VodRemoveDomainFromSchedulerRequest;
+use Volc\Service\Vod\Models\Response\VodRemoveDomainFromSchedulerResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainPlayRuleRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainPlayRuleResponse;
+use Volc\Service\Vod\Models\Request\VodStartDomainRequest;
+use Volc\Service\Vod\Models\Response\VodStartDomainResponse;
+use Volc\Service\Vod\Models\Request\VodStopDomainRequest;
+use Volc\Service\Vod\Models\Response\VodStopDomainResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteDomainRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteDomainResponse;
 use Volc\Service\Vod\Models\Request\VodListDomainRequest;
 use Volc\Service\Vod\Models\Response\VodListDomainResponse;
 use Volc\Service\Vod\Models\Request\VodCreateCdnRefreshTaskRequest;
@@ -599,6 +615,39 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * DescribeDrmDataKey.
+     *
+     * @param $req VodDescribeDrmDataKeyRequest
+     * @return VodDescribeDrmDataKeyResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeDrmDataKey (VodDescribeDrmDataKeyRequest $req): VodDescribeDrmDataKeyResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeDrmDataKey', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeDrmDataKeyResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * UploadMediaByUrl.
      *
      * @param $req VodUrlUploadRequest
@@ -875,6 +924,39 @@ class Vod extends V4Curl
 		try {
 			$query = VodUtils::formatRequestParam($req);
 			$response = $this->request('GetMediaInfos', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetMediaInfosResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetMediaInfos20230701.
+     *
+     * @param $req VodGetMediaInfosRequest
+     * @return VodGetMediaInfosResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getMediaInfos20230701 (VodGetMediaInfosRequest $req): VodGetMediaInfosResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetMediaInfos20230701', ['query' => $query]);
 		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -2150,6 +2232,39 @@ class Vod extends V4Curl
 	}
 	
 	/**
+     * DeleteSpace.
+     *
+     * @param $req VodDeleteSpaceRequest
+     * @return VodDeleteSpaceResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteSpace (VodDeleteSpaceRequest $req): VodDeleteSpaceResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteSpace', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteSpaceResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
      * CreateSpace.
      *
      * @param $req VodCreateSpaceRequest
@@ -2304,6 +2419,204 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateSpaceUploadConfigResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * AddDomainToScheduler.
+     *
+     * @param $req VodAddDomainToSchedulerRequest
+     * @return VodAddDomainToSchedulerResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function addDomainToScheduler (VodAddDomainToSchedulerRequest $req): VodAddDomainToSchedulerResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('AddDomainToScheduler', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodAddDomainToSchedulerResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * RemoveDomainFromScheduler.
+     *
+     * @param $req VodRemoveDomainFromSchedulerRequest
+     * @return VodRemoveDomainFromSchedulerResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function removeDomainFromScheduler (VodRemoveDomainFromSchedulerRequest $req): VodRemoveDomainFromSchedulerResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('RemoveDomainFromScheduler', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodRemoveDomainFromSchedulerResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainPlayRule.
+     *
+     * @param $req VodUpdateDomainPlayRuleRequest
+     * @return VodUpdateDomainPlayRuleResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainPlayRule (VodUpdateDomainPlayRuleRequest $req): VodUpdateDomainPlayRuleResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainPlayRule', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainPlayRuleResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * StartDomain.
+     *
+     * @param $req VodStartDomainRequest
+     * @return VodStartDomainResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function startDomain (VodStartDomainRequest $req): VodStartDomainResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('StartDomain', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodStartDomainResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * StopDomain.
+     *
+     * @param $req VodStopDomainRequest
+     * @return VodStopDomainResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function stopDomain (VodStopDomainRequest $req): VodStopDomainResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('StopDomain', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodStopDomainResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteDomain.
+     *
+     * @param $req VodDeleteDomainRequest
+     * @return VodDeleteDomainResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteDomain (VodDeleteDomainRequest $req): VodDeleteDomainResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteDomain', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteDomainResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

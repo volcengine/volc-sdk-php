@@ -55,6 +55,18 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileExtension = 7;</code>
      */
     protected $FileExtension = '';
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 8;</code>
+     */
+    protected $ClientNetWorkMode = '';
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 9;</code>
+     */
+    protected $ClientIDCMode = '';
 
     /**
      * Constructor.
@@ -76,6 +88,10 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *           上传的文件的存储类型，1-标准存储，2-归档存储，非必填参数，默认为标准存储 
      *     @type string $FileExtension
      *           上传中文件的文件后缀 
+     *     @type string $ClientNetWorkMode
+     *           客户端网络环境 
+     *     @type string $ClientIDCMode
+     *           客户端机房环境 
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +277,58 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileExtension = $var;
+
+        return $this;
+    }
+
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 8;</code>
+     * @return string
+     */
+    public function getClientNetWorkMode()
+    {
+        return $this->ClientNetWorkMode;
+    }
+
+    /**
+     * 客户端网络环境 
+     *
+     * Generated from protobuf field <code>string ClientNetWorkMode = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientNetWorkMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientNetWorkMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 9;</code>
+     * @return string
+     */
+    public function getClientIDCMode()
+    {
+        return $this->ClientIDCMode;
+    }
+
+    /**
+     * 客户端机房环境 
+     *
+     * Generated from protobuf field <code>string ClientIDCMode = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientIDCMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientIDCMode = $var;
 
         return $this;
     }

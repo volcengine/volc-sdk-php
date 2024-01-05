@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÍŒ
+Ú“
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -49,7 +49,10 @@ class ResponseVod
 Result (2<.Volcengine.Vod.Models.Business.VodGetHlsDecryptionKeyResult"Ó
 ,VodGetPlayInfoWithLiveTimeShiftSceneResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataZ
-Result (2J.Volcengine.Vod.Models.Business.VodGetPlayInfoWithLiveTimeShiftSceneResult" 
+Result (2J.Volcengine.Vod.Models.Business.VodGetPlayInfoWithLiveTimeShiftSceneResult"µ
+VodDescribeDrmDataKeyResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
+Result (2;.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult" 
 VodUploadMediaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata=
 Result (2-.Volcengine.Vod.Models.Business.VodCommitData"§
@@ -206,6 +209,8 @@ $VodSubmitDirectEditTaskAsyncResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
 Result (23.Volcengine.Vod.Models.Business.GetDirectEditResult"a
 VodCreateSpaceResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"a
+VodDeleteSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"
 VodListSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata<
@@ -219,7 +224,19 @@ $VodSubmitDirectEditTaskAsyncResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"Ç
 &VodDescribeVodSpaceStorageDataResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
-Result (2D.Volcengine.Vod.Models.Business.VodDescribeVodSpaceStorageDataResult"¥
+Result (2D.Volcengine.Vod.Models.Business.VodDescribeVodSpaceStorageDataResult"j
+VodUpdateDomainPlayRuleResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"j
+VodAddDomainToSchedulerResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"o
+$VodRemoveDomainFromSchedulerResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"b
+VodDeleteDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"a
+VodStartDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"`
+VodStopDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¥
 VodListDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
 Result (23.Volcengine.Vod.Models.Business.VodDomainConfigInfo"²

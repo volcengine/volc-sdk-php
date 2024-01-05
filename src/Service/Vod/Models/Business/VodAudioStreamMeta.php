@@ -43,6 +43,12 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Quality = 5;</code>
      */
     protected $Quality = '';
+    /**
+     *声道数
+     *
+     * Generated from protobuf field <code>int32 Channels = 6;</code>
+     */
+    protected $Channels = 0;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
      *          音频码率(Kbps)
      *     @type string $Quality
      *          音频质量
+     *     @type int $Channels
+     *          声道数
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class VodAudioStreamMeta extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Quality = $var;
+
+        return $this;
+    }
+
+    /**
+     *声道数
+     *
+     * Generated from protobuf field <code>int32 Channels = 6;</code>
+     * @return int
+     */
+    public function getChannels()
+    {
+        return $this->Channels;
+    }
+
+    /**
+     *声道数
+     *
+     * Generated from protobuf field <code>int32 Channels = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setChannels($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->Channels = $var;
 
         return $this;
     }

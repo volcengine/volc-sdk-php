@@ -97,6 +97,12 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TosStorageClass = 14;</code>
      */
     protected $TosStorageClass = '';
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 15;</code>
+     */
+    private $FileExtra;
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *          动态范围，"HDR" or "SDR"
      *     @type string $TosStorageClass
      *           Tos存储类型:STANDARD, ARCHIVE
+     *     @type array|\Google\Protobuf\Internal\MapField $FileExtra
+     *          附加属性
      * }
      */
     public function __construct($data = NULL) {
@@ -519,6 +527,32 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 15;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getFileExtra()
+    {
+        return $this->FileExtra;
+    }
+
+    /**
+     *附加属性
+     *
+     * Generated from protobuf field <code>map<string, string> FileExtra = 15;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setFileExtra($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->FileExtra = $arr;
 
         return $this;
     }

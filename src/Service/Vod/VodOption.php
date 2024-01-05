@@ -56,6 +56,16 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeDrmDataKey' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeDrmDataKey',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetPlayInfoWithLiveTimeShiftScene' => [
             'url' => '/',
             'method' => 'get',
@@ -150,6 +160,16 @@ class VodOption
                 'query' => [
                     'Action' => 'GetMediaInfos',
                     'Version' => '2022-12-01',
+                ],
+            ]
+        ],
+        'GetMediaInfos20230701' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMediaInfos',
+                    'Version' => '2023-07-01',
                 ],
             ]
         ],
@@ -572,6 +592,16 @@ class VodOption
         // **********************************************************************
         // 空间管理
         // **********************************************************************
+        'DeleteSpace' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteSpace',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'CreateSpace' => [
             'url' => '/',
             'method' => 'get',
@@ -635,6 +665,66 @@ class VodOption
         // **********************************************************************
         // 分发加速管理
         // **********************************************************************
+        'DeleteDomain' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteDomain',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'StopDomain' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'StopDomain',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'StartDomain' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'StartDomain',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateDomainPlayRule' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateDomainPlayRule',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'RemoveDomainFromScheduler' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'RemoveDomainFromScheduler',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'AddDomainToScheduler' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'AddDomainToScheduler',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'ListDomain' => [
             'url' => '/',
             'method' => 'get',

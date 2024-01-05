@@ -57,6 +57,14 @@ class ApplyUploadInfoParam extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 StorageClass = 11;</code>
      */
     protected $StorageClass = 0;
+    /**
+     * Generated from protobuf field <code>string ClientNetWorkMode = 101;</code>
+     */
+    protected $ClientNetWorkMode = '';
+    /**
+     * Generated from protobuf field <code>string ClientIDCMode = 102;</code>
+     */
+    protected $ClientIDCMode = '';
 
     /**
      * Constructor.
@@ -75,6 +83,8 @@ class ApplyUploadInfoParam extends \Google\Protobuf\Internal\Message
      *     @type int $FlushUploadMode
      *     @type string $Md5
      *     @type int $StorageClass
+     *     @type string $ClientNetWorkMode
+     *     @type string $ClientIDCMode
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +330,50 @@ class ApplyUploadInfoParam extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->StorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientNetWorkMode = 101;</code>
+     * @return string
+     */
+    public function getClientNetWorkMode()
+    {
+        return $this->ClientNetWorkMode;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientNetWorkMode = 101;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientNetWorkMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientNetWorkMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientIDCMode = 102;</code>
+     * @return string
+     */
+    public function getClientIDCMode()
+    {
+        return $this->ClientIDCMode;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientIDCMode = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientIDCMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientIDCMode = $var;
 
         return $this;
     }
