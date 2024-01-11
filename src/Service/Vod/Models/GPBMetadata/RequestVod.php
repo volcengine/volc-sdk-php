@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-òz
+≠{
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -631,6 +631,14 @@ DomainType (	
 Domain (	
 Expire ("è
 "VodUpdateDomainAuthConfigV2Request
+	SpaceName (	
+
+DomainType (	
+Domain (	
+MainKey (	
+	BackupKey (	
+Status (	"í
+%VodUpdateDomainUrlAuthConfigV2Request
 	SpaceName (	
 
 DomainType (	

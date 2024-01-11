@@ -176,6 +176,8 @@ use Volc\Service\Vod\Models\Request\VodUpdateDomainAuthConfigV2Request;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainAuthConfigV2Response;
 use Volc\Service\Vod\Models\Request\AddOrUpdateCertificateV2Request;
 use Volc\Service\Vod\Models\Response\AddOrUpdateCertificateV2Response;
+use Volc\Service\Vod\Models\Request\VodUpdateDomainUrlAuthConfigV2Request;
+use Volc\Service\Vod\Models\Response\VodUpdateDomainUrlAuthConfigV2Response;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -3178,6 +3180,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new AddOrUpdateCertificateV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateDomainUrlAuthConfig.
+     *
+     * @param $req VodUpdateDomainUrlAuthConfigV2Request
+     * @return VodUpdateDomainUrlAuthConfigV2Response
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateDomainUrlAuthConfig (VodUpdateDomainUrlAuthConfigV2Request $req): VodUpdateDomainUrlAuthConfigV2Response
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateDomainUrlAuthConfig', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateDomainUrlAuthConfigV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
