@@ -16,6 +16,7 @@ $request->setEndTime("your EndTime");
 $request->setAggregation(0);
 $request->setBandwidthType("your BandwidthType");
 $request->setArea("your Area");
+$request->setRegionList("your RegionList");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse();

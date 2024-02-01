@@ -86,12 +86,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DeleteWatermarkPreset' => [
+            'CreateWatermarkPreset' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DeleteWatermarkPreset',
+                        'Action' => 'CreateWatermarkPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -104,6 +104,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateWatermarkPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteWatermarkPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteWatermarkPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -128,18 +140,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'ListVhostWatermarkPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'CreateWatermarkPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'CreateWatermarkPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -266,6 +266,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'UpdateSnapshotPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateSnapshotPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeCDNSnapshotHistory' => [
                 'method' => 'post',
                 'url' => '/',
@@ -290,12 +302,36 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'ListVhostSnapshotPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListVhostSnapshotPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'CreateSnapshotPreset' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'CreateSnapshotPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateSnapshotPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateSnapshotPresetV2',
                         'Version' => '2023-01-01',
                     ]
                 ],

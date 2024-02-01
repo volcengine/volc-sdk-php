@@ -56,15 +56,19 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
      */
     private $DetailFieldList;
     /**
-     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 8;</code>
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     */
+    private $RegionList;
+    /**
+     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 9;</code>
      */
     protected $TotalSubtitleUsageData = 0;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 10;</code>
      */
     private $SubtitleUsageDataList;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 11;</code>
      */
     private $SubtitleUsageDataDetailList;
 
@@ -88,6 +92,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
      *          聚合的时间粒度，单位秒，默认3600，支持3600和86400
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DetailFieldList
      *           展示详细信息的维度，取值：TaskStage、Space
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $RegionList
      *     @type int|string $TotalSubtitleUsageData
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataItem[]|\Google\Protobuf\Internal\RepeatedField $SubtitleUsageDataList
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataDetail[]|\Google\Protobuf\Internal\RepeatedField $SubtitleUsageDataDetailList
@@ -281,7 +286,29 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 8;</code>
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->RegionList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 9;</code>
      * @return int|string
      */
     public function getTotalSubtitleUsageData()
@@ -290,7 +317,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 8;</code>
+     * Generated from protobuf field <code>int64 TotalSubtitleUsageData = 9;</code>
      * @param int|string $var
      * @return $this
      */
@@ -303,7 +330,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubtitleUsageDataList()
@@ -312,7 +339,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataItem SubtitleUsageDataList = 10;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -325,7 +352,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubtitleUsageDataDetailList()
@@ -334,7 +361,7 @@ class DescribeVodSpaceSubtitleStatisDataResult extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceSubtitleStatisDataDetail SubtitleUsageDataDetailList = 11;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceSubtitleStatisDataDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

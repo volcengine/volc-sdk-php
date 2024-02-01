@@ -53,6 +53,10 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string Area = 7;</code>
      */
     protected $Area = '';
+    /**
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     */
+    protected $RegionList = '';
 
     /**
      * Constructor.
@@ -73,6 +77,7 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
      *     @type string $TrafficType
      *           ECDN, CDN, or ALL
      *     @type string $Area
+     *     @type string $RegionList
      * }
      */
     public function __construct($data = NULL) {
@@ -254,6 +259,28 @@ class VodDescribeVodDomainTrafficDataRequest extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->Area = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @return string
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->RegionList = $var;
 
         return $this;
     }

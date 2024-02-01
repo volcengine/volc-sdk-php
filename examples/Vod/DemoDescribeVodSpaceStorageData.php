@@ -14,6 +14,7 @@ $request->setStartTime("your StartTime");
 $request->setEndTime("your EndTime");
 $request->setAggregation(0);
 $request->setType("your Type");
+$request->setRegionList("your RegionList");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodDescribeVodSpaceStorageDataResponse();

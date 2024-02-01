@@ -61,15 +61,21 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
      */
     private $DetailFieldList;
     /**
-     * Generated from protobuf field <code>int64 TotalTranscodeData = 9;</code>
+     * 地区列表
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 9;</code>
+     */
+    private $RegionList;
+    /**
+     * Generated from protobuf field <code>int64 TotalTranscodeData = 10;</code>
      */
     protected $TotalTranscodeData = 0;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 11;</code>
      */
     private $TotalTranscodeDataList;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 12;</code>
      */
     private $TranscodeDataDetailList;
 
@@ -94,6 +100,8 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
      *          聚合的时间粒度，单位秒，默认3600，支持3600和86400
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DetailFieldList
      *           展示详细信息的维度，取值：TaskStage、Space
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $RegionList
+     *           地区列表
      *     @type int|string $TotalTranscodeData
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceTranscodeItem[]|\Google\Protobuf\Internal\RepeatedField $TotalTranscodeDataList
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceTranscodeDetail[]|\Google\Protobuf\Internal\RepeatedField $TranscodeDataDetailList
@@ -311,7 +319,33 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalTranscodeData = 9;</code>
+     * 地区列表
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * 地区列表
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 9;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->RegionList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 TotalTranscodeData = 10;</code>
      * @return int|string
      */
     public function getTotalTranscodeData()
@@ -320,7 +354,7 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalTranscodeData = 9;</code>
+     * Generated from protobuf field <code>int64 TotalTranscodeData = 10;</code>
      * @param int|string $var
      * @return $this
      */
@@ -333,7 +367,7 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTotalTranscodeDataList()
@@ -342,7 +376,7 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeItem TotalTranscodeDataList = 11;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceTranscodeItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -355,7 +389,7 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 12;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranscodeDataDetailList()
@@ -364,7 +398,7 @@ class DescribeVodSpaceTranscodeDataResult extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 11;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceTranscodeDetail TranscodeDataDetailList = 12;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceTranscodeDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

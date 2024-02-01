@@ -55,6 +55,12 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>string Area = 7;</code>
      */
     protected $Area = '';
+    /**
+     * 空间区域 
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     */
+    protected $RegionList = '';
 
     /**
      * Constructor.
@@ -76,6 +82,8 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
      *           默认是CDN，支持CDN、ECDN、ALL 
      *     @type string $Area
      *           加速区域 
+     *     @type string $RegionList
+     *           空间区域 
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +269,32 @@ class VodDescribeVodDomainBandwidthDataRequest extends \Google\Protobuf\Internal
     {
         GPBUtil::checkString($var, True);
         $this->Area = $var;
+
+        return $this;
+    }
+
+    /**
+     * 空间区域 
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @return string
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * 空间区域 
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->RegionList = $var;
 
         return $this;
     }

@@ -65,6 +65,12 @@ class DescribeVodSpaceTranscodeDataRequest extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>string DetailFieldList = 8;</code>
      */
     protected $DetailFieldList = '';
+    /**
+     * 地区列表，多个地区用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 9;</code>
+     */
+    protected $RegionList = '';
 
     /**
      * Constructor.
@@ -87,6 +93,8 @@ class DescribeVodSpaceTranscodeDataRequest extends \Google\Protobuf\Internal\Mes
      *          聚合的时间粒度，单位秒，默认3600，支持3600和86400
      *     @type string $DetailFieldList
      *           展示详细信息的维度，取值：TaskStage、Space，多个值用逗号分割
+     *     @type string $RegionList
+     *           地区列表，多个地区用逗号分割
      * }
      */
     public function __construct($data = NULL) {
@@ -296,6 +304,32 @@ class DescribeVodSpaceTranscodeDataRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, True);
         $this->DetailFieldList = $var;
+
+        return $this;
+    }
+
+    /**
+     * 地区列表，多个地区用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 9;</code>
+     * @return string
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * 地区列表，多个地区用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->RegionList = $var;
 
         return $this;
     }

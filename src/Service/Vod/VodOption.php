@@ -1058,6 +1058,22 @@ class VodOption
                     ],
                 ];
                 break;
+            case 'ap-southeast-1':
+                $config = [
+                    'host' => 'https://vod.ap-southeast-1.volcengineapi.com',
+                    'scheme' => 'https',
+                    'config' => [
+                        'timeout' => 5.0,
+                        'headers' => [
+                            'Accept' => 'application/json',
+                        ],
+                        'v4_credentials' => [
+                            'region' => 'ap-southeast-1',
+                            'service' => 'vod',
+                        ],
+                    ],
+                ];
+                break;
             default:
                 throw new Exception("Cant find the region, please check it carefully");
         }

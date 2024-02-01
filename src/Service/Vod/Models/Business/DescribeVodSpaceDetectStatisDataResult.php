@@ -57,15 +57,19 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
      */
     private $DetailFieldList;
     /**
-     * Generated from protobuf field <code>int64 TotalDetectUsageData = 8;</code>
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     */
+    private $RegionList;
+    /**
+     * Generated from protobuf field <code>int64 TotalDetectUsageData = 9;</code>
      */
     protected $TotalDetectUsageData = 0;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 10;</code>
      */
     private $DetectUsageDataList;
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 11;</code>
      */
     private $DetectUsageDataDetailList;
 
@@ -90,6 +94,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
      *          聚合的时间粒度，单位秒，默认3600，支持3600和86400
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $DetailFieldList
      *           展示详细信息的维度，取值：TaskStage、Space
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $RegionList
      *     @type int|string $TotalDetectUsageData
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceDetectStatisDataItem[]|\Google\Protobuf\Internal\RepeatedField $DetectUsageDataList
      *     @type \Volc\Service\Vod\Models\Business\DescribeVodSpaceDetectStatisDataDetail[]|\Google\Protobuf\Internal\RepeatedField $DetectUsageDataDetailList
@@ -285,7 +290,29 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalDetectUsageData = 8;</code>
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->RegionList = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 TotalDetectUsageData = 9;</code>
      * @return int|string
      */
     public function getTotalDetectUsageData()
@@ -294,7 +321,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>int64 TotalDetectUsageData = 8;</code>
+     * Generated from protobuf field <code>int64 TotalDetectUsageData = 9;</code>
      * @param int|string $var
      * @return $this
      */
@@ -307,7 +334,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDetectUsageDataList()
@@ -316,7 +343,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 9;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataItem DetectUsageDataList = 10;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceDetectStatisDataItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -329,7 +356,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDetectUsageDataDetailList()
@@ -338,7 +365,7 @@ class DescribeVodSpaceDetectStatisDataResult extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 10;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.DescribeVodSpaceDetectStatisDataDetail DetectUsageDataDetailList = 11;</code>
      * @param \Volc\Service\Vod\Models\Business\DescribeVodSpaceDetectStatisDataDetail[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

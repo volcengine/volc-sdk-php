@@ -44,15 +44,21 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
      */
     protected $Type = '';
     /**
+     * region list
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 6;</code>
+     */
+    private $RegionList;
+    /**
      * Byte of latest storage
      *
-     * Generated from protobuf field <code>int64 LatestStorageData = 6;</code>
+     * Generated from protobuf field <code>int64 LatestStorageData = 7;</code>
      */
     protected $LatestStorageData = 0;
     /**
      * list of Storage Data
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 8;</code>
      */
     private $StorageDataList;
 
@@ -72,6 +78,8 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
      *           Time granularity of aggregation
      *     @type string $Type
      *           hot, lowfreq, punish
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $RegionList
+     *           region list
      *     @type int|string $LatestStorageData
      *           Byte of latest storage
      *     @type \Volc\Service\Vod\Models\Business\VodStorageData[]|\Google\Protobuf\Internal\RepeatedField $StorageDataList
@@ -214,9 +222,35 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * region list
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * region list
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 6;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->RegionList = $arr;
+
+        return $this;
+    }
+
+    /**
      * Byte of latest storage
      *
-     * Generated from protobuf field <code>int64 LatestStorageData = 6;</code>
+     * Generated from protobuf field <code>int64 LatestStorageData = 7;</code>
      * @return int|string
      */
     public function getLatestStorageData()
@@ -227,7 +261,7 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
     /**
      * Byte of latest storage
      *
-     * Generated from protobuf field <code>int64 LatestStorageData = 6;</code>
+     * Generated from protobuf field <code>int64 LatestStorageData = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -242,7 +276,7 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
     /**
      * list of Storage Data
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStorageDataList()
@@ -253,7 +287,7 @@ class VodDescribeVodSpaceStorageDataResult extends \Google\Protobuf\Internal\Mes
     /**
      * list of Storage Data
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 7;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodStorageData StorageDataList = 8;</code>
      * @param \Volc\Service\Vod\Models\Business\VodStorageData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

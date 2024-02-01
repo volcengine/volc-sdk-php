@@ -124,6 +124,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string NeedOriginal = 18;</code>
      */
     protected $NeedOriginal = '';
+    /**
+     *强行指定本次请求的时间戳防盗链 单位秒
+     *
+     * Generated from protobuf field <code>string ForceExpire = 19;</code>
+     */
+    protected $ForceExpire = '';
 
     /**
      * Constructor.
@@ -170,6 +176,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          播放配置,可指定播放域名
      *     @type string $NeedOriginal
      *          控制是否需要将原片信息置于 VideoInfos 中
+     *     @type string $ForceExpire
+     *          强行指定本次请求的时间戳防盗链 单位秒
      * }
      */
     public function __construct($data = NULL) {
@@ -647,6 +655,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->NeedOriginal = $var;
+
+        return $this;
+    }
+
+    /**
+     *强行指定本次请求的时间戳防盗链 单位秒
+     *
+     * Generated from protobuf field <code>string ForceExpire = 19;</code>
+     * @return string
+     */
+    public function getForceExpire()
+    {
+        return $this->ForceExpire;
+    }
+
+    /**
+     *强行指定本次请求的时间戳防盗链 单位秒
+     *
+     * Generated from protobuf field <code>string ForceExpire = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setForceExpire($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ForceExpire = $var;
 
         return $this;
     }

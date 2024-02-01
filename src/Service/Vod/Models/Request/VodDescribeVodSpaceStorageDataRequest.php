@@ -43,6 +43,12 @@ class VodDescribeVodSpaceStorageDataRequest extends \Google\Protobuf\Internal\Me
      * Generated from protobuf field <code>string Type = 5;</code>
      */
     protected $Type = '';
+    /**
+     * region list, multiple regions are divided by commas
+     *
+     * Generated from protobuf field <code>string RegionList = 6;</code>
+     */
+    protected $RegionList = '';
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class VodDescribeVodSpaceStorageDataRequest extends \Google\Protobuf\Internal\Me
      *           default and only supports 86400
      *     @type string $Type
      *           hot default, lowfreq, punish
+     *     @type string $RegionList
+     *           region list, multiple regions are divided by commas
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class VodDescribeVodSpaceStorageDataRequest extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkString($var, True);
         $this->Type = $var;
+
+        return $this;
+    }
+
+    /**
+     * region list, multiple regions are divided by commas
+     *
+     * Generated from protobuf field <code>string RegionList = 6;</code>
+     * @return string
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * region list, multiple regions are divided by commas
+     *
+     * Generated from protobuf field <code>string RegionList = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->RegionList = $var;
 
         return $this;
     }

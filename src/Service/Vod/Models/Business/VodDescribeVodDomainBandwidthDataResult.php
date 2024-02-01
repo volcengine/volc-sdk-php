@@ -56,33 +56,39 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
      */
     protected $Area = '';
     /**
+     * 空间所属区域
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     */
+    private $RegionList;
+    /**
      * 带宽峰值，单位为bps
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
+     * Generated from protobuf field <code>double PeakBandwidth = 9;</code>
      */
     protected $PeakBandwidth = 0.0;
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 10;</code>
      */
     protected $PeakBandwidthTime = '';
     /**
      * 带宽95峰值，单位为bps
      *
-     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     * Generated from protobuf field <code>double Peak95Bandwidth = 11;</code>
      */
     protected $Peak95Bandwidth = 0.0;
     /**
      * 带宽95峰值出现的时间
      *
-     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 12;</code>
      */
     protected $Peak95BandwidthTime = '';
     /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 13;</code>
      */
     private $BandwidthDataList;
 
@@ -106,6 +112,8 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
      *           默认是CDN，支持CDN、ECDN、ALL
      *     @type string $Area
      *           区域
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $RegionList
+     *           空间所属区域
      *     @type float $PeakBandwidth
      *           带宽峰值，单位为bps
      *     @type string $PeakBandwidthTime
@@ -306,9 +314,35 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     }
 
     /**
+     * 空间所属区域
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * 空间所属区域
+     *
+     * Generated from protobuf field <code>repeated string RegionList = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->RegionList = $arr;
+
+        return $this;
+    }
+
+    /**
      * 带宽峰值，单位为bps
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
+     * Generated from protobuf field <code>double PeakBandwidth = 9;</code>
      * @return float
      */
     public function getPeakBandwidth()
@@ -319,7 +353,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽峰值，单位为bps
      *
-     * Generated from protobuf field <code>double PeakBandwidth = 8;</code>
+     * Generated from protobuf field <code>double PeakBandwidth = 9;</code>
      * @param float $var
      * @return $this
      */
@@ -334,7 +368,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 10;</code>
      * @return string
      */
     public function getPeakBandwidthTime()
@@ -345,7 +379,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽峰值出现的时间
      *
-     * Generated from protobuf field <code>string PeakBandwidthTime = 9;</code>
+     * Generated from protobuf field <code>string PeakBandwidthTime = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -360,7 +394,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽95峰值，单位为bps
      *
-     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     * Generated from protobuf field <code>double Peak95Bandwidth = 11;</code>
      * @return float
      */
     public function getPeak95Bandwidth()
@@ -371,7 +405,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽95峰值，单位为bps
      *
-     * Generated from protobuf field <code>double Peak95Bandwidth = 10;</code>
+     * Generated from protobuf field <code>double Peak95Bandwidth = 11;</code>
      * @param float $var
      * @return $this
      */
@@ -386,7 +420,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽95峰值出现的时间
      *
-     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 12;</code>
      * @return string
      */
     public function getPeak95BandwidthTime()
@@ -397,7 +431,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 带宽95峰值出现的时间
      *
-     * Generated from protobuf field <code>string Peak95BandwidthTime = 11;</code>
+     * Generated from protobuf field <code>string Peak95BandwidthTime = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -412,7 +446,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 13;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBandwidthDataList()
@@ -423,7 +457,7 @@ class VodDescribeVodDomainBandwidthDataResult extends \Google\Protobuf\Internal\
     /**
      * 所有时间粒度数据
      *
-     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 12;</code>
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodBandwidthData BandwidthDataList = 13;</code>
      * @param \Volc\Service\Vod\Models\Business\VodBandwidthData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

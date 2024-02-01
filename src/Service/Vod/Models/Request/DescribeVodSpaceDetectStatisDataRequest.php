@@ -57,6 +57,12 @@ class DescribeVodSpaceDetectStatisDataRequest extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>string DetailFieldList = 7;</code>
      */
     protected $DetailFieldList = '';
+    /**
+     * 区域，多个区域用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     */
+    protected $RegionList = '';
 
     /**
      * Constructor.
@@ -78,6 +84,8 @@ class DescribeVodSpaceDetectStatisDataRequest extends \Google\Protobuf\Internal\
      *          聚合的时间粒度，单位秒，默认3600，支持3600和86400
      *     @type string $DetailFieldList
      *           展示详细信息的维度，取值：TaskStage、Space，多个值用逗号分割
+     *     @type string $RegionList
+     *           区域，多个区域用逗号分割
      * }
      */
     public function __construct($data = NULL) {
@@ -263,6 +271,32 @@ class DescribeVodSpaceDetectStatisDataRequest extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkString($var, True);
         $this->DetailFieldList = $var;
+
+        return $this;
+    }
+
+    /**
+     * 区域，多个区域用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @return string
+     */
+    public function getRegionList()
+    {
+        return $this->RegionList;
+    }
+
+    /**
+     * 区域，多个区域用逗号分割
+     *
+     * Generated from protobuf field <code>string RegionList = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionList($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->RegionList = $var;
 
         return $this;
     }

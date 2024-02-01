@@ -16,6 +16,7 @@ $request->setDetectType("your DetectType");
 $request->setTaskStageList("your TaskStageList");
 $request->setAggregation(0);
 $request->setDetailFieldList("your DetailFieldList");
+$request->setRegionList("your RegionList");
 
 
 $response = new Volc\Service\Vod\Models\Response\DescribeVodSpaceDetectStatisDataResponse();

@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-≠{
+‚|
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -42,7 +42,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"Í
+Quality (	"ˇ
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -65,7 +65,8 @@ NeedThumbs	 (	
 Quality (	
 
 PlayConfig (	
-NeedOriginal (	"g
+NeedOriginal (	
+ForceExpire (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -458,13 +459,15 @@ OrderByKey (	
 !VodUpdateSpaceUploadConfigRequest
 	SpaceName (	
 	ConfigKey (	
-ConfigValue (	"Å
+ConfigValue (	"ï
 %VodDescribeVodSpaceStorageDataRequest
 	SpaceList (	
 	StartTime (	
 EndTime (	
 Aggregation (
-Type (	"\\
+Type (	
+
+RegionList (	"\\
 VodUpdateDomainPlayRuleRequest
 	SpaceName (	
 DefaultDomain (	
@@ -538,7 +541,7 @@ DomainName (	
 StartTimestamp (
 EndTimestamp (
 SortType (	
-Item (	"∑
+Item (	"À
 (VodDescribeVodDomainBandwidthDataRequest
 
 DomainList (	
@@ -547,7 +550,9 @@ DomainList (	
 EndTime (	
 Aggregation (
 BandwidthType (	
-Area (	"ä
+Area (	
+
+RegionList (	"ä
 VodListCdnUsageDataRequest
 Domains (	
 Interval (	
@@ -590,7 +595,7 @@ NeedDetail ("ì
 EndTimestamp (
 Metric (	
 
-NeedDetail ("≥
+NeedDetail ("«
 &VodDescribeVodDomainTrafficDataRequest
 
 DomainList (	
@@ -599,7 +604,9 @@ DomainList (	
 EndTime (	
 Aggregation (
 TrafficType (	
-Area (	"A
+Area (	
+
+RegionList (	"A
 VodSubmitBlockTasksRequest
 FileUrls (	
 	Operation (	"∂
@@ -679,7 +686,7 @@ NeedThumbs (	
  (	
 HDRDefinition (	"%
 VodGetAppInfoRequest
-AppId ("–
+AppId ("‰
 $DescribeVodSpaceTranscodeDataRequest
 	SpaceList (	
 	StartTime (	
@@ -688,7 +695,9 @@ $DescribeVodSpaceTranscodeDataRequest
 Specification (	
 TaskStageList (	
 Aggregation (
-DetailFieldList (	"∂
+DetailFieldList (	
+
+RegionList	 (	" 
 #DescribeVodSpaceAIStatisDataRequest
 	SpaceList (	
 	StartTime (	
@@ -696,7 +705,9 @@ $DescribeVodSpaceTranscodeDataRequest
 MediaAiType (	
 TaskStageList (	
 Aggregation (
-DetailFieldList (	"Ω
+DetailFieldList (	
+
+RegionList (	"—
 )DescribeVodSpaceSubtitleStatisDataRequest
 	SpaceList (	
 	StartTime (	
@@ -704,7 +715,9 @@ $DescribeVodSpaceTranscodeDataRequest
 SubtitleType (	
 TaskStageList (	
 Aggregation (
-DetailFieldList (	"π
+DetailFieldList (	
+
+RegionList (	"Õ
 \'DescribeVodSpaceDetectStatisDataRequest
 	SpaceList (	
 	StartTime (	
@@ -713,7 +726,9 @@ $DescribeVodSpaceTranscodeDataRequest
 DetectType (	
 TaskStageList (	
 Aggregation (
-DetailFieldList (	"≤
+DetailFieldList (	
+
+RegionList (	"∆
 DescribeVodSnapshotDataRequest
 	SpaceList (	
 	StartTime (	
@@ -721,7 +736,9 @@ DetectType (	
 SnapshotType (	
 TaskStageList (	
 Aggregation (
-DetailFieldList (	"ë
+DetailFieldList (	
+
+RegionList (	"ë
 )DescribeVodSpaceWorkflowDetailDataRequest
 Region (	
 Space (	
