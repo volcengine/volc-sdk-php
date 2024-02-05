@@ -12,10 +12,8 @@ echo "\nDemo FaceFusionMovieSubmitTask\n";
 
 $body = [
     'req_key' => 'facefusionmovie_standard',
-    // 'binary_data_base64' => ["xxxx"],
     'image_url' => 'https://xxxx',
     'video_url' => 'https://xxxx',
-    'enable_face_beautify' => true,
 ];
 $response = $client->FaceFusionMovieSubmitTask(['json' => $body]);
 echo $response;

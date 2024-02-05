@@ -331,6 +331,31 @@ class Visual extends V4Curl
         $response = $this->request('OverResolutionV2', $query);
         return $response->getBody();
     }
+    public function FaceSwapV2(array $query = [])
+    {
+        $response = $this->request('FaceSwapV2', $query);
+        return $response->getBody();
+    }
+    public function FaceswapAI(array $query = [])
+    {
+        $response = $this->request('FaceswapAI', $query);
+        return $response->getBody();
+    }
+    public function CertH5ConfigInit(array $query = [])
+    {
+        $response = $this->request('CertH5ConfigInit', $query);
+        return $response->getBody();
+    }
+    public function CertH5Token(array $query = [])
+    {
+        $response = $this->request('CertH5Token', $query);
+        return $response->getBody();
+    }
+    public function HighAesSmartDrawing(array $query = [])
+    {
+        $response = $this->request('HighAesSmartDrawing', $query);
+        return $response->getBody();
+    }
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
@@ -340,6 +365,71 @@ class Visual extends V4Curl
                     'Action' => 'JPCartoon',
                     'Version' => '2020-08-26',
                 ],
+            ],
+        ],
+        'HighAesSmartDrawing' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'HighAesSmartDrawing',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'FaceSwapV2' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceSwap',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CertH5ConfigInit' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertH5ConfigInit',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CertH5Token' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertH5Token',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => '2022-08-31',
+                ]
+            ],
+        ],
+        'FaceswapAI' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceswapAI',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
             ],
         ],
         'OverResolutionV2' => [
