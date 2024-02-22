@@ -95,7 +95,9 @@ namespace Volc\Service\Live\V20230101;
  * @method array DescribeLivePushStreamMetrics(array $json)
  * @method array DescribeLivePlayStatusCodeData(array $json)
  * @method array DescribeLiveBatchSourceStreamMetrics(array $json)
+ * @method array DescribeLiveBatchSourceStreamAvgMetrics(array $json)
  * @method array DescribeLiveBatchPushStreamMetrics(array $json)
+ * @method array DescribeLiveBatchPushStreamAvgMetrics(array $json)
  * @method array DescribeLiveStreamCountData(array $json)
  * @method array DescribeLivePushStreamCountData(array $json)
  * @method array DescribeLiveSourceBandwidthData(array $json)
@@ -126,6 +128,9 @@ namespace Volc\Service\Live\V20230101;
  * @method array UpdateAuthKey(array $json)
  * @method array DescribeLiveActivityBandwidthData(array $json)
  * @method array DescribeLiveStreamUsageData(array $json)
+ * @method array DeleteIPAccessRule(array $json)
+ * @method array UpdateIPAccessRule(array $json)
+ * @method array DescribeIPAccessRule(array $json)
  */
 trait LiveTrait
 {
