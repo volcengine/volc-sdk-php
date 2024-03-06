@@ -24,8 +24,6 @@ use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
 use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoWithLiveTimeShiftSceneRequest;
 use Volc\Service\Vod\Models\Response\VodGetPlayInfoWithLiveTimeShiftSceneResponse;
-use Volc\Service\Vod\Models\Request\VodDescribeDrmDataKeyRequest;
-use Volc\Service\Vod\Models\Response\VodDescribeDrmDataKeyResponse;
 use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
 use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
 use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
@@ -381,7 +379,23 @@ class Vod extends V4Curl
         }
         $respData = new VodGetDirectEditResultResponse();
         try {
-            $respData = VodUtils::parseResponseData($response, $respData);
+            $tmp = json_decode($response->getBody());
+            foreach ($tmp->Result as $value) {
+                $value->EditParam = base64_encode(json_encode($value->EditParam));
+            }
+            try {
+                $respData->mergeFromJsonString(json_encode($tmp), true);
+            } catch (Exception $e) {
+                echo $e, "\n";
+                if ($respData->getResponseMetadata() == null) {
+                    throw new Exception($response->getReasonPhrase());
+                }
+            } catch (Throwable $t) {
+                echo $t, "\n";
+                if ($respData->getResponseMetadata() == null) {
+                    throw new Exception($response->getReasonPhrase());
+                }
+            }
         } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
@@ -606,39 +620,6 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetPlayInfoWithLiveTimeShiftSceneResponse();
-		try {
-            $respData = VodUtils::parseResponseData($response, $respData);
-        } catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }
-        return $respData;
-	}
-	
-	/**
-     * DescribeDrmDataKey.
-     *
-     * @param $req VodDescribeDrmDataKeyRequest
-     * @return VodDescribeDrmDataKeyResponse
-     * @throws Exception the exception
-	 * @throws Throwable the exception
-     */
-	public function describeDrmDataKey (VodDescribeDrmDataKeyRequest $req): VodDescribeDrmDataKeyResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('DescribeDrmDataKey', ['query' => $query]);
-		} catch (Exception $e) {
-            throw $e;
-        } catch (Throwable $t) {
-            throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodDescribeDrmDataKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

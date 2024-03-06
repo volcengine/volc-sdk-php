@@ -14,56 +14,22 @@ class VodEdit
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-∑	
+ê
 &volcengine/vod/business/vod_edit.protoVolcengine.Vod.Models.Business"0
 SubmitDirectEditTaskAsyncResult
 ReqId (	"\'
 GetDirectEditProgress
-Result ("¬
+Result ("ó
 GetDirectEditResult
-ReqId (	<
-	EditParam (2).Volcengine.Vod.Models.Business.EditParam
+ReqId (	
+	EditParam (
 Priority (
 CallbackUri (	
 CallbackArgs (	
 Status (	
-	OutputVid (	"Ï
-	EditParam6
-Canvas (2&.Volcengine.Vod.Models.Business.Canvas6
-Output (2&.Volcengine.Vod.Models.Business.Output%
-Track (2.google.protobuf.Value6
-Upload (2&.Volcengine.Vod.Models.Business.Upload
-Uploader (	"\'
-Canvas
-Height (
-Width ("Ü
-Output
-Alpha (4
-Codec (2%.Volcengine.Vod.Models.Business.Codec
-DisableAudio (
-DisableVideo (
-Fps ("b
-Codec
-AudioBitrate (
-
-AudioCodec (	
-Crf (
-Preset (	
-
-VideoCodec (	"E
-Track
-
-ID (	
-Source (	
-
-TargetTime (
-Type (	".
-Upload
-	SpaceName (	
-	VideoName (	B»
+	OutputVid (	B»
 )com.volcengine.service.vod.model.businessBVodEditPZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business†ÿ  Volc\\Service\\Vod\\Models\\Business‚#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 

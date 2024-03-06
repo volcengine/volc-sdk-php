@@ -22,9 +22,9 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EditParam EditParam = 2;</code>
+     * Generated from protobuf field <code>bytes EditParam = 2;</code>
      */
-    protected $EditParam = null;
+    protected $EditParam = '';
     /**
      * 优先级
      *
@@ -64,7 +64,7 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ReqId
      *           视频编辑执行Id
-     *     @type \Volc\Service\Vod\Models\Business\EditParam $EditParam
+     *     @type string $EditParam
      *           视频编辑参数
      *     @type int $Priority
      *           优先级
@@ -112,34 +112,24 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EditParam EditParam = 2;</code>
-     * @return \Volc\Service\Vod\Models\Business\EditParam|null
+     * Generated from protobuf field <code>bytes EditParam = 2;</code>
+     * @return string
      */
     public function getEditParam()
     {
         return $this->EditParam;
     }
 
-    public function hasEditParam()
-    {
-        return isset($this->EditParam);
-    }
-
-    public function clearEditParam()
-    {
-        unset($this->EditParam);
-    }
-
     /**
      * 视频编辑参数
      *
-     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.EditParam EditParam = 2;</code>
-     * @param \Volc\Service\Vod\Models\Business\EditParam $var
+     * Generated from protobuf field <code>bytes EditParam = 2;</code>
+     * @param string $var
      * @return $this
      */
     public function setEditParam($var)
     {
-        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\EditParam::class);
+        GPBUtil::checkString($var, False);
         $this->EditParam = $var;
 
         return $this;

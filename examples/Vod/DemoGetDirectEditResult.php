@@ -22,20 +22,11 @@ try {
 if ($response != null && $response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
     echo $response->getResponseMetadata()->getError()->serializeToJsonString(), "\n";
 } else {
-    foreach ($response->getResult() as $elem) {
-        // 如果需要访问 Track字段，则使用下列循环和  vector 取出数据；
-        // 如不需使用 Track 参数的话，则使用默认的 xxx->getYYY()取参数即可
-        $editParam = json_decode($elem->getEditParam()->serializeToJsonString(),true);
-        foreach($editParam['Track'] as $tracks) {
-            foreach($tracks as $track){
-                echo $track['ID'],"\n";
-                echo $track['Source'],"\n";
-                foreach ($track['TargetTime'] as $targetTime) {
-                    echo $targetTime,"\n";
-                }
-                echo $track['Type'],"\n";
-            }
-        }
-    }
     echo $response->serializeToJsonString(), "\n";
+
+    $res = json_decode($response->serializeToJsonString());
+    foreach ($res->Result as $result){
+        $result->EditParam = json_decode(base64_decode($result->EditParam));
+    }
+    echo json_encode($res), "\n";
 }
