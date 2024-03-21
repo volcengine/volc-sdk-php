@@ -356,6 +356,21 @@ class Visual extends V4Curl
         $response = $this->request('HighAesSmartDrawing', $query);
         return $response->getBody();
     }
+    public function Img2ImgInpainting(array $query = [])
+    {
+        $response = $this->request('Img2ImgInpainting', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgInpaintingEdit(array $query = [])
+    {
+        $response = $this->request('Img2ImgInpaintingEdit', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgOutpainting(array $query = [])
+    {
+        $response = $this->request('Img2ImgOutpainting', $query);
+        return $response->getBody();
+    }
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
@@ -365,6 +380,45 @@ class Visual extends V4Curl
                     'Action' => 'JPCartoon',
                     'Version' => '2020-08-26',
                 ],
+            ],
+        ],
+        'Img2ImgOutpainting' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgOutpainting',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgInpainting' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgInpainting',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgInpaintingEdit' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgInpaintingEdit',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
             ],
         ],
         'HighAesSmartDrawing' => [

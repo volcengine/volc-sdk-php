@@ -158,6 +158,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'CreateLiveStreamRecordIndexFiles' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateLiveStreamRecordIndexFiles',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'CreatePullRecordTask' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1166,6 +1178,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeLiveBatchStreamTranscodeData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveBatchStreamTranscodeData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeLiveStreamCountData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1244,18 +1268,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLiveBatchStreamTrafficData',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'DescribeLiveBatchStreamTranscodeData' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeLiveBatchStreamTranscodeData',
                         'Version' => '2023-01-01',
                     ]
                 ],
