@@ -24,6 +24,10 @@ use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
 use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoWithLiveTimeShiftSceneRequest;
 use Volc\Service\Vod\Models\Response\VodGetPlayInfoWithLiveTimeShiftSceneResponse;
+use Volc\Service\Vod\Models\Request\VodSubmitMoveObjectTaskRequest;
+use Volc\Service\Vod\Models\Response\VodSubmitMoveObjectTaskResponse;
+use Volc\Service\Vod\Models\Request\VodQueryMoveObjectTaskInfoRequest;
+use Volc\Service\Vod\Models\Response\VodQueryMoveObjectTaskInfoResponse;
 use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
 use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
 use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
@@ -204,6 +208,7 @@ use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
+use Volc\Service\Vod\Upload\UploadPolicy;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
@@ -277,18 +282,33 @@ class Vod extends V4Curl
         return base64_encode(json_encode($token));
     }
 	
-    public function getUploadVideoAuth(): array
+    public function getUploadVideoAuth(array $spaceNames = array(), string $keyPtn = '', UploadPolicy $uploadPolicy = null): array
     {
-        return $this->getUploadVideoAuthWithExpiredTime(60 * 60);
+        return $this->getUploadVideoAuthWithExpiredTime(60 * 60, $spaceNames,$keyPtn,$uploadPolicy);
     }
 
-    public function getUploadVideoAuthWithExpiredTime(int $expire): array
+    public function getUploadVideoAuthWithExpiredTime(int $expire, array $spaceNames = array(), string $keyPtn = '', UploadPolicy $uploadPolicy = null): array
     {
-        $actions = [ActionApplyUpload, ActionCommitUpload];
+        $spaceRes = [];
+        if (sizeof($spaceNames) != 0) {
+            foreach ($spaceNames as $space) {
+                $spaceRes[] = sprintf(ResourceSpaceNameTRN, $space);
+            }
+        }
         $resources = [];
-        $statement = $this->newAllowStatement($actions, $resources);
+
+        $statements = [];
+        $statements[] = $this->newAllowStatement([ActionApplyUpload], $spaceRes);
+        $statements[] = $this->newAllowStatement([ActionCommitUpload], $resources);
+
+        if ($keyPtn != ''){
+            $statements[] = $this->newAllowStatement(['FileNamePtn'], [$keyPtn]);
+        }
+        if ($uploadPolicy != null){
+            $statements[] = $this->newAllowStatement(['UploadPolicy'], [json_encode($uploadPolicy)]);
+        }
         $policy = [
-            Statement => [$statement],
+            Statement => $statements,
         ];
         return $this->signSts2($policy, $expire);
     }
@@ -620,6 +640,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetPlayInfoWithLiveTimeShiftSceneResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * SubmitMoveObjectTask.
+     *
+     * @param $req VodSubmitMoveObjectTaskRequest
+     * @return VodSubmitMoveObjectTaskResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function submitMoveObjectTask (VodSubmitMoveObjectTaskRequest $req): VodSubmitMoveObjectTaskResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('SubmitMoveObjectTask', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodSubmitMoveObjectTaskResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * QueryMoveObjectTaskInfo.
+     *
+     * @param $req VodQueryMoveObjectTaskInfoRequest
+     * @return VodQueryMoveObjectTaskInfoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function queryMoveObjectTaskInfo (VodQueryMoveObjectTaskInfoRequest $req): VodQueryMoveObjectTaskInfoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('QueryMoveObjectTaskInfo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodQueryMoveObjectTaskInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

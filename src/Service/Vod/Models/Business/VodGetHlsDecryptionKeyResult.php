@@ -19,18 +19,6 @@ class VodGetHlsDecryptionKeyResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string SecretKey = 1;</code>
      */
     protected $SecretKey = '';
-    /**
-     * SecretKey是否是已经base64过后的SecretKey
-     *
-     * Generated from protobuf field <code>bool IsBase64 = 2;</code>
-     */
-    protected $IsBase64 = false;
-    /**
-     *真实的密钥格式 二进制密钥则是binary 缺省就是string
-     *
-     * Generated from protobuf field <code>string KeyFormat = 3;</code>
-     */
-    protected $KeyFormat = '';
 
     /**
      * Constructor.
@@ -40,10 +28,6 @@ class VodGetHlsDecryptionKeyResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $SecretKey
      *           Drm密钥
-     *     @type bool $IsBase64
-     *           SecretKey是否是已经base64过后的SecretKey
-     *     @type string $KeyFormat
-     *          真实的密钥格式 二进制密钥则是binary 缺省就是string
      * }
      */
     public function __construct($data = NULL) {
@@ -73,58 +57,6 @@ class VodGetHlsDecryptionKeyResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->SecretKey = $var;
-
-        return $this;
-    }
-
-    /**
-     * SecretKey是否是已经base64过后的SecretKey
-     *
-     * Generated from protobuf field <code>bool IsBase64 = 2;</code>
-     * @return bool
-     */
-    public function getIsBase64()
-    {
-        return $this->IsBase64;
-    }
-
-    /**
-     * SecretKey是否是已经base64过后的SecretKey
-     *
-     * Generated from protobuf field <code>bool IsBase64 = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsBase64($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->IsBase64 = $var;
-
-        return $this;
-    }
-
-    /**
-     *真实的密钥格式 二进制密钥则是binary 缺省就是string
-     *
-     * Generated from protobuf field <code>string KeyFormat = 3;</code>
-     * @return string
-     */
-    public function getKeyFormat()
-    {
-        return $this->KeyFormat;
-    }
-
-    /**
-     *真实的密钥格式 二进制密钥则是binary 缺省就是string
-     *
-     * Generated from protobuf field <code>string KeyFormat = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setKeyFormat($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->KeyFormat = $var;
 
         return $this;
     }

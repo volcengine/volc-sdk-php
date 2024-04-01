@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-â|
+Ð
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -85,7 +85,18 @@ PlayConfig (	
 NeedComposeBucketName (	"*
 VodDescribeDrmDataKeyRequest
 
-Ak (	"m
+Ak (	"¬
+VodSubmitMoveObjectTaskRequest
+SourceSpace (	
+SourceFileName (	
+TargetSpace (	
+TargetFileName (	
+SaveSourceObject (
+ForceOverwrite ("]
+!VodQueryMoveObjectTaskInfoRequest
+TaskId (	
+SourceSpace (	
+TargetSpace (	"m
 VodUrlUploadRequest
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
@@ -659,7 +670,13 @@ DomainType (	
 
 DomainType (	
 CertificateId (	
-HttpsStatus (	"X
+HttpsStatus (	"^
+UpdateDomainAreaRequest
+	SpaceName (	
+Domain (	
+
+DomainType (	
+Area (	"X
 !VodAddCallbackSubscriptionRequest
 	SpaceName (	
 Url (	

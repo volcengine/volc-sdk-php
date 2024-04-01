@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Í”
+³˜
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -52,7 +52,13 @@ class ResponseVod
 Result (2J.Volcengine.Vod.Models.Business.VodGetPlayInfoWithLiveTimeShiftSceneResult"µ
 VodDescribeDrmDataKeyResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
-Result (2;.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult" 
+Result (2;.Volcengine.Vod.Models.Business.VodDescribeDrmDataKeyResult"»
+VodSubmitMoveObjectTaskResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
+Result (2?.Volcengine.Vod.Models.Business.VodSubmitMoveObjectTaskRespData"À
+"VodQueryMoveObjectTaskInfoResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataQ
+Result (2A.Volcengine.Vod.Models.Business.VodQueryMoveObjectTaskInfoResData" 
 VodUploadMediaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata=
 Result (2-.Volcengine.Vod.Models.Business.VodCommitData"§
@@ -285,6 +291,8 @@ $VodRemoveDomainFromSchedulerResponseG
 &VodUpdateDomainUrlAuthConfigV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"k
  AddOrUpdateCertificateV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"c
+UpdateDomainAreaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"m
 "VodAddCallbackSubscriptionResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f

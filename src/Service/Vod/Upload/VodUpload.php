@@ -14,13 +14,18 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RetryMiddleware;
 use Throwable;
+use Volc\Service\Base\Models\Base\ResponseError;
 use Volc\Service\Vod\Models\Business\StorageClassType;
 use Volc\Service\Vod\Models\Business\VodStoreInfo;
 use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
+use Volc\Service\Vod\Models\Request\VodQueryMoveObjectTaskInfoRequest;
+use Volc\Service\Vod\Models\Request\VodSubmitMoveObjectTaskRequest;
 use Volc\Service\Vod\Models\Request\VodUploadMaterialRequest;
 use Volc\Service\Vod\Models\Request\VodUploadMediaRequest;
 use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
+use Volc\Service\Vod\Models\Response\VodQueryMoveObjectTaskInfoResponse;
+use Volc\Service\Vod\Models\Response\VodSubmitMoveObjectTaskResponse;
 use Volc\Service\Vod\Vod;
 
 const MinChunkSize = 1024 * 1024 * 20;
@@ -307,5 +312,55 @@ class VodUpload extends Vod
         return 0;
     }
 
+    public function moveObjectCrossSpace(VodSubmitMoveObjectTaskRequest $req, int $cycleNum): VodQueryMoveObjectTaskInfoResponse
+    {
+        $submitResponse = new VodSubmitMoveObjectTaskResponse();
+        try {
+            $submitResponse = $this->submitMoveObjectTask($req);
+        } catch (Exception $e) {
+            echo $e, "\n";
+        } catch (Throwable $e) {
+            echo $e, "\n";
+        }
 
+        $response = new VodQueryMoveObjectTaskInfoResponse();
+        if ($submitResponse != null && $submitResponse->getResponseMetadata() != null && $submitResponse->getResponseMetadata()->getError() != null) {
+            $response->setResponseMetadata($submitResponse->getResponseMetadata());
+            return $response;
+        }
+
+        if ($cycleNum == 0) {
+            $cycleNum = 600;
+        }
+
+        $request = new VodQueryMoveObjectTaskInfoRequest();
+        $request->setTaskId($submitResponse->getResult()->getData()->getTaskId());
+        $request->setSourceSpace($submitResponse->getResult()->getData()->getSourceSpace());
+        $request->setTargetSpace($submitResponse->getResult()->getData()->getTargetSpace());
+
+        for ($i = 0; $i < $cycleNum; $i++) {
+            try {
+                $response = $this->queryMoveObjectTaskInfo($request);
+            } catch (Exception $e) {
+                echo $e, "\n";
+            } catch (Throwable $e) {
+                echo $e, "\n";
+            }
+
+            if ($response != null && $response->getResponseMetadata() != null && $response->getResponseMetadata()->getError() != null) {
+                return $response;
+            }
+            if ($response->getResult()->getData()->getState() == "success" || $response->getResult()->getData()->getState() == "failed") {
+                return $response;
+            }
+            sleep(1);
+        }
+
+        $customError = new ResponseError();
+        $customError->setCode("502");
+        $customError->setMessage("task run time out, please retry or contact volc assistant");
+        $submitResponse->getResponseMetadata()->setError($customError);
+        $response->setResponseMetadata($submitResponse->getResponseMetadata());
+        return $response;
+    }
 }

@@ -318,7 +318,7 @@ class ImageX extends V4Curl
             throw new Exception("no file uploaded");
         }
         if (isset($params["SkipCommit"]) && $params["SkipCommit"] === true) {
-            return json_encode(["Result" => ["Results" => $skippedCommitResult]]);
+            return ["Result" => ["Results" => $skippedCommitResult]];
         }
 
         $commitParams = array();
@@ -361,7 +361,7 @@ class ImageX extends V4Curl
         return base64_encode(json_encode($token));
     }
 
-    public function getUploadAuth(array $serviceIDList, int $expire = 3600, string $keyPtn = '')
+    public function getUploadAuth(array $serviceIDList, int $expire = 3600, string $keyPtn = '', array $tag = [])
     {
         $applyRes = [];
         $commitRes = [];
@@ -382,7 +382,9 @@ class ImageX extends V4Curl
                 $this->newAllowStatement(['ImageX:CommitImageUpload'], $commitRes),
             ],
         ];
-
+        foreach ($tag as $key => $value) {
+            $policy['Statement'][] = $this->newAllowStatement([$key], [$value]);
+        }
         return $this->signSts2($policy, $expire);
     }
 

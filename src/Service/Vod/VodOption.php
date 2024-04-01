@@ -9,6 +9,8 @@ const ActionApplyUpload = "vod:ApplyUploadInfo";
 const ActionCommitUpload = "vod:CommitUploadInfo";
 const Statement = "Statement";
 
+const ResourceSpaceNameTRN = "trn:vod:*:*:space/%s";
+
 
 class VodOption
 {
@@ -76,6 +78,31 @@ class VodOption
                 ],
             ]
         ],
+
+        // **********************************************************************
+        // 文件操作
+        // **********************************************************************
+        'SubmitMoveObjectTask' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'SubmitMoveObjectTask',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'QueryMoveObjectTaskInfo' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'QueryMoveObjectTaskInfo',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+
         // **********************************************************************
         // 上传
         // **********************************************************************
@@ -200,6 +227,16 @@ class VodOption
                 'query' => [
                     'Action' => 'DeleteTranscodes',
                     'Version' => '2020-08-01',
+                ],
+            ]
+        ],
+        'DeleteMediaTosFile' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteMediaTosFile',
+                    'Version' => '2022-12-01',
                 ],
             ]
         ],
