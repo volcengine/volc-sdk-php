@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service\Imagex\V2;
+namespace Volc\Service\ImageX\V2;
 
 class ImagexConfig
 {
