@@ -206,6 +206,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'GetPullRecordTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetPullRecordTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeRecordTaskFileHistory' => [
                 'method' => 'post',
                 'url' => '/',
@@ -266,24 +278,24 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'UpdateSnapshotPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateSnapshotPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'UpdateSnapshotPresetV2' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateSnapshotPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateSnapshotPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateSnapshotPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -302,18 +314,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListVhostSnapshotPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListVhostSnapshotPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'ListVhostSnapshotPresetV2' => [
                 'method' => 'post',
                 'url' => '/',
@@ -326,12 +326,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'CreateSnapshotPreset' => [
+            'ListVhostSnapshotPreset' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'CreateSnapshotPreset',
+                        'Action' => 'ListVhostSnapshotPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -344,6 +344,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'CreateSnapshotPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateSnapshotPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateSnapshotPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -428,18 +440,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateCallback',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'DescribeAuth' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeAuth',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -998,18 +998,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'GetPullRecordTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'GetPullRecordTask',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DeleteSnapshotAuditPreset' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1208,6 +1196,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLivePushStreamCountData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLivePushStreamInfoData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLivePushStreamInfoData',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1478,6 +1478,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeAuth' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeAuth',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'UpdateDenyConfig' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1508,6 +1520,54 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateAuthKey',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteHTTPHeaderConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteHTTPHeaderConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'EnableHTTPHeaderConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'EnableHTTPHeaderConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeHTTPHeaderConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeHTTPHeaderConfig',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateHTTPHeaderConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateHTTPHeaderConfig',
                         'Version' => '2023-01-01',
                     ]
                 ],

@@ -8,8 +8,10 @@ namespace Volc\Service\Vod;
 use Exception;
 use Throwable;
 use Volc\Base\V4Curl;
+use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
 use Volc\Service\Vod\Models\Request\VodGetDirectEditProgressRequest;
 use Volc\Service\Vod\Models\Request\VodGetDirectEditResultRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditResultResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest;
@@ -1144,8 +1146,42 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
-	
-	/**
+
+    /**
+     * DeleteMediaTosFile.
+     *
+     * @param $req VodDeleteMediaTosFileRequest
+     * @return VodDeleteMediaTosFileResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function deleteMediaTosFile (VodDeleteMediaTosFileRequest $req): VodDeleteMediaTosFileResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('DeleteMediaTosFile', ['form_params' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodDeleteMediaTosFileResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+
+    /**
      * GetMediaList.
      *
      * @param $req VodGetMediaListRequest
