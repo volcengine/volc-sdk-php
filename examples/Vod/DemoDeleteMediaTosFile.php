@@ -9,7 +9,7 @@ $client->setAccessKey('your ak');
 $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest();
-$request->setFileNames(["your FileNames"]);
+$request->setFileNames([new Volc\Service\Vod\Models\Business\FileNames()]);
 $request->setSpaceName("your SpaceName");
 
 

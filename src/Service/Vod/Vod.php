@@ -8,10 +8,8 @@ namespace Volc\Service\Vod;
 use Exception;
 use Throwable;
 use Volc\Base\V4Curl;
-use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
 use Volc\Service\Vod\Models\Request\VodGetDirectEditProgressRequest;
 use Volc\Service\Vod\Models\Request\VodGetDirectEditResultRequest;
-use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditResultResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest;
@@ -54,6 +52,8 @@ use Volc\Service\Vod\Models\Request\VodDeleteMediaRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteMediaResponse;
 use Volc\Service\Vod\Models\Request\VodDeleteTranscodesRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteTranscodesResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
 use Volc\Service\Vod\Models\Response\VodGetMediaListResponse;
 use Volc\Service\Vod\Models\Request\VodGetSubtitleInfoListRequest;
@@ -210,7 +210,6 @@ use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
-use Volc\Service\Vod\Upload\UploadPolicy;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
@@ -283,7 +282,7 @@ class Vod extends V4Curl
         $token["GetSubtitleAuthToken"] = parse_url($this->getRequestUrl("GetSubtitleInfoList", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
-	
+
     public function getUploadVideoAuth(array $spaceNames = array(), string $keyPtn = '', UploadPolicy $uploadPolicy = null): array
     {
         return $this->getUploadVideoAuthWithExpiredTime(60 * 60, $spaceNames,$keyPtn,$uploadPolicy);
@@ -1146,31 +1145,31 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
-
-    /**
+	
+	/**
      * DeleteMediaTosFile.
      *
      * @param $req VodDeleteMediaTosFileRequest
      * @return VodDeleteMediaTosFileResponse
      * @throws Exception the exception
-     * @throws Throwable the exception
+	 * @throws Throwable the exception
      */
-    public function deleteMediaTosFile (VodDeleteMediaTosFileRequest $req): VodDeleteMediaTosFileResponse
-    {
-        try {
-            $query = VodUtils::formatRequestParam($req);
-            $response = $this->request('DeleteMediaTosFile', ['form_params' => $query]);
-        } catch (Exception $e) {
+	public function deleteMediaTosFile (VodDeleteMediaTosFileRequest $req): VodDeleteMediaTosFileResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteMediaTosFile', ['form_params' => $query]);
+		} catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-        }
-        $respData = new VodDeleteMediaTosFileResponse();
-        try {
+		}
+		$respData = new VodDeleteMediaTosFileResponse();
+		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -1178,10 +1177,9 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-    }
-
-
-    /**
+	}
+	
+	/**
      * GetMediaList.
      *
      * @param $req VodGetMediaListRequest

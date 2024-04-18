@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-³˜
+æ™
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -213,7 +213,10 @@ $VodSubmitDirectEditTaskAsyncResponseG
 Result (25.Volcengine.Vod.Models.Business.GetDirectEditProgress"®
 VodGetDirectEditResultResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
-Result (23.Volcengine.Vod.Models.Business.GetDirectEditResult"a
+Result (23.Volcengine.Vod.Models.Business.GetDirectEditResult"°
+VodCancelDirectEditTaskResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
+Result (24.Volcengine.Vod.Models.Business.CancelDirectEditTask"a
 VodCreateSpaceResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"a
 VodDeleteSpaceResponseG

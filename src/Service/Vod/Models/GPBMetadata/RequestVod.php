@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-–
+ÅÄ
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -448,6 +448,8 @@ OrderByKey (	
 VodGetDirectEditResultRequest
 ReqIds (	"0
 VodGetDirectEditProgressRequest
+ReqId (	"/
+VodCancelDirectEditTaskRequest
 ReqId (	"*
 VodDeleteSpaceRequest
 	SpaceName (	"v
