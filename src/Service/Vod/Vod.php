@@ -210,6 +210,7 @@ use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
+use Volc\Service\Vod\Upload\UploadPolicy;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>

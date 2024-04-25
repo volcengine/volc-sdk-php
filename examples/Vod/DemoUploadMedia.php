@@ -17,6 +17,7 @@ $filePath = "file path";
 $functions = new Functions();
 $functions->addGetMetaFunc();
 $functions->addSnapshotTimeFunc(2.1);
+$functions->addStartWorkflowFunc("your template id");
 $optionInfo = new OptionInfo();
 $optionInfo->IsHlsIndexOnly = true;
 $functions->addOptionInfoFunc($optionInfo);
