@@ -210,6 +210,14 @@ use Volc\Service\Vod\Models\Request\VodDescribeVodDomainTrafficDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainTrafficDataResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeVodDomainBandwidthDataRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeVodDomainBandwidthDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodEnhanceImageDataRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodEnhanceImageDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodSpaceEditStatisDataRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodSpaceEditStatisDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodPlayedStatisDataRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodPlayedStatisDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodMostPlayedStatisDataRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodMostPlayedStatisDataResponse;
 use Volc\Service\Vod\Upload\UploadPolicy;
 
 /**
@@ -283,7 +291,7 @@ class Vod extends V4Curl
         $token["GetSubtitleAuthToken"] = parse_url($this->getRequestUrl("GetSubtitleInfoList", ['query' => $query]))['query'];
         return base64_encode(json_encode($token));
     }
-
+	
     public function getUploadVideoAuth(array $spaceNames = array(), string $keyPtn = '', UploadPolicy $uploadPolicy = null): array
     {
         return $this->getUploadVideoAuthWithExpiredTime(60 * 60, $spaceNames,$keyPtn,$uploadPolicy);
@@ -3777,6 +3785,138 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDescribeVodDomainBandwidthDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodEnhanceImageData.
+     *
+     * @param $req DescribeVodEnhanceImageDataRequest
+     * @return DescribeVodEnhanceImageDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodEnhanceImageData (DescribeVodEnhanceImageDataRequest $req): DescribeVodEnhanceImageDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodEnhanceImageData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodEnhanceImageDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodSpaceEditStatisData.
+     *
+     * @param $req DescribeVodSpaceEditStatisDataRequest
+     * @return DescribeVodSpaceEditStatisDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodSpaceEditStatisData (DescribeVodSpaceEditStatisDataRequest $req): DescribeVodSpaceEditStatisDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodSpaceEditStatisData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodSpaceEditStatisDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodPlayedStatisData.
+     *
+     * @param $req DescribeVodPlayedStatisDataRequest
+     * @return DescribeVodPlayedStatisDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodPlayedStatisData (DescribeVodPlayedStatisDataRequest $req): DescribeVodPlayedStatisDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodPlayedStatisData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodPlayedStatisDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodMostPlayedStatisData.
+     *
+     * @param $req DescribeVodMostPlayedStatisDataRequest
+     * @return DescribeVodMostPlayedStatisDataResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodMostPlayedStatisData (DescribeVodMostPlayedStatisDataRequest $req): DescribeVodMostPlayedStatisDataResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodMostPlayedStatisData', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodMostPlayedStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

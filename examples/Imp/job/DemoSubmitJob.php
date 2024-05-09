@@ -2,10 +2,16 @@
 
 require('../../../vendor/autoload.php');
 
+use Volc\Service\Imp\Imp;
+use Volc\Service\Imp\Models\Business\InputPath;
+use Volc\Service\Imp\Models\Business\DetectRect;
+use Volc\Service\Imp\Models\Business\OCR;
+use Volc\Service\Imp\Models\Business\OverrideParams;
+use Volc\Service\Imp\Models\Business\Params;
+use Volc\Service\Imp\Models\Business\SmartEraseOverrideParams;
+use Volc\Service\Imp\Models\Business\Watermark;
 use Volc\Service\Imp\Models\Request\ImpSubmitJobRequest;
 use Volc\Service\Imp\Models\Response\ImpSubmitJobResponse;
-use Volc\Service\Imp\Models\Business\InputPath;
-use Volc\Service\Imp\Imp;
 
 // call below method if you don't set ak and sk in $HOME/.vcloud/config
 $client = Imp::getInstance();
@@ -14,16 +20,45 @@ $client->setSecretKey("your sk");
 
 $request = new ImpSubmitJobRequest();
 
-
 $inputPath = new InputPath();
 $inputPath->setType("VOD");
 $inputPath->setVodSpaceName("your space name");
 $inputPath->setFileId("your file id");
 
+$params = new Params();
+$overrideParams = new OverrideParams();
+$smartErase = new SmartEraseOverrideParams();
+$smartErases = array();
+$watermark = new Watermark();
+$watermarkDetectRects = array();
+$watermarkDetectRect = new DetectRect();
+$watermarkDetectRect->setX1(0);
+$watermarkDetectRect->setY1(0);
+$watermarkDetectRect->setX2(1);
+$watermarkDetectRect->setY2(1);
+$watermarkDetectRects[0] = $watermarkDetectRect;
+$watermark->setDetectRect($watermarkDetectRects);
+$ocr = new OCR();
+$ocrDetectRects = array();
+$ocrDetectRect = new DetectRect();
+$ocrDetectRect->setX1(0);
+$ocrDetectRect->setY1(0);
+$ocrDetectRect->setX2(1);
+$ocrDetectRect->setY2(1);
+$ocrDetectRects[0] = $ocrDetectRect;
+$ocr->setDetectRect($ocrDetectRects);
+$smartErase->setActivityId(array("*"));
+$smartErase->setWatermark($watermark);
+$smartErase->setOCR($ocr);
+$smartErases[0]=$smartErase;
+$overrideParams->setSmartErase($smartErases);
+$params->setOverrideParams($overrideParams);
+
 $request->setTemplateId("your template id");
 $request->setCallbackArgs("your callback args");
 $request->setEnableLowPriority("false"); // true 开启 false 不开启 闲时转码
 $request->setInputPath($inputPath);
+$request->setParams($params);
 
 $response = new ImpSubmitJobResponse();
 try {

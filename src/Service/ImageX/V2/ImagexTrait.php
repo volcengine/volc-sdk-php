@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service\Imagex\V2;
+namespace Volc\Service\ImageX\V2;
 
 /**
  * @method array DelDomain(array $query, array $json)
@@ -20,6 +20,9 @@ namespace Volc\Service\Imagex\V2;
  * @method array GetVendorBuckets(array $json)
  * @method array GetImageMigrateTasks(array $query)
  * @method array RerunImageMigrateTask(array $query)
+ * @method array DescribeImageXSourceRequestBandwidth(array $query)
+ * @method array DescribeImageXSourceRequestTraffic(array $query)
+ * @method array DescribeImageXSourceRequest(array $query)
  * @method array DescribeImageXBucketRetrievalUsage(array $query)
  * @method array DescribeImageXSummary(array $query)
  * @method array DescribeImageXDomainTrafficData(array $query)

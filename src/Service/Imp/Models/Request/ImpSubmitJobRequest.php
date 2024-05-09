@@ -37,6 +37,12 @@ class ImpSubmitJobRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string EnableLowPriority = 4;</code>
      */
     protected $EnableLowPriority = '';
+    /**
+     * 任务执行参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Imp.Models.Business.Params Params = 5;</code>
+     */
+    protected $Params = null;
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class ImpSubmitJobRequest extends \Google\Protobuf\Internal\Message
      *           回调参数
      *     @type string $EnableLowPriority
      *           是否开启闲时任务, "true"/"false"
+     *     @type \Volc\Service\Imp\Models\Business\Params $Params
+     *           任务执行参数
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class ImpSubmitJobRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->EnableLowPriority = $var;
+
+        return $this;
+    }
+
+    /**
+     * 任务执行参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Imp.Models.Business.Params Params = 5;</code>
+     * @return \Volc\Service\Imp\Models\Business\Params
+     */
+    public function getParams()
+    {
+        return $this->Params;
+    }
+
+    /**
+     * 任务执行参数
+     *
+     * Generated from protobuf field <code>.Volcengine.Imp.Models.Business.Params Params = 5;</code>
+     * @param \Volc\Service\Imp\Models\Business\Params $var
+     * @return $this
+     */
+    public function setParams($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Imp\Models\Business\Params::class);
+        $this->Params = $var;
 
         return $this;
     }

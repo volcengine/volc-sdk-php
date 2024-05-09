@@ -1072,6 +1072,46 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeVodEnhanceImageData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodEnhanceImageData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeVodSpaceEditStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodSpaceEditStatisData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeVodPlayedStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodPlayedStatisData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeVodMostPlayedStatisData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodMostPlayedStatisData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
     ];
 
     /**

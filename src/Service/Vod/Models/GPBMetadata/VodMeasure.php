@@ -16,7 +16,7 @@ class VodMeasure
         }
         $pool->internalAddGeneratedFile(
             '
-¡-
+Ì<
 )volcengine/vod/business/vod_measure.protoVolcengine.Vod.Models.Business"<
 DescribeVodSpaceTranscodeItem
 Name (	
@@ -205,7 +205,81 @@ $DescribeVodPlayFileLogByDomainResult
 EndTime (	
 
 DomainList (	T
-FileList (2B.Volcengine.Vod.Models.Business.DescribeVodPlayFileLogByDomainItemBË
+FileList (2B.Volcengine.Vod.Models.Business.DescribeVodPlayFileLogByDomainItem"‚
+DescribeVodEnhanceImageDataItem
+Time (	
+
+SR (
+VFI (
+
+SDREnhance (
+SDR2HDR (
+AudioDenose ("©
+!DescribeVodEnhanceImageDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+TaskTypeList (	
+TaskStageList (	
+Aggregation (
+
+RegionList (	
+TotalEnhanceImagData (Y
+EnhanceImageList	 (2?.Volcengine.Vod.Models.Business.DescribeVodEnhanceImageDataItem"D
+"DescribeVodSpaceEditStatisDataItem
+Name (	
+Duration ("•
+&DescribeVodSpaceEditStatisDetailTVUnit
+Time (	]
+EditUsageItemList (2B.Volcengine.Vod.Models.Business.DescribeVodSpaceEditStatisDataItem"˜
+$DescribeVodSpaceEditStatisDataDetail
+Space (	a
+EditUsageDataList (2F.Volcengine.Vod.Models.Business.DescribeVodSpaceEditStatisDetailTVUnit"
+$DescribeVodSpaceEditStatisDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+Specification (	
+Aggregation (
+DetailFieldList (	
+
+RegionList (	
+TotalEditUsageData (b
+TotalEditUsageDataList	 (2B.Volcengine.Vod.Models.Business.DescribeVodSpaceEditStatisDataIteme
+EditUsageDataDetailList
+ (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceEditStatisDataDetail"”
+DescribeVodPlayedStatisDataItem
+Vid (	
+Name (	
+Size (
+Duration (
+
+CreateTime (	
+	PlayCount (
+Traffic ("Ò
+!DescribeVodPlayedStatisDataResult
+Space (	
+	StartTime (	
+EndTime (	
+VidList (	
+	OrderType (	V
+PlayStatInfos (2?.Volcengine.Vod.Models.Business.DescribeVodPlayedStatisDataItem"˜
+#DescribeVodMostPlayedStatisDataItem
+Vid (	
+Name (	
+Size (
+Duration (
+
+CreateTime (	
+	PlayCount (
+Traffic ("×
+%DescribeVodMostPlayedStatisDataResult
+Space (	
+	StartTime (	
+EndTime (	
+	OrderType (	
+TopN (Z
+PlayStatInfos (2C.Volcengine.Vod.Models.Business.DescribeVodMostPlayedStatisDataItemBË
 )com.volcengine.service.vod.model.businessB
 VodMeasurePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

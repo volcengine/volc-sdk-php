@@ -19,7 +19,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÅÄ
+ÍÑ
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -776,7 +776,37 @@ RegionList (	"ë
 	StartTime (	
 EndTime (	
 
-DomainList (	"A
+DomainList (	"±
+"DescribeVodEnhanceImageDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+TaskTypeList (	
+TaskStageList (	
+Aggregation (
+
+RegionList (	"∑
+%DescribeVodSpaceEditStatisDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+Specification (	
+Aggregation (
+DetailFieldList (	
+
+RegionList (	"{
+"DescribeVodPlayedStatisDataRequest
+Space (	
+	StartTime (	
+EndTime (	
+VidList (	
+	OrderType (	"|
+&DescribeVodMostPlayedStatisDataRequest
+Space (	
+	StartTime (	
+EndTime (	
+	OrderType (	
+TopN ("A
 VodSubmitBlockMediaTaskRequest
 	SpaceName (	
 Vids (	"C

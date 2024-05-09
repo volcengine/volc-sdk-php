@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service\Imagex\V2;
+namespace Volc\Service\ImageX\V2;
 
 use Exception;
 use GuzzleHttp\Handler\CurlHandler;
@@ -360,15 +360,15 @@ class Imagex extends V4Curl
         $applyRes = [];
         $commitRes = [];
         if (sizeof($serviceIDList) == 0) {
-            $applyRes[] = sprintf(static::ResourceServiceIdTRN, "*");
-            $commitRes[] = sprintf(static::ResourceServiceIdTRN, "*");
+            $applyRes[] = sprintf(ResourceServiceIdTRN, "*");
+            $commitRes[] = sprintf(ResourceServiceIdTRN, "*");
         } else {
             foreach ($serviceIDList as $serviceID) {
-                $applyRes[] = sprintf(static::ResourceServiceIdTRN, $serviceID);
-                $commitRes[] = sprintf(static::ResourceServiceIdTRN, $serviceID);
+                $applyRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
+                $commitRes[] = sprintf(ResourceServiceIdTRN, $serviceID);
             }
         }
-        $applyRes[] = sprintf(static::ResourceStoreKeyTRN, $keyPtn);
+        $applyRes[] = sprintf(ResourceStoreKeyTRN, $keyPtn);
 
         $policy = [
             'Statement' => [

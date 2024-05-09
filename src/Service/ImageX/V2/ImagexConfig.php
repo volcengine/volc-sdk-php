@@ -1,6 +1,6 @@
 <?php
 
-namespace Volc\Service\Imagex\V2;
+namespace Volc\Service\ImageX\V2;
 
 class ImagexConfig
 {
@@ -166,7 +166,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'CreateImageMigrateTask',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => false,
@@ -178,7 +178,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DeleteImageMigrateTask',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -190,7 +190,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'ExportFailedMigrateTask',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -202,7 +202,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateImageTaskStrategy',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => false,
@@ -214,7 +214,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'TerminateImageMigrateTask',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -226,7 +226,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'GetVendorBuckets',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => false,
@@ -238,7 +238,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'GetImageMigrateTasks',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -250,7 +250,43 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'RerunImageMigrateTask',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeImageXSourceRequestBandwidth' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXSourceRequestBandwidth',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeImageXSourceRequestTraffic' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXSourceRequestTraffic',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeImageXSourceRequest' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXSourceRequest',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,

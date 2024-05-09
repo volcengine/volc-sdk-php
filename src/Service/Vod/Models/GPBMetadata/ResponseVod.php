@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-æ™
+„ 
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -330,7 +330,19 @@ $DescribeVodSpaceAIStatisDataResponseG
 Result (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult"Ç
 &DescribeVodPlayFileLogByDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
-Result (2D.Volcengine.Vod.Models.Business.DescribeVodPlayFileLogByDomainResult"¹
+Result (2D.Volcengine.Vod.Models.Business.DescribeVodPlayFileLogByDomainResult"Á
+#DescribeVodEnhanceImageDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataQ
+Result (2A.Volcengine.Vod.Models.Business.DescribeVodEnhanceImageDataResult"Ç
+&DescribeVodSpaceEditStatisDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
+Result (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceEditStatisDataResult"Á
+#DescribeVodPlayedStatisDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataQ
+Result (2A.Volcengine.Vod.Models.Business.DescribeVodPlayedStatisDataResult"É
+\'DescribeVodMostPlayedStatisDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataU
+Result (2E.Volcengine.Vod.Models.Business.DescribeVodMostPlayedStatisDataResult"¹
 VodSubmitBlockMediaTaskResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
 Result (2=.Volcengine.Vod.Models.Business.VodSubmitBlockMediaTaskResult"½
