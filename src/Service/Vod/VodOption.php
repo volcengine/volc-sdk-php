@@ -912,6 +912,26 @@ class VodOption
                 ],
             ]
         ],
+        'GetFileInfos' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetFileInfos',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateFileStorageClass' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateFileStorageClass',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetContentBlockTasks' => [
             'url' => '/',
             'method' => 'post',

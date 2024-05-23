@@ -14,6 +14,7 @@ use Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditResultResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitDirectEditTaskAsyncResponse;
+use Volc\Service\Vod\Upload\UploadPolicy;
 use Volc\Service\Vod\Models\Request\VodGetAllPlayInfoRequest;
 use Volc\Service\Vod\Models\Response\VodGetAllPlayInfoResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoRequest;
@@ -52,6 +53,10 @@ use Volc\Service\Vod\Models\Request\VodDeleteMediaRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteMediaResponse;
 use Volc\Service\Vod\Models\Request\VodDeleteTranscodesRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteTranscodesResponse;
+use Volc\Service\Vod\Models\Request\VodGetFileInfosRequest;
+use Volc\Service\Vod\Models\Response\VodGetFileInfosResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateFileStorageClassRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateFileStorageClassResponse;
 use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
@@ -218,7 +223,6 @@ use Volc\Service\Vod\Models\Request\DescribeVodPlayedStatisDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodPlayedStatisDataResponse;
 use Volc\Service\Vod\Models\Request\DescribeVodMostPlayedStatisDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodMostPlayedStatisDataResponse;
-use Volc\Service\Vod\Upload\UploadPolicy;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
@@ -1145,6 +1149,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDeleteTranscodesResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetFileInfos.
+     *
+     * @param $req VodGetFileInfosRequest
+     * @return VodGetFileInfosResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getFileInfos (VodGetFileInfosRequest $req): VodGetFileInfosResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetFileInfos', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetFileInfosResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateFileStorageClass.
+     *
+     * @param $req VodUpdateFileStorageClassRequest
+     * @return VodUpdateFileStorageClassResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateFileStorageClass (VodUpdateFileStorageClassRequest $req): VodUpdateFileStorageClassResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('UpdateFileStorageClass', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateFileStorageClassResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

@@ -17,10 +17,11 @@ class RequestVod
         \GPBMetadata\Google\Protobuf\Wrappers::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodWorkflow::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê„
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto"„
+†‡
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	
@@ -290,7 +291,17 @@ BucketName (	".
 	SpaceName (	
 Prefix (	
 Limit (	
-Starter (	"-
+Starter (	"Y
+VodGetFileInfosRequest
+	SpaceName (	
+EncodedFileNames (	
+
+BucketName (	"•
+ VodUpdateFileStorageClassRequest
+	SpaceName (	J
+FileUpdateInfos (21.Volcengine.Vod.Models.Business.VodFileUpdateInfo
+
+BucketName (	"-
 VodExtractMediaMetaTaskRequest
 Vid (	"Ž
 VodStartWorkflowRequest

@@ -50,9 +50,9 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
      */
     protected $SizeX = 0;
     /**
-     * Generated from protobuf field <code>int32 sizeY = 10;</code>
+     * Generated from protobuf field <code>int32 SizeY = 10;</code>
      */
-    protected $sizeY = 0;
+    protected $SizeY = 0;
 
     /**
      * Constructor.
@@ -69,7 +69,7 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
      *     @type int $PosX
      *     @type int $PosY
      *     @type int $SizeX
-     *     @type int $sizeY
+     *     @type int $SizeY
      * }
      */
     public function __construct($data = NULL) {
@@ -276,23 +276,23 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 sizeY = 10;</code>
+     * Generated from protobuf field <code>int32 SizeY = 10;</code>
      * @return int
      */
     public function getSizeY()
     {
-        return $this->sizeY;
+        return $this->SizeY;
     }
 
     /**
-     * Generated from protobuf field <code>int32 sizeY = 10;</code>
+     * Generated from protobuf field <code>int32 SizeY = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setSizeY($var)
     {
         GPBUtil::checkInt32($var);
-        $this->sizeY = $var;
+        $this->SizeY = $var;
 
         return $this;
     }

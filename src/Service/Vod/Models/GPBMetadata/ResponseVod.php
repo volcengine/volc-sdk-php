@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-„ 
+ì¢
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -143,7 +143,13 @@ $VodDeleteVideoClassificationResponseG
 Result (2/.Volcengine.Vod.Models.Business.VodSnapshotData"§
 VodGetFileListResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
-Result (24.Volcengine.Vod.Models.Business.VodGetMediaInfosData"j
+Result (24.Volcengine.Vod.Models.Business.VodGetMediaInfosData"§
+VodGetFileInfosResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataC
+Result (23.Volcengine.Vod.Models.Business.VodGetFileInfosData"»
+!VodUpdateFileStorageClassResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
+Result (2=.Volcengine.Vod.Models.Business.VodUpdateFileStorageClassData"j
 VodExtractMediaMetaTaskResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"«
 VodStartWorkflowResponseG
