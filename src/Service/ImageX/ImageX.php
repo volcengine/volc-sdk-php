@@ -269,11 +269,13 @@ class ImageX extends V4Curl
             }
         }
 
+        $st1 = microtime(true);
         $response = $this->applyUploadImage(['query' => $queryStr]);
         $applyResponse = json_decode($response, true);
         if (isset($applyResponse["ResponseMetadata"]["Error"])) {
             return sprintf("uploadImages: request id %s error %s", $applyResponse["ResponseMetadata"]["RequestId"], $applyResponse["ResponseMetadata"]["Error"]["Message"]);
         }
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", applyImageUpload cost " . (microtime(true) - $st1) * 1000 . "ms\n");
 
         $uploadAddr = $applyResponse['Result']['UploadAddress'];
         if (count($uploadAddr['UploadHosts']) == 0) {
@@ -284,6 +286,7 @@ class ImageX extends V4Curl
             return "uploadImages: store infos num != upload num";
         }
 
+        $st2 = microtime(true);
         $successOids = [];
         $skippedCommitResult = [];
         for ($i = 0; $i < count($filePaths); ++$i) {
@@ -317,6 +320,8 @@ class ImageX extends V4Curl
         if (count($successOids) == 0) {
             throw new Exception("no file uploaded");
         }
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", upload cost " . (microtime(true) - $st2) * 1000 . "ms\n");
+
         if (isset($params["SkipCommit"]) && $params["SkipCommit"] === true) {
             return ["Result" => ["Results" => $skippedCommitResult]];
         }
@@ -340,7 +345,10 @@ class ImageX extends V4Curl
             "json" => $commitBody,
         ];
 
+        $st3 = microtime(true);
         $response = $this->commitUploadImage($commitReq);
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", commit cost " . (microtime(true) - $st3) * 1000 . "ms\n");
+
         return (string)$response;
     }
 

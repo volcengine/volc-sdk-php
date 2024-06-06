@@ -267,10 +267,12 @@ class Imagex extends V4Curl
             }
         }
 
+        $st1 = microtime(true);
         $applyResponse = $this->applyImageUpload($queryStr);
         if (isset ($applyResponse["ResponseMetadata"]["Error"])) {
             throw new Exception(sprintf("uploadImages: request id %s error %s", $applyResponse["ResponseMetadata"]["RequestId"], $applyResponse["ResponseMetadata"]["Error"]["Message"]));
         }
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", applyImageUpload cost " . (microtime(true) - $st1) * 1000 . "ms\n");
 
         $uploadAddr = $applyResponse['Result']['UploadAddress'];
         if (count($uploadAddr['UploadHosts']) == 0) {
@@ -281,6 +283,7 @@ class Imagex extends V4Curl
             throw new Exception(sprintf("uploadImages: store infos num(%d) != upload num(%d)", count($uploadAddr['StoreInfos'], $params["UploadNum"])));
         }
 
+        $st2 = microtime(true);
         $successOids = [];
         $skippedCommitResult = [];
         for ($i = 0; $i < count($fileOrPaths); ++$i) {
@@ -314,6 +317,8 @@ class Imagex extends V4Curl
         if (count($successOids) == 0) {
             throw new Exception("no file uploaded");
         }
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", upload cost " . (microtime(true) - $st2) * 1000 . "ms\n");
+
         if (isset ($params["SkipCommit"]) && $params["SkipCommit"] === true) {
             return [
                 "ResponseMetadata" => $applyResponse["ResponseMetadata"],
@@ -335,7 +340,11 @@ class Imagex extends V4Curl
         if (isset ($params["Functions"])) {
             $commitBody["Functions"] = $params["Functions"];
         }
-        return $this->commitImageUpload($commitParams, $commitBody);
+        $st3 = microtime(true);
+        $res =  $this->commitImageUpload($commitParams, $commitBody);
+        echo ("requsetID ". $applyResponse["ResponseMetadata"]["RequestId"] .", commit cost " . (microtime(true) - $st3) * 1000 . "ms\n");
+
+        return $res;
     }
 
     public function getUploadAuthToken($query)

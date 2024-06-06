@@ -14,6 +14,8 @@ use Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditResultResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitDirectEditTaskAsyncResponse;
+use Volc\Service\Vod\Models\Request\VodCancelDirectEditTaskRequest;
+use Volc\Service\Vod\Models\Response\VodCancelDirectEditTaskResponse;
 use Volc\Service\Vod\Upload\UploadPolicy;
 use Volc\Service\Vod\Models\Request\VodGetAllPlayInfoRequest;
 use Volc\Service\Vod\Models\Response\VodGetAllPlayInfoResponse;
@@ -490,6 +492,39 @@ class Vod extends V4Curl
         $respData = new VodGetDirectEditProgressResponse();
         try {
             $respData = VodUtils::parseResponseData($resp, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+    /**
+     * CancelDirectEditTask.
+     *
+     * @param $req VodCancelDirectEditTaskRequest
+     * @return VodCancelDirectEditTaskResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function cancelDirectEditTask(VodCancelDirectEditTaskRequest $req): VodCancelDirectEditTaskResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $response = $this->request('CancelDirectEditTask', ['json' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodCancelDirectEditTaskResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
