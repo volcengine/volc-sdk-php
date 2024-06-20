@@ -12,7 +12,6 @@
       "guzzlehttp/guzzle": "*",
       "ext-json": "*",
       "google/protobuf": "*",
-      "google/gax": "*",
       "ext-openssl": "*"
     },
     "autoload": {
