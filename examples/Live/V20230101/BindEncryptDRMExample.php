@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->describeLiveStreamUsageData($body);
+$response = $client->bindEncryptDRM($body);
 print_r($response);

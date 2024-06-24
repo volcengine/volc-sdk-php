@@ -9,7 +9,7 @@ $client = Live::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$query = [];
+$body = [];
 
-$response = $client->listVqosMetricsDimensions($query);
+$response = $client->unBindEncryptDRM($body);
 print_r($response);

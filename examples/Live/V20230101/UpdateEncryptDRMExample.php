@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->getPullCDNSnapshotTask($body);
+$response = $client->updateEncryptDRM($body);
 print_r($response);

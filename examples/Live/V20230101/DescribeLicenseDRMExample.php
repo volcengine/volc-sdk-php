@@ -9,7 +9,7 @@ $client = Live::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$body = [];
+$query = [];
 
-$response = $client->createPullCDNSnapshotTask($body);
+$response = $client->describeLicenseDRM($query);
 print_r($response);

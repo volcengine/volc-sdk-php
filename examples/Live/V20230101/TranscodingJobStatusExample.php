@@ -9,7 +9,7 @@ $client = Live::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$body = [];
+$query = [];
 
-$response = $client->createVerifyContent($body);
+$response = $client->transcodingJobStatus($query);
 print_r($response);

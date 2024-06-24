@@ -62,6 +62,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'TranscodingJobStatus' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'TranscodingJobStatus',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'ListVhostTransCodePreset' => [
                 'method' => 'post',
                 'url' => '/',
@@ -85,6 +97,18 @@ class LiveConfig
                 ],
                 'has_query' => false,
                 'has_json' => true,
+            ],
+            'RestartTranscodingJob' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'RestartTranscodingJob',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
             ],
             'CreateWatermarkPreset' => [
                 'method' => 'post',
@@ -518,30 +542,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'CreateVerifyContent' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'CreateVerifyContent',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'VerifyDomainOwner' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'VerifyDomainOwner',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DeleteDomain' => [
                 'method' => 'post',
                 'url' => '/',
@@ -938,66 +938,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListVqosMetricsDimensions' => [
-                'method' => 'get',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListVqosMetricsDimensions',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => false,
-            ],
-            'StopPullCDNSnapshotTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'StopPullCDNSnapshotTask',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'CreatePullCDNSnapshotTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'CreatePullCDNSnapshotTask',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'GetPullCDNSnapshotTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'GetPullCDNSnapshotTask',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'ListPullCDNSnapshotTask' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListPullCDNSnapshotTask',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DeleteSnapshotAuditPreset' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1016,18 +956,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateSnapshotAuditPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'DescribeSnapshotAuditPresetDetail' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeSnapshotAuditPresetDetail',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1166,18 +1094,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeLiveBatchStreamTranscodeData' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeLiveBatchStreamTranscodeData',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DescribeLiveStreamCountData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1208,6 +1124,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLivePushStreamInfoData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveTranscodeInfoData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveTranscodeInfoData',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1256,18 +1184,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLiveMetricTrafficData',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'DescribeLiveBatchStreamTrafficData' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeLiveBatchStreamTrafficData',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1418,18 +1334,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeLiveCustomizedLogData' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeLiveCustomizedLogData',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DescribeLiveLogData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1574,24 +1478,84 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeLiveActivityBandwidthData' => [
+            'UpdateEncryptDRM' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DescribeLiveActivityBandwidthData',
+                        'Action' => 'UpdateEncryptDRM',
                         'Version' => '2023-01-01',
                     ]
                 ],
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeLiveStreamUsageData' => [
+            'DescribeLicenseDRM' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DescribeLiveStreamUsageData',
+                        'Action' => 'DescribeLicenseDRM',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeCertDRM' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeCertDRM',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeEncryptDRM' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeEncryptDRM',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => false,
+            ],
+            'BindEncryptDRM' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'BindEncryptDRM',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UnBindEncryptDRM' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UnBindEncryptDRM',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListBindEncryptDRM' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListBindEncryptDRM',
                         'Version' => '2023-01-01',
                     ]
                 ],

@@ -9,7 +9,7 @@ $client = Live::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$body = [];
+$query = [];
 
-$response = $client->describeLiveBatchStreamTranscodeData($body);
+$response = $client->restartTranscodingJob($query);
 print_r($response);

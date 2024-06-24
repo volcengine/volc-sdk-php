@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->describeLiveBatchStreamTrafficData($body);
+$response = $client->describeLiveTranscodeInfoData($body);
 print_r($response);

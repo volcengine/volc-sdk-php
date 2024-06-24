@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->verifyDomainOwner($body);
+$response = $client->listBindEncryptDRM($body);
 print_r($response);
