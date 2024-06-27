@@ -1034,6 +1034,30 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeLiveBatchStreamSessionData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveBatchStreamSessionData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveStreamSessionData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveStreamSessionData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeLivePlayStatusCodeData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1190,12 +1214,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeLiveStreamSessionData' => [
+            'DescribeLiveBatchStreamTrafficData' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'DescribeLiveStreamSessionData',
+                        'Action' => 'DescribeLiveBatchStreamTrafficData',
                         'Version' => '2023-01-01',
                     ]
                 ],
