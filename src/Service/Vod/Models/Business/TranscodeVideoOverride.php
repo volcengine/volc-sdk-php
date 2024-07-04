@@ -37,6 +37,12 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string FileName = 4;</code>
      */
     protected $FileName = '';
+    /**
+     * 指定水印模板Id
+     *
+     * Generated from protobuf field <code>string LogoTemplateId = 5;</code>
+     */
+    protected $LogoTemplateId = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
      *           模板组下标，仅对模板组生效
      *     @type string $FileName
      *           文件名
+     *     @type string $LogoTemplateId
+     *           指定水印模板Id
      * }
      */
     public function __construct($data = NULL) {
@@ -169,6 +177,32 @@ class TranscodeVideoOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->FileName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 指定水印模板Id
+     *
+     * Generated from protobuf field <code>string LogoTemplateId = 5;</code>
+     * @return string
+     */
+    public function getLogoTemplateId()
+    {
+        return $this->LogoTemplateId;
+    }
+
+    /**
+     * 指定水印模板Id
+     *
+     * Generated from protobuf field <code>string LogoTemplateId = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogoTemplateId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->LogoTemplateId = $var;
 
         return $this;
     }

@@ -53,6 +53,26 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 SizeY = 10;</code>
      */
     protected $SizeY = 0;
+    /**
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     */
+    protected $Transparency = 0;
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     */
+    protected $PosRatioX = 0.0;
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     */
+    protected $PosRatioY = 0.0;
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     */
+    protected $SizeRatioX = 0.0;
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     */
+    protected $SizeRatioY = 0.0;
 
     /**
      * Constructor.
@@ -70,6 +90,11 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
      *     @type int $PosY
      *     @type int $SizeX
      *     @type int $SizeY
+     *     @type int $Transparency
+     *     @type float $PosRatioX
+     *     @type float $PosRatioY
+     *     @type float $SizeRatioX
+     *     @type float $SizeRatioY
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +318,116 @@ class VideoLogoDefinition extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->SizeY = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     * @return int
+     */
+    public function getTransparency()
+    {
+        return $this->Transparency;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTransparency($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->Transparency = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     * @return float
+     */
+    public function getPosRatioX()
+    {
+        return $this->PosRatioX;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPosRatioX($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->PosRatioX = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     * @return float
+     */
+    public function getPosRatioY()
+    {
+        return $this->PosRatioY;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPosRatioY($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->PosRatioY = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     * @return float
+     */
+    public function getSizeRatioX()
+    {
+        return $this->SizeRatioX;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSizeRatioX($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->SizeRatioX = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     * @return float
+     */
+    public function getSizeRatioY()
+    {
+        return $this->SizeRatioY;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSizeRatioY($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->SizeRatioY = $var;
 
         return $this;
     }

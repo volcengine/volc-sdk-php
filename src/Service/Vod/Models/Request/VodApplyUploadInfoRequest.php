@@ -67,6 +67,12 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ClientIDCMode = 9;</code>
      */
     protected $ClientIDCMode = '';
+    /**
+     * 是否支持降级域名调度 true-支持降级，false-不支持降级
+     *
+     * Generated from protobuf field <code>bool NeedFallback = 10;</code>
+     */
+    protected $NeedFallback = false;
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *           客户端网络环境 
      *     @type string $ClientIDCMode
      *           客户端机房环境 
+     *     @type bool $NeedFallback
+     *           是否支持降级域名调度 true-支持降级，false-不支持降级
      * }
      */
     public function __construct($data = NULL) {
@@ -329,6 +337,32 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ClientIDCMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否支持降级域名调度 true-支持降级，false-不支持降级
+     *
+     * Generated from protobuf field <code>bool NeedFallback = 10;</code>
+     * @return bool
+     */
+    public function getNeedFallback()
+    {
+        return $this->NeedFallback;
+    }
+
+    /**
+     * 是否支持降级域名调度 true-支持降级，false-不支持降级
+     *
+     * Generated from protobuf field <code>bool NeedFallback = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNeedFallback($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->NeedFallback = $var;
 
         return $this;
     }

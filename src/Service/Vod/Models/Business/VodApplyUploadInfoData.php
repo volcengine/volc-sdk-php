@@ -19,6 +19,12 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodUploadAddress UploadAddress = 1;</code>
      */
     protected $UploadAddress = null;
+    /**
+     * 1001 阶段返回候选上传地址用于降级 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CandidateUploadAddresses CandidateUploadAddresses = 2;</code>
+     */
+    protected $CandidateUploadAddresses = null;
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Service\Vod\Models\Business\VodUploadAddress $UploadAddress
      *           1001 阶段返回信息 
+     *     @type \Volc\Service\Vod\Models\Business\CandidateUploadAddresses $CandidateUploadAddresses
+     *           1001 阶段返回候选上传地址用于降级 
      * }
      */
     public function __construct($data = NULL) {
@@ -67,6 +75,42 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodUploadAddress::class);
         $this->UploadAddress = $var;
+
+        return $this;
+    }
+
+    /**
+     * 1001 阶段返回候选上传地址用于降级 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CandidateUploadAddresses CandidateUploadAddresses = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\CandidateUploadAddresses|null
+     */
+    public function getCandidateUploadAddresses()
+    {
+        return $this->CandidateUploadAddresses;
+    }
+
+    public function hasCandidateUploadAddresses()
+    {
+        return isset($this->CandidateUploadAddresses);
+    }
+
+    public function clearCandidateUploadAddresses()
+    {
+        unset($this->CandidateUploadAddresses);
+    }
+
+    /**
+     * 1001 阶段返回候选上传地址用于降级 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CandidateUploadAddresses CandidateUploadAddresses = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\CandidateUploadAddresses $var
+     * @return $this
+     */
+    public function setCandidateUploadAddresses($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\CandidateUploadAddresses::class);
+        $this->CandidateUploadAddresses = $var;
 
         return $this;
     }

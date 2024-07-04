@@ -45,6 +45,38 @@ class ImageLogoDefinition extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 SizeY = 8;</code>
      */
     protected $SizeY = 0;
+    /**
+     *循环次数
+     *
+     * Generated from protobuf field <code>int32 LoopTimes = 9;</code>
+     */
+    protected $LoopTimes = 0;
+    /**
+     * Generated from protobuf field <code>bool RepeatLast = 10;</code>
+     */
+    protected $RepeatLast = false;
+    /**
+     *透明度
+     *
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     */
+    protected $Transparency = 0;
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     */
+    protected $PosRatioX = 0.0;
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     */
+    protected $PosRatioY = 0.0;
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     */
+    protected $SizeRatioX = 0.0;
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     */
+    protected $SizeRatioY = 0.0;
 
     /**
      * Constructor.
@@ -60,6 +92,15 @@ class ImageLogoDefinition extends \Google\Protobuf\Internal\Message
      *     @type int $PosY
      *     @type int $SizeX
      *     @type int $SizeY
+     *     @type int $LoopTimes
+     *          循环次数
+     *     @type bool $RepeatLast
+     *     @type int $Transparency
+     *          透明度
+     *     @type float $PosRatioX
+     *     @type float $PosRatioY
+     *     @type float $SizeRatioX
+     *     @type float $SizeRatioY
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +280,168 @@ class ImageLogoDefinition extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->SizeY = $var;
+
+        return $this;
+    }
+
+    /**
+     *循环次数
+     *
+     * Generated from protobuf field <code>int32 LoopTimes = 9;</code>
+     * @return int
+     */
+    public function getLoopTimes()
+    {
+        return $this->LoopTimes;
+    }
+
+    /**
+     *循环次数
+     *
+     * Generated from protobuf field <code>int32 LoopTimes = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLoopTimes($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->LoopTimes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool RepeatLast = 10;</code>
+     * @return bool
+     */
+    public function getRepeatLast()
+    {
+        return $this->RepeatLast;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool RepeatLast = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRepeatLast($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->RepeatLast = $var;
+
+        return $this;
+    }
+
+    /**
+     *透明度
+     *
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     * @return int
+     */
+    public function getTransparency()
+    {
+        return $this->Transparency;
+    }
+
+    /**
+     *透明度
+     *
+     * Generated from protobuf field <code>int32 Transparency = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTransparency($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->Transparency = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     * @return float
+     */
+    public function getPosRatioX()
+    {
+        return $this->PosRatioX;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioX = 12;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPosRatioX($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->PosRatioX = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     * @return float
+     */
+    public function getPosRatioY()
+    {
+        return $this->PosRatioY;
+    }
+
+    /**
+     * Generated from protobuf field <code>double PosRatioY = 13;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPosRatioY($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->PosRatioY = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     * @return float
+     */
+    public function getSizeRatioX()
+    {
+        return $this->SizeRatioX;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioX = 14;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSizeRatioX($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->SizeRatioX = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     * @return float
+     */
+    public function getSizeRatioY()
+    {
+        return $this->SizeRatioY;
+    }
+
+    /**
+     * Generated from protobuf field <code>double SizeRatioY = 15;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSizeRatioY($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->SizeRatioY = $var;
 
         return $this;
     }

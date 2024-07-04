@@ -20,7 +20,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
         $pool->internalAddGeneratedFile(
             '
-†‡
+ë‰
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -102,7 +102,7 @@ PlayConfig (	
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
 VodQueryUploadTaskInfoRequest
-JobIds (	"×
+JobIds (	"í
 VodApplyUploadInfoRequest
 	SpaceName (	
 
@@ -113,7 +113,9 @@ SessionKey (	
 StorageClass (
 FileExtension (	
 ClientNetWorkMode (	
-ClientIDCMode	 (	"œ
+ClientIDCMode	 (	
+NeedFallback
+ ("œ
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -495,7 +497,7 @@ RegionList (	"\\
 VodUpdateDomainPlayRuleRequest
 	SpaceName (	
 DefaultDomain (	
-PlayRule (	"r
+PlayRule ("r
 VodAddDomainToSchedulerRequest
 	SpaceName (	
 
@@ -676,7 +678,23 @@ DomainType (	
 Domain (	
 MainKey (	
 	BackupKey (	
-Status (	"„
+Status (	"L
+VodListPCDNDomainRequest
+	SpaceName (	
+Offset (
+Limit ("?
+VodCreatePCDNDomainRequest
+	SpaceName (	
+Domain (	">
+VodStartPCDNDomainRequest
+	SpaceName (	
+Domain (	"=
+VodStopPCDNDomainRequest
+	SpaceName (	
+Domain (	"?
+VodDeletePCDNDomainRequest
+	SpaceName (	
+Domain (	"„
 AddOrUpdateCertificateV2Request
 	SpaceName (	
 Domain (	

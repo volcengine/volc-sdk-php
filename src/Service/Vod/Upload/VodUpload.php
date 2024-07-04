@@ -33,6 +33,26 @@ const LargeFileSize = 1024 * 1024 * 1024;
 
 class VodUpload extends Vod
 {
+
+    public function uploadToB(string $spaceName, string $filePath, string $fileType, string $fileName,
+                              string $fileExtension, string $clientNetWorkMode, string $clientIDCMode, int $storageClass)
+    {
+        $applyRequest = new VodApplyUploadInfoRequest();
+        $applyRequest->setSpaceName($spaceName);
+        $applyRequest->setFileName($fileName);
+        $applyRequest->setFileType($fileType);
+        $applyRequest->setFileExtension($fileExtension);
+        $applyRequest->setStorageClass($storageClass);
+        $applyRequest->setClientNetWorkMode($clientNetWorkMode);
+        $applyRequest->setClientIDCMode($clientIDCMode);
+        $applyRequest->setNeedFallback(true);
+        $resp = $this->upload($applyRequest, $filePath);
+        if ($resp[0] != 0) {
+            throw new Exception($resp[1]);
+        }
+        return $resp[2];
+    }
+
     /**
      * @param VodUploadMediaRequest $vodUploadMediaRequest
      * @return VodCommitUploadInfoResponse
@@ -41,20 +61,12 @@ class VodUpload extends Vod
      */
     public function uploadMedia(VodUploadMediaRequest $vodUploadMediaRequest): VodCommitUploadInfoResponse
     {
-        $applyRequest = new VodApplyUploadInfoRequest();
-        $applyRequest->setSpaceName($vodUploadMediaRequest->getSpaceName());
-        $applyRequest->setFileName($vodUploadMediaRequest->getFileName());
-        $applyRequest->setFileExtension($vodUploadMediaRequest->getFileExtension());
-        $applyRequest->setStorageClass($vodUploadMediaRequest->getStorageClass());
-        $applyRequest->setClientIDCMode($vodUploadMediaRequest->getClientIDCMode());
-        $applyRequest->setClientNetWorkMode($vodUploadMediaRequest->getClientNetWorkMode());
-        $resp = $this->upload($applyRequest, $vodUploadMediaRequest->getFilePath());
-        if ($resp[0] != 0) {
-            throw new Exception($resp[1]);
-        }
+        $sessionKey = $this->uploadToB($vodUploadMediaRequest->getSpaceName(), $vodUploadMediaRequest->getFilePath(), "media",
+            $vodUploadMediaRequest->getFileName(), $vodUploadMediaRequest->getFileExtension(), $vodUploadMediaRequest->getClientNetWorkMode(),
+            $vodUploadMediaRequest->getClientIDCMode(), $vodUploadMediaRequest->getStorageClass());
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMediaRequest->getSpaceName());
-        $request->setSessionKey($resp[2]);
+        $request->setSessionKey($sessionKey);
         $request->setCallbackArgs($vodUploadMediaRequest->getCallbackArgs());
         $request->setFunctions($vodUploadMediaRequest->getFunctions());
         try {
@@ -66,20 +78,12 @@ class VodUpload extends Vod
 
     public function uploadMaterial(VodUploadMaterialRequest $vodUploadMaterialRequest): VodCommitUploadInfoResponse
     {
-        $applyRequest = new VodApplyUploadInfoRequest();
-        $applyRequest->setSpaceName($vodUploadMaterialRequest->getSpaceName());
-        $applyRequest->setFileType($vodUploadMaterialRequest->getFileType());
-        $applyRequest->setFileName($vodUploadMaterialRequest->getFileName());
-        $applyRequest->setFileExtension($vodUploadMaterialRequest->getFileExtension());
-        $applyRequest->setClientIDCMode($vodUploadMaterialRequest->getClientIDCMode());
-        $applyRequest->setClientNetWorkMode($vodUploadMaterialRequest->getClientNetWorkMode());
-        $resp = $this->upload($applyRequest, $vodUploadMaterialRequest->getFilePath());
-        if ($resp[0] != 0) {
-            throw new Exception($resp[1]);
-        }
+        $sessionKey = $this->uploadToB($vodUploadMaterialRequest->getSpaceName(), $vodUploadMaterialRequest->getFilePath(), $vodUploadMaterialRequest->getFileType(),
+            $vodUploadMaterialRequest->getFileName(), $vodUploadMaterialRequest->getFileExtension(), $vodUploadMaterialRequest->getClientNetWorkMode(),
+            $vodUploadMaterialRequest->getClientIDCMode(), 0);
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMaterialRequest->getSpaceName());
-        $request->setSessionKey($resp[2]);
+        $request->setSessionKey($sessionKey);
         $request->setCallbackArgs($vodUploadMaterialRequest->getCallbackArgs());
         $request->setFunctions($vodUploadMaterialRequest->getFunctions());
         try {
@@ -101,20 +105,52 @@ class VodUpload extends Vod
                 return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
             }
 
-            $uploadAddress = $response->getResult()->getData()->getUploadAddress();
-
-            $uploadHost = ($uploadAddress->getUploadHosts())[0];
-            $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
-            $session = $uploadAddress->getSessionKey();
-
-            $storeInfo = new VodStoreInfo();
-            $storeInfo->mergeFrom(($uploadAddress->getStoreInfos())[0]);
-            $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
-            if ($respCode != 0) {
-                return array(-1, "upload " . $filePath . " error", "", "");
+            $candidateUploadAddress = $response->getResult()->getData()->getCandidateUploadAddresses();
+            $allUploadAddress = array();
+            if ($candidateUploadAddress != null) {
+                $allUploadAddress = array_merge(iterator_to_array($candidateUploadAddress->getMainUploadAddresses()),
+                    iterator_to_array($candidateUploadAddress->getBackupUploadAddresses()),
+                    iterator_to_array($candidateUploadAddress->getFallbackUploadAddresses()));
             }
 
-            return array(0, "", $session, $oid);
+            if (count($allUploadAddress) > 0) {
+                foreach ($allUploadAddress as $uploadAddress) {
+                    if (count($uploadAddress->getUploadHosts()) == 0 || count($uploadAddress->getStoreInfos()) == 0 && $uploadAddress->getStoreInfos()[0] == null) {
+                        continue;
+                    }
+                    $uploadHost = ($uploadAddress->getUploadHosts())[0];
+                    $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
+                    $auth = ($uploadAddress->getStoreInfos())[0]->getAuth();
+                    $session = $uploadAddress->getSessionKey();
+                    $storeInfo = new VodStoreInfo();
+                    $storeInfo->setStoreUri($oid);
+                    $storeInfo->setAuth($auth);
+                    try {
+                        $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
+                        if ($respCode != 0) {
+                            continue;
+                        }
+                        return array(0, "", $session, $oid);
+                    } catch (Throwable $e) {
+                        continue;
+                    }
+                }
+                return array(-1, "upload " . $filePath . " error", "", "");
+            } else {
+                $uploadAddress = $response->getResult()->getData()->getUploadAddress();
+                $uploadHost = ($uploadAddress->getUploadHosts())[0];
+                $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
+                $session = $uploadAddress->getSessionKey();
+                $storeInfo = new VodStoreInfo();
+                $storeInfo->mergeFrom(($uploadAddress->getStoreInfos())[0]);
+
+                $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
+                if ($respCode != 0) {
+                    return array(-1, "upload " . $filePath . " error", "", "");
+                }
+
+                return array(0, "", $session, $oid);
+            }
         } catch (Throwable $e) {
             return array(-1, $e->getMessage(), "", "");
         }
