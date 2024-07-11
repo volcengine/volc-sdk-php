@@ -197,7 +197,37 @@ class Sms extends V4Curl
                     'Version' => ServiceVersion20210111,
                 ],
             ]
-        ]
+        ],
+        "ApplySignatureIdent" => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ApplySignatureIdent',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        "GetSignatureIdentList" => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetSignatureIdentList',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
+        "BatchBindSignatureIdent" => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'BatchBindSignatureIdent',
+                    'Version' => ServiceVersion20210111,
+                ],
+            ]
+        ],
     ];
 
     public function sendSms(array $query = [])
@@ -340,6 +370,33 @@ class Sms extends V4Curl
         $response = $this->request('InsertSubAccount', $query);
         if ($response->getStatusCode() >= 500) {
             $response = $this->request('InsertSubAccount', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function applySignatureIdent(array $query = [])
+    {
+        $response = $this->request('ApplySignatureIdent', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('ApplySignatureIdent', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function getSignatureIdentList(array $query = [])
+    {
+        $response = $this->request('GetSignatureIdentList', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('GetSignatureIdentList', $query);
+        }
+        return $response->getBody();
+    }
+
+    public function batchBindSignatureIdent(array $query = [])
+    {
+        $response = $this->request('BatchBindSignatureIdent', $query);
+        if ($response->getStatusCode() >= 500) {
+            $response = $this->request('BatchBindSignatureIdent', $query);
         }
         return $response->getBody();
     }
