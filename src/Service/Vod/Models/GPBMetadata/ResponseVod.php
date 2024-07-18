@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ì¢
+¹§
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -298,6 +298,17 @@ $VodRemoveDomainFromSchedulerResponseG
 #VodUpdateDomainAuthConfigV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"q
 &VodUpdateDomainUrlAuthConfigV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"­
+VodListPCDNDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataG
+Result (27.Volcengine.Vod.Models.Business.VodPCDNDomainConfigInfo"f
+VodCreatePCDNDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"e
+VodStartPCDNDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"d
+VodStopPCDNDomainResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f
+VodDeletePCDNDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"k
  AddOrUpdateCertificateV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"c

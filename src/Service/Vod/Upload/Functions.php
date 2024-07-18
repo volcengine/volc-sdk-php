@@ -2,6 +2,8 @@
 
 namespace Volc\Service\Vod\Upload;
 
+use Volc\Service\Vod\Models\Business\VodUploadTemplate;
+
 class Functions
 {
     private $funcs = [];
@@ -16,10 +18,15 @@ class Functions
     {
         $this->funcs[] = new FunctionInner("Snapshot", new SnapshotTimeInput($snapshotTime));
     }
-
+    //deprecated
     public function addStartWorkflowFunc(string $templateId)
     {
         $this->funcs[] = new FunctionInner("StartWorkflow", new WorkflowInput($templateId));
+    }
+
+    public function addStartWorkflowTemplateFunc($templates)
+    {
+        $this->funcs[] = new FunctionInner("StartWorkflow", new WorkflowInput("", $templates));
     }
 
     public function addOptionInfoFunc(OptionInfo $optionInfo)

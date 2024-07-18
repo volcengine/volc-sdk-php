@@ -89,6 +89,10 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string HlsMediaSize = 19;</code>
      */
     protected $HlsMediaSize = '';
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 20;</code>
+     */
+    private $Templates;
 
     /**
      * Constructor.
@@ -115,6 +119,7 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
      *     @type string $ActionType
      *     @type bool $IsHlsIndexOnly
      *     @type string $HlsMediaSize
+     *     @type \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $Templates
      * }
      */
     public function __construct($data = NULL) {
@@ -536,6 +541,28 @@ class VodUploadFunctionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->HlsMediaSize = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTemplates()
+    {
+        return $this->Templates;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 20;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTemplates($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodUploadTemplate::class);
+        $this->Templates = $arr;
 
         return $this;
     }

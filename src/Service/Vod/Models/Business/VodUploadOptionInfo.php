@@ -17,6 +17,14 @@ class VodUploadOptionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string TemplateId = 1;</code>
      */
     protected $TemplateId = '';
+    /**
+     * Generated from protobuf field <code>repeated string TemplateIds = 2;</code>
+     */
+    private $TemplateIds;
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 3;</code>
+     */
+    private $Templates;
 
     /**
      * Constructor.
@@ -25,6 +33,8 @@ class VodUploadOptionInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $TemplateId
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $TemplateIds
+     *     @type \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $Templates
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +60,50 @@ class VodUploadOptionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TemplateId = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string TemplateIds = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTemplateIds()
+    {
+        return $this->TemplateIds;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string TemplateIds = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTemplateIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->TemplateIds = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTemplates()
+    {
+        return $this->Templates;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 3;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTemplates($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodUploadTemplate::class);
+        $this->Templates = $arr;
 
         return $this;
     }

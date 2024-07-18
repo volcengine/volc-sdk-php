@@ -26,9 +26,9 @@ class VodUpdateDomainPlayRuleRequest extends \Google\Protobuf\Internal\Message
     /**
      * 0 随机模式 1 默认域名模式
      *
-     * Generated from protobuf field <code>string PlayRule = 3;</code>
+     * Generated from protobuf field <code>int32 PlayRule = 3;</code>
      */
-    protected $PlayRule = '';
+    protected $PlayRule = 0;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class VodUpdateDomainPlayRuleRequest extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *     @type string $DefaultDomain
      *          默认域名
-     *     @type string $PlayRule
+     *     @type int $PlayRule
      *           0 随机模式 1 默认域名模式
      * }
      */
@@ -99,8 +99,8 @@ class VodUpdateDomainPlayRuleRequest extends \Google\Protobuf\Internal\Message
     /**
      * 0 随机模式 1 默认域名模式
      *
-     * Generated from protobuf field <code>string PlayRule = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>int32 PlayRule = 3;</code>
+     * @return int
      */
     public function getPlayRule()
     {
@@ -110,13 +110,13 @@ class VodUpdateDomainPlayRuleRequest extends \Google\Protobuf\Internal\Message
     /**
      * 0 随机模式 1 默认域名模式
      *
-     * Generated from protobuf field <code>string PlayRule = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int32 PlayRule = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setPlayRule($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt32($var);
         $this->PlayRule = $var;
 
         return $this;

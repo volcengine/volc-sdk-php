@@ -103,6 +103,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> CustomURLHeaders = 15;</code>
      */
     private $CustomURLHeaders;
+    /**
+     * 工作流模板 
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 16;</code>
+     */
+    private $Templates;
 
     /**
      * Constructor.
@@ -140,6 +146,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           是否闲时转码 
      *     @type array|\Google\Protobuf\Internal\MapField $CustomURLHeaders
      *           自定义Header 
+     *     @type \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $Templates
+     *           工作流模板 
      * }
      */
     public function __construct($data = NULL) {
@@ -533,6 +541,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->CustomURLHeaders = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 工作流模板 
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTemplates()
+    {
+        return $this->Templates;
+    }
+
+    /**
+     * 工作流模板 
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodUploadTemplate Templates = 16;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodUploadTemplate[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTemplates($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodUploadTemplate::class);
+        $this->Templates = $arr;
 
         return $this;
     }

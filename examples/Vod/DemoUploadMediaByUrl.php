@@ -16,6 +16,10 @@ $urlSet->setSourceUrl("");
 $urlSet->setStorageClass(0);
 $urlSet->setFileExtension(".mp4");
 $urlSet->setCallbackArgs("");
+$impTemplate = new Volc\Service\Vod\Models\Business\VodUploadTemplate();
+$impTemplate->setTemplateIds(["imp template id"]);
+$impTemplate->setTemplateType("imp");
+$urlSet->setTemplates([$impTemplate]);
 $request->setURLSets([$urlSet]);
 
 

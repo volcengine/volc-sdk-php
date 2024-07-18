@@ -512,6 +512,18 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #删除托管在内容分发网络的证书: https://www.volcengine.com/docs/6454/597589
+        'DeleteCdnCertificate' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteCdnCertificate',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
         #查询计费结果数据: 
         'DescribeAccountingSummary' => [
           'url' => '/',
@@ -519,6 +531,162 @@ class Cdn extends V4Curl
           'config' => [
               'query' => [
                   'Action' => 'DescribeAccountingSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取访问统计的细分数据: 
+        'DescribeDistrictData' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDistrictData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取计费区域的细分数据: 
+        'DescribeEdgeData' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取访问统计的汇总数据: 
+        'DescribeDistrictSummary' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDistrictSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取计费区域的汇总数据: 
+        'DescribeEdgeSummary' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取回源统计的细分数据: 
+        'DescribeOriginData' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取回源统计的汇总数据: 
+        'DescribeOriginSummary' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginSummary',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取独立访客的细分数据: 
+        'DescribeUserData' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeUserData',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取访问数据的统计排名: 
+        'DescribeDistrictRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDistrictRanking',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取计费区域的统计排名: 
+        'DescribeEdgeRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeRanking',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取回源数据的统计排名: 
+        'DescribeOriginRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginRanking',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取访问状态码排名数据: 
+        'DescribeEdgeStatusCodeRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeEdgeStatusCodeRanking',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取回源状态码的统计排名: 
+        'DescribeOriginStatusCodeRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeOriginStatusCodeRanking',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取热门对象的统计排名: 
+        'DescribeStatisticalRanking' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeStatisticalRanking',
                   'Version' => '2021-03-01',
               ],
           ]
@@ -797,9 +965,79 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("BatchDeployCert", $data);
     }
 
+    public function deleteCdnCertificate(array $data = []): string
+    {
+        return $this->requestWithRetry("DeleteCdnCertificate", $data);
+    }
+
     public function describeAccountingSummary(array $data = []): string
     {
         return $this->requestWithRetry("DescribeAccountingSummary", $data);
+    }
+
+    public function describeDistrictData(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDistrictData", $data);
+    }
+
+    public function describeEdgeData(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeEdgeData", $data);
+    }
+
+    public function describeDistrictSummary(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDistrictSummary", $data);
+    }
+
+    public function describeEdgeSummary(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeEdgeSummary", $data);
+    }
+
+    public function describeOriginData(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeOriginData", $data);
+    }
+
+    public function describeOriginSummary(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeOriginSummary", $data);
+    }
+
+    public function describeUserData(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeUserData", $data);
+    }
+
+    public function describeDistrictRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDistrictRanking", $data);
+    }
+
+    public function describeEdgeRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeEdgeRanking", $data);
+    }
+
+    public function describeOriginRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeOriginRanking", $data);
+    }
+
+    public function describeEdgeStatusCodeRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeEdgeStatusCodeRanking", $data);
+    }
+
+    public function describeOriginStatusCodeRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeOriginStatusCodeRanking", $data);
+    }
+
+    public function describeStatisticalRanking(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeStatisticalRanking", $data);
     }
 
 }
