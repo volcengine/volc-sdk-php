@@ -22,9 +22,10 @@ class Singleton
     public static function getInstance(string $region = 'cn-north-1')
     {
         $cls = get_called_class();
-        if (!isset(self::$instances[$cls])) {
-            self::$instances[$cls] = new static($region);
+        $k = $cls . ':' . $region;
+        if (!isset(self::$instances[$k])) {
+            self::$instances[$k] = new static($region);
         }
-        return self::$instances[$cls];
+        return self::$instances[$k];
     }
 }
