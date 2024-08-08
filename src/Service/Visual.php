@@ -371,6 +371,61 @@ class Visual extends V4Curl
         $response = $this->request('Img2ImgOutpainting', $query);
         return $response->getBody();
     }
+    public function Img2ImgCreateDisneyStyleNoFace(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateDisneyStyleNoFace', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreatePastelBoys2D(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreatePastelBoys2D', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateEtherRealMix(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateEtherRealMix', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateToonyou(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateToonyou', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateAnyloraMakoto(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateAnyloraMakoto', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateRevAnimated(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateRevAnimated', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateAesBlueline(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateAesBlueline', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgCreateInkAndWater(array $query = [])
+    {
+        $response = $this->request('Img2ImgCreateInkAndWater', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgWaterColorStyle(array $query = [])
+    {
+        $response = $this->request('Img2ImgWaterColorStyle', $query);
+        return $response->getBody();
+    }
+    public function EntitySegment(array $query = [])
+    {
+        $response = $this->request('EntitySegment', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgAnimeAcceleratedMaintainID(array $query = [])
+    {
+        $response = $this->request('Img2ImgAnimeAcceleratedMaintainID', $query);
+        return $response->getBody();
+    }
     protected $apiList = [
         'JPCartoon' => [
             'url' => '/',
@@ -380,6 +435,149 @@ class Visual extends V4Curl
                     'Action' => 'JPCartoon',
                     'Version' => '2020-08-26',
                 ],
+            ],
+        ],
+        'Img2ImgAnimeAcceleratedMaintainID' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgAnimeAcceleratedMaintainID',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'EntitySegment' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'EntitySegment',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgWaterColorStyle' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgWaterColorStyle',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateInkAndWater' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateInkAndWater',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateAesBlueline' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateAesBlueline',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateRevAnimated' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateRevAnimated',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateEtherRealMix' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateEtherRealMix',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateAnyloraMakoto' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateAnyloraMakoto',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateToonyou' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateToonyou',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreatePastelBoys2D' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreatePastelBoys2D',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgCreateDisneyStyleNoFace' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgCreateDisneyStyleNoFace',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
             ],
         ],
         'Img2ImgOutpainting' => [

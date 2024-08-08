@@ -106,7 +106,7 @@ namespace Volc\Service\ImageX\V2;
  * @method array GetImageUploadFiles(array $query)
  * @method array GetImageUpdateFiles(array $query)
  * @method array PreviewImageUploadFile(array $query)
- * @method array GetImageServiceSubscription()
+ * @method array GetImageServiceSubscription(array $query)
  * @method array GetImageService(array $query)
  * @method array GetAllImageServices(array $query)
  * @method array CreateImageCompressTask(array $query, array $json)

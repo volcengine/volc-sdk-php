@@ -9,5 +9,7 @@ $client = Imagex::getInstance();
 $client->setAccessKey("ak");
 $client->setSecretKey("sk");
 
-$response = $client->getImageServiceSubscription();
+$query = [];
+
+$response = $client->getImageServiceSubscription($query);
 print_r($response);

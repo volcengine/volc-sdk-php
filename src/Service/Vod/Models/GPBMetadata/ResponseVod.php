@@ -30,7 +30,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¹§
+÷¬
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -309,7 +309,12 @@ $VodRemoveDomainFromSchedulerResponseG
 VodStopPCDNDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"f
 VodDeletePCDNDomainResponseG
-ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"k
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"h
+VodUpdateDomainConfigResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¹
+VodDescribeDomainConfigResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
+Result (2=.Volcengine.Vod.Models.Business.VodDescribeDomainConfigResult"k
  AddOrUpdateCertificateV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"c
 UpdateDomainAreaResponseG
@@ -344,7 +349,13 @@ $DescribeVodSpaceAIStatisDataResponseG
 Result (2H.Volcengine.Vod.Models.Business.DescribeVodSpaceWorkflowDetailDataResult"Ç
 &DescribeVodSpaceEditDetailDataResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
-Result (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult"Ç
+Result (2D.Volcengine.Vod.Models.Business.DescribeVodSpaceEditDetailDataResult"Ã
+$DescribeVodRealtimeMediaDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataR
+Result (2B.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDataResult"Ï
+*DescribeVodRealtimeMediaDetailDataResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataX
+Result (2H.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDetailDataResult"Ç
 &DescribeVodPlayFileLogByDomainResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataT
 Result (2D.Volcengine.Vod.Models.Business.DescribeVodPlayFileLogByDomainResult"Á

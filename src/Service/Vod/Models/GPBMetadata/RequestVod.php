@@ -18,10 +18,11 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodWorkflow::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ë‰
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto"„
+ºŽ
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	
@@ -694,7 +695,18 @@ DomainType (	
 Domain (	"?
 VodDeletePCDNDomainRequest
 	SpaceName (	
-Domain (	"„
+Domain (	"–
+VodUpdateDomainConfigRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	?
+Config (2/.Volcengine.Vod.Models.Business.VodDomainConfig"W
+VodDescribeDomainConfigRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	"„
 AddOrUpdateCertificateV2Request
 	SpaceName (	
 Domain (	
@@ -835,7 +847,21 @@ RegionList (	"{
 	StartTime (	
 EndTime (	
 	OrderType (	
-TopN ("A
+TopN ("Ÿ
+#DescribeVodRealtimeMediaDataRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	
+ProcessType (	
+Aggregation (
+DetailFieldList (	"‘
+)DescribeVodRealtimeMediaDetailDataRequest
+Region (	
+Space (	
+	StartTime (	
+EndTime (	
+PageSize (
+PageNum ("A
 VodSubmitBlockMediaTaskRequest
 	SpaceName (	
 Vids (	"C

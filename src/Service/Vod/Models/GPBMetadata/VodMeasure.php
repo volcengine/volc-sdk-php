@@ -16,7 +16,7 @@ class VodMeasure
         }
         $pool->internalAddGeneratedFile(
             '
-Ì<
+âD
 )volcengine/vod/business/vod_measure.protoVolcengine.Vod.Models.Business"<
 DescribeVodSpaceTranscodeItem
 Name (	
@@ -279,7 +279,40 @@ CreateTime (	
 EndTime (	
 	OrderType (	
 TopN (Z
-PlayStatInfos (2C.Volcengine.Vod.Models.Business.DescribeVodMostPlayedStatisDataItemBË
+PlayStatInfos (2C.Volcengine.Vod.Models.Business.DescribeVodMostPlayedStatisDataItem"?
+ DescribeVodRealtimeMediaDataItem
+Time (	
+Count ("£
+"DescribeVodRealtimeMediaDataDetail
+Space (	
+Total (_
+RealtimeMediaDataList (2@.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDataItem"ˆ
+"DescribeVodRealtimeMediaDataResult
+	SpaceList (	
+	StartTime (	
+EndTime (	
+ProcessType (	
+Aggregation (
+DetailFieldList (	
+TotalRealtimeMediaData (_
+RealtimeMediaDataList (2@.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDataItemg
+RealtimeMediaDetailDataList	 (2B.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDataDetail"–
+&DescribeVodRealtimeMediaDetailDataItem
+TraceId (	
+	StartTime (	
+EndTime (	
+FileName (	
+Command (	
+ResponseCode (	"ˆ
+(DescribeVodRealtimeMediaDetailDataResult
+Region (	
+Space (	
+	StartTime (	
+EndTime (	
+PageSize (
+PageNum (
+Total (g
+RealtimeMediaDetailData (2F.Volcengine.Vod.Models.Business.DescribeVodRealtimeMediaDetailDataItemBË
 )com.volcengine.service.vod.model.businessB
 VodMeasurePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

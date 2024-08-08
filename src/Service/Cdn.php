@@ -692,6 +692,66 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #批量更新加速域名: 
+        'BatchUpdateCdnConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'BatchUpdateCdnConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #上传证书新版: 
+        'AddCertificate' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'AddCertificate',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #删除用量导出任务: 
+        'DeleteUsageReport' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteUsageReport',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #创建用量导出任务: 
+        'CreateUsageReport' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'CreateUsageReport',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #获取用量导出任务列表: 
+        'ListUsageReports' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListUsageReports',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
 
 ];
 
@@ -1038,6 +1098,31 @@ class Cdn extends V4Curl
     public function describeStatisticalRanking(array $data = []): string
     {
         return $this->requestWithRetry("DescribeStatisticalRanking", $data);
+    }
+
+    public function batchUpdateCdnConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("BatchUpdateCdnConfig", $data);
+    }
+
+    public function addCertificate(array $data = []): string
+    {
+        return $this->requestWithRetry("AddCertificate", $data);
+    }
+
+    public function deleteUsageReport(array $data = []): string
+    {
+        return $this->requestWithRetry("DeleteUsageReport", $data);
+    }
+
+    public function createUsageReport(array $data = []): string
+    {
+        return $this->requestWithRetry("CreateUsageReport", $data);
+    }
+
+    public function listUsageReports(array $data = []): string
+    {
+        return $this->requestWithRetry("ListUsageReports", $data);
     }
 
 }

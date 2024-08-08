@@ -1297,7 +1297,7 @@ class ImagexConfig
                         'Version' => '2023-05-01',
                     ]
                 ],
-                'has_query' => false,
+                'has_query' => true,
                 'has_json' => false,
             ],
             'GetImageService' => [
@@ -1402,7 +1402,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'CreateImageFromUri',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,

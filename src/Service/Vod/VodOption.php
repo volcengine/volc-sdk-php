@@ -1006,6 +1006,28 @@ class VodOption
                 ],
             ]
         ],
+
+        'DescribeDomainConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeDomainConfig',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+
+        'UpdateDomainConfig' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateDomainConfig',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************
@@ -1138,6 +1160,26 @@ class VodOption
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodMostPlayedStatisData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeVodRealtimeMediaData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodRealtimeMediaData',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeVodRealtimeMediaDetailData' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodRealtimeMediaDetailData',
                     'Version' => '2023-07-01',
                 ],
             ]
