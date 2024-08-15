@@ -130,6 +130,12 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ForceExpire = 19;</code>
      */
     protected $ForceExpire = '';
+    /**
+     *获取全部流 默认不开启 开启后将没有降级策略 返回Vid下的所有转码流
+     *
+     * Generated from protobuf field <code>bool GetAll = 20;</code>
+     */
+    protected $GetAll = false;
 
     /**
      * Constructor.
@@ -178,6 +184,8 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          控制是否需要将原片信息置于 VideoInfos 中
      *     @type string $ForceExpire
      *          强行指定本次请求的时间戳防盗链 单位秒
+     *     @type bool $GetAll
+     *          获取全部流 默认不开启 开启后将没有降级策略 返回Vid下的所有转码流
      * }
      */
     public function __construct($data = NULL) {
@@ -681,6 +689,32 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ForceExpire = $var;
+
+        return $this;
+    }
+
+    /**
+     *获取全部流 默认不开启 开启后将没有降级策略 返回Vid下的所有转码流
+     *
+     * Generated from protobuf field <code>bool GetAll = 20;</code>
+     * @return bool
+     */
+    public function getGetAll()
+    {
+        return $this->GetAll;
+    }
+
+    /**
+     *获取全部流 默认不开启 开启后将没有降级策略 返回Vid下的所有转码流
+     *
+     * Generated from protobuf field <code>bool GetAll = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGetAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->GetAll = $var;
 
         return $this;
     }

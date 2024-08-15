@@ -400,6 +400,26 @@ class VodOption
                 ],
             ]
         ],
+        'SubmitBlockObjectTasks' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SubmitBlockObjectTasks',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'ListBlockObjectTasks' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'ListBlockObjectTasks',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 转码
         // **********************************************************************
@@ -1195,6 +1215,7 @@ class VodOption
             case 'cn-north-1':
                 $config = [
                     'host' => 'https://vod.volcengineapi.com',
+                    'scheme' => 'https',
                     'config' => [
                         'timeout' => 5.0,
                         'headers' => [

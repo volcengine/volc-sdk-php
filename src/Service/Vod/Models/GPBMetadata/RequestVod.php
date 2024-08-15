@@ -21,7 +21,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         $pool->internalAddGeneratedFile(
             '
-∫é
+¨í
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -44,7 +44,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"ˇ
+Quality (	"è
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -68,7 +68,8 @@ NeedThumbs	 (	
 
 PlayConfig (	
 NeedOriginal (	
-ForceExpire (	"g
+ForceExpire (	
+GetAll ("g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -98,7 +99,17 @@ PlayConfig (	
 !VodQueryMoveObjectTaskInfoRequest
 TaskId (	
 SourceSpace (	
-TargetSpace (	"m
+TargetSpace (	"y
+ VodSubmitBlockObjectTasksRequest
+	SpaceName (	
+	Operation (	
+FileNamesUrlEncoded (	
+
+RefreshCdn (	"a
+VodListBlockObjectTasksRequest
+	SpaceName (	
+FileNamesUrlEncoded (	
+TaskIds (	"m
 VodUrlUploadRequest
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
@@ -657,7 +668,19 @@ DomainType (	
 Origins (	
 Area (	
 
-BucketName	 (	"g
+BucketName	 (	"Å
+VodCreateDomainV3Request
+	SpaceName (	
+
+DomainType (	
+Domain (	
+SourceStationType (
+Area (	
+
+BucketName	 (	2
+IPv6
+ (2$.Volcengine.Vod.Models.Business.IPv6=
+Origin (2-.Volcengine.Vod.Models.Business.CdnOriginRule"g
 VodUpdateDomainExpireV2Request
 	SpaceName (	
 

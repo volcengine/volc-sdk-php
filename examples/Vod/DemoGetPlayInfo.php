@@ -28,6 +28,7 @@ $request->setQuality("your Quality");
 $request->setPlayConfig("your PlayConfig");
 $request->setNeedOriginal("your NeedOriginal");
 $request->setForceExpire("your ForceExpire");
+$request->setGetAll(false);
 
 
 $response = new Volc\Service\Vod\Models\Response\VodGetPlayInfoResponse();

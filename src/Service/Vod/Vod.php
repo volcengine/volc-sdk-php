@@ -31,6 +31,10 @@ use Volc\Service\Vod\Models\Request\VodSubmitMoveObjectTaskRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitMoveObjectTaskResponse;
 use Volc\Service\Vod\Models\Request\VodQueryMoveObjectTaskInfoRequest;
 use Volc\Service\Vod\Models\Response\VodQueryMoveObjectTaskInfoResponse;
+use Volc\Service\Vod\Models\Request\VodSubmitBlockObjectTasksRequest;
+use Volc\Service\Vod\Models\Response\VodSubmitBlockObjectTasksResponse;
+use Volc\Service\Vod\Models\Request\VodListBlockObjectTasksRequest;
+use Volc\Service\Vod\Models\Response\VodListBlockObjectTasksResponse;
 use Volc\Service\Vod\Models\Request\VodUrlUploadRequest;
 use Volc\Service\Vod\Models\Response\VodUrlUploadResponse;
 use Volc\Service\Vod\Models\Request\VodQueryUploadTaskInfoRequest;
@@ -763,6 +767,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodQueryMoveObjectTaskInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * SubmitBlockObjectTasks.
+     *
+     * @param $req VodSubmitBlockObjectTasksRequest
+     * @return VodSubmitBlockObjectTasksResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function submitBlockObjectTasks (VodSubmitBlockObjectTasksRequest $req): VodSubmitBlockObjectTasksResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('SubmitBlockObjectTasks', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodSubmitBlockObjectTasksResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ListBlockObjectTasks.
+     *
+     * @param $req VodListBlockObjectTasksRequest
+     * @return VodListBlockObjectTasksResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function listBlockObjectTasks (VodListBlockObjectTasksRequest $req): VodListBlockObjectTasksResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('ListBlockObjectTasks', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodListBlockObjectTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

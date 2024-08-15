@@ -28,10 +28,11 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMeasure::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodProject::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodTrade::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodObject::initOnce();
         $pool->internalAddGeneratedFile(
             '
-÷¬
-*volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto"ª
+ƒ±
+*volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
 Result (24.Volcengine.Vod.Models.Business.VodAllPlayInfoResult"£
@@ -58,7 +59,13 @@ class ResponseVod
 Result (2?.Volcengine.Vod.Models.Business.VodSubmitMoveObjectTaskRespData"À
 "VodQueryMoveObjectTaskInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataQ
-Result (2A.Volcengine.Vod.Models.Business.VodQueryMoveObjectTaskInfoResData" 
+Result (2A.Volcengine.Vod.Models.Business.VodQueryMoveObjectTaskInfoResData"½
+!VodSubmitBlockObjectTasksResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
+Result (2?.Volcengine.Vod.Models.Business.VodSubmitBlockObjectTasksResult"¹
+VodListBlockObjectTasksResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
+Result (2=.Volcengine.Vod.Models.Business.VodListBlockObjectTasksResult" 
 VodUploadMediaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata=
 Result (2-.Volcengine.Vod.Models.Business.VodCommitData"§
@@ -292,6 +299,8 @@ $VodRemoveDomainFromSchedulerResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
 Result (2=.Volcengine.Vod.Models.Business.VodGetContentBlockTasksResult"d
 VodCreateDomainV2ResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"d
+VodCreateDomainV3ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"j
 VodUpdateDomainExpireV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"n

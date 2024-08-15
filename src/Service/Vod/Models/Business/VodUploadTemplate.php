@@ -24,7 +24,7 @@ class VodUploadTemplate extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string TemplateType = 2;</code>
      */
-    protected $TemplateType = 'test';
+    protected $TemplateType = '';
 
     /**
      * Constructor.
