@@ -110,6 +110,54 @@ class LiveConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DeleteWatermarkPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteWatermarkPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateWatermarkPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateWatermarkPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListWatermarkPresetDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListWatermarkPresetDetail',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateWatermarkPresetV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateWatermarkPresetV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'CreateWatermarkPreset' => [
                 'method' => 'post',
                 'url' => '/',
@@ -638,6 +686,54 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'CreateLiveVideoQualityAnalysisTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateLiveVideoQualityAnalysisTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteLiveVideoQualityAnalysisTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteLiveVideoQualityAnalysisTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetLiveVideoQualityAnalysisTaskDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetLiveVideoQualityAnalysisTaskDetail',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListLiveVideoQualityAnalysisTasks' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListLiveVideoQualityAnalysisTasks',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'StopPullToPushTask' => [
                 'method' => 'post',
                 'url' => '/',
@@ -662,12 +758,36 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'CreatePullToPushGroup' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreatePullToPushGroup',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DeletePullToPushTask' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'DeletePullToPushTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeletePullToPushGroup' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeletePullToPushGroup',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -698,6 +818,30 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'UpdatePullToPushGroup' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdatePullToPushGroup',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListPullToPushGroup' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListPullToPushGroup',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'ListPullToPushTask' => [
                 'method' => 'get',
                 'url' => '/',
@@ -709,6 +853,18 @@ class LiveConfig
                 ],
                 'has_query' => true,
                 'has_json' => false,
+            ],
+            'ListPullToPushTaskV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListPullToPushTaskV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
             ],
             'DeleteRelaySourceV4' => [
                 'method' => 'post',
@@ -1514,6 +1670,42 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'UpdateEncryptHLS' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateEncryptHLS',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetHLSEncryptDataKey' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetHLSEncryptDataKey',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeEncryptHLS' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeEncryptHLS',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => false,
+            ],
             'DescribeLicenseDRM' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1616,6 +1808,54 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeIPAccessRule',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteSubtitleTranscodePreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteSubtitleTranscodePreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateSubtitleTranscodePreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateSubtitleTranscodePreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListVhostSubtitleTranscodePreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListVhostSubtitleTranscodePreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateSubtitleTranscodePreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateSubtitleTranscodePreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
