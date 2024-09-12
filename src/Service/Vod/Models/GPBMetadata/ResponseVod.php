@@ -31,7 +31,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodObject::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ƒ±
+Ä²
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -220,7 +220,10 @@ $VodDeleteVideoClassificationResponseG
 Result (2>.Volcengine.Vod.Models.Business.VodListWatermarkResponseResult"À
 $VodSubmitDirectEditTaskAsyncResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
-Result (2?.Volcengine.Vod.Models.Business.SubmitDirectEditTaskAsyncResult"²
+Result (2?.Volcengine.Vod.Models.Business.SubmitDirectEditTaskAsyncResult"¾
+#VodSubmitDirectEditTaskSyncResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataN
+Result (2>.Volcengine.Vod.Models.Business.SubmitDirectEditTaskSyncResult"²
  VodGetDirectEditProgressResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataE
 Result (25.Volcengine.Vod.Models.Business.GetDirectEditProgress"®

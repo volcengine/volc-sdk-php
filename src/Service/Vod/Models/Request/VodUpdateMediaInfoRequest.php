@@ -49,6 +49,15 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value ClassificationId = 6;</code>
      */
     protected $ClassificationId = null;
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ExpireTime = 7;</code>
+     */
+    protected $ExpireTime = null;
 
     /**
      * Constructor.
@@ -68,6 +77,11 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
      *          视频标签
      *     @type \Google\Protobuf\Int64Value $ClassificationId
      *          视频分类Id
+     *     @type \Google\Protobuf\StringValue $ExpireTime
+     *           媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     *           填"9999-12-31T23:59:59Z"表示永不过期.
+     *           过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     *           示例值:2024-08-30T20:10:11+08:00 
      * }
      */
     public function __construct($data = NULL) {
@@ -414,6 +428,81 @@ class VodUpdateMediaInfoRequest extends \Google\Protobuf\Internal\Message
     public function setClassificationIdUnwrapped($var)
     {
         $this->writeWrapperValue("ClassificationId", $var);
+        return $this;}
+
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ExpireTime = 7;</code>
+     * @return \Google\Protobuf\StringValue|null
+     */
+    public function getExpireTime()
+    {
+        return $this->ExpireTime;
+    }
+
+    public function hasExpireTime()
+    {
+        return isset($this->ExpireTime);
+    }
+
+    public function clearExpireTime()
+    {
+        unset($this->ExpireTime);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getExpireTime()</code>
+
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ExpireTime = 7;</code>
+     * @return string|null
+     */
+    public function getExpireTimeUnwrapped()
+    {
+        return $this->readWrapperValue("ExpireTime");
+    }
+
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ExpireTime = 7;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setExpireTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->ExpireTime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ExpireTime = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setExpireTimeUnwrapped($var)
+    {
+        $this->writeWrapperValue("ExpireTime", $var);
         return $this;}
 
 }

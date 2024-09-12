@@ -14,7 +14,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateAesBlueline\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-aesv2_blueline",
+    "req_key" => "img2img_blueline_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"

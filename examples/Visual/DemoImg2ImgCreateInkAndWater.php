@@ -14,7 +14,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateInkAndWater\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-inkAndwater",
+    "req_key" => "img2img_water_ink_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"],

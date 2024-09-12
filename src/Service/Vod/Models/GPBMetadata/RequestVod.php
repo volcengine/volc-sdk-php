@@ -21,7 +21,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¬’
+»”
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -127,7 +127,7 @@ SessionKey (	
 ClientNetWorkMode (	
 ClientIDCMode	 (	
 NeedFallback
- ("œ
+ ("°
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -141,7 +141,9 @@ SessionKey (	
 ParallelNum
  (
 ClientNetWorkMode (	
-ClientIDCMode (	"‚
+ClientIDCMode (	
+
+ExpireTime (	"‚
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -166,14 +168,16 @@ SessionKey (	
 ParallelNum (
 ClientNetWorkMode	 (	
 ClientIDCMode
- (	"…
+ (	"™
 VodCommitUploadInfoRequest
 	SpaceName (	
 
 SessionKey (	
 CallbackArgs (	
 	Functions (	
-VodUploadSource (	"=
+VodUploadSource (	
+
+ExpireTime (	"=
 VodUrlUploadJsonRequest
 	SpaceName (	
 URLSets (	"i
@@ -191,14 +195,16 @@ BucketName (	".
 Vids (	
 StorageClass (	
 CallbackArgs (	
-FileIds (	"œ
+FileIds (	"Î
 VodUpdateMediaInfoRequest
 Vid (	/
 	PosterUri (2.google.protobuf.StringValue+
 Title (2.google.protobuf.StringValue1
 Description (2.google.protobuf.StringValue*
 Tags (2.google.protobuf.StringValue5
-ClassificationId (2.google.protobuf.Int64Value"\'
+ClassificationId (2.google.protobuf.Int64Value0
+
+ExpireTime (2.google.protobuf.StringValue"\'
 VodGetMediaInfosRequest
 Vids (	";
 VodDeleteMediaRequest
@@ -305,12 +311,15 @@ BucketName (	".
 	SpaceName (	
 Prefix (	
 Limit (	
-Starter (	"Y
+Starter (	"­
 VodGetFileInfosRequest
 	SpaceName (	
 EncodedFileNames (	
 
-BucketName (	"•
+BucketName (	
+NeedDownloadUrl (
+DownloadUrlNetworkType (	
+DownloadUrlExpire ("•
  VodUpdateFileStorageClassRequest
 	SpaceName (	J
 FileUpdateInfos (21.Volcengine.Vod.Models.Business.VodFileUpdateInfo
@@ -469,7 +478,11 @@ OrderByKey (	
 	EditParam (
 Priority (
 CallbackUri (	
-CallbackArgs (	"/
+CallbackArgs (	"^
+"VodSubmitDirectEditTaskSyncRequest
+Uploader (	
+Application (	
+	EditParam ("/
 VodGetDirectEditResultRequest
 ReqIds (	"0
 VodGetDirectEditProgressRequest

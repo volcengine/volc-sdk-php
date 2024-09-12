@@ -51,6 +51,12 @@ class VodFileInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string EncodedFileName = 6;</code>
      */
     protected $EncodedFileName = '';
+    /**
+     * 文件下载链接
+     *
+     * Generated from protobuf field <code>string DownloadUrl = 7;</code>
+     */
+    protected $DownloadUrl = '';
 
     /**
      * Constructor.
@@ -70,6 +76,8 @@ class VodFileInfo extends \Google\Protobuf\Internal\Message
      *           crc64hash值
      *     @type string $EncodedFileName
      *           URL编码后的FileName
+     *     @type string $DownloadUrl
+     *           文件下载链接
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +237,32 @@ class VodFileInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->EncodedFileName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 文件下载链接
+     *
+     * Generated from protobuf field <code>string DownloadUrl = 7;</code>
+     * @return string
+     */
+    public function getDownloadUrl()
+    {
+        return $this->DownloadUrl;
+    }
+
+    /**
+     * 文件下载链接
+     *
+     * Generated from protobuf field <code>string DownloadUrl = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DownloadUrl = $var;
 
         return $this;
     }

@@ -55,6 +55,12 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string OutputVid = 7;</code>
      */
     protected $OutputVid = '';
+    /**
+     * 错误信息
+     *
+     * Generated from protobuf field <code>string Message = 8;</code>
+     */
+    protected $Message = '';
 
     /**
      * Constructor.
@@ -76,6 +82,8 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
      *           编辑任务状态
      *     @type string $OutputVid
      *           产物vid
+     *     @type string $Message
+     *           错误信息
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +269,32 @@ class GetDirectEditResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->OutputVid = $var;
+
+        return $this;
+    }
+
+    /**
+     * 错误信息
+     *
+     * Generated from protobuf field <code>string Message = 8;</code>
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
+    }
+
+    /**
+     * 错误信息
+     *
+     * Generated from protobuf field <code>string Message = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Message = $var;
 
         return $this;
     }

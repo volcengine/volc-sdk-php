@@ -14,6 +14,8 @@ use Volc\Service\Vod\Models\Response\VodGetDirectEditProgressResponse;
 use Volc\Service\Vod\Models\Response\VodGetDirectEditResultResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskAsyncRequest;
 use Volc\Service\Vod\Models\Response\VodSubmitDirectEditTaskAsyncResponse;
+use Volc\Service\Vod\Models\Request\VodSubmitDirectEditTaskSyncRequest;
+use Volc\Service\Vod\Models\Response\VodSubmitDirectEditTaskSyncResponse;
 use Volc\Service\Vod\Models\Request\VodCancelDirectEditTaskRequest;
 use Volc\Service\Vod\Models\Response\VodCancelDirectEditTaskResponse;
 use Volc\Service\Vod\Upload\UploadPolicy;
@@ -392,6 +394,40 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
         }
         $respData = new VodSubmitDirectEditTaskAsyncResponse();
+        try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+    }
+
+    /**
+     * SubmitDirectEditTaskSync.
+     *
+     * @param $req VodSubmitDirectEditTaskSyncRequest
+     * @return VodSubmitDirectEditTaskSyncResponse
+     * @throws Exception the exception
+     * @throws Throwable the exception
+     */
+    public function submitDirectEditTaskSync(VodSubmitDirectEditTaskSyncRequest $req): VodSubmitDirectEditTaskSyncResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParam($req);
+            $query["EditParam"] = json_decode($req->getEditParam());
+            $response = $this->request('SubmitDirectEditTaskSync', ['json' => $query]);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+        }
+        $respData = new VodSubmitDirectEditTaskSyncResponse();
         try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

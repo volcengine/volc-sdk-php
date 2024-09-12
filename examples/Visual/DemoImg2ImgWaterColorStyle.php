@@ -14,7 +14,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgWaterColorStyle\n";
 
 $body = [
-    "req_key" => "img2img_water_color_style",
+    "req_key" => "img2img_water_paint_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"

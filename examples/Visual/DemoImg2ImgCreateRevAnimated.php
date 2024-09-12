@@ -14,7 +14,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateRevAnimated\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-rev_animated-id",
+    "req_key" => "img2img_rev_animated_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"],

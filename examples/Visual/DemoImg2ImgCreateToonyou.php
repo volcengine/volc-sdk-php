@@ -12,7 +12,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateToonyou\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-toonyou_jp",
+    "req_key" => "img2img_cartoon_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"],

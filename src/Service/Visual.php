@@ -11,7 +11,7 @@ class Visual extends V4Curl
         return [
             'host' => 'https://visual.volcengineapi.com',
             'config' => [
-                'timeout' => 60.0,
+                'timeout' => 30.0,
                 'headers' => [
                     'Accept' => 'application/json'
                 ],
@@ -426,7 +426,134 @@ class Visual extends V4Curl
         $response = $this->request('Img2ImgAnimeAcceleratedMaintainID', $query);
         return $response->getBody();
     }
+    public function Img2ImgXLSft(array $query = [])
+    {
+        $response = $this->request('Img2ImgXLSft', $query);
+        return $response->getBody();
+    }
+    public function Text2ImgXLSft(array $query = [])
+    {
+        $response = $this->request('Text2ImgXLSft', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgComicsStyle(array $query = [])
+    {
+        $response = $this->request('Img2ImgComicsStyle', $query);
+        return $response->getBody();
+    }
+    public function Img2ImgExquisiteStyle(array $query = [])
+    {
+        $response = $this->request('Img2ImgExquisiteStyle', $query);
+        return $response->getBody();
+    }
+    public function FaceCompare(array $query = [])
+    {
+        $response = $this->request('FaceCompare', $query);
+        return $response->getBody();
+    }
+
+    public function StillLivenessImg(array $query = [])
+    {
+        $response = $this->request('StillLivenessImg', $query);
+        return $response->getBody();
+    }
+    public function CertSrcFaceComp(array $query = [])
+    {
+        $response = $this->request('CertSrcFaceComp', $query);
+        return $response->getBody();
+    }
+    public function CVProcess(array $query = [])
+    {
+        $response = $this->request('CVProcess', $query);
+        return $response->getBody();
+    }
+    public function CVSubmitTask(array $query = [])
+    {
+        $response = $this->request('CVSubmitTask', $query);
+        return $response->getBody();
+    }
+    public function CVGetResult(array $query = [])
+    {
+        $response = $this->request('CVGetResult', $query);
+        return $response->getBody();
+    }
+    public function CVSync2AsyncSubmitTask(array $query = [])
+    {
+        $response = $this->request('CVSync2AsyncSubmitTask', $query);
+        return $response->getBody();
+    }
+    public function CVSync2AsyncGetResult(array $query = [])
+    {
+        $response = $this->request('CVSync2AsyncGetResult', $query);
+        return $response->getBody();
+    }
+
     protected $apiList = [
+        'CVProcess' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVProcess',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CVSubmitTask' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVSubmitTask',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CVGetResult' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVGetResult',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CVSync2AsyncSubmitTask' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVSync2AsyncSubmitTask',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CVSync2AsyncGetResult' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVSync2AsyncGetResult',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
         'JPCartoon' => [
             'url' => '/',
             'method' => 'post',
@@ -435,6 +562,97 @@ class Visual extends V4Curl
                     'Action' => 'JPCartoon',
                     'Version' => '2020-08-26',
                 ],
+            ],
+        ],
+        'CertSrcFaceComp' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CertSrcFaceComp',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'StillLivenessImg' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'StillLivenessImg',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'FaceCompare' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'FaceCompare',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgComicsStyle' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgComicsStyle',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgExquisiteStyle' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgExquisiteStyle',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Text2ImgXLSft' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Text2ImgXLSft',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'Img2ImgXLSft' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'Img2ImgXLSft',
+                    'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
             ],
         ],
         'Img2ImgAnimeAcceleratedMaintainID' => [

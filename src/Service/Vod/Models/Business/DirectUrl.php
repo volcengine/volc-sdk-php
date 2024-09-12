@@ -25,6 +25,12 @@ class DirectUrl extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string BucketName = 2;</code>
      */
     protected $BucketName = '';
+    /**
+     * 空间名
+     *
+     * Generated from protobuf field <code>string SpaceName = 3;</code>
+     */
+    protected $SpaceName = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class DirectUrl extends \Google\Protobuf\Internal\Message
      *           文件名
      *     @type string $BucketName
      *           Bucket名称
+     *     @type string $SpaceName
+     *           空间名
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class DirectUrl extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->BucketName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 空间名
+     *
+     * Generated from protobuf field <code>string SpaceName = 3;</code>
+     * @return string
+     */
+    public function getSpaceName()
+    {
+        return $this->SpaceName;
+    }
+
+    /**
+     * 空间名
+     *
+     * Generated from protobuf field <code>string SpaceName = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->SpaceName = $var;
 
         return $this;
     }

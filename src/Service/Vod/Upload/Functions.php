@@ -34,6 +34,11 @@ class Functions
         $this->funcs[] = new FunctionInner("AddOptionInfo", $optionInfo);
     }
 
+    public function addCaptionUploadFunc(CaptionInput $captionInput)
+    {
+        $this->funcs[] = new FunctionInner("CaptionUpload", $captionInput);
+    }
+
     public function getFunctionsString(): string
     {
         return json_encode($this->funcs);

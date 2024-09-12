@@ -27,6 +27,24 @@ class VodGetFileInfosRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string BucketName = 3;</code>
      */
     protected $BucketName = '';
+    /**
+     * 是否需要下载链接
+     *
+     * Generated from protobuf field <code>bool NeedDownloadUrl = 4;</code>
+     */
+    protected $NeedDownloadUrl = false;
+    /**
+     *下载链接网络类型
+     *
+     * Generated from protobuf field <code>string DownloadUrlNetworkType = 5;</code>
+     */
+    protected $DownloadUrlNetworkType = '';
+    /**
+     *下载链接过期时间
+     *
+     * Generated from protobuf field <code>int64 DownloadUrlExpire = 6;</code>
+     */
+    protected $DownloadUrlExpire = 0;
 
     /**
      * Constructor.
@@ -38,6 +56,12 @@ class VodGetFileInfosRequest extends \Google\Protobuf\Internal\Message
      *     @type string $EncodedFileNames
      *     @type string $BucketName
      *           bucket名
+     *     @type bool $NeedDownloadUrl
+     *           是否需要下载链接
+     *     @type string $DownloadUrlNetworkType
+     *          下载链接网络类型
+     *     @type int|string $DownloadUrlExpire
+     *          下载链接过期时间
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +135,84 @@ class VodGetFileInfosRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->BucketName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否需要下载链接
+     *
+     * Generated from protobuf field <code>bool NeedDownloadUrl = 4;</code>
+     * @return bool
+     */
+    public function getNeedDownloadUrl()
+    {
+        return $this->NeedDownloadUrl;
+    }
+
+    /**
+     * 是否需要下载链接
+     *
+     * Generated from protobuf field <code>bool NeedDownloadUrl = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNeedDownloadUrl($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->NeedDownloadUrl = $var;
+
+        return $this;
+    }
+
+    /**
+     *下载链接网络类型
+     *
+     * Generated from protobuf field <code>string DownloadUrlNetworkType = 5;</code>
+     * @return string
+     */
+    public function getDownloadUrlNetworkType()
+    {
+        return $this->DownloadUrlNetworkType;
+    }
+
+    /**
+     *下载链接网络类型
+     *
+     * Generated from protobuf field <code>string DownloadUrlNetworkType = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadUrlNetworkType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DownloadUrlNetworkType = $var;
+
+        return $this;
+    }
+
+    /**
+     *下载链接过期时间
+     *
+     * Generated from protobuf field <code>int64 DownloadUrlExpire = 6;</code>
+     * @return int|string
+     */
+    public function getDownloadUrlExpire()
+    {
+        return $this->DownloadUrlExpire;
+    }
+
+    /**
+     *下载链接过期时间
+     *
+     * Generated from protobuf field <code>int64 DownloadUrlExpire = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setDownloadUrlExpire($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->DownloadUrlExpire = $var;
 
         return $this;
     }

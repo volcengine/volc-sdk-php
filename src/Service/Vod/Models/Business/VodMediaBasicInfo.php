@@ -85,6 +85,15 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double HlsMediaSize = 12;</code>
      */
     protected $HlsMediaSize = 0.0;
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>string ExpireTime = 13;</code>
+     */
+    protected $ExpireTime = '';
 
     /**
      * Constructor.
@@ -116,6 +125,11 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *           音视频来源
      *     @type float $HlsMediaSize
      *           Hls媒体Size(m3u8+ts)
+     *     @type string $ExpireTime
+     *           媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     *           填"9999-12-31T23:59:59Z"表示永不过期.
+     *           过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     *           示例值:2024-08-30T20:10:11+08:00 
      * }
      */
     public function __construct($data = NULL) {
@@ -441,6 +455,38 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->HlsMediaSize = $var;
+
+        return $this;
+    }
+
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>string ExpireTime = 13;</code>
+     * @return string
+     */
+    public function getExpireTime()
+    {
+        return $this->ExpireTime;
+    }
+
+    /**
+     * 媒资文件过期时间,采用ISO日期格式. 不传或传空,不修改.
+     * 填"9999-12-31T23:59:59Z"表示永不过期.
+     * 过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
+     * 示例值:2024-08-30T20:10:11+08:00 
+     *
+     * Generated from protobuf field <code>string ExpireTime = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExpireTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ExpireTime = $var;
 
         return $this;
     }

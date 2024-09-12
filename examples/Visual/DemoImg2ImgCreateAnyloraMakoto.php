@@ -12,7 +12,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateAnyloraMakoto\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-anylora_makoto",
+    "req_key" => "img2img_makoto_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"],

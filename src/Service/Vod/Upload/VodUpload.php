@@ -69,6 +69,7 @@ class VodUpload extends Vod
         $request->setSessionKey($sessionKey);
         $request->setCallbackArgs($vodUploadMediaRequest->getCallbackArgs());
         $request->setFunctions($vodUploadMediaRequest->getFunctions());
+        $request->setExpireTime($vodUploadMediaRequest->getExpireTime());
         try {
             return $this->commitUploadInfo($request);
         } catch (Throwable $e) {

@@ -626,6 +626,16 @@ class VodOption
                 ],
             ]
         ],
+        'SubmitDirectEditTaskSync' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'SubmitDirectEditTaskSync',
+                    'Version' => '2018-01-01',
+                ],
+            ]
+        ],
         'GetDirectEditResult' => [
             'url' => '/',
             'method' => 'post',

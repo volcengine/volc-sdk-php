@@ -12,7 +12,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreatePastelBoys2D\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-pastel_boys_2D-id",
+    "req_key" => "img2img_pastel_boys_style",
     # "binary_data_base64"=> [],
     "image_urls" => [
         "https://"],

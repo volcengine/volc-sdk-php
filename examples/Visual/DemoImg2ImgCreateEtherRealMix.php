@@ -12,7 +12,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateEtherRealMix\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-ether_real_mix-id",
+    "req_key" => "img2img_real_mix_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https:"

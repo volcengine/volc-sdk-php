@@ -12,7 +12,7 @@ $client->setSecretKey('SK');
 echo "\nDemo Img2ImgCreateDisneyStyleNoFace\n";
 
 $body = [
-    "req_key" => "image2image-ai_create-disneyStyle_noface",
+    "req_key" => "img2img_disney_3d_style",
     # "binary_data_base64"=>[],
     "image_urls" => [
         "https://"
