@@ -4,17 +4,25 @@
 <?php
 require('../../vendor/autoload.php');
 
+// Create a VOD instance in the specified region.
+// $client = Volc\Service\Vod\Vod::getInstance('cn-north-1');
 $client = Volc\Service\Vod\Vod::getInstance();
-$client->setAccessKey('your ak');
-$client->setSecretKey('your sk');
+
+// Configure your Access Key ID (AK) and Secret Access Key (SK) in the environment variables or in the local ~/.volc/config file. For detailed instructions, see https://www.volcengine.com/docs/4/4408.
+// The SDK will automatically fetch the AK and SK from the environment variables or the ~/.volc/config file as needed.
+// During testing, you may use the following code snippet. However, do not store the AK and SK directly in your project code to prevent potential leakage and safeguard the security of all resources associated with your account.
+// $client->setAccessKey('your ak');
+// $client->setSecretKey('your sk');
 
 $request = new Volc\Service\Vod\Models\Request\VodStartWorkflowRequest();
 $request->setVid("your Vid");
 $request->setTemplateId("your TemplateId");
-$request->setInput(new Volc\Service\Vod\Models\Business\WorkflowParams());$request->setPriority(0);
+$request->setInput(new Volc\Service\Vod\Models\Business\WorkflowParams());
+$request->setPriority(0);
 $request->setCallbackArgs("your CallbackArgs");
 $request->setEnableLowPriority(false);
-$request->setDirectUrl(new Volc\Service\Vod\Models\Business\DirectUrl());$request->setTaskListId("your TaskListId");
+$request->setDirectUrl(new Volc\Service\Vod\Models\Business\DirectUrl());
+$request->setTaskListId("your TaskListId");
 
 
 $response = new Volc\Service\Vod\Models\Response\VodStartWorkflowResponse();

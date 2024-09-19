@@ -19,10 +19,11 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodUpload::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-»”
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto"„
+í—
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	
@@ -908,7 +909,22 @@ RegionList (	"{
 	SpaceName (	
 Vids (	"
 VodListProjectsRequest"!
-VodGetTradeConfigurationRequestBÈ
+VodGetTradeConfigurationRequest"®
+VodSetCloudMigrateJobRequest
+JobId (S
+JobSourceInfo (2<.Volcengine.Vod.Models.Business.VodCloudMigrateJobSourceInfo
+CallbackAddress (	
+	SpaceName (	"‘
+VodSubmitCloudMigrateJobRequest
+JobId (
+SubAppId (	
+	SourceVid (	
+	TargetVid (	
+CallbackArgs (	
+	SpaceName (	"@
+VodGetCloudMigrateJobRequest
+JobId (
+	SpaceName (	BÈ
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request ØÊVolc\\Service\\Vod\\Models\\Requestâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);

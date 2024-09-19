@@ -1255,7 +1255,20 @@ class VodOption
                 ];
                 break;
             default:
-                throw new Exception("Cant find the region, please check it carefully");
+                $config = [
+                    'host' => sprintf('https://vod-%s.volcengineapi.com',$region),
+                    'scheme' => 'https',
+                    'config' => [
+                        'timeout' => 5.0,
+                        'headers' => [
+                            'Accept' => 'application/json',
+                        ],
+                        'v4_credentials' => [
+                            'region' => $region,
+                            'service' => 'vod',
+                        ],
+                    ],
+                ];
         }
         return $config;
     }
