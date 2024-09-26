@@ -6,6 +6,8 @@ use Volc\Service\Imp\Imp;
 use Volc\Service\Imp\Models\Business\InputPath;
 use Volc\Service\Imp\Models\Business\DetectRect;
 use Volc\Service\Imp\Models\Business\OCR;
+use Volc\Service\Imp\Models\Business\OutputOverrideParams;
+use Volc\Service\Imp\Models\Business\OutputPath;
 use Volc\Service\Imp\Models\Business\OverrideParams;
 use Volc\Service\Imp\Models\Business\Params;
 use Volc\Service\Imp\Models\Business\SmartEraseOverrideParams;
@@ -27,8 +29,9 @@ $inputPath->setFileId("your file id");
 
 $params = new Params();
 $overrideParams = new OverrideParams();
-$smartErase = new SmartEraseOverrideParams();
+// SmartEraseOverrideParams
 $smartErases = array();
+$smartErase = new SmartEraseOverrideParams();
 $watermark = new Watermark();
 $watermarkDetectRects = array();
 $watermarkDetectRect = new DetectRect();
@@ -50,8 +53,20 @@ $ocr->setDetectRect($ocrDetectRects);
 $smartErase->setActivityId(array("*"));
 $smartErase->setWatermark($watermark);
 $smartErase->setOCR($ocr);
-$smartErases[0]=$smartErase;
+$smartErases[0] = $smartErase;
 $overrideParams->setSmartErase($smartErases);
+// OutputOverrideParams
+$outputs = array();
+$output = new OutputOverrideParams();
+$output_path = new OutputPath();
+$output_path->setType("your storage type");
+$output_path->setVodSpaceName("your vod spaceName");
+$output_path->setTosBucket("your tos bucketName");
+$output_path->setFileName("output FileName");
+$output->setActivityId(array("*"));
+$output->setOutputPath($output_path);
+$outputs[0] = $output;
+$overrideParams->setOutput($outputs);
 $params->setOverrideParams($overrideParams);
 
 $request->setTemplateId("your template id");
