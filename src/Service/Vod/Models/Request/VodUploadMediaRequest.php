@@ -94,6 +94,12 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ExpireTime = 13;</code>
      */
     protected $ExpireTime = '';
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 14;</code>
+     */
+    protected $UploadHostPrefer = '';
 
     /**
      * Constructor.
@@ -130,6 +136,8 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           填"9999-12-31T23:59:59Z"表示永不过期.
      *           过期后该媒资文件及其相关资源（转码结果、封面图等）将被永久删除.
      *           示例值:2024-08-30T20:10:11+08:00 
+     *     @type string $UploadHostPrefer
+     *           上传域名偏好 
      * }
      */
     public function __construct($data = NULL) {
@@ -477,6 +485,32 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ExpireTime = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 14;</code>
+     * @return string
+     */
+    public function getUploadHostPrefer()
+    {
+        return $this->UploadHostPrefer;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUploadHostPrefer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UploadHostPrefer = $var;
 
         return $this;
     }

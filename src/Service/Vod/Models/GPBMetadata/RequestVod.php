@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-í—
+Õ˜
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -115,7 +115,7 @@ RefreshCdn (	"a
 	SpaceName (	C
 URLSets (22.Volcengine.Vod.Models.Business.VodUrlUploadURLSet"/
 VodQueryUploadTaskInfoRequest
-JobIds (	"í
+JobIds (	"‡
 VodApplyUploadInfoRequest
 	SpaceName (	
 
@@ -128,7 +128,8 @@ SessionKey (	
 ClientNetWorkMode (	
 ClientIDCMode	 (	
 NeedFallback
- ("°
+ (
+UploadHostPrefer (	"Ê
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -144,7 +145,8 @@ SessionKey (	
 ClientNetWorkMode (	
 ClientIDCMode (	
 
-ExpireTime (	"‚
+ExpireTime (	
+UploadHostPrefer (	"œ
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -157,7 +159,8 @@ ExpireTime (	"‚
 ParallelNum	 (
 ClientNetWorkMode
  (	
-ClientIDCMode (	"î
+ClientIDCMode (	
+UploadHostPrefer (	"ˆ
 VodUploadObjectRequest
 	SpaceName (	
 FilePath (	
@@ -169,7 +172,8 @@ ExpireTime (	"‚
 ParallelNum (
 ClientNetWorkMode	 (	
 ClientIDCMode
- (	"™
+ (	
+UploadHostPrefer (	"™
 VodCommitUploadInfoRequest
 	SpaceName (	
 

@@ -73,6 +73,12 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool NeedFallback = 10;</code>
      */
     protected $NeedFallback = false;
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 11;</code>
+     */
+    protected $UploadHostPrefer = '';
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
      *           客户端机房环境 
      *     @type bool $NeedFallback
      *           是否支持降级域名调度 true-支持降级，false-不支持降级
+     *     @type string $UploadHostPrefer
+     *           上传域名偏好 
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class VodApplyUploadInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->NeedFallback = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 11;</code>
+     * @return string
+     */
+    public function getUploadHostPrefer()
+    {
+        return $this->UploadHostPrefer;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUploadHostPrefer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UploadHostPrefer = $var;
 
         return $this;
     }

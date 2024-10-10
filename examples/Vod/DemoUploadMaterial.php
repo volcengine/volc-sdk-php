@@ -43,6 +43,7 @@ $request->setFunctions($functions);
 $request->setFileType("media");
 
 $request->setCallbackArgs("my callback");
+$request->setUploadHostPrefer("");
 
 $response = new VodCommitUploadInfoResponse();
 try {

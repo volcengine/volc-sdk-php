@@ -79,6 +79,12 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ClientIDCMode = 11;</code>
      */
     protected $ClientIDCMode = '';
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 12;</code>
+     */
+    protected $UploadHostPrefer = '';
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
      *           客户端网络环境 
      *     @type string $ClientIDCMode
      *           客户端机房环境 
+     *     @type string $UploadHostPrefer
+     *           上传域名偏好 
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodUploadMaterialRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ClientIDCMode = $var;
+
+        return $this;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 12;</code>
+     * @return string
+     */
+    public function getUploadHostPrefer()
+    {
+        return $this->UploadHostPrefer;
+    }
+
+    /**
+     * 上传域名偏好 
+     *
+     * Generated from protobuf field <code>string UploadHostPrefer = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUploadHostPrefer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UploadHostPrefer = $var;
 
         return $this;
     }

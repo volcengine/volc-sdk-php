@@ -38,9 +38,9 @@ class JobExecution extends \Google\Protobuf\Internal\Message
      */
     protected $Status = '';
     /**
-     * Generated from protobuf field <code>string CreateAt = 5;</code>
+     * Generated from protobuf field <code>string CreatedAt = 5;</code>
      */
-    protected $CreateAt = '';
+    protected $CreatedAt = '';
     /**
      * Generated from protobuf field <code>string FinishedAt = 6;</code>
      */
@@ -78,7 +78,7 @@ class JobExecution extends \Google\Protobuf\Internal\Message
      *           任务节点info
      *     @type string $Status
      *           工作流状态
-     *     @type string $CreateAt
+     *     @type string $CreatedAt
      *     @type string $FinishedAt
      *     @type string $TemplateId
      *           工作流模板id
@@ -198,23 +198,23 @@ class JobExecution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string CreateAt = 5;</code>
+     * Generated from protobuf field <code>string CreatedAt = 5;</code>
      * @return string
      */
-    public function getCreateAt()
+    public function getCreatedAt()
     {
-        return $this->CreateAt;
+        return $this->CreatedAt;
     }
 
     /**
-     * Generated from protobuf field <code>string CreateAt = 5;</code>
+     * Generated from protobuf field <code>string CreatedAt = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setCreateAt($var)
+    public function setCreatedAt($var)
     {
         GPBUtil::checkString($var, True);
-        $this->CreateAt = $var;
+        $this->CreatedAt = $var;
 
         return $this;
     }

@@ -35,7 +35,7 @@ class VodUpload extends Vod
 {
 
     public function uploadToB(string $spaceName, string $filePath, string $fileType, string $fileName,
-                              string $fileExtension, string $clientNetWorkMode, string $clientIDCMode, int $storageClass)
+                              string $fileExtension, string $clientNetWorkMode, string $clientIDCMode, int $storageClass, string $uploadHostPrefer)
     {
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($spaceName);
@@ -46,6 +46,7 @@ class VodUpload extends Vod
         $applyRequest->setClientNetWorkMode($clientNetWorkMode);
         $applyRequest->setClientIDCMode($clientIDCMode);
         $applyRequest->setNeedFallback(true);
+        $applyRequest->setUploadHostPrefer($uploadHostPrefer);
         $resp = $this->upload($applyRequest, $filePath);
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
@@ -63,7 +64,7 @@ class VodUpload extends Vod
     {
         $sessionKey = $this->uploadToB($vodUploadMediaRequest->getSpaceName(), $vodUploadMediaRequest->getFilePath(), "media",
             $vodUploadMediaRequest->getFileName(), $vodUploadMediaRequest->getFileExtension(), $vodUploadMediaRequest->getClientNetWorkMode(),
-            $vodUploadMediaRequest->getClientIDCMode(), $vodUploadMediaRequest->getStorageClass());
+            $vodUploadMediaRequest->getClientIDCMode(), $vodUploadMediaRequest->getStorageClass(), $vodUploadMediaRequest->getUploadHostPrefer());
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMediaRequest->getSpaceName());
         $request->setSessionKey($sessionKey);
@@ -81,7 +82,7 @@ class VodUpload extends Vod
     {
         $sessionKey = $this->uploadToB($vodUploadMaterialRequest->getSpaceName(), $vodUploadMaterialRequest->getFilePath(), $vodUploadMaterialRequest->getFileType(),
             $vodUploadMaterialRequest->getFileName(), $vodUploadMaterialRequest->getFileExtension(), $vodUploadMaterialRequest->getClientNetWorkMode(),
-            $vodUploadMaterialRequest->getClientIDCMode(), 0);
+            $vodUploadMaterialRequest->getClientIDCMode(), 0,$vodUploadMaterialRequest->getUploadHostPrefer());
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMaterialRequest->getSpaceName());
         $request->setSessionKey($sessionKey);

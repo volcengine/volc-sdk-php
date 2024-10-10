@@ -43,6 +43,7 @@ $request->setFunctions($functions);
 $request->setCallbackArgs("my callback");
 $request->setFileName("hello/vod.mp4");
 $request->setStorageClass(0);
+$request->setUploadHostPrefer("");
 
 $response = new VodCommitUploadInfoResponse();
 try {
