@@ -25,6 +25,10 @@ class ApplyResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string SDKParam = 3;</code>
      */
     protected $SDKParam = '';
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 5;</code>
+     */
+    protected $VpcTosUploadAddress = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class ApplyResponse extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\UploadAddress $UploadAddress
      *     @type \Volc\Service\Vod\Models\Business\FlushUploadResult $FlushUploadResult
      *     @type string $SDKParam
+     *     @type \Volc\Service\Vod\Models\Business\VpcTosUploadAddress $VpcTosUploadAddress
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +129,38 @@ class ApplyResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->SDKParam = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 5;</code>
+     * @return \Volc\Service\Vod\Models\Business\VpcTosUploadAddress|null
+     */
+    public function getVpcTosUploadAddress()
+    {
+        return $this->VpcTosUploadAddress;
+    }
+
+    public function hasVpcTosUploadAddress()
+    {
+        return isset($this->VpcTosUploadAddress);
+    }
+
+    public function clearVpcTosUploadAddress()
+    {
+        unset($this->VpcTosUploadAddress);
+    }
+
+    /**
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 5;</code>
+     * @param \Volc\Service\Vod\Models\Business\VpcTosUploadAddress $var
+     * @return $this
+     */
+    public function setVpcTosUploadAddress($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VpcTosUploadAddress::class);
+        $this->VpcTosUploadAddress = $var;
 
         return $this;
     }

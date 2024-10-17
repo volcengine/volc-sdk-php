@@ -1256,7 +1256,7 @@ class VodOption
                 break;
             default:
                 $config = [
-                    'host' => sprintf('https://vod-%s.volcengineapi.com',$region),
+                    'host' => sprintf('https://vod.%s.volcengineapi.com',$region),
                     'scheme' => 'https',
                     'config' => [
                         'timeout' => 5.0,

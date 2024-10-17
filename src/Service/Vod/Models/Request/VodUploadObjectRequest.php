@@ -79,6 +79,12 @@ class VodUploadObjectRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string UploadHostPrefer = 11;</code>
      */
     protected $UploadHostPrefer = '';
+    /**
+     * 大文件上传分片大小，最小20MB 
+     *
+     * Generated from protobuf field <code>int64 ChunkSize = 12;</code>
+     */
+    protected $ChunkSize = 0;
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class VodUploadObjectRequest extends \Google\Protobuf\Internal\Message
      *           客户端机房环境 
      *     @type string $UploadHostPrefer
      *           上传域名偏好 
+     *     @type int|string $ChunkSize
+     *           大文件上传分片大小，最小20MB 
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class VodUploadObjectRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->UploadHostPrefer = $var;
+
+        return $this;
+    }
+
+    /**
+     * 大文件上传分片大小，最小20MB 
+     *
+     * Generated from protobuf field <code>int64 ChunkSize = 12;</code>
+     * @return int|string
+     */
+    public function getChunkSize()
+    {
+        return $this->ChunkSize;
+    }
+
+    /**
+     * 大文件上传分片大小，最小20MB 
+     *
+     * Generated from protobuf field <code>int64 ChunkSize = 12;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setChunkSize($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->ChunkSize = $var;
 
         return $this;
     }

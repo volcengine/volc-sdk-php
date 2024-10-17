@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Õ˜
+Ê™
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -129,7 +129,7 @@ SessionKey (	
 ClientIDCMode	 (	
 NeedFallback
  (
-UploadHostPrefer (	"Ê
+UploadHostPrefer (	"Ý
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -146,7 +146,8 @@ SessionKey (	
 ClientIDCMode (	
 
 ExpireTime (	
-UploadHostPrefer (	"œ
+UploadHostPrefer (	
+	ChunkSize ("¯
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -160,7 +161,8 @@ ExpireTime (	
 ClientNetWorkMode
  (	
 ClientIDCMode (	
-UploadHostPrefer (	"ˆ
+UploadHostPrefer (	
+	ChunkSize ("›
 VodUploadObjectRequest
 	SpaceName (	
 FilePath (	
@@ -173,7 +175,8 @@ ExpireTime (	
 ClientNetWorkMode	 (	
 ClientIDCMode
  (	
-UploadHostPrefer (	"™
+UploadHostPrefer (	
+	ChunkSize ("™
 VodCommitUploadInfoRequest
 	SpaceName (	
 
@@ -211,7 +214,10 @@ BucketName (	".
 
 ExpireTime (2.google.protobuf.StringValue"\'
 VodGetMediaInfosRequest
-Vids (	";
+Vids (	":
+VodDeleteMaterialRequest
+Mid (	
+	SpaceName (	";
 VodDeleteMediaRequest
 Vids (	
 CallbackArgs (	"P

@@ -32,7 +32,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ì¶
+²·
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -100,7 +100,9 @@ class ResponseVod
 Result (2>.Volcengine.Vod.Models.Business.VodUpdateMediaStorageClassData"¥
 VodDeleteMediaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataB
-Result (22.Volcengine.Vod.Models.Business.VodDeleteMediaData"¯
+Result (22.Volcengine.Vod.Models.Business.VodDeleteMediaData"d
+VodDeleteMaterialResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¯
 VodDeleteTranscodesResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataG
 Result (27.Volcengine.Vod.Models.Business.VodDeleteTranscodesData"³

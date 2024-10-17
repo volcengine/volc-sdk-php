@@ -10,13 +10,17 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\NoSeekStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Stream;
 use GuzzleHttp\RetryMiddleware;
 use Throwable;
 use Volc\Service\Base\Models\Base\ResponseError;
+use Volc\Service\Vod\Models\Business\PartUploadInfo;
 use Volc\Service\Vod\Models\Business\StorageClassType;
 use Volc\Service\Vod\Models\Business\VodStoreInfo;
+use Volc\Service\Vod\Models\Business\VpcTosUploadAddress;
 use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
 use Volc\Service\Vod\Models\Request\VodQueryMoveObjectTaskInfoRequest;
@@ -30,13 +34,20 @@ use Volc\Service\Vod\Vod;
 
 const MinChunkSize = 1024 * 1024 * 20;
 const LargeFileSize = 1024 * 1024 * 1024;
+const UploadModeDirect = "direct";
+const UploadModePart = "part";
+const HeaderCrc64 = "x-tos-hash-crc64ecma";
+const HeaderRequestId = "x-tos-request-id";
+const HeaderEtag = "ETag";
+const QuickCompleteModeEnable = "enable";
 
 class VodUpload extends Vod
 {
 
     public function uploadToB(string $spaceName, string $filePath, string $fileType, string $fileName,
-                              string $fileExtension, string $clientNetWorkMode, string $clientIDCMode, int $storageClass, string $uploadHostPrefer)
+                              string $fileExtension, string $clientNetWorkMode, string $clientIDCMode, int $storageClass, string $uploadHostPrefer, int $chunkSize)
     {
+        $fileSize = filesize($filePath);
         $applyRequest = new VodApplyUploadInfoRequest();
         $applyRequest->setSpaceName($spaceName);
         $applyRequest->setFileName($fileName);
@@ -47,7 +58,8 @@ class VodUpload extends Vod
         $applyRequest->setClientIDCMode($clientIDCMode);
         $applyRequest->setNeedFallback(true);
         $applyRequest->setUploadHostPrefer($uploadHostPrefer);
-        $resp = $this->upload($applyRequest, $filePath);
+        $applyRequest->setFileSize($fileSize);
+        $resp = $this->innerUpload($applyRequest, $filePath, $chunkSize);
         if ($resp[0] != 0) {
             throw new Exception($resp[1]);
         }
@@ -64,7 +76,7 @@ class VodUpload extends Vod
     {
         $sessionKey = $this->uploadToB($vodUploadMediaRequest->getSpaceName(), $vodUploadMediaRequest->getFilePath(), "media",
             $vodUploadMediaRequest->getFileName(), $vodUploadMediaRequest->getFileExtension(), $vodUploadMediaRequest->getClientNetWorkMode(),
-            $vodUploadMediaRequest->getClientIDCMode(), $vodUploadMediaRequest->getStorageClass(), $vodUploadMediaRequest->getUploadHostPrefer());
+            $vodUploadMediaRequest->getClientIDCMode(), $vodUploadMediaRequest->getStorageClass(), $vodUploadMediaRequest->getUploadHostPrefer(), $vodUploadMediaRequest->getChunkSize());
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMediaRequest->getSpaceName());
         $request->setSessionKey($sessionKey);
@@ -82,7 +94,7 @@ class VodUpload extends Vod
     {
         $sessionKey = $this->uploadToB($vodUploadMaterialRequest->getSpaceName(), $vodUploadMaterialRequest->getFilePath(), $vodUploadMaterialRequest->getFileType(),
             $vodUploadMaterialRequest->getFileName(), $vodUploadMaterialRequest->getFileExtension(), $vodUploadMaterialRequest->getClientNetWorkMode(),
-            $vodUploadMaterialRequest->getClientIDCMode(), 0,$vodUploadMaterialRequest->getUploadHostPrefer());
+            $vodUploadMaterialRequest->getClientIDCMode(), 0,$vodUploadMaterialRequest->getUploadHostPrefer(), $vodUploadMaterialRequest->getChunkSize());
         $request = new VodCommitUploadInfoRequest();
         $request->setSpaceName($vodUploadMaterialRequest->getSpaceName());
         $request->setSessionKey($sessionKey);
@@ -98,13 +110,35 @@ class VodUpload extends Vod
 
     public function upload(VodApplyUploadInfoRequest $applyRequest, string $filePath): array
     {
+        $this->innerUpload($applyRequest, $filePath, MinChunkSize);
+    }
+
+    private function innerUpload(VodApplyUploadInfoRequest $applyRequest, string $filePath, int $chunkSize): array
+    {
         if (!file_exists($filePath)) {
             return array(-1, "file not exists", "", "");
+        }
+        if ($chunkSize < MinChunkSize) {
+            $chunkSize = MinChunkSize;
         }
         try {
             $response = $this->applyUploadInfo($applyRequest);
             if ($response->getResponseMetadata()->getError() != null) {
                 return array(-1, $response->getResponseMetadata()->serializeToJsonString(), "", "");
+            }
+
+            // 内网上传
+            $vpcTosUploadAddress = $response->getResult()->getData()->getVpcTosUploadAddress();
+            if ($vpcTosUploadAddress != null) {
+                $vpcRespCode = $this->vpcUploadFile($vpcTosUploadAddress, $filePath);
+                if ($vpcRespCode != 0){
+                    return array(-1, "vpc upload " . $filePath . " error", "", "");
+                }
+
+                $uploadAddress = $response->getResult()->getData()->getUploadAddress();
+                $oid = ($uploadAddress->getStoreInfos())[0]->getStoreUri();
+                $session = $uploadAddress->getSessionKey();
+                return array(0, "", $session, $oid);
             }
 
             $candidateUploadAddress = $response->getResult()->getData()->getCandidateUploadAddresses();
@@ -128,7 +162,7 @@ class VodUpload extends Vod
                     $storeInfo->setStoreUri($oid);
                     $storeInfo->setAuth($auth);
                     try {
-                        $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
+                        $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass(), $chunkSize);
                         if ($respCode != 0) {
                             continue;
                         }
@@ -146,7 +180,7 @@ class VodUpload extends Vod
                 $storeInfo = new VodStoreInfo();
                 $storeInfo->mergeFrom(($uploadAddress->getStoreInfos())[0]);
 
-                $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass());
+                $respCode = $this->uploadFile($uploadHost, $storeInfo, $filePath, $applyRequest->getStorageClass(), $chunkSize);
                 if ($respCode != 0) {
                     return array(-1, "upload " . $filePath . " error", "", "");
                 }
@@ -158,7 +192,7 @@ class VodUpload extends Vod
         }
     }
 
-    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath, int $storageClass): int
+    public function uploadFile(string $uploadHost, VodStoreInfo $storeInfo, string $filePath, int $storageClass, int $chunkSize): int
     {
         if (!file_exists($filePath)) {
             return -1;
@@ -182,14 +216,14 @@ class VodUpload extends Vod
             'handler' => $handlerStack,
         ]);
 
-        if ($fileSize < MinChunkSize) {
+        if ($fileSize < $chunkSize) {
             return $this->directUpload($oid, $auth, $filePath, $client, $storageClass);
         } else {
-            return $this->chunkUpload($oid, $auth, $filePath, true, $client, $storageClass);
+            return $this->chunkUpload($oid, $auth, $filePath, true, $client, $storageClass, $chunkSize);
         }
     }
 
-    private function retryDecider(): \Closure
+    public function retryDecider(): \Closure
     {
         return function ($retries,
                          Request $request,
@@ -202,7 +236,7 @@ class VodUpload extends Vod
         };
     }
 
-    private function retryDelay(): \Closure
+    public function retryDelay(): \Closure
     {
         return function ($num) {
             return RetryMiddleware::exponentialDelay($num);
@@ -230,20 +264,20 @@ class VodUpload extends Vod
         return 0;
     }
 
-    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client, int $storageClass): int
+    private function chunkUpload(string $oid, string $auth, string $filePath, bool $isLargeFile, Client $client, int $storageClass, int $chunkSize): int
     {
         $uploadID = $this->initUploadPart($oid, $auth, $isLargeFile, $client, $storageClass);
         if ($uploadID == "") {
             return -1;
         }
         $fileSize = filesize($filePath);
-        $num = floor($fileSize / MinChunkSize);
+        $num = floor($fileSize / $chunkSize);
         $lastNum = $num - 1;
         $fp = fopen($filePath, 'r');
         $checkSum = [];
         $objectContentType = "";
         for ($i = 0; $i < $lastNum; $i++) {
-            $data = stream_get_contents($fp, MinChunkSize, $i * MinChunkSize);
+            $data = stream_get_contents($fp, $chunkSize, $i * $chunkSize);
             $partNumber = $i;
             if ($isLargeFile) {
                 $partNumber = $partNumber + 1;
@@ -259,8 +293,8 @@ class VodUpload extends Vod
             }
             $checkSum[] = $crc32;
         }
-        $maxLength = $fileSize - $lastNum * MinChunkSize;
-        $data = stream_get_contents($fp, $maxLength, $lastNum * MinChunkSize);
+        $maxLength = $fileSize - $lastNum * $chunkSize;
+        $data = stream_get_contents($fp, $maxLength, $lastNum * $chunkSize);
         if ($isLargeFile) {
             $lastNum = $lastNum + 1;
         }
@@ -400,5 +434,148 @@ class VodUpload extends Vod
         $submitResponse->getResponseMetadata()->setError($customError);
         $response->setResponseMetadata($submitResponse->getResponseMetadata());
         return $response;
+    }
+
+    public function vpcUploadFile(VpcTosUploadAddress $vpcUploadInfo, string $filePath): int
+    {
+        if (!file_exists($filePath)) {
+            return -1;
+        }
+
+        if ($vpcUploadInfo->getQuickCompleteMode() == QuickCompleteModeEnable) {
+            return 0;
+        }
+
+        $handlerStack = HandlerStack::create(new CurlHandler());
+        $handlerStack->push(Middleware::retry($this->retryDecider(), $this->retryDelay()));
+
+        $timeout = 900.0;
+
+        $client = new Client([
+            'timeout' => $timeout,
+            'handler' => $handlerStack,
+        ]);
+
+        if ($vpcUploadInfo->getUploadMode() == UploadModeDirect) {
+            return $this->vpcPut($vpcUploadInfo->getPutUrl(), $filePath, $client, iterator_to_array($vpcUploadInfo->getPutUrlHeaders()));
+        } else if ($vpcUploadInfo->getUploadMode() == UploadModePart) {
+            return $this->vpcPartUpload($vpcUploadInfo->getPartUploadInfo(), $filePath,  $client);
+        }
+        return -1;
+    }
+
+    private function vpcPartUpload(PartUploadInfo $partUploadInfo, string $filePath, Client $client): int
+    {
+        $fileSize = filesize($filePath);
+        $chunkSize = $partUploadInfo->getPartSize();
+        $num = floor($fileSize / $chunkSize);
+
+        $partUrls = iterator_to_array($partUploadInfo->getPartPutUrls());
+        $completeBody = ['Parts' => []];
+
+
+        for ($i = 0; $i < $num; $i++) {
+            $partNumber = $i + 1;
+
+            $partResp = $this->vpcPartPut($partUrls[$i],$filePath, $i * $chunkSize, $chunkSize, $client,[]);
+            if ($partResp['res'] != 0){
+                return -1;
+            }
+            $completeBody['Parts'][] = ['PartNumber'=>$partNumber, 'ETag'=>$partResp['etag']];
+        }
+
+        $lastChunkSize = $fileSize - $num * $chunkSize;
+
+        $partResp = $this->vpcPartPut($partUrls[$i],$filePath, $num * $chunkSize, $lastChunkSize, $client,[]);
+        if ($partResp['res'] != 0){
+            return -1;
+        }
+        $completeBody['Parts'][] = ['PartNumber'=>$num+1, 'ETag'=>$partResp['etag']];
+        $postBody = json_encode($completeBody);
+
+        return $this->vpcPost($partUploadInfo->getCompletePartUrl(), $postBody, $client, iterator_to_array($partUploadInfo->getCompleteUrlHeaders()));
+    }
+
+    public function vpcPartPut(string $url, string $filePath,int $offset, int $partSize, Client $client, array $headers): array
+    {
+        $res = ['res'=>0];
+        try {
+            $file = fopen($filePath, 'r');
+            $fileSize = filesize($filePath);
+            if ($offset < 0 || $offset > $fileSize) {
+                throw new Exception('invalid offset');
+            } else if ($offset > 0) {
+                fseek($file, $offset, 0);
+            }
+
+            $body = new NoSeekStream(new Stream($file));
+            $headers['Content-Length'] = $partSize;
+
+            $response = $client->put($url, ["body" => $body, "headers" => $headers]);
+            if ($response == null || $response->getStatusCode() != 200) {
+                $reqId = $response->getHeaderLine(HeaderRequestId);
+                echo 'Vpc Part Upload Failed. Req Id: ' . $reqId . PHP_EOL;
+                $res['res'] = -1;
+                return $res;
+            }
+
+            $etag = $response->getHeaderLine(HeaderEtag);
+            $res['etag'] = $etag;
+        } catch (Exception $e) {
+            echo $e, "\n";
+            $res['res'] = -2;
+            return $res;
+        } catch (Throwable $e) {
+            echo $e, "\n";
+            $res['res'] = -2;
+            return $res;
+        }
+
+        return $res;
+    }
+
+    public function vpcPost(string $url,string $body, Client $client, array $headers): int
+    {
+        try {
+            $response = $client->post($url, ["body" => $body, "headers" => $headers]);
+
+            if ($response == null || $response->getStatusCode() != 200) {
+                $reqId = $response->getHeaderLine(HeaderRequestId);
+                echo 'Vpc Direct Upload Failed. Req Id: ' . $reqId . PHP_EOL;
+                return -1;
+            }
+
+        } catch (Exception $e) {
+            echo $e, "\n";
+            return -2;
+        } catch (Throwable $e) {
+            echo $e, "\n";
+            return -2;
+        }
+        return 0;
+    }
+
+    public function vpcPut(string $url, string $filePath, Client $client, array $headers): int
+    {
+        try {
+            $file = fopen($filePath, 'r');
+            $body = new NoSeekStream(new Stream($file));
+
+            $response = $client->put($url, ["body" => $body, "headers" => $headers]);
+            if ($response == null || $response->getStatusCode() != 200) {
+                $reqId = $response->getHeaderLine(HeaderRequestId);
+                echo 'Vpc Direct Upload Failed. Req Id: ' . $reqId . PHP_EOL;
+                return -1;
+            }
+
+        } catch (Exception $e) {
+            echo $e, "\n";
+            return -2;
+        } catch (Throwable $e) {
+            echo $e, "\n";
+            return -2;
+        }
+
+        return 0;
     }
 }

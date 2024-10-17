@@ -10,7 +10,7 @@ use Volc\Service\Vod\Upload\Template;
 
 // Create a VOD instance in the specified region.
 // $client = Volc\Service\Vod\Vod::getInstance('cn-north-1');
-$client = Volc\Service\Vod\Vod::getInstance();
+$client = VodUpload::getInstance();
 
 // Configure your Access Key ID (AK) and Secret Access Key (SK) in the environment variables or in the local ~/.volc/config file. For detailed instructions, see https://www.volcengine.com/docs/4/4408.
 // The SDK will automatically fetch the AK and SK from the environment variables or the ~/.volc/config file as needed.

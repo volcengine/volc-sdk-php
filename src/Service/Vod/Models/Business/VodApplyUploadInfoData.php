@@ -25,6 +25,12 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.CandidateUploadAddresses CandidateUploadAddresses = 2;</code>
      */
     protected $CandidateUploadAddresses = null;
+    /**
+     * 1001 阶段返回内网上传信息 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 3;</code>
+     */
+    protected $VpcTosUploadAddress = null;
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
      *           1001 阶段返回信息 
      *     @type \Volc\Service\Vod\Models\Business\CandidateUploadAddresses $CandidateUploadAddresses
      *           1001 阶段返回候选上传地址用于降级 
+     *     @type \Volc\Service\Vod\Models\Business\VpcTosUploadAddress $VpcTosUploadAddress
+     *           1001 阶段返回内网上传信息 
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +119,42 @@ class VodApplyUploadInfoData extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\CandidateUploadAddresses::class);
         $this->CandidateUploadAddresses = $var;
+
+        return $this;
+    }
+
+    /**
+     * 1001 阶段返回内网上传信息 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 3;</code>
+     * @return \Volc\Service\Vod\Models\Business\VpcTosUploadAddress|null
+     */
+    public function getVpcTosUploadAddress()
+    {
+        return $this->VpcTosUploadAddress;
+    }
+
+    public function hasVpcTosUploadAddress()
+    {
+        return isset($this->VpcTosUploadAddress);
+    }
+
+    public function clearVpcTosUploadAddress()
+    {
+        unset($this->VpcTosUploadAddress);
+    }
+
+    /**
+     * 1001 阶段返回内网上传信息 
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VpcTosUploadAddress VpcTosUploadAddress = 3;</code>
+     * @param \Volc\Service\Vod\Models\Business\VpcTosUploadAddress $var
+     * @return $this
+     */
+    public function setVpcTosUploadAddress($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VpcTosUploadAddress::class);
+        $this->VpcTosUploadAddress = $var;
 
         return $this;
     }
