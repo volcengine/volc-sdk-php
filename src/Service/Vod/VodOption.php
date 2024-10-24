@@ -250,6 +250,16 @@ class VodOption
                 ],
             ]
         ],
+        'DeleteMaterial' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteMaterial',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetSubtitleInfoList' => [
             'url' => '/',
             'method' => 'get',

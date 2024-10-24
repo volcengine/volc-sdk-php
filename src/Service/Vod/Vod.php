@@ -69,6 +69,8 @@ use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
 use Volc\Service\Vod\Models\Response\VodGetMediaListResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteMaterialRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteMaterialResponse;
 use Volc\Service\Vod\Models\Request\VodGetSubtitleInfoListRequest;
 use Volc\Service\Vod\Models\Response\VodGetSubtitleInfoListResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSubtitleStatusRequest;
@@ -1430,6 +1432,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetMediaListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteMaterial.
+     *
+     * @param $req VodDeleteMaterialRequest
+     * @return VodDeleteMaterialResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteMaterial (VodDeleteMaterialRequest $req): VodDeleteMaterialResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteMaterial', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDeleteMaterialResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
