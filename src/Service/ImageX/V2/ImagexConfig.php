@@ -52,6 +52,18 @@ class ImagexConfig
     public static function apiList()
     {
         return [
+            'UpdateImageDomainVolcOrigin' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainVolcOrigin',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'DelDomain' => [
                 'method' => 'post',
                 'url' => '/',
@@ -64,12 +76,48 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'AddDomainV1' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'AddDomainV1',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageDomainIPAuth' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainIPAuth',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateRefer' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateRefer',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageDomainUaAccess' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainUaAccess',
                         'Version' => '2018-08-01',
                     ]
                 ],
@@ -88,6 +136,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'UpdateImageDomainDownloadSpeedLimit' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainDownloadSpeedLimit',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateResponseHeader' => [
                 'method' => 'post',
                 'url' => '/',
@@ -95,6 +155,78 @@ class ImagexConfig
                     'query' => [
                         'Action' => 'UpdateResponseHeader',
                         'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageDomainAreaAccess' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainAreaAccess',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateDomainAdaptiveFmt' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateDomainAdaptiveFmt',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageDomainConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainConfig',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateAdvance' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateAdvance',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageDomainBandwidthLimit' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageDomainBandwidthLimit',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateSlimConfig' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateSlimConfig',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -155,6 +287,174 @@ class ImagexConfig
                     'query' => [
                         'Action' => 'GetServiceDomains',
                         'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DeleteImageMonitorRules' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageMonitorRules',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageMonitorRecords' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageMonitorRecords',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'CreateImageMonitorRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageMonitorRule',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageMonitorRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageMonitorRule',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageMonitorRuleStatus' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageMonitorRuleStatus',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageAlertRecords' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAlertRecords',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageMonitorRules' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageMonitorRules',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'CreateImageSettingRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageSettingRule',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageSettingRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageSettingRule',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageSettingRulePriority' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageSettingRulePriority',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageSettingRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageSettingRule',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageSettings' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageSettings',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageSettingRuleHistory' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageSettingRuleHistory',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageSettingRules' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageSettingRules',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -250,6 +550,18 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'RerunImageMigrateTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageAddOnTag' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAddOnTag',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1168,12 +1480,60 @@ class ImagexConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'CreateBatchProcessTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateBatchProcessTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetBatchProcessResult' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetBatchProcessResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetBatchTaskInfo' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetBatchTaskInfo',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'UpdateImageResourceStatus' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateImageResourceStatus',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateFileStorageClass' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateFileStorageClass',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1204,6 +1564,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'CreateFileRestore' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateFileRestore',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateImageUploadFiles' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1222,6 +1594,18 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'CommitImageUpload',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageFileCT' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageFileCT',
                         'Version' => '2018-08-01',
                     ]
                 ],
@@ -1282,18 +1666,6 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'PreviewImageUploadFile',
-                        'Version' => '2023-05-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => false,
-            ],
-            'GetImageServiceSubscription' => [
-                'method' => 'get',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'GetImageServiceSubscription',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1600,6 +1972,18 @@ class ImagexConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'GetDenoisingImage' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetDenoisingImage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'GetImageDuplicateDetection' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1696,6 +2080,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'GetLicensePlateDetection' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetLicensePlateDetection',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'GetPrivateImageType' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1708,12 +2104,36 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'GetAiGenerateImage' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetAiGenerateImage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'CreateHiddenWatermarkImage' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'CreateHiddenWatermarkImage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageExifData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageExifData',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1766,6 +2186,30 @@ class ImagexConfig
                     ]
                 ],
                 'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetImageAiGenerateTask' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAiGenerateTask',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetProductAIGCResult' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetProductAIGCResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
                 'has_json' => true,
             ],
             'GetImageEraseModels' => [
@@ -1828,12 +2272,36 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'UpdateResEventRule' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateResEventRule',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateServiceName' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateServiceName',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateStorageRules' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateStorageRules',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1852,6 +2320,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'UpdateImageUploadOverwrite' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageUploadOverwrite',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateImageMirrorConf' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1863,6 +2343,18 @@ class ImagexConfig
                 ],
                 'has_query' => true,
                 'has_json' => true,
+            ],
+            'GetImageServiceSubscription' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageServiceSubscription',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
             ],
             'GetImageAuthKey' => [
                 'method' => 'get',
@@ -1960,6 +2452,162 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DeleteImageElements' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageElements',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageBackgroundColors' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageBackgroundColors',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageStyle' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageStyle',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'CreateImageStyle' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageStyle',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageStyleMeta' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageStyleMeta',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'AddImageElements' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'AddImageElements',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'AddImageBackgroundColors' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'AddImageBackgroundColors',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageStyle' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageStyle',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageFonts' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageFonts',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageElements' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageElements',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageBackgroundColors' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageBackgroundColors',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageStyles' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageStyles',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageStyleDetail' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageStyleDetail',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'GetImageStyleResult' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1971,6 +2619,78 @@ class ImagexConfig
                 ],
                 'has_query' => true,
                 'has_json' => true,
+            ],
+            'DownloadCert' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DownloadCert',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DelCert' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DelCert',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'AddCert' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'AddCert',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageAllDomainCert' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAllDomainCert',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetCertInfo' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCertInfo',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetAllCerts' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetAllCerts',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
             ],
             'CreateImageTemplate' => [
                 'method' => 'post',
@@ -2002,6 +2722,18 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DeleteImageTemplate',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'CreateImageTemplatesByImport' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageTemplatesByImport',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -2078,6 +2810,18 @@ class ImagexConfig
                     ]
                 ],
                 'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetSyncAuditResult' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetSyncAuditResult',
+                        'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
                 'has_json' => true,
             ],
             'UpdateImageAuditTaskStatus' => [
