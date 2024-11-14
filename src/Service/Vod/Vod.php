@@ -241,6 +241,8 @@ use Volc\Service\Vod\Models\Request\DescribeVodRealtimeMediaDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodRealtimeMediaDataResponse;
 use Volc\Service\Vod\Models\Request\DescribeVodRealtimeMediaDetailDataRequest;
 use Volc\Service\Vod\Models\Response\DescribeVodRealtimeMediaDetailDataResponse;
+use Volc\Service\Vod\Models\Request\DescribeVodVidTrafficFileLogRequest;
+use Volc\Service\Vod\Models\Response\DescribeVodVidTrafficFileLogResponse;
 
 /**
  * Generated from protobuf service <code>volcengine/vod/service/service_vod.proto</code>
@@ -4303,6 +4305,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new DescribeVodRealtimeMediaDetailDataResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeVodVidTrafficFileLog.
+     *
+     * @param $req DescribeVodVidTrafficFileLogRequest
+     * @return DescribeVodVidTrafficFileLogResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeVodVidTrafficFileLog (DescribeVodVidTrafficFileLogRequest $req): DescribeVodVidTrafficFileLogResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeVodVidTrafficFileLog', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new DescribeVodVidTrafficFileLogResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

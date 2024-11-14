@@ -904,6 +904,78 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DescribeImageXHeifEncodeFileInSizeByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeFileInSizeByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DescribeImageXHeifEncodeFileOutSizeByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeFileOutSizeByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DescribeImageXHeifEncodeSuccessCountByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeSuccessCountByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DescribeImageXHeifEncodeSuccessRateByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeSuccessRateByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DescribeImageXHeifEncodeDurationByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeDurationByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DescribeImageXHeifEncodeErrorCodeByTime' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXHeifEncodeErrorCodeByTime',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'DescribeImageXExceedResolutionRatioAll' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2116,6 +2188,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'CreateCVImageGenerateTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateCVImageGenerateTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'CreateHiddenWatermarkImage' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2152,6 +2236,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'GetCVImageGenerateResult' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCVImageGenerateResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'CreateImageHmExtract' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2164,6 +2260,30 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'GetCVTextGenerateImage' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCVTextGenerateImage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetCVImageGenerateTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCVImageGenerateTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'CreateImageHmEmbed' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2174,6 +2294,18 @@ class ImagexConfig
                     ]
                 ],
                 'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetCVAnimeGenerateImage' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCVAnimeGenerateImage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
                 'has_json' => true,
             ],
             'GetComprehensiveEnhanceImage' => [

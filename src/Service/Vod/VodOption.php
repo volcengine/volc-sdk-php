@@ -1224,6 +1224,16 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeVodVidTrafficFileLog' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeVodVidTrafficFileLog',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
     ];
 
     /**

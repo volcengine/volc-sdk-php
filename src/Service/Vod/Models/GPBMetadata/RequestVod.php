@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ê™
+¨š
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -908,7 +908,11 @@ RegionList (	"{
 	StartTime (	
 EndTime (	
 PageSize (
-PageNum ("A
+PageNum ("\\
+#DescribeVodVidTrafficFileLogRequest
+	SpaceList (	
+	StartTime (	
+EndTime (	"A
 VodSubmitBlockMediaTaskRequest
 	SpaceName (	
 Vids (	"C
