@@ -752,6 +752,66 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #查询全局配置: 
+        'DescribeSharedConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeSharedConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #查询全局配置列表: 
+        'ListSharedConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListSharedConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #删除全局配置: 
+        'DeleteSharedConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteSharedConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #修改全局配置: 
+        'UpdateSharedConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'UpdateSharedConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #新增全局配置: 
+        'AddSharedConfig' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'AddSharedConfig',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
 
 ];
 
@@ -1123,6 +1183,31 @@ class Cdn extends V4Curl
     public function listUsageReports(array $data = []): string
     {
         return $this->requestWithRetry("ListUsageReports", $data);
+    }
+
+    public function describeSharedConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeSharedConfig", $data);
+    }
+
+    public function listSharedConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("ListSharedConfig", $data);
+    }
+
+    public function deleteSharedConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("DeleteSharedConfig", $data);
+    }
+
+    public function updateSharedConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("UpdateSharedConfig", $data);
+    }
+
+    public function addSharedConfig(array $data = []): string
+    {
+        return $this->requestWithRetry("AddSharedConfig", $data);
     }
 
 }
