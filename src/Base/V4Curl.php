@@ -149,6 +149,8 @@ abstract class V4Curl extends Singleton
             return $response;
         } catch (ClientException $exception) {
             return $exception->getResponse();
+        } catch (Exception $exception) {
+            return $exception->getResponse();
         }
     }
 
@@ -217,6 +219,7 @@ abstract class V4Curl extends Singleton
             "Resource" => $resources,
         ];
     }
+
     protected function configMerge($c1, $c2, $c3)
     {
         $result = $c1;

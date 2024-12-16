@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->updateDenyConfig($body);
+$response = $client->describeLiveTopPlayData($body);
 print_r($response);

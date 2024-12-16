@@ -1154,6 +1154,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeLiveTopPlayData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveTopPlayData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeLiveRegionData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1538,18 +1550,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'DescribeDenyConfig' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DescribeDenyConfig',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DescribeReferer' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1568,18 +1568,6 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeAuth',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'UpdateDenyConfig' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateDenyConfig',
                         'Version' => '2023-01-01',
                     ]
                 ],
