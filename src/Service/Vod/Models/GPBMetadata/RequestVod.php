@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¨š
+½š
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -337,7 +337,7 @@ BucketName (	
 
 BucketName (	"-
 VodExtractMediaMetaTaskRequest
-Vid (	"Ž
+Vid (	"£
 VodStartWorkflowRequest
 Vid (	
 
@@ -348,7 +348,8 @@ TemplateId (	=
 EnableLowPriority (<
 	DirectUrl (2).Volcengine.Vod.Models.Business.DirectUrl
 
-TaskListId (	"D
+TaskListId (	
+ClientToken	 (	"D
 !VodRetrieveTranscodeResultRequest
 Vid (	
 
