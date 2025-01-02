@@ -812,6 +812,30 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #接入域名校验: 
+        'CheckDomain' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'CheckDomain',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #DNS校验信息生成: 
+        'DescribeRetrieveInfo' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeRetrieveInfo',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
 
 ];
 
@@ -1208,6 +1232,16 @@ class Cdn extends V4Curl
     public function addSharedConfig(array $data = []): string
     {
         return $this->requestWithRetry("AddSharedConfig", $data);
+    }
+
+    public function checkDomain(array $data = []): string
+    {
+        return $this->requestWithRetry("CheckDomain", $data);
+    }
+
+    public function describeRetrieveInfo(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeRetrieveInfo", $data);
     }
 
 }
