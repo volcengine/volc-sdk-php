@@ -197,6 +197,10 @@ use Volc\Service\Vod\Models\Request\AddOrUpdateCertificateV2Request;
 use Volc\Service\Vod\Models\Response\AddOrUpdateCertificateV2Response;
 use Volc\Service\Vod\Models\Request\VodUpdateDomainUrlAuthConfigV2Request;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainUrlAuthConfigV2Response;
+use Volc\Service\Vod\Models\Request\VodVerifyDomainOwnerRequest;
+use Volc\Service\Vod\Models\Response\VodVerifyDomainOwnerResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeDomainVerifyContentRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeDomainVerifyContentResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateDomainConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainConfigResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeDomainConfigRequest;
@@ -3579,6 +3583,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateDomainUrlAuthConfigV2Response();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * VerifyDomainOwner.
+     *
+     * @param $req VodVerifyDomainOwnerRequest
+     * @return VodVerifyDomainOwnerResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function verifyDomainOwner (VodVerifyDomainOwnerRequest $req): VodVerifyDomainOwnerResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('VerifyDomainOwner', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodVerifyDomainOwnerResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeDomainVerifyContent.
+     *
+     * @param $req VodDescribeDomainVerifyContentRequest
+     * @return VodDescribeDomainVerifyContentResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeDomainVerifyContent (VodDescribeDomainVerifyContentRequest $req): VodDescribeDomainVerifyContentResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeDomainVerifyContent', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeDomainVerifyContentResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

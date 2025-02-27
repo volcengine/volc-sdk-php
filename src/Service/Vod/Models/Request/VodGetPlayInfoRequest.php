@@ -32,7 +32,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $Codec = '';
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe,auto.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      */
@@ -136,6 +136,19 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool GetAll = 20;</code>
      */
     protected $GetAll = false;
+    /**
+     *"数字水印类型。取值：
+     *ABTraceStream：AB流溯源水印。"
+     *
+     * Generated from protobuf field <code>string DigitalWatermarkType = 21;</code>
+     */
+    protected $DigitalWatermarkType = '';
+    /**
+     *下发AB流时设置的uid，当DigitalWatermarkType=ABTraceStream时需要传入这个参数，在下发的播放地址中会加入点播实时处理的query，并改写TypeA签算的uid。
+     *
+     * Generated from protobuf field <code>string UserToken = 22;</code>
+     */
+    protected $UserToken = '';
 
     /**
      * Constructor.
@@ -150,7 +163,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $Codec
      *           编码格式，支持 mp3、aac、opus、H264、H265、H266, 视频默认H264，音频默认aac
      *     @type string $Definition
-     *           视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
+     *           视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe,auto.默认返回全部
      *     @type string $FileType
      *           流文件类型,支持:
      *           加密视频流evideo，加密音频流传eaudio,非加密视频流video,普通音频音频流audio.默认video
@@ -186,6 +199,11 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          强行指定本次请求的时间戳防盗链 单位秒
      *     @type bool $GetAll
      *          获取全部流 默认不开启 开启后将没有降级策略 返回Vid下的所有转码流
+     *     @type string $DigitalWatermarkType
+     *          "数字水印类型。取值：
+     *          ABTraceStream：AB流溯源水印。"
+     *     @type string $UserToken
+     *          下发AB流时设置的uid，当DigitalWatermarkType=ABTraceStream时需要传入这个参数，在下发的播放地址中会加入点播实时处理的query，并改写TypeA签算的uid。
      * }
      */
     public function __construct($data = NULL) {
@@ -272,7 +290,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe,auto.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @return string
@@ -283,7 +301,7 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe.默认返回全部
+     * 视频流清晰度，支持：240p,360p,480p,540p,720p,1080p,2k,4k,od,oe,auto.默认返回全部
      *
      * Generated from protobuf field <code>string Definition = 4;</code>
      * @param string $var
@@ -715,6 +733,60 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->GetAll = $var;
+
+        return $this;
+    }
+
+    /**
+     *"数字水印类型。取值：
+     *ABTraceStream：AB流溯源水印。"
+     *
+     * Generated from protobuf field <code>string DigitalWatermarkType = 21;</code>
+     * @return string
+     */
+    public function getDigitalWatermarkType()
+    {
+        return $this->DigitalWatermarkType;
+    }
+
+    /**
+     *"数字水印类型。取值：
+     *ABTraceStream：AB流溯源水印。"
+     *
+     * Generated from protobuf field <code>string DigitalWatermarkType = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDigitalWatermarkType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DigitalWatermarkType = $var;
+
+        return $this;
+    }
+
+    /**
+     *下发AB流时设置的uid，当DigitalWatermarkType=ABTraceStream时需要传入这个参数，在下发的播放地址中会加入点播实时处理的query，并改写TypeA签算的uid。
+     *
+     * Generated from protobuf field <code>string UserToken = 22;</code>
+     * @return string
+     */
+    public function getUserToken()
+    {
+        return $this->UserToken;
+    }
+
+    /**
+     *下发AB流时设置的uid，当DigitalWatermarkType=ABTraceStream时需要传入这个参数，在下发的播放地址中会加入点播实时处理的query，并改写TypeA签算的uid。
+     *
+     * Generated from protobuf field <code>string UserToken = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->UserToken = $var;
 
         return $this;
     }

@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ωö
+´ù
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -45,7 +45,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"è
+Quality (	"¿
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -70,7 +70,9 @@ NeedThumbs	 (	
 PlayConfig (	
 NeedOriginal (	
 ForceExpire (	
-GetAll ("g
+GetAll (
+DigitalWatermarkType (	
+	UserToken (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -669,10 +671,11 @@ DomainList (	
 TrafficType (	
 Area (	
 
-RegionList (	"A
+RegionList (	"T
 VodSubmitBlockTasksRequest
 FileUrls (	
-	Operation (	"∂
+	Operation (	
+	SpaceName (	"∂
 VodGetContentBlockTasksRequest
 Url (	
 Domain (	
@@ -727,7 +730,13 @@ DomainType (	
 Domain (	
 MainKey (	
 	BackupKey (	
-Status (	"L
+Status (	"A
+VodVerifyDomainOwnerRequest
+Domain (	
+
+VerifyType (	"7
+%VodDescribeDomainVerifyContentRequest
+Domain (	"L
 VodListPCDNDomainRequest
 	SpaceName (	
 Offset (
@@ -777,7 +786,16 @@ DomainType (	
 Events (	
 AuthEnabled (	
 
-PrivateKey (	"Ù
+PrivateKey (	"´
+GetCallbackRecordRequest
+	SpaceName (	
+Vid (	
+Status (	
+	StartTime (
+EndTime (
+Limit (
+	EventType (	
+ContinuationToken (	"Ù
 &VodGetSmartStrategyLitePlayInfoRequest
 PlayUrl (	
 Format (	

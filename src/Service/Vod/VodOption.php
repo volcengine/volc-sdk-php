@@ -1068,6 +1068,28 @@ class VodOption
                 ],
             ]
         ],
+
+        'DescribeDomainVerifyContent' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeDomainVerifyContent',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+
+        'VerifyDomainOwner' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'VerifyDomainOwner',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************
