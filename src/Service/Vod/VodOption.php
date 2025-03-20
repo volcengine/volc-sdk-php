@@ -180,6 +180,26 @@ class VodOption
                 ],
             ]
         ],
+        'GetInnerAuditURLs' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetInnerAuditURLs',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'GetAdAuditResultByVid' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetAdAuditResultByVid',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetMediaInfos' => [
             'url' => '/',
             'method' => 'get',

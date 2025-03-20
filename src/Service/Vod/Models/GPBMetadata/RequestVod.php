@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-´ù
+—û
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -337,7 +337,15 @@ BucketName (	
 	SpaceName (	J
 FileUpdateInfos (21.Volcengine.Vod.Models.Business.VodFileUpdateInfo
 
-BucketName (	"-
+BucketName (	"P
+VodGetInnerAuditURLsRequest
+	SpaceName (	
+Vid (	
+	FileNames (	"R
+VodGetAdAuditResultByVidRequest
+	SpaceName (	
+Vid (	
+FileIds (	"-
 VodExtractMediaMetaTaskRequest
 Vid (	"£
 VodStartWorkflowRequest

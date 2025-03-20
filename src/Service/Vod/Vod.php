@@ -65,6 +65,10 @@ use Volc\Service\Vod\Models\Request\VodGetFileInfosRequest;
 use Volc\Service\Vod\Models\Response\VodGetFileInfosResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateFileStorageClassRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateFileStorageClassResponse;
+use Volc\Service\Vod\Models\Request\VodGetInnerAuditURLsRequest;
+use Volc\Service\Vod\Models\Response\VodGetInnerAuditURLsResponse;
+use Volc\Service\Vod\Models\Request\VodGetAdAuditResultByVidRequest;
+use Volc\Service\Vod\Models\Response\VodGetAdAuditResultByVidResponse;
 use Volc\Service\Vod\Models\Request\VodDeleteMediaTosFileRequest;
 use Volc\Service\Vod\Models\Response\VodDeleteMediaTosFileResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaListRequest;
@@ -1372,6 +1376,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateFileStorageClassResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetInnerAuditURLs.
+     *
+     * @param $req VodGetInnerAuditURLsRequest
+     * @return VodGetInnerAuditURLsResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getInnerAuditURLs (VodGetInnerAuditURLsRequest $req): VodGetInnerAuditURLsResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParamV2($req);
+			$response = $this->request('GetInnerAuditURLs', ['json' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetInnerAuditURLsResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetAdAuditResultByVid.
+     *
+     * @param $req VodGetAdAuditResultByVidRequest
+     * @return VodGetAdAuditResultByVidResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getAdAuditResultByVid (VodGetAdAuditResultByVidRequest $req): VodGetAdAuditResultByVidResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParamV2($req);
+			$response = $this->request('GetAdAuditResultByVid', ['json' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodGetAdAuditResultByVidResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
