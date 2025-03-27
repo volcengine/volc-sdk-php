@@ -3,9 +3,12 @@
 namespace Volc\Service\ImageX\V2;
 
 use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\LimitStream;
+use GuzzleHttp\Psr7\Stream;
 use Volc\Base\V4Curl;
 use GuzzleHttp\Client;
 use Volc\Service\ImageX\ImageXUtil;
@@ -347,6 +350,232 @@ class Imagex extends V4Curl
 
         return $res;
     }
+
+    /**
+     * @throws Exception
+     * @throws GuzzleException
+     */
+    public function vpcUploadImages(array $request = []): array
+    {
+        if ((isset($request["FilePath"]) && isset($request["Data"])) || (!isset($request["FilePath"]) && !isset($request["Data"]))){
+            throw new Exception("filePath and data can not be empty or not empty at the same time");
+        }
+        $isFile = false;
+        if (isset($request["FilePath"])) {
+            if (!file_exists($request["FilePath"])){
+                throw new Exception("file not exists");
+            }
+//            $fileResource = fopen($request["FilePath"], 'rb');
+//            if ($fileResource === false) {
+//                throw new Exception("file open error");
+//            }
+
+            $fileSize = filesize($request["FilePath"]);
+            if ($fileSize === false) {
+                throw new Exception("file stat error");
+            }
+            $isFile = true;
+            $fileResource = $request["FilePath"];
+        } else {
+            if (!is_string($request["Data"])){
+                throw new Exception("data format error");
+            }
+            $fileSize = strlen($request["Data"]);
+            $fileResource = $request["Data"];
+        }
+
+        $applyVpcUploadInfoParam = [
+            "ServiceId" => $request["ServiceId"],
+            "FileSize" => $fileSize
+        ];
+        if (isset($request["StoreKey"])) {
+            $applyVpcUploadInfoParam["StoreKey"] = $request["StoreKey"];
+        }
+        if (isset($request["Prefix"])) {
+            $applyVpcUploadInfoParam["Prefix"] = $request["Prefix"];
+        }
+        if (isset($request["FileExtension"])) {
+            $applyVpcUploadInfoParam["FileExtension"] = $request["FileExtension"];
+        }
+        if (isset($request["ContentType"])) {
+            $applyVpcUploadInfoParam["ContentType"] = $request["ContentType"];
+        }
+        if (isset($request["Overwrite"])) {
+            $applyVpcUploadInfoParam["Overwrite"] = $request["Overwrite"];
+        }
+        if (isset($request["StorageClass"])) {
+            $applyVpcUploadInfoParam["StorageClass"] = $request["StorageClass"];
+        }
+        if (isset($request["PartSize"])) {
+            $applyVpcUploadInfoParam["PartSize"] = $request["PartSize"];
+        }
+
+
+        $applyResponse = $this->ApplyVpcUploadInfo($applyVpcUploadInfoParam);
+        if (!isset($applyResponse["ResponseMetadata"])){
+            throw new Exception("apply empty resp");
+        }
+        if (isset ($applyResponse["ResponseMetadata"]["Error"])) {
+            throw new Exception(sprintf("request id %s error %s", $applyResponse["ResponseMetadata"]["RequestId"], $applyResponse["ResponseMetadata"]["Error"]["Message"]));
+        }
+        if (!isset($applyResponse["Result"]) || !isset($applyResponse["Result"]["UploadMode"])){
+            throw new Exception(sprintf("request id %s empty result", $applyResponse["ResponseMetadata"]["RequestId"]));
+        }
+
+
+        $uploadAddr = $applyResponse['Result'];
+        $sessionKey =$uploadAddr['SessionKey'];
+
+        $commitParams = array();
+        $commitParams["ServiceId"] = $request["ServiceId"];
+        if (isset ($request["SkipMeta"])) {
+            $commitParams["SkipMeta"] = $request["SkipMeta"];
+        }
+        $commitBody = array();
+        $commitBody["SuccessOids"] = [];
+        $commitBody["SessionKey"] = $sessionKey;
+        if (isset ($request["OptionInfos"])) {
+            $commitBody["OptionInfos"] = $request["OptionInfos"];
+        }
+        if (isset ($request["Functions"])) {
+            $commitBody["Functions"] = $request["Functions"];
+        }
+
+        try {
+            $this->vpcUpload($uploadAddr, $fileResource,$isFile, $fileSize);
+        }catch (Exception $e) {
+            $this->commitImageUpload($commitParams, $commitBody);
+            throw $e;
+        }
+
+        $successOids = [$uploadAddr['Oid']];
+        $commitBody["SuccessOids"] = $successOids;
+        return $this->commitImageUpload($commitParams, $commitBody);
+    }
+
+    /**
+     * @throws Exception
+     * @throws GuzzleException
+     */
+    private function vpcUpload(array $uploadAddr, $file,bool $isFile, int $fileSize) {
+//        $handlerStack = HandlerStack::create(new CurlHandler());
+//        $handlerStack->push(Middleware::retry(ImagexUtil::retryDecider(), ImagexUtil::retryDelay()));
+        $client = new Client([
+//            'handler' => $handlerStack,
+            'timeout' => 600.0,
+        ]);
+
+        if ($uploadAddr["UploadMode"] == "direct") {
+            $this->vpcPut($uploadAddr, $file, $client);
+        } elseif ($uploadAddr["UploadMode"] == "part"){
+            $this->vpcPartUpload($uploadAddr, $file,$isFile,$fileSize, $client);
+        } else{
+            throw new Exception(sprintf("unexpected mode %s", $uploadAddr["UploadMode"]));
+        }
+    }
+
+    /**
+     * @throws Exception
+     * @throws GuzzleException
+     */
+    private function vpcPartUpload(array $uploadAddr, $file, bool $isFile, int $fileSize, Client $client) {
+        if (!isset($uploadAddr["PartUploadInfo"]) || !is_array($uploadAddr["PartUploadInfo"])) {
+            throw new Exception("miss part upload info");
+        }
+        $partUploadInfo = $uploadAddr["PartUploadInfo"];
+        $chunkSize = $partUploadInfo["PartSize"];
+        $totalNum = floor($fileSize / $chunkSize);
+        $lastPartSize = $fileSize % $chunkSize;
+        if ($lastPartSize == 0) {
+            $totalNum--;
+        }
+        if (sizeof($partUploadInfo["PartPutURLs"]) != $totalNum +1) {
+            throw new Exception("miss match part upload info");
+        }
+
+        $offset = 0;
+        $completeBody = ['Parts' => []];
+        for ($i = 0; $i < sizeof($partUploadInfo["PartPutURLs"]); $i++) {
+            $partNumber = $i + 1;
+            $uploadPartSize = $chunkSize;
+
+            if ($i + 1 == sizeof($partUploadInfo["PartPutURLs"]) && $lastPartSize != 0){
+                $uploadPartSize = $lastPartSize;
+            }
+            $purUrl = $partUploadInfo["PartPutURLs"][$i];
+            $etag = $this->vpcPartPut($purUrl, $file,$isFile, $offset, $uploadPartSize, $client);
+
+            $completeBody['Parts'][] = ['PartNumber'=>$partNumber, 'ETag'=>$etag];
+            $offset += $uploadPartSize;
+        }
+
+        $postBody = json_encode($completeBody);
+        $this->vpcPost($partUploadInfo, $postBody, $client);
+    }
+
+    /**
+     * @throws GuzzleException
+     * @throws Exception
+     */
+    private function vpcPost(array $partUploadInfo, string $body, Client $client){
+        $url = $partUploadInfo["CompletePartURL"];
+        $headers = array();
+        if (isset($partUploadInfo["CompletePartURLHeaders"])){
+            foreach ($partUploadInfo["CompletePartURLHeaders"] as $header){
+                $headers[$header["Key"]] = $header["Value"];
+            }
+        }
+
+        $response = $client->post($url, ["body" => $body, "headers" => $headers]);
+        if ($response == null || $response->getStatusCode() != 200) {
+            $reqId = $response->getHeaderLine("x-tos-request-id");
+            throw new Exception(sprintf("post error: code %s logId %s", $response->getStatusCode(), $reqId));
+        }
+    }
+
+    /**
+     * @throws GuzzleException
+     * @throws Exception
+     */
+    private function vpcPartPut(string $url, $dataRaw, bool $isFile,  $offset, $partSize, Client $client): string
+    {
+        if ($isFile){
+            $file = fopen($dataRaw, 'r');
+            $body = new LimitStream(new Stream($file), $partSize, $offset);
+        } else {
+            $body = substr($dataRaw, $offset, $partSize);
+        }
+
+        $response = $client->put($url, ["body" => $body]);
+        if ($response == null || $response->getStatusCode() != 200) {
+            $reqId = $response->getHeaderLine("x-tos-request-id");
+            throw new Exception(sprintf("put error: code %s logId %s", $response->getStatusCode(), $reqId));
+        }
+
+        return $response->getHeaderLine("ETag");
+    }
+
+    /**
+     * @throws GuzzleException
+     * @throws Exception
+     */
+    private function vpcPut(array $uploadAddr, $file, Client $client) {
+        $putUrl = $uploadAddr["PutURL"];
+        $headers = array();
+        if (isset($uploadAddr["PutURLHeaders"])){
+            foreach ($uploadAddr["PutURLHeaders"] as $header){
+                $headers[$header["Key"]] = $header["Value"];
+            }
+        }
+
+//        $body = new NoSeekStream(new Stream($file));
+        $response = $client->put($putUrl, ["body" => $file, "headers" => $headers]);
+        if ($response->getStatusCode() != 200) {
+            $reqId = $response->getHeaderLine("x-tos-request-id");
+            throw new Exception(sprintf("put error: code %s logId %s", $response->getStatusCode(), $reqId));
+        }
+    }
+
 
     public function getUploadAuthToken($query)
     {

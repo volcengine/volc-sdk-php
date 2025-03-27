@@ -568,6 +568,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DescribeImageXCubeUsage' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXCubeUsage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'DescribeImageXSourceRequestBandwidth' => [
                 'method' => 'get',
                 'url' => '/',
@@ -610,6 +622,18 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeImageXBucketRetrievalUsage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'DescribeImageXAIRequestCntUsage' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXAIRequestCntUsage',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -1684,6 +1708,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'ApplyVpcUploadInfo' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ApplyVpcUploadInfo',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'ApplyImageUpload' => [
                 'method' => 'get',
                 'url' => '/',
@@ -2176,18 +2212,6 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
-            'GetAiGenerateImage' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'GetAiGenerateImage',
-                        'Version' => '2023-05-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => true,
-            ],
             'CreateCVImageGenerateTask' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2434,6 +2458,18 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'UpdateStorageRules',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateStorageRulesV2' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateStorageRulesV2',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -2763,30 +2799,6 @@ class ImagexConfig
                 ],
                 'has_query' => true,
                 'has_json' => false,
-            ],
-            'DelCert' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'DelCert',
-                        'Version' => '2023-05-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => true,
-            ],
-            'AddCert' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'AddCert',
-                        'Version' => '2023-05-01',
-                    ]
-                ],
-                'has_query' => true,
-                'has_json' => true,
             ],
             'GetImageAllDomainCert' => [
                 'method' => 'get',
