@@ -31,10 +31,11 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodObject::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodCallback::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodReporter::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¼À
-*volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto"ª
+’Â
+*volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto*volcengine/vod/business/vod_reporter.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
 Result (24.Volcengine.Vod.Models.Business.VodAllPlayInfoResult"£
@@ -427,7 +428,10 @@ $DescribeVodVidTrafficFileLogResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"µ
 VodGetCloudMigrateJobResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataK
-Result (2;.Volcengine.Vod.Models.Business.VodGetCloudMigrateJobResultBÌ
+Result (2;.Volcengine.Vod.Models.Business.VodGetCloudMigrateJobResult"§
+VodReportEventResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
+Result (24.Volcengine.Vod.Models.Business.VodReportEventResultBÌ
 )com.volcengine.service.vod.model.responseBVodResponsePZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/response ØÊ Volc\\Service\\Vod\\Models\\Responseâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 

@@ -22,7 +22,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ñž
+‡Ÿ
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -950,7 +950,11 @@ RegionList (	"{
 	SpaceName (	
 Vids (	"
 VodListProjectsRequest"!
-VodGetTradeConfigurationRequest"®
+VodGetTradeConfigurationRequest"4
+VodReportEventRequest
+
+Id (	
+Reports ("®
 VodSetCloudMigrateJobRequest
 JobId (S
 JobSourceInfo (2<.Volcengine.Vod.Models.Business.VodCloudMigrateJobSourceInfo

@@ -380,6 +380,17 @@ class Vms extends V4Curl
             ]
         ],
 
+        'RouteAAuth' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'RouteAAuth',
+                    'Version' => DefaultVersion,
+                ],
+            ]
+        ],
+
         'CreateTask' => [
             'url' => '/',
             'method' => 'post',
@@ -829,6 +840,14 @@ class Vms extends V4Curl
             $data = new ArrayObject();
         }
         return $this->requestWithRetry("UnbindAXYB", ['form_params' => $data]);
+    }
+
+    public function RouteAAuth(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("RouteAAuth", ['form_params' => $data]);
     }
 
     public function CreateTask(array $data = []): string
