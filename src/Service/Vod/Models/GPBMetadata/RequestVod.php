@@ -20,10 +20,11 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMedia::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‡Ÿ
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto"„
+ó£
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	
@@ -532,7 +533,28 @@ OrderByKey (	
 !VodUpdateSpaceUploadConfigRequest
 	SpaceName (	
 	ConfigKey (	
-ConfigValue (	"•
+ConfigValue (	"8
+#VodDescribeUploadSpaceConfigRequest
+	SpaceName (	"†
+!VodUpdateUploadSpaceConfigRequest
+	SpaceName (	
+
+AutoPoster (	N
+CustomPosterConfig (22.Volcengine.Vod.Models.Business.CustomPosterConfig
+GetPosterMode (	
+AutoPosterCandidate (	
+AutoTranscode (	H
+TranscodeConfig (2/.Volcengine.Vod.Models.Business.TranscodeConfig
+AutoSetVideoStatus (	
+UploadOverwrite	 (	
+CallbackReturnPlayUrl
+ (	
+CallbackReturnRunId (	
+GetMetaMode (	
+AutoGetArchiveVideoMeta (	
+AutoGetIAVideoMeta (	
+
+MetaGetMd5 (	"•
 %VodDescribeVodSpaceStorageDataRequest
 	SpaceList (	
 	StartTime (	

@@ -155,6 +155,10 @@ use Volc\Service\Vod\Models\Request\VodUpdateSpaceRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateSpaceUploadConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateSpaceUploadConfigResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeUploadSpaceConfigRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeUploadSpaceConfigResponse;
+use Volc\Service\Vod\Models\Request\VodUpdateUploadSpaceConfigRequest;
+use Volc\Service\Vod\Models\Response\VodUpdateUploadSpaceConfigResponse;
 use Volc\Service\Vod\Models\Request\VodAddDomainToSchedulerRequest;
 use Volc\Service\Vod\Models\Response\VodAddDomainToSchedulerResponse;
 use Volc\Service\Vod\Models\Request\VodRemoveDomainFromSchedulerRequest;
@@ -2861,6 +2865,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodUpdateSpaceUploadConfigResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DescribeUploadSpaceConfig.
+     *
+     * @param $req VodDescribeUploadSpaceConfigRequest
+     * @return VodDescribeUploadSpaceConfigResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeUploadSpaceConfig (VodDescribeUploadSpaceConfigRequest $req): VodDescribeUploadSpaceConfigResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeUploadSpaceConfig', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeUploadSpaceConfigResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * UpdateUploadSpaceConfig.
+     *
+     * @param $req VodUpdateUploadSpaceConfigRequest
+     * @return VodUpdateUploadSpaceConfigResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function updateUploadSpaceConfig (VodUpdateUploadSpaceConfigRequest $req): VodUpdateUploadSpaceConfigResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParamV2($req);
+			$response = $this->request('UpdateUploadSpaceConfig', ['json' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodUpdateUploadSpaceConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

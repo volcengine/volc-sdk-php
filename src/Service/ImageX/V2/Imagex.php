@@ -96,7 +96,7 @@ class Imagex extends V4Curl
     }
 
 
-    public function upload(string $uploadHost, $storeInfo, string $file)
+    public function upload(string $uploadHost, $storeInfo, string $file, array $params = [])
     {
         /** @noinspection PhpUnusedLocalVariableInspection */
         $fileResource = null;
@@ -126,26 +126,26 @@ class Imagex extends V4Curl
         if ($fileSize <= static::MinChunkSize) {
             $content = stream_get_contents($fileResource);
             if (strlen($content) == $fileSize) {
-                return $this->directUpload($uploadHost, $storeInfo, $content);
+                return $this->directUpload($uploadHost, $storeInfo, $content, $params);
             } else {
                 return -1;
             }
         }
-        $isLargeFile = $fileSize > static::LargeFileSize;
-        $handlerStack = HandlerStack::create(new CurlHandler());
-        $handlerStack->push(Middleware::retry(ImagexUtil::retryDecider(), ImagexUtil::retryDelay()));
+        $isLargeFile = $fileSize > static::LargeFileSize || isset($params["UploadHost"]);
+//        $handlerStack = HandlerStack::create(new CurlHandler());
+//        $handlerStack->push(Middleware::retry(ImagexUtil::retryDecider(), ImagexUtil::retryDelay()));
         $client = new Client([
             'base_uri' => "https://" . $uploadHost,
             'timeout' => $isLargeFile ? 600.0 : 30.0,
-            'handler' => $handlerStack,
+//            'handler' => $handlerStack,
         ]);
-        return $this->chunkUpload($storeInfo, $fileResource, $fileSize, $client);
+        return $this->chunkUpload($storeInfo, $fileResource, $fileSize, $client, $params);
     }
 
-    private function chunkUpload(array $storeInfo, $fileResource, int $fileSize, Client $httpClient)
+    private function chunkUpload(array $storeInfo, $fileResource, int $fileSize, Client $httpClient, array $params = [])
     {
-        $isLargeFile = $fileSize > static::LargeFileSize;
-        $uploadID = $this->initUploadPart($storeInfo, $isLargeFile, $httpClient);
+        $isLargeFile = $fileSize > static::LargeFileSize || isset($params["UploadHost"]);
+        $uploadID = $this->initUploadPart($storeInfo, $isLargeFile, $httpClient, $params);
         if ($uploadID == "") {
             return -1;
         }
@@ -175,15 +175,22 @@ class Imagex extends V4Curl
             return -1;
         }
         $checkSum[] = $crc32;
-        return $this->uploadMergePart($storeInfo, $uploadID, $checkSum, $isLargeFile, $httpClient);
+        return $this->uploadMergePart($storeInfo, $uploadID, $checkSum, $isLargeFile, $httpClient, $params);
     }
 
-    private function initUploadPart(array $storeInfo, bool $isLargeFile, Client $httpClient)
+    private function initUploadPart(array $storeInfo, bool $isLargeFile, Client $httpClient, array $params = [])
     {
         $headers = ['Authorization' => $storeInfo["Auth"]];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = 'gateway';
         }
+        if (isset($params["ContentType"]) && is_string($params["ContentType"])) {
+            $headers['Specified-Content-Type'] = $params["ContentType"];
+        }
+        if (isset($params["StorageClass"]) && is_string($params["StorageClass"])) {
+            $headers['X-VeImageX-Storage-Class'] = $params["StorageClass"];
+        }
+        print_r($headers);
         $response = $httpClient->put(ImageXUtil::escapePath($storeInfo["StoreUri"]) . '?uploads', ['headers' => $headers]);
         $initUploadResponse = json_decode((string) $response->getBody(), true);
         if (!isset ($initUploadResponse["success"]) || $initUploadResponse["success"] != 0) {
@@ -196,9 +203,9 @@ class Imagex extends V4Curl
     {
         $uri = sprintf("%s?partNumber=%d&uploadID=%s", ImageXUtil::escapePath($storeInfo["StoreUri"]), $partNumber, $uploadID);
         $crc32 = sprintf("%08x", crc32($data));
-        $headers = ['Authorization' => ['Authorization' => $storeInfo["Auth"]], 'Content-CRC32' => $crc32];
+        $headers = ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = 'gateway';
         }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $data]);
         $uploadPartResponse = json_decode((string) $response->getBody(), true);
@@ -208,7 +215,7 @@ class Imagex extends V4Curl
         return $crc32;
     }
 
-    private function uploadMergePart(array $storeInfo, string $uploadID, array $checkSum, bool $isLargeFile, Client $client): int
+    private function uploadMergePart(array $storeInfo, string $uploadID, array $checkSum, bool $isLargeFile, Client $client, array $params = []): int
     {
         $uri = sprintf("%s?uploadID=%s", ImageXUtil::escapePath($storeInfo["StoreUri"]), $uploadID);
         $m = [];
@@ -222,7 +229,13 @@ class Imagex extends V4Curl
         $body = implode(",", $m);
         $headers = ['Authorization' => $storeInfo["Auth"]];
         if ($isLargeFile) {
-            $headers[] = ['X-Storage-Mode' => 'gateway'];
+            $headers['X-Storage-Mode'] = 'gateway';
+        }
+        if (isset($params["ContentType"]) && is_string($params["ContentType"])) {
+            $headers['Specified-Content-Type'] = $params["ContentType"];
+        }
+        if (isset($params["StorageClass"]) && is_string($params["StorageClass"])) {
+            $headers['X-VeImageX-Storage-Class'] = $params["StorageClass"];
         }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);
         $uploadPartResponse = json_decode((string) $response->getBody(), true);
@@ -232,14 +245,21 @@ class Imagex extends V4Curl
         return 0;
     }
 
-    private function directUpload(string $uploadHost, array $storeInfo, $content)
+    private function directUpload(string $uploadHost, array $storeInfo, $content, array $params = [])
     {
         $crc32 = sprintf("%08x", crc32($content));
         $tosClient = new Client([
             'base_uri' => "https://" . $uploadHost,
             'timeout' => 30.0,
         ]);
-        $response = $tosClient->request('PUT', ImageXUtil::escapePath($storeInfo["StoreUri"]), ["body" => $content, "headers" => ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32]]);
+        $headers = ['Authorization' => $storeInfo["Auth"], 'Content-CRC32' => $crc32];
+        if (isset($params["ContentType"]) && is_string($params["ContentType"])) {
+            $headers['Specified-Content-Type'] = $params["ContentType"];
+        }
+        if (isset($params["StorageClass"]) && is_string($params["StorageClass"])) {
+            $headers['X-VeImageX-Storage-Class'] = $params["StorageClass"];
+        }
+        $response = $tosClient->request('PUT', ImageXUtil::escapePath($storeInfo["StoreUri"]), ["body" => $content, "headers" => $headers]);
         $uploadResponse = json_decode((string) $response->getBody(), true);
         if (!isset ($uploadResponse["success"]) || $uploadResponse["success"] != 0) {
             return -2;
@@ -262,6 +282,9 @@ class Imagex extends V4Curl
         $applyParams["UploadNum"] = $params["UploadNum"];
         if (isset ($params["StoreKeys"]) && count($params["StoreKeys"]) != $params["UploadNum"]) {
             return "uploadImages: no StoreKeys found or StoreKeys size is unmatch";
+        }
+        if (isset($params["Overwrite"])) {
+            $applyParams["Overwrite"] = $params["Overwrite"];
         }
         $applyParams["StoreKeys"] = array();
         $queryStr = http_build_query($applyParams);
@@ -290,10 +313,30 @@ class Imagex extends V4Curl
         $st2 = microtime(true);
         $successOids = [];
         $skippedCommitResult = [];
+
+        $contentTypes = [];
+        $storageClasses = [];
+        if (isset ($params["ContentTypes"]) && is_array($params["ContentTypes"])) {
+            $contentTypes = $params["ContentTypes"];
+        }
+        if (isset ($params["StorageClasses"]) && is_array($params["StorageClasses"])) {
+            $storageClasses = $params["StorageClasses"];
+        }
         for ($i = 0; $i < count($fileOrPaths); ++$i) {
             $storeInfo = $uploadAddr['StoreInfos'][$i];
+            $uploadParams = [];
+            if (sizeof($contentTypes) > $i) {
+                $uploadParams["ContentType"] = $contentTypes[$i];
+            }
+            if (sizeof($storageClasses) > $i) {
+                $uploadParams["StorageClass"] = $storageClasses[$i];
+            }
+            if (isset($params["UploadHost"]) && is_string($params["UploadHost"])) {
+                $uploadParams["UploadHost"] = $params["UploadHost"];
+                $uploadHost = $params["UploadHost"];
+            }
             try {
-                $respCode = $this->upload($uploadHost, $storeInfo, $fileOrPaths[$i]);
+                $respCode = $this->upload($uploadHost, $storeInfo, $fileOrPaths[$i], $uploadParams);
                 if ($respCode == 0) {
                     // succeed
                     $successOids[] = $storeInfo['StoreUri'];

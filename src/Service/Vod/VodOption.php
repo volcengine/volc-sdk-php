@@ -769,6 +769,26 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeUploadSpaceConfig' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeUploadSpaceConfig',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'UpdateUploadSpaceConfig' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'UpdateUploadSpaceConfig',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 分发加速管理
         // **********************************************************************
