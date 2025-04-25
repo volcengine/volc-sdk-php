@@ -362,18 +362,6 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'UpdateSnapshotPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'UpdateSnapshotPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'DescribeCDNSnapshotHistory' => [
                 'method' => 'post',
                 'url' => '/',
@@ -398,36 +386,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'ListVhostSnapshotPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'ListVhostSnapshotPreset',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
             'CreateSnapshotPresetV2' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'CreateSnapshotPresetV2',
-                        'Version' => '2023-01-01',
-                    ]
-                ],
-                'has_query' => false,
-                'has_json' => true,
-            ],
-            'CreateSnapshotPreset' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'CreateSnapshotPreset',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1394,6 +1358,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeLiveEdgeStatData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveEdgeStatData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeLiveISPData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1904,6 +1880,162 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'CreateSubtitleTranscodePreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateLivePadPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateLivePadPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteLivePadPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteLivePadPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'StopLivePadStream' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'StopLivePadStream',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateLivePadPreset' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateLivePadPreset',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLivePadStreamList' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLivePadStreamList',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLivePadPresetDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLivePadPresetDetail',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateCarouselTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateCarouselTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteCarouselTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteCarouselTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'UpdateCarouselTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateCarouselTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'GetCarouselDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetCarouselDetail',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListCarouselTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListCarouselTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'CreateHighLightTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateHighLightTask',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DeleteTaskByAccountID' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteTaskByAccountID',
                         'Version' => '2023-01-01',
                     ]
                 ],

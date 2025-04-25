@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->listVhostSnapshotPreset($body);
+$response = $client->deleteCarouselTask($body);
 print_r($response);

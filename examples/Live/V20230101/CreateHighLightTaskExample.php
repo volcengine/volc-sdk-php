@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->createSnapshotPreset($body);
+$response = $client->createHighLightTask($body);
 print_r($response);
