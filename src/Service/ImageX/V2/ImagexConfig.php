@@ -616,6 +616,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DescribeImageXStorageUsage' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXStorageUsage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'DescribeImageXBucketRetrievalUsage' => [
                 'method' => 'get',
                 'url' => '/',
@@ -1828,6 +1840,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'GetImageEraseResult' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageEraseResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'GetImageService' => [
                 'method' => 'get',
                 'url' => '/',
@@ -2102,18 +2126,6 @@ class ImagexConfig
                     ]
                 ],
                 'has_query' => true,
-                'has_json' => true,
-            ],
-            'GetImageEraseResult' => [
-                'method' => 'post',
-                'url' => '/',
-                'config' => [
-                    'query' => [
-                        'Action' => 'GetImageEraseResult',
-                        'Version' => '2023-05-01',
-                    ]
-                ],
-                'has_query' => false,
                 'has_json' => true,
             ],
             'GetImageSuperResolutionResult' => [
