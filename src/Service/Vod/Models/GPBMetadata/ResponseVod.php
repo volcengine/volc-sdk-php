@@ -34,7 +34,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodReporter::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¹Ä
+ùÅ
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto*volcengine/vod/business/vod_reporter.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -50,7 +50,10 @@ class ResponseVod
 Result (2>.Volcengine.Vod.Models.Business.VodGetPrivateDrmPlayAuthResult"·
 VodGetHlsDecryptionKeyResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataL
-Result (2<.Volcengine.Vod.Models.Business.VodGetHlsDecryptionKeyResult"Ó
+Result (2<.Volcengine.Vod.Models.Business.VodGetHlsDecryptionKeyResult"½
+!VodCreateHlsDecryptionKeyResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataO
+Result (2?.Volcengine.Vod.Models.Business.VodCreateHlsDecryptionKeyResult"Ó
 ,VodGetPlayInfoWithLiveTimeShiftSceneResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataZ
 Result (2J.Volcengine.Vod.Models.Business.VodGetPlayInfoWithLiveTimeShiftSceneResult"µ

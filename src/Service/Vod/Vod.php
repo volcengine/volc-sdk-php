@@ -27,6 +27,8 @@ use Volc\Service\Vod\Models\Request\VodGetPrivateDrmPlayAuthRequest;
 use Volc\Service\Vod\Models\Response\VodGetPrivateDrmPlayAuthResponse;
 use Volc\Service\Vod\Models\Request\VodGetHlsDecryptionKeyRequest;
 use Volc\Service\Vod\Models\Response\VodGetHlsDecryptionKeyResponse;
+use Volc\Service\Vod\Models\Request\VodCreateHlsDecryptionKeyRequest;
+use Volc\Service\Vod\Models\Response\VodCreateHlsDecryptionKeyResponse;
 use Volc\Service\Vod\Models\Request\VodGetPlayInfoWithLiveTimeShiftSceneRequest;
 use Volc\Service\Vod\Models\Response\VodGetPlayInfoWithLiveTimeShiftSceneResponse;
 use Volc\Service\Vod\Models\Request\VodSubmitMoveObjectTaskRequest;
@@ -720,6 +722,39 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodGetHlsDecryptionKeyResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * CreateHlsDecryptionKey.
+     *
+     * @param $req VodCreateHlsDecryptionKeyRequest
+     * @return VodCreateHlsDecryptionKeyResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function createHlsDecryptionKey (VodCreateHlsDecryptionKeyRequest $req): VodCreateHlsDecryptionKeyResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('CreateHlsDecryptionKey', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodCreateHlsDecryptionKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

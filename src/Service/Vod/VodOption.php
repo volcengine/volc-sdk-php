@@ -48,6 +48,16 @@ class VodOption
                 ],
             ]
         ],
+        'CreateHlsDecryptionKey' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CreateHlsDecryptionKey',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetHlsDecryptionKey' => [
             'url' => '/',
             'method' => 'get',

@@ -94,7 +94,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      */
     protected $HDRDefinition = '';
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
+     *播放场景，指定获取对应场景的音视频流。 当前支持：
+     *1. preview-试看下发场景
+     *2. 按硬压字幕语言下发场景
      *
      * Generated from protobuf field <code>string PlayScene = 14;</code>
      */
@@ -149,6 +151,18 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string UserToken = 22;</code>
      */
     protected $UserToken = '';
+    /**
+     *客户端生成 私有Drm加密 用于加密密钥明文,unionInfo,DrmExpireTImestamp
+     *
+     * Generated from protobuf field <code>string DrmKEK = 23;</code>
+     */
+    protected $DrmKEK = '';
+    /**
+     *用于标识请求来自于web播放器 "1"表示web播放器
+     *
+     * Generated from protobuf field <code>string JSPlayer = 24;</code>
+     */
+    protected $JSPlayer = '';
 
     /**
      * Constructor.
@@ -185,7 +199,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *           HDR清晰度，默认不查询，支持：all, 240p, 360p, 420p, 480p, 540p, 720p,
      *           1080p, 2k, 4k 
      *     @type string $PlayScene
-     *           播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
+     *          播放场景，指定获取对应场景的音视频流。 当前支持：
+     *          1. preview-试看下发场景
+     *          2. 按硬压字幕语言下发场景
      *     @type string $DrmExpireTimestamp
      *           DRM过期时间戳, 若需使用请联系技术支持 
      *     @type string $Quality
@@ -204,6 +220,10 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
      *          ABTraceStream：AB流溯源水印。"
      *     @type string $UserToken
      *          下发AB流时设置的uid，当DigitalWatermarkType=ABTraceStream时需要传入这个参数，在下发的播放地址中会加入点播实时处理的query，并改写TypeA签算的uid。
+     *     @type string $DrmKEK
+     *          客户端生成 私有Drm加密 用于加密密钥明文,unionInfo,DrmExpireTImestamp
+     *     @type string $JSPlayer
+     *          用于标识请求来自于web播放器 "1"表示web播放器
      * }
      */
     public function __construct($data = NULL) {
@@ -554,7 +574,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
+     *播放场景，指定获取对应场景的音视频流。 当前支持：
+     *1. preview-试看下发场景
+     *2. 按硬压字幕语言下发场景
      *
      * Generated from protobuf field <code>string PlayScene = 14;</code>
      * @return string
@@ -565,7 +587,9 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 播放场景，指定获取对应场景的音视频流。当前支持：preview-试看 
+     *播放场景，指定获取对应场景的音视频流。 当前支持：
+     *1. preview-试看下发场景
+     *2. 按硬压字幕语言下发场景
      *
      * Generated from protobuf field <code>string PlayScene = 14;</code>
      * @param string $var
@@ -787,6 +811,58 @@ class VodGetPlayInfoRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->UserToken = $var;
+
+        return $this;
+    }
+
+    /**
+     *客户端生成 私有Drm加密 用于加密密钥明文,unionInfo,DrmExpireTImestamp
+     *
+     * Generated from protobuf field <code>string DrmKEK = 23;</code>
+     * @return string
+     */
+    public function getDrmKEK()
+    {
+        return $this->DrmKEK;
+    }
+
+    /**
+     *客户端生成 私有Drm加密 用于加密密钥明文,unionInfo,DrmExpireTImestamp
+     *
+     * Generated from protobuf field <code>string DrmKEK = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDrmKEK($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->DrmKEK = $var;
+
+        return $this;
+    }
+
+    /**
+     *用于标识请求来自于web播放器 "1"表示web播放器
+     *
+     * Generated from protobuf field <code>string JSPlayer = 24;</code>
+     * @return string
+     */
+    public function getJSPlayer()
+    {
+        return $this->JSPlayer;
+    }
+
+    /**
+     *用于标识请求来自于web播放器 "1"表示web播放器
+     *
+     * Generated from protobuf field <code>string JSPlayer = 24;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJSPlayer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->JSPlayer = $var;
 
         return $this;
     }

@@ -23,7 +23,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ó£
+Ì¤
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -46,7 +46,7 @@ NeedThumbs	 (	
 KeyFrameAlignmentVersion (	
 
 UserAction (	
-Quality (	"À
+Quality (	"â
 VodGetPlayInfoRequest
 Vid (	
 Format (	
@@ -73,7 +73,9 @@ PlayConfig (	
 ForceExpire (	
 GetAll (
 DigitalWatermarkType (	
-	UserToken (	"g
+	UserToken (	
+DrmKEK (	
+JSPlayer (	"g
 VodGetPrivateDrmPlayAuthRequest
 DrmType (	
 Vid (	
@@ -83,7 +85,9 @@ PlayConfig (	
 DrmAuthToken (	
 
 Ak (	
-Source (	"˜
+Source (	"5
+ VodCreateHlsDecryptionKeyRequest
+	SpaceName (	"˜
 +VodGetPlayInfoWithLiveTimeShiftSceneRequest
 	StoreUris (	
 	SpaceName (	
