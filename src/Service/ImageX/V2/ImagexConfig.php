@@ -256,6 +256,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'VerifyDomainOwner' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'VerifyDomainOwner',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'GetResponseHeaderValidateKeys' => [
                 'method' => 'get',
                 'url' => '/',
@@ -275,6 +287,18 @@ class ImagexConfig
                     'query' => [
                         'Action' => 'GetDomainConfig',
                         'Version' => '2018-08-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetDomainOwnerVerifyContent' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetDomainOwnerVerifyContent',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
@@ -2296,6 +2320,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => true,
             ],
+            'CreateHmExtractTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateHmExtractTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'UpdateImageExifData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -2451,6 +2487,18 @@ class ImagexConfig
                 ],
                 'has_query' => true,
                 'has_json' => false,
+            ],
+            'GetImageHmExtractTaskInfo' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageHmExtractTaskInfo',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
             ],
             'CreateImageService' => [
                 'method' => 'post',
