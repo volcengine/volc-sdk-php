@@ -23,7 +23,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ã§
+Í•
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto"Ñ
 VodGetAllPlayInfoRequest
 Vids (	
@@ -678,7 +678,7 @@ NeedDetail (
 
 NeedDetail ("\'
 VodDescribeIPInfoRequest
-Ips (	"ê
+Ips (	"¢
 VodListCdnPvDataRequest
 Domains (	
 Interval (	
@@ -686,7 +686,8 @@ NeedDetail ("\'
 EndTimestamp (
 DataType (	
 
-NeedDetail ("ì
+NeedDetail (
+Protocol (	"ì
 VodListCdnHitrateDataRequest
 Domains (	
 Interval (	
@@ -719,7 +720,7 @@ RegionList (	"T
 	StartTime (
 EndTime (
 PageNum (
-PageSize	 ("¡
+PageSize	 ("Õ
 VodCreateDomainV2Request
 	SpaceName (	
 
@@ -730,7 +731,12 @@ DomainType (	
 Origins (	
 Area (	
 
-BucketName	 (	"Å
+BucketName	 (	
+Host
+ (	
+PrivateBucketAccess (O
+PrivateBucketAuth (24.Volcengine.Vod.Models.Business.VodPrivateBucketAuth
+Region (	"Å
 VodCreateDomainV3Request
 	SpaceName (	
 

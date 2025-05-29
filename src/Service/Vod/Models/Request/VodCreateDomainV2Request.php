@@ -55,6 +55,30 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string BucketName = 9;</code>
      */
     protected $BucketName = '';
+    /**
+     * 回源Host
+     *
+     * Generated from protobuf field <code>string Host = 10;</code>
+     */
+    protected $Host = '';
+    /**
+     * 是否开启私有桶访问
+     *
+     * Generated from protobuf field <code>bool PrivateBucketAccess = 11;</code>
+     */
+    protected $PrivateBucketAccess = false;
+    /**
+     * 私有桶访问授权信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPrivateBucketAuth PrivateBucketAuth = 12;</code>
+     */
+    protected $PrivateBucketAuth = null;
+    /**
+     * 回源桶地址
+     *
+     * Generated from protobuf field <code>string Region = 13;</code>
+     */
+    protected $Region = '';
 
     /**
      * Constructor.
@@ -75,6 +99,14 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      *          地区
      *     @type string $BucketName
      *          挂载tos 桶名称
+     *     @type string $Host
+     *           回源Host
+     *     @type bool $PrivateBucketAccess
+     *           是否开启私有桶访问
+     *     @type \Volc\Service\Vod\Models\Business\VodPrivateBucketAuth $PrivateBucketAuth
+     *           私有桶访问授权信息
+     *     @type string $Region
+     *           回源桶地址
      * }
      */
     public function __construct($data = NULL) {
@@ -274,6 +306,120 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->BucketName = $var;
+
+        return $this;
+    }
+
+    /**
+     * 回源Host
+     *
+     * Generated from protobuf field <code>string Host = 10;</code>
+     * @return string
+     */
+    public function getHost()
+    {
+        return $this->Host;
+    }
+
+    /**
+     * 回源Host
+     *
+     * Generated from protobuf field <code>string Host = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHost($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Host = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否开启私有桶访问
+     *
+     * Generated from protobuf field <code>bool PrivateBucketAccess = 11;</code>
+     * @return bool
+     */
+    public function getPrivateBucketAccess()
+    {
+        return $this->PrivateBucketAccess;
+    }
+
+    /**
+     * 是否开启私有桶访问
+     *
+     * Generated from protobuf field <code>bool PrivateBucketAccess = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPrivateBucketAccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->PrivateBucketAccess = $var;
+
+        return $this;
+    }
+
+    /**
+     * 私有桶访问授权信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPrivateBucketAuth PrivateBucketAuth = 12;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodPrivateBucketAuth|null
+     */
+    public function getPrivateBucketAuth()
+    {
+        return $this->PrivateBucketAuth;
+    }
+
+    public function hasPrivateBucketAuth()
+    {
+        return isset($this->PrivateBucketAuth);
+    }
+
+    public function clearPrivateBucketAuth()
+    {
+        unset($this->PrivateBucketAuth);
+    }
+
+    /**
+     * 私有桶访问授权信息
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodPrivateBucketAuth PrivateBucketAuth = 12;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodPrivateBucketAuth $var
+     * @return $this
+     */
+    public function setPrivateBucketAuth($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodPrivateBucketAuth::class);
+        $this->PrivateBucketAuth = $var;
+
+        return $this;
+    }
+
+    /**
+     * 回源桶地址
+     *
+     * Generated from protobuf field <code>string Region = 13;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->Region;
+    }
+
+    /**
+     * 回源桶地址
+     *
+     * Generated from protobuf field <code>string Region = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Region = $var;
 
         return $this;
     }

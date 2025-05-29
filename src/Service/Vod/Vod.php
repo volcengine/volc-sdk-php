@@ -3602,31 +3602,31 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
-	
-	/**
+
+    /**
      * CreateDomain.
      *
      * @param $req VodCreateDomainV2Request
      * @return VodCreateDomainV2Response
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function createDomain (VodCreateDomainV2Request $req): VodCreateDomainV2Response
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('CreateDomain', ['query' => $query]);
-		} catch (Exception $e) {
+    public function createDomain (VodCreateDomainV2Request $req): VodCreateDomainV2Response
+    {
+        try {
+            $query = VodUtils::formatRequestParamV2($req);
+            $response = $this->request('CreateDomain', ['json' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodCreateDomainV2Response();
-		try {
+        }
+        $respData = new VodCreateDomainV2Response();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -3634,7 +3634,7 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
+    }
 	
 	/**
      * UpdateDomainExpire.
@@ -3833,31 +3833,31 @@ class Vod extends V4Curl
         }
         return $respData;
 	}
-	
-	/**
+
+    /**
      * UpdateDomainConfig.
      *
      * @param $req VodUpdateDomainConfigRequest
      * @return VodUpdateDomainConfigResponse
      * @throws Exception the exception
-	 * @throws Throwable the exception
+     * @throws Throwable the exception
      */
-	public function updateDomainConfig (VodUpdateDomainConfigRequest $req): VodUpdateDomainConfigResponse
-	{
-		try {
-			$query = VodUtils::formatRequestParam($req);
-			$response = $this->request('UpdateDomainConfig', ['query' => $query]);
-		} catch (Exception $e) {
+    public function updateDomainConfig (VodUpdateDomainConfigRequest $req): VodUpdateDomainConfigResponse
+    {
+        try {
+            $query = VodUtils::formatRequestParamV2($req);
+            $response = $this->request('UpdateDomainConfig', ['json' => $query]);
+        } catch (Exception $e) {
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
+        }
+        if ($response->getStatusCode() != 200) {
+            echo $response->getStatusCode(), "\n";
             echo $response->getBody()->getContents(), "\n";
-		}
-		$respData = new VodUpdateDomainConfigResponse();
-		try {
+        }
+        $respData = new VodUpdateDomainConfigResponse();
+        try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
             throw $e;
@@ -3865,7 +3865,7 @@ class Vod extends V4Curl
             throw $t;
         }
         return $respData;
-	}
+    }
 	
 	/**
      * DescribeDomainConfig.

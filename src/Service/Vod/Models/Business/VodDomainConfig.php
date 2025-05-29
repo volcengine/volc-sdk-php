@@ -19,6 +19,12 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodResponseHeaderControl ResponseHeaderControl = 1;</code>
      */
     protected $ResponseHeaderControl = null;
+    /**
+     * 源站配置
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginalControl OriginalControl = 2;</code>
+     */
+    protected $OriginalControl = null;
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type \Volc\Service\Vod\Models\Business\VodResponseHeaderControl $ResponseHeaderControl
      *           HTTP响应头设置
+     *     @type \Volc\Service\Vod\Models\Business\VodOriginalControl $OriginalControl
+     *           源站配置
      * }
      */
     public function __construct($data = NULL) {
@@ -67,6 +75,42 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodResponseHeaderControl::class);
         $this->ResponseHeaderControl = $var;
+
+        return $this;
+    }
+
+    /**
+     * 源站配置
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginalControl OriginalControl = 2;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodOriginalControl|null
+     */
+    public function getOriginalControl()
+    {
+        return $this->OriginalControl;
+    }
+
+    public function hasOriginalControl()
+    {
+        return isset($this->OriginalControl);
+    }
+
+    public function clearOriginalControl()
+    {
+        unset($this->OriginalControl);
+    }
+
+    /**
+     * 源站配置
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginalControl OriginalControl = 2;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodOriginalControl $var
+     * @return $this
+     */
+    public function setOriginalControl($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodOriginalControl::class);
+        $this->OriginalControl = $var;
 
         return $this;
     }
