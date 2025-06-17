@@ -25,6 +25,12 @@ class VodOriginalControl extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Host = 2;</code>
      */
     protected $Host = '';
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 3;</code>
+     */
+    protected $OriginProtocol = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class VodOriginalControl extends \Google\Protobuf\Internal\Message
      *           源站配置
      *     @type string $Host
      *           回源Host
+     *     @type string $OriginProtocol
+     *           回源协议，支持http、https、followclient，http
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class VodOriginalControl extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Host = $var;
+
+        return $this;
+    }
+
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 3;</code>
+     * @return string
+     */
+    public function getOriginProtocol()
+    {
+        return $this->OriginProtocol;
+    }
+
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOriginProtocol($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->OriginProtocol = $var;
 
         return $this;
     }

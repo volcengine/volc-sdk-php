@@ -79,6 +79,24 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Region = 13;</code>
      */
     protected $Region = '';
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 14;</code>
+     */
+    protected $OriginProtocol = '';
+    /**
+     * Generated from protobuf field <code>string HttpPort = 15;</code>
+     */
+    protected $HttpPort = '';
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 16;</code>
+     */
+    protected $HttpsPort = '';
+    /**
+     * Generated from protobuf field <code>string Weight = 17;</code>
+     */
+    protected $Weight = '';
 
     /**
      * Constructor.
@@ -107,6 +125,11 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      *           私有桶访问授权信息
      *     @type string $Region
      *           回源桶地址
+     *     @type string $OriginProtocol
+     *           回源协议，支持http、https、followclient，http
+     *     @type string $HttpPort
+     *     @type string $HttpsPort
+     *     @type string $Weight
      * }
      */
     public function __construct($data = NULL) {
@@ -420,6 +443,98 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Region = $var;
+
+        return $this;
+    }
+
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 14;</code>
+     * @return string
+     */
+    public function getOriginProtocol()
+    {
+        return $this->OriginProtocol;
+    }
+
+    /**
+     * 回源协议，支持http、https、followclient，http
+     *
+     * Generated from protobuf field <code>string OriginProtocol = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOriginProtocol($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->OriginProtocol = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpPort = 15;</code>
+     * @return string
+     */
+    public function getHttpPort()
+    {
+        return $this->HttpPort;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpPort = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHttpPort($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HttpPort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 16;</code>
+     * @return string
+     */
+    public function getHttpsPort()
+    {
+        return $this->HttpsPort;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHttpsPort($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HttpsPort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Weight = 17;</code>
+     * @return string
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Weight = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Weight = $var;
 
         return $this;
     }

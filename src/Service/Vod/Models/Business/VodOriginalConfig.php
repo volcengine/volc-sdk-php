@@ -55,6 +55,18 @@ class VodOriginalConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Region = 7;</code>
      */
     protected $Region = '';
+    /**
+     * Generated from protobuf field <code>string HttpPort = 8;</code>
+     */
+    protected $HttpPort = '';
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 9;</code>
+     */
+    protected $HttpsPort = '';
+    /**
+     * Generated from protobuf field <code>string Weight = 10;</code>
+     */
+    protected $Weight = '';
 
     /**
      * Constructor.
@@ -76,6 +88,9 @@ class VodOriginalConfig extends \Google\Protobuf\Internal\Message
      *           私有存储桶鉴权
      *     @type string $Region
      *           回源桶地址
+     *     @type string $HttpPort
+     *     @type string $HttpsPort
+     *     @type string $Weight
      * }
      */
     public function __construct($data = NULL) {
@@ -271,6 +286,72 @@ class VodOriginalConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Region = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpPort = 8;</code>
+     * @return string
+     */
+    public function getHttpPort()
+    {
+        return $this->HttpPort;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpPort = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHttpPort($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HttpPort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 9;</code>
+     * @return string
+     */
+    public function getHttpsPort()
+    {
+        return $this->HttpsPort;
+    }
+
+    /**
+     * Generated from protobuf field <code>string HttpsPort = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHttpsPort($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->HttpsPort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Weight = 10;</code>
+     * @return string
+     */
+    public function getWeight()
+    {
+        return $this->Weight;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Weight = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Weight = $var;
 
         return $this;
     }
