@@ -758,12 +758,12 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
-            'RestartPullToPushTask' => [
+            'ContinuePullToPushTask' => [
                 'method' => 'post',
                 'url' => '/',
                 'config' => [
                     'query' => [
-                        'Action' => 'RestartPullToPushTask',
+                        'Action' => 'ContinuePullToPushTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -824,6 +824,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'ListPullToPushTaskV2',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'RelaunchPullToPushTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'RelaunchPullToPushTask',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -1166,6 +1178,18 @@ class LiveConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'DescribeLiveCallbackData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveCallbackData',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
             'DescribeLiveBatchStreamSessionData' => [
                 'method' => 'post',
                 'url' => '/',
@@ -1244,6 +1268,18 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DescribeLiveBatchPushStreamAvgMetrics',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeLiveBatchStreamTranscodeData' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeLiveBatchStreamTranscodeData',
                         'Version' => '2023-01-01',
                     ]
                 ],
@@ -2036,6 +2072,30 @@ class LiveConfig
                 'config' => [
                     'query' => [
                         'Action' => 'DeleteTaskByAccountID',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'DescribeHighLightTaskByAccountID' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeHighLightTaskByAccountID',
+                        'Version' => '2023-01-01',
+                    ]
+                ],
+                'has_query' => false,
+                'has_json' => true,
+            ],
+            'ListHighLightTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'ListHighLightTask',
                         'Version' => '2023-01-01',
                     ]
                 ],

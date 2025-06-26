@@ -11,5 +11,5 @@ $client->setSecretKey("sk");
 
 $body = [];
 
-$response = $client->restartPullToPushTask($body);
+$response = $client->continuePullToPushTask($body);
 print_r($response);
