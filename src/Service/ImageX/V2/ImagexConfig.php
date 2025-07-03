@@ -3070,7 +3070,7 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'GetSyncAuditResult',
-                        'Version' => '2018-08-01',
+                        'Version' => '2023-05-01',
                     ]
                 ],
                 'has_query' => true,
