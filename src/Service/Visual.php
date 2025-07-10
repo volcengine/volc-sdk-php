@@ -293,7 +293,7 @@ class Visual extends V4Curl
     }
     public function GoodsSegment(array $query = [])
     {
-        $response = $this->request('SkySegment', $query);
+        $response = $this->request('GoodsSegment', $query);
         return $response->getBody();
     }
     public function ImageCorrection(array $query = [])
