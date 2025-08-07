@@ -664,6 +664,18 @@ class ImagexConfig
                 'has_query' => true,
                 'has_json' => false,
             ],
+            'DescribeImageXAddOnQPSUsage' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DescribeImageXAddOnQPSUsage',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
             'DescribeImageXAIRequestCntUsage' => [
                 'method' => 'get',
                 'url' => '/',
@@ -1671,6 +1683,90 @@ class ImagexConfig
                 ],
                 'has_query' => true,
                 'has_json' => true,
+            ],
+            'CreateImageAIProcessQueue' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageAIProcessQueue',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageAIProcessQueue' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageAIProcessQueue',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'CreateImageAIProcessCallback' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateImageAIProcessCallback',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageAIProcessQueue' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageAIProcessQueue',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateImageAIProcessQueueStatus' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateImageAIProcessQueueStatus',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'DeleteImageAIProcessDetail' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'DeleteImageAIProcessDetail',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'GetImageAIProcessQueues' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAIProcessQueues',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
             ],
             'GetImageAITasks' => [
                 'method' => 'get',
