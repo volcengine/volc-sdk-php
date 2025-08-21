@@ -3148,6 +3148,30 @@ class ImagexConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'CreateVideoAuditTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateVideoAuditTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'CreateAudioAuditTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'CreateAudioAuditTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'DeleteImageAuditResult' => [
                 'method' => 'post',
                 'url' => '/',
@@ -3166,6 +3190,30 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'GetSyncAuditResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'SingleImageAudit' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'SingleImageAudit',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'BatchImageAudit' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'BatchImageAudit',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -3208,12 +3256,48 @@ class ImagexConfig
                 'has_query' => false,
                 'has_json' => true,
             ],
+            'UpdateVideoAuditTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateVideoAuditTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
+            'UpdateAudioAuditTask' => [
+                'method' => 'post',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'UpdateAudioAuditTask',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => true,
+            ],
             'GetImageAuditTasks' => [
                 'method' => 'get',
                 'url' => '/',
                 'config' => [
                     'query' => [
                         'Action' => 'GetImageAuditTasks',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetImageAuditTaskResult' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetImageAuditTaskResult',
                         'Version' => '2023-05-01',
                     ]
                 ],
@@ -3238,6 +3322,30 @@ class ImagexConfig
                 'config' => [
                     'query' => [
                         'Action' => 'GetAuditEntrysCount',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetVideoAuditResult' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetVideoAuditResult',
+                        'Version' => '2023-05-01',
+                    ]
+                ],
+                'has_query' => true,
+                'has_json' => false,
+            ],
+            'GetAudioAuditResult' => [
+                'method' => 'get',
+                'url' => '/',
+                'config' => [
+                    'query' => [
+                        'Action' => 'GetAudioAuditResult',
                         'Version' => '2023-05-01',
                     ]
                 ],
