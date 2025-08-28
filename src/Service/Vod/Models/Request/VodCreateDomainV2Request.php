@@ -97,6 +97,12 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Weight = 17;</code>
      */
     protected $Weight = '';
+    /**
+     * 源站列表。
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.CdnOriginRule Origin = 18;</code>
+     */
+    private $Origin;
 
     /**
      * Constructor.
@@ -130,6 +136,8 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      *     @type string $HttpPort
      *     @type string $HttpsPort
      *     @type string $Weight
+     *     @type \Volc\Service\Vod\Models\Business\CdnOriginRule[]|\Google\Protobuf\Internal\RepeatedField $Origin
+     *           源站列表。
      * }
      */
     public function __construct($data = NULL) {
@@ -535,6 +543,32 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Weight = $var;
+
+        return $this;
+    }
+
+    /**
+     * 源站列表。
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.CdnOriginRule Origin = 18;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrigin()
+    {
+        return $this->Origin;
+    }
+
+    /**
+     * 源站列表。
+     *
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.CdnOriginRule Origin = 18;</code>
+     * @param \Volc\Service\Vod\Models\Business\CdnOriginRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\CdnOriginRule::class);
+        $this->Origin = $arr;
 
         return $this;
     }
