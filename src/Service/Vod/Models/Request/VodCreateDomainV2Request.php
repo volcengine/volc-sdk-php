@@ -103,6 +103,12 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.CdnOriginRule Origin = 18;</code>
      */
     private $Origin;
+    /**
+     * 业务类型，vod、web、download、live_video，不填写默认 vod
+     *
+     * Generated from protobuf field <code>string BusinessType = 19;</code>
+     */
+    protected $BusinessType = '';
 
     /**
      * Constructor.
@@ -138,6 +144,8 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
      *     @type string $Weight
      *     @type \Volc\Service\Vod\Models\Business\CdnOriginRule[]|\Google\Protobuf\Internal\RepeatedField $Origin
      *           源站列表。
+     *     @type string $BusinessType
+     *           业务类型，vod、web、download、live_video，不填写默认 vod
      * }
      */
     public function __construct($data = NULL) {
@@ -569,6 +577,32 @@ class VodCreateDomainV2Request extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\CdnOriginRule::class);
         $this->Origin = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 业务类型，vod、web、download、live_video，不填写默认 vod
+     *
+     * Generated from protobuf field <code>string BusinessType = 19;</code>
+     * @return string
+     */
+    public function getBusinessType()
+    {
+        return $this->BusinessType;
+    }
+
+    /**
+     * 业务类型，vod、web、download、live_video，不填写默认 vod
+     *
+     * Generated from protobuf field <code>string BusinessType = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBusinessType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->BusinessType = $var;
 
         return $this;
     }
