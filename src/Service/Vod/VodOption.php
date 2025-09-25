@@ -1140,6 +1140,26 @@ class VodOption
                 ],
             ]
         ],
+        'DescribeCdnEdgeIp' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeCdnEdgeIp',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DescribeCdnRegionAndIsp' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DescribeCdnRegionAndIsp',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         // **********************************************************************
         // 回调管理
         // **********************************************************************

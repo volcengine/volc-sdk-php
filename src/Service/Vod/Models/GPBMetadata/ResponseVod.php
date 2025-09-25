@@ -34,7 +34,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodReporter::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ùÅ
+ñÈ
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto*volcengine/vod/business/vod_reporter.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -351,7 +351,13 @@ $VodRemoveDomainFromSchedulerResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"¹
 VodDescribeDomainConfigResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataM
-Result (2=.Volcengine.Vod.Models.Business.VodDescribeDomainConfigResult"k
+Result (2=.Volcengine.Vod.Models.Business.VodDescribeDomainConfigResult"³
+VodDescribeCdnEdgeIpResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataJ
+Result (2:.Volcengine.Vod.Models.Business.VodDescribeCdnEdgeIpResult"¿
+"VodDescribeCdnRegionAndIspResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataP
+Result (2@.Volcengine.Vod.Models.Business.VodDescribeCdnRegionAndIspResult"k
  AddOrUpdateCertificateV2ResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"c
 UpdateDomainAreaResponseG

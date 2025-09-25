@@ -23,7 +23,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Œ§
+¤©
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -776,7 +776,24 @@ DomainType (	
 Domain (	
 MainKey (	
 	BackupKey (	
-Status (	"A
+Status (	"Ô
+VodDescribeCdnEdgeIpRequest
+	SpaceName (	
+
+DomainType (	
+Domain (	
+	IpVersion (	H ˆ
+Isp (	Hˆ
+Region (	Hˆ
+Status (	HˆB
+
+_IpVersionB
+_IspB	
+_RegionB	
+_Status"?
+!VodDescribeCdnRegionAndIspRequest
+Area (	H ˆB
+_Area"A
 VodVerifyDomainOwnerRequest
 Domain (	
 

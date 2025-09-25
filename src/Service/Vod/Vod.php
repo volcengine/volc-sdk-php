@@ -215,6 +215,10 @@ use Volc\Service\Vod\Models\Request\VodUpdateDomainConfigRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateDomainConfigResponse;
 use Volc\Service\Vod\Models\Request\VodDescribeDomainConfigRequest;
 use Volc\Service\Vod\Models\Response\VodDescribeDomainConfigResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeCdnEdgeIpRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeCdnEdgeIpResponse;
+use Volc\Service\Vod\Models\Request\VodDescribeCdnRegionAndIspRequest;
+use Volc\Service\Vod\Models\Response\VodDescribeCdnRegionAndIspResponse;
 use Volc\Service\Vod\Models\Request\VodAddCallbackSubscriptionRequest;
 use Volc\Service\Vod\Models\Response\VodAddCallbackSubscriptionResponse;
 use Volc\Service\Vod\Models\Request\VodSetCallbackEventRequest;
@@ -3890,6 +3894,72 @@ class Vod extends V4Curl
             echo $response->getBody()->getContents(), "\n";
 		}
 		$respData = new VodDescribeDomainConfigResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+
+	/**
+     * DescribeCdnEdgeIp.
+     *
+     * @param $req VodDescribeCdnEdgeIpRequest
+     * @return VodDescribeCdnEdgeIpResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeCdnEdgeIp (VodDescribeCdnEdgeIpRequest $req): VodDescribeCdnEdgeIpResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeCdnEdgeIp', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeCdnEdgeIpResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+
+	/**
+     * DescribeCdnRegionAndIsp.
+     *
+     * @param $req VodDescribeCdnRegionAndIspRequest
+     * @return VodDescribeCdnRegionAndIspResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function describeCdnRegionAndIsp (VodDescribeCdnRegionAndIspRequest $req): VodDescribeCdnRegionAndIspResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DescribeCdnRegionAndIsp', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+		if ($response->getStatusCode() != 200) {
+			echo $response->getStatusCode(), "\n";
+            echo $response->getBody()->getContents(), "\n";
+		}
+		$respData = new VodDescribeCdnRegionAndIspResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {
