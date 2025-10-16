@@ -45,6 +45,19 @@ class ImagexConfig
                         'service' => 'ImageX'
                     ]
                 ]
+            ],
+            'ap-southeast-1' => [
+                'host' => 'https://imagex.ap-southeast-1.volcengineapi.com',
+                'config' => [
+                    'timeout' => 5.0,
+                    'headers' => [
+                        'Accept' => 'application/json'
+                    ],
+                    'v4_credentials' => [
+                        'region' => 'ap-southeast-1',
+                        'service' => 'ImageX'
+                    ]
+                ]
             ]
         ];
     }

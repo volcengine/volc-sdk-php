@@ -77,6 +77,12 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .Volcengine.Vod.Models.Business.UserAgentAccessRule UaAccessRule = 15;</code>
      */
     protected $UaAccessRule = null;
+    /**
+     * 源站重写
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginRewrite OriginRewriteControl = 18;</code>
+     */
+    protected $OriginRewriteControl = null;
 
     /**
      * Constructor.
@@ -101,6 +107,8 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\RefererAccessRule $RefererAccessRule
      *     @type \Volc\Service\Vod\Models\Business\RequestHeaderRule[]|\Google\Protobuf\Internal\RepeatedField $RequestHeader
      *     @type \Volc\Service\Vod\Models\Business\UserAgentAccessRule $UaAccessRule
+     *     @type \Volc\Service\Vod\Models\Business\VodOriginRewrite $OriginRewriteControl
+     *           源站重写
      * }
      */
     public function __construct($data = NULL) {
@@ -562,6 +570,42 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\UserAgentAccessRule::class);
         $this->UaAccessRule = $var;
+
+        return $this;
+    }
+
+    /**
+     * 源站重写
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginRewrite OriginRewriteControl = 18;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodOriginRewrite|null
+     */
+    public function getOriginRewriteControl()
+    {
+        return $this->OriginRewriteControl;
+    }
+
+    public function hasOriginRewriteControl()
+    {
+        return isset($this->OriginRewriteControl);
+    }
+
+    public function clearOriginRewriteControl()
+    {
+        unset($this->OriginRewriteControl);
+    }
+
+    /**
+     * 源站重写
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginRewrite OriginRewriteControl = 18;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodOriginRewrite $var
+     * @return $this
+     */
+    public function setOriginRewriteControl($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodOriginRewrite::class);
+        $this->OriginRewriteControl = $var;
 
         return $this;
     }

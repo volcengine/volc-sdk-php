@@ -21,10 +21,11 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodCdn::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
+        \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¤©
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto"„
+Ý®
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	
@@ -234,7 +235,7 @@ ExpireTime (2.google.protobuf.StringValue"\'
 CallbackArgs (	"D
 VodDeleteMediaTosFileRequest
 	FileNames (	
-	SpaceName (	"û
+	SpaceName (	"Š
 VodGetMediaListRequest
 	SpaceName (	
 Vid (	
@@ -248,7 +249,8 @@ ExpireTime (2.google.protobuf.StringValue"\'
 ClassificationIds
  (	
 TosStorageClasses (	
-VodUploadSources (	"æ
+VodUploadSources (	
+Title (	"æ
 VodGetSubtitleInfoListRequest
 Vid (	
 FileIds (	
@@ -1024,7 +1026,29 @@ RegionList (	"{
 	SpaceName (	"@
 VodGetCloudMigrateJobRequest
 JobId (
-	SpaceName (	BÈ
+	SpaceName (	"ð
+VodCreateDramaRecapTaskRequest
+	SpaceName (	
+Vids (	
+DramaScriptTaskId (	H ˆ
+	RecapText (	[
+SpeakerConfig (2D.Volcengine.Vod.Models.Business.VodCreateDramaRecapTaskSpeakerConfig
+IsEraseSubtitle (HˆU
+
+FontConfig (2A.Volcengine.Vod.Models.Business.VodCreateDramaRecapTaskFontconfigB
+_DramaScriptTaskIdB
+_IsEraseSubtitle"‚
+VodCreateDramaScriptTaskRequest
+	SpaceName (	
+Vids (	#
+ReRunDramaScriptTaskId (	H ˆB
+_ReRunDramaScriptTaskId"B
+VodQueryDramaRecapTaskRequest
+	SpaceName (	
+TaskId (	"C
+VodQueryDramaScriptTaskRequest
+	SpaceName (	
+TaskId (	BÈ
 (com.volcengine.service.vod.model.requestB
 VodRequestPZ@github.com/volcengine/volc-sdk-golang/service/vod/models/request ØÊVolc\\Service\\Vod\\Models\\Requestâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
