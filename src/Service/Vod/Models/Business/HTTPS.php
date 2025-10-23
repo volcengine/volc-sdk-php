@@ -25,6 +25,10 @@ class HTTPS extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .Volcengine.Vod.Models.Business.ForcedRedirect ForcedRedirect = 3;</code>
      */
     protected $ForcedRedirect = null;
+    /**
+     * Generated from protobuf field <code>optional bool HTTP2 = 4;</code>
+     */
+    protected $HTTP2 = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class HTTPS extends \Google\Protobuf\Internal\Message
      *     @type bool $Switch
      *     @type \Volc\Service\Vod\Models\Business\CertInfo $CertInfo
      *     @type \Volc\Service\Vod\Models\Business\ForcedRedirect $ForcedRedirect
+     *     @type bool $HTTP2
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +139,38 @@ class HTTPS extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\ForcedRedirect::class);
         $this->ForcedRedirect = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool HTTP2 = 4;</code>
+     * @return bool
+     */
+    public function getHTTP2()
+    {
+        return isset($this->HTTP2) ? $this->HTTP2 : false;
+    }
+
+    public function hasHTTP2()
+    {
+        return isset($this->HTTP2);
+    }
+
+    public function clearHTTP2()
+    {
+        unset($this->HTTP2);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool HTTP2 = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHTTP2($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->HTTP2 = $var;
 
         return $this;
     }
