@@ -29,6 +29,10 @@ class HTTPS extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool HTTP2 = 4;</code>
      */
     protected $HTTP2 = null;
+    /**
+     * Generated from protobuf field <code>repeated string TlsVersion = 5;</code>
+     */
+    private $TlsVersion;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class HTTPS extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\CertInfo $CertInfo
      *     @type \Volc\Service\Vod\Models\Business\ForcedRedirect $ForcedRedirect
      *     @type bool $HTTP2
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $TlsVersion
      * }
      */
     public function __construct($data = NULL) {
@@ -171,6 +176,28 @@ class HTTPS extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->HTTP2 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string TlsVersion = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTlsVersion()
+    {
+        return $this->TlsVersion;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string TlsVersion = 5;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTlsVersion($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->TlsVersion = $arr;
 
         return $this;
     }

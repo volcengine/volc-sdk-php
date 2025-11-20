@@ -83,6 +83,10 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodOriginRewrite OriginRewriteControl = 18;</code>
      */
     protected $OriginRewriteControl = null;
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodOriginArgRule OriginArg = 19;</code>
+     */
+    private $OriginArg;
 
     /**
      * Constructor.
@@ -109,6 +113,7 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\UserAgentAccessRule $UaAccessRule
      *     @type \Volc\Service\Vod\Models\Business\VodOriginRewrite $OriginRewriteControl
      *           源站重写
+     *     @type \Volc\Service\Vod\Models\Business\VodOriginArgRule[]|\Google\Protobuf\Internal\RepeatedField $OriginArg
      * }
      */
     public function __construct($data = NULL) {
@@ -606,6 +611,28 @@ class VodDomainConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodOriginRewrite::class);
         $this->OriginRewriteControl = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodOriginArgRule OriginArg = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOriginArg()
+    {
+        return $this->OriginArg;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodOriginArgRule OriginArg = 19;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodOriginArgRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOriginArg($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodOriginArgRule::class);
+        $this->OriginArg = $arr;
 
         return $this;
     }
