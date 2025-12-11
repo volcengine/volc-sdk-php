@@ -446,6 +446,17 @@ class Vms extends V4Curl
             ]
         ],
 
+        'RegisterIndustrialId' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'RegisterIndustrialId',
+                    'Version' => DefaultVersion,
+                ],
+            ]
+        ],
+
         'RouteAAuth' => [
             'url' => '/',
             'method' => 'post',
@@ -954,6 +965,13 @@ class Vms extends V4Curl
             $data = new ArrayObject();
         }
         return $this->requestWithRetry("DeleteAXGGroup", ['json' => $data]);
+    }
+    public function RegisterIndustrialId(array $data = []): string
+    {
+        if (empty($data)){
+            $data = new ArrayObject();
+        }
+        return $this->requestWithRetry("RegisterIndustrialId", ['json' => $data]);
     }
 
     public function RouteAAuth(array $data = []): string

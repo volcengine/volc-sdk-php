@@ -24,7 +24,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¤¯
+Æ°
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -517,7 +517,14 @@ OrderByKey (	
 VodGetDirectEditProgressRequest
 ReqId (	"/
 VodCancelDirectEditTaskRequest
-ReqId (	"*
+ReqId (	"g
+VodAsyncVCreativeTaskRequest
+Uploader (	
+ParamStr (	
+Scene (	
+CallbackArgs (	"7
+ VodGetVCreativeTaskResultRequest
+VCreativeId (	"*
 VodDeleteSpaceRequest
 	SpaceName (	"v
 VodCreateSpaceRequest

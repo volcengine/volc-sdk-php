@@ -16,7 +16,7 @@ class VodEdit
         }
         $pool->internalAddGeneratedFile(
             '
-™
+­
 &volcengine/vod/business/vod_edit.protoVolcengine.Vod.Models.Business"0
 SubmitDirectEditTaskAsyncResult
 ReqId (	"M
@@ -36,7 +36,15 @@ class VodEdit
 	OutputVid (	
 Message (	"\'
 CancelDirectEditTask
-Message (	BÈ
+Message (	"/
+AsyncVCreativeTaskResult
+VCreativeId (	"a
+GetVCreativeTaskResult
+Uploader (	
+	ParamJson (	
+Status (	
+
+OutputJson (	BÈ
 )com.volcengine.service.vod.model.businessBVodEditPZAgithub.com/volcengine/volc-sdk-golang/service/vod/models/business ØÊ Volc\\Service\\Vod\\Models\\Businessâ#Volc\\Service\\Vod\\Models\\GPBMetadatabproto3'
         , true);
 
