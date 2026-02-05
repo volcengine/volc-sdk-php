@@ -415,10 +415,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-        }
         $respData = new VodSubmitDirectEditTaskAsyncResponse();
         try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -449,10 +445,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-        }
         $respData = new VodSubmitDirectEditTaskSyncResponse();
         try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -482,10 +474,6 @@ class Vod extends V4Curl
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
         }
         $respData = new VodGetDirectEditResultResponse();
         try {
@@ -559,10 +547,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-        }
         $respData = new VodGetDirectEditProgressResponse();
         try {
             $respData = VodUtils::parseResponseData($resp, $respData);
@@ -591,10 +575,6 @@ class Vod extends V4Curl
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
         }
         $respData = new VodCancelDirectEditTaskResponse();
         try {
@@ -625,10 +605,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-        }
         $respData = new VodAsyncVCreativeTaskResponse();
         try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -657,10 +633,6 @@ class Vod extends V4Curl
             throw $e;
         } catch (Throwable $t) {
             throw $t;
-        }
-        if ($response->getStatusCode() != 200) {
-            echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
         }
         $respData = new VodGetVCreativeTaskResultResponse();
         try {
@@ -692,10 +664,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAllPlayInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -725,10 +693,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetPlayInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -758,10 +722,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetPrivateDrmPlayAuthResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -791,10 +751,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetHlsDecryptionKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -824,10 +780,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateHlsDecryptionKeyResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -857,10 +809,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetPlayInfoWithLiveTimeShiftSceneResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -890,10 +838,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodSubmitMoveObjectTaskResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -923,10 +867,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodQueryMoveObjectTaskInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -956,10 +896,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodSubmitBlockObjectTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -989,10 +925,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListBlockObjectTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1022,10 +954,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUrlUploadResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1055,10 +983,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodQueryUploadTaskInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1088,10 +1012,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodApplyUploadInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1121,10 +1041,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCommitUploadInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1154,10 +1070,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListFileMetaInfosByFileNamesResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1187,10 +1099,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateMediaInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1220,10 +1128,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateMediaPublishStatusResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1253,10 +1157,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateMediaStorageClassResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1286,10 +1186,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetMediaInfosResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1319,10 +1215,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetMediaInfosResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1352,10 +1244,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetRecommendedPosterResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1385,10 +1273,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteMediaResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1418,10 +1302,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteTranscodesResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1451,10 +1331,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetFileInfosResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1484,10 +1360,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateFileStorageClassResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1517,10 +1389,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetInnerAuditURLsResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1550,10 +1418,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAdAuditResultByVidResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1583,10 +1447,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteMediaTosFileResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1616,10 +1476,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetMediaListResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1649,10 +1505,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteMaterialResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1682,10 +1534,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetSubtitleInfoListResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1715,10 +1563,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateSubtitleStatusResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1748,10 +1592,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateSubtitleInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1781,10 +1621,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAuditFramesForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1814,10 +1650,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetMLFramesForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1847,10 +1679,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetBetterFramesForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1880,10 +1708,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAudioInfoForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1913,10 +1737,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAutomaticSpeechRecognitionForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1946,10 +1766,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAudioEventDetectionForAuditResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -1979,10 +1795,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateVideoClassificationResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2012,10 +1824,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateVideoClassificationResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2045,10 +1853,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteVideoClassificationResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2078,10 +1882,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListVideoClassificationsResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2111,10 +1911,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListSnapshotsResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2144,10 +1940,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodExtractMediaMetaTaskResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2177,10 +1969,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodStartWorkflowResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2210,10 +1998,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodRetrieveTranscodeResultResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2243,10 +2027,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetWorkflowExecutionStatusResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2276,10 +2056,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetWorkflowResultResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2309,10 +2085,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateTaskTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2342,10 +2114,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateTaskTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2375,10 +2143,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetTaskTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2408,10 +2172,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListTaskTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2441,10 +2201,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteTaskTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2474,10 +2230,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateWorkflowTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2507,10 +2259,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateWorkflowTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2540,10 +2288,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetWorkflowTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2573,10 +2317,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListWorkflowTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2606,10 +2346,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteWorkflowTemplateResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2639,10 +2375,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateWatermarkResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2672,10 +2404,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateWatermarkResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2705,10 +2433,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetWatermarkResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2738,10 +2462,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListWatermarkResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2771,10 +2491,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteWatermarkResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2804,10 +2520,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteSpaceResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2837,10 +2549,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateSpaceResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2870,10 +2578,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListSpaceResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2903,10 +2607,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetSpaceDetailResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2936,10 +2636,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateSpaceResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -2969,10 +2665,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateSpaceUploadConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3002,10 +2694,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeUploadSpaceConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3035,10 +2723,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateUploadSpaceConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3068,10 +2752,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodAddDomainToSchedulerResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3101,10 +2781,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodRemoveDomainFromSchedulerResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3134,10 +2810,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateDomainPlayRuleResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3167,10 +2839,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodStartDomainResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3200,10 +2868,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodStopDomainResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3233,10 +2897,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDeleteDomainResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3266,10 +2926,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListDomainResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3299,10 +2955,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateCdnRefreshTaskResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3332,10 +2984,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateCdnPreloadTaskResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3365,10 +3013,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListCdnTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3398,10 +3042,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListCdnAccessLogResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3431,10 +3071,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListCdnTopAccessUrlResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3464,10 +3100,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodListCdnTopAccessResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3497,10 +3129,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCdnStatisticsCommonResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3530,10 +3158,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCdnStatisticsCommonResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3563,10 +3187,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeIPInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3596,10 +3216,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCdnStatisticsCommonResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3629,10 +3245,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodSubmitBlockTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3662,10 +3274,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetContentBlockTasksResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3695,10 +3303,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodCreateDomainV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3728,10 +3332,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateDomainExpireV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3761,10 +3361,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateDomainAuthConfigV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3794,10 +3390,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new AddOrUpdateCertificateV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3827,10 +3419,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateDomainUrlAuthConfigV2Response();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3860,10 +3448,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodVerifyDomainOwnerResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3893,10 +3477,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeDomainVerifyContentResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3926,10 +3506,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodUpdateDomainConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3959,10 +3535,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeDomainConfigResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -3992,10 +3564,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeCdnEdgeIpResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4025,10 +3593,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeCdnRegionAndIspResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4058,10 +3622,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodAddCallbackSubscriptionResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4091,10 +3651,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodSetCallbackEventResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4124,10 +3680,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetSmartStrategyLitePlayInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4157,10 +3709,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodGetAppInfoResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4190,10 +3738,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceTranscodeDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4223,10 +3767,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceAIStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4256,10 +3796,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceSubtitleStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4289,10 +3825,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceDetectStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4322,10 +3854,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceWorkflowDetailDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4355,10 +3883,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceEditDetailDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4388,10 +3912,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSnapshotDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4421,10 +3941,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeVodSpaceStorageDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4454,10 +3970,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeVodDomainTrafficDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4487,10 +3999,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new VodDescribeVodDomainBandwidthDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4520,10 +4028,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodEnhanceImageDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4553,10 +4057,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodSpaceEditStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4586,10 +4086,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodPlayedStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4619,10 +4115,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodMostPlayedStatisDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4652,10 +4144,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodRealtimeMediaDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4685,10 +4173,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodRealtimeMediaDetailDataResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
@@ -4718,10 +4202,6 @@ class Vod extends V4Curl
         } catch (Throwable $t) {
             throw $t;
         }			
-		if ($response->getStatusCode() != 200) {
-			echo $response->getStatusCode(), "\n";
-            echo $response->getBody()->getContents(), "\n";
-		}
 		$respData = new DescribeVodVidTrafficFileLogResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
