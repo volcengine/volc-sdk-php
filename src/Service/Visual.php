@@ -492,6 +492,11 @@ class Visual extends V4Curl
         $response = $this->request('CertLivenessVerifyQuery', $query);
         return $response->getBody();
     }
+    public function CVCancelTask(array $query = [])
+    {
+        $response = $this->request('CVCancelTask', $query);
+        return $response->getBody();
+    }
 
     protected $apiList = [
         'CVProcess' => [
@@ -501,6 +506,19 @@ class Visual extends V4Curl
                 'query' => [
                     'Action' => 'CVProcess',
                     'Version' => '2022-08-31',
+                ],
+                'header' => [
+                    'Content-Type' => 'application/json',
+                ]
+            ],
+        ],
+        'CVCancelTask' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'CVCancelTask',
+                    'Version' => '2024-06-06',
                 ],
                 'header' => [
                     'Content-Type' => 'application/json',
