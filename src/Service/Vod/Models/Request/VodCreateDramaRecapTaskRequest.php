@@ -45,6 +45,14 @@ class VodCreateDramaRecapTaskRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodCreateDramaRecapTaskFontconfig FontConfig = 7;</code>
      */
     protected $FontConfig = null;
+    /**
+     * Generated from protobuf field <code>optional int32 BatchGenerateCount = 8;</code>
+     */
+    protected $BatchGenerateCount = null;
+    /**
+     * Generated from protobuf field <code>optional .Volcengine.Vod.Models.Business.DramaRecapConfig DramaRecapConfig = 9;</code>
+     */
+    protected $DramaRecapConfig = null;
 
     /**
      * Constructor.
@@ -59,6 +67,8 @@ class VodCreateDramaRecapTaskRequest extends \Google\Protobuf\Internal\Message
      *     @type \Volc\Service\Vod\Models\Business\VodCreateDramaRecapTaskSpeakerConfig $SpeakerConfig
      *     @type bool $IsEraseSubtitle
      *     @type \Volc\Service\Vod\Models\Business\VodCreateDramaRecapTaskFontconfig $FontConfig
+     *     @type int $BatchGenerateCount
+     *     @type \Volc\Service\Vod\Models\Business\DramaRecapConfig $DramaRecapConfig
      * }
      */
     public function __construct($data = NULL) {
@@ -256,6 +266,70 @@ class VodCreateDramaRecapTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodCreateDramaRecapTaskFontconfig::class);
         $this->FontConfig = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 BatchGenerateCount = 8;</code>
+     * @return int
+     */
+    public function getBatchGenerateCount()
+    {
+        return isset($this->BatchGenerateCount) ? $this->BatchGenerateCount : 0;
+    }
+
+    public function hasBatchGenerateCount()
+    {
+        return isset($this->BatchGenerateCount);
+    }
+
+    public function clearBatchGenerateCount()
+    {
+        unset($this->BatchGenerateCount);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 BatchGenerateCount = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBatchGenerateCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->BatchGenerateCount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .Volcengine.Vod.Models.Business.DramaRecapConfig DramaRecapConfig = 9;</code>
+     * @return \Volc\Service\Vod\Models\Business\DramaRecapConfig|null
+     */
+    public function getDramaRecapConfig()
+    {
+        return $this->DramaRecapConfig;
+    }
+
+    public function hasDramaRecapConfig()
+    {
+        return isset($this->DramaRecapConfig);
+    }
+
+    public function clearDramaRecapConfig()
+    {
+        unset($this->DramaRecapConfig);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .Volcengine.Vod.Models.Business.DramaRecapConfig DramaRecapConfig = 9;</code>
+     * @param \Volc\Service\Vod\Models\Business\DramaRecapConfig $var
+     * @return $this
+     */
+    public function setDramaRecapConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\DramaRecapConfig::class);
+        $this->DramaRecapConfig = $var;
 
         return $this;
     }

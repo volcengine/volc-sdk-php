@@ -160,6 +160,36 @@ class VodOption
         // **********************************************************************
         // 媒资
         // **********************************************************************
+        'GetMediaEntityList' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMediaEntityList',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'GetMediaEntity' => [
+            'url' => '/',
+            'method' => 'get',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetMediaEntity',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'DeleteMediaEntity' => [
+            'url' => '/',
+            'method' => 'post',
+            'config' => [
+                'query' => [
+                    'Action' => 'DeleteMediaEntity',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'UpdateMediaInfo' => [
             'url' => '/',
             'method' => 'get',

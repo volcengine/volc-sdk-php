@@ -111,6 +111,12 @@ use Volc\Service\Vod\Models\Request\VodListSnapshotsRequest;
 use Volc\Service\Vod\Models\Response\VodListSnapshotsResponse;
 use Volc\Service\Vod\Models\Request\VodExtractMediaMetaTaskRequest;
 use Volc\Service\Vod\Models\Response\VodExtractMediaMetaTaskResponse;
+use Volc\Service\Vod\Models\Request\VodGetMediaEntityListRequest;
+use Volc\Service\Vod\Models\Response\VodGetMediaEntityListResponse;
+use Volc\Service\Vod\Models\Request\VodGetMediaEntityRequest;
+use Volc\Service\Vod\Models\Response\VodGetMediaEntityResponse;
+use Volc\Service\Vod\Models\Request\VodDeleteMediaEntityRequest;
+use Volc\Service\Vod\Models\Response\VodDeleteMediaEntityResponse;
 use Volc\Service\Vod\Models\Request\VodStartWorkflowRequest;
 use Volc\Service\Vod\Models\Response\VodStartWorkflowResponse;
 use Volc\Service\Vod\Models\Request\VodRetrieveTranscodeResultRequest;
@@ -1941,6 +1947,93 @@ class Vod extends V4Curl
             throw $t;
         }			
 		$respData = new VodExtractMediaMetaTaskResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetMediaEntityList.
+     *
+     * @param $req VodGetMediaEntityListRequest
+     * @return VodGetMediaEntityListResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getMediaEntityList (VodGetMediaEntityListRequest $req): VodGetMediaEntityListResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetMediaEntityList', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodGetMediaEntityListResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetMediaEntity.
+     *
+     * @param $req VodGetMediaEntityRequest
+     * @return VodGetMediaEntityResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getMediaEntity (VodGetMediaEntityRequest $req): VodGetMediaEntityResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetMediaEntity', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodGetMediaEntityResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * DeleteMediaEntity.
+     *
+     * @param $req VodDeleteMediaEntityRequest
+     * @return VodDeleteMediaEntityResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function deleteMediaEntity (VodDeleteMediaEntityRequest $req): VodDeleteMediaEntityResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('DeleteMediaEntity', ['form_params' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodDeleteMediaEntityResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

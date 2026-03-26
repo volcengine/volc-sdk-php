@@ -25,6 +25,14 @@ class VodCreateDramaScriptTaskRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string ReRunDramaScriptTaskId = 3;</code>
      */
     protected $ReRunDramaScriptTaskId = null;
+    /**
+     * Generated from protobuf field <code>optional bool HasHardSubtitle = 4;</code>
+     */
+    protected $HasHardSubtitle = null;
+    /**
+     * Generated from protobuf field <code>string ClientToken = 5;</code>
+     */
+    protected $ClientToken = '';
 
     /**
      * Constructor.
@@ -35,6 +43,8 @@ class VodCreateDramaScriptTaskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $SpaceName
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $Vids
      *     @type string $ReRunDramaScriptTaskId
+     *     @type bool $HasHardSubtitle
+     *     @type string $ClientToken
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +124,60 @@ class VodCreateDramaScriptTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ReRunDramaScriptTaskId = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool HasHardSubtitle = 4;</code>
+     * @return bool
+     */
+    public function getHasHardSubtitle()
+    {
+        return isset($this->HasHardSubtitle) ? $this->HasHardSubtitle : false;
+    }
+
+    public function hasHasHardSubtitle()
+    {
+        return isset($this->HasHardSubtitle);
+    }
+
+    public function clearHasHardSubtitle()
+    {
+        unset($this->HasHardSubtitle);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool HasHardSubtitle = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasHardSubtitle($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->HasHardSubtitle = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientToken = 5;</code>
+     * @return string
+     */
+    public function getClientToken()
+    {
+        return $this->ClientToken;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ClientToken = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ClientToken = $var;
 
         return $this;
     }
