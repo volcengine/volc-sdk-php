@@ -78,6 +78,8 @@ namespace Volc\Service\Live\V20230101;
  * @method array DescribeRelaySourceV3(array $json)
  * @method array CreateRelaySourceV4(array $json)
  * @method array UpdateRelaySourceV3(array $json)
+ * @method array DescribeLiveStreamGroupByPage(array $json)
+ * @method array DescribeForbiddenStreamGroupByPage(array $json)
  * @method array KillStream(array $json)
  * @method array DescribeClosedStreamInfoByPage(array|string $query)
  * @method array DescribeLiveStreamInfoByPage(array|string $query)
@@ -176,6 +178,13 @@ namespace Volc\Service\Live\V20230101;
  * @method array DeleteTaskByAccountID(array $json)
  * @method array DescribeHighLightTaskByAccountID(array $json)
  * @method array ListHighLightTask(array $json)
+ * @method array CreateSpeechTask(array $json)
+ * @method array DeleteSpeechTask(array $json)
+ * @method array SearchSpeechTask(array $json)
+ * @method array UpdateSpeechTask(array $json)
+ * @method array GetSpeechTask(array $json)
+ * @method array GetSpeechConfig()
+ * @method array RestartSpeechTask(array $json)
  */
 trait LiveTrait
 {
