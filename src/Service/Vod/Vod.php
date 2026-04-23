@@ -51,6 +51,8 @@ use Volc\Service\Vod\Models\Request\VodApplyUploadInfoRequest;
 use Volc\Service\Vod\Models\Response\VodApplyUploadInfoResponse;
 use Volc\Service\Vod\Models\Request\VodCommitUploadInfoRequest;
 use Volc\Service\Vod\Models\Response\VodCommitUploadInfoResponse;
+use Volc\Service\Vod\Models\Request\VodParseUploadManifestRequest;
+use Volc\Service\Vod\Models\Response\VodParseUploadManifestResponse;
 use Volc\Service\Vod\Models\Request\VodListFileMetaInfosByFileNamesRequest;
 use Volc\Service\Vod\Models\Response\VodListFileMetaInfosByFileNamesResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateMediaInfoRequest;
@@ -1048,6 +1050,35 @@ class Vod extends V4Curl
             throw $t;
         }			
 		$respData = new VodCommitUploadInfoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * ParseUploadManifest.
+     *
+     * @param $req VodParseUploadManifestRequest
+     * @return VodParseUploadManifestResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function parseUploadManifest (VodParseUploadManifestRequest $req): VodParseUploadManifestResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParamV2($req);
+			$response = $this->request('ParseUploadManifest', ['json' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodParseUploadManifestResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

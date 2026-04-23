@@ -106,6 +106,12 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 ChunkSize = 15;</code>
      */
     protected $ChunkSize = 0;
+    /**
+     * 支持解析hls Manifest 
+     *
+     * Generated from protobuf field <code>bool SupportParseManifest = 16;</code>
+     */
+    protected $SupportParseManifest = false;
 
     /**
      * Constructor.
@@ -146,6 +152,8 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
      *           上传域名偏好 
      *     @type int|string $ChunkSize
      *           大文件上传分片大小，最小20MB 
+     *     @type bool $SupportParseManifest
+     *           支持解析hls Manifest 
      * }
      */
     public function __construct($data = NULL) {
@@ -545,6 +553,32 @@ class VodUploadMediaRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->ChunkSize = $var;
+
+        return $this;
+    }
+
+    /**
+     * 支持解析hls Manifest 
+     *
+     * Generated from protobuf field <code>bool SupportParseManifest = 16;</code>
+     * @return bool
+     */
+    public function getSupportParseManifest()
+    {
+        return $this->SupportParseManifest;
+    }
+
+    /**
+     * 支持解析hls Manifest 
+     *
+     * Generated from protobuf field <code>bool SupportParseManifest = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSupportParseManifest($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->SupportParseManifest = $var;
 
         return $this;
     }

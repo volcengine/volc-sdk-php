@@ -17,7 +17,7 @@ class VodUpload
         \Volc\Service\Vod\Models\GPBMetadata\VodCommon::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ˆ=
+§>
 (volcengine/vod/business/vod_upload.protoVolcengine.Vod.Models.Business"­
 VodUrlUploadURLSet
 	SourceUrl (	
@@ -271,7 +271,11 @@ SourceInfo (2-.Volcengine.Vod.Models.Business.VodSourceInfo
 UploadAddress (2-.Volcengine.Vod.Models.Business.UploadAddressL
 FlushUploadResult (21.Volcengine.Vod.Models.Business.FlushUploadResult
 SDKParam (	P
-VpcTosUploadAddress (23.Volcengine.Vod.Models.Business.VpcTosUploadAddress"§
+VpcTosUploadAddress (23.Volcengine.Vod.Models.Business.VpcTosUploadAddress"3
+VodParseUploadManifestData
+MediaSegments (	"h
+VodParseUploadManifestResultH
+Data (2:.Volcengine.Vod.Models.Business.VodParseUploadManifestData"§
 SubmitMoveObjectTaskParam
 SourceSpace (	
 SourceFileName (	

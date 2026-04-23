@@ -24,7 +24,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿ´
+€¶
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -137,7 +137,7 @@ SessionKey (	
 ClientIDCMode	 (	
 NeedFallback
  (
-UploadHostPrefer (	"Ý
+UploadHostPrefer (	"û
 VodUploadMediaRequest
 	SpaceName (	
 FilePath (	
@@ -155,7 +155,8 @@ SessionKey (	
 
 ExpireTime (	
 UploadHostPrefer (	
-	ChunkSize ("¯
+	ChunkSize (
+SupportParseManifest ("¯
 VodUploadMaterialRequest
 	SpaceName (	
 FilePath (	
@@ -196,7 +197,11 @@ SessionKey (	
 ExpireTime (	"=
 VodUrlUploadJsonRequest
 	SpaceName (	
-URLSets (	"i
+URLSets (	"a
+VodParseUploadManifestRequest
+	SpaceName (	
+ManifestType (	
+ManifestContent (	"i
 &VodListFileMetaInfosByFileNamesRequest
 	SpaceName (	
 FileNameEncodeds (	

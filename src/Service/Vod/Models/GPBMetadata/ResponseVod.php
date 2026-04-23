@@ -35,7 +35,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-þÖ
+¸Ø
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto*volcengine/vod/business/vod_reporter.proto\'volcengine/vod/business/vod_drama.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -87,7 +87,10 @@ class ResponseVod
 Result (28.Volcengine.Vod.Models.Business.VodApplyUploadInfoResult"±
 VodCommitUploadInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataI
-Result (29.Volcengine.Vod.Models.Business.VodCommitUploadInfoResult"É
+Result (29.Volcengine.Vod.Models.Business.VodCommitUploadInfoResult"·
+VodParseUploadManifestResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataL
+Result (2<.Volcengine.Vod.Models.Business.VodParseUploadManifestResult"É
 \'VodListFileMetaInfosByFileNamesResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataU
 Result (2E.Volcengine.Vod.Models.Business.VodListFileMetaInfosByFileNamesResult"©
