@@ -536,6 +536,30 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #查询全局配置关联域名: 
+        'DescribeDomainShared' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDomainShared',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #批量查询节点信息: 
+        'DescribeCdnIP' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeCdnIP',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
         #获取访问统计的细分数据: 
         'DescribeDistrictData' => [
           'url' => '/',
@@ -836,6 +860,90 @@ class Cdn extends V4Curl
           ]
         ],
 
+        #查询域名版本列表: 
+        'ListDomainVersions' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ListDomainVersions',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #查询域名环境版本: 
+        'DescribeDomainEnvVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDomainEnvVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #创建域名版本: 
+        'CreateDomainVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'CreateDomainVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #删除域名版本: 
+        'DeleteDomainVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DeleteDomainVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #查询域名版本: 
+        'DescribeDomainVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'DescribeDomainVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #修改域名版本: 
+        'UpdateDomainVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'UpdateDomainVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
+        #发布域名版本: 
+        'ReleaseDomainVersion' => [
+          'url' => '/',
+          'method' => 'post',
+          'config' => [
+              'query' => [
+                  'Action' => 'ReleaseDomainVersion',
+                  'Version' => '2021-03-01',
+              ],
+          ]
+        ],
+
 
 ];
 
@@ -1119,6 +1227,16 @@ class Cdn extends V4Curl
         return $this->requestWithRetry("DescribeAccountingSummary", $data);
     }
 
+    public function describeDomainShared(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDomainShared", $data);
+    }
+
+    public function describeCdnIP(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeCdnIP", $data);
+    }
+
     public function describeDistrictData(array $data = []): string
     {
         return $this->requestWithRetry("DescribeDistrictData", $data);
@@ -1242,6 +1360,41 @@ class Cdn extends V4Curl
     public function describeRetrieveInfo(array $data = []): string
     {
         return $this->requestWithRetry("DescribeRetrieveInfo", $data);
+    }
+
+    public function listDomainVersions(array $data = []): string
+    {
+        return $this->requestWithRetry("ListDomainVersions", $data);
+    }
+
+    public function describeDomainEnvVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDomainEnvVersion", $data);
+    }
+
+    public function createDomainVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("CreateDomainVersion", $data);
+    }
+
+    public function deleteDomainVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("DeleteDomainVersion", $data);
+    }
+
+    public function describeDomainVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("DescribeDomainVersion", $data);
+    }
+
+    public function updateDomainVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("UpdateDomainVersion", $data);
+    }
+
+    public function releaseDomainVersion(array $data = []): string
+    {
+        return $this->requestWithRetry("ReleaseDomainVersion", $data);
     }
 
 }
