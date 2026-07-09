@@ -127,6 +127,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .Volcengine.Vod.Models.Business.VodExecution Executions = 19;</code>
      */
     private $Executions;
+    /**
+     * 媒资类型 
+     *
+     * Generated from protobuf field <code>int32 RecordType = 20;</code>
+     */
+    protected $RecordType = 0;
 
     /**
      * Constructor.
@@ -172,6 +178,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           图集信息 
      *     @type \Volc\Service\Vod\Models\Business\VodExecution[]|\Google\Protobuf\Internal\RepeatedField $Executions
      *           处理任务信息 
+     *     @type int $RecordType
+     *           媒资类型 
      * }
      */
     public function __construct($data = NULL) {
@@ -669,6 +677,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Volc\Service\Vod\Models\Business\VodExecution::class);
         $this->Executions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 媒资类型 
+     *
+     * Generated from protobuf field <code>int32 RecordType = 20;</code>
+     * @return int
+     */
+    public function getRecordType()
+    {
+        return $this->RecordType;
+    }
+
+    /**
+     * 媒资类型 
+     *
+     * Generated from protobuf field <code>int32 RecordType = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRecordType($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->RecordType = $var;
 
         return $this;
     }
