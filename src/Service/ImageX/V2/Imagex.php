@@ -237,6 +237,9 @@ class Imagex extends V4Curl
         if (isset($params["StorageClass"]) && is_string($params["StorageClass"])) {
             $headers['X-VeImageX-Storage-Class'] = $params["StorageClass"];
         }
+        if (isset($params["AIGCMeta"]) && is_string($params["AIGCMeta"])) {
+            $headers['X-Upload-AIGC-Meta'] = $params["AIGCMeta"];
+        }
         $response = $client->put($uri, ['headers' => $headers, 'body' => $body]);
         $uploadPartResponse = json_decode((string) $response->getBody(), true);
         if (!isset ($uploadPartResponse["success"]) || $uploadPartResponse["success"] != 0) {
@@ -258,6 +261,9 @@ class Imagex extends V4Curl
         }
         if (isset($params["StorageClass"]) && is_string($params["StorageClass"])) {
             $headers['X-VeImageX-Storage-Class'] = $params["StorageClass"];
+        }
+        if (isset($params["AIGCMeta"]) && is_string($params["AIGCMeta"])) {
+            $headers['X-Upload-AIGC-Meta'] = $params["AIGCMeta"];
         }
         $response = $tosClient->request('PUT', ImageXUtil::escapePath($storeInfo["StoreUri"]), ["body" => $content, "headers" => $headers]);
         $uploadResponse = json_decode((string) $response->getBody(), true);
@@ -316,11 +322,15 @@ class Imagex extends V4Curl
 
         $contentTypes = [];
         $storageClasses = [];
+        $aigcMetaDataList = [];
         if (isset ($params["ContentTypes"]) && is_array($params["ContentTypes"])) {
             $contentTypes = $params["ContentTypes"];
         }
         if (isset ($params["StorageClasses"]) && is_array($params["StorageClasses"])) {
             $storageClasses = $params["StorageClasses"];
+        }
+        if (isset ($params["AIGCMetaData"]) && is_array($params["AIGCMetaData"])) {
+            $aigcMetaDataList = $params["AIGCMetaData"];
         }
         for ($i = 0; $i < count($fileOrPaths); ++$i) {
             $storeInfo = $uploadAddr['StoreInfos'][$i];
@@ -330,6 +340,14 @@ class Imagex extends V4Curl
             }
             if (sizeof($storageClasses) > $i) {
                 $uploadParams["StorageClass"] = $storageClasses[$i];
+            }
+            if (sizeof($aigcMetaDataList) > $i) {
+                $metaDataJson = json_encode($aigcMetaDataList[$i]);
+                if ($metaDataJson === false) {
+                    error_log("Failed to encode AIGC meta data: " . json_last_error_msg());
+                } else {
+                    $uploadParams["AIGCMeta"] = base64_encode($metaDataJson);
+                }
             }
             if (isset($params["UploadHost"]) && is_string($params["UploadHost"])) {
                 $uploadParams["UploadHost"] = $params["UploadHost"];
