@@ -18,26 +18,38 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 源空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 1;</code>
      */
     protected $SourceSpace = '';
     /**
+     * 源空间下待迁移源文件的文件路径。 
+     *
      * Generated from protobuf field <code>string SourceFileName = 2;</code>
      */
     protected $SourceFileName = '';
     /**
+     * 目标空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      */
     protected $TargetSpace = '';
     /**
+     * 目标空间下迁移后的文件路径。不传时默认与 SourceFileName 一致。 
+     *
      * Generated from protobuf field <code>string TargetFileName = 4;</code>
      */
     protected $TargetFileName = '';
     /**
+     * 迁移结束后是否删除源文件。默认删除源文件。 
+     *
      * Generated from protobuf field <code>bool SaveSourceObject = 5;</code>
      */
     protected $SaveSourceObject = false;
     /**
+     * 是否开启强覆盖。目标文件已存在时，需同时打开目标空间允许覆盖开关。 
+     *
      * Generated from protobuf field <code>bool ForceOverwrite = 6;</code>
      */
     protected $ForceOverwrite = false;
@@ -49,11 +61,17 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $SourceSpace
+     *           源空间名称。可通过 ListSpace 接口获取。 
      *     @type string $SourceFileName
+     *           源空间下待迁移源文件的文件路径。 
      *     @type string $TargetSpace
+     *           目标空间名称。可通过 ListSpace 接口获取。 
      *     @type string $TargetFileName
+     *           目标空间下迁移后的文件路径。不传时默认与 SourceFileName 一致。 
      *     @type bool $SaveSourceObject
+     *           迁移结束后是否删除源文件。默认删除源文件。 
      *     @type bool $ForceOverwrite
+     *           是否开启强覆盖。目标文件已存在时，需同时打开目标空间允许覆盖开关。 
      * }
      */
     public function __construct($data = NULL) {
@@ -62,6 +80,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 源空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 1;</code>
      * @return string
      */
@@ -71,6 +91,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 源空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 1;</code>
      * @param string $var
      * @return $this
@@ -84,6 +106,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 源空间下待迁移源文件的文件路径。 
+     *
      * Generated from protobuf field <code>string SourceFileName = 2;</code>
      * @return string
      */
@@ -93,6 +117,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 源空间下待迁移源文件的文件路径。 
+     *
      * Generated from protobuf field <code>string SourceFileName = 2;</code>
      * @param string $var
      * @return $this
@@ -106,6 +132,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 目标空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      * @return string
      */
@@ -115,6 +143,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 目标空间名称。可通过 ListSpace 接口获取。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      * @param string $var
      * @return $this
@@ -128,6 +158,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 目标空间下迁移后的文件路径。不传时默认与 SourceFileName 一致。 
+     *
      * Generated from protobuf field <code>string TargetFileName = 4;</code>
      * @return string
      */
@@ -137,6 +169,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 目标空间下迁移后的文件路径。不传时默认与 SourceFileName 一致。 
+     *
      * Generated from protobuf field <code>string TargetFileName = 4;</code>
      * @param string $var
      * @return $this
@@ -150,6 +184,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 迁移结束后是否删除源文件。默认删除源文件。 
+     *
      * Generated from protobuf field <code>bool SaveSourceObject = 5;</code>
      * @return bool
      */
@@ -159,6 +195,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 迁移结束后是否删除源文件。默认删除源文件。 
+     *
      * Generated from protobuf field <code>bool SaveSourceObject = 5;</code>
      * @param bool $var
      * @return $this
@@ -172,6 +210,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 是否开启强覆盖。目标文件已存在时，需同时打开目标空间允许覆盖开关。 
+     *
      * Generated from protobuf field <code>bool ForceOverwrite = 6;</code>
      * @return bool
      */
@@ -181,6 +221,8 @@ class VodSubmitMoveObjectTaskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 是否开启强覆盖。目标文件已存在时，需同时打开目标空间允许覆盖开关。 
+     *
      * Generated from protobuf field <code>bool ForceOverwrite = 6;</code>
      * @param bool $var
      * @return $this

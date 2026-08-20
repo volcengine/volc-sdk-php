@@ -14,14 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 迁移任务 ID，可从 SubmitMoveObjectTask 接口返回结果中获取。 
+     *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      */
     protected $TaskId = '';
     /**
+     * 源空间名称。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 2;</code>
      */
     protected $SourceSpace = '';
     /**
+     * 目标空间名称。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      */
     protected $TargetSpace = '';
@@ -33,8 +39,11 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type string $TaskId
+     *           迁移任务 ID，可从 SubmitMoveObjectTask 接口返回结果中获取。 
      *     @type string $SourceSpace
+     *           源空间名称。 
      *     @type string $TargetSpace
+     *           目标空间名称。 
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +52,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 迁移任务 ID，可从 SubmitMoveObjectTask 接口返回结果中获取。 
+     *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      * @return string
      */
@@ -52,6 +63,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 迁移任务 ID，可从 SubmitMoveObjectTask 接口返回结果中获取。 
+     *
      * Generated from protobuf field <code>string TaskId = 1;</code>
      * @param string $var
      * @return $this
@@ -65,6 +78,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 源空间名称。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 2;</code>
      * @return string
      */
@@ -74,6 +89,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 源空间名称。 
+     *
      * Generated from protobuf field <code>string SourceSpace = 2;</code>
      * @param string $var
      * @return $this
@@ -87,6 +104,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 目标空间名称。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      * @return string
      */
@@ -96,6 +115,8 @@ class VodQueryMoveObjectTaskInfoRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * 目标空间名称。 
+     *
      * Generated from protobuf field <code>string TargetSpace = 3;</code>
      * @param string $var
      * @return $this

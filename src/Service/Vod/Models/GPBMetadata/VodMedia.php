@@ -17,7 +17,7 @@ class VodMedia
         \Volc\Service\Vod\Models\GPBMetadata\VodCommon::initOnce();
         $pool->internalAddGeneratedFile(
             '
-½A
+ÄB
 \'volcengine/vod/business/vod_media.protoVolcengine.Vod.Models.Business"r
 %VodListFileMetaInfosByFileNamesResultI
 VodFileMetaInfos (2/.Volcengine.Vod.Models.Business.VodFileMetaInfo"
@@ -28,7 +28,7 @@ class VodMedia
 MaterialId (	
 FileType (	
 FileName (	
-FileNameEncoded (	"Ê
+FileNameEncoded (	"ê
 VodMediaBasicInfo
 	SpaceName (	
 Vid (	
@@ -41,7 +41,8 @@ MaterialId (	
 CreateTime (	I
 Classification	 (21.Volcengine.Vod.Models.Business.VodClassification
 TosStorageClass
- (	
+ (	
+StorageClassUpdateTime (	
 VodUploadSource (	
 HlsMediaSize (
 
@@ -258,7 +259,11 @@ Definition (	
 Status (	
 Reason (	"6
 VodUpdateMediaStorageClassData
-NotExistVids (	"b
+NotExistVids (	"6
+VodRestoreColdArchiveVideoData
+NotExistVids (	"-
+VodGetRestoreVideoStatusData
+State (	"b
 VodSubmitBlockMediaTaskResult
 NotExistVids (	
 BlockedVids (	

@@ -35,7 +35,7 @@ class ResponseVod
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¸Ø
+´Û
 *volcengine/vod/response/response_vod.protoVolcengine.Vod.Models.Response&volcengine/vod/business/vod_play.proto\'volcengine/vod/business/vod_media.proto(volcengine/vod/business/vod_upload.proto*volcengine/vod/business/vod_workflow.proto&volcengine/vod/business/vod_edit.proto\'volcengine/vod/business/vod_space.proto%volcengine/vod/business/vod_cdn.proto(volcengine/vod/business/vod_common.proto0volcengine/vod/business/vod_smart_strategy.proto-volcengine/vod/business/vod_apps_manage.proto)volcengine/vod/business/vod_measure.proto)volcengine/vod/business/vod_project.proto\'volcengine/vod/business/vod_trade.proto(volcengine/vod/business/vod_object.proto)volcengine/vod/business/vod_migrate.proto*volcengine/vod/business/vod_callback.proto*volcengine/vod/business/vod_reporter.proto\'volcengine/vod/business/vod_drama.proto"ª
 VodGetAllPlayInfoResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataD
@@ -106,7 +106,13 @@ class ResponseVod
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadata"½
 "VodUpdateMediaStorageClassResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataN
-Result (2>.Volcengine.Vod.Models.Business.VodUpdateMediaStorageClassData"¥
+Result (2>.Volcengine.Vod.Models.Business.VodUpdateMediaStorageClassData"½
+"VodRestoreColdArchiveVideoResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataN
+Result (2>.Volcengine.Vod.Models.Business.VodRestoreColdArchiveVideoData"¹
+ VodGetRestoreVideoStatusResponseG
+ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataL
+Result (2<.Volcengine.Vod.Models.Business.VodGetRestoreVideoStatusData"¥
 VodDeleteMediaResponseG
 ResponseMetadata (2-.Volcengine.Base.Models.Base.ResponseMetadataB
 Result (22.Volcengine.Vod.Models.Business.VodDeleteMediaData"d

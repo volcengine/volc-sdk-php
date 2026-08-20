@@ -61,6 +61,10 @@ use Volc\Service\Vod\Models\Request\VodUpdateMediaPublishStatusRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateMediaPublishStatusResponse;
 use Volc\Service\Vod\Models\Request\VodUpdateMediaStorageClassRequest;
 use Volc\Service\Vod\Models\Response\VodUpdateMediaStorageClassResponse;
+use Volc\Service\Vod\Models\Request\VodRestoreColdArchiveVideoRequest;
+use Volc\Service\Vod\Models\Response\VodRestoreColdArchiveVideoResponse;
+use Volc\Service\Vod\Models\Request\VodGetRestoreVideoStatusRequest;
+use Volc\Service\Vod\Models\Response\VodGetRestoreVideoStatusResponse;
 use Volc\Service\Vod\Models\Request\VodGetMediaInfosRequest;
 use Volc\Service\Vod\Models\Response\VodGetMediaInfosResponse;
 use Volc\Service\Vod\Models\Request\VodGetRecommendedPosterRequest;
@@ -1195,6 +1199,64 @@ class Vod extends V4Curl
             throw $t;
         }			
 		$respData = new VodUpdateMediaStorageClassResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * RestoreColdArchiveVideo.
+     *
+     * @param $req VodRestoreColdArchiveVideoRequest
+     * @return VodRestoreColdArchiveVideoResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function restoreColdArchiveVideo (VodRestoreColdArchiveVideoRequest $req): VodRestoreColdArchiveVideoResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('RestoreColdArchiveVideo', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodRestoreColdArchiveVideoResponse();
+		try {
+            $respData = VodUtils::parseResponseData($response, $respData);
+        } catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }
+        return $respData;
+	}
+	
+	/**
+     * GetRestoreVideoStatus.
+     *
+     * @param $req VodGetRestoreVideoStatusRequest
+     * @return VodGetRestoreVideoStatusResponse
+     * @throws Exception the exception
+	 * @throws Throwable the exception
+     */
+	public function getRestoreVideoStatus (VodGetRestoreVideoStatusRequest $req): VodGetRestoreVideoStatusResponse
+	{
+		try {
+			$query = VodUtils::formatRequestParam($req);
+			$response = $this->request('GetRestoreVideoStatus', ['query' => $query]);
+		} catch (Exception $e) {
+            throw $e;
+        } catch (Throwable $t) {
+            throw $t;
+        }			
+		$respData = new VodGetRestoreVideoStatusResponse();
 		try {
             $respData = VodUtils::parseResponseData($response, $respData);
         } catch (Exception $e) {

@@ -24,7 +24,7 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
         $pool->internalAddGeneratedFile(
             '
-€¶
+â·
 (volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
@@ -216,7 +216,17 @@ BucketName (	".
 Vids (	
 StorageClass (	
 CallbackArgs (	
-FileIds (	"Î
+FileIds (	"x
+!VodRestoreColdArchiveVideoRequest
+	SpaceName (	
+Vids (	
+FileIds (	
+RestoreTier (	
+Days (	"Q
+VodGetRestoreVideoStatusRequest
+	SpaceName (	
+Vid (	
+FileId (	"Î
 VodUpdateMediaInfoRequest
 Vid (	/
 	PosterUri (2.google.protobuf.StringValue+
@@ -620,11 +630,12 @@ DomainType (	
 DomainType (	
 SourceStationType (
 Offset (
-Limit ("O
+Limit ("d
 VodCreateCdnRefreshTaskRequest
 	SpaceName (	
 Urls (	
-Type (	"A
+Type (	
+CacheShared ("A
 VodCreateCdnPreloadTaskRequest
 	SpaceName (	
 Urls (	"Â

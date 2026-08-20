@@ -74,6 +74,12 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      */
     protected $TosStorageClass = '';
     /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 14;</code>
+     */
+    protected $StorageClassUpdateTime = '';
+    /**
      * 音视频来源
      *
      * Generated from protobuf field <code>string VodUploadSource = 11;</code>
@@ -121,6 +127,8 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
      *          分类串
      *     @type string $TosStorageClass
      *           Tos存储类型:STANDARD, ARCHIVE, IA
+     *     @type string $StorageClassUpdateTime
+     *          此文件存储类型的最新更新时间，RFC3339格式
      *     @type string $VodUploadSource
      *           音视频来源
      *     @type float $HlsMediaSize
@@ -403,6 +411,32 @@ class VodMediaBasicInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 14;</code>
+     * @return string
+     */
+    public function getStorageClassUpdateTime()
+    {
+        return $this->StorageClassUpdateTime;
+    }
+
+    /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStorageClassUpdateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->StorageClassUpdateTime = $var;
 
         return $this;
     }

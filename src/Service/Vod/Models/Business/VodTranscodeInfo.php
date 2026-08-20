@@ -98,6 +98,12 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      */
     protected $TosStorageClass = '';
     /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 16;</code>
+     */
+    protected $StorageClassUpdateTime = '';
+    /**
      *附加属性
      *
      * Generated from protobuf field <code>map<string, string> FileExtra = 15;</code>
@@ -138,6 +144,8 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
      *          动态范围，"HDR" or "SDR"
      *     @type string $TosStorageClass
      *           Tos存储类型:STANDARD, ARCHIVE
+     *     @type string $StorageClassUpdateTime
+     *          此文件存储类型的最新更新时间，RFC3339格式
      *     @type array|\Google\Protobuf\Internal\MapField $FileExtra
      *          附加属性
      * }
@@ -527,6 +535,32 @@ class VodTranscodeInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->TosStorageClass = $var;
+
+        return $this;
+    }
+
+    /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 16;</code>
+     * @return string
+     */
+    public function getStorageClassUpdateTime()
+    {
+        return $this->StorageClassUpdateTime;
+    }
+
+    /**
+     *此文件存储类型的最新更新时间，RFC3339格式
+     *
+     * Generated from protobuf field <code>string StorageClassUpdateTime = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStorageClassUpdateTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->StorageClassUpdateTime = $var;
 
         return $this;
     }

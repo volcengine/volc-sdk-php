@@ -31,6 +31,12 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string Type = 3;</code>
      */
     protected $Type = '';
+    /**
+     * 是否刷新共享缓存开关 
+     *
+     * Generated from protobuf field <code>bool CacheShared = 4;</code>
+     */
+    protected $CacheShared = false;
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
      *           刷新Url或目录 
      *     @type string $Type
      *           刷新任务类型 
+     *     @type bool $CacheShared
+     *           是否刷新共享缓存开关 
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class VodCreateCdnRefreshTaskRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->Type = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否刷新共享缓存开关 
+     *
+     * Generated from protobuf field <code>bool CacheShared = 4;</code>
+     * @return bool
+     */
+    public function getCacheShared()
+    {
+        return $this->CacheShared;
+    }
+
+    /**
+     * 是否刷新共享缓存开关 
+     *
+     * Generated from protobuf field <code>bool CacheShared = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCacheShared($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->CacheShared = $var;
 
         return $this;
     }

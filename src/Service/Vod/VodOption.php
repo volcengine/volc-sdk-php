@@ -20,7 +20,7 @@ class VodOption
         // **********************************************************************
         'GetPlayInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetPlayInfo',
@@ -30,7 +30,7 @@ class VodOption
         ],
         'GetAllPlayInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetAllPlayInfo',
@@ -40,7 +40,7 @@ class VodOption
         ],
         'GetPrivateDrmPlayAuth' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetPrivateDrmPlayAuth',
@@ -50,7 +50,7 @@ class VodOption
         ],
         'CreateHlsDecryptionKey' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CreateHlsDecryptionKey',
@@ -60,7 +60,7 @@ class VodOption
         ],
         'GetHlsDecryptionKey' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetHlsDecryptionKey',
@@ -70,7 +70,7 @@ class VodOption
         ],
         'DescribeDrmDataKey' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeDrmDataKey',
@@ -80,7 +80,7 @@ class VodOption
         ],
         'GetPlayInfoWithLiveTimeShiftScene' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetPlayInfoWithLiveTimeShiftScene',
@@ -94,7 +94,7 @@ class VodOption
         // **********************************************************************
         'SubmitMoveObjectTask' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'SubmitMoveObjectTask',
@@ -104,7 +104,7 @@ class VodOption
         ],
         'QueryMoveObjectTaskInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'QueryMoveObjectTaskInfo',
@@ -118,7 +118,7 @@ class VodOption
         // **********************************************************************
         'UploadMediaByUrl' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UploadMediaByUrl',
@@ -128,7 +128,7 @@ class VodOption
         ],
         'QueryUploadTaskInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'QueryUploadTaskInfo',
@@ -138,7 +138,7 @@ class VodOption
         ],
         'ApplyUploadInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ApplyUploadInfo',
@@ -148,7 +148,7 @@ class VodOption
         ],
         'CommitUploadInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'timeout' => 30.0,
                 'query' => [
@@ -159,7 +159,7 @@ class VodOption
         ],
         'ParseUploadManifest' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'ParseUploadManifest',
@@ -172,7 +172,7 @@ class VodOption
         // **********************************************************************
         'GetMediaEntityList' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaEntityList',
@@ -182,7 +182,7 @@ class VodOption
         ],
         'GetMediaEntity' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaEntity',
@@ -192,7 +192,7 @@ class VodOption
         ],
         'DeleteMediaEntity' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteMediaEntity',
@@ -202,7 +202,7 @@ class VodOption
         ],
         'UpdateMediaInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateMediaInfo',
@@ -212,7 +212,7 @@ class VodOption
         ],
         'UpdateMediaPublishStatus' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateMediaPublishStatus',
@@ -222,7 +222,7 @@ class VodOption
         ],
         'UpdateMediaStorageClass' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateMediaStorageClass',
@@ -230,9 +230,29 @@ class VodOption
                 ],
             ]
         ],
+        'RestoreColdArchiveVideo' => [
+            'url' => '/',
+            'method' => 'GET',
+            'config' => [
+                'query' => [
+                    'Action' => 'RestoreColdArchiveVideo',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
+        'GetRestoreVideoStatus' => [
+            'url' => '/',
+            'method' => 'GET',
+            'config' => [
+                'query' => [
+                    'Action' => 'GetRestoreVideoStatus',
+                    'Version' => '2023-07-01',
+                ],
+            ]
+        ],
         'GetInnerAuditURLs' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'GetInnerAuditURLs',
@@ -242,7 +262,7 @@ class VodOption
         ],
         'GetAdAuditResultByVid' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'GetAdAuditResultByVid',
@@ -252,7 +272,7 @@ class VodOption
         ],
         'GetMediaInfos' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaInfos',
@@ -262,7 +282,7 @@ class VodOption
         ],
         'GetMediaInfos20230701' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaInfos',
@@ -272,7 +292,7 @@ class VodOption
         ],
         'GetRecommendedPoster' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetRecommendedPoster',
@@ -282,7 +302,7 @@ class VodOption
         ],
         'DeleteMedia' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteMedia',
@@ -292,7 +312,7 @@ class VodOption
         ],
         'DeleteTranscodes' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteTranscodes',
@@ -302,7 +322,7 @@ class VodOption
         ],
         'DeleteMediaTosFile' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteMediaTosFile',
@@ -312,7 +332,7 @@ class VodOption
         ],
         'GetMediaList' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMediaList',
@@ -322,7 +342,7 @@ class VodOption
         ],
         'DeleteMaterial' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteMaterial',
@@ -332,7 +352,7 @@ class VodOption
         ],
         'GetSubtitleInfoList' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetSubtitleInfoList',
@@ -342,7 +362,7 @@ class VodOption
         ],
         'UpdateSubtitleStatus' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSubtitleStatus',
@@ -352,7 +372,7 @@ class VodOption
         ],
         'UpdateSubtitleInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSubtitleInfo',
@@ -362,7 +382,7 @@ class VodOption
         ],
         'GetAuditFramesForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetAuditFramesForAudit',
@@ -372,7 +392,7 @@ class VodOption
         ],
         'GetMLFramesForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetMLFramesForAudit',
@@ -382,7 +402,7 @@ class VodOption
         ],
         'GetBetterFramesForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetBetterFramesForAudit',
@@ -392,7 +412,7 @@ class VodOption
         ],
         'GetAudioInfoForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetAudioInfoForAudit',
@@ -402,7 +422,7 @@ class VodOption
         ],
         'GetAutomaticSpeechRecognitionForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetAutomaticSpeechRecognitionForAudit',
@@ -412,7 +432,7 @@ class VodOption
         ],
         'GetAudioEventDetectionForAudit' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetAudioEventDetectionForAudit',
@@ -422,7 +442,7 @@ class VodOption
         ],
         'CreateVideoClassification' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'CreateVideoClassification',
@@ -432,7 +452,7 @@ class VodOption
         ],
         'UpdateVideoClassification' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateVideoClassification',
@@ -442,7 +462,7 @@ class VodOption
         ],
         'DeleteVideoClassification' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteVideoClassification',
@@ -452,7 +472,7 @@ class VodOption
         ],
         'ListVideoClassifications' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListVideoClassifications',
@@ -462,7 +482,7 @@ class VodOption
         ],
         'ListSnapshots' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListSnapshots',
@@ -472,7 +492,7 @@ class VodOption
         ],
         'ExtractMediaMetaTask' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ExtractMediaMetaTask',
@@ -482,7 +502,7 @@ class VodOption
         ],
         'SubmitBlockObjectTasks' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'SubmitBlockObjectTasks',
@@ -492,7 +512,7 @@ class VodOption
         ],
         'ListBlockObjectTasks' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'ListBlockObjectTasks',
@@ -505,7 +525,7 @@ class VodOption
         // **********************************************************************
         'StartWorkflow' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'StartWorkflow',
@@ -515,7 +535,7 @@ class VodOption
         ],
         'RetrieveTranscodeResult' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'RetrieveTranscodeResult',
@@ -525,7 +545,7 @@ class VodOption
         ],
         'GetWorkflowExecution' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetWorkflowExecution',
@@ -535,7 +555,7 @@ class VodOption
         ],
         'GetWorkflowExecutionResult' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetWorkflowExecutionResult',
@@ -545,7 +565,7 @@ class VodOption
         ],
         'GetTaskTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetTaskTemplate',
@@ -555,7 +575,7 @@ class VodOption
         ],
         'CreateTaskTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CreateTaskTemplate',
@@ -565,7 +585,7 @@ class VodOption
         ],
         'UpdateTaskTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateTaskTemplate',
@@ -575,7 +595,7 @@ class VodOption
         ],
         'ListTaskTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListTaskTemplate',
@@ -585,7 +605,7 @@ class VodOption
         ],
         'DeleteTaskTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteTaskTemplate',
@@ -595,7 +615,7 @@ class VodOption
         ],
         'GetWorkflowTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetWorkflowTemplate',
@@ -605,7 +625,7 @@ class VodOption
         ],
         'CreateWorkflowTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CreateWorkflowTemplate',
@@ -615,7 +635,7 @@ class VodOption
         ],
         'UpdateWorkflowTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateWorkflowTemplate',
@@ -625,7 +645,7 @@ class VodOption
         ],
         'ListWorkflowTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListWorkflowTemplate',
@@ -635,7 +655,7 @@ class VodOption
         ],
         'DeleteWorkflowTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteWorkflowTemplate',
@@ -645,7 +665,7 @@ class VodOption
         ],
         'GetWatermarkTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetWatermarkTemplate',
@@ -655,7 +675,7 @@ class VodOption
         ],
         'CreateWatermarkTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CreateWatermarkTemplate',
@@ -665,7 +685,7 @@ class VodOption
         ],
         'UpdateWatermarkTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateWatermarkTemplate',
@@ -675,7 +695,7 @@ class VodOption
         ],
         'ListWatermarkTemplate' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListWatermarkTemplate',
@@ -685,7 +705,7 @@ class VodOption
         ],
         'DeleteWatermarkTemplate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteWatermarkTemplate',
@@ -698,7 +718,7 @@ class VodOption
         // **********************************************************************
         'SubmitDirectEditTaskAsync' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'SubmitDirectEditTaskAsync',
@@ -708,7 +728,7 @@ class VodOption
         ],
         'SubmitDirectEditTaskSync' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'SubmitDirectEditTaskSync',
@@ -718,7 +738,7 @@ class VodOption
         ],
         'GetDirectEditResult' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'GetDirectEditResult',
@@ -728,7 +748,7 @@ class VodOption
         ],
         'GetDirectEditProgress' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetDirectEditProgress',
@@ -738,7 +758,7 @@ class VodOption
         ],
         'CancelDirectEditTask' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CancelDirectEditTask',
@@ -751,7 +771,7 @@ class VodOption
         // **********************************************************************
         'AsyncVCreativeTask' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'AsyncVCreativeTask',
@@ -761,7 +781,7 @@ class VodOption
         ],
         'GetVCreativeTaskResult' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetVCreativeTaskResult',
@@ -774,7 +794,7 @@ class VodOption
         // **********************************************************************
         'DeleteSpace' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteSpace',
@@ -784,7 +804,7 @@ class VodOption
         ],
         'CreateSpace' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'CreateSpace',
@@ -794,7 +814,7 @@ class VodOption
         ],
         'ListSpace' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListSpace',
@@ -804,7 +824,7 @@ class VodOption
         ],
         'GetSpaceDetail' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetSpaceDetail',
@@ -814,7 +834,7 @@ class VodOption
         ],
         'UpdateSpace' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSpace',
@@ -824,7 +844,7 @@ class VodOption
         ],
         'UpdateSpaceUploadConfig' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateSpaceUploadConfig',
@@ -834,7 +854,7 @@ class VodOption
         ],
         'DescribeVodSpaceStorageData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceStorageData',
@@ -844,7 +864,7 @@ class VodOption
         ],
         'DescribeUploadSpaceConfig' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeUploadSpaceConfig',
@@ -854,7 +874,7 @@ class VodOption
         ],
         'UpdateUploadSpaceConfig' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateUploadSpaceConfig',
@@ -867,7 +887,7 @@ class VodOption
         // **********************************************************************
         'DeleteDomain' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DeleteDomain',
@@ -877,7 +897,7 @@ class VodOption
         ],
         'StopDomain' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'StopDomain',
@@ -887,7 +907,7 @@ class VodOption
         ],
         'StartDomain' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'StartDomain',
@@ -897,7 +917,7 @@ class VodOption
         ],
         'UpdateDomainPlayRule' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDomainPlayRule',
@@ -907,7 +927,7 @@ class VodOption
         ],
         'RemoveDomainFromScheduler' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'RemoveDomainFromScheduler',
@@ -917,7 +937,7 @@ class VodOption
         ],
         'AddDomainToScheduler' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'AddDomainToScheduler',
@@ -927,7 +947,7 @@ class VodOption
         ],
         'ListDomain' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListDomain',
@@ -937,7 +957,7 @@ class VodOption
         ],
         'CreateCdnRefreshTask' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'CreateCdnRefreshTask',
@@ -947,7 +967,7 @@ class VodOption
         ],
         'CreateCdnPreloadTask' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'CreateCdnPreloadTask',
@@ -957,7 +977,7 @@ class VodOption
         ],
         'ListCdnTasks' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTasks',
@@ -967,7 +987,7 @@ class VodOption
         ],
         'ListCdnAccessLog' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnAccessLog',
@@ -977,7 +997,7 @@ class VodOption
         ],
         'ListCdnTopAccessUrl' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTopAccessUrl',
@@ -987,7 +1007,7 @@ class VodOption
         ],
         'ListCdnTopAccess' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnTopAccess',
@@ -997,7 +1017,7 @@ class VodOption
         ],
         'DescribeVodDomainBandwidthData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodDomainBandwidthData',
@@ -1007,7 +1027,7 @@ class VodOption
         ],
         'DescribeVodDomainTrafficData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodDomainTrafficData',
@@ -1017,7 +1037,7 @@ class VodOption
         ],
         'ListCdnUsageData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnUsageData',
@@ -1027,7 +1047,7 @@ class VodOption
         ],
         'ListCdnStatusData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnStatusData',
@@ -1037,7 +1057,7 @@ class VodOption
         ],
         'DescribeIpInfo' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeIpInfo',
@@ -1047,7 +1067,7 @@ class VodOption
         ],
         'ListCdnPvData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'ListCdnPvData',
@@ -1057,7 +1077,7 @@ class VodOption
         ],
         'SubmitBlockTasks' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'SubmitBlockTasks',
@@ -1067,7 +1087,7 @@ class VodOption
         ],
         'ListFileMetaInfosByFileNames' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'ListFileMetaInfosByFileNames',
@@ -1077,7 +1097,7 @@ class VodOption
         ],
         'GetFileInfos' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'GetFileInfos',
@@ -1087,7 +1107,7 @@ class VodOption
         ],
         'UpdateFileStorageClass' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateFileStorageClass',
@@ -1097,7 +1117,7 @@ class VodOption
         ],
         'GetContentBlockTasks' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'GetContentBlockTasks',
@@ -1107,7 +1127,7 @@ class VodOption
         ],
         'CreateDomain' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'CreateDomain',
@@ -1118,7 +1138,7 @@ class VodOption
 
         'UpdateDomainExpire' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDomainExpire',
@@ -1129,7 +1149,7 @@ class VodOption
 
         'UpdateDomainAuthConfig' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDomainAuthConfig',
@@ -1140,7 +1160,7 @@ class VodOption
 
         'AddOrUpdateCertificate' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'AddOrUpdateCertificate',
@@ -1151,7 +1171,7 @@ class VodOption
 
         'UpdateDomainUrlAuthConfig' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDomainUrlAuthConfig',
@@ -1162,7 +1182,7 @@ class VodOption
 
         'DescribeDomainConfig' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeDomainConfig',
@@ -1173,7 +1193,7 @@ class VodOption
 
         'UpdateDomainConfig' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'UpdateDomainConfig',
@@ -1184,7 +1204,7 @@ class VodOption
 
         'DescribeDomainVerifyContent' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeDomainVerifyContent',
@@ -1195,7 +1215,7 @@ class VodOption
 
         'VerifyDomainOwner' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'VerifyDomainOwner',
@@ -1205,7 +1225,7 @@ class VodOption
         ],
         'DescribeCdnEdgeIp' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeCdnEdgeIp',
@@ -1215,7 +1235,7 @@ class VodOption
         ],
         'DescribeCdnRegionAndIsp' => [
             'url' => '/',
-            'method' => 'post',
+            'method' => 'POST',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeCdnRegionAndIsp',
@@ -1228,7 +1248,7 @@ class VodOption
         // **********************************************************************
         'AddCallbackSubscription' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'AddCallbackSubscription',
@@ -1238,7 +1258,7 @@ class VodOption
         ],
         'SetCallbackEvent' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'SetCallbackEvent',
@@ -1251,7 +1271,7 @@ class VodOption
         // **********************************************************************
         'DescribeVodSpaceTranscodeData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceTranscodeData',
@@ -1261,7 +1281,7 @@ class VodOption
         ],
         'DescribeVodSpaceAIStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceAIStatisData',
@@ -1271,7 +1291,7 @@ class VodOption
         ],
         'DescribeVodSpaceSubtitleStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceSubtitleStatisData',
@@ -1281,7 +1301,7 @@ class VodOption
         ],
         'DescribeVodSpaceDetectStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceDetectStatisData',
@@ -1291,7 +1311,7 @@ class VodOption
         ],
         'DescribeVodSnapshotData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSnapshotData',
@@ -1301,7 +1321,7 @@ class VodOption
         ],
         'DescribeVodSpaceWorkflowDetailData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceWorkflowDetailData',
@@ -1311,7 +1331,7 @@ class VodOption
         ],
         'DescribeVodSpaceEditDetailData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceEditDetailData',
@@ -1321,7 +1341,7 @@ class VodOption
         ],
         'DescribeVodEnhanceImageData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodEnhanceImageData',
@@ -1331,7 +1351,7 @@ class VodOption
         ],
         'DescribeVodSpaceEditStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodSpaceEditStatisData',
@@ -1341,7 +1361,7 @@ class VodOption
         ],
         'DescribeVodPlayedStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodPlayedStatisData',
@@ -1351,7 +1371,7 @@ class VodOption
         ],
         'DescribeVodMostPlayedStatisData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodMostPlayedStatisData',
@@ -1361,7 +1381,7 @@ class VodOption
         ],
         'DescribeVodRealtimeMediaData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodRealtimeMediaData',
@@ -1371,7 +1391,7 @@ class VodOption
         ],
         'DescribeVodRealtimeMediaDetailData' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodRealtimeMediaDetailData',
@@ -1381,7 +1401,7 @@ class VodOption
         ],
         'DescribeVodVidTrafficFileLog' => [
             'url' => '/',
-            'method' => 'get',
+            'method' => 'GET',
             'config' => [
                 'query' => [
                     'Action' => 'DescribeVodVidTrafficFileLog',
