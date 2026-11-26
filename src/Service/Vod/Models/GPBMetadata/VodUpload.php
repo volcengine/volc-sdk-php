@@ -17,8 +17,8 @@ class VodUpload
         \Volc\Service\Vod\Models\GPBMetadata\VodCommon::initOnce();
         $pool->internalAddGeneratedFile(
             '
-»>
-(volcengine/vod/business/vod_upload.protoVolcengine.Vod.Models.Business"Á
+Ï>
+(volcengine/vod/business/vod_upload.protoVolcengine.Vod.Models.Business"Õ
 VodUrlUploadURLSet
 	SourceUrl (	
 CallbackArgs (	
@@ -43,7 +43,9 @@ TemplateId (	
 
 Executions (2,.Volcengine.Vod.Models.Business.VodExecution
 
-RecordType (7
+RecordType (
+
+AIGCSource (	7
 CustomURLHeadersEntry
 key (	
 value (	:8"-

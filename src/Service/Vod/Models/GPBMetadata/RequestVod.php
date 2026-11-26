@@ -22,10 +22,11 @@ class RequestVod
         \Volc\Service\Vod\Models\GPBMetadata\VodMigrate::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodSpace::initOnce();
         \Volc\Service\Vod\Models\GPBMetadata\VodDrama::initOnce();
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         $pool->internalAddGeneratedFile(
             '
-â·
-(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.proto"„
+ƒ¸
+(volcengine/vod/request/request_vod.protoVolcengine.Vod.Models.Request*volcengine/vod/business/vod_workflow.proto(volcengine/vod/business/vod_upload.proto\'volcengine/vod/business/vod_media.proto%volcengine/vod/business/vod_cdn.proto)volcengine/vod/business/vod_migrate.proto\'volcengine/vod/business/vod_space.proto\'volcengine/vod/business/vod_drama.protogoogle/api/field_behavior.proto"„
 VodGetAllPlayInfoRequest
 Vids (	
 Formats (	

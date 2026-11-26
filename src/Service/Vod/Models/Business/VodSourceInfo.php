@@ -145,6 +145,18 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> FileExtra = 21;</code>
      */
     private $FileExtra;
+    /**
+     * AIGC来源
+     *
+     * Generated from protobuf field <code>string AIGCSource = 23;</code>
+     */
+    protected $AIGCSource = '';
+    /**
+     * AIGCMeta
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAIGCMeta AIGCMeta = 24;</code>
+     */
+    protected $AIGCMeta = null;
 
     /**
      * Constructor.
@@ -196,6 +208,10 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
      *          文件名
      *     @type array|\Google\Protobuf\Internal\MapField $FileExtra
      *          附加属性
+     *     @type string $AIGCSource
+     *           AIGC来源
+     *     @type \Volc\Service\Vod\Models\Business\VodAIGCMeta $AIGCMeta
+     *           AIGCMeta
      * }
      */
     public function __construct($data = NULL) {
@@ -791,6 +807,68 @@ class VodSourceInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->FileExtra = $arr;
+
+        return $this;
+    }
+
+    /**
+     * AIGC来源
+     *
+     * Generated from protobuf field <code>string AIGCSource = 23;</code>
+     * @return string
+     */
+    public function getAIGCSource()
+    {
+        return $this->AIGCSource;
+    }
+
+    /**
+     * AIGC来源
+     *
+     * Generated from protobuf field <code>string AIGCSource = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAIGCSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->AIGCSource = $var;
+
+        return $this;
+    }
+
+    /**
+     * AIGCMeta
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAIGCMeta AIGCMeta = 24;</code>
+     * @return \Volc\Service\Vod\Models\Business\VodAIGCMeta|null
+     */
+    public function getAIGCMeta()
+    {
+        return $this->AIGCMeta;
+    }
+
+    public function hasAIGCMeta()
+    {
+        return isset($this->AIGCMeta);
+    }
+
+    public function clearAIGCMeta()
+    {
+        unset($this->AIGCMeta);
+    }
+
+    /**
+     * AIGCMeta
+     *
+     * Generated from protobuf field <code>.Volcengine.Vod.Models.Business.VodAIGCMeta AIGCMeta = 24;</code>
+     * @param \Volc\Service\Vod\Models\Business\VodAIGCMeta $var
+     * @return $this
+     */
+    public function setAIGCMeta($var)
+    {
+        GPBUtil::checkMessage($var, \Volc\Service\Vod\Models\Business\VodAIGCMeta::class);
+        $this->AIGCMeta = $var;
 
         return $this;
     }

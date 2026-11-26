@@ -133,6 +133,12 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 RecordType = 20;</code>
      */
     protected $RecordType = 0;
+    /**
+     * AIGC来源 
+     *
+     * Generated from protobuf field <code>string AIGCSource = 21;</code>
+     */
+    protected $AIGCSource = '';
 
     /**
      * Constructor.
@@ -180,6 +186,8 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
      *           处理任务信息 
      *     @type int $RecordType
      *           媒资类型 
+     *     @type string $AIGCSource
+     *           AIGC来源 
      * }
      */
     public function __construct($data = NULL) {
@@ -703,6 +711,32 @@ class VodUrlUploadURLSet extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->RecordType = $var;
+
+        return $this;
+    }
+
+    /**
+     * AIGC来源 
+     *
+     * Generated from protobuf field <code>string AIGCSource = 21;</code>
+     * @return string
+     */
+    public function getAIGCSource()
+    {
+        return $this->AIGCSource;
+    }
+
+    /**
+     * AIGC来源 
+     *
+     * Generated from protobuf field <code>string AIGCSource = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAIGCSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->AIGCSource = $var;
 
         return $this;
     }
